@@ -1,0 +1,19 @@
+body {
+  font-family: "San Francisco", "Helvetica Neue", Helvetica, sans-serif;
+}
+
+.b--physics {
+  border-color: hsl(195, 100%, 45%);
+}
+
+.b--society {
+  border-color: green;
+}
+
+.b--engineering {
+  border-color: hsl(45, 100%, 45%);
+}
+
+.b--rare {
+  border-color: hsl(300, 100%, 25%);
+}
