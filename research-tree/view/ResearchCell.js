@@ -7,7 +7,7 @@ const IMG = `${BASE}public/vanilla/img/`;
 
 const createImage = research => {
   const { key } = research;
-  const className = `v-top ${research.is_rare ? "b--rare ba bw2" : ""}`;
+  const className = `v-mid ${research.is_rare ? "b--rare ba bw2" : ""}`;
 
   return ReactDOMFactories.img({
     className,
@@ -44,11 +44,12 @@ class ResearchCell extends React.Component {
     const label1 = createLabel1(research);
     const label2 = createLabel2(research);
     const label3 = createLabel3(research);
-    const label = ReactUtils.createTable([
-      ReactUtils.createRow(ReactUtils.createCell(label1), "labelLine1", `b f6 tl`),
-      ReactUtils.createRow(ReactUtils.createCell(label2), "labelLine2", `f7 tl`),
-      ReactUtils.createRow(ReactUtils.createCell(label3), "labelLine3", `f7 tl`)
-    ]);
+    const rows = [
+      ReactUtils.createRow(ReactUtils.createCell(label1), "labelLine1", "b f6"),
+      ReactUtils.createRow(ReactUtils.createCell(label2), "labelLine2"),
+      ReactUtils.createRow(ReactUtils.createCell(label3), "labelLine3")
+    ];
+    const label = ReactUtils.createTable(rows, "innerTable", "f7 tl");
 
     const { name } = research;
     const row = ReactUtils.createRow([
@@ -57,7 +58,7 @@ class ResearchCell extends React.Component {
     ]);
     const innerTable = ReactUtils.createTable(row, "innerTable");
 
-    const outerClass = `b--${research.area} ba bw2 ${research.is_rare ? " pr1" : " pa1"}`;
+    const outerClass = `b--${research.area} ba bw2 ${research.is_rare ? "pr1" : "pa1"}`;
 
     return ReactUtils.createCell(innerTable, `${myKey}${name}ResearchCell`, outerClass);
   }
