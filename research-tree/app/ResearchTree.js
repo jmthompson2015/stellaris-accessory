@@ -15,4 +15,4 @@ ReactDOM.render(element0, document.getElementById("inputPanel"));
 
 const container1 = React.createElement(ResearchTableContainer);
 const element1 = React.createElement(ReactRedux.Provider, { store }, container1);
-ReactDOM.render(element1, document.getElementById("researchPanel"));
+ReactDOM.render(element1, document.getElementById("researchTable"));

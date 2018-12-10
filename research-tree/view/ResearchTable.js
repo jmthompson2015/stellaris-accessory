@@ -47,7 +47,7 @@ class ResearchTable extends React.Component {
       }
     }
 
-    return ReactUtils.createTable(rows, `${myKey}ResearchTable`, "center tc");
+    return ReactUtils.createTable(rows, `${myKey}ResearchTable`, "tc");
   }
 }
 
