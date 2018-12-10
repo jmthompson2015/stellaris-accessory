@@ -98,7 +98,7 @@ QUnit.test("allPrerequisites() tech_pk_shielder", assert => {
 
 QUnit.test("categoriesByArea() engineering", assert => {
   // Setup.
-  const areaKey = "ENGINEERING";
+  const areaKey = "engineering";
 
   // Run.
   const result = ResearchUtils.categoriesByArea(areaKey);
@@ -113,7 +113,7 @@ QUnit.test("categoriesByArea() engineering", assert => {
 
 QUnit.test("categoriesByArea() physics", assert => {
   // Setup.
-  const areaKey = "PHYSICS";
+  const areaKey = "physics";
 
   // Run.
   const result = ResearchUtils.categoriesByArea(areaKey);
@@ -128,7 +128,7 @@ QUnit.test("categoriesByArea() physics", assert => {
 
 QUnit.test("categoriesByArea() society", assert => {
   // Setup.
-  const areaKey = "SOCIETY";
+  const areaKey = "society";
 
   // Run.
   const result = ResearchUtils.categoriesByArea(areaKey);
@@ -202,7 +202,7 @@ QUnit.test("researches()", assert => {
 
 QUnit.test("researchesByArea() engineering", assert => {
   // Setup.
-  const areaKey = "ENGINEERING";
+  const areaKey = "engineering";
 
   // Run.
   const result = ResearchUtils.researchesByArea(areaKey);
@@ -232,7 +232,7 @@ QUnit.test("researchesByArea() physics", assert => {
 
 QUnit.test("researchesByArea() society", assert => {
   // Setup.
-  const areaKey = "SOCIETY";
+  const areaKey = "society";
 
   // Run.
   const result = ResearchUtils.researchesByArea(areaKey);

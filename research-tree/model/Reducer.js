@@ -54,7 +54,7 @@ Reducer.root = (state, action) => {
         newResearchKey = undefined;
       } else {
         newCategory = Category[action.categoryKey];
-        newAreaKey = newCategory.area.toUpperCase();
+        newAreaKey = newCategory.area;
         newCategories = RU.categoriesByArea(newAreaKey);
         newResearches = RU.researchesByCategory(action.categoryKey);
         newResearchKey = newResearches[0].key;
@@ -69,7 +69,7 @@ Reducer.root = (state, action) => {
     case ActionType.SET_RESEARCH:
       console.log(`Reducer SET_RESEARCH ${action.researchKey}`);
       newResearch = Research[action.researchKey];
-      newAreaKey = newResearch.area.toUpperCase();
+      newAreaKey = newResearch.area;
       newCategories = RU.categoriesByArea(newAreaKey);
       newCategoryKey = newResearch.category.toUpperCase();
       newResearches = RU.researchesByCategory(newCategoryKey);

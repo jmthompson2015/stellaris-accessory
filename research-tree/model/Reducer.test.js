@@ -7,7 +7,7 @@ QUnit.module("Reducer");
 QUnit.test("setArea()", assert => {
   // Setup.
   const state = AppState.create();
-  const areaKey = "ENGINEERING";
+  const areaKey = "engineering";
   const action = ActionCreator.setArea(areaKey);
 
   // Run.
@@ -33,7 +33,7 @@ QUnit.test("setCategory()", assert => {
 
   // Verify.
   assert.ok(result);
-  assert.equal(result.areaKey, "PHYSICS");
+  assert.equal(result.areaKey, "physics");
   assert.equal(result.categories.length, 4);
   assert.equal(result.categoryKey, categoryKey);
   assert.equal(result.researches.length, 30);
@@ -51,7 +51,7 @@ QUnit.test("setResearch()", assert => {
 
   // Verify.
   assert.ok(result);
-  assert.equal(result.areaKey, "PHYSICS");
+  assert.equal(result.areaKey, "physics");
   assert.equal(result.categories.length, 4);
   assert.equal(result.categoryKey, "PARTICLES");
   assert.equal(result.researches.length, 43);

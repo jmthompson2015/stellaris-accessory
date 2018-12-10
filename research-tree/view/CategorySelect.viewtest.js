@@ -11,7 +11,7 @@ const myOnChange = categoryKey => {
 const element1 = React.createElement(CategorySelect, { onChange: myOnChange });
 ReactDOM.render(element1, document.getElementById("panel1"));
 
-const categories2 = RU.categoriesByArea("ENGINEERING");
+const categories2 = RU.categoriesByArea("engineering");
 const element2 = React.createElement(CategorySelect, {
   onChange: myOnChange,
   categories: categories2,
@@ -19,7 +19,7 @@ const element2 = React.createElement(CategorySelect, {
 });
 ReactDOM.render(element2, document.getElementById("panel2"));
 
-const categories3 = RU.categoriesByArea("PHYSICS");
+const categories3 = RU.categoriesByArea("physics");
 const element3 = React.createElement(CategorySelect, {
   onChange: myOnChange,
   categories: categories3,
@@ -27,7 +27,7 @@ const element3 = React.createElement(CategorySelect, {
 });
 ReactDOM.render(element3, document.getElementById("panel3"));
 
-const categories4 = RU.categoriesByArea("SOCIETY");
+const categories4 = RU.categoriesByArea("society");
 const element4 = React.createElement(CategorySelect, {
   onChange: myOnChange,
   categories: categories4,

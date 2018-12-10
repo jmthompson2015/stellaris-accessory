@@ -11,7 +11,7 @@ const myOnChange = researchKey => {
 const element1 = React.createElement(ResearchSelect, { onChange: myOnChange });
 ReactDOM.render(element1, document.getElementById("panel1"));
 
-const researches2 = RU.researchesByArea("ENGINEERING");
+const researches2 = RU.researchesByArea("engineering");
 const element2 = React.createElement(ResearchSelect, {
   onChange: myOnChange,
   myKey: "2",
@@ -19,7 +19,7 @@ const element2 = React.createElement(ResearchSelect, {
 });
 ReactDOM.render(element2, document.getElementById("panel2"));
 
-const researches3 = RU.researchesByArea("PHYSICS");
+const researches3 = RU.researchesByArea("physics");
 const element3 = React.createElement(ResearchSelect, {
   onChange: myOnChange,
   myKey: "3",
@@ -27,7 +27,7 @@ const element3 = React.createElement(ResearchSelect, {
 });
 ReactDOM.render(element3, document.getElementById("panel3"));
 
-const researches4 = RU.researchesByArea("SOCIETY");
+const researches4 = RU.researchesByArea("society");
 const element4 = React.createElement(ResearchSelect, {
   onChange: myOnChange,
   myKey: "4",

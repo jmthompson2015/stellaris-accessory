@@ -1,15 +1,15 @@
 const Area = {
-  "ENGINEERING": {
-    "name": "engineering",
-    "key": "ENGINEERING"
+  "engineering": {
+    "name": "Engineering",
+    "key": "engineering"
   },
-  "PHYSICS": {
-    "name": "physics",
-    "key": "PHYSICS"
+  "physics": {
+    "name": "Physics",
+    "key": "physics"
   },
-  "SOCIETY": {
-    "name": "society",
-    "key": "SOCIETY"
+  "society": {
+    "name": "Society",
+    "key": "society"
   }
 }
 

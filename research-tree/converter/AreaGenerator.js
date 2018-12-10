@@ -1,6 +1,5 @@
 const R = require("ramda");
 
-const EnumGenerator = require("./EnumGenerator.js");
 const FileLoader = require("./FileLoader.js");
 const FileWriter = require("./FileWriter.js");
 
@@ -16,6 +15,12 @@ Object.freeze(Area);
 
 export default Area;`;
 
+const capitalizeFirstLetter = string => {
+  const firstLetter = string[0] || string.charAt(0);
+
+  return firstLetter ? firstLetter.toUpperCase() + string.substring(1) : "";
+};
+
 AreaGenerator.convert = () => {
   FileLoader.loadLocalFileJson(INPUT_FILE).then(data => {
     const reduceFunction1 = (accum, item) =>
@@ -25,9 +30,8 @@ AreaGenerator.convert = () => {
     allItem.sort();
 
     const reduceFunction2 = (accum, item) => {
-      const newKey = EnumGenerator.createEnumName(item);
-      const newItem = { name: item, key: newKey };
-      return R.assoc(newKey, newItem, accum);
+      const newItem = { name: capitalizeFirstLetter(item), key: item };
+      return R.assoc(item, newItem, accum);
     };
     const itemMap = R.reduce(reduceFunction2, {}, allItem);
 
