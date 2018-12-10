@@ -1,63 +1,63 @@
 const Category = {
-  "BIOLOGY": {
+  "Biology": {
     "name": "Biology",
     "area": "society",
-    "key": "BIOLOGY"
+    "key": "Biology"
   },
-  "COMPUTING": {
+  "Computing": {
     "name": "Computing",
     "area": "physics",
-    "key": "COMPUTING"
+    "key": "Computing"
   },
-  "FIELD_MANIPULATION": {
+  "Field Manipulation": {
     "name": "Field Manipulation",
     "area": "physics",
-    "key": "FIELD_MANIPULATION"
+    "key": "Field Manipulation"
   },
-  "INDUSTRY": {
+  "Industry": {
     "name": "Industry",
     "area": "engineering",
-    "key": "INDUSTRY"
+    "key": "Industry"
   },
-  "MATERIALS": {
+  "Materials": {
     "name": "Materials",
     "area": "engineering",
-    "key": "MATERIALS"
+    "key": "Materials"
   },
-  "MILITARY_THEORY": {
+  "Military Theory": {
     "name": "Military Theory",
     "area": "society",
-    "key": "MILITARY_THEORY"
+    "key": "Military Theory"
   },
-  "NEW_WORLDS": {
+  "New Worlds": {
     "name": "New Worlds",
     "area": "society",
-    "key": "NEW_WORLDS"
+    "key": "New Worlds"
   },
-  "PARTICLES": {
+  "Particles": {
     "name": "Particles",
     "area": "physics",
-    "key": "PARTICLES"
+    "key": "Particles"
   },
-  "PROPULSION": {
+  "Propulsion": {
     "name": "Propulsion",
     "area": "engineering",
-    "key": "PROPULSION"
+    "key": "Propulsion"
   },
-  "PSIONICS": {
+  "Psionics": {
     "name": "Psionics",
     "area": "society",
-    "key": "PSIONICS"
+    "key": "Psionics"
   },
-  "STATECRAFT": {
+  "Statecraft": {
     "name": "Statecraft",
     "area": "society",
-    "key": "STATECRAFT"
+    "key": "Statecraft"
   },
-  "VOIDCRAFT": {
+  "Voidcraft": {
     "name": "Voidcraft",
     "area": "physics",
-    "key": "VOIDCRAFT"
+    "key": "Voidcraft"
   }
 }
 

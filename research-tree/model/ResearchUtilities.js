@@ -69,11 +69,8 @@ ResearchUtilities.allPrerequisites = research => {
   return ResearchUtilities.researches(keys);
 };
 
-ResearchUtilities.categoriesByArea = areaKey => {
-  const myAreaKey = areaKey.toLowerCase();
-
-  return R.filter(c => c.area === myAreaKey, Object.values(Category));
-};
+ResearchUtilities.categoriesByArea = areaKey =>
+  R.filter(c => c.area === areaKey, Object.values(Category));
 
 ResearchUtilities.prerequisitesByResearch = researchKey => {
   const research = ResearchUtilities.research(researchKey);
@@ -98,9 +95,7 @@ ResearchUtilities.research = key => Research[key];
 ResearchUtilities.researches = keys => R.map(key => Research[key], keys);
 
 ResearchUtilities.researchesByArea = areaKey => {
-  const myAreaKey = areaKey.toLowerCase();
-
-  const researches = R.filter(r => r.area === myAreaKey, Object.values(Research));
+  const researches = R.filter(r => r.area === areaKey, Object.values(Research));
 
   return R.sortBy(R.prop("name"), researches);
 };

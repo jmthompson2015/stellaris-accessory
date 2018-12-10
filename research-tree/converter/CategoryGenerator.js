@@ -1,6 +1,5 @@
 const R = require("ramda");
 
-const EnumGenerator = require("./EnumGenerator.js");
 const FileLoader = require("./FileLoader.js");
 const FileWriter = require("./FileWriter.js");
 
@@ -25,7 +24,7 @@ CategoryGenerator.convert = () => {
     const allItem = R.sortBy(R.prop("name"), allItem1);
 
     const reduceFunction2 = (accum, item) => {
-      const newKey = EnumGenerator.createEnumName(item.name);
+      const newKey = item.name;
       const newItem = R.assoc("key", newKey, item);
       return R.assoc(newKey, newItem, accum);
     };

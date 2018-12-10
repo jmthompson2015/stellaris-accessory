@@ -17,7 +17,7 @@ QUnit.test("setArea()", assert => {
   assert.ok(result);
   assert.equal(result.areaKey, areaKey);
   assert.equal(result.categories.length, 3);
-  assert.equal(result.categoryKey, "INDUSTRY");
+  assert.equal(result.categoryKey, "Industry");
   assert.equal(result.researches.length, 116);
   assert.equal(result.researchKey, "tech_afterburners_2");
 });
@@ -25,7 +25,7 @@ QUnit.test("setArea()", assert => {
 QUnit.test("setCategory()", assert => {
   // Setup.
   const state = AppState.create();
-  const categoryKey = "COMPUTING";
+  const categoryKey = "Computing";
   const action = ActionCreator.setCategory(categoryKey);
 
   // Run.
@@ -53,7 +53,7 @@ QUnit.test("setResearch()", assert => {
   assert.ok(result);
   assert.equal(result.areaKey, "physics");
   assert.equal(result.categories.length, 4);
-  assert.equal(result.categoryKey, "PARTICLES");
+  assert.equal(result.categoryKey, "Particles");
   assert.equal(result.researches.length, 43);
   assert.equal(result.researchKey, researchKey);
 });

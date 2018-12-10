@@ -24,7 +24,7 @@ const createLabel1 = research => {
 
 const createLabel2 = research => {
   const { category, tier } = research;
-  const categoryObj = Category[category.replace(/ /g, "_").toUpperCase()];
+  const categoryObj = Category[category];
   const myTier = research.is_start_tech ? "Starting" : `Tier ${tier}`;
 
   return `${categoryObj.name} (${myTier})`;

@@ -107,8 +107,8 @@ QUnit.test("categoriesByArea() engineering", assert => {
   assert.ok(result);
   const length = 3;
   assert.equal(result.length, length);
-  assert.equal(result[0].key, "INDUSTRY");
-  assert.equal(result[length - 1].key, "PROPULSION");
+  assert.equal(result[0].key, "Industry");
+  assert.equal(result[length - 1].key, "Propulsion");
 });
 
 QUnit.test("categoriesByArea() physics", assert => {
@@ -122,8 +122,8 @@ QUnit.test("categoriesByArea() physics", assert => {
   assert.ok(result);
   const length = 4;
   assert.equal(result.length, length);
-  assert.equal(result[0].key, "COMPUTING");
-  assert.equal(result[length - 1].key, "VOIDCRAFT");
+  assert.equal(result[0].key, "Computing");
+  assert.equal(result[length - 1].key, "Voidcraft");
 });
 
 QUnit.test("categoriesByArea() society", assert => {
@@ -137,8 +137,8 @@ QUnit.test("categoriesByArea() society", assert => {
   assert.ok(result);
   const length = 5;
   assert.equal(result.length, length);
-  assert.equal(result[0].key, "BIOLOGY");
-  assert.equal(result[length - 1].key, "STATECRAFT");
+  assert.equal(result[0].key, "Biology");
+  assert.equal(result[length - 1].key, "Statecraft");
 });
 
 QUnit.test("prerequisitesByResearch() tech_nanite_assemblers", assert => {
@@ -247,7 +247,7 @@ QUnit.test("researchesByArea() society", assert => {
 
 QUnit.test("researchesByCategory() biology", assert => {
   // Setup.
-  const categoryKey = "BIOLOGY";
+  const categoryKey = "Biology";
 
   // Run.
   const result = ResearchUtils.researchesByCategory(categoryKey);
@@ -262,7 +262,7 @@ QUnit.test("researchesByCategory() biology", assert => {
 
 QUnit.test("researchesByCategory() computing", assert => {
   // Setup.
-  const categoryKey = "COMPUTING";
+  const categoryKey = "Computing";
 
   // Run.
   const result = ResearchUtils.researchesByCategory(categoryKey);
@@ -277,7 +277,7 @@ QUnit.test("researchesByCategory() computing", assert => {
 
 QUnit.test("researchesByCategory() industry", assert => {
   // Setup.
-  const categoryKey = "INDUSTRY";
+  const categoryKey = "Industry";
 
   // Run.
   const result = ResearchUtils.researchesByCategory(categoryKey);

@@ -71,7 +71,7 @@ Reducer.root = (state, action) => {
       newResearch = Research[action.researchKey];
       newAreaKey = newResearch.area;
       newCategories = RU.categoriesByArea(newAreaKey);
-      newCategoryKey = newResearch.category.toUpperCase();
+      newCategoryKey = newResearch.category;
       newResearches = RU.researchesByCategory(newCategoryKey);
       return R.pipe(
         R.assoc("areaKey", newAreaKey),

@@ -5,7 +5,7 @@ import ResearchTableContainer from "./ResearchTableContainer.js";
 
 const store = Redux.createStore(Reducer.root);
 store.dispatch(ActionCreator.setArea("physics"));
-store.dispatch(ActionCreator.setCategory("PARTICLES"));
+store.dispatch(ActionCreator.setCategory("Particles"));
 store.dispatch(ActionCreator.setResearch("tech_lasers_4"));
 
 const container = React.createElement(ResearchTableContainer);

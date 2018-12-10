@@ -4,7 +4,7 @@ QUnit.module("Category");
 
 QUnit.test("Category properties Biology", assert => {
   // Setup.
-  const key = "BIOLOGY";
+  const key = "Biology";
 
   // Run.
   const category = Category[key];
@@ -27,11 +27,11 @@ QUnit.test("Category keys", assert => {
 
   const category0 = Category[keys[0]];
   assert.equal(category0.name, "Biology");
-  assert.equal(category0.key, "BIOLOGY");
+  assert.equal(category0.key, "Biology");
 
   const categoryLast = Category[keys[length - 1]];
   assert.equal(categoryLast.name, "Voidcraft");
-  assert.equal(categoryLast.key, "VOIDCRAFT");
+  assert.equal(categoryLast.key, "Voidcraft");
 });
 
 const CategoryTest = {};
