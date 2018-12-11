@@ -2,8 +2,10 @@ import Category from "../artifact/Category.js";
 
 import ReactUtils from "./ReactUtilities.js";
 
-const BASE = "https://gitlab.com/bipedalshark/stellaris-tech-tree/raw/master/";
-const IMG = `${BASE}public/vanilla/img/`;
+// 2.0: const BASE = "https://gitlab.com/bipedalshark/stellaris-tech-tree/raw/master/";
+// 2.0: const IMG = `${BASE}public/vanilla/img/`;
+const BASE = "https://turanar.github.io/stellaris-tech-tree/";
+const IMG = `${BASE}vanilla/img/`;
 
 const createImage = research => {
   const { key } = research;

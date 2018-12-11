@@ -12,7 +12,7 @@ QUnit.test("allChildren() tech_lasers_1", assert => {
 
   // Verify.
   assert.ok(result);
-  const length = 21;
+  const length = 18;
   assert.equal(result.length, length);
   assert.equal(result[0].key, "tech_arc_emitter_1");
   assert.equal(result[length - 1].key, "tech_repeatable_weapon_type_energy_fire_rate");
@@ -44,10 +44,10 @@ QUnit.test("allPrerequisites() tech_arc_emitter_2", assert => {
 
   // Verify.
   assert.ok(result);
-  const length = 11;
+  const length = 10;
   assert.equal(result.length, length);
   assert.equal(result[0].key, "tech_arc_emitter_1");
-  assert.equal(result[length - 1].key, "tech_starbase_2");
+  assert.equal(result[length - 1].key, "tech_lasers_2");
 });
 
 QUnit.test("allPrerequisites() tech_lasers_2", assert => {
@@ -120,7 +120,7 @@ QUnit.test("categoriesByArea() physics", assert => {
 
   // Verify.
   assert.ok(result);
-  const length = 4;
+  const length = 5;
   assert.equal(result.length, length);
   assert.equal(result[0].key, "Computing");
   assert.equal(result[length - 1].key, "Voidcraft");
@@ -210,7 +210,7 @@ QUnit.test("researchesByAreaCategory() engineering Voidcraft", assert => {
 
   // Verify.
   assert.ok(result);
-  const length = 41;
+  const length = 44;
   assert.equal(result.length, length);
   assert.equal(result[0].key, "tech_battleship_hull_2");
   assert.equal(result[length - 1].key, "tech_titans");

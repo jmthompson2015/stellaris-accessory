@@ -7,7 +7,8 @@ const FileWriter = require("./FileWriter.js");
 
 const GameSummaryFetcher = {};
 
-// const INPUT_FILE = "https://gitlab.com/bipedalshark/stellaris-tech-tree/raw/master/public/vanilla/techs.json";
+// 2.0: const INPUT_FILE = "https://gitlab.com/bipedalshark/stellaris-tech-tree/raw/master/public/vanilla/techs.json";
+// 2.2: const INPUT_FILE = "https://turanar.github.io/stellaris-tech-tree/vanilla/techs.json";
 const INPUT_FILE = "techs.json";
 const OUTPUT_FILE = "../artifact/Research.js";
 const HEADER = `const Research = `;

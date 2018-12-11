@@ -30,7 +30,8 @@ const Category = {
   "Materials": {
     "name": "Materials",
     "areas": [
-      "engineering"
+      "engineering",
+      "physics"
     ],
     "key": "Materials"
   },

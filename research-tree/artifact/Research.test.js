@@ -16,7 +16,7 @@ QUnit.test("Research properties Red Lasers", assert => {
 
 QUnit.test("Research keys", assert => {
   // Setup.
-  const length = 332;
+  const length = 375;
 
   // Run.
   const keys = Object.keys(Research);
@@ -29,8 +29,8 @@ QUnit.test("Research keys", assert => {
   assert.equal(research0.key, "tech_lasers_1");
 
   const researchLast = Research[keys[length - 1]];
-  assert.equal(researchLast.name, "Atmospheric Nanobot Dispersal");
-  assert.equal(researchLast.key, "tech_pk_nanobots");
+  assert.equal(researchLast.name, "Nanite Repair System");
+  assert.equal(researchLast.key, "tech_nanite_repair_system");
 });
 
 const ResearchTest = {};
