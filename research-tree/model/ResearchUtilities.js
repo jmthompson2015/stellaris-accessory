@@ -94,18 +94,9 @@ ResearchUtilities.research = key => Research[key];
 
 ResearchUtilities.researches = keys => R.map(key => Research[key], keys);
 
-ResearchUtilities.researchesByArea = areaKey => {
-  const researches = R.filter(r => r.area === areaKey, Object.values(Research));
-
-  return R.sortBy(R.prop("name"), researches);
-};
-
-ResearchUtilities.researchesByCategory = categoryKey => {
-  const myCategory = Category[categoryKey];
-  const myCategoryKey = myCategory ? myCategory.name : undefined;
-
+ResearchUtilities.researchesByAreaCategory = (areaKey, categoryKey) => {
   const researches = R.filter(
-    r => myCategoryKey && r.category === myCategoryKey,
+    r => r.area === areaKey && r.category === categoryKey,
     Object.values(Research)
   );
 

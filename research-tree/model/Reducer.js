@@ -35,7 +35,7 @@ Reducer.root = (state, action) => {
       } else {
         newCategories = RU.categoriesByArea(action.areaKey);
         newCategoryKey = newCategories[0].key;
-        newResearches = RU.researchesByArea(action.areaKey);
+        newResearches = RU.researchesByAreaCategory(action.areaKey, newCategoryKey);
         newResearchKey = newResearches[0].key;
       }
       return R.pipe(
@@ -56,7 +56,7 @@ Reducer.root = (state, action) => {
         newCategory = Category[action.categoryKey];
         newAreaKey = newCategory.area;
         newCategories = RU.categoriesByArea(newAreaKey);
-        newResearches = RU.researchesByCategory(action.categoryKey);
+        newResearches = RU.researchesByAreaCategory(newAreaKey, action.categoryKey);
         newResearchKey = newResearches[0].key;
       }
       return R.pipe(
@@ -72,7 +72,7 @@ Reducer.root = (state, action) => {
       newAreaKey = newResearch.area;
       newCategories = RU.categoriesByArea(newAreaKey);
       newCategoryKey = newResearch.category;
-      newResearches = RU.researchesByCategory(newCategoryKey);
+      newResearches = RU.researchesByAreaCategory(newAreaKey, newCategoryKey);
       return R.pipe(
         R.assoc("areaKey", newAreaKey),
         R.assoc("categories", newCategories),

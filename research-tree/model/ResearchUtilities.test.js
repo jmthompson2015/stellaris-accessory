@@ -200,94 +200,36 @@ QUnit.test("researches()", assert => {
   assert.equal(result[length - 1].key, keys[length - 1]);
 });
 
-QUnit.test("researchesByArea() engineering", assert => {
+QUnit.test("researchesByAreaCategory() engineering Voidcraft", assert => {
   // Setup.
   const areaKey = "engineering";
+  const categoryKey = "Voidcraft";
 
   // Run.
-  const result = ResearchUtils.researchesByArea(areaKey);
+  const result = ResearchUtils.researchesByAreaCategory(areaKey, categoryKey);
 
   // Verify.
   assert.ok(result);
-  const length = 116;
+  const length = 41;
   assert.equal(result.length, length);
-  assert.equal(result[0].key, "tech_afterburners_2");
-  assert.equal(result[length - 1].key, "tech_mine_yuranic");
+  assert.equal(result[0].key, "tech_battleship_hull_2");
+  assert.equal(result[length - 1].key, "tech_titans");
 });
 
-QUnit.test("researchesByArea() physics", assert => {
+QUnit.test("researchesByAreaCategory() physics Particles", assert => {
   // Setup.
   const areaKey = "physics";
+  const categoryKey = "Particles";
 
   // Run.
-  const result = ResearchUtils.researchesByArea(areaKey);
+  const result = ResearchUtils.researchesByAreaCategory(areaKey, categoryKey);
 
   // Verify.
   assert.ok(result);
-  const length = 95;
+  const length = 43;
   assert.equal(result.length, length);
-  assert.equal(result[0].key, "tech_cryostasis_1");
+  assert.equal(result[0].key, "tech_reactor_boosters_3");
   assert.equal(result[length - 1].key, "tech_zero_point_power");
-});
-
-QUnit.test("researchesByArea() society", assert => {
-  // Setup.
-  const areaKey = "society";
-
-  // Run.
-  const result = ResearchUtils.researchesByArea(areaKey);
-
-  // Verify.
-  assert.ok(result);
-  const length = 121;
-  assert.equal(result.length, length);
-  assert.equal(result[0].key, "tech_ascension_theory_apoc");
-  assert.equal(result[length - 1].key, "tech_mine_zro");
-});
-
-QUnit.test("researchesByCategory() biology", assert => {
-  // Setup.
-  const categoryKey = "Biology";
-
-  // Run.
-  const result = ResearchUtils.researchesByCategory(categoryKey);
-
-  // Verify.
-  assert.ok(result);
-  const length = 37;
-  assert.equal(result.length, length);
-  assert.equal(result[0].key, "tech_adaptive_combat_algorithms");
-  assert.equal(result[length - 1].key, "tech_alien_life_studies");
-});
-
-QUnit.test("researchesByCategory() computing", assert => {
-  // Setup.
-  const categoryKey = "Computing";
-
-  // Run.
-  const result = ResearchUtils.researchesByCategory(categoryKey);
-
-  // Verify.
-  assert.ok(result);
-  const length = 30;
-  assert.equal(result.length, length);
-  assert.equal(result[0].key, "tech_cryostasis_1");
-  assert.equal(result[length - 1].key, "tech_improved_databank_uplinks");
-});
-
-QUnit.test("researchesByCategory() industry", assert => {
-  // Setup.
-  const categoryKey = "Industry";
-
-  // Run.
-  const result = ResearchUtils.researchesByCategory(categoryKey);
-
-  // Verify.
-  assert.ok(result);
-  const length = 25;
-  assert.equal(result.length, length);
-  assert.equal(result[0].key, "tech_mineral_processing_2");
-  assert.equal(result[length - 1].key, "tech_synthetic_workers");
 });
 
 const ResearchUtilitiesTest = {};
