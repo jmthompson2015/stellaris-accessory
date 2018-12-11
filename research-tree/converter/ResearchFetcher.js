@@ -28,7 +28,6 @@ GameSummaryFetcher.fetch = () =>
       const pipeFunction = R.pipe(
         R.dissoc("base_factor"),
         R.dissoc("base_weight"),
-        R.dissoc("description"),
         R.dissoc("weight_modifiers")
       );
       const reduceFunction2 = (accum, item) => {
