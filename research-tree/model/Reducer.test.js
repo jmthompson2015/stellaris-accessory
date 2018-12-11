@@ -24,7 +24,10 @@ QUnit.test("setArea()", assert => {
 
 QUnit.test("setCategory()", assert => {
   // Setup.
-  const state = AppState.create();
+  const state0 = AppState.create();
+  const areaKey = "physics";
+  const action0 = ActionCreator.setArea(areaKey);
+  const state = Reducer.root(state0, action0);
   const categoryKey = "Computing";
   const action = ActionCreator.setCategory(categoryKey);
 

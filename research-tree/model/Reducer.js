@@ -27,17 +27,10 @@ Reducer.root = (state, action) => {
   switch (action.type) {
     case ActionType.SET_AREA:
       console.log(`Reducer SET_AREA ${action.areaKey}`);
-      if (action.areaKey === "-all-") {
-        newCategories = undefined;
-        newCategoryKey = undefined;
-        newResearches = undefined;
-        newResearchKey = undefined;
-      } else {
-        newCategories = RU.categoriesByArea(action.areaKey);
-        newCategoryKey = newCategories[0].key;
-        newResearches = RU.researchesByAreaCategory(action.areaKey, newCategoryKey);
-        newResearchKey = newResearches[0].key;
-      }
+      newCategories = RU.categoriesByArea(action.areaKey);
+      newCategoryKey = newCategories[0].key;
+      newResearches = RU.researchesByAreaCategory(action.areaKey, newCategoryKey);
+      newResearchKey = newResearches[0].key;
       return R.pipe(
         R.assoc("areaKey", action.areaKey),
         R.assoc("categories", newCategories),
@@ -47,18 +40,11 @@ Reducer.root = (state, action) => {
       )(state);
     case ActionType.SET_CATEGORY:
       console.log(`Reducer SET_CATEGORY ${action.categoryKey}`);
-      if (action.categoryKey === "-all-") {
-        newAreaKey = state.areaKey;
-        newCategories = undefined;
-        newResearches = undefined;
-        newResearchKey = undefined;
-      } else {
-        newCategory = Category[action.categoryKey];
-        newAreaKey = state.areaKey || newCategory.areas[0];
-        newCategories = RU.categoriesByArea(newAreaKey);
-        newResearches = RU.researchesByAreaCategory(newAreaKey, action.categoryKey);
-        newResearchKey = newResearches[0].key;
-      }
+      newCategory = Category[action.categoryKey];
+      newAreaKey = state.areaKey || newCategory.areas[0];
+      newCategories = RU.categoriesByArea(newAreaKey);
+      newResearches = RU.researchesByAreaCategory(newAreaKey, action.categoryKey);
+      newResearchKey = newResearches[0].key;
       return R.pipe(
         R.assoc("areaKey", newAreaKey),
         R.assoc("categories", newCategories),

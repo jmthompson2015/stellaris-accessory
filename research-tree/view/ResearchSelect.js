@@ -19,12 +19,10 @@ class ResearchSelect extends React.Component {
 
   render() {
     const { myKey, researches, researchKey } = this.props;
-    const options0 = [ReactDOMFactories.option({ key: "-all-" }, "-all-")];
     const options = R.map(createOption, researches);
 
     return ReactDOMFactories.select(
       { id: `${myKey}researchSelect`, defaultValue: researchKey, onChange: this.handleChange },
-      options0,
       options
     );
   }
@@ -32,16 +30,15 @@ class ResearchSelect extends React.Component {
 
 ResearchSelect.propTypes = {
   onChange: PropTypes.func.isRequired,
+  researchKey: PropTypes.string.isRequired,
 
   myKey: PropTypes.string,
-  researches: PropTypes.arrayOf(PropTypes.shape()),
-  researchKey: PropTypes.string
+  researches: PropTypes.arrayOf(PropTypes.shape())
 };
 
 ResearchSelect.defaultProps = {
   myKey: "myKey",
-  researches: Object.values(Research),
-  researchKey: undefined
+  researches: Object.values(Research)
 };
 
 export default ResearchSelect;

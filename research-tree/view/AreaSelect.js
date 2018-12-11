@@ -22,25 +22,18 @@ class AreaSelect extends React.Component {
 
   render() {
     const { areaKey } = this.props;
-    const options0 = [ReactDOMFactories.option({ key: "-all-" }, "-all-")];
     const options = R.map(key => createOption(key), Object.keys(Area));
 
     return ReactDOMFactories.select(
       { id: "areaSelect", defaultValue: areaKey, onChange: this.handleChange },
-      options0,
       options
     );
   }
 }
 
 AreaSelect.propTypes = {
-  onChange: PropTypes.func.isRequired,
-
-  areaKey: PropTypes.string
-};
-
-AreaSelect.defaultProps = {
-  areaKey: undefined
+  areaKey: PropTypes.string.isRequired,
+  onChange: PropTypes.func.isRequired
 };
 
 export default AreaSelect;

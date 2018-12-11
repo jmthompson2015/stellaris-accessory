@@ -19,28 +19,25 @@ class CategorySelect extends React.Component {
 
   render() {
     const { categories, categoryKey, myKey } = this.props;
-    const options0 = [ReactDOMFactories.option({ key: "-all-" }, "-all-")];
     const options = R.map(createOption, categories);
 
     return ReactDOMFactories.select(
       { id: `${myKey}categorySelect`, defaultValue: categoryKey, onChange: this.handleChange },
-      options0,
       options
     );
   }
 }
 
 CategorySelect.propTypes = {
+  categoryKey: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired,
 
   categories: PropTypes.arrayOf(PropTypes.shape()),
-  categoryKey: PropTypes.string,
   myKey: PropTypes.string
 };
 
 CategorySelect.defaultProps = {
   categories: Object.values(Category),
-  categoryKey: undefined,
   myKey: "myKey"
 };
 
