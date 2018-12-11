@@ -16,7 +16,7 @@ QUnit.test("setArea()", assert => {
   // Verify.
   assert.ok(result);
   assert.equal(result.areaKey, areaKey);
-  assert.equal(result.categories.length, 3);
+  assert.equal(result.categories.length, 4);
   assert.equal(result.categoryKey, "Industry");
   assert.equal(result.researches.length, 25);
   assert.equal(result.researchKey, "tech_mineral_processing_2");

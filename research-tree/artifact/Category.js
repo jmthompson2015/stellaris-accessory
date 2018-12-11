@@ -1,62 +1,87 @@
 const Category = {
   "Biology": {
     "name": "Biology",
-    "area": "society",
+    "areas": [
+      "society"
+    ],
     "key": "Biology"
   },
   "Computing": {
     "name": "Computing",
-    "area": "physics",
+    "areas": [
+      "physics"
+    ],
     "key": "Computing"
   },
   "Field Manipulation": {
     "name": "Field Manipulation",
-    "area": "physics",
+    "areas": [
+      "physics"
+    ],
     "key": "Field Manipulation"
   },
   "Industry": {
     "name": "Industry",
-    "area": "engineering",
+    "areas": [
+      "engineering"
+    ],
     "key": "Industry"
   },
   "Materials": {
     "name": "Materials",
-    "area": "engineering",
+    "areas": [
+      "engineering"
+    ],
     "key": "Materials"
   },
   "Military Theory": {
     "name": "Military Theory",
-    "area": "society",
+    "areas": [
+      "society"
+    ],
     "key": "Military Theory"
   },
   "New Worlds": {
     "name": "New Worlds",
-    "area": "society",
+    "areas": [
+      "society"
+    ],
     "key": "New Worlds"
   },
   "Particles": {
     "name": "Particles",
-    "area": "physics",
+    "areas": [
+      "physics"
+    ],
     "key": "Particles"
   },
   "Propulsion": {
     "name": "Propulsion",
-    "area": "engineering",
+    "areas": [
+      "engineering"
+    ],
     "key": "Propulsion"
   },
   "Psionics": {
     "name": "Psionics",
-    "area": "society",
+    "areas": [
+      "society"
+    ],
     "key": "Psionics"
   },
   "Statecraft": {
     "name": "Statecraft",
-    "area": "society",
+    "areas": [
+      "society"
+    ],
     "key": "Statecraft"
   },
   "Voidcraft": {
     "name": "Voidcraft",
-    "area": "physics",
+    "areas": [
+      "engineering",
+      "physics"
+    ],
     "key": "Voidcraft"
   }
 }

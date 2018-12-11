@@ -105,10 +105,10 @@ QUnit.test("categoriesByArea() engineering", assert => {
 
   // Verify.
   assert.ok(result);
-  const length = 3;
+  const length = 4;
   assert.equal(result.length, length);
   assert.equal(result[0].key, "Industry");
-  assert.equal(result[length - 1].key, "Propulsion");
+  assert.equal(result[length - 1].key, "Voidcraft");
 });
 
 QUnit.test("categoriesByArea() physics", assert => {

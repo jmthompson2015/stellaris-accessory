@@ -70,7 +70,7 @@ ResearchUtilities.allPrerequisites = research => {
 };
 
 ResearchUtilities.categoriesByArea = areaKey =>
-  R.filter(c => c.area === areaKey, Object.values(Category));
+  R.filter(c => c.areas.includes(areaKey), Object.values(Category));
 
 ResearchUtilities.prerequisitesByResearch = researchKey => {
   const research = ResearchUtilities.research(researchKey);

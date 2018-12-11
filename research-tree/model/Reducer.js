@@ -54,7 +54,7 @@ Reducer.root = (state, action) => {
         newResearchKey = undefined;
       } else {
         newCategory = Category[action.categoryKey];
-        newAreaKey = newCategory.area;
+        newAreaKey = state.areaKey || newCategory.areas[0];
         newCategories = RU.categoriesByArea(newAreaKey);
         newResearches = RU.researchesByAreaCategory(newAreaKey, action.categoryKey);
         newResearchKey = newResearches[0].key;
