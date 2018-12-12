@@ -2,6 +2,22 @@ import ResearchUtils from "./ResearchUtilities.js";
 
 QUnit.module("ResearchUtilities");
 
+QUnit.test("allChildren() tech_cruisers", assert => {
+  // Setup.
+  const key = "tech_cruisers";
+  const research = ResearchUtils.research(key);
+
+  // Run.
+  const result = ResearchUtils.allChildren(research);
+
+  // Verify.
+  assert.ok(result);
+  const length = 24;
+  assert.equal(result.length, length);
+  assert.equal(result[0].key, "tech_arc_emitter_1");
+  assert.equal(result[length - 1].key, "tech_titans");
+});
+
 QUnit.test("allChildren() tech_lasers_1", assert => {
   // Setup.
   const key = "tech_lasers_1";
@@ -34,13 +50,27 @@ QUnit.test("allChildren() tech_lasers_4", assert => {
   assert.equal(result[length - 1].key, "tech_repeatable_weapon_type_energy_damage");
 });
 
-QUnit.test("allPrerequisites() tech_arc_emitter_2", assert => {
+QUnit.test("allChildren() tech_pk_shielder", assert => {
+  // Setup.
+  const key = "tech_pk_shielder";
+  const research = ResearchUtils.research(key);
+
+  // Run.
+  const result = ResearchUtils.allChildren(research);
+
+  // Verify.
+  assert.ok(result);
+  const length = 0;
+  assert.equal(result.length, length);
+});
+
+QUnit.test("allParents() tech_arc_emitter_2", assert => {
   // Setup.
   const key = "tech_arc_emitter_2";
   const research = ResearchUtils.research(key);
 
   // Run.
-  const result = ResearchUtils.allPrerequisites(research);
+  const result = ResearchUtils.allParents(research);
 
   // Verify.
   assert.ok(result);
@@ -50,13 +80,13 @@ QUnit.test("allPrerequisites() tech_arc_emitter_2", assert => {
   assert.equal(result[length - 1].key, "tech_lasers_2");
 });
 
-QUnit.test("allPrerequisites() tech_lasers_2", assert => {
+QUnit.test("allParents() tech_lasers_2", assert => {
   // Setup.
   const key = "tech_lasers_2";
   const research = ResearchUtils.research(key);
 
   // Run.
-  const result = ResearchUtils.allPrerequisites(research);
+  const result = ResearchUtils.allParents(research);
 
   // Verify.
   assert.ok(result);
@@ -64,13 +94,13 @@ QUnit.test("allPrerequisites() tech_lasers_2", assert => {
   assert.equal(result[0].key, "tech_lasers_1");
 });
 
-QUnit.test("allPrerequisites() tech_lasers_4", assert => {
+QUnit.test("allParents() tech_lasers_4", assert => {
   // Setup.
   const key = "tech_lasers_4";
   const research = ResearchUtils.research(key);
 
   // Run.
-  const result = ResearchUtils.allPrerequisites(research);
+  const result = ResearchUtils.allParents(research);
 
   // Verify.
   assert.ok(result);
@@ -80,13 +110,13 @@ QUnit.test("allPrerequisites() tech_lasers_4", assert => {
   assert.equal(result[length - 1].key, "tech_lasers_3");
 });
 
-QUnit.test("allPrerequisites() tech_pk_shielder", assert => {
+QUnit.test("allParents() tech_pk_shielder", assert => {
   // Setup.
   const key = "tech_pk_shielder";
   const research = ResearchUtils.research(key);
 
   // Run.
-  const result = ResearchUtils.allPrerequisites(research);
+  const result = ResearchUtils.allParents(research);
 
   // Verify.
   assert.ok(result);
@@ -141,12 +171,12 @@ QUnit.test("categoriesByArea() society", assert => {
   assert.equal(result[length - 1].key, "Statecraft");
 });
 
-QUnit.test("prerequisitesByResearch() tech_nanite_assemblers", assert => {
+QUnit.test("parentsByResearch() tech_nanite_assemblers", assert => {
   // Setup.
   const itemKey = "tech_nanite_assemblers";
 
   // Run.
-  const result = ResearchUtils.prerequisitesByResearch(itemKey);
+  const result = ResearchUtils.parentsByResearch(itemKey);
 
   // Verify.
   assert.ok(result);
@@ -156,14 +186,14 @@ QUnit.test("prerequisitesByResearch() tech_nanite_assemblers", assert => {
   assert.equal(result[length - 1], "tech_galactic_administration");
 });
 
-QUnit.test("prerequisitesForResearches()", assert => {
+QUnit.test("parentsForResearches()", assert => {
   // Setup.
   const key0 = "tech_nanite_assemblers";
   const item0 = ResearchUtils.research(key0);
   const items = R.map(key => ResearchUtils.research(key), item0.prerequisites);
 
   // Run.
-  const result = ResearchUtils.prerequisitesForResearches(items);
+  const result = ResearchUtils.parentsForResearches(items);
 
   // Verify.
   assert.ok(result);
@@ -230,6 +260,21 @@ QUnit.test("researchesByAreaCategory() physics Particles", assert => {
   assert.equal(result.length, length);
   assert.equal(result[0].key, "tech_reactor_boosters_3");
   assert.equal(result[length - 1].key, "tech_zero_point_power");
+});
+
+QUnit.test("researchesByParent() tech_cruisers", assert => {
+  // Setup.
+  const itemKey = "tech_cruisers";
+
+  // Run.
+  const result = ResearchUtils.researchesByParent(itemKey);
+
+  // Verify.
+  assert.ok(result);
+  const length = 3;
+  assert.equal(result.length, length);
+  assert.equal(result[0].key, "tech_cruiser_build_speed");
+  assert.equal(result[length - 1].key, "tech_battleships");
 });
 
 const ResearchUtilitiesTest = {};

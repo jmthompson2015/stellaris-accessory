@@ -16,7 +16,7 @@ class ResearchTable extends React.Component {
     rows.push(ReactUtils.createRow(cell0, "nameRow", rowClass));
 
     if (isDescending) {
-      const researches = ResearchUtils.allPrerequisites(research);
+      const researches = ResearchUtils.allParents(research);
 
       for (let t = tier; t >= 0; t -= 1) {
         const researchByTier = R.filter(r => r.tier === t, researches);
