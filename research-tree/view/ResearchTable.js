@@ -1,49 +1,52 @@
-import ResearchUtils from "../model/ResearchUtilities.js";
+import Research from "../artifact/Research.js";
+
+import RU from "../model/ResearchUtilities.js";
 
 import ReactUtils from "./ReactUtilities.js";
 import ResearchRow from "./ResearchRow.js";
 
+const maxTier = R.reduce((accum, r) => Math.max(accum, r.tier), 0, Object.values(Research));
+
 class ResearchTable extends React.Component {
   render() {
-    const { isDescending, myKey, research } = this.props;
-    const { tier } = research;
+    const { myKey, research } = this.props;
 
     const cellClass = "center pa1 tc";
     const rowClass = "center tc";
+    const tierFilter = t => r => r.tier === t;
     const rows = [];
+
+    const parentResearches = RU.allParents(research);
+
+    for (let t = 0; t <= maxTier; t += 1) {
+      const researchByTier = R.filter(tierFilter(t), parentResearches);
+
+      if (researchByTier.length > 0) {
+        const researchRow = React.createElement(ResearchRow, {
+          researches: researchByTier,
+          myKey: `myResearchRow${t}`
+        });
+        const cell = ReactUtils.createCell(researchRow, `parentResearchRow${t}Cell`, cellClass);
+        rows.push(ReactUtils.createRow(cell, `parentResearchRow${t}Row`, rowClass));
+      }
+    }
+
     const researchRow00 = React.createElement(ResearchRow, { researches: [research] });
     const cell0 = ReactUtils.createCell(researchRow00, "researchRow00Cell", cellClass);
-    rows.push(ReactUtils.createRow(cell0, "nameRow", rowClass));
+    rows.push(ReactUtils.createRow(cell0, "nameRow", `bg-gainsboro ${rowClass}`));
 
-    if (isDescending) {
-      const researches = ResearchUtils.allParents(research);
+    const childResearches = RU.allChildren(research);
 
-      for (let t = tier; t >= 0; t -= 1) {
-        const researchByTier = R.filter(r => r.tier === t, researches);
+    for (let t = 0; t <= maxTier; t += 1) {
+      const researchByTier = R.filter(tierFilter(t), childResearches);
 
-        if (researchByTier.length > 0) {
-          const researchRow = React.createElement(ResearchRow, {
-            researches: researchByTier,
-            myKey: `myResearchRow${t}`
-          });
-          const cell = ReactUtils.createCell(researchRow, `researchRow${t}Cell`, cellClass);
-          rows.push(ReactUtils.createRow(cell, `researchRow${t}Row`, rowClass));
-        }
-      }
-    } else {
-      const researches = ResearchUtils.allChildren(research);
-
-      for (let t = tier; t < 6; t += 1) {
-        const researchByTier = R.filter(r => r.tier === t, researches);
-
-        if (researchByTier.length > 0) {
-          const researchRow = React.createElement(ResearchRow, {
-            researches: researchByTier,
-            myKey: `myResearchRow${t}`
-          });
-          const cell = ReactUtils.createCell(researchRow, `researchRow${t}Cell`, cellClass);
-          rows.push(ReactUtils.createRow(cell, `researchRow${t}Row`, rowClass));
-        }
+      if (researchByTier.length > 0) {
+        const researchRow = React.createElement(ResearchRow, {
+          researches: researchByTier,
+          myKey: `myResearchRow${t}`
+        });
+        const cell = ReactUtils.createCell(researchRow, `childResearchRow${t}Cell`, cellClass);
+        rows.push(ReactUtils.createRow(cell, `childResearchRow${t}Row`, rowClass));
       }
     }
 
@@ -54,12 +57,10 @@ class ResearchTable extends React.Component {
 ResearchTable.propTypes = {
   research: PropTypes.shape().isRequired,
 
-  isDescending: PropTypes.bool,
   myKey: PropTypes.string
 };
 
 ResearchTable.defaultProps = {
-  isDescending: true,
   myKey: "myKey"
 };
 

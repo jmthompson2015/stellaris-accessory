@@ -17,3 +17,7 @@ body {
 .b--rare {
   border-color: hsl(300, 100%, 25%);
 }
+
+.bg-gainsboro {
+  background-color: Gainsboro;
+}
