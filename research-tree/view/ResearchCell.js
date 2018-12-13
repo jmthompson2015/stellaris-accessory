@@ -52,6 +52,17 @@ const createLabel = research => {
 };
 
 class ResearchCell extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.handleClick = this.handleClickFunction.bind(this);
+  }
+
+  handleClickFunction() {
+    const { onClick, research } = this.props;
+    onClick(research);
+  }
+
   render() {
     const { myKey, research } = this.props;
     const image = createImage(research);
@@ -65,7 +76,7 @@ class ResearchCell extends React.Component {
     const innerTable = ReactUtils.createTable(row, "innerTable");
 
     const outerClass = `b--${research.area} ba bw2 ${research.is_rare ? "pr1" : "pa1"}`;
-    const outerProps = { title: research.description };
+    const outerProps = { onClick: this.handleClick, title: research.description };
 
     return ReactUtils.createCell(innerTable, `${myKey}${name}ResearchCell`, outerClass, outerProps);
   }
@@ -74,11 +85,13 @@ class ResearchCell extends React.Component {
 ResearchCell.propTypes = {
   research: PropTypes.shape().isRequired,
 
-  myKey: PropTypes.string
+  myKey: PropTypes.string,
+  onClick: PropTypes.func
 };
 
 ResearchCell.defaultProps = {
-  myKey: "myKey"
+  myKey: "myKey",
+  onClick: () => {}
 };
 
 export default ResearchCell;

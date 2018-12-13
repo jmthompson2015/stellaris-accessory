@@ -1,9 +1,9 @@
 import ReactUtils from "./ReactUtilities.js";
 import ResearchCell from "./ResearchCell.js";
 
-const createCell = research => {
+const createCell = onClick => research => {
   const { name } = research;
-  const element = React.createElement(ResearchCell, { research });
+  const element = React.createElement(ResearchCell, { research, onClick });
 
   return ReactDOMFactories.span(
     {
@@ -16,8 +16,8 @@ const createCell = research => {
 
 class ResearchRow extends React.Component {
   render() {
-    const { myKey, researches } = this.props;
-    const cells = R.map(createCell, researches);
+    const { myKey, onClick, researches } = this.props;
+    const cells = R.map(createCell(onClick), researches);
     const row = ReactUtils.createRow(cells, `${myKey}ResearchCellRow`);
 
     return ReactUtils.createTable(row, `${myKey}ResearchCellTable`, "center tc v-top");
@@ -27,11 +27,13 @@ class ResearchRow extends React.Component {
 ResearchRow.propTypes = {
   researches: PropTypes.arrayOf(PropTypes.shape()).isRequired,
 
-  myKey: PropTypes.string
+  myKey: PropTypes.string,
+  onClick: PropTypes.func
 };
 
 ResearchRow.defaultProps = {
-  myKey: "myKey"
+  myKey: "myKey",
+  onClick: undefined
 };
 
 export default ResearchRow;

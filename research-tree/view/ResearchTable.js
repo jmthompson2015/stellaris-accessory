@@ -9,7 +9,7 @@ const maxTier = R.reduce((accum, r) => Math.max(accum, r.tier), 0, Object.values
 
 class ResearchTable extends React.Component {
   render() {
-    const { myKey, research } = this.props;
+    const { myKey, onClick, research } = this.props;
 
     const cellClass = "center pa1 tc";
     const rowClass = "center tc";
@@ -24,14 +24,15 @@ class ResearchTable extends React.Component {
       if (researchByTier.length > 0) {
         const researchRow = React.createElement(ResearchRow, {
           researches: researchByTier,
-          myKey: `myResearchRow${t}`
+          myKey: `myResearchRow${t}`,
+          onClick
         });
         const cell = ReactUtils.createCell(researchRow, `parentResearchRow${t}Cell`, cellClass);
         rows.push(ReactUtils.createRow(cell, `parentResearchRow${t}Row`, rowClass));
       }
     }
 
-    const researchRow00 = React.createElement(ResearchRow, { researches: [research] });
+    const researchRow00 = React.createElement(ResearchRow, { researches: [research], onClick });
     const cell0 = ReactUtils.createCell(researchRow00, "researchRow00Cell", cellClass);
     rows.push(ReactUtils.createRow(cell0, "nameRow", `bg-gainsboro ${rowClass}`));
 
@@ -43,7 +44,8 @@ class ResearchTable extends React.Component {
       if (researchByTier.length > 0) {
         const researchRow = React.createElement(ResearchRow, {
           researches: researchByTier,
-          myKey: `myResearchRow${t}`
+          myKey: `myResearchRow${t}`,
+          onClick
         });
         const cell = ReactUtils.createCell(researchRow, `childResearchRow${t}Cell`, cellClass);
         rows.push(ReactUtils.createRow(cell, `childResearchRow${t}Row`, rowClass));
@@ -57,11 +59,13 @@ class ResearchTable extends React.Component {
 ResearchTable.propTypes = {
   research: PropTypes.shape().isRequired,
 
-  myKey: PropTypes.string
+  myKey: PropTypes.string,
+  onClick: PropTypes.func
 };
 
 ResearchTable.defaultProps = {
-  myKey: "myKey"
+  myKey: "myKey",
+  onClick: undefined
 };
 
 export default ResearchTable;
