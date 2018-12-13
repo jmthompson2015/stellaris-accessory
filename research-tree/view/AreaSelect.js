@@ -25,7 +25,7 @@ class AreaSelect extends React.Component {
     const options = R.map(key => createOption(key), Object.keys(Area));
 
     return ReactDOMFactories.select(
-      { id: "areaSelect", defaultValue: areaKey, onChange: this.handleChange },
+      { key: areaKey, id: "areaSelect", defaultValue: areaKey, onChange: this.handleChange },
       options
     );
   }

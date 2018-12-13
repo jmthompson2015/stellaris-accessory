@@ -22,7 +22,12 @@ class CategorySelect extends React.Component {
     const options = R.map(createOption, categories);
 
     return ReactDOMFactories.select(
-      { id: `${myKey}categorySelect`, defaultValue: categoryKey, onChange: this.handleChange },
+      {
+        key: categoryKey,
+        id: `${myKey}categorySelect`,
+        defaultValue: categoryKey,
+        onChange: this.handleChange
+      },
       options
     );
   }

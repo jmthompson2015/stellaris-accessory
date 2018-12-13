@@ -22,7 +22,12 @@ class ResearchSelect extends React.Component {
     const options = R.map(createOption, researches);
 
     return ReactDOMFactories.select(
-      { id: `${myKey}researchSelect`, defaultValue: researchKey, onChange: this.handleChange },
+      {
+        key: researchKey,
+        id: `${myKey}researchSelect`,
+        defaultValue: researchKey,
+        onChange: this.handleChange
+      },
       options
     );
   }
