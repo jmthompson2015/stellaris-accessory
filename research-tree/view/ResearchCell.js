@@ -75,7 +75,7 @@ class ResearchCell extends React.Component {
     ]);
     const innerTable = ReactUtils.createTable(row, "innerTable");
 
-    const outerClass = `b--${research.area} ba bw2 ${research.is_rare ? "pr1" : "pa1"}`;
+    const outerClass = `b--${research.area} ba bg-white bw2 ${research.is_rare ? "pr1" : "pa1"}`;
     const outerProps = { onClick: this.handleClick, title: research.description };
 
     return ReactUtils.createCell(innerTable, `${myKey}${name}ResearchCell`, outerClass, outerProps);
