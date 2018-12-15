@@ -40,6 +40,13 @@ ResearchUtilities.allParents = research => {
 ResearchUtilities.categoriesByArea = areaKey =>
   R.filter(c => c.areas.includes(areaKey), Object.values(Category));
 
+ResearchUtilities.dangerousByArea = areaKey => {
+  const filterFunction = r => r.is_dangerous && r.area === areaKey;
+  const researches = R.filter(filterFunction, Object.values(Research));
+
+  return R.sortBy(R.prop("name"), researches);
+};
+
 ResearchUtilities.parentsByResearch = researchKey => {
   const research = ResearchUtilities.research(researchKey);
 
@@ -55,6 +62,20 @@ ResearchUtilities.parentsForResearches = researches => {
   return prerequisites;
 };
 
+ResearchUtilities.rareResearches = () => {
+  const filterFunction = r => r.is_rare;
+  const researches = R.filter(filterFunction, Object.values(Research));
+
+  return R.sortBy(R.prop("name"), researches);
+};
+
+ResearchUtilities.raresByArea = areaKey => {
+  const filterFunction = r => r.is_rare && r.area === areaKey;
+  const researches = R.filter(filterFunction, Object.values(Research));
+
+  return R.sortBy(R.prop("name"), researches);
+};
+
 ResearchUtilities.research = key => Research[key];
 
 ResearchUtilities.researches = keys => R.map(key => Research[key], keys);
@@ -68,5 +89,19 @@ ResearchUtilities.researchesByAreaCategory = (areaKey, categoryKey) => {
 
 ResearchUtilities.researchesByParent = key =>
   R.filter(research => research.prerequisites.includes(key), Object.values(Research));
+
+ResearchUtilities.starterResearches = () => {
+  const filterFunction = r => r.is_start_tech;
+  const researches = R.filter(filterFunction, Object.values(Research));
+
+  return R.sortBy(R.prop("name"), researches);
+};
+
+ResearchUtilities.startersByArea = areaKey => {
+  const filterFunction = r => r.is_start_tech && r.area === areaKey;
+  const researches = R.filter(filterFunction, Object.values(Research));
+
+  return R.sortBy(R.prop("name"), researches);
+};
 
 export default ResearchUtilities;

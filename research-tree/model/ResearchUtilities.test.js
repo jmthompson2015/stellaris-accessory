@@ -171,6 +171,49 @@ QUnit.test("categoriesByArea() society", assert => {
   assert.equal(result[length - 1].key, "Statecraft");
 });
 
+QUnit.test("dangerousByArea() engineering", assert => {
+  // Setup.
+  const areaKey = "engineering";
+
+  // Run.
+  const result = ResearchUtils.dangerousByArea(areaKey);
+
+  // Verify.
+  assert.ok(result);
+  const length = 1;
+  assert.equal(result.length, length);
+  assert.equal(result[0].key, "tech_synthetic_workers");
+});
+
+QUnit.test("dangerousByArea() physics", assert => {
+  // Setup.
+  const areaKey = "physics";
+
+  // Run.
+  const result = ResearchUtils.dangerousByArea(areaKey);
+
+  // Verify.
+  assert.ok(result);
+  const length = 2;
+  assert.equal(result.length, length);
+  assert.equal(result[0].key, "tech_jump_drive_1");
+  assert.equal(result[length - 1].key, "tech_combat_computers_3");
+});
+
+QUnit.test("dangerousByArea() society", assert => {
+  // Setup.
+  const areaKey = "society";
+
+  // Run.
+  const result = ResearchUtils.dangerousByArea(areaKey);
+
+  // Verify.
+  assert.ok(result);
+  const length = 1;
+  assert.equal(result.length, length);
+  assert.equal(result[0].key, "tech_psi_jump_drive_1");
+});
+
 QUnit.test("parentsByResearch() tech_nanite_assemblers", assert => {
   // Setup.
   const itemKey = "tech_nanite_assemblers";
@@ -201,6 +244,65 @@ QUnit.test("parentsForResearches()", assert => {
   assert.equal(result.length, length);
   assert.equal(result[0], "tech_colonial_centralization");
   assert.equal(result[length - 1], "tech_robomodding_m");
+});
+
+QUnit.test("rareResearches()", assert => {
+  // Setup.
+
+  // Run.
+  const result = ResearchUtils.rareResearches();
+
+  // Verify.
+  assert.ok(result);
+  const length = 77;
+  assert.equal(result.length, length);
+  assert.equal(result[0].key, "tech_battleship_hull_2");
+  assert.equal(result[length - 1].key, "tech_mine_zro");
+});
+
+QUnit.test("raresByArea() engineering", assert => {
+  // Setup.
+  const areaKey = "engineering";
+
+  // Run.
+  const result = ResearchUtils.raresByArea(areaKey);
+
+  // Verify.
+  assert.ok(result);
+  const length = 24;
+  assert.equal(result.length, length);
+  assert.equal(result[0].key, "tech_battleship_hull_2");
+  assert.equal(result[length - 1].key, "tech_synthetic_workers");
+});
+
+QUnit.test("raresByArea() physics", assert => {
+  // Setup.
+  const areaKey = "physics";
+
+  // Run.
+  const result = ResearchUtils.raresByArea(areaKey);
+
+  // Verify.
+  assert.ok(result);
+  const length = 23;
+  assert.equal(result.length, length);
+  assert.equal(result[0].key, "tech_combat_computers_autonomous");
+  assert.equal(result[length - 1].key, "tech_wormhole_stabilization");
+});
+
+QUnit.test("raresByArea() society", assert => {
+  // Setup.
+  const areaKey = "society";
+
+  // Run.
+  const result = ResearchUtils.raresByArea(areaKey);
+
+  // Verify.
+  assert.ok(result);
+  const length = 30;
+  assert.equal(result.length, length);
+  assert.equal(result[0].key, "tech_ascension_theory");
+  assert.equal(result[length - 1].key, "tech_mine_zro");
 });
 
 QUnit.test("research() tech_automated_exploration", assert => {
@@ -275,6 +377,65 @@ QUnit.test("researchesByParent() tech_cruisers", assert => {
   assert.equal(result.length, length);
   assert.equal(result[0].key, "tech_cruiser_build_speed");
   assert.equal(result[length - 1].key, "tech_battleships");
+});
+
+QUnit.test("starterResearches()", assert => {
+  // Setup.
+
+  // Run.
+  const result = ResearchUtils.starterResearches();
+
+  // Verify.
+  assert.ok(result);
+  const length = 32;
+  assert.equal(result.length, length);
+  assert.equal(result[0].key, "tech_pd_tracking_1");
+  assert.equal(result[length - 1].key, "tech_hive_node");
+});
+
+QUnit.test("startersByArea() engineering", assert => {
+  // Setup.
+  const areaKey = "engineering";
+
+  // Run.
+  const result = ResearchUtils.startersByArea(areaKey);
+
+  // Verify.
+  assert.ok(result);
+  const length = 15;
+  assert.equal(result.length, length);
+  assert.equal(result[0].key, "tech_thrusters_1");
+  assert.equal(result[length - 1].key, "tech_starbase_2");
+});
+
+QUnit.test("startersByArea() physics", assert => {
+  // Setup.
+  const areaKey = "physics";
+
+  // Run.
+  const result = ResearchUtils.startersByArea(areaKey);
+
+  // Verify.
+  assert.ok(result);
+  const length = 9;
+  assert.equal(result.length, length);
+  assert.equal(result[0].key, "tech_pd_tracking_1");
+  assert.equal(result[length - 1].key, "tech_basic_science_lab_1");
+});
+
+QUnit.test("startersByArea() society", assert => {
+  // Setup.
+  const areaKey = "society";
+
+  // Run.
+  const result = ResearchUtils.startersByArea(areaKey);
+
+  // Verify.
+  assert.ok(result);
+  const length = 8;
+  assert.equal(result.length, length);
+  assert.equal(result[0].key, "tech_holo_entertainment");
+  assert.equal(result[length - 1].key, "tech_hive_node");
 });
 
 const ResearchUtilitiesTest = {};

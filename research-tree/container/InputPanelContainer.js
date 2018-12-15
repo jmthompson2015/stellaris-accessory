@@ -3,9 +3,25 @@ import ActionCreator from "../model/ActionCreator.js";
 import InputPanel from "../view/InputPanel.js";
 
 const mapStateToProps = state => {
-  const { areaKey, categories, categoryKey, researches, researchKey } = state;
+  const {
+    areaKey,
+    categories,
+    categoryKey,
+    rareResearches,
+    researches,
+    researchKey,
+    startingResearches
+  } = state;
 
-  return { areaKey, categories, categoryKey, researches, researchKey };
+  return {
+    areaKey,
+    categories,
+    categoryKey,
+    rareResearches,
+    researches,
+    researchKey,
+    startingResearches
+  };
 };
 
 const mapDispatchToProps = dispatch => ({

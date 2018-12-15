@@ -12,8 +12,10 @@ class InputPanel extends React.Component {
       onAreaChange,
       onCategoryChange,
       onResearchChange,
+      rareResearches,
       researches,
-      researchKey
+      researchKey,
+      startingResearches
     } = this.props;
 
     const areaSelect = React.createElement(AreaSelect, { onChange: onAreaChange, areaKey });
@@ -26,6 +28,18 @@ class InputPanel extends React.Component {
       onChange: onResearchChange,
       researches,
       researchKey
+    });
+    const starterSelect = React.createElement(ResearchSelect, {
+      onChange: onResearchChange,
+      researches: startingResearches,
+      researchKey,
+      myKey: "starting"
+    });
+    const rareSelect = React.createElement(ResearchSelect, {
+      onChange: onResearchChange,
+      researches: rareResearches,
+      researchKey,
+      myKey: "rare"
     });
 
     const cells0 = [
@@ -40,11 +54,21 @@ class InputPanel extends React.Component {
       ReactUtils.createCell("Research: ", "researchLabel", "pr1 pv1"),
       ReactUtils.createCell(researchSelect, "researchSelect")
     ];
+    const cells3 = [
+      ReactUtils.createCell("Starting: ", "starterLabel", "pr1 pv1"),
+      ReactUtils.createCell(starterSelect, "starterSelect")
+    ];
+    const cells4 = [
+      ReactUtils.createCell("Rare: ", "rareLabel", "pr1 pv1"),
+      ReactUtils.createCell(rareSelect, "rareSelect")
+    ];
 
     const rows = [
       ReactUtils.createRow(cells0, "areaRow"),
       ReactUtils.createRow(cells1, "categoryRow"),
-      ReactUtils.createRow(cells2, "researchRow")
+      ReactUtils.createRow(cells2, "researchRow"),
+      ReactUtils.createRow(cells3, "starterRow"),
+      ReactUtils.createRow(cells4, "rareRow")
     ];
 
     return ReactUtils.createTable(rows);
@@ -59,16 +83,20 @@ InputPanel.propTypes = {
   areaKey: PropTypes.string,
   categories: PropTypes.arrayOf(PropTypes.shape()),
   categoryKey: PropTypes.string,
+  rareResearches: PropTypes.arrayOf(PropTypes.shape()),
   researches: PropTypes.arrayOf(PropTypes.shape()),
-  researchKey: PropTypes.string
+  researchKey: PropTypes.string,
+  startingResearches: PropTypes.arrayOf(PropTypes.shape())
 };
 
 InputPanel.defaultProps = {
   areaKey: undefined,
   categories: undefined,
   categoryKey: undefined,
+  rareResearches: [],
   researches: undefined,
-  researchKey: undefined
+  researchKey: undefined,
+  startingResearches: []
 };
 
 export default InputPanel;

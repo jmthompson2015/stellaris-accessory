@@ -2,7 +2,6 @@
 
 import InputPanel from "./InputPanel.js";
 
-const axisKey = "green";
 const myOnAreaChange = areaKey => {
   console.log(`myOnAreaChange() areaKey = ${areaKey}`);
 };
@@ -16,7 +15,6 @@ const myOnResearchChange = researchKey => {
 const element = React.createElement(InputPanel, {
   onAreaChange: myOnAreaChange,
   onCategoryChange: myOnCategoryChange,
-  onResearchChange: myOnResearchChange,
-  axisKey
+  onResearchChange: myOnResearchChange
 });
 ReactDOM.render(element, document.getElementById("panel"));
