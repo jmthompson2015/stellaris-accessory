@@ -28,10 +28,10 @@ QUnit.test("allChildren() tech_lasers_1", assert => {
 
   // Verify.
   assert.ok(result);
-  const length = 18;
+  const length = 16;
   assert.equal(result.length, length);
   assert.equal(result[0].key, "tech_arc_emitter_1");
-  assert.equal(result[length - 1].key, "tech_repeatable_weapon_type_energy_fire_rate");
+  assert.equal(result[length - 1].key, "tech_plasma_3");
 });
 
 QUnit.test("allChildren() tech_lasers_4", assert => {
@@ -44,10 +44,10 @@ QUnit.test("allChildren() tech_lasers_4", assert => {
 
   // Verify.
   assert.ok(result);
-  const length = 6;
+  const length = 5;
   assert.equal(result.length, length);
   assert.equal(result[0].key, "tech_energy_lance_1");
-  assert.equal(result[length - 1].key, "tech_repeatable_weapon_type_energy_damage");
+  assert.equal(result[length - 1].key, "tech_lasers_5");
 });
 
 QUnit.test("allChildren() tech_pk_shielder", assert => {
@@ -342,7 +342,7 @@ QUnit.test("researchesByAreaCategory() engineering Voidcraft", assert => {
 
   // Verify.
   assert.ok(result);
-  const length = 44;
+  const length = 40;
   assert.equal(result.length, length);
   assert.equal(result[0].key, "tech_battleship_hull_2");
   assert.equal(result[length - 1].key, "tech_titans");
@@ -358,7 +358,7 @@ QUnit.test("researchesByAreaCategory() physics Particles", assert => {
 
   // Verify.
   assert.ok(result);
-  const length = 43;
+  const length = 41;
   assert.equal(result.length, length);
   assert.equal(result[0].key, "tech_reactor_boosters_3");
   assert.equal(result[length - 1].key, "tech_zero_point_power");

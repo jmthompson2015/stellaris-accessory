@@ -6,9 +6,9 @@ const Research = {
     "cost": 0,
     "description": "Laser weapons fire focused beams of light at targets, causing damage through the generation of intense heat.",
     "feature_unlocks": [
-      "<b>Component:</b> Large Red Laser",
-      "<b>Component:</b> Medium Red Laser",
-      "<b>Component:</b> Small Red Laser"
+      "Component: Small Red Laser",
+      "Component: Large Red Laser",
+      "Component: Medium Red Laser"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -46,7 +46,7 @@ const Research = {
     "cost": 0,
     "description": "Testable predictions of observable phenomena.",
     "feature_unlocks": [
-      "<b>Building:</b> Research Labs"
+      "Building: Research Labs"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -66,7 +66,7 @@ const Research = {
     "cost": 0,
     "description": "Additional power generation systems increase the ship's reactor output.",
     "feature_unlocks": [
-      "<b>Component:</b> Reactor Booster"
+      "Component: Reactor Booster"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -86,7 +86,7 @@ const Research = {
     "cost": 0,
     "description": "A facility where organic matter is converted into energy at a highly efficient rate.",
     "feature_unlocks": [
-      "<b>Building:</b> Bio-Reactor"
+      "Building: Bio-Reactor"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -96,7 +96,7 @@ const Research = {
     "tier": 0,
     "prerequisites_names": [],
     "potential": [
-      "Any of the following \n    •   is_machine_empire=yes\n    •   is_mechanical_empire=yes"
+      "One must be true\n    •   is_machine_empire=yes\n    •   is_mechanical_empire=yes"
     ],
     "is_gestalt": false,
     "is_machine": false
@@ -108,7 +108,7 @@ const Research = {
     "cost": 0,
     "description": "Like the strands of a spider web, the extra-dimensional realm of hyperspace runs between the gravity wells of most stars. Faster than light travel is theoretically possible along these hyperlanes.",
     "feature_unlocks": [
-      "<b>Component:</b> Hyper Drive I"
+      "Component: Hyper Drive I"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -128,7 +128,7 @@ const Research = {
     "cost": 0,
     "description": "This energy source generates power for ships through induced fission, but it also produces harmful nuclear waste.",
     "feature_unlocks": [
-      "<b>Component:</b> Fission Reactor"
+      "Component: Fission Reactor"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -148,7 +148,7 @@ const Research = {
     "cost": 0,
     "description": "The best defense is a good offense.",
     "feature_unlocks": [
-      "<b>Component:</b> Sentinel Point-Defense"
+      "Component: Sentinel Point-Defense"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -168,9 +168,9 @@ const Research = {
     "cost": 0,
     "description": "Energy deflector screens can stop a limited amount of incoming enemy fire before overloading. Their main drawback is that they consume large amounts of power.",
     "feature_unlocks": [
-      "<b>Component:</b> Medium Deflectors",
-      "<b>Component:</b> Large Deflectors",
-      "<b>Component:</b> Small Deflectors"
+      "Component: Large Deflectors",
+      "Component: Small Deflectors",
+      "Component: Medium Deflectors"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -190,9 +190,9 @@ const Research = {
     "cost": 750,
     "description": "More powerful than red lasers, these blue variants emit electromagnetic radiation at a wavelength that appears blue or violet to most organics.",
     "feature_unlocks": [
-      "<b>Component:</b> Small Blue Laser",
-      "<b>Component:</b> Medium Blue Laser",
-      "<b>Component:</b> Large Blue Laser"
+      "Component: Medium Blue Laser",
+      "Component: Large Blue Laser",
+      "Component: Small Blue Laser"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -219,7 +219,7 @@ const Research = {
     "cost": 1000,
     "description": "Containment force fields are excellent for isolating and holding various substances or specimens so they can be analyzed in detail.",
     "feature_unlocks": [
-      "MOD_COUNTRY_STATION_RESEARCHERS_PRODUCES_MULT: +10%"
+      "Research Station Output +10%"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -246,7 +246,7 @@ const Research = {
     "cost": 500,
     "description": "A lot of critical research can only be done in a zero gravity environment, which these specialized laboratories are eminently designed for.",
     "feature_unlocks": [
-      "MOD_COUNTRY_STATION_RESEARCHERS_PRODUCES_MULT: +10%"
+      "Research Station Output +10%"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -273,7 +273,7 @@ const Research = {
     "cost": 750,
     "description": "An advanced AI will aid science officers in their task to explore strange new worlds, to seek out new life and new civilizations, to boldly go where no Blorg has gone before. The Science Ship will be able to explore the galaxy with help from an AI.",
     "feature_unlocks": [
-      "MOD_COUNTRY_SCIENCE_SHIP_SURVEY_SPEED: +25%",
+      "Survey Speed +25%",
       "<b>Feature : </b>Automatic Exploration"
     ],
     "is_dangerous": false,
@@ -294,8 +294,8 @@ const Research = {
     "cost": 1000,
     "description": "Active matrices tuned for specific combat-centric tasks greatly improve engagement efficiency.",
     "feature_unlocks": [
-      "<b>Component:</b> Starbase Fire Control",
-      "<b>Component:</b> Combat Computer"
+      "Component: Combat Computer",
+      "Component: Starbase Fire Control"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -322,7 +322,7 @@ const Research = {
     "cost": 1000,
     "description": "By giving control of the colony ship to an Artificial Intelligence, the crew and colonists can be suspended in a deep sleep.",
     "feature_unlocks": [
-      "Colony Development Speed: +50%"
+      "Colony Development Speed +50%"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -354,7 +354,7 @@ const Research = {
     "cost": 750,
     "description": "Nuclear fusion processes generate a great amount of power for ships, but without many of the risks associated with fission power.",
     "feature_unlocks": [
-      "<b>Component:</b> Fusion Reactor"
+      "Component: Fusion Reactor"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -381,7 +381,7 @@ const Research = {
     "cost": 500,
     "description": "Modulated fields allow for increased production and improved energy yield.",
     "feature_unlocks": [
-      "MOD_COUNTRY_PLANET_TECHNICIAN_ENERGY_PRODUCES_MULT: +10%"
+      "£energy£ Energy Credits from £job_technician£ Technicians +10%"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -408,8 +408,8 @@ const Research = {
     "cost": 750,
     "description": "Load-balancing facilities can greatly improve the stability of local grids and feed excess power back into centralized capacitors.",
     "feature_unlocks": [
-      "<b>Edict:</b> Capacity Overload",
-      "<b>Building:</b> Energy Grid"
+      "Building: Energy Grid",
+      "Edict: Capacity Overload"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -436,7 +436,7 @@ const Research = {
     "cost": 1000,
     "description": "As we explore the galaxy, we continually encounter new materials and substances that are unfamiliar to us. Cataloging and analyzing these discoveries will require new facilities.",
     "feature_unlocks": [
-      "<b>Building:</b> Research Complexes"
+      "Building: Research Complexes"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -463,7 +463,7 @@ const Research = {
     "cost": 1000,
     "description": "By installing an auxiliary fire-control system our ships can afford to make more advanced calculations, increasing accuracy.",
     "feature_unlocks": [
-      "<b>Component:</b> Auxiliary Fire-control"
+      "Component: Auxiliary Fire-control"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -490,7 +490,7 @@ const Research = {
     "cost": 6000,
     "description": "The discovery of antimatter power allows for highly advanced reactor boosters that can greatly enhance ship reactors.",
     "feature_unlocks": [
-      "<b>Component:</b> Advanced Reactor Booster"
+      "Component: Advanced Reactor Booster"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -522,7 +522,7 @@ const Research = {
     "cost": 1000,
     "description": "The discovery of fusion power allows for better reactor boosters to be fitted onto our ships.",
     "feature_unlocks": [
-      "<b>Component:</b> Improved Reactor Booster"
+      "Component: Improved Reactor Booster"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -554,7 +554,7 @@ const Research = {
     "cost": 500,
     "description": "Exploring the mediation of fundamental forces through subatomic particles.",
     "feature_unlocks": [
-      "MOD_COUNTRY_PLANET_RESEARCHERS_PHYSICS_RESEARCH_PRODUCES_MULT: +20%"
+      "£physics£ Physics Research from £job_researcher£ Researchers +20%"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -574,7 +574,7 @@ const Research = {
     "cost": 500,
     "description": "Organizational circuitry rerouting academic fervor.",
     "feature_unlocks": [
-      "MOD_COUNTRY_ALL_TECHNOLOGY_RESEARCH_SPEED: +5%"
+      "Research Speed +5%"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -601,9 +601,9 @@ const Research = {
     "cost": 1000,
     "description": "These updated deflector screens are capable of soaking up even more punishment before they overload.",
     "feature_unlocks": [
-      "<b>Component:</b> Large Improved Deflectors",
-      "<b>Component:</b> Small Improved Deflectors",
-      "<b>Component:</b> Medium Improved Deflectors"
+      "Component: Large Improved Deflectors",
+      "Component: Small Improved Deflectors",
+      "Component: Medium Improved Deflectors"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -630,9 +630,9 @@ const Research = {
     "cost": 1500,
     "description": "Ultraviolet lasers are an updated and more powerful version of their blue predecessors. Accurate and destructive, these weapons are capable of inflicting great damage.",
     "feature_unlocks": [
-      "<b>Component:</b> Small UV Laser",
-      "<b>Component:</b> Large UV Laser",
-      "<b>Component:</b> Medium UV Laser"
+      "Component: Small UV Laser",
+      "Component: Medium UV Laser",
+      "Component: Large UV Laser"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -659,8 +659,8 @@ const Research = {
     "cost": 2000,
     "description": "Disruptors fire high-energy bolts that weaken and destroy the molecular bonds that hold the target's constituent atoms together. They are capable of passing through shields and armor to wreak havoc directly on enemy hull and crew.",
     "feature_unlocks": [
-      "<b>Component:</b> Small Disruptor",
-      "<b>Component:</b> Medium Disruptor"
+      "Component: Small Disruptor",
+      "Component: Medium Disruptor"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -687,7 +687,7 @@ const Research = {
     "cost": 2500,
     "description": "Increased automation of station functions will free up more staff for research duties.",
     "feature_unlocks": [
-      "MOD_COUNTRY_STATION_RESEARCHERS_PRODUCES_MULT: +10%"
+      "Research Station Output +10%"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -714,7 +714,7 @@ const Research = {
     "cost": 1500,
     "description": "Advanced probes that can thoroughly analyze subjects on a sub-atomic level, generating a wealth of valuable research data.",
     "feature_unlocks": [
-      "MOD_COUNTRY_STATION_RESEARCHERS_PRODUCES_MULT: +10%"
+      "Research Station Output +10%"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -741,9 +741,9 @@ const Research = {
     "cost": 2000,
     "description": "Weapons that eject destructive balls of high-energy plasma at targets. These plasma projectiles are extremely effective at eating through ship armor.",
     "feature_unlocks": [
-      "<b>Component:</b> Large Plasma Thrower",
-      "<b>Component:</b> Small Plasma Thrower",
-      "<b>Component:</b> Medium Plasma Thrower"
+      "Component: Medium Plasma Thrower",
+      "Component: Large Plasma Thrower",
+      "Component: Small Plasma Thrower"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -770,9 +770,9 @@ const Research = {
     "cost": 750,
     "description": "By harnessing the entropic nature of the Null Void, this beam can actually destroy energy.",
     "feature_unlocks": [
-      "<b>Component:</b> Large Null Void Beam",
-      "<b>Component:</b> Small Null Void Beam",
-      "<b>Component:</b> Medium Null Void Beam"
+      "Component: Medium Null Void Beam",
+      "Component: Small Null Void Beam",
+      "Component: Large Null Void Beam"
     ],
     "is_dangerous": false,
     "is_rare": true,
@@ -792,8 +792,8 @@ const Research = {
     "cost": 2000,
     "description": "Using strong-focus lenses in combination with an oscillating firing frequence help create lasers strong enough to mine asteroids, or shoot down hostiles.",
     "feature_unlocks": [
-      "<b>Component:</b> Medium Cutting Laser",
-      "<b>Component:</b> Small Cutting Laser"
+      "Component: Small Cutting Laser",
+      "Component: Medium Cutting Laser"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -813,7 +813,7 @@ const Research = {
     "cost": 2000,
     "description": "Introspective prioritization.",
     "feature_unlocks": [
-      "Research Alternatives: +1"
+      "Research Alternatives +1"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -840,8 +840,8 @@ const Research = {
     "cost": 1500,
     "description": "A shipboard lab with advanced archaeological equipment, including a vast database supplied by the Curator Order where new discoveries can easily be cross-referenced.",
     "feature_unlocks": [
-      "MOD_COUNTRY_SHIP_ANOMALY_GENERATION_CHANCE_MULT: +10%",
-      "MOD_COUNTRY_SHIP_ANOMALY_RESEARCH_SPEED_MULT: +25%"
+      "Anomaly Discovery Chance +10%",
+      "Anomaly Research Speed +25%"
     ],
     "is_dangerous": false,
     "is_rare": true,
@@ -861,7 +861,7 @@ const Research = {
     "cost": 1500,
     "description": "These shipboard lab facilities incorporate advanced technologies from the ancient Curator Order to further increase survey speeds.",
     "feature_unlocks": [
-      "MOD_COUNTRY_SCIENCE_SHIP_SURVEY_SPEED: +33%"
+      "Survey Speed +33%"
     ],
     "is_dangerous": false,
     "is_rare": true,
@@ -881,7 +881,7 @@ const Research = {
     "cost": 2500,
     "description": "Basic entanglement principles applied to energy generation provide a substantial increase in energy output.",
     "feature_unlocks": [
-      "MOD_COUNTRY_PLANET_TECHNICIAN_ENERGY_PRODUCES_MULT: +10%"
+      "£energy£ Energy Credits from £job_technician£ Technicians +10%"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -913,7 +913,7 @@ const Research = {
     "cost": 2000,
     "description": "The ability to sustain a fusion reaction at relatively low temperatures will result in a new generation of fusion reactors for our ships.",
     "feature_unlocks": [
-      "<b>Component:</b> Cold Fusion Reactor"
+      "Component: Cold Fusion Reactor"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -940,8 +940,8 @@ const Research = {
     "cost": 1500,
     "description": "These sensors have been tuned to look for any gravitational changes in space, such as those produced by the presence of a starship.",
     "feature_unlocks": [
-      "<b>Component:</b> Gravitic Sensors",
-      "<b>Starbase Building:</b> Listening Post"
+      "Starbase Building: Listening Post",
+      "Component: Gravitic Sensors"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -988,7 +988,7 @@ const Research = {
     "cost": 2500,
     "description": "A re-engineered and unified grid further reduces energy losses over distance.",
     "feature_unlocks": [
-      "<b>Building:</b> Energy Nexus"
+      "Building: Energy Nexus"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -1020,7 +1020,7 @@ const Research = {
     "cost": 2500,
     "description": "These capacitors store surplus energy which can quickly be transferred to reinforce a ship's shields.",
     "feature_unlocks": [
-      "<b>Component:</b> Shield Capacitor"
+      "Component: Shield Capacitor"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -1048,7 +1048,7 @@ const Research = {
     "description": "Gravity well projectors can be used to create localized pockets of space where safe entry into hyperspace is impossible. The immense power requirements and the size of the projectors prohibits their use on anything smaller than a starbase.",
     "feature_unlocks": [
       "<b>Feature : </b>Planetary FTL Inhibitors",
-      "<b>Component:</b> FTL Inhibitor"
+      "Component: FTL Inhibitor"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -1075,7 +1075,7 @@ const Research = {
     "cost": 2500,
     "description": "The seemingly erratic behavior of tiny things can dramatically alter the way we think about bigger things.",
     "feature_unlocks": [
-      "MOD_COUNTRY_PLANET_RESEARCHERS_PHYSICS_RESEARCH_PRODUCES_MULT: +20%"
+      "£physics£ Physics Research from £job_researcher£ Researchers +20%"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -1102,8 +1102,8 @@ const Research = {
     "cost": 2000,
     "description": "We have identified the existence of points in space where a ship expends less energy to \"breach\" their way into a hyperlane. This will lead to a new generation of hyper drives.",
     "feature_unlocks": [
-      "<b>Component:</b> Hyper Drive II",
-      "<b>Starbase Building:</b> Hyperlane Registrar"
+      "Component: Hyper Drive II",
+      "Starbase Building: Hyperlane Registrar"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -1130,7 +1130,7 @@ const Research = {
     "cost": 2500,
     "description": "Arrays of defensive armaments prove much more effective than independent countermeasures.",
     "feature_unlocks": [
-      "<b>Component:</b> Barrier Point-Defense"
+      "Component: Barrier Point-Defense"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -1157,9 +1157,9 @@ const Research = {
     "cost": 2500,
     "description": "These new shield generators represent the next generation of energy screens, replacing the older deflector technology. They offer significantly better protection.",
     "feature_unlocks": [
-      "<b>Component:</b> Small Shields",
-      "<b>Component:</b> Medium Shields",
-      "<b>Component:</b> Large Shields"
+      "Component: Small Shields",
+      "Component: Medium Shields",
+      "Component: Large Shields"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -1186,7 +1186,7 @@ const Research = {
     "cost": 1500,
     "description": "Aside from the obvious safety concerns, the artificial creation of Volatile Motes is an extremely delicate and complicated process that requires highly specialized equipment.",
     "feature_unlocks": [
-      "<b>Building:</b> Chemical Plants"
+      "Building: Chemical Plants"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -1213,7 +1213,7 @@ const Research = {
     "cost": 2500,
     "description": "Void Clouds use the electrical charges generated by the dense gases that make up most of their core to release bolts of burning plasma. Using the same gas composition together with a specialized conduit allows for powerful lightning weaponry.",
     "feature_unlocks": [
-      "<b>Component:</b> Cloud Lightning"
+      "Component: Cloud Lightning"
     ],
     "is_dangerous": false,
     "is_rare": true,
@@ -1233,9 +1233,9 @@ const Research = {
     "cost": 4000,
     "description": "These lasers have a shorter wavelength than UV-based laser weaponry, but are even more destructive.",
     "feature_unlocks": [
-      "<b>Component:</b> Large X-Ray Laser",
-      "<b>Component:</b> Medium X-Ray Laser",
-      "<b>Component:</b> Small X-Ray Laser"
+      "Component: Small X-Ray Laser",
+      "Component: Large X-Ray Laser",
+      "Component: Medium X-Ray Laser"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -1262,8 +1262,8 @@ const Research = {
     "cost": 4000,
     "description": "These upgraded disruptors fire bolts of more destructive ion particles at targets.",
     "feature_unlocks": [
-      "<b>Component:</b> Medium Ion Disruptor",
-      "<b>Component:</b> Small Ion Disruptor"
+      "Component: Small Ion Disruptor",
+      "Component: Medium Ion Disruptor"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -1290,7 +1290,7 @@ const Research = {
     "cost": 4000,
     "description": "Studying something from the limited perspective of a single dimensional reality does not paint the whole picture. Every angle must be considered.",
     "feature_unlocks": [
-      "MOD_COUNTRY_STATION_RESEARCHERS_PRODUCES_MULT: +10%"
+      "Research Station Output +10%"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -1317,12 +1317,12 @@ const Research = {
     "cost": 4000,
     "description": "These new accelerators launch projectiles of high-energy plasma with improved containment fields. This results in less energy leakage as the projectile travels in space towards its target.",
     "feature_unlocks": [
-      "<b>Component:</b> Large Plasma Accelerator",
-      "<b>Component:</b> Medium Plasma Accelerator",
-      "<b>Component:</b> Small Plasma Accelerator",
-      "<b>Component:</b> Small Caravan Cannon",
-      "<b>Component:</b> Large Caravan Cannon",
-      "<b>Component:</b> Medium Caravan Cannon"
+      "Component: Small Plasma Accelerator",
+      "Component: Medium Plasma Accelerator",
+      "Component: Large Plasma Accelerator",
+      "Component: Medium Caravan Cannon",
+      "Component: Small Caravan Cannon",
+      "Component: Large Caravan Cannon"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -1349,7 +1349,7 @@ const Research = {
     "cost": 4000,
     "description": "Generating a strong energy shield within a planetary atmosphere is a greater challenge than in the vacuum of space, but it offers a potent defense against orbital bombardment.",
     "feature_unlocks": [
-      "<b>Building:</b> Planetary Shield Generator"
+      "Building: Planetary Shield Generator"
     ],
     "is_dangerous": false,
     "is_rare": true,
@@ -1376,8 +1376,8 @@ const Research = {
     "cost": 4000,
     "description": "Further advances in predictive algorithms allow for augmented tactical decision-making in the field.",
     "feature_unlocks": [
-      "<b>Component:</b> Starbase Fire Control",
-      "<b>Component:</b> Advanced Combat Computer"
+      "Component: Advanced Combat Computer",
+      "Component: Starbase Fire Control"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -1409,7 +1409,7 @@ const Research = {
     "cost": 5000,
     "description": "By harnessing the energy produced by matter/antimatter annihilations, our efficiency at generating ship power will be orders of magnitude better than fusion.",
     "feature_unlocks": [
-      "<b>Component:</b> Antimatter Reactor"
+      "Component: Antimatter Reactor"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -1436,7 +1436,7 @@ const Research = {
     "cost": 2500,
     "description": "Sufficiently advanced systems are capable of optimizing themselves if they are made acutely aware of the purpose for which they were made.",
     "feature_unlocks": [
-      "Colony Development Speed: +50%"
+      "Colony Development Speed +50%"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -1468,8 +1468,8 @@ const Research = {
     "cost": 4000,
     "description": "A bid for interplanetary resource pools and more flexible research grants.",
     "feature_unlocks": [
-      "<b>Building:</b> Research Institute",
-      "<b>Building:</b> Planetary Supercomputer"
+      "Building: Planetary Supercomputer",
+      "Building: Research Institute"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -1501,8 +1501,8 @@ const Research = {
     "cost": 4000,
     "description": "Sensors that detect the subspace fluctuations left in the wake of traveling starships. Their sensitivity and range is greater than that of a gravitic sensor array.",
     "feature_unlocks": [
-      "<b>Component:</b> Subspace Sensors",
-      "<b>Starbase Building:</b> Black Hole Observatory"
+      "Starbase Building: Black Hole Observatory",
+      "Component: Subspace Sensors"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -1529,7 +1529,7 @@ const Research = {
     "cost": 4000,
     "description": "To expand our knowledge base, we must consider all levels of existence. A new realm of science awaits us!",
     "feature_unlocks": [
-      "<b>Building:</b> Advanced Research Complexes"
+      "Building: Advanced Research Complexes"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -1588,7 +1588,7 @@ const Research = {
     "cost": 10000,
     "description": "When a temporal paradox becomes tangled, a kind of consciousness arises, with its own needs, its own desires. This is what has occurred with the consciousness that some call the Worm-in-Waiting. If we can align ourselves with that consciousness, we might just achieve a kind of immortality.",
     "feature_unlocks": [
-      "<b>Building:</b> Omega Alignment"
+      "Building: Omega Alignment"
     ],
     "is_dangerous": false,
     "is_rare": true,
@@ -1620,7 +1620,7 @@ const Research = {
     "cost": 6000,
     "description": "This exotic substance has many properties that seemingly defy the laws of physics. Harvestable concentrations can only be found near Black Holes or in certain nebulas.",
     "feature_unlocks": [
-      "<b>Reveals Ressource:</b> Dark Matter"
+      "Reveals Ressource: Dark Matter"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -1673,7 +1673,7 @@ const Research = {
     "tier": 3,
     "prerequisites_names": [],
     "potential": [
-      "Does NOT Have Global Flag l_cluster_opened"
+      "Does NOT have the l_cluster_opened global flag"
     ],
     "is_gestalt": false,
     "is_machine": false
@@ -1685,7 +1685,7 @@ const Research = {
     "cost": 6000,
     "description": "A new generation of hyper drives capable of accessing the subspace slipstreams that are present within hyperspace. This leads to dramatically improved drive performance.",
     "feature_unlocks": [
-      "<b>Component:</b> Hyper Drive III"
+      "Component: Hyper Drive III"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -1712,9 +1712,9 @@ const Research = {
     "cost": 6000,
     "description": "An updated shield generator that produces an even stronger energy field. Only sustained enemy fire can penetrate this barrier.",
     "feature_unlocks": [
-      "<b>Component:</b> Medium Advanced Shields",
-      "<b>Component:</b> Large Advanced Shields",
-      "<b>Component:</b> Small Advanced Shields"
+      "Component: Small Advanced Shields",
+      "Component: Medium Advanced Shields",
+      "Component: Large Advanced Shields"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -1741,7 +1741,7 @@ const Research = {
     "cost": 6000,
     "description": "These energy projectiles consist of tightly concentrated protons capable of causing immense damage to the hull of enemy ships.",
     "feature_unlocks": [
-      "<b>Component:</b> Proton Launchers"
+      "Component: Proton Launchers"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -1768,8 +1768,8 @@ const Research = {
     "cost": 8000,
     "description": "Extremely high-yield disruptors that fire quantum energy charges causing incredible damage to those unfortunate enough to get in their way.",
     "feature_unlocks": [
-      "<b>Component:</b> Medium Phased Disruptor",
-      "<b>Component:</b> Small Phased Disruptor"
+      "Component: Small Phased Disruptor",
+      "Component: Medium Phased Disruptor"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -1796,9 +1796,9 @@ const Research = {
     "cost": 8000,
     "description": "The electromagnetic radiation emitted by gamma lasers is of an extremely high frequency. Their destructive potential is unmatched in the field of laser weapons.",
     "feature_unlocks": [
-      "<b>Component:</b> Medium Gamma Laser",
-      "<b>Component:</b> Small Gamma Laser",
-      "<b>Component:</b> Large Gamma Laser"
+      "Component: Small Gamma Laser",
+      "Component: Large Gamma Laser",
+      "Component: Medium Gamma Laser"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -1825,7 +1825,7 @@ const Research = {
     "cost": 8000,
     "description": "Expanding possibilities through the application of limited cybernetics.",
     "feature_unlocks": [
-      "MOD_COUNTRY_ALL_TECHNOLOGY_RESEARCH_SPEED: +5%"
+      "Research Speed +5%"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -1844,7 +1844,7 @@ const Research = {
     "potential": [
       "Has Gestalt Consciousness Ethic"
     ],
-    "is_gestalt": true,
+    "is_gestalt": false,
     "is_machine": false
   },
   "tech_plasma_3": {
@@ -1854,9 +1854,9 @@ const Research = {
     "cost": 8000,
     "description": "The latest in plasma weaponry, these cannons are fully militarized versions of the older, somewhat improvised plasma throwers. Their plasma projectiles are even deadlier.",
     "feature_unlocks": [
-      "<b>Component:</b> Medium Plasma Cannon",
-      "<b>Component:</b> Small Plasma Cannon",
-      "<b>Component:</b> Large Plasma Cannon"
+      "Component: Large Plasma Cannon",
+      "Component: Small Plasma Cannon",
+      "Component: Medium Plasma Cannon"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -1883,7 +1883,7 @@ const Research = {
     "cost": 10000,
     "description": "Powerful weapons that launch a lightning arc of chaotic energy at targets, which in part can ignore armor and shields.",
     "feature_unlocks": [
-      "<b>Component:</b> Arc Emitter"
+      "Component: Arc Emitter"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -1915,7 +1915,7 @@ const Research = {
     "cost": 12000,
     "description": "These upgraded emitters are equipped with better focusing lenses, resulting in a more powerful energy discharge.",
     "feature_unlocks": [
-      "<b>Component:</b> Focused Arc Emitter"
+      "Component: Focused Arc Emitter"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -1942,7 +1942,7 @@ const Research = {
     "cost": 10000,
     "description": "Running sapient AIs through high-intensity combat simulations yields valuable insight into potential optimizations for risk-evaluation techniques.",
     "feature_unlocks": [
-      "<b>Component:</b> Sapient Combat Computer"
+      "Component: Sapient Combat Computer"
     ],
     "is_dangerous": true,
     "is_rare": true,
@@ -1964,7 +1964,7 @@ const Research = {
       }
     ],
     "potential": [
-      "Does NOT Have Gestalt Consciousness Ethic"
+      "Does NOT have Gestalt Consciousness Ethic"
     ],
     "is_gestalt": false,
     "is_machine": false
@@ -2003,7 +2003,7 @@ const Research = {
     "cost": 10000,
     "description": "Aligning defensive and offensive weapon execution paradigms allows for increased efficiency.",
     "feature_unlocks": [
-      "<b>Starbase Building:</b> Defense-Grid Supercomputer"
+      "Starbase Building: Defense-Grid Supercomputer"
     ],
     "is_dangerous": false,
     "is_rare": true,
@@ -2030,7 +2030,7 @@ const Research = {
     "cost": 8000,
     "description": "Evolving artificial intellects are opening the door to the possibility for true synthetic sapience.",
     "feature_unlocks": [
-      "MOD_COUNTRY_ALL_TECHNOLOGY_RESEARCH_SPEED: +5%"
+      "Research Speed +5%"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -2047,7 +2047,7 @@ const Research = {
       }
     ],
     "potential": [
-      "Does NOT Have Gestalt Consciousness Ethic"
+      "Does NOT have Gestalt Consciousness Ethic"
     ],
     "is_gestalt": false,
     "is_machine": false
@@ -2059,7 +2059,7 @@ const Research = {
     "cost": 10000,
     "description": "Quantum superposition of energy coils, simultaneously drained and charged.",
     "feature_unlocks": [
-      "MOD_COUNTRY_PLANET_TECHNICIAN_ENERGY_PRODUCES_MULT: +10%"
+      "£energy£ Energy Credits from £job_technician£ Technicians +10%"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -2091,7 +2091,7 @@ const Research = {
     "cost": 8000,
     "description": "Advanced sensors that rely on rotating tachyon beams to detect ship movements even at extreme distances.",
     "feature_unlocks": [
-      "<b>Component:</b> Tachyon Sensors"
+      "Component: Tachyon Sensors"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -2118,7 +2118,7 @@ const Research = {
     "cost": 10000,
     "description": "Granting our ships their own semi-autonomous intellect will greatly enhance their responsiveness in combat.",
     "feature_unlocks": [
-      "<b>Component:</b> Autonomous Ship Intellect"
+      "Component: Autonomous Ship Intellect"
     ],
     "is_dangerous": false,
     "is_rare": true,
@@ -2137,7 +2137,7 @@ const Research = {
     "potential": [
       "Has Gestalt Consciousness Ethic"
     ],
-    "is_gestalt": true,
+    "is_gestalt": false,
     "is_machine": false
   },
   "tech_zero_point_power": {
@@ -2147,7 +2147,7 @@ const Research = {
     "cost": 10000,
     "description": "These generators extract vacuum energy, providing an almost limitless supply of ship power. There is no more efficient way to generate energy.",
     "feature_unlocks": [
-      "<b>Component:</b> Zero Point Reactor"
+      "Component: Zero Point Reactor"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -2174,7 +2174,7 @@ const Research = {
     "cost": 10000,
     "description": "These heavy energy weapons fire focused particle beams that cause massive damage. The size of the emitter arrays limits their use to battleships and titans.",
     "feature_unlocks": [
-      "<b>Component:</b> Particle Lance"
+      "Component: Particle Lance"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -2206,7 +2206,7 @@ const Research = {
     "cost": 10000,
     "description": "Three dimensions, inextricable from the fourth.",
     "feature_unlocks": [
-      "MOD_COUNTRY_PLANET_RESEARCHERS_PHYSICS_RESEARCH_PRODUCES_MULT: +20%"
+      "£physics£ Physics Research from £job_researcher£ Researchers +20%"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -2233,7 +2233,7 @@ const Research = {
     "cost": 8000,
     "description": "Advanced prediction greatly increases the accuracy of active countermeasure systems.",
     "feature_unlocks": [
-      "<b>Component:</b> Guardian Point-Defense"
+      "Component: Guardian Point-Defense"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -2260,9 +2260,9 @@ const Research = {
     "cost": 12000,
     "description": "These reinforced and hardened energy shields are incredibly powerful. The protection they offer is second to none.",
     "feature_unlocks": [
-      "<b>Component:</b> Medium Hyper Shields",
-      "<b>Component:</b> Large Hyper Shields",
-      "<b>Component:</b> Small Hyper Shields"
+      "Component: Small Hyper Shields",
+      "Component: Large Hyper Shields",
+      "Component: Medium Hyper Shields"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -2289,7 +2289,7 @@ const Research = {
     "cost": 12000,
     "description": "A more powerful version of the particle lance, this weapon fires a tachyon beam of immense power. Like its predecessor, its use is limited to battleships and titans.",
     "feature_unlocks": [
-      "<b>Component:</b> Tachyon Lance"
+      "Component: Tachyon Lance"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -2321,7 +2321,7 @@ const Research = {
     "cost": 10000,
     "description": "Upgraded energy projectiles that rely on neutrons instead of protons for their destructive power.",
     "feature_unlocks": [
-      "<b>Component:</b> Neutron Launchers"
+      "Component: Neutron Launchers"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -2348,7 +2348,7 @@ const Research = {
     "cost": 20000,
     "description": "A shielding field is deployed around a planet, creating a barrier that is permanent and impenetrable (save for some wavelengths of light).",
     "feature_unlocks": [
-      "<b>Component:</b> Global Pacifier"
+      "Component: Global Pacifier"
     ],
     "is_dangerous": false,
     "is_rare": true,
@@ -2366,7 +2366,7 @@ const Research = {
     ],
     "potential": [
       "Has DLC Apocalypse",
-      "Has Country Flag colossus_project"
+      "Has the Colossus Project country flag"
     ],
     "is_gestalt": false,
     "is_machine": false
@@ -2378,7 +2378,7 @@ const Research = {
     "cost": 50000,
     "description": "These generators appear to somehow draw energy directly from dark matter, providing more ship power than should be possible according to the laws of physics.",
     "feature_unlocks": [
-      "<b>Component:</b> Dark Matter Reactor"
+      "Component: Dark Matter Reactor"
     ],
     "is_dangerous": false,
     "is_rare": true,
@@ -2398,33 +2398,6 @@ const Research = {
     "is_gestalt": false,
     "is_machine": false
   },
-  "tech_repeatable_weapon_type_energy_fire_rate": {
-    "key": "tech_repeatable_weapon_type_energy_fire_rate",
-    "area": "physics",
-    "category": "Particles",
-    "cost": 50000,
-    "description": "New developments in tech cooling regularly surface, improving the stability and efficiency of our weapons systems, keeping them from blowing up the ships upon which they are mounted.",
-    "feature_unlocks": [
-      "MOD_COUNTRY_WEAPON_TYPE_ENERGY_WEAPON_FIRE_RATE_MULT: +5%"
-    ],
-    "is_dangerous": false,
-    "is_rare": false,
-    "is_start_tech": false,
-    "name": "Flash Coolant",
-    "prerequisites": [
-      "tech_lasers_2"
-    ],
-    "tier": 5,
-    "prerequisites_names": [
-      {
-        "name": "Blue Lasers",
-        "key": "tech_lasers_2"
-      }
-    ],
-    "potential": [],
-    "is_gestalt": false,
-    "is_machine": false
-  },
   "tech_pk_neutron": {
     "key": "tech_pk_neutron",
     "area": "physics",
@@ -2432,7 +2405,7 @@ const Research = {
     "cost": 20000,
     "description": "An accelerated plume of neutron radiation \"paints\" the planet surface, severely degrading most materials and directly destroying biological tissue.",
     "feature_unlocks": [
-      "<b>Component:</b> Neutron Sweep"
+      "Component: Neutron Sweep"
     ],
     "is_dangerous": false,
     "is_rare": true,
@@ -2450,9 +2423,9 @@ const Research = {
     ],
     "potential": [
       "Has DLC Apocalypse",
-      "Has Country Flag colossus_project",
-      "Is Spiritualist",
-      "Is Pacifist"
+      "Has the Colossus Project country flag",
+      "Is NOT Spiritualist",
+      "Is NOT Pacifist"
     ],
     "is_gestalt": false,
     "is_machine": false
@@ -2464,7 +2437,7 @@ const Research = {
     "cost": 50000,
     "description": "While producing average results in standard tests, the accuracy of Enigmatic Decoder's prediction algorithms seemingly increases as the target's flight path grows more erratic.",
     "feature_unlocks": [
-      "<b>Component:</b> Enigmatic Decoder"
+      "Component: Enigmatic Decoder"
     ],
     "is_dangerous": false,
     "is_rare": true,
@@ -2477,33 +2450,6 @@ const Research = {
     "is_gestalt": false,
     "is_machine": false
   },
-  "tech_repeatable_reduced_building_cost": {
-    "key": "tech_repeatable_reduced_building_cost",
-    "area": "physics",
-    "category": "Computing",
-    "cost": 50000,
-    "description": "Increasingly powerful computation paradigms allow us to adapt individual construction projects to planetary and ultra-local gravitational conditions.",
-    "feature_unlocks": [
-      "MOD_COUNTRY_PLANET_BUILDINGS_COST_MULT: -5%"
-    ],
-    "is_dangerous": false,
-    "is_rare": false,
-    "is_start_tech": false,
-    "name": "Gravitational Analysis",
-    "prerequisites": [
-      "tech_physics_2"
-    ],
-    "tier": 5,
-    "prerequisites_names": [
-      {
-        "name": "Applied Quantum Physics",
-        "key": "tech_physics_2"
-      }
-    ],
-    "potential": [],
-    "is_gestalt": false,
-    "is_machine": false
-  },
   "tech_jump_drive_1": {
     "key": "tech_jump_drive_1",
     "area": "physics",
@@ -2511,7 +2457,7 @@ const Research = {
     "cost": 15000,
     "description": "A groundbreaking technological marvel, the Jump Drive shreds the local space-time continuum and rearranges it on the quantum level to be identical to that of the target destination - and thus the ship appears to near-instantly \"jump\" from system to system.",
     "feature_unlocks": [
-      "<b>Component:</b> Jump Drive",
+      "Component: Jump Drive",
       "<b>Feature : </b>Jump Drive Travel"
     ],
     "is_dangerous": true,
@@ -2564,33 +2510,6 @@ const Research = {
     "is_gestalt": false,
     "is_machine": false
   },
-  "tech_repeatable_improved_shield_output": {
-    "key": "tech_repeatable_improved_shield_output",
-    "area": "physics",
-    "category": "Field Manipulation",
-    "cost": 50000,
-    "description": "The basic mechanics of ship shields are complex, but they can be adjusted and improved in a multitude of ways.",
-    "feature_unlocks": [
-      "Shield Hit Points: +5%"
-    ],
-    "is_dangerous": false,
-    "is_rare": false,
-    "is_start_tech": false,
-    "name": "Shield Harmonics",
-    "prerequisites": [
-      "tech_shields_4"
-    ],
-    "tier": 5,
-    "prerequisites_names": [
-      {
-        "name": "Advanced Shields",
-        "key": "tech_shields_4"
-      }
-    ],
-    "potential": [],
-    "is_gestalt": false,
-    "is_machine": false
-  },
   "tech_extradimensional_weapon_1": {
     "key": "tech_extradimensional_weapon_1",
     "area": "physics",
@@ -2598,9 +2517,9 @@ const Research = {
     "cost": 20000,
     "description": "Applying 5th-dimensional energy manipulation principles on lower dimensional planes allows for the creation of powerful energy weapons.",
     "feature_unlocks": [
-      "<b>Component:</b> Large Matter Disintegrator",
-      "<b>Component:</b> Medium Matter Disintegrator",
-      "<b>Component:</b> Small Matter Disintegrator"
+      "Component: Medium Matter Disintegrator",
+      "Component: Large Matter Disintegrator",
+      "Component: Small Matter Disintegrator"
     ],
     "is_dangerous": false,
     "is_rare": true,
@@ -2620,7 +2539,7 @@ const Research = {
     "cost": 50000,
     "description": "The Enigmatic Encoder scrambles flight path data according to some indeterminable design before feeding it back to fleet command.",
     "feature_unlocks": [
-      "<b>Component:</b> Enigmatic Encoder"
+      "Component: Enigmatic Encoder"
     ],
     "is_dangerous": false,
     "is_rare": true,
@@ -2633,60 +2552,6 @@ const Research = {
     "is_gestalt": false,
     "is_machine": false
   },
-  "tech_repeatable_weapon_type_energy_damage": {
-    "key": "tech_repeatable_weapon_type_energy_damage",
-    "area": "physics",
-    "category": "Particles",
-    "cost": 50000,
-    "description": "Perfecting the firing cadence of laser weaponry is a task that could keep the engineering elite of any given planet busy for centuries.",
-    "feature_unlocks": [
-      "MOD_COUNTRY_WEAPON_TYPE_ENERGY_WEAPON_DAMAGE_MULT: +5%"
-    ],
-    "is_dangerous": false,
-    "is_rare": false,
-    "is_start_tech": false,
-    "name": "Focusing Arrays",
-    "prerequisites": [
-      "tech_lasers_4"
-    ],
-    "tier": 5,
-    "prerequisites_names": [
-      {
-        "name": "X-Ray Lasers",
-        "key": "tech_lasers_4"
-      }
-    ],
-    "potential": [],
-    "is_gestalt": false,
-    "is_machine": false
-  },
-  "tech_repeatable_improved_tile_energy_output": {
-    "key": "tech_repeatable_improved_tile_energy_output",
-    "area": "physics",
-    "category": "Field Manipulation",
-    "cost": 50000,
-    "description": "Minor improvements to transmission efficiency adds up to a sizeable reduction in overall energy loss.",
-    "feature_unlocks": [
-      "MOD_COUNTRY_PLANET_JOBS_ENERGY_PRODUCES_MULT: +5%"
-    ],
-    "is_dangerous": false,
-    "is_rare": false,
-    "is_start_tech": false,
-    "name": "Applied Superconductivity",
-    "prerequisites": [
-      "tech_power_plant_3"
-    ],
-    "tier": 5,
-    "prerequisites_names": [
-      {
-        "name": "Quantum Energy States",
-        "key": "tech_power_plant_3"
-      }
-    ],
-    "potential": [],
-    "is_gestalt": false,
-    "is_machine": false
-  },
   "tech_dark_matter_deflector": {
     "key": "tech_dark_matter_deflector",
     "area": "physics",
@@ -2694,9 +2559,9 @@ const Research = {
     "cost": 50000,
     "description": "These deflectors utilize dark matter to deflect incoming projectiles in a way that seems to utterly defy the laws of nature.",
     "feature_unlocks": [
-      "<b>Component:</b> Large Dark Matter Deflectors",
-      "<b>Component:</b> Small Dark Matter Deflectors",
-      "<b>Component:</b> Medium Dark Matter Deflectors"
+      "Component: Small Dark Matter Deflectors",
+      "Component: Medium Dark Matter Deflectors",
+      "Component: Large Dark Matter Deflectors"
     ],
     "is_dangerous": false,
     "is_rare": true,
@@ -2723,7 +2588,7 @@ const Research = {
     "cost": 0,
     "description": "Through the development of macroscopic synaptic nodes, the will of the Hive will be strengthened.",
     "feature_unlocks": [
-      "<b>Building:</b> Synaptic Nodes"
+      "Building: Synaptic Nodes"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -2745,12 +2610,12 @@ const Research = {
     "cost": 0,
     "description": "Once a colony has been firmly established and pioneers turn into citizens, the need for a strong local government providing stability trumps the colonial need for flexibility.",
     "feature_unlocks": [
-      "<b>Building:</b> Sentinel Posts",
-      "<b>Building:</b> Administrative Array",
-      "<b>Building:</b> Precinct Houses",
-      "<b>Building:</b> Planetary Administration",
-      "<b>Building:</b> Maintenance Depots",
-      "<b>Building:</b> Hive Core"
+      "Building: Hive Core",
+      "Building: Sentinel Posts",
+      "Building: Planetary Administration",
+      "Building: Administrative Array",
+      "Building: Precinct Houses",
+      "Building: Maintenance Depots"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -2770,8 +2635,8 @@ const Research = {
     "cost": 0,
     "description": "Calculating required resources and gear required to establish a planetary colony allows us to herd brave pioneers into grand \"ark ships,\" confident that they will survive the long voyage across the stars to a new home.",
     "feature_unlocks": [
-      "<b>Ship Size:</b> Private Colony Ship",
-      "<b>Ship Size:</b> Colony Ship"
+      "Ship Size: Private Colony Ship",
+      "Ship Size: Colony Ship"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -2791,7 +2656,7 @@ const Research = {
     "cost": 0,
     "description": "With new planetary markets comes new opportunities for commerce. Business will be booming.",
     "feature_unlocks": [
-      "<b>Building:</b> Commercial Zones"
+      "Building: Commercial Zones"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -2801,7 +2666,7 @@ const Research = {
     "tier": 0,
     "prerequisites_names": [],
     "potential": [
-      "is_gestalt=no"
+      "Is NOT Gestalt"
     ],
     "is_gestalt": false,
     "is_machine": false
@@ -2813,7 +2678,7 @@ const Research = {
     "cost": 0,
     "description": "Pioneering use of holographic technology allows for the creation of artificial environments that seem as authentic as the real world. It is the next step of immersive entertainment.",
     "feature_unlocks": [
-      "<b>Building:</b> Holo-Theatres"
+      "Building: Holo-Theatres"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -2823,7 +2688,7 @@ const Research = {
     "tier": 0,
     "prerequisites_names": [],
     "potential": [
-      "is_gestalt=no"
+      "Is NOT Gestalt"
     ],
     "is_gestalt": false,
     "is_machine": false
@@ -2835,10 +2700,10 @@ const Research = {
     "cost": 0,
     "description": "An understanding of a shared past is necessary in order to make any significant strides into the future.",
     "feature_unlocks": [
-      "<b>Building:</b> Temple",
-      "<b>Building:</b> Autochthon Monument",
-      "<b>Building:</b> Corporate Culture Site",
-      "<b>Building:</b> Uplink Node"
+      "Building: Autochthon Monument",
+      "Building: Uplink Node",
+      "Building: Corporate Culture Site",
+      "Building: Temple"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -2860,7 +2725,7 @@ const Research = {
     "cost": 0,
     "description": "There may come a time when intellects, vast and cool and unsympathetic, regard our worlds with envy and draw plans against us. We must be ready.",
     "feature_unlocks": [
-      "<b>Building:</b> Stronghold"
+      "Building: Stronghold"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -2898,7 +2763,7 @@ const Research = {
     "cost": 500,
     "description": "Mapping the genome of an individual through the sequencing of their DNA opens up for tailored medical treatments and therapies.",
     "feature_unlocks": [
-      "Pop Growth Speed: +10%"
+      "Pop Growth Speed +10%"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -2908,7 +2773,7 @@ const Research = {
     "tier": 1,
     "prerequisites_names": [],
     "potential": [
-      "Any of the following \n    •   Does NOT Have Machine Intelligence Authority\n    •   Has Driven Assimilator Civic\n    •   Has Rogue Servitor Civic"
+      "One must be true\n    •   Does NOT have Machine Intelligence Authority\n    •   Has Government Civic: Driven Assimilator\n    •   Has Government Civic: Rogue Servitor"
     ],
     "is_gestalt": false,
     "is_machine": false
@@ -2920,8 +2785,8 @@ const Research = {
     "cost": 500,
     "description": "Ancient warring tribes, historical nations in conflict, now unified in empire. We must not, will not, crumble.",
     "feature_unlocks": [
-      "<b>Edict:</b> Peace Festivals",
-      "MOD_COUNTRY_COUNTRY_BASE_UNITY_PRODUCES_ADD: +2",
+      "Monthly Unity +2",
+      "Edict: Peace Festivals",
       "<b>Feature : </b>Additional Edicts (Campaigns)"
     ],
     "is_dangerous": false,
@@ -2974,7 +2839,7 @@ const Research = {
     "cost": 750,
     "description": "The colonization of alien worlds has opened up an entirely new field of biomedical research.",
     "feature_unlocks": [
-      "<b>Building:</b> Gene Clinics"
+      "Building: Gene Clinics"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -2996,7 +2861,7 @@ const Research = {
       }
     ],
     "potential": [
-      "is_gestalt=no"
+      "Is NOT Gestalt"
     ],
     "is_gestalt": false,
     "is_machine": false
@@ -3008,7 +2873,7 @@ const Research = {
     "cost": 1000,
     "description": "Adapting the Tiyanki method of siphoning energy from gaseous matter, it is possible to construct weapons draining energy from enemy ships.",
     "feature_unlocks": [
-      "<b>Component:</b> Energy Siphon"
+      "Component: Energy Siphon"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -3028,7 +2893,7 @@ const Research = {
     "cost": 750,
     "description": "Improved food processing techniques will lead to better preservation methods and less spoilage.",
     "feature_unlocks": [
-      "<b>Building:</b> Food Processing Facilities"
+      "Building: Food Processing Facilities"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -3080,8 +2945,8 @@ const Research = {
     "cost": 750,
     "description": "The progress we make calls for a new, nimbler form of administration that may aid rather than hinder us in our pursuits.",
     "feature_unlocks": [
-      "MOD_COUNTRY_LEADERS_COST_MULT: -20%",
-      "Leader Pool Size: +1"
+      "Leader Cost -20%",
+      "Leader Pool Size +1"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -3108,7 +2973,7 @@ const Research = {
     "cost": 1000,
     "description": "Trade across interstellar distances presents a new set of challenges to overcome. It is critical to achieve the transfer of goods from one system to another in a timely and above all cost efficient manner.",
     "feature_unlocks": [
-      "<b>Starbase Building:</b> Offworld Trading Company"
+      "Starbase Building: Offworld Trading Company"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -3125,7 +2990,7 @@ const Research = {
       }
     ],
     "potential": [
-      "is_gestalt=no"
+      "Is NOT Gestalt"
     ],
     "is_gestalt": false,
     "is_machine": false
@@ -3162,7 +3027,7 @@ const Research = {
     "cost": 500,
     "description": "Studying the different forms of life that appear on our world helps us better understand ourselves and the life that surrounds us.",
     "feature_unlocks": [
-      "MOD_COUNTRY_PLANET_RESEARCHERS_SOCIETY_RESEARCH_PRODUCES_MULT: +20%"
+      "£society£ Society Research from £job_researcher£ Researchers +20%"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -3182,8 +3047,8 @@ const Research = {
     "cost": 500,
     "description": "Hydroponics Farming in a controlled environment allows for crops to be grown in climates where farming would normally be impossible.",
     "feature_unlocks": [
-      "<b>Building:</b> Hydroponics Farms",
-      "<b>Starbase Building:</b> Hydroponics Bay"
+      "Building: Hydroponics Farms",
+      "Starbase Building: Hydroponics Bay"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -3235,7 +3100,7 @@ const Research = {
     "cost": 4000,
     "description": "Voidspawn eggs have evolved to withstand the harsh conditions of space by absorbing and conserving energy from their nearest star.",
     "feature_unlocks": [
-      "MOD_COUNTRY_PLANET_JOBS_ENERGY_PRODUCES_MULT: +5%"
+      "£energy£ Energy Credits from £job£ Jobs +5%"
     ],
     "is_dangerous": false,
     "is_rare": true,
@@ -3255,8 +3120,8 @@ const Research = {
     "cost": 500,
     "description": "Farming techniques can be further refined through sophisticated computer simulations of different environments and weather patterns. This allows for more predictable crop yields.",
     "feature_unlocks": [
-      "MOD_COUNTRY_PLANET_FARMERS_FOOD_PRODUCES_MULT: +10%",
-      "<b>Edict:</b> Farming Subsidies"
+      "£food£ Food from £job_farmer£ Farmers +10%",
+      "Edict: Farming Subsidies"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -3308,7 +3173,7 @@ const Research = {
     "cost": 1000,
     "description": "These massive entertainment complexes is where dreams come true. Shopping malls, restaurants, amusement parks, virtual arcades, and more. You dream it - we are it!",
     "feature_unlocks": [
-      "<b>Building:</b> Hyper-Entertainment Forums"
+      "Building: Hyper-Entertainment Forums"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -3325,7 +3190,7 @@ const Research = {
       }
     ],
     "potential": [
-      "is_gestalt=no"
+      "Is NOT Gestalt"
     ],
     "is_gestalt": false,
     "is_machine": false
@@ -3362,7 +3227,7 @@ const Research = {
     "cost": 750,
     "description": "Studying the fauna of other worlds gives insight into alien behaviors, allowing us to identify and domesticate docile entities.",
     "feature_unlocks": [
-      "<b>Building:</b> Alien Zoo"
+      "Building: Alien Zoo"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -3384,8 +3249,8 @@ const Research = {
     "cost": 1000,
     "description": "Cognition is little but the processing of sensory input. It can be altered.",
     "feature_unlocks": [
-      "<b>Building:</b> Slave Processing Facility",
-      "<b>Army:</b> Slave Army"
+      "Army: Slave Army",
+      "Building: Slave Processing Facility"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -3395,7 +3260,7 @@ const Research = {
     "tier": 1,
     "prerequisites_names": [],
     "potential": [
-      "Does NOT Have Gestalt Consciousness Ethic"
+      "Does NOT have Gestalt Consciousness Ethic"
     ],
     "is_gestalt": false,
     "is_machine": false
@@ -3407,9 +3272,9 @@ const Research = {
     "cost": 750,
     "description": "There are many alien empires who would gladly seize our worlds for themselves. We must be prepared for them, should the worst come to pass.",
     "feature_unlocks": [
-      "MOD_COUNTRY_SHOW_ONLY_CUSTOM_TOOLTIP: no",
-      "Defense Army Damage: +33%",
-      "MOD_COUNTRY_CUSTOM_TOOLTIP: "
+      "mod_country_show_only_custom_tooltip no",
+      "mod_country_custom_tooltip ",
+      "Defense Army Damage +33%"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -3436,7 +3301,7 @@ const Research = {
     "cost": 2500,
     "description": "Sophisticated genetic engineering of crops helps increase yield and further improves both taste and nutrient levels.",
     "feature_unlocks": [
-      "MOD_COUNTRY_PLANET_FARMERS_FOOD_PRODUCES_MULT: +10%"
+      "£food£ Food from £job_farmer£ Farmers +10%"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -3468,8 +3333,8 @@ const Research = {
     "cost": 2500,
     "description": "A well-oiled war machine is the key to exerting influence on a galactic scale. Backed by the might of our military, we can lay claim to almost anything we want.",
     "feature_unlocks": [
-      "War Exhaustion Gain: -10%",
-      "Claim Influence Cost: -10%"
+      "Claim Influence Cost -10%",
+      "War Exhaustion Gain -10%"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -3496,7 +3361,7 @@ const Research = {
     "cost": 2500,
     "description": "Semi-independent units have proved critical to the success of the greater whole.",
     "feature_unlocks": [
-      "MOD_COUNTRY_COUNTRY_BASE_INFLUENCE_PRODUCES_ADD: +1"
+      "Monthly Influence +1"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -3515,7 +3380,7 @@ const Research = {
     "potential": [
       "Has Gestalt Consciousness Ethic"
     ],
-    "is_gestalt": true,
+    "is_gestalt": false,
     "is_machine": false
   },
   "tech_gene_banks": {
@@ -3525,7 +3390,7 @@ const Research = {
     "cost": 2500,
     "description": "Gene Banks filter and curate available genomes for deployment in clones.",
     "feature_unlocks": [
-      "<b>Army:</b> Clone Army"
+      "Army: Clone Army"
     ],
     "is_dangerous": false,
     "is_rare": true,
@@ -3542,7 +3407,7 @@ const Research = {
       }
     ],
     "potential": [
-      "Any of the following \n    •   Does NOT Have Machine Intelligence Authority\n    •   Has Driven Assimilator Civic"
+      "One must be true\n    •   Does NOT have Machine Intelligence Authority\n    •   Has Government Civic: Driven Assimilator"
     ],
     "is_gestalt": false,
     "is_machine": false
@@ -3554,8 +3419,8 @@ const Research = {
     "cost": 1500,
     "description": "The strategic value of a good defense remains as relevant today as it was to our predecessors in the far distant past. Technology does not render fortifications obsolete - it merely changes their requirements.",
     "feature_unlocks": [
-      "Defense Army Health: +25%",
-      "<b>Building:</b> Fortress"
+      "Building: Fortress",
+      "Defense Army Health +25%"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -3582,7 +3447,7 @@ const Research = {
     "cost": 2000,
     "description": "By clustering networks of macroscopic synaptic nodes, maximum meganeuron transmission per available surface area can be attained.",
     "feature_unlocks": [
-      "<b>Building:</b> Synaptic Clusters"
+      "Building: Synaptic Clusters"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -3609,8 +3474,8 @@ const Research = {
     "cost": 2500,
     "description": "The Empire lives, the Empire breathes. We may make up its body, but it is not for the left hand to know what the right hand is doing.",
     "feature_unlocks": [
-      "MOD_COUNTRY_POP_FACTIONS_PRODUCES_ADD: +1",
-      "<b>Starbase Building:</b> Deep Space Black Site"
+      "Faction Influence Gain +1",
+      "Starbase Building: Deep Space Black Site"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -3627,7 +3492,7 @@ const Research = {
       }
     ],
     "potential": [
-      "Does NOT Have Gestalt Consciousness Ethic"
+      "Does NOT have Gestalt Consciousness Ethic"
     ],
     "is_gestalt": false,
     "is_machine": false
@@ -3640,7 +3505,7 @@ const Research = {
     "description": "There is no simple solution to the problem of macro-scale reshaping of planetary crusts - only bigger trowels and orbitally-deployed drills.",
     "feature_unlocks": [
       "<b>Feature : </b>Terraforming",
-      "<b>Edict:</b> Terraforming Gases"
+      "Edict: Terraforming Gases"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -3692,7 +3557,7 @@ const Research = {
     "cost": 2500,
     "description": "Further study into the hazardous environments found on other planets help alleviate the difficulties that colonizers encounter in their day-to-day lives on foreign worlds.",
     "feature_unlocks": [
-      "Habitability: +5%"
+      "Habitability +5%"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -3709,7 +3574,7 @@ const Research = {
       }
     ],
     "potential": [
-      "Any of the following \n    •   is_machine_empire=no\n    •   Has Driven Assimilator Civic\n    •   Has Rogue Servitor Civic"
+      "One must be true\n    •   is_machine_empire=no\n    •   Has Government Civic: Driven Assimilator\n    •   Has Government Civic: Rogue Servitor"
     ],
     "is_gestalt": false,
     "is_machine": false
@@ -3721,7 +3586,7 @@ const Research = {
     "cost": 1000,
     "description": "By adjusting atmospheric filtering on a per-site basis to better filter out undesirable elements, colonial living conditions may be improved.",
     "feature_unlocks": [
-      "Habitability: +5%"
+      "Habitability +5%"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -3738,7 +3603,7 @@ const Research = {
       }
     ],
     "potential": [
-      "Any of the following \n    •   is_machine_empire=no\n    •   Has Driven Assimilator Civic\n    •   Has Rogue Servitor Civic"
+      "One must be true\n    •   is_machine_empire=no\n    •   Has Government Civic: Driven Assimilator\n    •   Has Government Civic: Rogue Servitor"
     ],
     "is_gestalt": false,
     "is_machine": false
@@ -3750,7 +3615,7 @@ const Research = {
     "cost": 2500,
     "description": "Studying the life that arises on other worlds and beyond allows us to understand fundamental aspects of biology that were previously beyond our reach.",
     "feature_unlocks": [
-      "MOD_COUNTRY_PLANET_RESEARCHERS_SOCIETY_RESEARCH_PRODUCES_MULT: +20%"
+      "£society£ Society Research from £job_researcher£ Researchers +20%"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -3777,9 +3642,9 @@ const Research = {
     "cost": 2000,
     "description": "Physical reminders of how far we have come both instill a reverence for past achievements and bolster ambitions for the future.",
     "feature_unlocks": [
-      "<b>Building:</b> Network Junction",
-      "<b>Building:</b> Heritage Site",
-      "<b>Building:</b> Business Management Nexus"
+      "Building: Business Management Nexus",
+      "Building: Heritage Site",
+      "Building: Network Junction"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -3796,7 +3661,7 @@ const Research = {
       }
     ],
     "potential": [
-      "None of the following \n    •   Has Spiritualist Ethic\n    •   Has Fanatic Spiritualist Ethic\n    •   Has Rogue Servitor Civic"
+      "All must be false\n    •   Has Spiritualist Ethic\n    •   Has Fanatic Spiritualist Ethic\n    •   Has Government Civic: Rogue Servitor"
     ],
     "is_gestalt": false,
     "is_machine": false
@@ -3808,7 +3673,7 @@ const Research = {
     "cost": 2500,
     "description": "By breeding Space Amoebas in captivity, we can program their symbiotic flagella to act as organic strike craft for our navy.",
     "feature_unlocks": [
-      "<b>Component:</b> Amoeba Flagella"
+      "Component: Amoeba Flagella"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -3828,8 +3693,8 @@ const Research = {
     "cost": 2500,
     "description": "The purpose of one is the purpose of all. Together, we are greater than the sum of our parts.",
     "feature_unlocks": [
-      "Amenities: +5%",
-      "Deviancy: -15%"
+      "Amenities +5%",
+      "Deviancy -15%"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -3839,7 +3704,7 @@ const Research = {
     "tier": 2,
     "prerequisites_names": [],
     "potential": [
-      "is_gestalt=yes"
+      "Is Gestalt"
     ],
     "is_gestalt": false,
     "is_machine": false
@@ -3851,8 +3716,8 @@ const Research = {
     "cost": 2000,
     "description": "Creating dedicated headquarters for all levels of military operations shapes an efficient fleet, and lays a better foundation for future military training.",
     "feature_unlocks": [
-      "<b>Building:</b> Military Academy",
-      "Max Occupation Garrisons: +2"
+      "Max Occupation Garrisons +2",
+      "Building: Military Academy"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -3872,7 +3737,7 @@ const Research = {
     "cost": 1500,
     "description": "Gradual adaptation to the realities of deep-space combat allows us to effectively coordinate larger maneuvers.",
     "feature_unlocks": [
-      "Fleet Command Limit: +20"
+      "Fleet Command Limit +20"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -3892,10 +3757,10 @@ const Research = {
     "cost": 2000,
     "description": "Robust frameworks for local governance created on a per-case basis, to meet each colony's needs.",
     "feature_unlocks": [
-      "<b>Building:</b> Planetary Capital",
-      "<b>Building:</b> Hive Nexus",
-      "<b>Building:</b> Hall of Judgment",
-      "<b>Building:</b> Planetary Processor"
+      "Building: Hall of Judgment",
+      "Building: Hive Nexus",
+      "Building: Planetary Processor",
+      "Building: Planetary Capital"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -3922,7 +3787,7 @@ const Research = {
     "cost": 2500,
     "description": "Gradual adaptation to the realities of deep-space combat allows us to effectively coordinate larger maneuvers.",
     "feature_unlocks": [
-      "Fleet Command Limit: +20"
+      "Fleet Command Limit +20"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -3949,7 +3814,7 @@ const Research = {
     "cost": 2000,
     "description": "Organics often fight using illogical and unpredictable tactics that can be difficult to effectively counter. Adaptive tactics and new, more maneuverable warforms should provide a decisive advantage.",
     "feature_unlocks": [
-      "<b>Army:</b> Battle Frame Army"
+      "Army: Battle Frame Army"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -3969,7 +3834,7 @@ const Research = {
       "Has Machine Intelligence Authority"
     ],
     "is_gestalt": false,
-    "is_machine": true
+    "is_machine": false
   },
   "tech_epigenetic_triggers": {
     "key": "tech_epigenetic_triggers",
@@ -3995,7 +3860,7 @@ const Research = {
       }
     ],
     "potential": [
-      "Any of the following \n    •   Does NOT Have Machine Intelligence Authority\n    •   Has Driven Assimilator Civic\n    •   Has Rogue Servitor Civic"
+      "One must be true\n    •   Does NOT have Machine Intelligence Authority\n    •   Has Government Civic: Driven Assimilator\n    •   Has Government Civic: Rogue Servitor"
     ],
     "is_gestalt": false,
     "is_machine": false
@@ -4007,7 +3872,7 @@ const Research = {
     "cost": 2000,
     "description": "As extrasolar expeditions become more common, it is important to provide planetside relief for returning fleets.",
     "feature_unlocks": [
-      "Naval Capacity: +30"
+      "Naval Capacity +30"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -4027,7 +3892,7 @@ const Research = {
     "cost": 2000,
     "description": "Breakthroughs in enucleation and artificial womb technology allows for the mass-production of individuals based on a common genetic template.",
     "feature_unlocks": [
-      "Pop Growth Speed: +10%"
+      "Pop Growth Speed +10%"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -4044,7 +3909,7 @@ const Research = {
       }
     ],
     "potential": [
-      "Any of the following \n    •   Does NOT Have Machine Intelligence Authority\n    •   Has Driven Assimilator Civic"
+      "One must be true\n    •   Does NOT have Machine Intelligence Authority\n    •   Has Government Civic: Driven Assimilator"
     ],
     "is_gestalt": false,
     "is_machine": false
@@ -4081,7 +3946,7 @@ const Research = {
     "cost": 2000,
     "description": "Our future lies in the sea of stars.",
     "feature_unlocks": [
-      "Starbase Capacity: +2"
+      "Starbase Capacity +2"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -4101,7 +3966,7 @@ const Research = {
     "cost": 2000,
     "description": "Seeing is believing, and belief begets reality.",
     "feature_unlocks": [
-      "<b>Building:</b> Holotemple"
+      "Building: Holotemple"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -4118,7 +3983,7 @@ const Research = {
       }
     ],
     "potential": [
-      "Any of the following \n    •   Has Spiritualist Ethic\n    •   Has Fanatic Spiritualist Ethic"
+      "One must be true\n    •   Has Spiritualist Ethic\n    •   Has Fanatic Spiritualist Ethic"
     ],
     "is_gestalt": false,
     "is_machine": false
@@ -4130,8 +3995,8 @@ const Research = {
     "cost": 2000,
     "description": "A body of knowledge regarding combat behaviors is useless without a strong code governing its use.",
     "feature_unlocks": [
-      "<b>Starbase Building:</b> Naval Logistics Office",
-      "<b>Starbase Building:</b> Fleet Academy"
+      "Starbase Building: Fleet Academy",
+      "Starbase Building: Naval Logistics Office"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -4151,7 +4016,7 @@ const Research = {
     "cost": 1500,
     "description": "Local administrative developments allow for closer supervision of colonial affairs without excessively burdening central decision-making.",
     "feature_unlocks": [
-      "Administrative Cap: +20"
+      "Administrative Cap +20"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -4178,7 +4043,7 @@ const Research = {
     "cost": 2000,
     "description": "Where the body fails, science intervenes.",
     "feature_unlocks": [
-      "Leader Lifespan: +10"
+      "Age: $AGE|Y$ +10"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -4195,7 +4060,7 @@ const Research = {
       }
     ],
     "potential": [
-      "Any of the following \n    •   Does NOT Have Machine Intelligence Authority\n    •   Has Driven Assimilator Civic"
+      "One must be true\n    •   Does NOT have Machine Intelligence Authority\n    •   Has Government Civic: Driven Assimilator"
     ],
     "is_gestalt": false,
     "is_machine": false
@@ -4207,7 +4072,7 @@ const Research = {
     "cost": 2500,
     "description": "As our empire grows, so does our understanding of our own biology. Advanced medical treatments on a cellular level have allowed for significant advancements in population health.",
     "feature_unlocks": [
-      "<b>Building:</b> Cyto-Revitalization Centers"
+      "Building: Cyto-Revitalization Centers"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -4229,7 +4094,7 @@ const Research = {
       }
     ],
     "potential": [
-      "is_gestalt=no"
+      "Is NOT Gestalt"
     ],
     "is_gestalt": false,
     "is_machine": false
@@ -4283,7 +4148,7 @@ const Research = {
       }
     ],
     "potential": [
-      "Does NOT Have Gestalt Consciousness Ethic"
+      "Does NOT have Gestalt Consciousness Ethic"
     ],
     "is_gestalt": false,
     "is_machine": false
@@ -4295,8 +4160,8 @@ const Research = {
     "cost": 2500,
     "description": "It is circumstance that dictates what is moral. Define the circumstances, and ethics is like clay in your hands.",
     "feature_unlocks": [
-      "Crime: -15%",
-      "Amenities: +5%"
+      "Crime -15%",
+      "Amenities +5%"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -4306,7 +4171,7 @@ const Research = {
     "tier": 2,
     "prerequisites_names": [],
     "potential": [
-      "Does NOT Have Gestalt Consciousness Ethic"
+      "Does NOT have Gestalt Consciousness Ethic"
     ],
     "is_gestalt": false,
     "is_machine": false
@@ -4333,7 +4198,7 @@ const Research = {
       }
     ],
     "potential": [
-      "is_gestalt=no"
+      "Is NOT Gestalt"
     ],
     "is_gestalt": false,
     "is_machine": false
@@ -4360,7 +4225,7 @@ const Research = {
       }
     ],
     "potential": [
-      "is_gestalt=no"
+      "Is NOT Gestalt"
     ],
     "is_gestalt": false,
     "is_machine": false
@@ -4372,8 +4237,8 @@ const Research = {
     "cost": 6000,
     "description": "Restructuring the chain of command and deciding what interdependencies are set between officers, make fleets more responsive and effective.",
     "feature_unlocks": [
-      "Ship Fire Rate: +5%",
-      "<b>Starbase Building:</b> Command Center"
+      "Ship Fire Rate +5%",
+      "Starbase Building: Command Center"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -4400,7 +4265,7 @@ const Research = {
     "cost": 6000,
     "description": "Thinking outside the box merely places you in another, somewhat larger box.",
     "feature_unlocks": [
-      "MOD_COUNTRY_PLANET_JOBS_PRODUCES_MULT: +5%"
+      "Resources from £job£ Jobs +5%"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -4417,7 +4282,7 @@ const Research = {
       }
     ],
     "potential": [
-      "is_gestalt=no"
+      "Is NOT Gestalt"
     ],
     "is_gestalt": false,
     "is_machine": false
@@ -4446,7 +4311,7 @@ const Research = {
       }
     ],
     "potential": [
-      "Any of the following \n    •   Does NOT Have Machine Intelligence Authority\n    •   Has Driven Assimilator Civic\n    •   Has Rogue Servitor Civic"
+      "One must be true\n    •   Does NOT have Machine Intelligence Authority\n    •   Has Government Civic: Driven Assimilator\n    •   Has Government Civic: Rogue Servitor"
     ],
     "is_gestalt": false,
     "is_machine": false
@@ -4458,7 +4323,7 @@ const Research = {
     "cost": 4000,
     "description": "New cryopreservation and protein resequencing methods will make food processing much more efficient.",
     "feature_unlocks": [
-      "<b>Building:</b> Food Processing Centers"
+      "Building: Food Processing Centers"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -4490,8 +4355,8 @@ const Research = {
     "cost": 4000,
     "description": "A more extensive training program for new recruits, including realistic combat scenarios, prepare them for the field.",
     "feature_unlocks": [
-      "Assault Army Damage: +15%",
-      "Assault Army Morale: +15%"
+      "Assault Army Damage +15%",
+      "Assault Army Morale +15%"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -4538,7 +4403,7 @@ const Research = {
     "cost": 6000,
     "description": "Extensive study into different soil types and their ability to support crops will help improve the living conditions of our settlers on foreign worlds.",
     "feature_unlocks": [
-      "Habitability: +5%"
+      "Habitability +5%"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -4555,7 +4420,7 @@ const Research = {
       }
     ],
     "potential": [
-      "Any of the following \n    •   is_machine_empire=no\n    •   Has Driven Assimilator Civic\n    •   Has Rogue Servitor Civic"
+      "One must be true\n    •   is_machine_empire=no\n    •   Has Government Civic: Driven Assimilator\n    •   Has Government Civic: Rogue Servitor"
     ],
     "is_gestalt": false,
     "is_machine": false
@@ -4594,9 +4459,9 @@ const Research = {
     "cost": 5000,
     "description": "Not all research into faster-than-light communication channels produces useful results, but some outcomes may find new purpose in bringing our people together.",
     "feature_unlocks": [
-      "<b>Building:</b> Hypercomms Forum",
-      "<b>Building:</b> System Conflux",
-      "<b>Building:</b> Synergy Forum"
+      "Building: Synergy Forum",
+      "Building: System Conflux",
+      "Building: Hypercomms Forum"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -4618,7 +4483,7 @@ const Research = {
       }
     ],
     "potential": [
-      "None of the following \n    •   Has Spiritualist Ethic\n    •   Has Fanatic Spiritualist Ethic\n    •   Has Rogue Servitor Civic"
+      "All must be false\n    •   Has Spiritualist Ethic\n    •   Has Fanatic Spiritualist Ethic\n    •   Has Government Civic: Rogue Servitor"
     ],
     "is_gestalt": false,
     "is_machine": false
@@ -4630,8 +4495,8 @@ const Research = {
     "cost": 4000,
     "description": "Planets are big and production sites are often separated by vast distances. A coherent strategy for making certain that everyone is pulling in the same direction is often needed.",
     "feature_unlocks": [
-      "<b>Building:</b> Ministry of Production",
-      "<b>Building:</b> Resource Processing Center"
+      "Building: Ministry of Production",
+      "Building: Resource Processing Center"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -4668,9 +4533,9 @@ const Research = {
     "cost": 4000,
     "description": "These barriers are generated out of pure psychic energy by a cadre of psionic specialists. They will be able to stop some incoming fire, like our Energy deflector systems, but without the prohibitive power consumption.",
     "feature_unlocks": [
-      "<b>Component:</b> Large Psionic Barrier",
-      "<b>Component:</b> Medium Psionic Barrier",
-      "<b>Component:</b> Small Psionic Barrier"
+      "Component: Small Psionic Barrier",
+      "Component: Medium Psionic Barrier",
+      "Component: Large Psionic Barrier"
     ],
     "is_dangerous": false,
     "is_rare": true,
@@ -4697,7 +4562,7 @@ const Research = {
     "cost": 4000,
     "description": "Multiple administrative strata efficiently surface only the most vital information to the upper levels of government.",
     "feature_unlocks": [
-      "Administrative Cap: +20"
+      "Administrative Cap +20"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -4724,7 +4589,7 @@ const Research = {
     "cost": 4000,
     "description": "As we journeyed into the cosmos and ventured beyond our home system, we also entered a new era of economics. New markets are appearing a startling rate, and economic theorists are struggling to keep up.",
     "feature_unlocks": [
-      "<b>Building:</b> Commerce Megaplexes"
+      "Building: Commerce Megaplexes"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -4741,7 +4606,7 @@ const Research = {
       }
     ],
     "potential": [
-      "is_gestalt=no"
+      "Is NOT Gestalt"
     ],
     "is_gestalt": false,
     "is_machine": false
@@ -4753,9 +4618,9 @@ const Research = {
     "cost": 4000,
     "description": "With the latest advances in architecture, landscaping and holographic technology, we shall build the homes of the future.",
     "feature_unlocks": [
-      "<b>Building:</b> Paradise Dome",
-      "<b>Building:</b> Utopian Communal Housing",
-      "<b>Building:</b> Organic Paradise"
+      "Building: Organic Paradise",
+      "Building: Paradise Dome",
+      "Building: Utopian Communal Housing"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -4772,7 +4637,7 @@ const Research = {
       }
     ],
     "potential": [
-      "Any of the following \n    •   is_gestalt=no\n    •   Has Rogue Servitor Civic"
+      "One must be true\n    •   Is NOT Gestalt\n    •   Has Government Civic: Rogue Servitor"
     ],
     "is_gestalt": false,
     "is_machine": false
@@ -4803,7 +4668,7 @@ const Research = {
       }
     ],
     "potential": [
-      "Any of the following \n    •   Does NOT Have Machine Intelligence Authority\n    •   Has Driven Assimilator Civic\n    •   Has Rogue Servitor Civic"
+      "One must be true\n    •   Does NOT have Machine Intelligence Authority\n    •   Has Government Civic: Driven Assimilator\n    •   Has Government Civic: Rogue Servitor"
     ],
     "is_gestalt": false,
     "is_machine": false
@@ -4815,7 +4680,7 @@ const Research = {
     "cost": 4000,
     "description": "The mind is in many ways a reflection of the universe itself, a microcosmos. All species may not reach this insight, but their minds are tools greater than any other.",
     "feature_unlocks": [
-      "MOD_COUNTRY_COUNTRY_UNITY_PRODUCES_MULT: +5%"
+      "Monthly Unity +5%"
     ],
     "is_dangerous": false,
     "is_rare": true,
@@ -4825,7 +4690,7 @@ const Research = {
     "tier": 3,
     "prerequisites_names": [],
     "potential": [
-      "Does NOT Have Gestalt Consciousness Ethic"
+      "Does NOT have Gestalt Consciousness Ethic"
     ],
     "is_gestalt": false,
     "is_machine": false
@@ -4837,7 +4702,7 @@ const Research = {
     "cost": 4000,
     "description": "Are the precognitive powers of Numa at work or is it a matter of skilled craftsmanship? Either way this galactic stock market prediction model will forecast fluctuations in the economy with divine accuracy.",
     "feature_unlocks": [
-      "MOD_COUNTRY_PLANET_JOBS_ENERGY_PRODUCES_MULT: +5%"
+      "£energy£ Energy Credits from £job£ Jobs +5%"
     ],
     "is_dangerous": false,
     "is_rare": true,
@@ -4857,7 +4722,7 @@ const Research = {
     "cost": 5000,
     "description": "Gradual adaptation to the realities of deep-space combat allows us to effectively coordinate larger maneuvers.",
     "feature_unlocks": [
-      "Fleet Command Limit: +20"
+      "Fleet Command Limit +20"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -4884,7 +4749,7 @@ const Research = {
     "cost": 6000,
     "description": "Together, we build the future.",
     "feature_unlocks": [
-      "MOD_COUNTRY_PLANET_JOBS_PRODUCES_MULT: +5%"
+      "Resources from £job£ Jobs +5%"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -4913,8 +4778,8 @@ const Research = {
     "cost": 4000,
     "description": "Standardizing workflows for upgrading and retrofitting ship components can lead to massive efficiency gains.",
     "feature_unlocks": [
-      "MOD_COUNTRY_SHIPS_UPKEEP_MULT: -5%",
-      "Ship Upgrade Cost: -20%"
+      "Ship Upkeep -5%",
+      "Ship Upgrade Cost -20%"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -4941,7 +4806,7 @@ const Research = {
     "cost": 4000,
     "description": "Efficiency in all things.",
     "feature_unlocks": [
-      "MOD_COUNTRY_PLANET_JOBS_PRODUCES_MULT: +5%"
+      "Resources from £job£ Jobs +5%"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -4961,7 +4826,7 @@ const Research = {
       "Has Machine Intelligence Authority"
     ],
     "is_gestalt": false,
-    "is_machine": true
+    "is_machine": false
   },
   "tech_doctrine_navy_size_2": {
     "key": "tech_doctrine_navy_size_2",
@@ -4970,7 +4835,7 @@ const Research = {
     "cost": 5000,
     "description": "A fleet does not run on zeal alone. To ensure steady access to critical supplies, we should organize our logistics corps into dedicated support vessels.",
     "feature_unlocks": [
-      "Naval Capacity: +30"
+      "Naval Capacity +30"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -4997,7 +4862,7 @@ const Research = {
     "cost": 5000,
     "description": "Through our understanding of physics and field manipulation, our holy places shall we seen and felt by all.",
     "feature_unlocks": [
-      "<b>Building:</b> Sacred Nexus"
+      "Building: Sacred Nexus"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -5019,7 +4884,7 @@ const Research = {
       }
     ],
     "potential": [
-      "Any of the following \n    •   Has Spiritualist Ethic\n    •   Has Fanatic Spiritualist Ethic"
+      "One must be true\n    •   Has Spiritualist Ethic\n    •   Has Fanatic Spiritualist Ethic"
     ],
     "is_gestalt": false,
     "is_machine": false
@@ -5031,7 +4896,7 @@ const Research = {
     "cost": 5000,
     "description": "Careful reproductive planning should be incentivized, lest we waste valuable genetic legacies.",
     "feature_unlocks": [
-      "<b>Policy:</b> Selected Lineages"
+      "Policy: Selected Lineages"
     ],
     "is_dangerous": false,
     "is_rare": true,
@@ -5048,7 +4913,7 @@ const Research = {
       }
     ],
     "potential": [
-      "Does NOT Have Machine Intelligence Authority"
+      "Does NOT have Machine Intelligence Authority"
     ],
     "is_gestalt": false,
     "is_machine": false
@@ -5060,7 +4925,7 @@ const Research = {
     "cost": 5000,
     "description": "An extremely rare aerosol of exotic particles. It has been deposited on a number of worlds through meteor impacts, but its true origin is a mystery. If ingested by psionically-gifted individuals, Zro acts as a very potent (and addictive) drug that enhances Psi abilities.",
     "feature_unlocks": [
-      "<b>Reveals Ressource:</b> Zro"
+      "Reveals Ressource: Zro"
     ],
     "is_dangerous": false,
     "is_rare": true,
@@ -5092,8 +4957,8 @@ const Research = {
     "cost": 6000,
     "description": "Initiative and some measure of ambition must be promoted in our autonomous leader units, while still making certain that they do not stray too far from the directives of the core intelligence.",
     "feature_unlocks": [
-      "Leader Level Cap: +1",
-      "MOD_COUNTRY_LEADERS_UPKEEP_MULT: -10%"
+      "Leader Level Cap +1",
+      "Leader Upkeep -10%"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -5112,7 +4977,7 @@ const Research = {
     "potential": [
       "Has Gestalt Consciousness Ethic"
     ],
-    "is_gestalt": true,
+    "is_gestalt": false,
     "is_machine": false
   },
   "tech_galactic_administration": {
@@ -5122,9 +4987,9 @@ const Research = {
     "cost": 6000,
     "description": "The administrative needs of a star empire are as numerous as they are complex. We will rise to the occasion.",
     "feature_unlocks": [
-      "<b>Building:</b> System Capital-Complex",
-      "Civic Slots: +1",
-      "<b>Building:</b> Primary Nexus"
+      "Building: Primary Nexus",
+      "Civic Slots +1",
+      "Building: System Capital-Complex"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -5151,7 +5016,7 @@ const Research = {
     "cost": 4000,
     "description": "This corporate agency promotes a wide variety of interstellar tourist attractions, as well as offering employment packages and signing bonuses to potential emigrants interested in relocating to corporate space.",
     "feature_unlocks": [
-      "<b>Building:</b> Xeno-Outreach Agency"
+      "Building: Xeno-Outreach Agency"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -5191,7 +5056,7 @@ const Research = {
     "cost": 5000,
     "description": "The will of the Hive will be further strengthened and coordinated with the expansion and development of a massive nervous center of meganeurons.",
     "feature_unlocks": [
-      "<b>Building:</b> Confluence of Thought"
+      "Building: Confluence of Thought"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -5223,8 +5088,8 @@ const Research = {
     "cost": 6000,
     "description": "Finding aspects of the self within the group is natural and inevitable; eventually those shared aspects must be valued higher than individual identities.",
     "feature_unlocks": [
-      "Leader Level Cap: +1",
-      "MOD_COUNTRY_LEADERS_UPKEEP_MULT: -10%"
+      "Leader Level Cap +1",
+      "Leader Upkeep -10%"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -5241,7 +5106,7 @@ const Research = {
       }
     ],
     "potential": [
-      "Does NOT Have Gestalt Consciousness Ethic"
+      "Does NOT have Gestalt Consciousness Ethic"
     ],
     "is_gestalt": false,
     "is_machine": false
@@ -5253,7 +5118,7 @@ const Research = {
     "cost": 6000,
     "description": "Once fully adapted to the basics of Psionics, the mind is capable of connecting to other individuals, becoming something greater.",
     "feature_unlocks": [
-      "<b>Army:</b> Psionic Army"
+      "Army: Psionic Army"
     ],
     "is_dangerous": false,
     "is_rare": true,
@@ -5270,7 +5135,7 @@ const Research = {
       }
     ],
     "potential": [
-      "Does NOT Have Gestalt Consciousness Ethic"
+      "Does NOT have Gestalt Consciousness Ethic"
     ],
     "is_gestalt": false,
     "is_machine": false
@@ -5282,7 +5147,7 @@ const Research = {
     "cost": 4000,
     "description": "Through comprehensive study of irradiated environments we will allow our settlers to colonize worlds that have been devastated by nuclear warfare.",
     "feature_unlocks": [
-      "MOD_COUNTRY_PC_NUKED_HABITABILITY: +20%"
+      "Tomb World Habitability +20%"
     ],
     "is_dangerous": false,
     "is_rare": true,
@@ -5299,7 +5164,7 @@ const Research = {
       }
     ],
     "potential": [
-      "Any of the following \n    •   is_machine_empire=no\n    •   Has Driven Assimilator Civic\n    •   Has Rogue Servitor Civic"
+      "One must be true\n    •   is_machine_empire=no\n    •   Has Government Civic: Driven Assimilator\n    •   Has Government Civic: Rogue Servitor"
     ],
     "is_gestalt": false,
     "is_machine": false
@@ -5326,7 +5191,7 @@ const Research = {
       }
     ],
     "potential": [
-      "is_gestalt=no"
+      "Is NOT Gestalt"
     ],
     "is_gestalt": false,
     "is_machine": false
@@ -5338,7 +5203,7 @@ const Research = {
     "cost": 4000,
     "description": "A luxurious resort complex for high ranking corporate officers. Here they can sample the local planetary culture in a high security environment.",
     "feature_unlocks": [
-      "<b>Building:</b> Executive Retreat"
+      "Building: Executive Retreat"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -5377,7 +5242,7 @@ const Research = {
       }
     ],
     "potential": [
-      "Any of the following \n    •   Does NOT Have Machine Intelligence Authority\n    •   Has Driven Assimilator Civic\n    •   Has Rogue Servitor Civic"
+      "One must be true\n    •   Does NOT have Machine Intelligence Authority\n    •   Has Government Civic: Driven Assimilator\n    •   Has Government Civic: Rogue Servitor"
     ],
     "is_gestalt": false,
     "is_machine": false
@@ -5389,7 +5254,7 @@ const Research = {
     "cost": 5000,
     "description": "A genetically altered version of silicon-based bacteria could potentially be manipulated to regenerate non-organic materials.",
     "feature_unlocks": [
-      "<b>Component:</b> Regenerative Hull Tissue"
+      "Component: Regenerative Hull Tissue"
     ],
     "is_dangerous": false,
     "is_rare": true,
@@ -5409,8 +5274,8 @@ const Research = {
     "cost": 10000,
     "description": "When tailored to a species' genome, this form of tissue engineering has intensive neuroregenerative properties, significantly increasing the development of neurons, axons, and synapses in its recipient.",
     "feature_unlocks": [
-      "Leader Level Cap: +1",
-      "Species Leader Exp Gain: +25%"
+      "Leader Level Cap +1",
+      "Species Leader Exp Gain +25%"
     ],
     "is_dangerous": false,
     "is_rare": true,
@@ -5430,7 +5295,7 @@ const Research = {
     "cost": 10000,
     "description": "Leaving our planetary cradle has opened us up to a new understanding of faith, and its place in a wider context.",
     "feature_unlocks": [
-      "<b>Building:</b> Citadel of Faith"
+      "Building: Citadel of Faith"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -5452,7 +5317,7 @@ const Research = {
       }
     ],
     "potential": [
-      "Any of the following \n    •   Has Spiritualist Ethic\n    •   Has Fanatic Spiritualist Ethic"
+      "One must be true\n    •   Has Spiritualist Ethic\n    •   Has Fanatic Spiritualist Ethic"
     ],
     "is_gestalt": false,
     "is_machine": false
@@ -5464,7 +5329,7 @@ const Research = {
     "cost": 10000,
     "description": "Infusing crop strands with small amounts of nano-machines help create a type of produce that is ultra resilient, and the chemical composition of which can be tailored and altered during its entire lifetime.",
     "feature_unlocks": [
-      "MOD_COUNTRY_PLANET_FARMERS_FOOD_PRODUCES_MULT: +10%"
+      "£food£ Food from £job_farmer£ Farmers +10%"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -5496,7 +5361,7 @@ const Research = {
     "cost": 8000,
     "description": "By engaging in free trade of goods and services we allow for a more specialized economy, where an individual can excel in a narrow field and trade for their needs.",
     "feature_unlocks": [
-      "<b>Building:</b> Galactic Stock Exchange"
+      "Building: Galactic Stock Exchange"
     ],
     "is_dangerous": false,
     "is_rare": true,
@@ -5518,7 +5383,7 @@ const Research = {
       }
     ],
     "potential": [
-      "is_gestalt=no"
+      "Is NOT Gestalt"
     ],
     "is_gestalt": false,
     "is_machine": false
@@ -5530,7 +5395,7 @@ const Research = {
     "cost": 12000,
     "description": "We leave nothing to chance, no matter the cost. Through exacting curation of DNA banks do we build the leaders of tomorrow.",
     "feature_unlocks": [
-      "<b>Policy:</b> Capacity Boosters"
+      "Policy: Capacity Boosters"
     ],
     "is_dangerous": false,
     "is_rare": true,
@@ -5547,7 +5412,7 @@ const Research = {
       }
     ],
     "potential": [
-      "Does NOT Have Machine Intelligence Authority"
+      "Does NOT have Machine Intelligence Authority"
     ],
     "is_gestalt": false,
     "is_machine": false
@@ -5559,7 +5424,7 @@ const Research = {
     "cost": 10000,
     "description": "We must have to courage to seize our fate and make true what was always meant to be.",
     "feature_unlocks": [
-      "Starbase Capacity: +2"
+      "Starbase Capacity +2"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -5586,7 +5451,7 @@ const Research = {
     "cost": 8000,
     "description": "Nucleotide purification techniques allow for the isolation and refinement of particularly desirable genetic traits.",
     "feature_unlocks": [
-      "<b>Army:</b> Gene Warrior Army"
+      "Army: Gene Warrior Army"
     ],
     "is_dangerous": false,
     "is_rare": true,
@@ -5603,7 +5468,7 @@ const Research = {
       }
     ],
     "potential": [
-      "Does NOT Have Machine Intelligence Authority"
+      "Does NOT have Machine Intelligence Authority"
     ],
     "is_gestalt": false,
     "is_machine": false
@@ -5615,7 +5480,7 @@ const Research = {
     "cost": 12000,
     "description": "Additional study into different planetary climates will allow us to settle our population on worlds previously thought too hostile to support them.",
     "feature_unlocks": [
-      "Habitability: +5%"
+      "Habitability +5%"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -5632,7 +5497,7 @@ const Research = {
       }
     ],
     "potential": [
-      "Any of the following \n    •   is_machine_empire=no\n    •   Has Driven Assimilator Civic\n    •   Has Rogue Servitor Civic"
+      "One must be true\n    •   is_machine_empire=no\n    •   Has Government Civic: Driven Assimilator\n    •   Has Government Civic: Rogue Servitor"
     ],
     "is_gestalt": false,
     "is_machine": false
@@ -5644,7 +5509,7 @@ const Research = {
     "cost": 10000,
     "description": "Having the opportunity to study the multitudes of life lets us find some common ground for all living beings. The foundational building blocks of life.",
     "feature_unlocks": [
-      "MOD_COUNTRY_PLANET_RESEARCHERS_SOCIETY_RESEARCH_PRODUCES_MULT: +20%"
+      "£society£ Society Research from £job_researcher£ Researchers +20%"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -5671,7 +5536,7 @@ const Research = {
     "cost": 10000,
     "description": "Advances in the field of Psionics suggest the possibility of creating combat computers capable of reading and analysing the impulses of telepathic operatives before they are cognitively processed.",
     "feature_unlocks": [
-      "<b>Component:</b> Precognitive Interface"
+      "Component: Precognitive Interface"
     ],
     "is_dangerous": false,
     "is_rare": true,
@@ -5688,7 +5553,7 @@ const Research = {
       }
     ],
     "potential": [
-      "Does NOT Have Gestalt Consciousness Ethic"
+      "Does NOT have Gestalt Consciousness Ethic"
     ],
     "is_gestalt": false,
     "is_machine": false
@@ -5700,7 +5565,7 @@ const Research = {
     "cost": 10000,
     "description": "Millions of years of organic evolution will sometimes, through sheer persistence, produce elegant solutions that can also be applied to machine designs.",
     "feature_unlocks": [
-      "<b>Army:</b> Mega-Warform"
+      "Army: Mega-Warform"
     ],
     "is_dangerous": false,
     "is_rare": true,
@@ -5720,7 +5585,7 @@ const Research = {
       "Has Machine Intelligence Authority"
     ],
     "is_gestalt": false,
-    "is_machine": true
+    "is_machine": false
   },
   "tech_nutrient_replication": {
     "key": "tech_nutrient_replication",
@@ -5729,7 +5594,7 @@ const Research = {
     "cost": 12000,
     "description": "The process of synthetically replicating crops requires a lot of collected waste to create a small amount of produce, but nevertheless provides a significant boost to agricultural output.",
     "feature_unlocks": [
-      "MOD_COUNTRY_PLANET_JOBS_FOOD_PRODUCES_MULT: +15%"
+      "£food£ Food from £job£ Jobs +15%"
     ],
     "is_dangerous": false,
     "is_rare": true,
@@ -5746,7 +5611,7 @@ const Research = {
       }
     ],
     "potential": [
-      "Does NOT Have Machine Intelligence Authority"
+      "Does NOT have Machine Intelligence Authority"
     ],
     "is_gestalt": false,
     "is_machine": false
@@ -5758,7 +5623,7 @@ const Research = {
     "cost": 12000,
     "description": "Gradual adaptation to the realities of deep-space combat allows us to effectively coordinate larger maneuvers.",
     "feature_unlocks": [
-      "Fleet Command Limit: +20"
+      "Fleet Command Limit +20"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -5785,7 +5650,7 @@ const Research = {
     "cost": 8000,
     "description": "Gradual adaptation to the realities of deep-space combat allows us to effectively coordinate larger maneuvers.",
     "feature_unlocks": [
-      "Fleet Command Limit: +20"
+      "Fleet Command Limit +20"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -5812,8 +5677,8 @@ const Research = {
     "cost": 8000,
     "description": "Further improvements to administration grant an extended power projection across the stars, and the military clout needed to enforce our demands.",
     "feature_unlocks": [
-      "War Exhaustion Gain: -10%",
-      "Claim Influence Cost: -10%"
+      "Claim Influence Cost -10%",
+      "War Exhaustion Gain -10%"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -5840,7 +5705,7 @@ const Research = {
     "cost": 8000,
     "description": "Amateurs talk about tactics. Professionals study logistics. By ensuring our fleets are regularly and efficiently supplied, we can increase the number of vessels we can effectively support.",
     "feature_unlocks": [
-      "Naval Capacity: +30"
+      "Naval Capacity +30"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -5867,7 +5732,7 @@ const Research = {
     "cost": 12000,
     "description": "By maintaining a professional corps of fleet liasions, we can improve communications and the flow of orders throughout the chain of command.",
     "feature_unlocks": [
-      "Naval Capacity: +30"
+      "Naval Capacity +30"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -5894,7 +5759,7 @@ const Research = {
     "cost": 8000,
     "description": "From its cradle as a purely pharmaceutical venture, advancements in our understanding of the morphogenetic field allow for direct, subconscious interfaces with organic units.",
     "feature_unlocks": [
-      "<b>Army:</b> Xenomorph Army"
+      "Army: Xenomorph Army"
     ],
     "is_dangerous": false,
     "is_rare": true,
@@ -5911,7 +5776,7 @@ const Research = {
       }
     ],
     "potential": [
-      "Does NOT Have Machine Intelligence Authority"
+      "Does NOT have Machine Intelligence Authority"
     ],
     "is_gestalt": false,
     "is_machine": false
@@ -5923,9 +5788,9 @@ const Research = {
     "cost": 10000,
     "description": "Continuous, asynchronous analysis of disparate data sets allows for the accurate modeling of hitherto-unpredictable fluctuations in social currents.",
     "feature_unlocks": [
-      "<b>Building:</b> Auto-Curating Vault",
-      "<b>Building:</b> Alpha Hub",
-      "<b>Building:</b> Vault of Acquisitions"
+      "Building: Alpha Hub",
+      "Building: Vault of Acquisitions",
+      "Building: Auto-Curating Vault"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -5952,7 +5817,7 @@ const Research = {
       }
     ],
     "potential": [
-      "None of the following \n    •   Has Spiritualist Ethic\n    •   Has Fanatic Spiritualist Ethic\n    •   Has Rogue Servitor Civic"
+      "All must be false\n    •   Has Spiritualist Ethic\n    •   Has Fanatic Spiritualist Ethic\n    •   Has Government Civic: Rogue Servitor"
     ],
     "is_gestalt": false,
     "is_machine": false
@@ -5989,7 +5854,7 @@ const Research = {
     "cost": 20000,
     "description": "An arcane catalyst amplifying certain psionic wavelengths, capable of inducing hallucinations (religious experiences) in biological brains, and severe disruption (brain death) in electronic ones.",
     "feature_unlocks": [
-      "<b>Component:</b> Divine Enforcer"
+      "Component: Divine Enforcer"
     ],
     "is_dangerous": false,
     "is_rare": true,
@@ -6007,37 +5872,10 @@ const Research = {
     ],
     "potential": [
       "Has DLC Apocalypse",
-      "Has Country Flag colossus_project",
+      "Has the Colossus Project country flag",
       "Is Spiritualist",
-      "Any of the following \n    •   All of the following \n\t    •   Does NOT Have DLC Utopia\n\t    •   Has technology Telepathy\n    •   All of the following \n\t    •   Has DLC Utopia\n\t    •   Has Ascension Perk Mind over Matter"
+      "One must be true\n    •   All must be true\n\t    •   Does NOT have DLC Utopia\n\t    •   Has Technology: Telepathy\n    •   All must be true\n\t    •   Has DLC Utopia\n\t    •   Has Mind over Matter Ascension Perk"
     ],
-    "is_gestalt": false,
-    "is_machine": false
-  },
-  "tech_repeatable_improved_core_system_cap": {
-    "key": "tech_repeatable_improved_core_system_cap",
-    "area": "society",
-    "category": "New Worlds",
-    "cost": 50000,
-    "description": "Restructuring the managerial web linking core worlds to the capital can help alleviate the administrative stressors and information chokepoints that frequently arise within a budding empire.",
-    "feature_unlocks": [
-      "Administrative Cap: +10"
-    ],
-    "is_dangerous": false,
-    "is_rare": false,
-    "is_start_tech": false,
-    "name": "Administrative Efficiency",
-    "prerequisites": [
-      "tech_galactic_bureaucracy"
-    ],
-    "tier": 5,
-    "prerequisites_names": [
-      {
-        "name": "Galactic Bureaucracy",
-        "key": "tech_galactic_bureaucracy"
-      }
-    ],
-    "potential": [],
     "is_gestalt": false,
     "is_machine": false
   },
@@ -6048,7 +5886,7 @@ const Research = {
     "cost": 20000,
     "description": "By analyzing the biological weaponry employed by the Swarm we can create self-propelled projectiles weapons spreading the very same horrific destruction.",
     "feature_unlocks": [
-      "<b>Component:</b> Large Scourge Missile"
+      "Component: Large Scourge Missile"
     ],
     "is_dangerous": false,
     "is_rare": true,
@@ -6061,33 +5899,6 @@ const Research = {
     "is_gestalt": false,
     "is_machine": false
   },
-  "tech_repeatable_improved_edict_length": {
-    "key": "tech_repeatable_improved_edict_length",
-    "area": "society",
-    "category": "Statecraft",
-    "cost": 50000,
-    "description": "More aggressive information campaigns improve the populace's receptiveness to Edicts.",
-    "feature_unlocks": [
-      "Edict Duration: +10%"
-    ],
-    "is_dangerous": false,
-    "is_rare": false,
-    "is_start_tech": false,
-    "name": "Proclamation Broadcasts",
-    "prerequisites": [
-      "tech_artificial_moral_codes"
-    ],
-    "tier": 5,
-    "prerequisites_names": [
-      {
-        "name": "Artificial Moral Codes",
-        "key": "tech_artificial_moral_codes"
-      }
-    ],
-    "potential": [],
-    "is_gestalt": false,
-    "is_machine": false
-  },
   "tech_swarm_strike_craft_1": {
     "key": "tech_swarm_strike_craft_1",
     "area": "society",
@@ -6095,7 +5906,7 @@ const Research = {
     "cost": 20000,
     "description": "Collecting specimens from defeated Prethoryn enables us to clone and genetically program a war-brood of our own.",
     "feature_unlocks": [
-      "<b>Component:</b> Swarm Strikers"
+      "Component: Swarm Strikers"
     ],
     "is_dangerous": false,
     "is_rare": true,
@@ -6108,33 +5919,6 @@ const Research = {
     "is_gestalt": false,
     "is_machine": false
   },
-  "tech_repeatable_improved_leader_life_span": {
-    "key": "tech_repeatable_improved_leader_life_span",
-    "area": "society",
-    "category": "Biology",
-    "cost": 50000,
-    "description": "Regimens of periodic cell revitalization treatments keep the leader class spry and active beyond traditionally expected lifespans.",
-    "feature_unlocks": [
-      "Leader Lifespan: +5"
-    ],
-    "is_dangerous": false,
-    "is_rare": false,
-    "is_start_tech": false,
-    "name": "Cell Revitalization",
-    "prerequisites": [
-      "tech_vitality_boosters"
-    ],
-    "tier": 5,
-    "prerequisites_names": [
-      {
-        "name": "Vitality Boosters",
-        "key": "tech_vitality_boosters"
-      }
-    ],
-    "potential": [],
-    "is_gestalt": false,
-    "is_machine": false
-  },
   "tech_psi_jump_drive_1": {
     "key": "tech_psi_jump_drive_1",
     "area": "society",
@@ -6142,7 +5926,7 @@ const Research = {
     "cost": 17500,
     "description": "The Psi Jump Drive harnesses the psi energies emitted by the crew to force the vessel through the very fabric of reality, instantly \"jumping\" vast distances.",
     "feature_unlocks": [
-      "<b>Component:</b> Psi Jump Drive",
+      "Component: Psi Jump Drive",
       "<b>Feature : </b>Jump Drive Travel"
     ],
     "is_dangerous": true,
@@ -6160,116 +5944,8 @@ const Research = {
       }
     ],
     "potential": [
-      "Does NOT Have Gestalt Consciousness Ethic"
+      "Does NOT have Gestalt Consciousness Ethic"
     ],
-    "is_gestalt": false,
-    "is_machine": false
-  },
-  "tech_repeatable_command_limit": {
-    "key": "tech_repeatable_command_limit",
-    "area": "society",
-    "category": "Military Theory",
-    "cost": 50000,
-    "description": "Improving the support staff available to our admirals will increase the number of ships they can command in a single fleet.",
-    "feature_unlocks": [
-      "Fleet Command Limit: +10"
-    ],
-    "is_dangerous": false,
-    "is_rare": false,
-    "is_start_tech": false,
-    "name": "Admiralty Support Staff",
-    "prerequisites": [
-      "tech_doctrine_fleet_size_5"
-    ],
-    "tier": 5,
-    "prerequisites_names": [
-      {
-        "name": "Doctrine: Armada Battle Formation",
-        "key": "tech_doctrine_fleet_size_5"
-      }
-    ],
-    "potential": [],
-    "is_gestalt": false,
-    "is_machine": false
-  },
-  "tech_repeatable_naval_cap": {
-    "key": "tech_repeatable_naval_cap",
-    "area": "society",
-    "category": "Military Theory",
-    "cost": 50000,
-    "description": "Improved fleet management procedures will free up the resources needed to maintain a bigger fleet.",
-    "feature_unlocks": [
-      "Naval Capacity: +20"
-    ],
-    "is_dangerous": false,
-    "is_rare": false,
-    "is_start_tech": false,
-    "name": "Fleet Management Procedures",
-    "prerequisites": [
-      "tech_doctrine_navy_size_4"
-    ],
-    "tier": 5,
-    "prerequisites_names": [
-      {
-        "name": "Doctrine: Fleet Liasions",
-        "key": "tech_doctrine_navy_size_4"
-      }
-    ],
-    "potential": [],
-    "is_gestalt": false,
-    "is_machine": false
-  },
-  "tech_repeatable_improved_army_damage": {
-    "key": "tech_repeatable_improved_army_damage",
-    "area": "society",
-    "category": "Military Theory",
-    "cost": 50000,
-    "description": "Iterating on the standard conditioning regimen for ground troops has proven to make them more effective in direct combat.",
-    "feature_unlocks": [
-      "Army Damage: +10%"
-    ],
-    "is_dangerous": false,
-    "is_rare": false,
-    "is_start_tech": false,
-    "name": "Aggressive Conditioning",
-    "prerequisites": [
-      "tech_combat_training"
-    ],
-    "tier": 5,
-    "prerequisites_names": [
-      {
-        "name": "Combat Training",
-        "key": "tech_combat_training"
-      }
-    ],
-    "potential": [],
-    "is_gestalt": false,
-    "is_machine": false
-  },
-  "tech_repeatable_improved_army_health": {
-    "key": "tech_repeatable_improved_army_health",
-    "area": "society",
-    "category": "Military Theory",
-    "cost": 50000,
-    "description": "Careful tuning of pain receptors allow soldiers to fight through what would previously have been debilitating injuries.",
-    "feature_unlocks": [
-      "Army Health: +10%"
-    ],
-    "is_dangerous": false,
-    "is_rare": false,
-    "is_start_tech": false,
-    "name": "Nerve Dampeners",
-    "prerequisites": [
-      "tech_combat_training"
-    ],
-    "tier": 5,
-    "prerequisites_names": [
-      {
-        "name": "Combat Training",
-        "key": "tech_combat_training"
-      }
-    ],
-    "potential": [],
     "is_gestalt": false,
     "is_machine": false
   },
@@ -6280,9 +5956,9 @@ const Research = {
     "cost": 20000,
     "description": "These extremely powerful shields are generated out of pure psychic energy by a cadre of psionic specialists. Their powers are further augmented by large arrays of psi emitters.",
     "feature_unlocks": [
-      "<b>Component:</b> Large Psionic Shield",
-      "<b>Component:</b> Medium Psionic Shield",
-      "<b>Component:</b> Small Psionic Shield"
+      "Component: Large Psionic Shield",
+      "Component: Small Psionic Shield",
+      "Component: Medium Psionic Shield"
     ],
     "is_dangerous": false,
     "is_rare": true,
@@ -6323,33 +5999,6 @@ const Research = {
     "is_gestalt": false,
     "is_machine": false
   },
-  "tech_repeatable_improved_tile_food_output": {
-    "key": "tech_repeatable_improved_tile_food_output",
-    "area": "society",
-    "category": "Biology",
-    "cost": 50000,
-    "description": "Transgenic crops offer the nutritional elements of several standard food crops in one convenient package.",
-    "feature_unlocks": [
-      "MOD_COUNTRY_PLANET_JOBS_FOOD_PRODUCES_MULT: +5%"
-    ],
-    "is_dangerous": false,
-    "is_rare": false,
-    "is_start_tech": false,
-    "name": "Transgenic Crops",
-    "prerequisites": [
-      "tech_gene_crops"
-    ],
-    "tier": 5,
-    "prerequisites_names": [
-      {
-        "name": "Gene Crops",
-        "key": "tech_gene_crops"
-      }
-    ],
-    "potential": [],
-    "is_gestalt": false,
-    "is_machine": false
-  },
   "tech_ascension_theory": {
     "key": "tech_ascension_theory",
     "area": "society",
@@ -6357,8 +6006,8 @@ const Research = {
     "cost": 17500,
     "description": "Our history is a repeating cycle of dramatic technological, political, and cultural leaps; these leaps are often preceded by periods of upheaval and followed by times of relative stability. By identifying the core, recurring premises of these leaps, we may be able to effectively short-circuit the cycle for our own benefit.",
     "feature_unlocks": [
-      "<b>Feature : </b>Unity Ambitions",
-      "Ascension Perks: +1"
+      "Ascension Perks +1",
+      "<b>Feature : </b>Unity Ambitions"
     ],
     "is_dangerous": false,
     "is_rare": true,
@@ -6371,33 +6020,6 @@ const Research = {
     "is_gestalt": false,
     "is_machine": false
   },
-  "tech_repeatable_improved_starbase_capacity": {
-    "key": "tech_repeatable_improved_starbase_capacity",
-    "area": "society",
-    "category": "New Worlds",
-    "cost": 50000,
-    "description": "The immense logistical support networks needed to maintain an upgraded Starbase can be further improved, allowing us to support more of these stations.",
-    "feature_unlocks": [
-      "Starbase Capacity: +1"
-    ],
-    "is_dangerous": false,
-    "is_rare": false,
-    "is_start_tech": false,
-    "name": "Interstellar Expansion",
-    "prerequisites": [
-      "tech_galactic_ambitions"
-    ],
-    "tier": 5,
-    "prerequisites_names": [
-      {
-        "name": "Stellar Expansion",
-        "key": "tech_galactic_ambitions"
-      }
-    ],
-    "potential": [],
-    "is_gestalt": false,
-    "is_machine": false
-  },
   "tech_space_exploration": {
     "key": "tech_space_exploration",
     "area": "engineering",
@@ -6405,7 +6027,7 @@ const Research = {
     "cost": 0,
     "description": "The realization of faster-than-light travel is a new dawn for space exploration. Manned missions to other star systems are now not only possible, but necessary.",
     "feature_unlocks": [
-      "<b>Ship Size:</b> Science Ship"
+      "Ship Size: Science Ship"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -6425,8 +6047,8 @@ const Research = {
     "cost": 0,
     "description": "Space-to-space missiles equipped with high-yield nuclear warheads. Although based on old pre-space technology, these crude fire-and-forget weapons can be surprisingly effective at range.",
     "feature_unlocks": [
-      "<b>Starbase Module:</b> Missile Battery",
-      "<b>Component:</b> Nuclear Missiles"
+      "Component: Nuclear Missiles",
+      "Starbase Module: Missile Battery"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -6446,7 +6068,7 @@ const Research = {
     "cost": 0,
     "description": "Gun batteries that fire shrapnel rounds at close range. They are particularly lethal to enemy strike craft, but can also defend against missiles.",
     "feature_unlocks": [
-      "<b>Component:</b> Flak Battery"
+      "Component: Flak Battery"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -6466,7 +6088,7 @@ const Research = {
     "cost": 0,
     "description": "The FTL breakthrough allowed early attempts to adapt traditional surface-to-space shuttle frames to military applications to finally create relatively small, fast, and maneuverable vessels with limited firepower.",
     "feature_unlocks": [
-      "<b>Ship Size:</b> Corvette"
+      "Ship Size: Corvette"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -6504,7 +6126,7 @@ const Research = {
     "cost": 0,
     "description": "Advances in solar panel technology could offset the operating costs of our starbases. The panels would require an entire starbase module to generate enough energy, however.",
     "feature_unlocks": [
-      "<b>Starbase Module:</b> Solar Panel Network"
+      "Starbase Module: Solar Panel Network"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -6514,7 +6136,7 @@ const Research = {
     "tier": 0,
     "prerequisites_names": [],
     "potential": [
-      "is_gestalt=yes"
+      "Is Gestalt"
     ],
     "is_gestalt": false,
     "is_machine": false
@@ -6526,8 +6148,8 @@ const Research = {
     "cost": 500,
     "description": "The invasion of another world is a staggering enterprise. There are immense logistical challenges that must be overcome before we can muster our first interplanetary armies.",
     "feature_unlocks": [
-      "<b>Army:</b> Assault Army",
-      "<b>Army:</b> Hunter-Killer Army"
+      "Army: Assault Army",
+      "Army: Hunter-Killer Army"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -6583,9 +6205,9 @@ const Research = {
     "cost": 0,
     "description": "The basic industrial infrastructure that is required to become a spacefaring civilization.",
     "feature_unlocks": [
-      "<b>Building:</b> Civilian Industries",
-      "<b>Building:</b> Resource Silos",
-      "<b>Building:</b> Alloy Foundries"
+      "Building: Resource Silos",
+      "Building: Civilian Industries",
+      "Building: Alloy Foundries"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -6605,9 +6227,9 @@ const Research = {
     "cost": 500,
     "description": "Reinforced nanocomposite hull plating can provide an extra layer of protection that could be the difference between life and death in a combat situation.",
     "feature_unlocks": [
-      "<b>Component:</b> Large Nanocomposite Armor",
-      "<b>Component:</b> Medium Nanocomposite Armor",
-      "<b>Component:</b> Small Nanocomposite Armor"
+      "Component: Large Nanocomposite Armor",
+      "Component: Medium Nanocomposite Armor",
+      "Component: Small Nanocomposite Armor"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -6627,7 +6249,7 @@ const Research = {
     "cost": 0,
     "description": "Simple yet moderately effective chemical thrusters that rely on combustible propellant to function.",
     "feature_unlocks": [
-      "<b>Component:</b> Chemical Thrusters"
+      "Component: Chemical Thrusters"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -6647,9 +6269,9 @@ const Research = {
     "cost": 0,
     "description": "Construction in space presents our engineers with new design challenges that must be solved before we can build orbital stations above other worlds.",
     "feature_unlocks": [
-      "<b>Ship Size:</b> Mining Station",
-      "<b>Ship Size:</b> Construction Ship",
-      "<b>Ship Size:</b> Research Station"
+      "Ship Size: Research Station",
+      "Ship Size: Mining Station",
+      "Ship Size: Constructor"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -6669,10 +6291,10 @@ const Research = {
     "cost": 0,
     "description": "These electromagnetic projectile launchers use magnets to accelerate armor-piercing rounds towards targets at high speeds.",
     "feature_unlocks": [
-      "<b>Component:</b> Medium Mass Driver",
-      "<b>Starbase Module:</b> Gun Battery",
-      "<b>Component:</b> Small Mass Driver",
-      "<b>Component:</b> Large Mass Driver"
+      "Component: Large Mass Driver",
+      "Starbase Module: Gun Battery",
+      "Component: Small Mass Driver",
+      "Component: Medium Mass Driver"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -6692,7 +6314,7 @@ const Research = {
     "cost": 0,
     "description": "This will enable the construction of defensive deep space platforms to protect our Starbases.",
     "feature_unlocks": [
-      "<b>Ship Size:</b> Defense Platform"
+      "Ship Size: Defense Platform"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -6712,8 +6334,8 @@ const Research = {
     "cost": 1000,
     "description": "These robotic work units are perfect for menial labor tasks. They are hard-working and capable of following simple vocal instructions, but should not be expected to climb stairs.",
     "feature_unlocks": [
-      "<b>Building:</b> Robot Assembly Plants",
-      "<b>Feature : </b>Robot Workers"
+      "<b>Feature : </b>Robot Workers",
+      "Building: Robot Assembly Plants"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -6730,7 +6352,7 @@ const Research = {
       }
     ],
     "potential": [
-      "Does NOT Have Gestalt Consciousness Ethic"
+      "Does NOT have Gestalt Consciousness Ethic"
     ],
     "is_gestalt": false,
     "is_machine": false
@@ -6742,7 +6364,7 @@ const Research = {
     "cost": 750,
     "description": "These updated space-to-space missiles have more powerful fusion warheads and improved flight performance.",
     "feature_unlocks": [
-      "<b>Component:</b> Fusion Missiles"
+      "Component: Fusion Missiles"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -6774,7 +6396,7 @@ const Research = {
     "cost": 4000,
     "description": "This orbital bombardment management system spams a planet with millions of minute, high-velocity projectiles, overwhelming planetside defensive grids with trash data. Ships equipped with this component will cause more damage during orbital bombardment.",
     "feature_unlocks": [
-      "<b>Component:</b> Orbital Trash Disperser"
+      "Component: Orbital Trash Disperser"
     ],
     "is_dangerous": false,
     "is_rare": true,
@@ -6795,7 +6417,7 @@ const Research = {
     "description": "Rewritable assembly templates allow for the creation of bespoke synthetic worker designs.",
     "feature_unlocks": [
       "<b>Feature : </b>Robomodding",
-      "MOD_COUNTRY_ROBOT_SPECIES_TRAIT_POINTS_ADD: +2"
+      "Robot Modification Points +2"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -6812,7 +6434,7 @@ const Research = {
       }
     ],
     "potential": [
-      "Does NOT Have Gestalt Consciousness Ethic"
+      "Does NOT have Gestalt Consciousness Ethic"
     ],
     "is_gestalt": false,
     "is_machine": false
@@ -6824,7 +6446,7 @@ const Research = {
     "cost": 500,
     "description": "New fracking techniques will allow us to tap into previously unattainable pockets of geothermal resources deep beneath the planet's crust.",
     "feature_unlocks": [
-      "MOD_COUNTRY_PLANET_MINERS_MINERALS_PRODUCES_MULT: +10%"
+      "£minerals£ Minerals from £job_miner£ Miners +10%"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -6851,7 +6473,7 @@ const Research = {
     "cost": 1000,
     "description": "Rapid iteration in construction simulations determines the optimal component assembly patterns for each building project ahead of time.",
     "feature_unlocks": [
-      "Planet Build Speed: +25%"
+      "Planet Build Speed +25%"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -6878,8 +6500,8 @@ const Research = {
     "cost": 750,
     "description": "Establishing new standards for the modeling and construction of corvettes greatly improves the efficiency of the production pipeline.",
     "feature_unlocks": [
-      "MOD_COUNTRY_SHIPSIZE_CORVETTE_BUILD_SPEED_MULT: +25%",
-      "MOD_COUNTRY_SHIP_CORVETTE_COST_MULT: -5%"
+      "Corvette Build Cost -5%",
+      "Corvette Build Speed +25%"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -6906,8 +6528,8 @@ const Research = {
     "cost": 500,
     "description": "Wearing a powered exoskeleton suit augments the user's strength and speed. The military applications are obvious, but it will also increase labor efficiency.",
     "feature_unlocks": [
-      "MOD_COUNTRY_PLANET_JOBS_MINERALS_PRODUCES_MULT: +5%",
-      "Army Damage: +5%"
+      "Army Damage +5%",
+      "£minerals£ Minerals from £job£ Jobs +5%"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -6934,9 +6556,9 @@ const Research = {
     "cost": 750,
     "description": "A combination of different metals and ceramics that result in a strong armor without sacrificing flexibility.",
     "feature_unlocks": [
-      "<b>Component:</b> Small Ceramo-Metal Armor",
-      "<b>Component:</b> Medium Ceramo-Metal Armor",
-      "<b>Component:</b> Large Ceramo-Metal Armor"
+      "Component: Medium Ceramo-Metal Armor",
+      "Component: Large Ceramo-Metal Armor",
+      "Component: Small Ceramo-Metal Armor"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -6963,7 +6585,7 @@ const Research = {
     "cost": 1000,
     "description": "Advances in building techniques will allow for the construction of sturdier and more durable corvettes.",
     "feature_unlocks": [
-      "MOD_COUNTRY_SHIPSIZE_CORVETTE_HULL_ADD: +100"
+      "Corvette Hull Points +100"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -6990,8 +6612,8 @@ const Research = {
     "cost": 1000,
     "description": "These manned strike craft are launched from a mothership and rely on their speed and small size to survive long enough to punch through enemy defenses.",
     "feature_unlocks": [
-      "<b>Component:</b> Basic Strike Craft",
-      "<b>Starbase Module:</b> Hangar Bay"
+      "Starbase Module: Hangar Bay",
+      "Component: Basic Strike Craft"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -7018,8 +6640,8 @@ const Research = {
     "cost": 750,
     "description": "Optimal processing of mined materials have allowed us to reach new levels of efficiency.",
     "feature_unlocks": [
-      "<b>Building:</b> Mineral Purification Plants",
-      "<b>Edict:</b> Production Targets"
+      "Edict: Production Targets",
+      "Building: Mineral Purification Plants"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -7046,7 +6668,7 @@ const Research = {
     "cost": 750,
     "description": "These powerful thrusters provide additional combat speed but consume a great deal of power.",
     "feature_unlocks": [
-      "<b>Component:</b> Afterburners"
+      "Component: Afterburners"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -7073,7 +6695,7 @@ const Research = {
     "cost": 1000,
     "description": "With pre-programmed nano-circuits, many consumer products can be rapidly assembled in fabricators.",
     "feature_unlocks": [
-      "<b>Building:</b> Civilian Fabricators"
+      "Building: Civilian Fabricators"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -7090,7 +6712,7 @@ const Research = {
       }
     ],
     "potential": [
-      "Any of the following \n    •   is_gestalt=no\n    •   Has Rogue Servitor Civic"
+      "One must be true\n    •   Is NOT Gestalt\n    •   Has Government Civic: Rogue Servitor"
     ],
     "is_gestalt": false,
     "is_machine": false
@@ -7102,7 +6724,7 @@ const Research = {
     "cost": 500,
     "description": "Advanced instrumentation allows for the study and practical application of physical systems at nanometric scales.",
     "feature_unlocks": [
-      "MOD_COUNTRY_PLANET_RESEARCHERS_ENGINEERING_RESEARCH_PRODUCES_MULT: +20%"
+      "£engineering£ Engineering Research from £job_researcher£ Researchers +20%"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -7122,8 +6744,8 @@ const Research = {
     "cost": 500,
     "description": "The addition of internal refineries on mining stations will substantially increase mineral production.",
     "feature_unlocks": [
-      "<b>Starbase Building:</b> Nebula Refinery",
-      "MOD_COUNTRY_STATION_GATHERERS_PRODUCES_MULT: +10%"
+      "Starbase Building: Nebula Refinery",
+      "Mining Station Output +10%"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -7150,7 +6772,7 @@ const Research = {
     "cost": 1000,
     "description": "Increased scanner range will allow us to more quickly identify mineral concentrations, and focus our mining efforts there.",
     "feature_unlocks": [
-      "MOD_COUNTRY_STATION_GATHERERS_PRODUCES_MULT: +10%"
+      "Mining Station Output +10%"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -7178,7 +6800,7 @@ const Research = {
     "description": "Standardization of assembly templates allow for improved specialization of the drone population.",
     "feature_unlocks": [
       "<b>Feature : </b>Robomodding",
-      "MOD_COUNTRY_MACHINE_SPECIES_TRAIT_POINTS_ADD: +1"
+      "Machine Modification Points +1"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -7198,7 +6820,7 @@ const Research = {
       "Has Machine Intelligence Authority"
     ],
     "is_gestalt": false,
-    "is_machine": true
+    "is_machine": false
   },
   "tech_mass_drivers_2": {
     "key": "tech_mass_drivers_2",
@@ -7207,9 +6829,9 @@ const Research = {
     "cost": 750,
     "description": "Coilguns are more powerful versions of the early mass drivers, using electromagnetic coils to rapidly accelerate projectiles towards targets.",
     "feature_unlocks": [
-      "<b>Component:</b> Medium Coilgun",
-      "<b>Component:</b> Large Coilgun",
-      "<b>Component:</b> Small Coilgun"
+      "Component: Small Coilgun",
+      "Component: Medium Coilgun",
+      "Component: Large Coilgun"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -7236,7 +6858,7 @@ const Research = {
     "cost": 1000,
     "description": "Solid holographic casts can alter their shapes at a moment's notice, speeding up alloy production.",
     "feature_unlocks": [
-      "<b>Building:</b> Alloy Mega-Forges"
+      "Building: Alloy Mega-Forges"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -7283,7 +6905,7 @@ const Research = {
     "cost": 1500,
     "description": "Advanced missiles equipped with very powerful antimatter warheads. A new and improved guidance system gives them a better chance of finding their targets.",
     "feature_unlocks": [
-      "<b>Component:</b> Antimatter Missiles"
+      "Component: Antimatter Missiles"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -7310,8 +6932,8 @@ const Research = {
     "cost": 2000,
     "description": "Microscopic tools that can assist our replication units in creating the more complex circuitry needed for new drones.",
     "feature_unlocks": [
-      "<b>Building:</b> Upgraded Drone Storage",
-      "Pop Assembly Speed: +10%"
+      "Pop Assembly Speed +10%",
+      "Building: Upgraded Drone Storage"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -7324,7 +6946,7 @@ const Research = {
       "Has Machine Intelligence Authority"
     ],
     "is_gestalt": false,
-    "is_machine": true
+    "is_machine": false
   },
   "tech_rare_crystals": {
     "key": "tech_rare_crystals",
@@ -7333,7 +6955,7 @@ const Research = {
     "cost": 1500,
     "description": "The crystallization process is complicated and difficult, but synthetic crystals can be manufactured by using specialized industrial plants.",
     "feature_unlocks": [
-      "<b>Building:</b> Synthetic Crystal Plants"
+      "Building: Synthetic Crystal Plants"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -7360,8 +6982,8 @@ const Research = {
     "cost": 1500,
     "description": "Mining these crystals without damaging or even destroying them is an extremely delicate process. It requires advanced equipment capable of pinpoint precision.",
     "feature_unlocks": [
-      "<b>Building:</b> Crystal Mines",
-      "<b>Reveals Ressource:</b> Rare Crystals"
+      "Reveals Ressource: Rare Crystals",
+      "Building: Crystal Mines"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -7388,7 +7010,7 @@ const Research = {
     "cost": 2500,
     "description": "The mass-production of this particularly capable nanite variety requires very advanced facilities.",
     "feature_unlocks": [
-      "<b>Building:</b> Nanite Transmuter"
+      "Building: Nanite Transmuter"
     ],
     "is_dangerous": false,
     "is_rare": true,
@@ -7410,7 +7032,7 @@ const Research = {
     "cost": 2000,
     "description": "Large-caliber ballistic weapons that fire cased explosive shells. The main advantage of these cannons is their high rate of fire.",
     "feature_unlocks": [
-      "<b>Component:</b> Autocannon"
+      "Component: Autocannon"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -7437,7 +7059,7 @@ const Research = {
     "cost": 2000,
     "description": "These torpedoes are essentially very large, slow-moving missiles. They are equipped with more powerful warheads and shield modulators that let them slip unmolested through energy screens.",
     "feature_unlocks": [
-      "<b>Component:</b> Space Torpedoes"
+      "Component: Space Torpedoes"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -7464,7 +7086,7 @@ const Research = {
     "cost": 4000,
     "description": "Improved production practices allow for greater alterations to synthetic workers without compromising core functionality.",
     "feature_unlocks": [
-      "MOD_COUNTRY_ROBOT_SPECIES_TRAIT_POINTS_ADD: +1"
+      "Robot Modification Points +1"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -7486,7 +7108,7 @@ const Research = {
       }
     ],
     "potential": [
-      "Does NOT Have Gestalt Consciousness Ethic"
+      "Does NOT have Gestalt Consciousness Ethic"
     ],
     "is_gestalt": false,
     "is_machine": false
@@ -7498,8 +7120,8 @@ const Research = {
     "cost": 2500,
     "description": "Streamlined starbase construction procedures, using modular designs, will reduce the present build cost and time.",
     "feature_unlocks": [
-      "MOD_COUNTRY_STARBASE_BUILDINGS_COST_MULT: -25%",
-      "MOD_COUNTRY_STARBASE_MODULES_COST_MULT: -25%"
+      "Starbase Building Cost -25%",
+      "Starbase Module Cost -25%"
     ],
     "is_dangerous": false,
     "is_rare": true,
@@ -7526,7 +7148,7 @@ const Research = {
     "cost": 2500,
     "description": "These massive drills are needed to access the rich mineral deposits that can often be found close to a planet's core.",
     "feature_unlocks": [
-      "MOD_COUNTRY_PLANET_MINERS_MINERALS_PRODUCES_MULT: +10%"
+      "£minerals£ Minerals from £job_miner£ Miners +10%"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -7553,7 +7175,7 @@ const Research = {
     "cost": 750,
     "description": "The Betharian minerals appear to have originated from singular source, but were scattered across the galaxy millennia ago. The minerals are most often encountered as pebble-sized clusters, and are highly flammable.",
     "feature_unlocks": [
-      "<b>Building:</b> Betharian Power Plant"
+      "Building: Betharian Power Plant"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -7581,7 +7203,7 @@ const Research = {
     "description": "Upgraded robotic workers, these units have an expanded movement range equal to that of most organics. Their neural processors have also been greatly improved.",
     "feature_unlocks": [
       "<b>Feature : </b>Droid Workers",
-      "<b>Army:</b> Robotic Assault Army"
+      "Army: Robotic Assault Army"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -7603,7 +7225,7 @@ const Research = {
       }
     ],
     "potential": [
-      "Does NOT Have Gestalt Consciousness Ethic"
+      "Does NOT have Gestalt Consciousness Ethic"
     ],
     "is_gestalt": false,
     "is_machine": false
@@ -7615,7 +7237,7 @@ const Research = {
     "cost": 2500,
     "description": "Advances in building techniques will allow for the construction of sturdier and more durable destroyers.",
     "feature_unlocks": [
-      "MOD_COUNTRY_SHIPSIZE_DESTROYER_HULL_ADD: +200"
+      "Destroyer Hull Points +200"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -7642,8 +7264,8 @@ const Research = {
     "cost": 1500,
     "description": "While larger than Corvettes, Destroyer hull configurations still make for comparatively nimble gunboats.",
     "feature_unlocks": [
-      "Fleet Command Limit: +10",
-      "<b>Ship Size:</b> Destroyer"
+      "Fleet Command Limit +10",
+      "Ship Size: Destroyer"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -7670,7 +7292,7 @@ const Research = {
     "cost": 2000,
     "description": "These smaller missiles are launched in volleys and have been specifically designed to overwhelm enemy point-defense systems.",
     "feature_unlocks": [
-      "<b>Component:</b> Swarmer Missiles"
+      "Component: Swarmer Missiles"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -7722,9 +7344,9 @@ const Research = {
     "cost": 2500,
     "description": "By infusing armor plating with Crystalline matter we are able to further increase the durability of our ships' protective hulls.",
     "feature_unlocks": [
-      "<b>Component:</b> Large Crystal-Infused Plating",
-      "<b>Component:</b> Medium Crystal-Infused Plating",
-      "<b>Component:</b> Small Crystal-Infused Plating"
+      "Component: Small Crystal-Infused Plating",
+      "Component: Medium Crystal-Infused Plating",
+      "Component: Large Crystal-Infused Plating"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -7744,7 +7366,7 @@ const Research = {
     "cost": 2000,
     "description": "A reinforced framework and blast shields with enhanced impact absorption will ensure the structural integrity of the platform even under immense pressure.",
     "feature_unlocks": [
-      "MOD_COUNTRY_SHIPSIZE_MILITARY_STATION_SMALL_HULL_ADD: +500"
+      "Defense Platform Hull Points +500"
     ],
     "is_dangerous": false,
     "is_rare": true,
@@ -7771,8 +7393,8 @@ const Research = {
     "cost": 1500,
     "description": "Pockets of Exotic Gas are rare and often inaccessible by conventional means. Such deposits can only be reached by using special extractor technology.",
     "feature_unlocks": [
-      "<b>Building:</b> Gas Extraction Wells",
-      "<b>Reveals Ressource:</b> Exotic Gases"
+      "Building: Gas Extraction Wells",
+      "Reveals Ressource: Exotic Gases"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -7799,7 +7421,7 @@ const Research = {
     "cost": 1500,
     "description": "Exotic Gas can be produced artificially, but it is a difficult process that requires advanced refinery equipment.",
     "feature_unlocks": [
-      "<b>Building:</b> Exotic Gas Refineries"
+      "Building: Exotic Gas Refineries"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -7826,9 +7448,9 @@ const Research = {
     "cost": 2000,
     "description": "Plasteel is an elastic material that combines many of the qualities of plastics and metal. It is relatively cheap to produce and can be used to augment ship armor.",
     "feature_unlocks": [
-      "<b>Component:</b> Large Plasteel Armor",
-      "<b>Component:</b> Small Plasteel Armor",
-      "<b>Component:</b> Medium Plasteel Armor"
+      "Component: Small Plasteel Armor",
+      "Component: Medium Plasteel Armor",
+      "Component: Large Plasteel Armor"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -7855,7 +7477,7 @@ const Research = {
     "cost": 2500,
     "description": "The latest generation of corvette hulls have optimized structural integrity fields and improved bulkheads.",
     "feature_unlocks": [
-      "MOD_COUNTRY_SHIPSIZE_CORVETTE_HULL_ADD: +100"
+      "Corvette Hull Points +100"
     ],
     "is_dangerous": false,
     "is_rare": true,
@@ -7882,7 +7504,7 @@ const Research = {
     "cost": 2500,
     "description": "The next generation of strike craft, featuring improved avionics, better handling characteristics and more powerful armaments.",
     "feature_unlocks": [
-      "<b>Component:</b> Improved Strike Craft"
+      "Component: Improved Strike Craft"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -7909,8 +7531,8 @@ const Research = {
     "cost": 2000,
     "description": "Establishing new standards for the modeling and construction of destroyers greatly improves the efficiency of the production pipeline.",
     "feature_unlocks": [
-      "MOD_COUNTRY_SHIP_DESTROYER_COST_MULT: -5%",
-      "MOD_COUNTRY_SHIPSIZE_DESTROYER_BUILD_SPEED_MULT: +25%"
+      "Destroyer Build Cost -5%",
+      "Destroyer Build Speed +25%"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -7937,7 +7559,7 @@ const Research = {
     "cost": 2500,
     "description": "Second-stage processing of pseudo-refined minerals allow for more efficient storage and transportation.",
     "feature_unlocks": [
-      "<b>Building:</b> Mineral Purification Hubs"
+      "Building: Mineral Purification Hubs"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -7969,8 +7591,8 @@ const Research = {
     "cost": 1500,
     "description": "Volatile Motes are fickle particles that are dangerous to work with. In order to safely harvest them without setting off a chain-reaction of explosions, energy fields must be used to stabilize the motes.",
     "feature_unlocks": [
-      "<b>Reveals Ressource:</b> Volatile Motes",
-      "<b>Building:</b> Mote Harvesting Traps"
+      "Building: Mote Harvesting Traps",
+      "Reveals Ressource: Volatile Motes"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -7997,7 +7619,7 @@ const Research = {
     "cost": 1500,
     "description": "These electric thrusters use beams of ions to generate thrust without the need for propellant.",
     "feature_unlocks": [
-      "<b>Component:</b> Ion Thrusters"
+      "Component: Ion Thrusters"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -8032,8 +7654,8 @@ const Research = {
     "tier": 2,
     "prerequisites_names": [],
     "potential": [
-      "Has Country Flag encountered_first_lgate",
-      "Does NOT Have Country Flag completed_lcluster_chain"
+      "Has the encountered_first_lgate country flag",
+      "Does NOT have the completed_lcluster_chain country flag"
     ],
     "is_gestalt": false,
     "is_machine": false
@@ -8045,7 +7667,7 @@ const Research = {
     "cost": 2500,
     "description": "The production and understanding of supersolids are of immeasurable value to any and every space-age civilization.",
     "feature_unlocks": [
-      "MOD_COUNTRY_PLANET_RESEARCHERS_ENGINEERING_RESEARCH_PRODUCES_MULT: +20%"
+      "£engineering£ Engineering Research from £job_researcher£ Researchers +20%"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -8072,7 +7694,7 @@ const Research = {
     "cost": 1500,
     "description": "These powerful short-range lasers can easily slice through rock, making the extraction of minerals a more efficient affair.",
     "feature_unlocks": [
-      "MOD_COUNTRY_STATION_GATHERERS_PRODUCES_MULT: +10%"
+      "Mining Station Output +10%"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -8099,7 +7721,7 @@ const Research = {
     "cost": 2500,
     "description": "Fleets of autonomous drones equipped with mining beams are deployed to quickly and efficiently gather nearby minerals.",
     "feature_unlocks": [
-      "MOD_COUNTRY_STATION_GATHERERS_PRODUCES_MULT: +10%"
+      "Mining Station Output +10%"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -8126,9 +7748,9 @@ const Research = {
     "cost": 1500,
     "description": "The latest in electromagnetic accelerators, railguns use twin parallel rails to fire projectiles at incredible speeds.",
     "feature_unlocks": [
-      "<b>Component:</b> Small Railgun",
-      "<b>Component:</b> Medium Railgun",
-      "<b>Component:</b> Large Railgun"
+      "Component: Small Railgun",
+      "Component: Medium Railgun",
+      "Component: Large Railgun"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -8155,7 +7777,7 @@ const Research = {
     "cost": 4000,
     "description": "With directional gravity technology, buildings on the surface of planets can reach higher than ever before without risking structural collapse. The sky is the limit!",
     "feature_unlocks": [
-      "<b>Building:</b> Expanded Warren",
+      "Building: Expanded Warren",
       "City District Housing: +1"
     ],
     "is_dangerous": false,
@@ -8183,7 +7805,7 @@ const Research = {
     "cost": 4000,
     "description": "The latest version of space-to-space missile, this upgraded variant has an immensely powerful warhead that draws its energy from a zero point vacuum.",
     "feature_unlocks": [
-      "<b>Component:</b> Quantum Missiles"
+      "Component: Quantum Missiles"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -8210,7 +7832,7 @@ const Research = {
     "cost": 2500,
     "description": "Upgraded flak batteries with new, more powerful shrapnel rounds.",
     "feature_unlocks": [
-      "<b>Component:</b> Flak Cannons"
+      "Component: Flak Cannons"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -8237,8 +7859,8 @@ const Research = {
     "cost": 6000,
     "description": "The creation of a dedicated naval engineering corps will greatly benefit the construction of deep space defense platforms, decreasing building costs and increasing durability.",
     "feature_unlocks": [
-      "Starbase Upgrade Speed: +25%",
-      "Starbase Upgrade Cost: -15%"
+      "Starbase Upgrade Speed +25%",
+      "Starbase Upgrade Cost -15%"
     ],
     "is_dangerous": false,
     "is_rare": true,
@@ -8270,7 +7892,7 @@ const Research = {
     "cost": 5000,
     "description": "Standardized pre-fab templates massively reduce on-site facility construction times.",
     "feature_unlocks": [
-      "Planet Build Speed: +50%"
+      "Planet Build Speed +50%"
     ],
     "is_dangerous": false,
     "is_rare": true,
@@ -8297,7 +7919,7 @@ const Research = {
     "cost": 6000,
     "description": "Modelled on organic DNA, these microscopic machine intellects are capable of autonomously assembling most components needed for new drones.",
     "feature_unlocks": [
-      "Pop Assembly Speed: +10%"
+      "Pop Assembly Speed +10%"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -8317,7 +7939,7 @@ const Research = {
       "Has Machine Intelligence Authority"
     ],
     "is_gestalt": false,
-    "is_machine": true
+    "is_machine": false
   },
   "tech_cruiser_build_speed": {
     "key": "tech_cruiser_build_speed",
@@ -8326,8 +7948,8 @@ const Research = {
     "cost": 5000,
     "description": "Establishing new standards for the modeling and construction of cruisers greatly improves the efficiency of the production pipeline.",
     "feature_unlocks": [
-      "MOD_COUNTRY_SHIPSIZE_CRUISER_BUILD_SPEED_MULT: +25%",
-      "MOD_COUNTRY_SHIP_CRUISER_COST_MULT: -5%"
+      "Cruiser Build Cost -5%",
+      "Cruiser Build Speed +25%"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -8354,7 +7976,7 @@ const Research = {
     "cost": 4000,
     "description": "These upgraded rotary autocannons feature improved tracking and fire control systems. This allows them to maintain an even higher rate of fire.",
     "feature_unlocks": [
-      "<b>Component:</b> Ripper Autocannon"
+      "Component: Ripper Autocannon"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -8381,7 +8003,7 @@ const Research = {
     "cost": 5000,
     "description": "Upgraded space torpedoes encased in armor, to better withstand enemy point-defense fire. The armor fragments into shards that cause additional damage when the torpedo detonates.",
     "feature_unlocks": [
-      "<b>Component:</b> Armored Torpedoes"
+      "Component: Armored Torpedoes"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -8408,7 +8030,7 @@ const Research = {
     "cost": 4000,
     "description": "These advanced motivators are both smaller and lighter than previous versions, allowing robotic units to allocate additional space for subsystems.",
     "feature_unlocks": [
-      "MOD_COUNTRY_MACHINE_SPECIES_TRAIT_POINTS_ADD: +1"
+      "Machine Modification Points +1"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -8433,7 +8055,7 @@ const Research = {
       "Has Machine Intelligence Authority"
     ],
     "is_gestalt": false,
-    "is_machine": true
+    "is_machine": false
   },
   "tech_destroyer_hull_2": {
     "key": "tech_destroyer_hull_2",
@@ -8442,7 +8064,7 @@ const Research = {
     "cost": 4000,
     "description": "The latest generation of destroyer hulls have optimized structural integrity fields and improved bulkheads.",
     "feature_unlocks": [
-      "MOD_COUNTRY_SHIPSIZE_DESTROYER_HULL_ADD: +200"
+      "Destroyer Hull Points +200"
     ],
     "is_dangerous": false,
     "is_rare": true,
@@ -8494,8 +8116,8 @@ const Research = {
     "cost": 4000,
     "description": "Originally devised as an experimental next-generation colony ship hull configuration, the design's ample hardpoints made it ideal for carrying heavy weapons ordnance.",
     "feature_unlocks": [
-      "Fleet Command Limit: +10",
-      "<b>Ship Size:</b> Cruiser"
+      "Fleet Command Limit +10",
+      "Ship Size: Cruiser"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -8522,7 +8144,7 @@ const Research = {
     "cost": 6000,
     "description": "Very long-range artillery capable of hurling powerful rounds over extreme distances with a large degree of accuracy.",
     "feature_unlocks": [
-      "<b>Component:</b> Kinetic Battery"
+      "Component: Kinetic Battery"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -8549,9 +8171,9 @@ const Research = {
     "cost": 5000,
     "description": "This strong yet flexible material is capable of withstanding severe punishment. It serves well as ship armor.",
     "feature_unlocks": [
-      "<b>Component:</b> Small Durasteel Armor",
-      "<b>Component:</b> Large Durasteel Armor",
-      "<b>Component:</b> Medium Durasteel Armor"
+      "Component: Medium Durasteel Armor",
+      "Component: Large Durasteel Armor",
+      "Component: Small Durasteel Armor"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -8578,7 +8200,7 @@ const Research = {
     "cost": 6000,
     "description": "A further refinement in strike craft design, these advanced strike craft are a pilot's dream. Their performance far exceeds that of previous models.",
     "feature_unlocks": [
-      "<b>Component:</b> Advanced Strike Craft"
+      "Component: Advanced Strike Craft"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -8605,7 +8227,7 @@ const Research = {
     "cost": 5000,
     "description": "This improved version of the standard afterburners provide an even greater boost to a ship's combat speed.",
     "feature_unlocks": [
-      "<b>Component:</b> Advanced Afterburners"
+      "Component: Advanced Afterburners"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -8637,7 +8259,7 @@ const Research = {
     "cost": 4000,
     "description": "An advanced form of electric propulsion, plasma thrusters afford ships greater sublight speeds and maneuverability.",
     "feature_unlocks": [
-      "<b>Component:</b> Plasma Thrusters"
+      "Component: Plasma Thrusters"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -8664,7 +8286,7 @@ const Research = {
     "cost": 4000,
     "description": "These kiosks can replicate any pre-approved object if its pattern has been stored within their memory banks.",
     "feature_unlocks": [
-      "<b>Building:</b> Civilian Repli-Complexes"
+      "Building: Civilian Repli-Complexes"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -8686,7 +8308,7 @@ const Research = {
       }
     ],
     "potential": [
-      "Any of the following \n    •   is_gestalt=no\n    •   Has Rogue Servitor Civic"
+      "One must be true\n    •   Is NOT Gestalt\n    •   Has Government Civic: Rogue Servitor"
     ],
     "is_gestalt": false,
     "is_machine": false
@@ -8698,7 +8320,7 @@ const Research = {
     "cost": 6000,
     "description": "Advances in building techniques will allow for the construction of sturdier and more durable cruisers.",
     "feature_unlocks": [
-      "MOD_COUNTRY_SHIPSIZE_CRUISER_HULL_ADD: +500"
+      "Cruiser Hull Points +500"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -8725,7 +8347,7 @@ const Research = {
     "cost": 4000,
     "description": "These special probes are equipped with swarms of nanites that identify previously unknown mineral concentrations and mark them for later extraction.",
     "feature_unlocks": [
-      "MOD_COUNTRY_STATION_GATHERERS_PRODUCES_MULT: +10%"
+      "Mining Station Output +10%"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -8752,9 +8374,9 @@ const Research = {
     "cost": 4000,
     "description": "A new version of the venerable railgun, with sturdier rails and an enhanced power supply. These weapons are even more powerful and accurate than their predecessors.",
     "feature_unlocks": [
-      "<b>Component:</b> Small Advanced Railgun",
-      "<b>Component:</b> Large Advanced Railgun",
-      "<b>Component:</b> Medium Advanced Railgun"
+      "Component: Large Advanced Railgun",
+      "Component: Medium Advanced Railgun",
+      "Component: Small Advanced Railgun"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -8781,7 +8403,7 @@ const Research = {
     "cost": 4000,
     "description": "Nano-separators are a revolutionary new step in the creation of alloys, simplifying the casting process while improving overall production quality.",
     "feature_unlocks": [
-      "<b>Building:</b> Alloy Nano-Plants"
+      "Building: Alloy Nano-Plants"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -8813,7 +8435,7 @@ const Research = {
     "cost": 10000,
     "description": "These highly advanced missiles are equipped with limited onboard AI pilots that substantially improve their performance and ability to track targets.",
     "feature_unlocks": [
-      "<b>Component:</b> Marauder Missiles"
+      "Component: Marauder Missiles"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -8840,7 +8462,7 @@ const Research = {
     "cost": 8000,
     "description": "Predictive tracking algorithms and even more powerful rounds make these batteries incredibly lethal to enemy strike craft.",
     "feature_unlocks": [
-      "<b>Component:</b> Flak Artillery"
+      "Component: Flak Artillery"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -8867,8 +8489,8 @@ const Research = {
     "cost": 10000,
     "description": "Establishing new standards for how we design and construct massive battleships greatly improves the speed at which they can be assembled.",
     "feature_unlocks": [
-      "MOD_COUNTRY_SHIP_BATTLESHIP_COST_MULT: -5%",
-      "MOD_COUNTRY_SHIPSIZE_BATTLESHIP_BUILD_SPEED_MULT: +25%"
+      "Battleship Build Cost -5%",
+      "Battleship Build Speed +25%"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -8895,7 +8517,7 @@ const Research = {
     "cost": 12000,
     "description": "Advances in building techniques will allow for the construction of sturdier and more durable battleships.",
     "feature_unlocks": [
-      "MOD_COUNTRY_SHIPSIZE_BATTLESHIP_HULL_ADD: +800"
+      "Battleship Hull Points +800"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -8922,7 +8544,7 @@ const Research = {
     "cost": 10000,
     "description": "Advanced torpedoes with very powerful warheads. They have a sleeker design, faster engines and upgraded shield modulators for slipping through energy screens.",
     "feature_unlocks": [
-      "<b>Component:</b> Devastator Torpedoes"
+      "Component: Devastator Torpedoes"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -8949,7 +8571,7 @@ const Research = {
     "cost": 8000,
     "description": "Advanced rotary autocannons capable of spewing a cloud of high-explosive shells at a target.",
     "feature_unlocks": [
-      "<b>Component:</b> Stormfire Autocannon"
+      "Component: Stormfire Autocannon"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -8976,7 +8598,7 @@ const Research = {
     "cost": 8000,
     "description": "Improved production practices allow for fundamental changes to synthetic workers without compromising core functionality.",
     "feature_unlocks": [
-      "MOD_COUNTRY_ROBOT_SPECIES_TRAIT_POINTS_ADD: +1"
+      "Robot Modification Points +1"
     ],
     "is_dangerous": false,
     "is_rare": true,
@@ -8998,7 +8620,7 @@ const Research = {
       }
     ],
     "potential": [
-      "Does NOT Have Gestalt Consciousness Ethic"
+      "Does NOT have Gestalt Consciousness Ethic"
     ],
     "is_gestalt": false,
     "is_machine": false
@@ -9010,7 +8632,7 @@ const Research = {
     "cost": 10000,
     "description": "Advanced spectrometry combines with fracking techniques and chemical flushing to rapidly exploit shallow and mid-depth deposits.",
     "feature_unlocks": [
-      "MOD_COUNTRY_PLANET_MINERS_MINERALS_PRODUCES_MULT: +10%"
+      "£minerals£ Minerals from £job_miner£ Miners +10%"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -9037,8 +8659,8 @@ const Research = {
     "cost": 10000,
     "description": "Highly advanced robots that are stronger, faster and more durable than the vast majority of organics. With their upgraded neural processors they are fully capable of independent operations.",
     "feature_unlocks": [
-      "<b>Feature : </b>Synthetic Workers",
-      "MOD_COUNTRY_PLANET_JOBS_ROBOTIC_PRODUCES_MULT: +10%"
+      "Robot Output +10%",
+      "<b>Feature : </b>Synthetic Workers"
     ],
     "is_dangerous": true,
     "is_rare": true,
@@ -9065,7 +8687,7 @@ const Research = {
       }
     ],
     "potential": [
-      "Does NOT Have Gestalt Consciousness Ethic"
+      "Does NOT have Gestalt Consciousness Ethic"
     ],
     "is_gestalt": false,
     "is_machine": false
@@ -9077,8 +8699,8 @@ const Research = {
     "cost": 8000,
     "description": "The largest of the standard military vessels, Battleships are traditionally heavily armored and sport several gun batteries.",
     "feature_unlocks": [
-      "Fleet Command Limit: +10",
-      "<b>Ship Size:</b> Battleship"
+      "Fleet Command Limit +10",
+      "Ship Size: Battleship"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -9105,7 +8727,7 @@ const Research = {
     "cost": 10000,
     "description": "New miniaturization techniques will allow us to equip swarmer missiles with more powerful warheads and improved flight performance.",
     "feature_unlocks": [
-      "<b>Component:</b> Whirlwind Missiles"
+      "Component: Whirlwind Missiles"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -9132,7 +8754,7 @@ const Research = {
     "cost": 8000,
     "description": "Using programmable nanites to assist in the construction of new robotic units will allow for more advanced models that are equipped with an even greater array of subsystems.",
     "feature_unlocks": [
-      "MOD_COUNTRY_MACHINE_SPECIES_TRAIT_POINTS_ADD: +1"
+      "Machine Modification Points +1"
     ],
     "is_dangerous": false,
     "is_rare": true,
@@ -9157,7 +8779,7 @@ const Research = {
       "Has Machine Intelligence Authority"
     ],
     "is_gestalt": false,
-    "is_machine": true
+    "is_machine": false
   },
   "tech_starbase_5": {
     "key": "tech_starbase_5",
@@ -9208,7 +8830,7 @@ const Research = {
       }
     ],
     "potential": [
-      "Does NOT Have Gestalt Consciousness Ethic"
+      "Does NOT have Gestalt Consciousness Ethic"
     ],
     "is_gestalt": false,
     "is_machine": false
@@ -9220,7 +8842,7 @@ const Research = {
     "cost": 10000,
     "description": "An even more powerful long-range, ship-based artillery cannon, equipped with a new barrel and an upgraded fire control computer.",
     "feature_unlocks": [
-      "<b>Component:</b> Kinetic Artillery"
+      "Component: Kinetic Artillery"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -9252,9 +8874,9 @@ const Research = {
     "cost": 10000,
     "description": "This incredibly dense and strong material can resist firepower that would turn armor made of any other alloys into slag.",
     "feature_unlocks": [
-      "<b>Component:</b> Small Neutronium Armor",
-      "<b>Component:</b> Medium Neutronium Armor",
-      "<b>Component:</b> Large Neutronium Armor"
+      "Component: Medium Neutronium Armor",
+      "Component: Large Neutronium Armor",
+      "Component: Small Neutronium Armor"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -9281,7 +8903,7 @@ const Research = {
     "cost": 8000,
     "description": "These highly advanced fusion-powered thrusters provide ships with unmatched maneuverability and speed under sublight conditions.",
     "feature_unlocks": [
-      "<b>Component:</b> Impulse Thrusters"
+      "Component: Impulse Thrusters"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -9308,7 +8930,7 @@ const Research = {
     "cost": 10000,
     "description": "The study of superfluidity promises to marry quantum mechanics with the fundamental interaction of gravity.",
     "feature_unlocks": [
-      "MOD_COUNTRY_PLANET_RESEARCHERS_ENGINEERING_RESEARCH_PRODUCES_MULT: +20%"
+      "£engineering£ Engineering Research from £job_researcher£ Researchers +20%"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -9335,7 +8957,7 @@ const Research = {
     "cost": 8000,
     "description": "The latest generation of cruiser hulls have optimized structural integrity fields and improved bulkheads.",
     "feature_unlocks": [
-      "MOD_COUNTRY_SHIPSIZE_CRUISER_HULL_ADD: +500"
+      "Cruiser Hull Points +500"
     ],
     "is_dangerous": false,
     "is_rare": true,
@@ -9362,7 +8984,7 @@ const Research = {
     "cost": 12000,
     "description": "An even more powerful mass accelerator cannon that can rip through even the toughest shields.",
     "feature_unlocks": [
-      "<b>Component:</b> Giga Cannon"
+      "Component: Giga Cannon"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -9394,7 +9016,7 @@ const Research = {
     "cost": 10000,
     "description": "An enormous mass accelerator cannon that can only be placed in a spinal mount and fires monstrously powerful rounds over vast distances.",
     "feature_unlocks": [
-      "<b>Component:</b> Mega Cannon"
+      "Component: Mega Cannon"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -9426,9 +9048,9 @@ const Research = {
     "cost": 8000,
     "description": "Introducing Crystalline matter into the forging process further improves the ultra-hard qualities of crystal-infused metals.",
     "feature_unlocks": [
-      "<b>Component:</b> Large Crystal-Forged Plating",
-      "<b>Component:</b> Medium Crystal-Forged Plating",
-      "<b>Component:</b> Small Crystal-Forged Plating"
+      "Component: Large Crystal-Forged Plating",
+      "Component: Small Crystal-Forged Plating",
+      "Component: Medium Crystal-Forged Plating"
     ],
     "is_dangerous": false,
     "is_rare": true,
@@ -9448,9 +9070,9 @@ const Research = {
     "cost": 8000,
     "description": "This updated version of the old coilgun design is even more destructive than the latest railgun designs. It is capable of launching projectiles with incredible accuracy and speed.",
     "feature_unlocks": [
-      "<b>Component:</b> Large Gauss Cannon",
-      "<b>Component:</b> Small Gauss Cannon",
-      "<b>Component:</b> Medium Gauss Cannon"
+      "Component: Small Gauss Cannon",
+      "Component: Medium Gauss Cannon",
+      "Component: Large Gauss Cannon"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -9477,7 +9099,7 @@ const Research = {
     "cost": 15000,
     "description": "The latest generation of battleship hulls have optimized structural integrity fields and improved bulkheads.",
     "feature_unlocks": [
-      "MOD_COUNTRY_SHIPSIZE_BATTLESHIP_HULL_ADD: +800"
+      "Battleship Hull Points +800"
     ],
     "is_dangerous": false,
     "is_rare": true,
@@ -9497,60 +9119,6 @@ const Research = {
     "is_gestalt": false,
     "is_machine": false
   },
-  "tech_repeatable_improved_armor_output": {
-    "key": "tech_repeatable_improved_armor_output",
-    "area": "engineering",
-    "category": "Materials",
-    "cost": 50000,
-    "description": "Compressing suitable materials into ultra-dense forms is a cheap and efficient way to improve their ability to absorb weapons-grade impacts.",
-    "feature_unlocks": [
-      "Armor Hit Points: +5%"
-    ],
-    "is_dangerous": false,
-    "is_rare": false,
-    "is_start_tech": false,
-    "name": "Matter Compression",
-    "prerequisites": [
-      "tech_ship_armor_3"
-    ],
-    "tier": 5,
-    "prerequisites_names": [
-      {
-        "name": "Plasteel Materials",
-        "key": "tech_ship_armor_3"
-      }
-    ],
-    "potential": [],
-    "is_gestalt": false,
-    "is_machine": false
-  },
-  "tech_repeatable_weapon_type_kinetic_damage": {
-    "key": "tech_repeatable_weapon_type_kinetic_damage",
-    "area": "engineering",
-    "category": "Propulsion",
-    "cost": 50000,
-    "description": "Ultra-dense slugs can punch through even the strongest of projected shields.",
-    "feature_unlocks": [
-      "MOD_COUNTRY_WEAPON_TYPE_KINETIC_WEAPON_DAMAGE_MULT: +5%"
-    ],
-    "is_dangerous": false,
-    "is_rare": false,
-    "is_start_tech": false,
-    "name": "High-Density Munitions",
-    "prerequisites": [
-      "tech_mass_drivers_3"
-    ],
-    "tier": 5,
-    "prerequisites_names": [
-      {
-        "name": "Railguns",
-        "key": "tech_mass_drivers_3"
-      }
-    ],
-    "potential": [],
-    "is_gestalt": false,
-    "is_machine": false
-  },
   "tech_mine_living_metal": {
     "key": "tech_mine_living_metal",
     "area": "engineering",
@@ -9558,8 +9126,8 @@ const Research = {
     "cost": 15000,
     "description": "Mining and processing the rare living metals is exceedingly difficult, but successful application of the mutable alloys yields incomparable advantages.",
     "feature_unlocks": [
-      "<b>Edict:</b> Living Metal Mega-Construction",
-      "<b>Reveals Ressource:</b> Living Metal"
+      "Reveals Ressource: Living Metal",
+      "Edict: Living Metal Mega-Construction"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -9579,60 +9147,6 @@ const Research = {
     "is_gestalt": false,
     "is_machine": false
   },
-  "tech_repeatable_weapon_type_explosive_fire_rate": {
-    "key": "tech_repeatable_weapon_type_explosive_fire_rate",
-    "area": "engineering",
-    "category": "Propulsion",
-    "cost": 50000,
-    "description": "Advances in miniaturization allow for more rapid loading and discharging of rocket-propelled payloads.",
-    "feature_unlocks": [
-      "MOD_COUNTRY_WEAPON_TYPE_EXPLOSIVE_WEAPON_FIRE_RATE_MULT: +5%"
-    ],
-    "is_dangerous": false,
-    "is_rare": false,
-    "is_start_tech": false,
-    "name": "Miniaturized Pre-Igniters",
-    "prerequisites": [
-      "tech_missiles_3"
-    ],
-    "tier": 5,
-    "prerequisites_names": [
-      {
-        "name": "Antimatter Missiles",
-        "key": "tech_missiles_3"
-      }
-    ],
-    "potential": [],
-    "is_gestalt": false,
-    "is_machine": false
-  },
-  "tech_repeatable_weapon_type_kinetic_fire_rate": {
-    "key": "tech_repeatable_weapon_type_kinetic_fire_rate",
-    "area": "engineering",
-    "category": "Propulsion",
-    "cost": 50000,
-    "description": "Minor technical advances combine with improved shipboard routines for handling munitions to provide a noticeable boost in fire rate.",
-    "feature_unlocks": [
-      "MOD_COUNTRY_WEAPON_TYPE_KINETIC_WEAPON_FIRE_RATE_MULT: +5%"
-    ],
-    "is_dangerous": false,
-    "is_rare": false,
-    "is_start_tech": false,
-    "name": "Loader Efficiency",
-    "prerequisites": [
-      "tech_mass_drivers_3"
-    ],
-    "tier": 5,
-    "prerequisites_names": [
-      {
-        "name": "Railguns",
-        "key": "tech_mass_drivers_3"
-      }
-    ],
-    "potential": [],
-    "is_gestalt": false,
-    "is_machine": false
-  },
   "tech_titan_hull_2": {
     "key": "tech_titan_hull_2",
     "area": "engineering",
@@ -9640,7 +9154,7 @@ const Research = {
     "cost": 20000,
     "description": "The latest generation of titan hulls have optimized structural integrity fields and improved bulkheads.",
     "feature_unlocks": [
-      "MOD_COUNTRY_SHIPSIZE_TITAN_HULL_ADD: +2000"
+      "Titan Hull Points +2000"
     ],
     "is_dangerous": false,
     "is_rare": true,
@@ -9667,7 +9181,7 @@ const Research = {
     "cost": 17500,
     "description": "Advances in building techniques will allow for the construction of sturdier and more durable titans.",
     "feature_unlocks": [
-      "MOD_COUNTRY_SHIPSIZE_TITAN_HULL_ADD: +2000"
+      "Titan Hull Points +2000"
     ],
     "is_dangerous": false,
     "is_rare": true,
@@ -9687,60 +9201,6 @@ const Research = {
     "is_gestalt": false,
     "is_machine": false
   },
-  "tech_repeatable_improved_military_station_health": {
-    "key": "tech_repeatable_improved_military_station_health",
-    "area": "engineering",
-    "category": "Voidcraft",
-    "cost": 50000,
-    "description": "Additional layers of armor plating within the structure itself improves the resilience of Military Stations.",
-    "feature_unlocks": [
-      "MOD_COUNTRY_SHIPCLASS_MILITARY_STATION_HULL_MULT: +10%"
-    ],
-    "is_dangerous": false,
-    "is_rare": false,
-    "is_start_tech": false,
-    "name": "Fortified Core Layers",
-    "prerequisites": [
-      "tech_defense_platform_hull_1"
-    ],
-    "tier": 5,
-    "prerequisites_names": [
-      {
-        "name": "Improved Structural Integrity",
-        "key": "tech_defense_platform_hull_1"
-      }
-    ],
-    "potential": [],
-    "is_gestalt": false,
-    "is_machine": false
-  },
-  "tech_repeatable_improved_military_station_damage": {
-    "key": "tech_repeatable_improved_military_station_damage",
-    "area": "engineering",
-    "category": "Voidcraft",
-    "cost": 50000,
-    "description": "Cross-linking weapon systems to fire in staggered volleys improves the actual damage output of Military Stations over time.",
-    "feature_unlocks": [
-      "MOD_COUNTRY_SHIPCLASS_MILITARY_STATION_DAMAGE_MULT: +10%"
-    ],
-    "is_dangerous": false,
-    "is_rare": false,
-    "is_start_tech": false,
-    "name": "Synchronized Firing Patterns",
-    "prerequisites": [
-      "tech_defense_platform_hull_1"
-    ],
-    "tier": 5,
-    "prerequisites_names": [
-      {
-        "name": "Improved Structural Integrity",
-        "key": "tech_defense_platform_hull_1"
-      }
-    ],
-    "potential": [],
-    "is_gestalt": false,
-    "is_machine": false
-  },
   "tech_pk_cracker": {
     "key": "tech_pk_cracker",
     "area": "engineering",
@@ -9748,7 +9208,7 @@ const Research = {
     "cost": 20000,
     "description": "A directed feed of thermic energy superheats the atmosphere and agitates the planet's core, setting up disastrous tectonic events. A final and comparatively minute concussive blast is then delivered, cracking the planet open.",
     "feature_unlocks": [
-      "<b>Component:</b> World Cracker"
+      "Component: World Cracker"
     ],
     "is_dangerous": false,
     "is_rare": true,
@@ -9766,8 +9226,8 @@ const Research = {
     ],
     "potential": [
       "Has DLC Apocalypse",
-      "Has Country Flag colossus_project",
-      "Is Pacifist"
+      "Has the Colossus Project country flag",
+      "Is NOT Pacifist"
     ],
     "is_gestalt": false,
     "is_machine": false
@@ -9779,9 +9239,9 @@ const Research = {
     "cost": 50000,
     "description": "The Ether Drake's scales are made up of multiple layers of unique mineral nanostructures. Unorthodox manufacturing techniques allow us to closely emulate these self-repairing structures.",
     "feature_unlocks": [
-      "<b>Component:</b> Small Dragonscale Armor",
-      "<b>Component:</b> Medium Dragonscale Armor",
-      "<b>Component:</b> Large Dragonscale Armor"
+      "Component: Small Dragonscale Armor",
+      "Component: Medium Dragonscale Armor",
+      "Component: Large Dragonscale Armor"
     ],
     "is_dangerous": false,
     "is_rare": true,
@@ -9794,33 +9254,6 @@ const Research = {
     "is_gestalt": false,
     "is_machine": false
   },
-  "tech_repeatable_weapon_type_explosive_damage": {
-    "key": "tech_repeatable_weapon_type_explosive_damage",
-    "area": "engineering",
-    "category": "Propulsion",
-    "cost": 50000,
-    "description": "With the chemical reaction tightly controlled by missile-board microprocessors, warhead detonations can be tuned for maximum effect for local conditions at the time of impact.",
-    "feature_unlocks": [
-      "MOD_COUNTRY_WEAPON_TYPE_EXPLOSIVE_WEAPON_DAMAGE_MULT: +5%"
-    ],
-    "is_dangerous": false,
-    "is_rare": false,
-    "is_start_tech": false,
-    "name": "Thermodynamic Yield Control",
-    "prerequisites": [
-      "tech_missiles_3"
-    ],
-    "tier": 5,
-    "prerequisites_names": [
-      {
-        "name": "Antimatter Missiles",
-        "key": "tech_missiles_3"
-      }
-    ],
-    "potential": [],
-    "is_gestalt": false,
-    "is_machine": false
-  },
   "tech_colossus": {
     "key": "tech_colossus",
     "area": "engineering",
@@ -9828,7 +9261,7 @@ const Research = {
     "cost": 20000,
     "description": "Advances in mega-engineering make blur the lines between reality and the fantastical, enabling the construction of Colossus-class military vessels that carry weapons capable of obliterating - or fundamentally altering - entire worlds, with the push of a button.",
     "feature_unlocks": [
-      "<b>Starbase Building:</b> Colossus Assembly Yards"
+      "Starbase Building: Colossus Assembly Yards"
     ],
     "is_dangerous": false,
     "is_rare": true,
@@ -9857,10 +9290,10 @@ const Research = {
     "cost": 15000,
     "description": "Modeled after the hulking shadows looming in the core systems of Stagnant Ascendancies, the Titan class can be outfitted with X-size weapons.",
     "feature_unlocks": [
-      "<b>Component:</b> Ion Cannon",
-      "<b>Ship Size:</b> Titan",
-      "Fleet Command Limit: +10",
-      "<b>Component:</b> Perdition Beam"
+      "Fleet Command Limit +10",
+      "Component: Ion Cannon",
+      "Ship Size: Titan",
+      "Component: Perdition Beam"
     ],
     "is_dangerous": false,
     "is_rare": false,
@@ -9889,7 +9322,7 @@ const Research = {
     "cost": 20000,
     "description": "Nanobot Diffuser",
     "feature_unlocks": [
-      "<b>Component:</b> Nanobot Diffuser"
+      "Component: Nanobot Diffuser"
     ],
     "is_dangerous": false,
     "is_rare": true,
@@ -9907,117 +9340,9 @@ const Research = {
     ],
     "potential": [
       "Has DLC Apocalypse",
-      "Has Country Flag colossus_project",
-      "Has Driven Assimilator Civic"
+      "Has the Colossus Project country flag",
+      "Has Government Civic: Driven Assimilator"
     ],
-    "is_gestalt": false,
-    "is_machine": false
-  },
-  "tech_repeatable_reduced_building_time": {
-    "key": "tech_repeatable_reduced_building_time",
-    "area": "engineering",
-    "category": "Industry",
-    "cost": 50000,
-    "description": "The application of game and puzzle theory has the potential to greatly optimize modular assembly and construction.",
-    "feature_unlocks": [
-      "Planet Build Speed: +10%"
-    ],
-    "is_dangerous": false,
-    "is_rare": false,
-    "is_start_tech": false,
-    "name": "Assembly Algorithms",
-    "prerequisites": [
-      "tech_construction_templates"
-    ],
-    "tier": 5,
-    "prerequisites_names": [
-      {
-        "name": "Construction Templates",
-        "key": "tech_construction_templates"
-      }
-    ],
-    "potential": [],
-    "is_gestalt": false,
-    "is_machine": false
-  },
-  "tech_repeatable_improved_tile_mineral_output": {
-    "key": "tech_repeatable_improved_tile_mineral_output",
-    "area": "engineering",
-    "category": "Industry",
-    "cost": 50000,
-    "description": "Changes in how mineral deposits are evaluated relative to each other lead to more efficient boring patterns.",
-    "feature_unlocks": [
-      "MOD_COUNTRY_PLANET_JOBS_MINERALS_PRODUCES_MULT: +5%"
-    ],
-    "is_dangerous": false,
-    "is_rare": false,
-    "is_start_tech": false,
-    "name": "Extraction Patterns",
-    "prerequisites": [
-      "tech_mineral_purification_2"
-    ],
-    "tier": 5,
-    "prerequisites_names": [
-      {
-        "name": "Advanced Mineral Purification",
-        "key": "tech_mineral_purification_2"
-      }
-    ],
-    "potential": [],
-    "is_gestalt": false,
-    "is_machine": false
-  },
-  "tech_repeatable_weapon_type_strike_craft_fire_damage": {
-    "key": "tech_repeatable_weapon_type_strike_craft_fire_damage",
-    "area": "engineering",
-    "category": "Voidcraft",
-    "cost": 50000,
-    "description": "Increasing the speed at which fighter pilots can process and act upon enemy positioning data elevates strike craft a few steps up the food chain.",
-    "feature_unlocks": [
-      "MOD_COUNTRY_WEAPON_TYPE_STRIKE_CRAFT_WEAPON_DAMAGE_MULT: +10%"
-    ],
-    "is_dangerous": false,
-    "is_rare": false,
-    "is_start_tech": false,
-    "name": "Synapse Interceptors",
-    "prerequisites": [
-      "tech_strike_craft_3"
-    ],
-    "tier": 5,
-    "prerequisites_names": [
-      {
-        "name": "Advanced Strike Craft",
-        "key": "tech_strike_craft_3"
-      }
-    ],
-    "potential": [],
-    "is_gestalt": false,
-    "is_machine": false
-  },
-  "tech_repeatable_weapon_type_strike_craft_fire_rate": {
-    "key": "tech_repeatable_weapon_type_strike_craft_fire_rate",
-    "area": "engineering",
-    "category": "Voidcraft",
-    "cost": 50000,
-    "description": "Circulating excess heat from weapons discharge in order to prime munitions as they are loaded increases the rate of fire of strike craft weaponry.",
-    "feature_unlocks": [
-      "MOD_COUNTRY_WEAPON_TYPE_STRIKE_CRAFT_WEAPON_FIRE_RATE_MULT: +10%"
-    ],
-    "is_dangerous": false,
-    "is_rare": false,
-    "is_start_tech": false,
-    "name": "Heat Recyclers",
-    "prerequisites": [
-      "tech_strike_craft_3"
-    ],
-    "tier": 5,
-    "prerequisites_names": [
-      {
-        "name": "Advanced Strike Craft",
-        "key": "tech_strike_craft_3"
-      }
-    ],
-    "potential": [],
     "is_gestalt": false,
     "is_machine": false
   },
@@ -10028,7 +9353,7 @@ const Research = {
     "cost": 50000,
     "description": "These ship thrusters utilize Dark Matter technology to generate propulsion in a manner that appears to defy numerous laws of physics.",
     "feature_unlocks": [
-      "<b>Component:</b> Dark Matter Thrusters"
+      "Component: Dark Matter Thrusters"
     ],
     "is_dangerous": false,
     "is_rare": true,
@@ -10055,8 +9380,8 @@ const Research = {
     "cost": 20000,
     "description": "To complete construction projects of truly staggering scales we must first achieve a fundamental understanding of both the engineering and resource storage requirements for such megastructures.",
     "feature_unlocks": [
-      "Resource Storage Capacity: +20000",
-      "<b>Feature : </b>Megastructure Restoration"
+      "<b>Feature : </b>Megastructure Restoration",
+      "Resource Storage Capacity +20000"
     ],
     "is_dangerous": false,
     "is_rare": true,
@@ -10093,7 +9418,7 @@ const Research = {
     "cost": 20000,
     "description": "A highly effective hull auto-repair system comprised of billions of microscopic nanomachines was found among the smoking remains of the Scavenger, and has been repurposed for our uses. Whether the Scavenger pilfered this system from an ancient derelict, or was originally constructed with it remains unknown.",
     "feature_unlocks": [
-      "<b>Component:</b> Nanite Repair System"
+      "Component: Nanite Repair System"
     ],
     "is_dangerous": false,
     "is_rare": true,

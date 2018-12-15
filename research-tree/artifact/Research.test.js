@@ -16,7 +16,7 @@ QUnit.test("Research properties Red Lasers", assert => {
 
 QUnit.test("Research keys", assert => {
   // Setup.
-  const length = 375;
+  const length = 350;
 
   // Run.
   const keys = Object.keys(Research);
