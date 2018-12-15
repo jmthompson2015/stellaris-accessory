@@ -22,6 +22,10 @@ body {
   border-color: hsl(300, 100%, 25%);
 }
 
+.b--slate-gray {
+  border-color: hsl(210, 13%, 50%);
+}
+
 .b--society {
   border-color: green;
 }

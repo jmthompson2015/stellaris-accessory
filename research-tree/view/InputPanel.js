@@ -42,36 +42,51 @@ class InputPanel extends React.Component {
       myKey: "rare"
     });
 
+    const labelClass = "pa1 tr";
+    const selectClass = "pa1";
+
     const cells0 = [
-      ReactUtils.createCell("Area: ", "areaLabel", "pr1 pv1"),
-      ReactUtils.createCell(areaSelect, "areaSelect")
+      ReactUtils.createCell("Area: ", "areaLabel", labelClass),
+      ReactUtils.createCell(areaSelect, "areaSelect", selectClass)
     ];
+    const topRow = ReactUtils.createRow(cells0);
+    const topTable = ReactUtils.createTable(topRow, "topTable", "center m0 pa1");
+
     const cells1 = [
-      ReactUtils.createCell("Category: ", "categoryLabel", "pr1 pv1"),
-      ReactUtils.createCell(categorySelect, "categorySelect")
+      ReactUtils.createCell("Category: ", "categoryLabel", labelClass),
+      ReactUtils.createCell(
+        categorySelect,
+        "categorySelect",
+        `b--slate-gray br bw1 ${selectClass}`
+      ),
+      ReactUtils.createCell("Starting: ", "starterLabel", `b--slate-gray bb bw1 ${labelClass}`),
+      ReactUtils.createCell(starterSelect, "starterSelect", `b--slate-gray bb bw1 ${selectClass}`)
     ];
     const cells2 = [
-      ReactUtils.createCell("Research: ", "researchLabel", "pr1 pv1"),
-      ReactUtils.createCell(researchSelect, "researchSelect")
+      ReactUtils.createCell("Research: ", "researchLabel", labelClass),
+      ReactUtils.createCell(
+        researchSelect,
+        "researchSelect",
+        `b--slate-gray br bw1 ${selectClass}`
+      ),
+      ReactUtils.createCell("Rare: ", "rareLabel", labelClass),
+      ReactUtils.createCell(rareSelect, "rareSelect", selectClass)
     ];
-    const cells3 = [
-      ReactUtils.createCell("Starting: ", "starterLabel", "pr1 pv1"),
-      ReactUtils.createCell(starterSelect, "starterSelect")
+    const innerRows = [
+      ReactUtils.createRow(cells1, "categoryStarterRow"),
+      ReactUtils.createRow(cells2, "researchRareRow")
     ];
-    const cells4 = [
-      ReactUtils.createCell("Rare: ", "rareLabel", "pr1 pv1"),
-      ReactUtils.createCell(rareSelect, "rareSelect")
-    ];
+    const innerTable = ReactUtils.createTable(innerRows, "innerTable");
+
+    const cell0 = ReactUtils.createCell(topTable, "topTable", "b--slate-gray bb bw1");
+    const cell1 = ReactUtils.createCell(innerTable, "innerTableRow");
 
     const rows = [
-      ReactUtils.createRow(cells0, "areaRow"),
-      ReactUtils.createRow(cells1, "categoryRow"),
-      ReactUtils.createRow(cells2, "researchRow"),
-      ReactUtils.createRow(cells3, "starterRow"),
-      ReactUtils.createRow(cells4, "rareRow")
+      ReactUtils.createRow(cell0, "topTable"),
+      ReactUtils.createRow(cell1, "innerTableRow")
     ];
 
-    return ReactUtils.createTable(rows, "inputPanel", "bg-gainsboro pa1");
+    return ReactUtils.createTable(rows, "inputPanel", "bg-gainsboro");
   }
 }
 
