@@ -9,7 +9,13 @@ const IMG = `${BASE}vanilla/img/`;
 
 const createImage = research => {
   const { key } = research;
-  const className = `v-mid ${research.is_rare ? "b--rare ba bw2" : ""}`;
+  let className = "v-mid";
+
+  if (research.is_dangerous) {
+    className += " b--dangerous ba bw2";
+  } else if (research.is_rare) {
+    className += " b--rare ba bw2";
+  }
 
   return ReactDOMFactories.img({
     className,
