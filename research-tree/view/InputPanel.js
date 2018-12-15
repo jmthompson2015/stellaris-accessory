@@ -71,7 +71,7 @@ class InputPanel extends React.Component {
       ReactUtils.createRow(cells4, "rareRow")
     ];
 
-    return ReactUtils.createTable(rows);
+    return ReactUtils.createTable(rows, "inputPanel", "bg-gainsboro pa1");
   }
 }
 

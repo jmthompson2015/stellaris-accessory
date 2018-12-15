@@ -1,5 +1,13 @@
 body {
+  background-color: Black;
+  background-image: url(stellaris_utopia.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
   font-family: "San Francisco", "Helvetica Neue", Helvetica, sans-serif;
+}
+
+.b--engineering {
+  border-color: hsl(45, 100%, 45%);
 }
 
 .b--physics {
@@ -10,14 +18,14 @@ body {
   border-color: green;
 }
 
-.b--engineering {
-  border-color: hsl(45, 100%, 45%);
-}
-
 .b--rare {
   border-color: hsl(300, 100%, 25%);
 }
 
+.bg-cadet-gray {
+  background-color: hsl(205, 16%, 63%);
+}
+
 .bg-gainsboro {
-  background-color: Gainsboro;
+  background-color: hsla(0, 0%, 86%, 0.7);
 }

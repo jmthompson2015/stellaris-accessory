@@ -46,7 +46,7 @@ const createMainCell = onClick => research => {
   const row = ReactUtils.createRow([cell0, cell1]);
   const mainTable = ReactUtils.createTable(row, "mainTable", "center ma0");
 
-  return ReactUtils.createRow(mainTable, "nameRow", `bg-gainsboro center ma0 pa1 tc`);
+  return ReactUtils.createRow(mainTable, "nameRow", `bg-cadet-gray center ma0 pa1 tc`);
 };
 
 class ResearchTable extends React.Component {
@@ -83,7 +83,7 @@ class ResearchTable extends React.Component {
       }
     }
 
-    return ReactUtils.createTable(rows, `${myKey}ResearchTable`, "tc");
+    return ReactUtils.createTable(rows, `${myKey}ResearchTable`, "bg-gainsboro tc");
   }
 }
 
