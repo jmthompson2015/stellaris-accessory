@@ -83,7 +83,7 @@ class ResearchTable extends React.Component {
       }
     }
 
-    return ReactUtils.createTable(rows, `${myKey}ResearchTable`, "bg-gainsboro tc");
+    return ReactUtils.createTable(rows, `${myKey}ResearchTable`, "bg-gainsboro center ma0");
   }
 }
 

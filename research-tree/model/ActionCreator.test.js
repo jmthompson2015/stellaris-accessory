@@ -6,12 +6,30 @@ QUnit.module("ActionCreator");
 QUnit.test("all action types", assert => {
   // Setup.
   const actionTypeKeys = Object.getOwnPropertyNames(ActionType);
-  assert.equal(actionTypeKeys.length, 3);
+  assert.equal(actionTypeKeys.length, 5);
 
   // Run / Verify.
   actionTypeKeys.forEach(key => {
     assert.ok(ActionCreator[ActionType[key]], `actionType = ${key} ${ActionType[key]}`);
   });
+});
+
+QUnit.test("back()", assert => {
+  // Run.
+  const result = ActionCreator.back();
+
+  // Verify.
+  assert.ok(result);
+  assert.equal(result.type, ActionType.BACK);
+});
+
+QUnit.test("forward()", assert => {
+  // Run.
+  const result = ActionCreator.forward();
+
+  // Verify.
+  assert.ok(result);
+  assert.equal(result.type, ActionType.FORWARD);
 });
 
 QUnit.test("setArea()", assert => {

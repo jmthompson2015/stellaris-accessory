@@ -5,7 +5,7 @@ import ReactUtils from "./ReactUtilities.js";
 // 2.0: const BASE = "https://gitlab.com/bipedalshark/stellaris-tech-tree/raw/master/";
 // 2.0: const IMG = `${BASE}public/vanilla/img/`;
 const BASE = "https://turanar.github.io/stellaris-tech-tree/";
-const IMG = `${BASE}img/`;
+const IMG = `${BASE}assets/img/`;
 
 const createImage = research => {
   const { key } = research;

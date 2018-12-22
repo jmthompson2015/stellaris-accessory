@@ -11,6 +11,10 @@ const makeActionCreator = (type, ...argNames) => (...args) => {
   return action;
 };
 
+ActionCreator.back = makeActionCreator(ActionType.BACK);
+
+ActionCreator.forward = makeActionCreator(ActionType.FORWARD);
+
 ActionCreator.setArea = makeActionCreator(ActionType.SET_AREA, "areaKey");
 
 ActionCreator.setCategory = makeActionCreator(ActionType.SET_CATEGORY, "categoryKey");

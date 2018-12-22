@@ -2,8 +2,10 @@ const AppState = {};
 
 AppState.create = ({
   areaKey,
+  backList = [],
   categories,
   categoryKey,
+  forwardList = [],
   rareResearches,
   researches,
   researchKey,
@@ -11,8 +13,10 @@ AppState.create = ({
 } = {}) =>
   Immutable({
     areaKey,
+    backList,
     categories,
     categoryKey,
+    forwardList,
     rareResearches,
     researches,
     researchKey,
