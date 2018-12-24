@@ -1,11 +1,7 @@
-import Research from "../artifact/Research.js";
-
 import RU from "../model/ResearchUtilities.js";
 
 import ReactUtils from "./ReactUtilities.js";
 import ResearchRow from "./ResearchRow.js";
-
-const maxTier = R.reduce((accum, r) => Math.max(accum, r.tier), 0, Object.values(Research));
 
 const createRow = onClick => researches => {
   const researchRow = React.createElement(ResearchRow, { researches, onClick });
@@ -54,33 +50,26 @@ class ResearchTable extends React.Component {
     const { myKey, onClick, research } = this.props;
 
     const rowClass = "center pa1 tc";
-    const tierFilter = t => r => r.tier === t;
     const rows = [];
 
-    const parentResearches = RU.allParents(research);
     const myCreateRow1 = createRow(onClick);
+    let parentResearches = RU.parentsForResearches(research);
 
-    for (let t = 0; t <= maxTier; t += 1) {
-      const researchByTier = R.filter(tierFilter(t), parentResearches);
-
-      if (researchByTier.length > 0) {
-        const row = myCreateRow1(researchByTier);
-        rows.push(ReactUtils.createRow(row, `parentResearchRow${t}Row`, rowClass));
-      }
+    while (parentResearches.length > 0) {
+      const row = myCreateRow1(parentResearches);
+      rows.unshift(ReactUtils.createRow(row, `parentResearchRow${rows.length}Row`, rowClass));
+      parentResearches = RU.parentsForResearches(parentResearches);
     }
 
     rows.push(createMainCell(onClick)(research));
 
-    const childResearches = RU.allChildren(research);
     const myCreateRow2 = createRow(onClick);
+    let childResearches = RU.childrenForResearches(research);
 
-    for (let t = 0; t <= maxTier; t += 1) {
-      const researchByTier = R.filter(tierFilter(t), childResearches);
-
-      if (researchByTier.length > 0) {
-        const row = myCreateRow2(researchByTier);
-        rows.push(ReactUtils.createRow(row, `childResearchRow${t}Row`, rowClass));
-      }
+    while (childResearches.length > 0) {
+      const row = myCreateRow2(childResearches);
+      rows.push(ReactUtils.createRow(row, `childResearchRow${rows.length}Row`, rowClass));
+      childResearches = RU.childrenForResearches(childResearches);
     }
 
     return ReactUtils.createTable(rows, `${myKey}ResearchTable`, "bg-gainsboro center ma0");

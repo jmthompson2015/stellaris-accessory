@@ -2,130 +2,6 @@ import ResearchUtils from "./ResearchUtilities.js";
 
 QUnit.module("ResearchUtilities");
 
-QUnit.test("allChildren() tech_cruisers", assert => {
-  // Setup.
-  const key = "tech_cruisers";
-  const research = ResearchUtils.research(key);
-
-  // Run.
-  const result = ResearchUtils.allChildren(research);
-
-  // Verify.
-  assert.ok(result);
-  const length = 24;
-  assert.equal(result.length, length);
-  assert.equal(result[0].key, "tech_arc_emitter_1");
-  assert.equal(result[length - 1].key, "tech_titans");
-});
-
-QUnit.test("allChildren() tech_lasers_1", assert => {
-  // Setup.
-  const key = "tech_lasers_1";
-  const research = ResearchUtils.research(key);
-
-  // Run.
-  const result = ResearchUtils.allChildren(research);
-
-  // Verify.
-  assert.ok(result);
-  const length = 18;
-  assert.equal(result.length, length);
-  assert.equal(result[0].key, "tech_arc_emitter_1");
-  assert.equal(result[length - 1].key, "tech_repeatable_weapon_type_energy_fire_rate");
-});
-
-QUnit.test("allChildren() tech_lasers_4", assert => {
-  // Setup.
-  const key = "tech_lasers_4";
-  const research = ResearchUtils.research(key);
-
-  // Run.
-  const result = ResearchUtils.allChildren(research);
-
-  // Verify.
-  assert.ok(result);
-  const length = 6;
-  assert.equal(result.length, length);
-  assert.equal(result[0].key, "tech_energy_lance_1");
-  assert.equal(result[length - 1].key, "tech_repeatable_weapon_type_energy_damage");
-});
-
-QUnit.test("allChildren() tech_pk_shielder", assert => {
-  // Setup.
-  const key = "tech_pk_shielder";
-  const research = ResearchUtils.research(key);
-
-  // Run.
-  const result = ResearchUtils.allChildren(research);
-
-  // Verify.
-  assert.ok(result);
-  const length = 0;
-  assert.equal(result.length, length);
-});
-
-QUnit.test("allParents() tech_arc_emitter_2", assert => {
-  // Setup.
-  const key = "tech_arc_emitter_2";
-  const research = ResearchUtils.research(key);
-
-  // Run.
-  const result = ResearchUtils.allParents(research);
-
-  // Verify.
-  assert.ok(result);
-  const length = 10;
-  assert.equal(result.length, length);
-  assert.equal(result[0].key, "tech_arc_emitter_1");
-  assert.equal(result[length - 1].key, "tech_lasers_2");
-});
-
-QUnit.test("allParents() tech_lasers_2", assert => {
-  // Setup.
-  const key = "tech_lasers_2";
-  const research = ResearchUtils.research(key);
-
-  // Run.
-  const result = ResearchUtils.allParents(research);
-
-  // Verify.
-  assert.ok(result);
-  assert.equal(result.length, 1);
-  assert.equal(result[0].key, "tech_lasers_1");
-});
-
-QUnit.test("allParents() tech_lasers_4", assert => {
-  // Setup.
-  const key = "tech_lasers_4";
-  const research = ResearchUtils.research(key);
-
-  // Run.
-  const result = ResearchUtils.allParents(research);
-
-  // Verify.
-  assert.ok(result);
-  const length = 3;
-  assert.equal(result.length, length);
-  assert.equal(result[0].key, "tech_lasers_1");
-  assert.equal(result[length - 1].key, "tech_lasers_3");
-});
-
-QUnit.test("allParents() tech_pk_shielder", assert => {
-  // Setup.
-  const key = "tech_pk_shielder";
-  const research = ResearchUtils.research(key);
-
-  // Run.
-  const result = ResearchUtils.allParents(research);
-
-  // Verify.
-  assert.ok(result);
-  const length = 6;
-  assert.equal(result.length, length);
-  assert.equal(result[0].key, "tech_battleships");
-  assert.equal(result[length - 1].key, "tech_titans");
-});
-
 QUnit.test("categoriesByArea() engineering", assert => {
   // Setup.
   const areaKey = "engineering";
@@ -171,6 +47,63 @@ QUnit.test("categoriesByArea() society", assert => {
   assert.equal(result[length - 1].key, "Statecraft");
 });
 
+QUnit.test("childrenForResearches() tech_cruisers", assert => {
+  // Setup.
+  const research = ResearchUtils.research("tech_cruisers");
+
+  // Run.
+  const result = ResearchUtils.childrenForResearches(research);
+
+  // Verify.
+  assert.ok(result);
+  const length = 3;
+  assert.equal(result.length, length);
+  assert.equal(result[0].key, "tech_battleships");
+  assert.equal(result[length - 1].key, "tech_cruiser_build_speed");
+});
+
+QUnit.test("childrenForResearches() tech_lasers_4", assert => {
+  // Setup.
+  const research = ResearchUtils.research("tech_lasers_4");
+
+  // Run.
+  const result = ResearchUtils.childrenForResearches(research);
+
+  // Verify.
+  assert.ok(result);
+  const length = 4;
+  assert.equal(result.length, length);
+  assert.equal(result[0].key, "tech_repeatable_weapon_type_energy_damage");
+  assert.equal(result[length - 1].key, "tech_energy_torpedoes_1");
+
+  // Run.
+  const result2 = ResearchUtils.childrenForResearches(result);
+
+  // Verify.
+  assert.ok(result2);
+  const length2 = 2;
+  assert.equal(result2.length, length2);
+  assert.equal(result2[0].key, "tech_energy_torpedoes_2");
+  assert.equal(result2[length2 - 1].key, "tech_energy_lance_2");
+});
+
+QUnit.test("childrenForResearches()", assert => {
+  // Setup.
+  const key0 = "tech_nanite_assemblers";
+  const research0 = ResearchUtils.research(key0);
+  const researches = R.map(key => ResearchUtils.research(key), research0.prerequisites);
+
+  // Run.
+  const result = ResearchUtils.childrenForResearches(researches);
+
+  // Verify.
+  assert.ok(result);
+  const length = 6;
+  assert.equal(result.length, length);
+  assert.equal(result[0].key, "tech_nanite_assemblers");
+  assert.equal(result[length - 1].key, "tech_nano_vitality_crops");
+});
+
 QUnit.test("dangerousByArea() engineering", assert => {
   // Setup.
   const areaKey = "engineering";
@@ -214,36 +147,36 @@ QUnit.test("dangerousByArea() society", assert => {
   assert.equal(result[0].key, "tech_psi_jump_drive_1");
 });
 
-QUnit.test("parentsByResearch() tech_nanite_assemblers", assert => {
+QUnit.test("parentsForResearches() tech_nanite_assemblers", assert => {
   // Setup.
-  const itemKey = "tech_nanite_assemblers";
+  const research = ResearchUtils.research("tech_nanite_assemblers");
 
   // Run.
-  const result = ResearchUtils.parentsByResearch(itemKey);
+  const result = ResearchUtils.parentsForResearches(research);
 
   // Verify.
   assert.ok(result);
   const length = 2;
   assert.equal(result.length, length);
-  assert.equal(result[0], "tech_binary_motivators");
-  assert.equal(result[length - 1], "tech_galactic_administration");
+  assert.equal(result[0].key, "tech_binary_motivators");
+  assert.equal(result[length - 1].key, "tech_galactic_administration");
 });
 
 QUnit.test("parentsForResearches()", assert => {
   // Setup.
   const key0 = "tech_nanite_assemblers";
-  const item0 = ResearchUtils.research(key0);
-  const items = R.map(key => ResearchUtils.research(key), item0.prerequisites);
+  const research0 = ResearchUtils.research(key0);
+  const researches = R.map(key => ResearchUtils.research(key), research0.prerequisites);
 
   // Run.
-  const result = ResearchUtils.parentsForResearches(items);
+  const result = ResearchUtils.parentsForResearches(researches);
 
   // Verify.
   assert.ok(result);
   const length = 2;
   assert.equal(result.length, length);
-  assert.equal(result[0], "tech_colonial_centralization");
-  assert.equal(result[length - 1], "tech_robomodding_m");
+  assert.equal(result[0].key, "tech_robomodding_m");
+  assert.equal(result[length - 1].key, "tech_colonial_centralization");
 });
 
 QUnit.test("rareResearches()", assert => {
@@ -364,21 +297,6 @@ QUnit.test("researchesByAreaCategory() physics Particles", assert => {
   assert.equal(result[length - 1].key, "tech_zero_point_power");
 });
 
-QUnit.test("researchesByParent() tech_cruisers", assert => {
-  // Setup.
-  const itemKey = "tech_cruisers";
-
-  // Run.
-  const result = ResearchUtils.researchesByParent(itemKey);
-
-  // Verify.
-  assert.ok(result);
-  const length = 3;
-  assert.equal(result.length, length);
-  assert.equal(result[0].key, "tech_cruiser_build_speed");
-  assert.equal(result[length - 1].key, "tech_battleships");
-});
-
 QUnit.test("starterResearches()", assert => {
   // Setup.
 
@@ -389,7 +307,7 @@ QUnit.test("starterResearches()", assert => {
   assert.ok(result);
   const length = 32;
   assert.equal(result.length, length);
-  assert.equal(result[0].key, "tech_pd_tracking_1");
+  assert.equal(result[0].key, "tech_thrusters_1");
   assert.equal(result[length - 1].key, "tech_hive_node");
 });
 
