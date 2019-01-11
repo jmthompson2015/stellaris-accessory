@@ -58,12 +58,27 @@ ${result}`;
     }
   });
 
+const isFormatted = false;
+
 JsonConverter.convert = () =>
   new Promise(resolve => {
+    const start = Date.now();
+    console.log("JsonConverter.convert() start");
     parseFile(0).then(buildingLines => {
       const content0 = `${HEADER}${buildingLines}${FOOTER}`;
-      const content = Postprocessor.process(content0);
-      FileWriter.writeFile(OUTPUT_FILE, content);
+
+      if (isFormatted) {
+        // Lose properties with the same name.
+        const content1 = Postprocessor.process(content0);
+        const contentObj = JSON.parse(content1);
+        FileWriter.writeFile(OUTPUT_FILE, JSON.stringify(contentObj, null, 2));
+      } else {
+        const content = Postprocessor.process(content0);
+        FileWriter.writeFile(OUTPUT_FILE, content);
+      }
+
+      const end = Date.now();
+      console.log(`elapsed: ${end - start} ms`);
       resolve();
     });
   });

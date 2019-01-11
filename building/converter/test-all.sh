@@ -5,3 +5,7 @@ node Parser.test
 node Postprocessor.test
 
 node JsonConverter.test
+
+node NameFinder.test
+
+open ../artifact/TestSuite.html
