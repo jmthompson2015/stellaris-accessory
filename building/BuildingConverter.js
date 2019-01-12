@@ -4,7 +4,7 @@ const R = require("ramda");
 
 const FileLoader = require("../converter/FileLoader.js");
 const FileWriter = require("../converter/FileWriter.js");
-const NameFinder = require("./NameFinder.js");
+const NameFinder = require("../converter/NameFinder.js");
 
 const BuildingConverter = {};
 

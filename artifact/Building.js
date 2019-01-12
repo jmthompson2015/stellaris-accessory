@@ -90,8 +90,8 @@ const Building = {
     "key": "building_ancient_palace"
   },
   "building_artist_patron": {
-    "name": "Gain access to a §S£building£ $building_artist_patron$§! with the following Empire effects:n$mod_job_culture_worker_add$: §G+3§!n$mod_planet_jobs_unity_produces_mult$: §G+15%§!n",
-    "description": "Gain access to a §S£building£ $building_artist_patron$§! with the following Empire effects:n$mod_job_coordinator_add$: §G+3§!n$mod_planet_jobs_unity_produces_mult$: §G+15%§!n",
+    "name": "Ministry of Culture",
+    "description": "A fashionable headquarters for the Ministry of Culture, helping to spread knowledge, entertainment and art to the masses.",
     "upkeep": {
       "energy": 2
     },
@@ -166,8 +166,8 @@ const Building = {
     "key": "building_bio_reprocessing_facilities"
   },
   "building_bureaucratic_complex": {
-    "name": "$MOD_POP_AMENITIES_USAGE_MULT$: §G-10%§!n$MOD_POP_HOUSING_USAGE_MULT$: §G-10%§!nCan construct £building §Y$building_bureaucratic_complex$§! buildings that add additional £job_administrator §Y$job_administrator$§! Jobs",
-    "description": "Bureaucratic Complex",
+    "name": "Bureaucratic Complex",
+    "description": "A labyrinthine government complex of bureaucratic offices, sub-offices and sub-sub-offices.",
     "category": "government",
     "planetModifiers": {
       "job_administrator_add": 2
@@ -181,8 +181,8 @@ const Building = {
     "key": "building_bureaucratic_complex"
   },
   "building_capital": {
-    "name": "Requires §Y$building_capital$§! on planet.",
-    "description": "Planetary Administration",
+    "name": "Planetary Administration",
+    "description": "Seat of the local ruling elite.",
     "category": "government",
     "childKeys": [
       "building_hive_capital",
@@ -479,8 +479,8 @@ const Building = {
     "key": "building_crystal_plant"
   },
   "building_deployment_post": {
-    "name": "§RRequires §Y$building_deployment_post$§! on planet.§!",
-    "description": "Deployment Post",
+    "name": "Deployment Post",
+    "description": "The initial deployment post from which we will expand on this world.",
     "category": "government",
     "childKeys": [
       "building_hive_capital",
@@ -599,8 +599,8 @@ const Building = {
     "key": "building_energy_nexus"
   },
   "building_executive_retreat": {
-    "name": "$building_executive_retreat_desc$",
-    "description": "Executive Retreat",
+    "name": "Executive Retreat",
+    "description": "A luxurious resort complex for high ranking corporate officers. Here they can sample the local planetary culture in a high security environment.",
     "planetModifiers": {
       "trade_value_mult": 0.05
     },
@@ -853,8 +853,8 @@ const Building = {
     "key": "building_gas_extractors"
   },
   "building_great_pyramid": {
-    "name": "The £building£ §S$building_great_pyramid$§! on [From.GetName] is §Rruined§!.n§B1 £pops£ Pop§! on [From.GetName] §Rdies§!.",
-    "description": "Another £building£ §S$building_great_pyramid$§! appears on [From.From.GetName].nn[From.From.GetName] gains the §R$pyramid_wars$§! modifier for §Y720§! days, with the following effects:n£happiness£ Happiness §R-40%§!nn",
+    "name": "Great Pyramid",
+    "description": "A pyramid constructed by the local population to appease a deity descended from the sky.",
     "planetModifiers": [],
     "key": "building_great_pyramid"
   },
@@ -922,8 +922,8 @@ const Building = {
     "key": "building_heritage_site"
   },
   "building_hive_capital": {
-    "name": "§RRequires §Y$building_hive_capital$§! on planet.§!",
-    "description": "Hive Core",
+    "name": "Hive Core",
+    "description": "The organizational core from which the Hive Mind coordinates planetside functions.",
     "category": "government",
     "childKeys": [
       "building_machine_capital",
@@ -977,8 +977,8 @@ const Building = {
     "key": "building_hive_confluence"
   },
   "building_hive_major_capital": {
-    "name": "§RRequires §Y$building_hive_major_capital$§! on planet.§!",
-    "description": "Hive Nexus",
+    "name": "Hive Nexus",
+    "description": "A sprawling capital complex from which the Hive Mind focuses planetary organization, coordination, and planning.",
     "category": "government",
     "childKeys": [
       "building_machine_major_capital",
@@ -1084,8 +1084,8 @@ const Building = {
     "key": "building_hospital"
   },
   "building_hydroponics_farm": {
-    "name": "Hydroponics Farm I",
-    "description": "$building_basic_farm_desc$",
+    "name": "Hydroponics Farms",
+    "description": "Hydroponics Farms produce nutrient-rich vegetable matter tailored for consumption by local Pops.",
     "category": "resource",
     "cost": {
       "minerals": 300
@@ -1207,8 +1207,8 @@ const Building = {
     "key": "building_machine_assembly_plant"
   },
   "building_machine_capital": {
-    "name": "§RRequires §Y$building_machine_capital_1$§! on planet.§!",
-    "description": "§RRequires §Y$building_machine_capital_2$§! on planet.§!",
+    "name": "Administrative Array",
+    "description": "A semi-autonomous computer network that handles the various administrative functions on a planet.",
     "category": "government",
     "childKeys": [
       "building_hive_capital",
@@ -1451,8 +1451,8 @@ const Building = {
     "key": "building_network_junction"
   },
   "building_noble_estates": {
-    "name": "§Y$MOD_LEADER_GOVERNOR_SKILL_LEVELS$§! increased by §G+1§!n£building£ §YCapital Buildings§! replace some £job_administrator£ §Y$job_administrator$§! Jobs with £job_noble£ §Y$job_noble_plural$§!nCan construct £building£ §Y$building_noble_estates$§! buildings that add additional £job_noble£ §Y$job_noble$§! Jobs",
-    "description": "Noble Estates",
+    "name": "Noble Estates",
+    "description": "Palaces and mansions, resplendent in their glory, owned by the nobility. The surrounding countryside and the peasants that inhabit it are theirs as well.",
     "category": "government",
     "planetModifiers": {
       "job_noble_add": 1,
@@ -1807,8 +1807,8 @@ const Building = {
     "key": "building_research_lab_3"
   },
   "building_resort_capital": {
-    "name": "§RRequires §Y$building_resort_capital$§! on planet.§!",
-    "description": "Resort Administration",
+    "name": "Resort Administration",
+    "description": "The central complex from where this planet-wide resort is administrated.",
     "category": "government",
     "childKeys": [
       "building_hive_capital",
@@ -1826,8 +1826,8 @@ const Building = {
     "key": "building_resort_capital"
   },
   "building_resort_major_capital": {
-    "name": "§RRequires §Y$building_resort_major_capital$§! on planet.§!",
-    "description": "Resort Capital-Complex",
+    "name": "Resort Capital-Complex",
+    "description": "A huge sprawling complex capable of administrating an even greater number of resorts and tourist attractions.",
     "category": "government",
     "childKeys": [
       "building_hive_major_capital",
@@ -1848,8 +1848,8 @@ const Building = {
     "key": "building_resort_major_capital"
   },
   "building_resource_silo": {
-    "name": "$building_resource_silo$",
-    "description": "$building_resource_silo_desc$n",
+    "name": "Resource Silos",
+    "description": "Massive resource silos and storage facilities where large quantities of resources can be safely kept.",
     "category": "resource",
     "cost": {
       "minerals": 200
@@ -1911,8 +1911,8 @@ const Building = {
     "key": "building_sentinel_posts"
   },
   "building_slave_capital": {
-    "name": "§RRequires §Y$building_slave_capital$§! on planet.§!",
-    "description": "Governor's Palace",
+    "name": "Governor's Palace",
+    "description": "The lavish palace from which this Thrall-World is governed.",
     "category": "government",
     "childKeys": [
       "building_hive_capital",
@@ -1946,8 +1946,8 @@ const Building = {
     "key": "building_slave_huts"
   },
   "building_slave_major_capital": {
-    "name": "§RRequires §Y$building_slave_major_capital$§! on planet.§!",
-    "description": "Governor's Estates",
+    "name": "Governor's Estates",
+    "description": "Sprawling and luxurious palaces that house the ruling elite of the Thrall-World.",
     "category": "government",
     "childKeys": [
       "building_hive_major_capital",
@@ -2132,8 +2132,8 @@ const Building = {
     "key": "building_temple"
   },
   "building_temple_of_prosperity": {
-    "name": "£pop£ §YSpiritualist Pops§! give additional £trade_value£ §Y$TRADE_VALUE$§! on all Planets and Branch OfficesnCan build £building£ §Y$building_temple_of_prosperity$§! $BRANCH_OFFICE_BUILDING$n$mod_pop_ethic_spiritualist_attraction_mult$: §G+50%§!",
-    "description": "Temple of Prosperity",
+    "name": "Temple of Prosperity",
+    "description": "A high-security temple that spreads the gospel of the Megachurch that built it.",
     "planetModifiers": {
       "job_preacher_add": 2,
       "pop_ethic_spiritualist_attraction_mult": 0.5
@@ -2211,8 +2211,8 @@ const Building = {
     "key": "building_virtual_entertainment_studios"
   },
   "building_waste_reprocessing_center": {
-    "name": "We have schematics. Designs! For a building, very advanced, very unique. A §G$building_waste_reprocessing_center$§!, to convert your scrap and waste into high-current energy and useful minerals.nnBut we need... workers. Terrible accident on Mining Platform 715-B, §Hkssk!§! Send us §R6§! §H$pop_cat_worker$§! £pop£ Pops, and we will give the blueprints to you.",
-    "description": "We have schematics. Designs! For a building, very advanced, very unique. A §G$building_waste_reprocessing_center$§!, to convert your scrap and waste into high-current energy and useful minerals.nnBut we need... workers. Terrible accident on Mining Platform 715-B, §Hkssk!§! Send us §R6§! §H$pop_cat_simple_drone$§! £pop£ Pops, and we will give the blueprints to you.",
+    "name": "Waste Reprocessing Center",
+    "description": "A planet's one stop center for converting industrial and biowaste into mostly clean, mostly reusable energy and minerals. Designed by the $NAME_Caravaneer_Fleet3$, its construction is somewhat arcane, and largely non-reverse- engineerable.",
     "planetModifiers": {
       "planet_amenities_add": 5,
       "job_technician_drone_add": 2
@@ -2253,8 +2253,8 @@ const Building = {
     "key": "building_wrecking_yards"
   },
   "building_xeno_tourism_agency": {
-    "name": "$building_xeno_tourism_agency_desc$",
-    "description": "Xeno-Outreach Agency",
+    "name": "Xeno-Outreach Agency",
+    "description": "This corporate agency promotes a wide variety of interstellar tourist attractions, as well as offering employment packages and signing bonuses to potential emigrants interested in relocating to corporate space.",
     "planetModifiers": {
       "trade_value_mult": 0.05
     },

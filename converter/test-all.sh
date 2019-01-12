@@ -4,6 +4,8 @@ node Parser.test
 
 node Postprocessor.test
 
+node NameFinder.test
+
 cd ../building
 
 ./test-all.sh
