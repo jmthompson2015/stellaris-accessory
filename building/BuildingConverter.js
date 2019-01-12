@@ -2,14 +2,14 @@
 
 const R = require("ramda");
 
-const FileLoader = require("../../converter/FileLoader.js");
-const FileWriter = require("../../converter/FileWriter.js");
+const FileLoader = require("../converter/FileLoader.js");
+const FileWriter = require("../converter/FileWriter.js");
 const NameFinder = require("./NameFinder.js");
 
 const BuildingConverter = {};
 
 const INPUT_FILE = "building.json";
-const OUTPUT_FILE = "../../artifact/Building.js";
+const OUTPUT_FILE = "../artifact/Building.js";
 const HEADER = `/* GENERATED FILE Do not edit. */
 /* eslint max-len: ["error", { "ignoreStrings": true }] */
 

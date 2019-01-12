@@ -2,13 +2,13 @@
 
 const R = require("ramda");
 
-const FileLoader = require("../../converter/FileLoader.js");
-const FileWriter = require("../../converter/FileWriter.js");
+const FileLoader = require("../converter/FileLoader.js");
+const FileWriter = require("../converter/FileWriter.js");
 
 const JobConverter = {};
 
 const INPUT_FILE = "job.json";
-const OUTPUT_FILE = "../../artifact/Job.js";
+const OUTPUT_FILE = "../artifact/Job.js";
 const HEADER = `/* GENERATED FILE Do not edit. */
 /* eslint max-len: ["error", { "ignoreStrings": true }] */
 

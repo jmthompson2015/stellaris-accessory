@@ -1,11 +1,11 @@
-cd ../building/converter
+cd ../building
 
 ./convert-all.sh
 
-cd ../../job/converter
+cd ../job
 
 ./convert-all.sh
 
-cd ../../converter
+cd ../converter
 
 node ResourceGenerator

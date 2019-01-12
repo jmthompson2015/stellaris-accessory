@@ -2,22 +2,22 @@
 
 const R = require("ramda");
 
-const FileLoader = require("../../converter/FileLoader.js");
-const FileWriter = require("../../converter/FileWriter.js");
+const FileLoader = require("../converter/FileLoader.js");
+const FileWriter = require("../converter/FileWriter.js");
 
-const JobCategoryGenerator = {};
+const CategoryGenerator = {};
 
-const INPUT_FILE = "job.json";
+const INPUT_FILE = "building.json";
 const PROPERTY = "category";
-const OUTPUT_FILE = "../../artifact/JobCategory.js";
+const OUTPUT_FILE = "../artifact/BuildingCategory.js";
 const HEADER = `/* GENERATED FILE Do not edit. */
 
-const JobCategory = `;
+const BuildingCategory = `;
 const FOOTER = `
 
-Object.freeze(JobCategory);
+Object.freeze(BuildingCategory);
 
-export default JobCategory;`;
+export default BuildingCategory;`;
 
 const createName = key => {
   let answer;
@@ -38,9 +38,9 @@ const createName = key => {
   return answer;
 };
 
-JobCategoryGenerator.generate = () => {
+CategoryGenerator.generate = () => {
   const start = Date.now();
-  console.log("JobCategoryGenerator.generate() start");
+  console.log("CategoryGenerator.generate() start");
   FileLoader.loadLocalFileJson(INPUT_FILE).then(data => {
     const reduceFunction1 = (accum, item) => {
       const obj0 = accum[item[PROPERTY]];
@@ -62,4 +62,4 @@ JobCategoryGenerator.generate = () => {
   });
 };
 
-JobCategoryGenerator.generate();
+CategoryGenerator.generate();

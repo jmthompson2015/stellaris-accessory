@@ -1,4 +1,4 @@
-building/converter/building.json
-job/converter/job.json
+building/building.json
+job/job.json
 node_modules/
 research-tree/converter/techs.json

@@ -4,12 +4,12 @@ node Parser.test
 
 node Postprocessor.test
 
-cd ../building/converter
+cd ../building
 
 ./test-all.sh
 
-cd ../../job/converter
+cd ../job
 
 ./test-all.sh
 
-cd ../../converter
+cd ../converter

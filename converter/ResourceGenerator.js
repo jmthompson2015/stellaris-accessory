@@ -7,7 +7,7 @@ const FileWriter = require("./FileWriter.js");
 
 const ResourceGenerator = {};
 
-const INPUT_FILES = ["../building/converter/building.json", "../job/converter/job.json"];
+const INPUT_FILES = ["../building/building.json", "../job/job.json"];
 const OUTPUT_FILE = "../artifact/Resource.js";
 const HEADER = `/* GENERATED FILE Do not edit. */
 

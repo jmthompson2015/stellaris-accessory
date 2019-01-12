@@ -1,10 +1,10 @@
 /* eslint no-console: ["error", { allow: ["log"] }] */
 
-const FileLoader = require("../../converter/FileLoader.js");
-const FileWriter = require("../../converter/FileWriter.js");
-const Parser = require("../../converter/Parser.js");
-const Postprocessor = require("../../converter/Postprocessor.js");
-const Preprocessor = require("../../converter/Preprocessor.js");
+const FileLoader = require("../converter/FileLoader.js");
+const FileWriter = require("../converter/FileWriter.js");
+const Parser = require("../converter/Parser.js");
+const Postprocessor = require("../converter/Postprocessor.js");
+const Preprocessor = require("../converter/Preprocessor.js");
 
 const JsonConverter = {};
 
