@@ -11,7 +11,7 @@ QUnit.test("Job properties clerk", assert => {
 
   // Verify.
   assert.ok(job);
-  assert.equal(job.name, "clerk");
+  assert.equal(job.name, "Clerk");
   assert.equal(job.category, "worker");
   assert.equal(job.key, key);
 });
@@ -27,11 +27,11 @@ QUnit.test("Job keys", assert => {
   assert.equal(keys.length, length);
 
   const job0 = Job[keys[0]];
-  assert.equal(job0.name, "administrator");
+  assert.equal(job0.name, "Administrator");
   assert.equal(job0.key, "administrator");
 
   const jobLast = Job[keys[length - 1]];
-  assert.equal(jobLast.name, "warrior_drone");
+  assert.equal(jobLast.name, "Warrior Drone");
   assert.equal(jobLast.key, "warrior_drone");
 });
 

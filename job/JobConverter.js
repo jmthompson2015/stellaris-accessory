@@ -4,6 +4,7 @@ const R = require("ramda");
 
 const FileLoader = require("../converter/FileLoader.js");
 const FileWriter = require("../converter/FileWriter.js");
+const NameFinder = require("../converter/NameFinder.js");
 
 const JobConverter = {};
 
@@ -21,12 +22,14 @@ export default Job;`;
 
 const parseJob = (key, job0) =>
   new Promise(resolve => {
-    const produces = job0.resources ? job0.resources.produces : undefined;
-    resolve({
-      name: key,
-      category: job0.category,
-      produces,
-      key
+    NameFinder.find(key).then(nameDesc => {
+      const produces = job0.resources ? job0.resources.produces : undefined;
+      resolve({
+        name: nameDesc.name,
+        category: job0.category,
+        produces,
+        key
+      });
     });
   });
 

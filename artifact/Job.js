@@ -3,7 +3,7 @@
 
 const Job = {
   "administrator": {
-    "name": "administrator",
+    "name": "Administrator",
     "category": "ruler",
     "produces": {
       "unity": 3
@@ -11,7 +11,7 @@ const Job = {
     "key": "administrator"
   },
   "agri_drone": {
-    "name": "agri_drone",
+    "name": "Agri-Drone",
     "category": "simple_drone",
     "produces": {
       "food": 6
@@ -19,7 +19,7 @@ const Job = {
     "key": "agri_drone"
   },
   "alloy_drone": {
-    "name": "alloy_drone",
+    "name": "Foundry Drone",
     "category": "complex_drone",
     "produces": {
       "alloys": 3
@@ -27,7 +27,7 @@ const Job = {
     "key": "alloy_drone"
   },
   "artisan": {
-    "name": "artisan",
+    "name": "Artisan",
     "category": "specialist",
     "produces": {
       "consumer_goods": 6
@@ -35,7 +35,7 @@ const Job = {
     "key": "artisan"
   },
   "artisan_drone": {
-    "name": "artisan_drone",
+    "name": "Artisan Drone",
     "category": "complex_drone",
     "produces": {
       "consumer_goods": 6
@@ -43,7 +43,7 @@ const Job = {
     "key": "artisan_drone"
   },
   "bio_trophy": {
-    "name": "bio_trophy",
+    "name": "Bio-Trophy",
     "category": "bio_trophy",
     "produces": {
       "unity": 2
@@ -51,7 +51,7 @@ const Job = {
     "key": "bio_trophy"
   },
   "brain_drone": {
-    "name": "brain_drone",
+    "name": "Brain Drone",
     "category": "complex_drone",
     "produces": {
       "physics_research": 4,
@@ -61,7 +61,7 @@ const Job = {
     "key": "brain_drone"
   },
   "calculator": {
-    "name": "calculator",
+    "name": "Calculator",
     "category": "complex_drone",
     "produces": {
       "physics_research": 4,
@@ -71,7 +71,7 @@ const Job = {
     "key": "calculator"
   },
   "chemist": {
-    "name": "chemist",
+    "name": "Chemist",
     "category": "specialist",
     "produces": {
       "volatile_motes": 2
@@ -79,7 +79,7 @@ const Job = {
     "key": "chemist"
   },
   "chemist_drone": {
-    "name": "chemist_drone",
+    "name": "Chem-Drone",
     "category": "complex_drone",
     "produces": {
       "volatile_motes": 2
@@ -87,12 +87,12 @@ const Job = {
     "key": "chemist_drone"
   },
   "clerk": {
-    "name": "clerk",
+    "name": "Clerk",
     "category": "worker",
     "key": "clerk"
   },
   "colonist": {
-    "name": "colonist",
+    "name": "Colonist",
     "category": "specialist",
     "produces": {
       "food": 1
@@ -100,7 +100,7 @@ const Job = {
     "key": "colonist"
   },
   "coordinator": {
-    "name": "coordinator",
+    "name": "Coordinator",
     "category": "complex_drone",
     "produces": {
       "unity": 3,
@@ -109,17 +109,17 @@ const Job = {
     "key": "coordinator"
   },
   "corrupt_drone": {
-    "name": "corrupt_drone",
+    "name": "Corrupt Drone",
     "category": "corrupt_drone",
     "key": "corrupt_drone"
   },
   "criminal": {
-    "name": "criminal",
+    "name": "Criminal",
     "category": "criminal",
     "key": "criminal"
   },
   "crystal_miner": {
-    "name": "crystal_miner",
+    "name": "Crystal Miner",
     "category": "worker",
     "produces": {
       "rare_crystals": 2
@@ -127,7 +127,7 @@ const Job = {
     "key": "crystal_miner"
   },
   "crystal_mining_drone": {
-    "name": "crystal_mining_drone",
+    "name": "Crystal Mining Drone",
     "category": "simple_drone",
     "produces": {
       "rare_crystals": 2
@@ -135,7 +135,7 @@ const Job = {
     "key": "crystal_mining_drone"
   },
   "culture_worker": {
-    "name": "culture_worker",
+    "name": "Culture Worker",
     "category": "specialist",
     "produces": {
       "unity": 3,
@@ -144,12 +144,12 @@ const Job = {
     "key": "culture_worker"
   },
   "deviant_drone": {
-    "name": "deviant_drone",
+    "name": "Deviant Drone",
     "category": "deviant_drone",
     "key": "deviant_drone"
   },
   "dimensional_portal_researcher": {
-    "name": "dimensional_portal_researcher",
+    "name": "Dimensional Portal Drone",
     "category": "specialist",
     "produces": {
       "trigger": {
@@ -162,7 +162,7 @@ const Job = {
     "key": "dimensional_portal_researcher"
   },
   "dimensional_portal_researcher_gestalt": {
-    "name": "dimensional_portal_researcher_gestalt",
+    "name": "Dimensional Portal Drone",
     "category": "complex_drone",
     "produces": {
       "trigger": {
@@ -175,7 +175,7 @@ const Job = {
     "key": "dimensional_portal_researcher_gestalt"
   },
   "enforcer": {
-    "name": "enforcer",
+    "name": "Enforcer",
     "category": "specialist",
     "produces": {
       "trigger": {
@@ -188,7 +188,7 @@ const Job = {
     "key": "enforcer"
   },
   "entertainer": {
-    "name": "entertainer",
+    "name": "Entertainer",
     "category": "specialist",
     "produces": {
       "unity": 2
@@ -196,7 +196,7 @@ const Job = {
     "key": "entertainer"
   },
   "event_purge": {
-    "name": "event_purge",
+    "name": "$job_purge$",
     "category": "purge",
     "produces": {
       "trigger": {
@@ -209,7 +209,7 @@ const Job = {
     "key": "event_purge"
   },
   "executive": {
-    "name": "executive",
+    "name": "Executive",
     "category": "ruler",
     "produces": {
       "unity": 2
@@ -217,7 +217,7 @@ const Job = {
     "key": "executive"
   },
   "fabricator": {
-    "name": "fabricator",
+    "name": "Fabricator",
     "category": "complex_drone",
     "produces": {
       "alloys": 3
@@ -225,7 +225,7 @@ const Job = {
     "key": "fabricator"
   },
   "farmer": {
-    "name": "farmer",
+    "name": "Farmer",
     "category": "worker",
     "produces": {
       "food": 6
@@ -233,7 +233,7 @@ const Job = {
     "key": "farmer"
   },
   "fe_acolyte_artisan": {
-    "name": "fe_acolyte_artisan",
+    "name": "Acolyte of the Workshop",
     "category": "precursor",
     "produces": {
       "consumer_goods": 3
@@ -241,7 +241,7 @@ const Job = {
     "key": "fe_acolyte_artisan"
   },
   "fe_acolyte_farm": {
-    "name": "fe_acolyte_farm",
+    "name": "Acolyte of the Plow",
     "category": "precursor",
     "produces": {
       "food": 8
@@ -249,7 +249,7 @@ const Job = {
     "key": "fe_acolyte_farm"
   },
   "fe_acolyte_generator": {
-    "name": "fe_acolyte_generator",
+    "name": "Acolyte of the Hyperspanner",
     "category": "precursor",
     "produces": {
       "energy": 6
@@ -257,7 +257,7 @@ const Job = {
     "key": "fe_acolyte_generator"
   },
   "fe_acolyte_mine": {
-    "name": "fe_acolyte_mine",
+    "name": "Acolyte of the Hammer",
     "category": "precursor",
     "produces": {
       "minerals": 6
@@ -265,7 +265,7 @@ const Job = {
     "key": "fe_acolyte_mine"
   },
   "fe_archivist": {
-    "name": "fe_archivist",
+    "name": "Archivist",
     "category": "precursor",
     "produces": {
       "society_research": 5,
@@ -275,7 +275,7 @@ const Job = {
     "key": "fe_archivist"
   },
   "fe_augur": {
-    "name": "fe_augur",
+    "name": "Augur of the Shroud",
     "category": "precursor",
     "produces": {
       "unity": 10
@@ -283,12 +283,12 @@ const Job = {
     "key": "fe_augur"
   },
   "fe_guardian_bot": {
-    "name": "fe_guardian_bot",
+    "name": "Guardian",
     "category": "precursor",
     "key": "fe_guardian_bot"
   },
   "fe_hedonist": {
-    "name": "fe_hedonist",
+    "name": "Hedonist",
     "category": "precursor",
     "produces": {
       "unity": 2
@@ -296,32 +296,32 @@ const Job = {
     "key": "fe_hedonist"
   },
   "fe_maintenance_bot": {
-    "name": "fe_maintenance_bot",
+    "name": "Caretaker",
     "category": "precursor",
     "key": "fe_maintenance_bot"
   },
   "fe_overseer": {
-    "name": "fe_overseer",
+    "name": "Overseer",
     "category": "precursor",
     "key": "fe_overseer"
   },
   "fe_protector": {
-    "name": "fe_protector",
+    "name": "Protector",
     "category": "precursor",
     "key": "fe_protector"
   },
   "fe_sky_cardinal": {
-    "name": "fe_sky_cardinal",
+    "name": "Sky Cardinal",
     "category": "precursor",
     "key": "fe_sky_cardinal"
   },
   "fe_xeno_keeper": {
-    "name": "fe_xeno_keeper",
+    "name": "Xeno-Keeper",
     "category": "precursor",
     "key": "fe_xeno_keeper"
   },
   "fe_xeno_ward": {
-    "name": "fe_xeno_ward",
+    "name": "Xeno-Ward",
     "category": "xeno_ward",
     "produces": {
       "unity": 2
@@ -329,7 +329,7 @@ const Job = {
     "key": "fe_xeno_ward"
   },
   "foundry": {
-    "name": "foundry",
+    "name": "Forge World",
     "category": "specialist",
     "produces": {
       "alloys": 3
@@ -337,7 +337,7 @@ const Job = {
     "key": "foundry"
   },
   "gas_extraction_drone": {
-    "name": "gas_extraction_drone",
+    "name": "Gas Extraction Drone",
     "category": "simple_drone",
     "produces": {
       "exotic_gases": 2
@@ -345,7 +345,7 @@ const Job = {
     "key": "gas_extraction_drone"
   },
   "gas_extractor": {
-    "name": "gas_extractor",
+    "name": "Gas Extractor",
     "category": "worker",
     "produces": {
       "exotic_gases": 2
@@ -353,7 +353,7 @@ const Job = {
     "key": "gas_extractor"
   },
   "gas_refiner": {
-    "name": "gas_refiner",
+    "name": "Gas Refiner",
     "category": "specialist",
     "produces": {
       "exotic_gases": 2
@@ -361,7 +361,7 @@ const Job = {
     "key": "gas_refiner"
   },
   "gas_refiner_drone": {
-    "name": "gas_refiner_drone",
+    "name": "Refinery Drone",
     "category": "complex_drone",
     "produces": {
       "exotic_gases": 2
@@ -369,7 +369,7 @@ const Job = {
     "key": "gas_refiner_drone"
   },
   "head_researcher": {
-    "name": "head_researcher",
+    "name": "Science Director",
     "category": "ruler",
     "produces": {
       "physics_research": 5,
@@ -379,12 +379,12 @@ const Job = {
     "key": "head_researcher"
   },
   "healthcare": {
-    "name": "healthcare",
+    "name": "Medical Worker",
     "category": "specialist",
     "key": "healthcare"
   },
   "high_priest": {
-    "name": "high_priest",
+    "name": "High Priest",
     "category": "ruler",
     "produces": {
       "unity": 5
@@ -392,7 +392,7 @@ const Job = {
     "key": "high_priest"
   },
   "hunter_gatherer": {
-    "name": "hunter_gatherer",
+    "name": "Hunter-Gatherer",
     "category": "worker",
     "produces": {
       "food": 1
@@ -400,7 +400,7 @@ const Job = {
     "key": "hunter_gatherer"
   },
   "livestock": {
-    "name": "livestock",
+    "name": "Livestock",
     "category": "worker",
     "produces": {
       "food": 4
@@ -408,12 +408,12 @@ const Job = {
     "key": "livestock"
   },
   "maintenance_drone": {
-    "name": "maintenance_drone",
+    "name": "Maintenance Drone",
     "category": "simple_drone",
     "key": "maintenance_drone"
   },
   "manager": {
-    "name": "manager",
+    "name": "Manager",
     "category": "specialist",
     "produces": {
       "unity": 3,
@@ -422,7 +422,7 @@ const Job = {
     "key": "manager"
   },
   "merchant": {
-    "name": "merchant",
+    "name": "Merchant",
     "category": "ruler",
     "produces": {
       "trigger": {
@@ -435,7 +435,7 @@ const Job = {
     "key": "merchant"
   },
   "miner": {
-    "name": "miner",
+    "name": "Miner",
     "category": "worker",
     "produces": {
       "minerals": 4
@@ -443,7 +443,7 @@ const Job = {
     "key": "miner"
   },
   "mining_drone": {
-    "name": "mining_drone",
+    "name": "Mining Drone",
     "category": "simple_drone",
     "produces": {
       "minerals": 4
@@ -451,7 +451,7 @@ const Job = {
     "key": "mining_drone"
   },
   "mote_harvester": {
-    "name": "mote_harvester",
+    "name": "Mote Harvester",
     "category": "worker",
     "produces": {
       "volatile_motes": 2
@@ -459,7 +459,7 @@ const Job = {
     "key": "mote_harvester"
   },
   "mote_harvesting_drone": {
-    "name": "mote_harvesting_drone",
+    "name": "Mote Harvesting Drone",
     "category": "simple_drone",
     "produces": {
       "volatile_motes": 2
@@ -467,12 +467,12 @@ const Job = {
     "key": "mote_harvesting_drone"
   },
   "noble": {
-    "name": "noble",
+    "name": "Noble",
     "category": "ruler",
     "key": "noble"
   },
   "odd_factory_worker": {
-    "name": "odd_factory_worker",
+    "name": "Odd Factory Worker",
     "category": "worker",
     "produces": {
       "alloys": 4
@@ -480,7 +480,7 @@ const Job = {
     "key": "odd_factory_worker"
   },
   "organic_battery": {
-    "name": "organic_battery",
+    "name": "Grid Amalgamated",
     "category": "worker",
     "produces": {
       "energy": 4
@@ -488,7 +488,7 @@ const Job = {
     "key": "organic_battery"
   },
   "patrol_drone": {
-    "name": "patrol_drone",
+    "name": "Hunter-Seeker Drone",
     "category": "complex_drone",
     "produces": {
       "unity": 1
@@ -496,7 +496,7 @@ const Job = {
     "key": "patrol_drone"
   },
   "peasant": {
-    "name": "peasant",
+    "name": "Peasant",
     "category": "worker",
     "produces": {
       "food": 2
@@ -504,12 +504,12 @@ const Job = {
     "key": "peasant"
   },
   "pre_sapient": {
-    "name": "pre_sapient",
+    "name": "Hunted",
     "category": "pre_sapients",
     "key": "pre_sapient"
   },
   "preacher": {
-    "name": "preacher",
+    "name": "Fertility Preacher",
     "category": "worker",
     "produces": {
       "unity": 1
@@ -517,7 +517,7 @@ const Job = {
     "key": "preacher"
   },
   "priest": {
-    "name": "priest",
+    "name": "Priest",
     "category": "specialist",
     "produces": {
       "unity": 3,
@@ -526,7 +526,7 @@ const Job = {
     "key": "priest"
   },
   "primitive_bureaucrat": {
-    "name": "primitive_bureaucrat",
+    "name": "Bureaucrat",
     "category": "ruler",
     "produces": {
       "unity": 1
@@ -534,7 +534,7 @@ const Job = {
     "key": "primitive_bureaucrat"
   },
   "primitive_farmer": {
-    "name": "primitive_farmer",
+    "name": "Farmer",
     "category": "worker",
     "produces": {
       "food": 3
@@ -542,7 +542,7 @@ const Job = {
     "key": "primitive_farmer"
   },
   "primitive_laborer": {
-    "name": "primitive_laborer",
+    "name": "Laborer",
     "category": "worker",
     "produces": {
       "consumer_goods": 2
@@ -550,7 +550,7 @@ const Job = {
     "key": "primitive_laborer"
   },
   "primitive_miner": {
-    "name": "primitive_miner",
+    "name": "$job_miner$",
     "category": "worker",
     "produces": {
       "minerals": 3
@@ -558,7 +558,7 @@ const Job = {
     "key": "primitive_miner"
   },
   "primitive_noble": {
-    "name": "primitive_noble",
+    "name": "Feudal Noble",
     "category": "ruler",
     "produces": {
       "unity": 1
@@ -566,7 +566,7 @@ const Job = {
     "key": "primitive_noble"
   },
   "primitive_priest": {
-    "name": "primitive_priest",
+    "name": "Cleric",
     "category": "specialist",
     "produces": {
       "unity": 1
@@ -574,7 +574,7 @@ const Job = {
     "key": "primitive_priest"
   },
   "primitive_priest_2": {
-    "name": "primitive_priest_2",
+    "name": "Priest",
     "category": "specialist",
     "produces": {
       "unity": 1
@@ -582,7 +582,7 @@ const Job = {
     "key": "primitive_priest_2"
   },
   "primitive_researcher": {
-    "name": "primitive_researcher",
+    "name": "Scholar",
     "category": "specialist",
     "produces": {
       "physics_research": 1,
@@ -592,7 +592,7 @@ const Job = {
     "key": "primitive_researcher"
   },
   "primitive_researcher_2": {
-    "name": "primitive_researcher_2",
+    "name": "Researcher",
     "category": "specialist",
     "produces": {
       "physics_research": 1,
@@ -602,7 +602,7 @@ const Job = {
     "key": "primitive_researcher_2"
   },
   "primitive_technician": {
-    "name": "primitive_technician",
+    "name": "$job_technician$",
     "category": "worker",
     "produces": {
       "energy": 1
@@ -610,17 +610,17 @@ const Job = {
     "key": "primitive_technician"
   },
   "primitive_warrior": {
-    "name": "primitive_warrior",
+    "name": "Warrior",
     "category": "specialist",
     "key": "primitive_warrior"
   },
   "primitive_warrior_2": {
-    "name": "primitive_warrior_2",
+    "name": "Soldier",
     "category": "specialist",
     "key": "primitive_warrior_2"
   },
   "purge": {
-    "name": "purge",
+    "name": "Purge",
     "category": "purge",
     "produces": {
       "trigger": {
@@ -634,7 +634,7 @@ const Job = {
     "key": "purge"
   },
   "ratling_scavenger": {
-    "name": "ratling_scavenger",
+    "name": "Scavenger",
     "category": "worker",
     "produces": {
       "food": 1,
@@ -644,12 +644,12 @@ const Job = {
     "key": "ratling_scavenger"
   },
   "replicator": {
-    "name": "replicator",
+    "name": "Replicator",
     "category": "complex_drone",
     "key": "replicator"
   },
   "researcher": {
-    "name": "researcher",
+    "name": "Scholar",
     "category": "specialist",
     "produces": {
       "trigger": {
@@ -662,27 +662,27 @@ const Job = {
     "key": "researcher"
   },
   "roboticist": {
-    "name": "roboticist",
+    "name": "Roboticist",
     "category": "specialist",
     "key": "roboticist"
   },
   "servant": {
-    "name": "servant",
+    "name": "Servant",
     "category": "worker",
     "key": "servant"
   },
   "slave_overseer": {
-    "name": "slave_overseer",
+    "name": "Overseer",
     "category": "worker",
     "key": "slave_overseer"
   },
   "slave_toiler": {
-    "name": "slave_toiler",
+    "name": "Toiler",
     "category": "worker",
     "key": "slave_toiler"
   },
   "soldier": {
-    "name": "soldier",
+    "name": "Soldier",
     "category": "worker",
     "produces": {
       "trigger": {
@@ -695,12 +695,12 @@ const Job = {
     "key": "soldier"
   },
   "spawning_drone": {
-    "name": "spawning_drone",
+    "name": "Spawning Drone",
     "category": "complex_drone",
     "key": "spawning_drone"
   },
   "synapse_drone": {
-    "name": "synapse_drone",
+    "name": "Synapse Drone",
     "category": "complex_drone",
     "produces": {
       "unity": 3,
@@ -709,7 +709,7 @@ const Job = {
     "key": "synapse_drone"
   },
   "technician": {
-    "name": "technician",
+    "name": "Tech-Drone",
     "category": "worker",
     "produces": {
       "energy": 4
@@ -717,7 +717,7 @@ const Job = {
     "key": "technician"
   },
   "technician_drone": {
-    "name": "technician_drone",
+    "name": "Tech-Drone",
     "category": "simple_drone",
     "produces": {
       "energy": 4
@@ -725,7 +725,7 @@ const Job = {
     "key": "technician_drone"
   },
   "telepath": {
-    "name": "telepath",
+    "name": "Telepath",
     "category": "specialist",
     "produces": {
       "trigger": {
@@ -738,7 +738,7 @@ const Job = {
     "key": "telepath"
   },
   "translucer": {
-    "name": "translucer",
+    "name": "Translucer",
     "category": "specialist",
     "produces": {
       "rare_crystals": 2
@@ -746,7 +746,7 @@ const Job = {
     "key": "translucer"
   },
   "translucer_drone": {
-    "name": "translucer_drone",
+    "name": "Lensing Drone",
     "category": "complex_drone",
     "produces": {
       "rare_crystals": 2
@@ -754,12 +754,12 @@ const Job = {
     "key": "translucer_drone"
   },
   "underground_trade_worker": {
-    "name": "underground_trade_worker",
+    "name": "Subterranean Liaison Officer",
     "category": "specialist",
     "key": "underground_trade_worker"
   },
   "warrior_drone": {
-    "name": "warrior_drone",
+    "name": "Warrior Drone",
     "category": "simple_drone",
     "key": "warrior_drone"
   }
