@@ -2,22 +2,22 @@
 
 const R = require("ramda");
 
-const FileLoader = require("./FileLoader.js");
-const FileWriter = require("./FileWriter.js");
+const FileLoader = require("../../converter/FileLoader.js");
+const FileWriter = require("../../converter/FileWriter.js");
 
 const CategoryGenerator = {};
 
 const INPUT_FILE = "building.json";
 const PROPERTY = "category";
-const OUTPUT_FILE = "../artifact/Category.js";
+const OUTPUT_FILE = "../../artifact/BuildingCategory.js";
 const HEADER = `/* GENERATED FILE Do not edit. */
 
-const Category = `;
+const BuildingCategory = `;
 const FOOTER = `
 
-Object.freeze(Category);
+Object.freeze(BuildingCategory);
 
-export default Category;`;
+export default BuildingCategory;`;
 
 const createName = key => {
   let answer;

@@ -16,7 +16,7 @@ QUnit.test("Resource properties alloys", assert => {
 
 QUnit.test("Resource keys", assert => {
   // Setup.
-  const length = 8;
+  const length = 14;
 
   // Run.
   const keys = Object.keys(Resource);

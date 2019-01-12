@@ -2,7 +2,7 @@
 
 const { assert } = require("unit.js");
 
-const FileLoader = require("./FileLoader.js");
+const FileLoader = require("../../converter/FileLoader.js");
 const JsonConverter = require("./JsonConverter.js");
 
 const testExpected = () => {

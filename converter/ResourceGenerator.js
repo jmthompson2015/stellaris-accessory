@@ -7,7 +7,7 @@ const FileWriter = require("./FileWriter.js");
 
 const ResourceGenerator = {};
 
-const INPUT_FILE = "building.json";
+const INPUT_FILES = ["../building/converter/building.json", "../job/converter/job.json"];
 const OUTPUT_FILE = "../artifact/Resource.js";
 const HEADER = `/* GENERATED FILE Do not edit. */
 
@@ -37,21 +37,45 @@ const createName = key => {
   return answer;
 };
 
+const parseFile = (n, answerIn) =>
+  new Promise(resolve => {
+    const answer = answerIn || "";
+
+    if (n < INPUT_FILES.length) {
+      console.log(`parsing file ${INPUT_FILES[n]}`);
+      FileLoader.loadLocalFileJson(INPUT_FILES[n]).then(data => {
+        const reduceFunction1 = property => (accum, building) => {
+          if (building.resources && building.resources[property]) {
+            const keys = Object.keys(building.resources[property]);
+            return R.concat(accum, keys);
+          }
+          return accum;
+        };
+        let myAnswer = answerIn;
+        if (INPUT_FILES[n].includes("building")) {
+          const allKeys0 = R.reduce(reduceFunction1("cost"), [], Object.values(data));
+          const allKeys1 = R.reduce(reduceFunction1("upkeep"), [], Object.values(data));
+          myAnswer = R.concat(allKeys0, allKeys1);
+        } else if (INPUT_FILES[n].includes("job")) {
+          const allKeys0 = R.reduce(reduceFunction1("produces"), [], Object.values(data));
+          myAnswer = R.uniq(allKeys0);
+        } else {
+          throw new Error(`Unknown file: ${INPUT_FILES[n]}`);
+        }
+
+        // Next file.
+        const myN = n + 1;
+        parseFile(myN, myAnswer).then(answer2 => resolve(answer2));
+      });
+    } else {
+      resolve(answer);
+    }
+  });
+
 ResourceGenerator.generate = () => {
   const start = Date.now();
   console.log("ResourceGenerator.generate() start");
-  FileLoader.loadLocalFileJson(INPUT_FILE).then(buildings => {
-    const reduceFunction1 = property => (accum, building) => {
-      if (building.resources && building.resources[property]) {
-        const keys = Object.keys(building.resources[property]);
-        return R.concat(accum, keys);
-      }
-      return accum;
-    };
-    const allKeys0 = R.reduce(reduceFunction1("cost"), [], Object.values(buildings));
-    const allKeys1 = R.reduce(reduceFunction1("upkeep"), [], Object.values(buildings));
-    const allKeys2 = R.concat(allKeys0, allKeys1);
-    const allKeys = R.uniq(allKeys2);
+  parseFile(0, []).then(allKeys => {
     allKeys.sort();
 
     const reduceFunction2 = (accum, key) => {

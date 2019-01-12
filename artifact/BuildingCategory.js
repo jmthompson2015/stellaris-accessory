@@ -1,6 +1,6 @@
 /* GENERATED FILE Do not edit. */
 
-const Category = {
+const BuildingCategory = {
   "amenity": {
     "name": "Amenity",
     "key": "amenity"
@@ -40,6 +40,6 @@ const Category = {
   }
 }
 
-Object.freeze(Category);
+Object.freeze(BuildingCategory);
 
-export default Category;
+export default BuildingCategory;

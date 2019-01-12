@@ -2,14 +2,14 @@
 
 const R = require("ramda");
 
-const FileLoader = require("./FileLoader.js");
-const FileWriter = require("./FileWriter.js");
+const FileLoader = require("../../converter/FileLoader.js");
+const FileWriter = require("../../converter/FileWriter.js");
 
 const JobCategoryGenerator = {};
 
 const INPUT_FILE = "job.json";
 const PROPERTY = "category";
-const OUTPUT_FILE = "../artifact/JobCategory.js";
+const OUTPUT_FILE = "../../artifact/JobCategory.js";
 const HEADER = `/* GENERATED FILE Do not edit. */
 
 const JobCategory = `;
