@@ -29,7 +29,7 @@ const parseFile = (n, answerIn) =>
     const answer = answerIn || "";
 
     if (n < INPUT_FILES.length) {
-      console.log(`parsing file ${INPUT_FILES[n]}`);
+      // console.log(`parsing file ${INPUT_FILES[n]}`);
       FileLoader.loadLocalFile(`${BUILDING}/${INPUT_FILES[n]}`).then(data => {
         const data2 = Lexer.lex(data);
 
