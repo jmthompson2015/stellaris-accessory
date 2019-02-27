@@ -2,3 +2,4 @@ building/building.json
 job/job.json
 node_modules/
 research-tree/converter/techs.json
+technology/technology.json

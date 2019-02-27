@@ -1,184 +1,86 @@
 /* eslint max-len: ["error", { "ignoreTemplateLiterals": true }] */
 /* eslint no-console: ["error", { allow: ["log"] }] */
 
+const R = require("ramda");
 const { assert } = require("unit.js");
 
+const Lexer = require("./Lexer.js");
 const Parser = require("./Parser.js");
 
-const { grammar, semantics } = Parser;
 const isVerbose = false;
 
-const parse = input => {
-  const matchResult = grammar.match(input);
-  if (matchResult.failed()) {
-    return console.log(`input failed to match ${input} ${matchResult.message}`);
-  }
-
-  return semantics(matchResult).eval();
-};
-
 const testExpected = (input, expected) => {
-  const result = parse(input);
+  const result = Parser.parse(input);
   assert(result !== undefined);
 
   if (isVerbose) {
-    console.log(`result =   :${result}:`);
-    console.log(`expected = :${expected}:`);
+    console.log(`result   = ${JSON.stringify(result, null, 2)}`);
+    console.log(`expected = ${JSON.stringify(expected, null, 2)}`);
   }
 
-  assert.equal(result, expected);
-
-  if (isVerbose) {
-    console.log("success = ", result, expected);
-  }
+  assert(R.equals(result, expected));
 
   return result;
 };
 
-const testLength = (input, expectedLength) => {
-  const result = parse(input);
-  assert(result !== undefined, "result !== undefined");
-  assert.equal(typeof result, "string", `typeof result = ${typeof result}`);
-  assert.equal(result.length, expectedLength, `result.length = ${result.length}`);
-
-  if (isVerbose) {
-    console.log("success = ", result.length, expectedLength);
-  }
-
-  return result;
-};
-
-const TEST1 = "base_buildtime = 360";
-testExpected(
-  TEST1,
-  `"base_buildtime": 360,
-`
+const TEST1 = Lexer.lex(
+  "tech_solar_panel_network = {\n" +
+    "	area = engineering\n" +
+    "	tier = 0\n" +
+    "	category = { voidcraft }\n" +
+    '	prerequisites = { "tech_starbase_2" }\n' +
+    "	start_tech = yes\n" +
+    "	potential = {\n" +
+    "		is_gestalt = yes\n" +
+    "	}\n" +
+    "}\n" +
+    ""
 );
+testExpected(TEST1, {
+  tech_solar_panel_network: {
+    area: "engineering",
+    tier: 0,
+    category: ["voidcraft"],
+    prerequisites: ["tech_starbase_2"],
+    start_tech: "yes",
+    potential: {
+      is_gestalt: "yes"
+    }
+  }
+});
 console.log("Parser Test 1: passed");
 
-const TEST2 = `building_hydroponics_farm = { base_buildtime = 360 category = resource }`;
-testExpected(
-  TEST2,
-  `"building_hydroponics_farm": {
-  "base_buildtime": 360,"category": "resource"
-},
-`
+const TEST2 = Lexer.lex(
+  "tech_space_exploration = {\n" +
+    "	cost = 0\n" +
+    "	area = engineering	\n" +
+    "	start_tech = yes\n" +
+    "	category = { voidcraft }\n" +
+    '	prerequisites = { "tech_basic_science_lab_1" }\n' +
+    "	tier = 0\n" +
+    "	prereqfor_desc = {\n" +
+    "		ship = {\n" +
+    '			title = "TECH_UNLOCK_SCIENCE_SHIP_CONSTRUCTION_TITLE"\n' +
+    '			desc = "TECH_UNLOCK_SCIENCE_SHIP_CONSTRUCTION_DESC"\n' +
+    "		}\n" +
+    "	}	\n" +
+    "}\n" +
+    ""
 );
+testExpected(TEST2, {
+  tech_space_exploration: {
+    cost: 0,
+    area: "engineering",
+    start_tech: "yes",
+    category: ["voidcraft"],
+    prerequisites: ["tech_basic_science_lab_1"],
+    tier: 0,
+    prereqfor_desc: {
+      ship: {
+        title: "TECH_UNLOCK_SCIENCE_SHIP_CONSTRUCTION_TITLE",
+        desc: "TECH_UNLOCK_SCIENCE_SHIP_CONSTRUCTION_DESC"
+      }
+    }
+  }
+});
 console.log("Parser Test 2: passed");
-
-const TEST3 = `building_hydroponics_farm = {
-	base_buildtime = 360
-	category = resource
-}`;
-testExpected(
-  TEST3,
-  `"building_hydroponics_farm": {
-  "base_buildtime": 360,"category": "resource"
-},
-`
-);
-console.log("Parser Test 3: passed");
-
-const TEST4 = `building_hydroponics_farm = {
-	base_buildtime = 360
-
-	category = resource
-
-	potential = {
-		NOT = { is_planet_class = pc_machine }
-		NOT = { has_modifier = resort_colony }
-	}
-
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = { is_regular_empire = yes }
-		}
-		modifier = {
-			job_farmer_add = 2
-		}
-	}
-
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = { is_gestalt = yes }
-		}
-		modifier = {
-			job_agri_drone_add = 2
-		}
-	}
-
-	resources = {
-		category = planet_buildings
-		cost = {
-			minerals = 300
-		}
-		upkeep = {
-			energy = 2
-		}
-	}
-
-	triggered_desc = {
-		trigger = {
-			exists = owner
-			owner = { is_gestalt = yes }
-		}
-		text = job_agri_drone_effect_desc
-	}
-	triggered_desc = {
-		trigger = {
-			exists = owner
-			owner = { is_gestalt = no }
-		}
-		text = job_farmer_effect_desc
-	}
-}
-`;
-testLength(TEST4, 856);
-console.log("Parser Test 4: passed");
-
-const TEST5 = `building_hydroponics_farm = {
-	prerequisites = {
-		tech_hydroponics
-	}
-}
-`;
-testExpected(
-  TEST5,
-  `"building_hydroponics_farm": {
-  "prerequisites": [
-  "tech_hydroponics",
-]
-},
-`
-);
-console.log("Parser Test 5: passed");
-
-const TEST6 = `planet_modifier = {
-  planet_jobs_slave_produces_mult = 0.05
-  pop_cat_slave_political_power = -0.25
-}`;
-testExpected(
-  TEST6,
-  `"planet_modifier": {
-  "planet_jobs_slave_produces_mult": 0.05,"pop_cat_slave_political_power": -0.25
-},
-`
-);
-console.log("Parser Test 6: passed");
-
-const TEST7 = `convert_to = {
-  building_hive_capital
-  building_deployment_post
-  building_resort_capital
-  building_slave_capital
-}`;
-testExpected(
-  TEST7,
-  `"convert_to": [
-  "building_hive_capital","building_deployment_post","building_resort_capital","building_slave_capital",
-],
-`
-);
-console.log("Parser Test 7: passed");

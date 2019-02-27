@@ -1,85 +1,94 @@
 /* eslint no-console: ["error", { allow: ["log"] }] */
 /* eslint no-unused-vars: ["error", { "args": "none" }] */
-/* eslint no-useless-escape: "off" */
 
-const ohm = require("ohm-js");
+const R = require("ramda");
 
 const Parser = {};
 
-Parser.grammar = ohm.grammar(`
-  Stellaris {
-    Exp = AssignExp+
+const matchBrace = content => {
+  let index = 0;
+  let openCount = 1;
+  let closeCount = 0;
 
-	  AssignExp = KeyExp "=" ValExp
-
-    KeyExp = string
-
-    ValExp = (ObjAssignExp | ObjValExp | SimpleValExp)
-
-    ObjAssignExp = "{" AssignExp+ "}"
-
-    ObjValExp = "{" SimpleValExp* "}"
-
-    SimpleValExp = number | qstring | string
-
-    qstring = "\"" string "\""
-
-    string = (letter | number | "_" | "@")+
-
-    number = float | int
-    float = "-"* digit+ "."* digit*
-    int = digit+
-  }
-`);
-
-Parser.semantics = Parser.grammar.createSemantics();
-Parser.semantics.addOperation("eval", {
-  Exp: a => `${a.eval()},
-`,
-  AssignExp: (a, b, c) => `${a.eval()}: ${c.eval()}`,
-  ObjAssignExp: (a, b, c) => `{
-  ${b.eval()}
-}`,
-  ObjValExp: (a, b, c) => {
-    if (b.sourceString === undefined || b.sourceString === "") {
-      return `[]`;
+  while (closeCount < openCount) {
+    index += 1;
+    if (content[index] === "{") {
+      openCount += 1;
+    } else if (content[index] === "}") {
+      closeCount += 1;
     }
-    return `[
-  ${b.eval()},
-]`;
-  },
-  qstring: (a, b, c) => b.eval(),
-  string: a => `"${a.sourceString}"`,
-  float: (sign, prefix, decimalPoint, suffix) => {
-    const p = decimalPoint.sourceString;
-    const factor = sign.sourceString !== undefined && sign.sourceString === "-" ? -1.0 : 1.0;
+  }
 
-    if (p !== undefined && p.length > 0) {
-      return factor * parseFloat(`${prefix.sourceString}${p}${suffix.sourceString}`);
+  return content.slice(0, index + 1);
+};
+
+const parseObject = fragment0 => {
+  // Trim brackets.
+  const fragment = fragment0.slice(1, -1);
+  // console.log(`fragment = :${fragment}:`);
+  let answer = {};
+  let key;
+  let value;
+
+  for (let i = 0; i < fragment.length; i += 1) {
+    if (fragment[i] === "=") {
+      key = fragment[i - 1];
+      // console.log(`${i} key = :${key}:`);
+
+      if (fragment[i + 1] === "{") {
+        const fragment2 = matchBrace(fragment.slice(i + 1));
+
+        if (fragment2.includes("=")) {
+          // Object.
+          value = parseObject(fragment2);
+          i += fragment2.length;
+        } else {
+          // Array.
+          value = fragment2.slice(1, -1);
+          i += value.length;
+        }
+      } else {
+        // String.
+        value = fragment[i + 1];
+        i += 1;
+
+        if (value.match(/^[-+]?\d+$/)) {
+          value = parseInt(value, 10);
+        } else if (value.match(/^[-+]?\d+\.\d+$/)) {
+          value = parseFloat(value);
+        }
+      }
+
+      // console.log(`${i + 1} value = :${value}:`);
+      answer = R.assoc(key, value, answer);
     }
-    return factor * parseInt(prefix.sourceString, 10);
-  },
-  int: i => parseInt(i.sourceString, 10)
-});
-
-Parser.parse = (content, isVerbose = false) => {
-  const { grammar, semantics } = Parser;
-  const matchResult = grammar.match(content);
-  if (isVerbose) {
-    console.log(`matchResult.succeeded() ? ${matchResult.succeeded()}`);
-    console.log(`matchResult.failed() ? ${matchResult.failed()}`);
   }
 
-  if (matchResult.failed()) {
-    console.log(`matchResult.shortMessage = ${matchResult.shortMessage}`);
-    console.log(`matchResult.message = ${matchResult.message}`);
-    console.log(
-      `matchResult.getRightmostFailurePosition() = ${matchResult.getRightmostFailurePosition()}`
-    );
-    console.log(`matchResult.getRightmostFailures() = ${matchResult.getRightmostFailures()}`);
+  return answer;
+};
+
+Parser.parse = (tokens, isVerbose = false) => {
+  let answer = {};
+  let index0 = 0;
+  let index1 = tokens.indexOf("=");
+
+  while (index0 >= 0 && index1 >= 0) {
+    const key = tokens.slice(index0, index1);
+    // console.log(`key = :${key}:`);
+
+    const index2 = tokens.indexOf("{", index1 + 1);
+    const fragment = matchBrace(tokens.slice(index2));
+    // console.log(`fragment = :${fragment}:`);
+
+    const obj = parseObject(fragment);
+    // console.log(`obj = ${JSON.stringify(obj, null, 2)}`);
+    answer = R.assoc(key, obj, answer);
+
+    index0 = index2 + fragment.length;
+    index1 = tokens.indexOf("=", index0);
   }
 
-  return semantics(matchResult).eval();
+  return answer;
 };
 
 module.exports = Parser;

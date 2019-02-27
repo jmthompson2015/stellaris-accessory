@@ -519,7 +519,7 @@ const Building = {
     ],
     "planetModifiers": {
       "planet_housing_add": 8,
-      "job_maintenance_drone_add": 2
+      "planet_amenities_add": 6
     },
     "cost": {
       "minerals": 300,
@@ -541,8 +541,8 @@ const Building = {
       "building_hive_warren"
     ],
     "planetModifiers": {
-      "planet_housing_add": 5,
-      "job_maintenance_drone_add": 1
+      "planet_housing_add": 4,
+      "planet_amenities_add": 3
     },
     "cost": {
       "minerals": 300
@@ -1548,6 +1548,7 @@ const Building = {
     "description": "A fully enclosed habitation dome with a self-contained ecosystem, a veritable private paradise for those rich or fortunate enough to live there.",
     "category": "amenity",
     "childKeys": [
+      "building_organic_paradise",
       "building_drone_megastorage",
       "building_expanded_warren",
       "building_communal_housing_large"
@@ -1712,7 +1713,6 @@ const Building = {
     "description": "A vast facility which centralizes the handling of resources and manufacturing across the entire planet.",
     "category": "manufacturing",
     "planetModifiers": {
-      "job_administrator_add": 1,
       "planet_metallurgists_produces_mult": 0.15,
       "planet_artisans_produces_mult": 0.15
     },
@@ -2018,6 +2018,11 @@ const Building = {
   "building_stone_palace": {
     "name": "Stone Palaces",
     "description": "Primitive palaces built out of stone, where the local ruling elite resides.",
+    "childKeys": [
+      "building_hive_capital",
+      "building_machine_capital",
+      "building_colony_shelter"
+    ],
     "planetModifiers": {
       "job_primitive_noble_add": 1,
       "job_primitive_warrior_add": 1,

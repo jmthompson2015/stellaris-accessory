@@ -18,7 +18,7 @@ QUnit.test("Job properties clerk", assert => {
 
 QUnit.test("Job keys", assert => {
   // Setup.
-  const length = 96;
+  const length = 97;
 
   // Run.
   const keys = Object.keys(Job);

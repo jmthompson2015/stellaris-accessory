@@ -11,26 +11,28 @@ const JsonConverter = {};
 
 const STEAMAPPS =
   "/Volumes/StorageDrive/jmthompson/Library/Application Support/SteamLibrary/steamapps";
-const BUILDING = `${STEAMAPPS}/common/Stellaris/common/buildings`;
+const TECHNOLOGY = `${STEAMAPPS}/common/Stellaris/common/technology`;
 const INPUT_FILES = [
-  "00_capital_buildings.txt",
-  "00_example.txt",
-  "01_pop_assembly_buildings.txt",
-  "02_government_buildings.txt",
-  "03_resource_buildings.txt",
-  "04_manufacturing_buildings.txt",
-  "05_research_buildings.txt",
-  "06_trade_buildings.txt",
-  "07_amenity_buildings.txt",
-  "08_unity_buildings.txt",
-  "09_army_buildings.txt",
-  "10_deposit_buildings.txt",
-  "11_primitive_buildings.txt",
-  "12_event_buildings.txt",
-  "13_fallen_empire_buildings.txt",
-  "14_branch_office_buildings.txt"
+  "00_apocalypse_tech.txt",
+  "00_distant_stars_tech.txt",
+  "00_eng_tech.txt",
+  "00_eng_tech_repeatable.txt",
+  "00_eng_weapon_tech.txt",
+  "00_fallen_empire_tech.txt",
+  "00_horizonsignal_tech.txt",
+  "00_leviathans_tech.txt",
+  "00_megacorp_tech.txt",
+  "00_phys_tech.txt",
+  "00_phys_tech_repeatable.txt",
+  "00_phys_weapon_tech.txt",
+  "00_repeatable.txt",
+  "00_soc_tech.txt",
+  "00_soc_tech_repeatable.txt",
+  "00_soc_weapon_tech.txt",
+  "00_strategic_resources_tech.txt",
+  "00_synthetic_dawn_tech.txt"
 ];
-const OUTPUT_FILE = "./building.json";
+const OUTPUT_FILE = "./technology.json";
 
 const parseFile = (n, answerIn) =>
   new Promise(resolve => {
@@ -38,7 +40,7 @@ const parseFile = (n, answerIn) =>
 
     if (n < INPUT_FILES.length) {
       console.log(`parsing file ${INPUT_FILES[n]}`);
-      FileLoader.loadLocalFile(`${BUILDING}/${INPUT_FILES[n]}`).then(data => {
+      FileLoader.loadLocalFile(`${TECHNOLOGY}/${INPUT_FILES[n]}`).then(data => {
         const data2 = Lexer.lex(data);
 
         // Parse.
@@ -58,8 +60,8 @@ JsonConverter.convert = () =>
   new Promise(resolve => {
     const start = Date.now();
     console.log("JsonConverter.convert() start");
-    parseFile(0).then(buildings => {
-      FileWriter.writeFile(OUTPUT_FILE, JSON.stringify(buildings, null, 2));
+    parseFile(0).then(technologies => {
+      FileWriter.writeFile(OUTPUT_FILE, JSON.stringify(technologies, null, 2));
 
       const end = Date.now();
       console.log(`elapsed: ${end - start} ms`);

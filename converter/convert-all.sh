@@ -6,6 +6,10 @@ cd ../job
 
 ./convert-all.sh
 
+cd ../technology
+
+./convert-all.sh
+
 cd ../converter
 
 node ResourceGenerator

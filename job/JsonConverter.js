@@ -1,10 +1,11 @@
 /* eslint no-console: ["error", { allow: ["log"] }] */
 
+const R = require("ramda");
+
 const FileLoader = require("../converter/FileLoader.js");
 const FileWriter = require("../converter/FileWriter.js");
+const Lexer = require("../converter/Lexer.js");
 const Parser = require("../converter/Parser.js");
-const Postprocessor = require("../converter/Postprocessor.js");
-const Preprocessor = require("../converter/Preprocessor.js");
 
 const JsonConverter = {};
 
@@ -22,11 +23,6 @@ const INPUT_FILES = [
   "07_fallen_empire_jobs.txt"
 ];
 const OUTPUT_FILE = "./job.json";
-const HEADER = `{
-`;
-const FOOTER = `
-}
-`;
 
 const parseFile = (n, answerIn) =>
   new Promise(resolve => {
@@ -35,12 +31,11 @@ const parseFile = (n, answerIn) =>
     if (n < INPUT_FILES.length) {
       console.log(`parsing file ${INPUT_FILES[n]}`);
       FileLoader.loadLocalFile(`${BUILDING}/${INPUT_FILES[n]}`).then(data => {
-        const data2 = Preprocessor.process(data);
+        const data2 = Lexer.lex(data);
 
         // Parse.
         const result = Parser.parse(data2);
-        const myAnswer = `${answer}
-${result}`;
+        const myAnswer = R.merge(answer, result);
 
         // Next file.
         const myN = n + 1;
@@ -51,24 +46,12 @@ ${result}`;
     }
   });
 
-const isFormatted = false;
-
 JsonConverter.convert = () =>
   new Promise(resolve => {
     const start = Date.now();
     console.log("JsonConverter.convert() start");
-    parseFile(0).then(buildingLines => {
-      const content0 = `${HEADER}${buildingLines}${FOOTER}`;
-
-      if (isFormatted) {
-        // Lose properties with the same name.
-        const content1 = Postprocessor.process(content0);
-        const contentObj = JSON.parse(content1);
-        FileWriter.writeFile(OUTPUT_FILE, JSON.stringify(contentObj, null, 2));
-      } else {
-        const content = Postprocessor.process(content0);
-        FileWriter.writeFile(OUTPUT_FILE, content);
-      }
+    parseFile(0).then(jobs => {
+      FileWriter.writeFile(OUTPUT_FILE, JSON.stringify(jobs, null, 2));
 
       const end = Date.now();
       console.log(`elapsed: ${end - start} ms`);

@@ -387,7 +387,12 @@ const Job = {
     "name": "High Priest",
     "category": "ruler",
     "produces": {
-      "unity": 5
+      "trigger": {
+        "owner": {
+          "has_valid_civic": "civic_exalted_priesthood"
+        }
+      },
+      "unity": 1
     },
     "key": "high_priest"
   },
@@ -520,8 +525,12 @@ const Job = {
     "name": "Priest",
     "category": "specialist",
     "produces": {
-      "unity": 3,
-      "society_research": 2
+      "trigger": {
+        "owner": {
+          "has_valid_civic": "civic_exalted_priesthood"
+        }
+      },
+      "unity": 1
     },
     "key": "priest"
   },
@@ -752,6 +761,19 @@ const Job = {
       "rare_crystals": 2
     },
     "key": "translucer_drone"
+  },
+  "underground_contact_drone": {
+    "name": "Subterranean Contact Drone",
+    "category": "simple_drone",
+    "produces": {
+      "trigger": {
+        "owner": {
+          "is_machine_empire": "yes"
+        }
+      },
+      "energy": 6
+    },
+    "key": "underground_contact_drone"
   },
   "underground_trade_worker": {
     "name": "Subterranean Liaison Officer",
