@@ -274,3 +274,103 @@ testExpected(TEST3, [
   "}"
 ]);
 console.log("Lexer Test 3: passed");
+
+const TEST4 =
+  "tech_repeatable_improved_tile_energy_output = {\n" +
+  "	area = physics\n" +
+  "	cost = @repeatableTechBaseCost\n" +
+  "	cost_per_level = @repeatableTechLevelCost\n" +
+  "	tier = @repeatableTechTier\n" +
+  "	category = { field_manipulation }\n" +
+  "	levels = -1\n" +
+  '	prerequisites = {"tech_power_plant_3"}\n' +
+  "	weight = @repeatableTechWeight\n" +
+  "	\n" +
+  "	weight_modifier = {\n" +
+  "		factor = @repatableTechFactor\n" +
+  "	}\n" +
+  "	\n" +
+  "	ai_weight = {\n" +
+  "		factor = 1.0\n" +
+  "	}\n" +
+  "	\n" +
+  "	weight_groups = {\n" +
+  "		repeatable\n" +
+  "	}\n" +
+  "	mod_weight_if_group_picked = {\n" +
+  "		repeatable = 0.01\n" +
+  "	}\n" +
+  "	\n" +
+  "	modifier = {\n" +
+  "		planet_jobs_energy_produces_mult = 0.05\n" +
+  "	}\n" +
+  "}\n" +
+  "";
+testExpected(TEST4, [
+  "tech_repeatable_improved_tile_energy_output",
+  "=",
+  "{",
+  "area",
+  "=",
+  "physics",
+  "cost",
+  "=",
+  "@repeatableTechBaseCost",
+  "cost_per_level",
+  "=",
+  "@repeatableTechLevelCost",
+  "tier",
+  "=",
+  "@repeatableTechTier",
+  "category",
+  "=",
+  "{",
+  "field_manipulation",
+  "}",
+  "levels",
+  "=",
+  "-1",
+  "prerequisites",
+  "=",
+  "{",
+  "tech_power_plant_3",
+  "}",
+  "weight",
+  "=",
+  "@repeatableTechWeight",
+  "weight_modifier",
+  "=",
+  "{",
+  "factor",
+  "=",
+  "@repatableTechFactor",
+  "}",
+  "ai_weight",
+  "=",
+  "{",
+  "factor",
+  "=",
+  "1.0",
+  "}",
+  "weight_groups",
+  "=",
+  "{",
+  "repeatable",
+  "}",
+  "mod_weight_if_group_picked",
+  "=",
+  "{",
+  "repeatable",
+  "=",
+  "0.01",
+  "}",
+  "modifier",
+  "=",
+  "{",
+  "planet_jobs_energy_produces_mult",
+  "=",
+  "0.05",
+  "}",
+  "}"
+]);
+console.log("Lexer Test 4: passed");

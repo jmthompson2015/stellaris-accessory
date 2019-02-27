@@ -5,6 +5,22 @@ const R = require("ramda");
 
 const Parser = {};
 
+const convertValue = value => {
+  let answer = value;
+
+  if (value.match(/^[-+]?\d+$/)) {
+    answer = parseInt(value, 10);
+  } else if (value.match(/^[-+]?\d+\.\d+$/)) {
+    answer = parseFloat(value);
+  } else if (value === "yes") {
+    answer = true;
+  } else if (value === "no") {
+    answer = false;
+  }
+
+  return answer;
+};
+
 const matchBrace = content => {
   let index = 0;
   let openCount = 1;
@@ -49,14 +65,8 @@ const parseObject = fragment0 => {
         }
       } else {
         // String.
-        value = fragment[i + 1];
+        value = convertValue(fragment[i + 1]);
         i += 1;
-
-        if (value.match(/^[-+]?\d+$/)) {
-          value = parseInt(value, 10);
-        } else if (value.match(/^[-+]?\d+\.\d+$/)) {
-          value = parseFloat(value);
-        }
       }
 
       // console.log(`${i + 1} value = :${value}:`);

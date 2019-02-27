@@ -9,7 +9,7 @@ const Technology = {
       "biology"
     ],
     "cost": "@tier3cost3",
-    "isRare": "yes",
+    "isRare": true,
     "prerequisites": [
       "tech_gene_tailoring"
     ],
@@ -40,25 +40,12 @@ const Technology = {
       "voidcraft"
     ],
     "cost": "@tier5cost3",
-    "isRare": "yes",
+    "isRare": true,
     "prerequisites": [
       "tech_titans"
     ],
     "tier": 5,
     "key": "@tier1cost1"
-  },
-  "ai_weight": {
-    "description": "",
-    "key": "ai_weight"
-  },
-  "mod_weight_if_group_picked": {
-    "description": "",
-    "key": "mod_weight_if_group_picked"
-  },
-  "modifier": {
-    "name": "Pop Modifier",
-    "description": "Our §H$MOD_POP_GOVERNMENT_ETHIC_ATTRACTION$§! modifier further changes its Attraction by $VALUE$.",
-    "key": "modifier"
   },
   "null_void_beam": {
     "name": "Null Void Beam",
@@ -68,7 +55,7 @@ const Technology = {
       "particles"
     ],
     "cost": "@tier1cost2",
-    "isRare": "yes",
+    "isRare": true,
     "tier": 2,
     "key": "null_void_beam"
   },
@@ -151,7 +138,7 @@ const Technology = {
       "field_manipulation"
     ],
     "cost": "@horizontechcost1",
-    "isRare": "yes",
+    "isRare": true,
     "prerequisites": [],
     "tier": "@horizontechtier",
     "key": "tech_akx_worm_1"
@@ -164,7 +151,7 @@ const Technology = {
       "statecraft"
     ],
     "cost": "@horizontechcost1",
-    "isRare": "yes",
+    "isRare": true,
     "prerequisites": [],
     "tier": "@horizontechtier",
     "key": "tech_akx_worm_2"
@@ -177,7 +164,7 @@ const Technology = {
       "particles"
     ],
     "cost": "@horizontechcost2",
-    "isRare": "yes",
+    "isRare": true,
     "prerequisites": [
       "tech_akx_worm_1",
       "tech_akx_worm_2"
@@ -287,7 +274,7 @@ const Technology = {
       "computing"
     ],
     "cost": "@tier2cost1",
-    "isRare": "yes",
+    "isRare": true,
     "tier": 2,
     "key": "tech_archeology_lab"
   },
@@ -313,7 +300,7 @@ const Technology = {
     "featureFlags": [
       "unity_ambitions"
     ],
-    "isRare": "yes",
+    "isRare": true,
     "tier": 5,
     "key": "tech_ascension_theory"
   },
@@ -532,7 +519,7 @@ const Technology = {
       "voidcraft"
     ],
     "cost": "@tier5cost1",
-    "isRare": "yes",
+    "isRare": true,
     "prerequisites": [
       "tech_battleship_hull_1"
     ],
@@ -587,7 +574,7 @@ const Technology = {
       "biology"
     ],
     "cost": "@tier4cost2",
-    "isRare": "yes",
+    "isRare": true,
     "prerequisites": [
       "tech_adaptive_combat_algorithms"
     ],
@@ -602,7 +589,7 @@ const Technology = {
       "biology"
     ],
     "cost": "@tier4cost3",
-    "isRare": "yes",
+    "isRare": true,
     "prerequisites": [
       "tech_selected_lineages"
     ],
@@ -825,7 +812,7 @@ const Technology = {
       "computing"
     ],
     "cost": "@tier4cost2",
-    "isRare": "yes",
+    "isRare": true,
     "prerequisites": [
       "tech_combat_computers_2",
       "tech_sapient_ai"
@@ -841,7 +828,7 @@ const Technology = {
       "computing"
     ],
     "cost": "@tier4cost2",
-    "isRare": "yes",
+    "isRare": true,
     "prerequisites": [
       "tech_combat_computers_2"
     ],
@@ -899,7 +886,7 @@ const Technology = {
       "industry"
     ],
     "cost": "@tier3cost2",
-    "isRare": "yes",
+    "isRare": true,
     "prerequisites": [
       "tech_assembly_pattern"
     ],
@@ -942,7 +929,7 @@ const Technology = {
       "voidcraft"
     ],
     "cost": "@tier2cost3",
-    "isRare": "yes",
+    "isRare": true,
     "prerequisites": [
       "tech_corvette_hull_1"
     ],
@@ -999,7 +986,7 @@ const Technology = {
       "voidcraft"
     ],
     "cost": "@tier4cost1",
-    "isRare": "yes",
+    "isRare": true,
     "prerequisites": [
       "tech_cruiser_hull_1"
     ],
@@ -1069,7 +1056,7 @@ const Technology = {
       "materials"
     ],
     "cost": "@tier4cost1",
-    "isRare": "yes",
+    "isRare": true,
     "tier": 4,
     "key": "tech_crystal_armor_2"
   },
@@ -1092,7 +1079,7 @@ const Technology = {
       "computing"
     ],
     "cost": "@tier2cost1",
-    "isRare": "yes",
+    "isRare": true,
     "tier": 2,
     "key": "tech_curator_lab"
   },
@@ -1118,7 +1105,7 @@ const Technology = {
       "field_manipulation"
     ],
     "cost": "@fallentechcost",
-    "isRare": "yes",
+    "isRare": true,
     "prerequisites": [
       "tech_shields_5"
     ],
@@ -1133,7 +1120,7 @@ const Technology = {
       "particles"
     ],
     "cost": "@fallentechcost",
-    "isRare": "yes",
+    "isRare": true,
     "prerequisites": [
       "tech_zero_point_power"
     ],
@@ -1148,7 +1135,7 @@ const Technology = {
       "propulsion"
     ],
     "cost": "@fallentechcost",
-    "isRare": "yes",
+    "isRare": true,
     "prerequisites": [
       "tech_thrusters_4"
     ],
@@ -1177,7 +1164,7 @@ const Technology = {
       "voidcraft"
     ],
     "cost": "@tier2cost2",
-    "isRare": "yes",
+    "isRare": true,
     "prerequisites": [
       "tech_starbase_3"
     ],
@@ -1234,7 +1221,7 @@ const Technology = {
       "voidcraft"
     ],
     "cost": "@tier3cost1",
-    "isRare": "yes",
+    "isRare": true,
     "prerequisites": [
       "tech_destroyer_hull_1"
     ],
@@ -1426,7 +1413,7 @@ const Technology = {
       "materials"
     ],
     "cost": "@guardiantechcost",
-    "isRare": "yes",
+    "isRare": true,
     "tier": "@guardiantechtier",
     "key": "tech_dragon_armor"
   },
@@ -1598,7 +1585,7 @@ const Technology = {
       "computing"
     ],
     "cost": "@guardiantechcost",
-    "isRare": "yes",
+    "isRare": true,
     "tier": "@guardiantechtier",
     "key": "tech_enigmatic_decoder"
   },
@@ -1610,7 +1597,7 @@ const Technology = {
       "computing"
     ],
     "cost": "@guardiantechcost",
-    "isRare": "yes",
+    "isRare": true,
     "tier": "@guardiantechtier",
     "key": "tech_enigmatic_encoder"
   },
@@ -1667,7 +1654,7 @@ const Technology = {
     "featureFlags": [
       "experimental_subspace_navigation"
     ],
-    "isRare": "yes",
+    "isRare": true,
     "prerequisites": [
       "tech_sensors_2"
     ],
@@ -1682,7 +1669,7 @@ const Technology = {
       "particles"
     ],
     "cost": "@tier5cost3",
-    "isRare": "yes",
+    "isRare": true,
     "tier": 5,
     "key": "tech_extradimensional_weapon_1"
   },
@@ -1885,7 +1872,7 @@ const Technology = {
       "statecraft"
     ],
     "cost": "@tier4cost1",
-    "isRare": "yes",
+    "isRare": true,
     "prerequisites": [
       "tech_colonial_centralization",
       "tech_interstellar_economics"
@@ -1901,7 +1888,7 @@ const Technology = {
       "biology"
     ],
     "cost": "@tier3cost1",
-    "isRare": "yes",
+    "isRare": true,
     "tier": 1,
     "key": "tech_gargantuan_evolution"
   },
@@ -1916,7 +1903,7 @@ const Technology = {
     "featureFlags": [
       "gateway_activation"
     ],
-    "isRare": "yes",
+    "isRare": true,
     "prerequisites": [
       "tech_hyper_drive_3"
     ],
@@ -1934,7 +1921,7 @@ const Technology = {
     "featureFlags": [
       "gateway_construction"
     ],
-    "isRare": "yes",
+    "isRare": true,
     "prerequisites": [
       "tech_gateway_activation",
       "tech_mega_engineering"
@@ -1950,7 +1937,7 @@ const Technology = {
       "biology"
     ],
     "cost": "@tier2cost3",
-    "isRare": "yes",
+    "isRare": true,
     "prerequisites": [
       "tech_cloning"
     ],
@@ -1979,7 +1966,7 @@ const Technology = {
       "biology"
     ],
     "cost": "@tier4cost1",
-    "isRare": "yes",
+    "isRare": true,
     "prerequisites": [
       "tech_gene_tailoring"
     ],
@@ -1998,7 +1985,7 @@ const Technology = {
       "advanced_gene_modding",
       "add_advanced_traits"
     ],
-    "isRare": "yes",
+    "isRare": true,
     "tier": 5,
     "key": "tech_genetic_resequencing"
   },
@@ -2362,7 +2349,7 @@ const Technology = {
     "featureFlags": [
       "jump_method"
     ],
-    "isRare": "yes",
+    "isRare": true,
     "prerequisites": [
       "tech_zero_point_power"
     ],
@@ -2472,7 +2459,7 @@ const Technology = {
       "particles"
     ],
     "cost": "@tier3cost3",
-    "isRare": "yes",
+    "isRare": true,
     "tier": 3,
     "key": "tech_lgate_activation"
   },
@@ -2665,7 +2652,7 @@ const Technology = {
     "featureFlags": [
       "megaengineering"
     ],
-    "isRare": "yes",
+    "isRare": true,
     "prerequisites": [
       "tech_starbase_5",
       "tech_battleships",
@@ -2777,7 +2764,7 @@ const Technology = {
       "psionics"
     ],
     "cost": "@tier3cost2",
-    "isRare": "yes",
+    "isRare": true,
     "prerequisites": [
       "tech_sensors_3",
       "tech_psionic_theory"
@@ -2942,7 +2929,7 @@ const Technology = {
       "voidcraft"
     ],
     "cost": "@tier2cost3",
-    "isRare": "yes",
+    "isRare": true,
     "prerequisites": [
       "tech_starbase_3"
     ],
@@ -2957,7 +2944,7 @@ const Technology = {
       "biology"
     ],
     "cost": "@tier4cost1",
-    "isRare": "yes",
+    "isRare": true,
     "prerequisites": [
       "tech_epigenetic_triggers"
     ],
@@ -2986,7 +2973,7 @@ const Technology = {
       "industry"
     ],
     "cost": "@tier4cost1",
-    "isRare": "yes",
+    "isRare": true,
     "prerequisites": [
       "tech_binary_motivators",
       "tech_galactic_administration"
@@ -3002,7 +2989,7 @@ const Technology = {
       "voidcraft"
     ],
     "cost": "@tier5cost3",
-    "isRare": "yes",
+    "isRare": true,
     "tier": 5,
     "key": "tech_nanite_repair_system"
   },
@@ -3014,7 +3001,7 @@ const Technology = {
       "materials"
     ],
     "cost": "@tier2cost3",
-    "isRare": "yes",
+    "isRare": true,
     "tier": 2,
     "key": "tech_nanite_transmutation"
   },
@@ -3051,7 +3038,7 @@ const Technology = {
       "biology"
     ],
     "cost": "@tier4cost2",
-    "isRare": "yes",
+    "isRare": true,
     "tier": 4,
     "key": "tech_neuroregeneration"
   },
@@ -3077,7 +3064,7 @@ const Technology = {
       "biology"
     ],
     "cost": "@tier4cost3",
-    "isRare": "yes",
+    "isRare": true,
     "prerequisites": [
       "tech_nano_vitality_crops"
     ],
@@ -3092,7 +3079,7 @@ const Technology = {
       "propulsion"
     ],
     "cost": "@tier3cost1",
-    "isRare": "yes",
+    "isRare": true,
     "tier": 1,
     "key": "tech_orbital_trash_dispersal"
   },
@@ -3156,7 +3143,7 @@ const Technology = {
       "statecraft"
     ],
     "cost": "@tier3cost1",
-    "isRare": "yes",
+    "isRare": true,
     "prerequisites": [
       "tech_artificial_moral_codes"
     ],
@@ -3210,7 +3197,7 @@ const Technology = {
       "voidcraft"
     ],
     "cost": "@tier5cost3",
-    "isRare": "yes",
+    "isRare": true,
     "prerequisites": [
       "tech_colossus"
     ],
@@ -3225,7 +3212,7 @@ const Technology = {
       "psionics"
     ],
     "cost": "@tier5cost3",
-    "isRare": "yes",
+    "isRare": true,
     "prerequisites": [
       "tech_colossus"
     ],
@@ -3240,7 +3227,7 @@ const Technology = {
       "voidcraft"
     ],
     "cost": "@tier5cost3",
-    "isRare": "yes",
+    "isRare": true,
     "prerequisites": [
       "tech_colossus"
     ],
@@ -3255,7 +3242,7 @@ const Technology = {
       "particles"
     ],
     "cost": "@tier5cost3",
-    "isRare": "yes",
+    "isRare": true,
     "prerequisites": [
       "tech_colossus"
     ],
@@ -3270,7 +3257,7 @@ const Technology = {
       "field_manipulation"
     ],
     "cost": "@tier5cost3",
-    "isRare": "yes",
+    "isRare": true,
     "prerequisites": [
       "tech_colossus"
     ],
@@ -3307,7 +3294,7 @@ const Technology = {
       "field_manipulation"
     ],
     "cost": "@tier3cost1",
-    "isRare": "yes",
+    "isRare": true,
     "prerequisites": [
       "tech_shields_3"
     ],
@@ -3491,7 +3478,7 @@ const Technology = {
       "psionics"
     ],
     "cost": "@tier4cost2",
-    "isRare": "yes",
+    "isRare": true,
     "prerequisites": [
       "tech_telepathy"
     ],
@@ -3506,7 +3493,7 @@ const Technology = {
       "statecraft"
     ],
     "cost": "@tier3cost1",
-    "isRare": "yes",
+    "isRare": true,
     "tier": 3,
     "key": "tech_prescient_data_modeling"
   },
@@ -3521,7 +3508,7 @@ const Technology = {
     "featureFlags": [
       "jump_method"
     ],
-    "isRare": "yes",
+    "isRare": true,
     "prerequisites": [
       "tech_precognition_interface"
     ],
@@ -3536,7 +3523,7 @@ const Technology = {
       "psionics"
     ],
     "cost": "@tier3cost1",
-    "isRare": "yes",
+    "isRare": true,
     "prerequisites": [
       "tech_psionic_theory"
     ],
@@ -3551,7 +3538,7 @@ const Technology = {
       "psionics"
     ],
     "cost": "@tier5cost3",
-    "isRare": "yes",
+    "isRare": true,
     "prerequisites": [
       "tech_psionic_theory"
     ],
@@ -3566,7 +3553,7 @@ const Technology = {
       "psionics"
     ],
     "cost": "@tier3cost1",
-    "isRare": "yes",
+    "isRare": true,
     "tier": 3,
     "key": "tech_psionic_theory"
   },
@@ -3664,7 +3651,7 @@ const Technology = {
       "biology"
     ],
     "cost": "@tier3cost2",
-    "isRare": "yes",
+    "isRare": true,
     "tier": 3,
     "key": "tech_regenerative_hull_tissue"
   },
@@ -3794,6 +3781,20 @@ const Technology = {
     "tier": "@repeatableTechTier",
     "key": "tech_repeatable_improved_military_station_health"
   },
+  "tech_repeatable_improved_shield_output": {
+    "name": "Shield Harmonics",
+    "description": "The basic mechanics of ship shields are complex, but they can be adjusted and improved in a multitude of ways.",
+    "area": "physics",
+    "category": [
+      "field_manipulation"
+    ],
+    "cost": "@repeatableTechBaseCost",
+    "prerequisites": [
+      "tech_shields_4"
+    ],
+    "tier": "@repeatableTechTier",
+    "key": "tech_repeatable_improved_shield_output"
+  },
   "tech_repeatable_improved_starbase_capacity": {
     "name": "Interstellar Expansion",
     "description": "The immense logistical support networks needed to maintain an upgraded Starbase can be further improved, allowing us to support more of these stations.",
@@ -3816,7 +3817,9 @@ const Technology = {
       "field_manipulation"
     ],
     "cost": "@repeatableTechBaseCost",
-    "prerequisites": "{tech_power_plant_3",
+    "prerequisites": [
+      "tech_power_plant_3"
+    ],
     "tier": "@repeatableTechTier",
     "key": "tech_repeatable_improved_tile_energy_output"
   },
@@ -3856,7 +3859,7 @@ const Technology = {
       "voidcraft"
     ],
     "cost": 2000,
-    "isRare": "yes",
+    "isRare": true,
     "tier": 2,
     "key": "tech_repeatable_lcluster_clue"
   },
@@ -3874,6 +3877,20 @@ const Technology = {
     "tier": "@repeatableTechTier",
     "key": "tech_repeatable_naval_cap"
   },
+  "tech_repeatable_reduced_building_cost": {
+    "name": "Gravitational Analysis",
+    "description": "Increasingly powerful computation paradigms allow us to adapt individual construction projects to planetary and ultra-local gravitational conditions.",
+    "area": "physics",
+    "category": [
+      "computing"
+    ],
+    "cost": "@repeatableTechBaseCost",
+    "prerequisites": [
+      "tech_physics_2"
+    ],
+    "tier": "@repeatableTechTier",
+    "key": "tech_repeatable_reduced_building_cost"
+  },
   "tech_repeatable_reduced_building_time": {
     "name": "Assembly Algorithms",
     "description": "The application of game and puzzle theory has the potential to greatly optimize modular assembly and construction.",
@@ -3887,6 +3904,34 @@ const Technology = {
     ],
     "tier": "@repeatableTechTier",
     "key": "tech_repeatable_reduced_building_time"
+  },
+  "tech_repeatable_weapon_type_energy_damage": {
+    "name": "Focusing Arrays",
+    "description": "Perfecting the firing cadence of laser weaponry is a task that could keep the engineering elite of any given planet busy for centuries.",
+    "area": "physics",
+    "category": [
+      "particles"
+    ],
+    "cost": "@repeatableTechBaseCost",
+    "prerequisites": [
+      "tech_lasers_4"
+    ],
+    "tier": "@repeatableTechTier",
+    "key": "tech_repeatable_weapon_type_energy_damage"
+  },
+  "tech_repeatable_weapon_type_energy_fire_rate": {
+    "name": "Flash Coolant",
+    "description": "New developments in tech cooling regularly surface, improving the stability and efficiency of our weapons systems, keeping them from blowing up the ships upon which they are mounted.",
+    "area": "physics",
+    "category": [
+      "particles"
+    ],
+    "cost": "@repeatableTechBaseCost",
+    "prerequisites": [
+      "tech_lasers_2"
+    ],
+    "tier": "@repeatableTechTier",
+    "key": "tech_repeatable_weapon_type_energy_fire_rate"
   },
   "tech_repeatable_weapon_type_explosive_damage": {
     "name": "Thermodynamic Yield Control",
@@ -3980,7 +4025,7 @@ const Technology = {
       "statecraft"
     ],
     "cost": "@tier3cost1",
-    "isRare": "yes",
+    "isRare": true,
     "prerequisites": [
       "tech_artificial_moral_codes"
     ],
@@ -4058,7 +4103,7 @@ const Technology = {
       "industry"
     ],
     "cost": "@tier4cost1",
-    "isRare": "yes",
+    "isRare": true,
     "prerequisites": [
       "tech_robomodding_points_1",
       "tech_synthetic_workers"
@@ -4105,7 +4150,7 @@ const Technology = {
       "biology"
     ],
     "cost": "@tier5cost3",
-    "isRare": "yes",
+    "isRare": true,
     "tier": 5,
     "key": "tech_scourge_missile_1"
   },
@@ -4117,7 +4162,7 @@ const Technology = {
       "biology"
     ],
     "cost": "@tier3cost2",
-    "isRare": "yes",
+    "isRare": true,
     "prerequisites": [
       "tech_vitality_boosters"
     ],
@@ -4416,7 +4461,7 @@ const Technology = {
       "particles"
     ],
     "cost": "@tier2cost3",
-    "isRare": "yes",
+    "isRare": true,
     "tier": 2,
     "key": "tech_space_cloud_weapon_1"
   },
@@ -4453,7 +4498,7 @@ const Technology = {
       "voidcraft"
     ],
     "cost": "@tier3cost3",
-    "isRare": "yes",
+    "isRare": true,
     "prerequisites": [
       "tech_starbase_4",
       "tech_modular_engineering"
@@ -4763,7 +4808,7 @@ const Technology = {
     "featureFlags": [
       "bliss_standard"
     ],
-    "isRare": "yes",
+    "isRare": true,
     "prerequisites": [
       "tech_genome_mapping"
     ],
@@ -4778,7 +4823,7 @@ const Technology = {
       "biology"
     ],
     "cost": "@tier5cost3",
-    "isRare": "yes",
+    "isRare": true,
     "tier": 5,
     "key": "tech_swarm_strike_craft_1"
   },
@@ -4818,7 +4863,7 @@ const Technology = {
       "computing"
     ],
     "cost": "@tier4cost2",
-    "isRare": "yes",
+    "isRare": true,
     "prerequisites": [
       "tech_self_aware_logic"
     ],
@@ -4867,7 +4912,7 @@ const Technology = {
     "featureFlags": [
       "synths"
     ],
-    "isRare": "yes",
+    "isRare": true,
     "prerequisites": [
       "tech_droid_workers",
       "tech_galactic_administration",
@@ -4884,7 +4929,7 @@ const Technology = {
       "psionics"
     ],
     "cost": "@tier3cost3",
-    "isRare": "yes",
+    "isRare": true,
     "prerequisites": [
       "tech_psionic_theory"
     ],
@@ -4969,7 +5014,7 @@ const Technology = {
       "voidcraft"
     ],
     "cost": "@tier5cost2",
-    "isRare": "yes",
+    "isRare": true,
     "prerequisites": [
       "tech_titans"
     ],
@@ -4984,7 +5029,7 @@ const Technology = {
       "voidcraft"
     ],
     "cost": "@tier5cost3",
-    "isRare": "yes",
+    "isRare": true,
     "prerequisites": [
       "tech_titan_hull_1"
     ],
@@ -5013,7 +5058,7 @@ const Technology = {
       "new_worlds"
     ],
     "cost": "@tier3cost1",
-    "isRare": "yes",
+    "isRare": true,
     "prerequisites": [
       "tech_colonization_3"
     ],
@@ -5155,7 +5200,7 @@ const Technology = {
     "featureFlags": [
       "wormhole_stabilization"
     ],
-    "isRare": "yes",
+    "isRare": true,
     "prerequisites": [
       "tech_hyper_drive_2"
     ],
@@ -5186,61 +5231,6 @@ const Technology = {
     ],
     "tier": 4,
     "key": "tech_zero_point_power"
-  },
-  "weight": {
-    "name": "This Edict puts considerable political weight behind new construction initiatives.",
-    "description": "§LPowerful yet fast-moving armor that uses repulsor lifts to hover slightly above the ground. Although this limits their weight somewhat, their speed and agility make up for it when compared to conventional tracked vehicles.§!",
-    "key": "weight"
-  },
-  "weight_groups": {
-    "description": "",
-    "key": "weight_groups"
-  },
-  "},tech_repeatable_improved_shield_output": {
-    "description": "",
-    "area": "physics",
-    "category": [
-      "field_manipulation"
-    ],
-    "cost": "@repeatableTechBaseCost",
-    "prerequisites": "{tech_shields_4",
-    "tier": "@repeatableTechTier",
-    "key": "},tech_repeatable_improved_shield_output"
-  },
-  "},tech_repeatable_reduced_building_cost": {
-    "description": "",
-    "area": "physics",
-    "category": [
-      "computing"
-    ],
-    "cost": "@repeatableTechBaseCost",
-    "prerequisites": [
-      "tech_physics_2"
-    ],
-    "tier": "@repeatableTechTier",
-    "key": "},tech_repeatable_reduced_building_cost"
-  },
-  "},tech_repeatable_weapon_type_energy_damage": {
-    "description": "",
-    "area": "physics",
-    "category": [
-      "particles"
-    ],
-    "cost": "@repeatableTechBaseCost",
-    "prerequisites": "{tech_lasers_4",
-    "tier": "@repeatableTechTier",
-    "key": "},tech_repeatable_weapon_type_energy_damage"
-  },
-  "},tech_repeatable_weapon_type_energy_fire_rate": {
-    "description": "",
-    "area": "physics",
-    "category": [
-      "particles"
-    ],
-    "cost": "@repeatableTechBaseCost",
-    "prerequisites": "{tech_lasers_2",
-    "tier": "@repeatableTechTier",
-    "key": "},tech_repeatable_weapon_type_energy_fire_rate"
   }
 }
 

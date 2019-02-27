@@ -768,7 +768,7 @@ const Job = {
     "produces": {
       "trigger": {
         "owner": {
-          "is_machine_empire": "yes"
+          "is_machine_empire": true
         }
       },
       "energy": 6

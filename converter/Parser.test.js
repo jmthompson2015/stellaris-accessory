@@ -42,9 +42,9 @@ testExpected(TEST1, {
     tier: 0,
     category: ["voidcraft"],
     prerequisites: ["tech_starbase_2"],
-    start_tech: "yes",
+    start_tech: true,
     potential: {
-      is_gestalt: "yes"
+      is_gestalt: true
     }
   }
 });
@@ -71,7 +71,7 @@ testExpected(TEST2, {
   tech_space_exploration: {
     cost: 0,
     area: "engineering",
-    start_tech: "yes",
+    start_tech: true,
     category: ["voidcraft"],
     prerequisites: ["tech_basic_science_lab_1"],
     tier: 0,
