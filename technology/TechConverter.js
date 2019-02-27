@@ -30,7 +30,9 @@ const parseTechnology = (key, tech0) =>
         category: tech0.category,
         cost: tech0.cost,
         featureFlags: tech0.feature_flags,
+        isDangerous: tech0.is_dangerous,
         isRare: tech0.is_rare,
+        isStartTech: tech0.start_tech,
         prerequisites: tech0.prerequisites,
         tier: tech0.tier,
         key

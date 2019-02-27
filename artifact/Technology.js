@@ -139,6 +139,7 @@ const Technology = {
     ],
     "cost": "@horizontechcost1",
     "isRare": true,
+    "isStartTech": false,
     "prerequisites": [],
     "tier": "@horizontechtier",
     "key": "tech_akx_worm_1"
@@ -152,6 +153,7 @@ const Technology = {
     ],
     "cost": "@horizontechcost1",
     "isRare": true,
+    "isStartTech": false,
     "prerequisites": [],
     "tier": "@horizontechtier",
     "key": "tech_akx_worm_2"
@@ -165,6 +167,7 @@ const Technology = {
     ],
     "cost": "@horizontechcost2",
     "isRare": true,
+    "isStartTech": false,
     "prerequisites": [
       "tech_akx_worm_1",
       "tech_akx_worm_2"
@@ -312,6 +315,7 @@ const Technology = {
       "voidcraft"
     ],
     "cost": "@tier1cost1",
+    "isStartTech": true,
     "prerequisites": [
       "tech_planetary_defenses"
     ],
@@ -440,6 +444,7 @@ const Technology = {
       "industry"
     ],
     "cost": 0,
+    "isStartTech": true,
     "tier": 0,
     "key": "tech_basic_industry"
   },
@@ -451,6 +456,7 @@ const Technology = {
       "computing"
     ],
     "cost": 0,
+    "isStartTech": true,
     "tier": 0,
     "key": "tech_basic_science_lab_1"
   },
@@ -563,6 +569,7 @@ const Technology = {
       "particles"
     ],
     "cost": 0,
+    "isStartTech": true,
     "tier": 0,
     "key": "tech_bio_reactor"
   },
@@ -713,6 +720,7 @@ const Technology = {
       "new_worlds"
     ],
     "cost": 0,
+    "isStartTech": true,
     "prerequisites": [
       "tech_space_exploration"
     ],
@@ -812,6 +820,7 @@ const Technology = {
       "computing"
     ],
     "cost": "@tier4cost2",
+    "isDangerous": true,
     "isRare": true,
     "prerequisites": [
       "tech_combat_computers_2",
@@ -944,6 +953,7 @@ const Technology = {
       "voidcraft"
     ],
     "cost": 0,
+    "isStartTech": true,
     "prerequisites": [
       "tech_starbase_2"
     ],
@@ -1068,6 +1078,7 @@ const Technology = {
       "statecraft"
     ],
     "cost": 0,
+    "isStartTech": true,
     "tier": 0,
     "key": "tech_cultural_heritage"
   },
@@ -1681,6 +1692,7 @@ const Technology = {
       "particles"
     ],
     "cost": 0,
+    "isStartTech": true,
     "tier": 0,
     "key": "tech_fission_power"
   },
@@ -1691,6 +1703,7 @@ const Technology = {
     "category": [
       "propulsion"
     ],
+    "isStartTech": true,
     "tier": 0,
     "key": "tech_flak_batteries_1"
   },
@@ -2127,6 +2140,7 @@ const Technology = {
       "statecraft"
     ],
     "cost": 0,
+    "isStartTech": true,
     "tier": 0,
     "key": "tech_hive_node"
   },
@@ -2138,6 +2152,7 @@ const Technology = {
       "statecraft"
     ],
     "cost": 0,
+    "isStartTech": true,
     "tier": 0,
     "key": "tech_holo_entertainment"
   },
@@ -2213,6 +2228,7 @@ const Technology = {
       "particles"
     ],
     "cost": 0,
+    "isStartTech": true,
     "prerequisites": [
       "tech_basic_science_lab_1"
     ],
@@ -2284,6 +2300,7 @@ const Technology = {
       "biology"
     ],
     "cost": 0,
+    "isStartTech": true,
     "tier": 0,
     "key": "tech_industrial_farming"
   },
@@ -2295,6 +2312,7 @@ const Technology = {
       "statecraft"
     ],
     "cost": 0,
+    "isStartTech": true,
     "tier": 0,
     "key": "tech_interplanetary_commerce"
   },
@@ -2349,6 +2367,7 @@ const Technology = {
     "featureFlags": [
       "jump_method"
     ],
+    "isDangerous": true,
     "isRare": true,
     "prerequisites": [
       "tech_zero_point_power"
@@ -2392,6 +2411,7 @@ const Technology = {
     "category": [
       "particles"
     ],
+    "isStartTech": true,
     "tier": 0,
     "key": "tech_lasers_1"
   },
@@ -2557,6 +2577,7 @@ const Technology = {
     "category": [
       "propulsion"
     ],
+    "isStartTech": true,
     "tier": 0,
     "key": "tech_mass_drivers_1"
   },
@@ -2638,6 +2659,7 @@ const Technology = {
       "industry"
     ],
     "cost": 0,
+    "isStartTech": true,
     "tier": 0,
     "key": "tech_mechanized_mining"
   },
@@ -2861,6 +2883,7 @@ const Technology = {
     "category": [
       "propulsion"
     ],
+    "isStartTech": true,
     "tier": 0,
     "key": "tech_missiles_1"
   },
@@ -3104,6 +3127,7 @@ const Technology = {
     "category": [
       "computing"
     ],
+    "isStartTech": true,
     "tier": 0,
     "key": "tech_pd_tracking_1"
   },
@@ -3272,6 +3296,7 @@ const Technology = {
       "military_theory"
     ],
     "cost": 0,
+    "isStartTech": true,
     "tier": 0,
     "key": "tech_planetary_defenses"
   },
@@ -3283,6 +3308,7 @@ const Technology = {
       "statecraft"
     ],
     "cost": 0,
+    "isStartTech": true,
     "tier": 0,
     "key": "tech_planetary_government"
   },
@@ -3411,6 +3437,7 @@ const Technology = {
       "field_manipulation"
     ],
     "cost": 0,
+    "isStartTech": true,
     "tier": 0,
     "key": "tech_power_plant_1"
   },
@@ -3508,6 +3535,7 @@ const Technology = {
     "featureFlags": [
       "jump_method"
     ],
+    "isDangerous": true,
     "isRare": true,
     "prerequisites": [
       "tech_precognition_interface"
@@ -3593,6 +3621,7 @@ const Technology = {
       "particles"
     ],
     "cost": 0,
+    "isStartTech": true,
     "prerequisites": [
       "tech_fission_power"
     ],
@@ -4258,6 +4287,7 @@ const Technology = {
       "field_manipulation"
     ],
     "cost": 0,
+    "isStartTech": true,
     "prerequisites": [
       "tech_basic_science_lab_1"
     ],
@@ -4328,6 +4358,7 @@ const Technology = {
       "materials"
     ],
     "cost": "@tier1cost1",
+    "isStartTech": true,
     "tier": 0,
     "key": "tech_ship_armor_1"
   },
@@ -4447,6 +4478,7 @@ const Technology = {
     "category": [
       "voidcraft"
     ],
+    "isStartTech": true,
     "prerequisites": [
       "tech_starbase_2"
     ],
@@ -4473,6 +4505,7 @@ const Technology = {
       "industry"
     ],
     "cost": 0,
+    "isStartTech": true,
     "tier": 0,
     "key": "tech_space_construction"
   },
@@ -4484,6 +4517,7 @@ const Technology = {
       "voidcraft"
     ],
     "cost": 0,
+    "isStartTech": true,
     "prerequisites": [
       "tech_starbase_1"
     ],
@@ -4514,6 +4548,7 @@ const Technology = {
       "voidcraft"
     ],
     "cost": 0,
+    "isStartTech": true,
     "prerequisites": [
       "tech_basic_science_lab_1"
     ],
@@ -4693,6 +4728,7 @@ const Technology = {
       "voidcraft"
     ],
     "cost": 0,
+    "isStartTech": true,
     "prerequisites": [
       "tech_space_construction"
     ],
@@ -4707,6 +4743,7 @@ const Technology = {
       "voidcraft"
     ],
     "cost": 0,
+    "isStartTech": true,
     "prerequisites": [
       "tech_starbase_1"
     ],
@@ -4912,6 +4949,7 @@ const Technology = {
     "featureFlags": [
       "synths"
     ],
+    "isDangerous": true,
     "isRare": true,
     "prerequisites": [
       "tech_droid_workers",
@@ -4961,6 +4999,7 @@ const Technology = {
       "propulsion"
     ],
     "cost": 0,
+    "isStartTech": true,
     "tier": 0,
     "key": "tech_thrusters_1"
   },
