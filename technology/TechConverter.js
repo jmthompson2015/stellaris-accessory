@@ -23,11 +23,13 @@ export default Technology;`;
 const parseTechnology = (key, tech0) =>
   new Promise(resolve => {
     NameFinder.find(key).then(nameDesc => {
+      const category = tech0.category.length === 1 ? tech0.category[0] : tech0.category;
+
       resolve({
         name: nameDesc.name,
         description: nameDesc.description,
         area: tech0.area,
-        category: tech0.category,
+        category,
         cost: tech0.cost,
         featureFlags: tech0.feature_flags,
         isDangerous: tech0.is_dangerous,

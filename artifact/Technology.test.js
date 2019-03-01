@@ -4,29 +4,40 @@ import Technology from "./Technology.js";
 
 QUnit.module("Technology");
 
+QUnit.test("Technology category.length isArray", assert => {
+  const keys = Object.keys(Technology);
+
+  for (let i = 0; i < keys.length; i += 1) {
+    const tech = Technology[keys[i]];
+    assert.equal(
+      Array.isArray(tech.category),
+      false,
+      `${tech.key} category isArray ? ${Array.isArray(tech.category)}`
+    );
+  }
+});
+
 QUnit.test("Technology properties tech_adaptive_bureaucracy", assert => {
   // Setup.
   const key = "tech_adaptive_bureaucracy";
 
   // Run.
-  const building = Technology[key];
+  const tech = Technology[key];
 
   // Verify.
-  assert.equal(building.name, "Positronic CPUs");
+  assert.equal(tech.name, "Positronic CPUs");
   assert.equal(
-    building.description,
+    tech.description,
     "Positronic CPUs are both cheaper and faster to produce than previous models, allowing us to press additional leader units into service."
   );
-  assert.equal(building.area, "society");
-  assert.equal(building.cost, "@tier1cost2");
-  assert.equal(building.tier, 1);
-  assert.equal(building.key, key);
+  assert.equal(tech.area, "society");
+  assert.equal(tech.category, "statecraft");
+  assert.equal(tech.cost, "@tier1cost2");
+  assert.equal(tech.tier, 1);
+  assert.equal(tech.key, key);
 
-  assert.equal(building.category.length, 1);
-  assert.equal(building.category[0], "statecraft");
-
-  assert.equal(building.prerequisites.length, 1);
-  assert.equal(building.prerequisites[0], "tech_planetary_unification");
+  assert.equal(tech.prerequisites.length, 1);
+  assert.equal(tech.prerequisites[0], "tech_planetary_unification");
 });
 
 QUnit.test("Technology keys", assert => {
@@ -39,13 +50,13 @@ QUnit.test("Technology keys", assert => {
   // Verify.
   assert.equal(keys.length, length);
 
-  const building0 = Technology[keys[0]];
-  assert.equal(building0.name, undefined);
-  assert.equal(building0.key, "@tech_gene_expressions_POINTS");
+  const tech0 = Technology[keys[0]];
+  assert.equal(tech0.name, undefined);
+  assert.equal(tech0.key, "@tech_gene_expressions_POINTS");
 
-  const buildingLast = Technology[keys[length - 1]];
-  assert.equal(buildingLast.name, "Zero Point Power");
-  assert.equal(buildingLast.key, "tech_zero_point_power");
+  const techLast = Technology[keys[length - 1]];
+  assert.equal(techLast.name, "Zero Point Power");
+  assert.equal(techLast.key, "tech_zero_point_power");
 });
 
 const TechnologyTest = {};
