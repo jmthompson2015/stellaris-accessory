@@ -1,0 +1,39 @@
+body {
+  background-color: Black;
+  background-image: url(stellaris_utopia.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-family: "San Francisco", "Helvetica Neue", Helvetica, sans-serif;
+}
+
+.b--dangerous {
+  border-color: hsl(0, 100%, 40%);
+}
+
+.b--engineering {
+  border-color: hsl(45, 100%, 45%);
+}
+
+.b--physics {
+  border-color: hsl(195, 100%, 45%);
+}
+
+.b--rare {
+  border-color: hsl(300, 100%, 25%);
+}
+
+.b--slate-gray {
+  border-color: hsl(210, 13%, 50%);
+}
+
+.b--society {
+  border-color: green;
+}
+
+.bg-cadet-gray {
+  background-color: hsl(205, 16%, 63%);
+}
+
+.bg-gainsboro {
+  background-color: hsla(0, 0%, 86%, 0.7);
+}
