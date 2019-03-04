@@ -51,11 +51,17 @@ const parse = (techs, indexIn, answerIn) =>
     const tech0 = techs[key];
 
     if (tech0) {
-      parseTechnology(key, tech0).then(tech => {
+      if (key.startsWith("@")) {
+        // Skip it.
         const myIndex = index + 1;
-        const myAnswer = R.assoc(tech.key, tech, answer);
-        parse(techs, myIndex, myAnswer).then(answer2 => resolve(answer2));
-      });
+        parse(techs, myIndex, answer).then(answer2 => resolve(answer2));
+      } else {
+        parseTechnology(key, tech0).then(tech => {
+          const myIndex = index + 1;
+          const myAnswer = R.assoc(tech.key, tech, answer);
+          parse(techs, myIndex, myAnswer).then(answer2 => resolve(answer2));
+        });
+      }
     } else {
       resolve(answer);
     }

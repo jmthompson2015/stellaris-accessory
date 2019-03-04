@@ -51,8 +51,8 @@ QUnit.test("Technology keys", assert => {
   assert.equal(keys.length, length);
 
   const tech0 = Technology[keys[0]];
-  assert.equal(tech0.name, undefined);
-  assert.equal(tech0.key, "@tech_gene_expressions_POINTS");
+  assert.equal(tech0.name, "Null Void Beam");
+  assert.equal(tech0.key, "null_void_beam");
 
   const techLast = Technology[keys[length - 1]];
   assert.equal(techLast.name, "Zero Point Power");

@@ -2,45 +2,6 @@
 /* eslint max-len: ["error", { "ignoreStrings": true }] */
 
 const Technology = {
-  "@tech_gene_expressions_POINTS": {
-    "description": "",
-    "area": "society",
-    "category": "biology",
-    "cost": "@tier3cost3",
-    "isRare": true,
-    "prerequisites": [
-      "tech_gene_tailoring"
-    ],
-    "tier": 3,
-    "key": "@tech_gene_expressions_POINTS"
-  },
-  "@tech_gene_tailoring_POINTS": {
-    "description": "",
-    "area": "society",
-    "category": "biology",
-    "cost": "@tier3cost1",
-    "featureFlags": [
-      "modify_traits",
-      "pop_self_modification"
-    ],
-    "prerequisites": [
-      "tech_genome_mapping"
-    ],
-    "tier": 3,
-    "key": "@tech_gene_tailoring_POINTS"
-  },
-  "@tier1cost1": {
-    "description": "",
-    "area": "engineering",
-    "category": "voidcraft",
-    "cost": "@tier5cost3",
-    "isRare": true,
-    "prerequisites": [
-      "tech_titans"
-    ],
-    "tier": 5,
-    "key": "@tier1cost1"
-  },
   "null_void_beam": {
     "name": "Null Void Beam",
     "description": "By harnessing the entropic nature of the Null Void, this beam can actually destroy energy.",
@@ -670,6 +631,19 @@ const Technology = {
     ],
     "tier": 4,
     "key": "tech_colonization_5"
+  },
+  "tech_colossus": {
+    "name": "Colossi",
+    "description": "Advances in mega-engineering make blur the lines between reality and the fantastical, enabling the construction of Colossus-class military vessels that carry weapons capable of obliterating - or fundamentally altering - entire worlds, with the push of a button.",
+    "area": "engineering",
+    "category": "voidcraft",
+    "cost": "@tier5cost3",
+    "isRare": true,
+    "prerequisites": [
+      "tech_titans"
+    ],
+    "tier": 5,
+    "key": "tech_colossus"
   },
   "tech_combat_computers_1": {
     "name": "Specialized Combat Computers",
@@ -1691,6 +1665,19 @@ const Technology = {
     "tier": 2,
     "key": "tech_gene_crops"
   },
+  "tech_gene_expressions": {
+    "name": "Targeted Gene Expressions",
+    "description": "Stricter control of RNA and protein production on the cellular level.",
+    "area": "society",
+    "category": "biology",
+    "cost": "@tier3cost3",
+    "isRare": true,
+    "prerequisites": [
+      "tech_gene_tailoring"
+    ],
+    "tier": 3,
+    "key": "tech_gene_expressions"
+  },
   "tech_gene_seed_purification": {
     "name": "Gene Seed Purification",
     "description": "Nucleotide purification techniques allow for the isolation and refinement of particularly desirable genetic traits.",
@@ -1703,6 +1690,22 @@ const Technology = {
     ],
     "tier": 4,
     "key": "tech_gene_seed_purification"
+  },
+  "tech_gene_tailoring": {
+    "name": "Gene Tailoring",
+    "description": "Making gene-editing tools widely available is sure to have a positive impact on our development as a species.",
+    "area": "society",
+    "category": "biology",
+    "cost": "@tier3cost1",
+    "featureFlags": [
+      "modify_traits",
+      "pop_self_modification"
+    ],
+    "prerequisites": [
+      "tech_genome_mapping"
+    ],
+    "tier": 3,
+    "key": "tech_gene_tailoring"
   },
   "tech_genetic_resequencing": {
     "name": "Genetic Resequencing",

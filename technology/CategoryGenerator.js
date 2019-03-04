@@ -36,23 +36,26 @@ CategoryGenerator.convert = () => {
   FileLoader.loadLocalFileJson(INPUT_FILE).then(data => {
     const reduceFunction1 = (accum, item) => {
       let answer = accum;
+      const itemProp = item[PROPERTY];
 
-      for (let i = 0; i < item[PROPERTY].length; i += 1) {
-        const key = item[PROPERTY][i];
-        const obj0 = accum[key];
+      if (itemProp) {
+        for (let i = 0; i < itemProp.length; i += 1) {
+          const key = itemProp[i];
+          const obj0 = accum[key];
 
-        if (obj0) {
-          const oldAreas = Array.isArray(obj0.area) ? obj0.area : [obj0.area];
-          const newAreas0 = R.append(item.area, oldAreas);
-          const newAreas1 = R.uniq(newAreas0);
-          newAreas1.sort();
-          const newAreas = newAreas1.length === 1 ? newAreas1[0] : newAreas1;
-          const newObj0 = R.assoc("area", newAreas, obj0);
-          const newObj = R.assoc("key", key, newObj0);
-          answer = R.assoc(key, newObj, accum);
-        } else {
-          const name = createName(key);
-          answer = R.assoc(key, { name, area: item.area, key }, accum);
+          if (obj0) {
+            const oldAreas = Array.isArray(obj0.area) ? obj0.area : [obj0.area];
+            const newAreas0 = R.append(item.area, oldAreas);
+            const newAreas1 = R.uniq(newAreas0);
+            newAreas1.sort();
+            const newAreas = newAreas1.length === 1 ? newAreas1[0] : newAreas1;
+            const newObj0 = R.assoc("area", newAreas, obj0);
+            const newObj = R.assoc("key", key, newObj0);
+            answer = R.assoc(key, newObj, accum);
+          } else {
+            const name = createName(key);
+            answer = R.assoc(key, { name, area: item.area, key }, accum);
+          }
         }
       }
       return answer;

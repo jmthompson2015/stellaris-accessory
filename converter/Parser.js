@@ -82,19 +82,26 @@ Parser.parse = (tokens, isVerbose = false) => {
   let index0 = 0;
   let index1 = tokens.indexOf("=");
 
-  while (index0 >= 0 && index1 >= 0) {
-    const key = tokens.slice(index0, index1);
+  while (index0 >= 0 && index1 > index0) {
+    const key = tokens.slice(index0, index1)[0];
     // console.log(`key = :${key}:`);
 
-    const index2 = tokens.indexOf("{", index1 + 1);
-    const fragment = matchBrace(tokens.slice(index2));
-    // console.log(`fragment = :${fragment}:`);
+    const index2 = index1 + 1;
 
-    const obj = parseObject(fragment);
-    // console.log(`obj = ${JSON.stringify(obj, null, 2)}`);
-    answer = R.assoc(key, obj, answer);
+    if (tokens[index2] === "{") {
+      const fragment = matchBrace(tokens.slice(index2));
+      // console.log(`fragment = :${fragment}:`);
 
-    index0 = index2 + fragment.length;
+      const obj = parseObject(fragment);
+      // console.log(`obj = ${JSON.stringify(obj, null, 2)}`);
+      answer = R.assoc(key, obj, answer);
+      index0 = index2 + fragment.length;
+    } else {
+      const value = convertValue(tokens[index2]);
+      answer = R.assoc(key, value, answer);
+      index0 = index2 + 1;
+    }
+
     index1 = tokens.indexOf("=", index0);
   }
 
