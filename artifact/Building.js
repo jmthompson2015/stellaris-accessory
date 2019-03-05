@@ -1584,7 +1584,7 @@ const Building = {
   },
   "building_planetary_shield_generator": {
     "name": "Planetary Shield Generator",
-    "description": "$tech_planetary_shield_generator_desc$",
+    "description": "Generating a strong energy shield within a planetary atmosphere is a greater challenge than in the vacuum of space, but it offers a potent defense against orbital bombardment.",
     "category": "army",
     "planetModifiers": {
       "planet_orbital_bombardment_damage": -0.5

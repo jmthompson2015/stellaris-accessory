@@ -193,8 +193,8 @@ const Technology = {
     "key": "tech_arc_emitter_2"
   },
   "tech_archeology_lab": {
-    "name": "$tech_archeology_lab$",
-    "description": "$TECH_UNLOCK_COMPONENT_LINE$ $tech_archeology_lab$",
+    "name": "Curator Archeology Lab",
+    "description": "A shipboard lab with advanced archaeological equipment, including a vast database supplied by the Curator Order where new discoveries can easily be cross-referenced.",
     "area": "physics",
     "category": "computing",
     "cost": "@tier2cost1",
@@ -300,8 +300,8 @@ const Technology = {
     "key": "tech_autocurating_vault"
   },
   "tech_automated_exploration": {
-    "name": "$AUTO_EXPLORE_ORDER$",
-    "description": "$AUTO_EXPLORE_ORDER_DESC$",
+    "name": "Automated Exploration Protocols",
+    "description": "An advanced AI will aid science officers in their task to explore strange new worlds, to seek out new life and new civilizations, to boldly go where no Blorg has gone before. The Science Ship will be able to explore the galaxy with help from an AI.",
     "area": "physics",
     "category": "computing",
     "cost": "@tier1cost2",
@@ -324,8 +324,8 @@ const Technology = {
     "key": "tech_autonomous_agents"
   },
   "tech_auxiliary_fire_control": {
-    "name": "$FIRE_CONTROL_1_DESC$",
-    "description": "",
+    "name": "Auxiliary Fire-control",
+    "description": "By installing an auxiliary fire-control system our ships can afford to make more advanced calculations, increasing accuracy.",
     "area": "physics",
     "category": "computing",
     "cost": "@tier1cost3",
@@ -443,8 +443,7 @@ const Technology = {
     "key": "tech_binary_motivators"
   },
   "tech_bio_reactor": {
-    "name": "$building_bio_reactor$",
-    "description": "$building_bio_reactor_desc$",
+    "description": "A facility where organic matter is converted into energy at a highly efficient rate.",
     "area": "physics",
     "category": "particles",
     "cost": 0,
@@ -903,8 +902,8 @@ const Technology = {
     "key": "tech_cultural_heritage"
   },
   "tech_curator_lab": {
-    "name": "$tech_curator_lab$",
-    "description": "$TECH_UNLOCK_COMPONENT_LINE$ $tech_curator_lab$",
+    "name": "Curator Exploration Lab",
+    "description": "These shipboard lab facilities incorporate advanced technologies from the ancient Curator Order to further increase survey speeds.",
     "area": "physics",
     "category": "computing",
     "cost": "@tier2cost1",
@@ -952,7 +951,7 @@ const Technology = {
   },
   "tech_dark_matter_propulsion": {
     "name": "Dark Matter Propulsion",
-    "description": "$SHIP_THRUSTER_5_DESC$",
+    "description": "These ship thrusters utilize Dark Matter technology to generate propulsion in a manner that appears to defy numerous laws of physics.",
     "area": "engineering",
     "category": "propulsion",
     "cost": "@fallentechcost",
@@ -1373,7 +1372,7 @@ const Technology = {
   },
   "tech_executive_retreat": {
     "name": "Executive Leisure Program",
-    "description": "$building_executive_retreat_desc$",
+    "description": "A luxurious resort complex for high ranking corporate officers. Here they can sample the local planetary culture in a high security environment.",
     "area": "society",
     "category": "statecraft",
     "cost": "@tier3cost1",
@@ -1585,7 +1584,7 @@ const Technology = {
   },
   "tech_galactic_markets": {
     "name": "Galactic Markets",
-    "description": "$building_galactic_stock_exchange_desc$",
+    "description": "By engaging in free trade of goods and services we allow for a more specialized economy, where an individual can excel in a narrow field and trade for their needs.",
     "area": "society",
     "category": "statecraft",
     "cost": "@tier4cost1",
@@ -1946,7 +1945,7 @@ const Technology = {
   },
   "tech_hyper_entertainment_forum": {
     "name": "Hyper-Entertainment Forum",
-    "description": "$building_hyper_entertainment_forum_desc$",
+    "description": "These massive entertainment complexes is where dreams come true. Shopping malls, restaurants, amusement parks, virtual arcades, and more. You dream it - we are it!",
     "area": "society",
     "category": "statecraft",
     "cost": "@tier1cost3",
@@ -2758,7 +2757,7 @@ const Technology = {
   },
   "tech_pk_cracker": {
     "name": "Core Cracking",
-    "description": "$PLANET_KILLER_CRACKER_DESC$",
+    "description": "A directed feed of thermic energy superheats the atmosphere and agitates the planet's core, setting up disastrous tectonic events. A final and comparatively minute concussive blast is then delivered, cracking the planet open.",
     "area": "engineering",
     "category": "voidcraft",
     "cost": "@tier5cost3",
@@ -2783,8 +2782,8 @@ const Technology = {
     "key": "tech_pk_godray"
   },
   "tech_pk_nanobots": {
-    "name": "$PLANET_KILLER_NANOBOTS$",
-    "description": "",
+    "name": "Atmospheric Nanobot Dispersal",
+    "description": "Swarms of nanobots are dispersed in the atmosphere. They infect sapient beings and restructure themselves into cybernetic implants, turning their unwitting hosts into cyborgs slaved to the Machine Intelligence.",
     "area": "engineering",
     "category": "voidcraft",
     "cost": "@tier5cost3",
@@ -2797,7 +2796,7 @@ const Technology = {
   },
   "tech_pk_neutron": {
     "name": "Neutron Sweeping",
-    "description": "$PLANET_KILLER_NEUTRON_DESC$",
+    "description": "An accelerated plume of neutron radiation ",
     "area": "physics",
     "category": "particles",
     "cost": "@tier5cost3",
@@ -2810,7 +2809,7 @@ const Technology = {
   },
   "tech_pk_shielder": {
     "name": "Global Pacification",
-    "description": "$PLANET_KILLER_SHIELDER_DESC$",
+    "description": "A shielding field is deployed around a planet, creating a barrier that is permanent and impenetrable (save for some wavelengths of light).",
     "area": "physics",
     "category": "field_manipulation",
     "cost": "@tier5cost3",
@@ -3102,7 +3101,7 @@ const Technology = {
   },
   "tech_reactor_boosters_1": {
     "name": "Reactor Boosters",
-    "description": "$REACTOR_BOOSTER_1_DESC$",
+    "description": "Additional power generation systems increase the ship's reactor output.",
     "area": "physics",
     "category": "particles",
     "cost": 0,
@@ -3114,8 +3113,8 @@ const Technology = {
     "key": "tech_reactor_boosters_1"
   },
   "tech_reactor_boosters_2": {
-    "name": "$REACTOR_BOOSTER_2_DESC$",
-    "description": "",
+    "name": "Improved Reactor Boosters",
+    "description": "The discovery of fusion power allows for better reactor boosters to be fitted onto our ships.",
     "area": "physics",
     "category": "particles",
     "cost": "@tier1cost3",
@@ -3127,8 +3126,8 @@ const Technology = {
     "key": "tech_reactor_boosters_2"
   },
   "tech_reactor_boosters_3": {
-    "name": "$REACTOR_BOOSTER_3_DESC$",
-    "description": "",
+    "name": "Advanced Reactor Boosters",
+    "description": "The discovery of antimatter power allows for highly advanced reactor boosters that can greatly enhance ship reactors.",
     "area": "physics",
     "category": "particles",
     "cost": "@tier3cost3",
@@ -3330,8 +3329,7 @@ const Technology = {
     "key": "tech_repeatable_improved_tile_mineral_output"
   },
   "tech_repeatable_lcluster_clue": {
-    "name": "$clue$",
-    "description": "Intensive study within the fields of nanomachinery and subspace phenomena will eventually yield a new §Y$clue$§! into the $lgate_disabled$ mystery.",
+    "description": "$clue$ Gained: §G+1§!",
     "area": "engineering",
     "category": "voidcraft",
     "cost": 2000,
@@ -4505,7 +4503,7 @@ const Technology = {
   },
   "tech_xeno_tourism_agency": {
     "name": "Xeno Outreach Agencies",
-    "description": "$building_xeno_tourism_agency_desc$",
+    "description": "This corporate agency promotes a wide variety of interstellar tourist attractions, as well as offering employment packages and signing bonuses to potential emigrants interested in relocating to corporate space.",
     "area": "society",
     "category": "statecraft",
     "cost": "@tier3cost1",

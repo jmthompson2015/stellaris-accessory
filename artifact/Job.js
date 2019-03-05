@@ -196,7 +196,6 @@ const Job = {
     "key": "entertainer"
   },
   "event_purge": {
-    "name": "$job_purge$",
     "category": "purge",
     "produces": {
       "trigger": {
@@ -559,7 +558,7 @@ const Job = {
     "key": "primitive_laborer"
   },
   "primitive_miner": {
-    "name": "$job_miner$",
+    "name": "Dangerous and sometimes lethal work in the dark bowels of the planet.",
     "category": "worker",
     "produces": {
       "minerals": 3
@@ -611,7 +610,7 @@ const Job = {
     "key": "primitive_researcher_2"
   },
   "primitive_technician": {
-    "name": "$job_technician$",
+    "name": "These technicians shuffle coal or maintain primitive nuclear generators.",
     "category": "worker",
     "produces": {
       "energy": 1

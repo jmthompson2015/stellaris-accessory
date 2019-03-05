@@ -28,16 +28,36 @@ NameFinder.find = buildingKey =>
           console.log(`${i} myLength = ${myLength} length = ${length}`);
         }
 
-        if (myLength > 0 && myLength < length) {
+        if (parts[i].indexOf("$") < 0 && myLength > 0 && myLength < length) {
           length = myLength;
           index = i;
         }
       }
 
+      const name = parts[index];
+      const description = parts[index + 1];
+
       if (isVerbose) {
         console.log(`index = ${index}`);
+        console.log(`name = :${name}:`);
+        console.log(`description = :${description}:`);
       }
-      resolve({ name: parts[index], description: parts[index + 1] });
+
+      const suffix1 = "_desc$";
+
+      if (description.startsWith("$") && description.toLowerCase().endsWith(suffix1)) {
+        const newDesc = description.substring(1, description.length - suffix1.length);
+        NameFinder.find(newDesc).then(nameDesc => {
+          resolve({ name, description: nameDesc.description });
+        });
+      } else if (description.startsWith("$") && description.endsWith("$")) {
+        const newDesc = description.substring(1, description.length - 1);
+        NameFinder.find(newDesc).then(nameDesc => {
+          resolve({ name, description: nameDesc.description });
+        });
+      } else {
+        resolve({ name, description });
+      }
     });
   });
 
