@@ -48,12 +48,14 @@ NameFinder.find = buildingKey =>
       if (description.startsWith("$") && description.toLowerCase().endsWith(suffix1)) {
         const newDesc = description.substring(1, description.length - suffix1.length);
         NameFinder.find(newDesc).then(nameDesc => {
-          resolve({ name, description: nameDesc.description });
+          const myName = name === undefined ? nameDesc.name : name;
+          resolve({ name: myName, description: nameDesc.description });
         });
       } else if (description.startsWith("$") && description.endsWith("$")) {
         const newDesc = description.substring(1, description.length - 1);
         NameFinder.find(newDesc).then(nameDesc => {
-          resolve({ name, description: nameDesc.description });
+          const myName = name === undefined ? nameDesc.name : name;
+          resolve({ name: myName, description: nameDesc.description });
         });
       } else {
         resolve({ name, description });

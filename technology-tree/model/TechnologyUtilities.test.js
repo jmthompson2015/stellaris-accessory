@@ -189,7 +189,7 @@ QUnit.test("rareTechnologies()", assert => {
   assert.ok(result);
   const length = 77;
   assert.equal(result.length, length);
-  assert.equal(result[0].key, "@tier1cost1");
+  assert.equal(result[0].key, "tech_battleship_hull_2");
   assert.equal(result[length - 1].key, "tech_mine_zro");
 });
 
@@ -204,7 +204,7 @@ QUnit.test("raresByArea() engineering", assert => {
   assert.ok(result);
   const length = 24;
   assert.equal(result.length, length);
-  assert.equal(result[0].key, "@tier1cost1");
+  assert.equal(result[0].key, "tech_battleship_hull_2");
   assert.equal(result[length - 1].key, "tech_synthetic_workers");
 });
 
@@ -219,7 +219,7 @@ QUnit.test("raresByArea() physics", assert => {
   assert.ok(result);
   const length = 23;
   assert.equal(result.length, length);
-  assert.equal(result[0].key, "tech_archeology_lab");
+  assert.equal(result[0].key, "tech_combat_computers_autonomous");
   assert.equal(result[length - 1].key, "tech_wormhole_stabilization");
 });
 
@@ -234,7 +234,7 @@ QUnit.test("raresByArea() society", assert => {
   assert.ok(result);
   const length = 30;
   assert.equal(result.length, length);
-  assert.equal(result[0].key, "@tech_gene_expressions_POINTS");
+  assert.equal(result[0].key, "tech_ascension_theory");
   assert.equal(result[length - 1].key, "tech_mine_zro");
 });
 
@@ -277,7 +277,7 @@ QUnit.test("technologiesByAreaCategory() engineering voidcraft", assert => {
   assert.ok(result);
   const length = 44;
   assert.equal(result.length, length);
-  assert.equal(result[0].key, "@tier1cost1");
+  assert.equal(result[0].key, "tech_battleship_hull_2");
   assert.equal(result[length - 1].key, "tech_titans");
 });
 
@@ -293,7 +293,7 @@ QUnit.test("technologiesByAreaCategory() physics particles", assert => {
   assert.ok(result);
   const length = 46;
   assert.equal(result.length, length);
-  assert.equal(result[0].key, "tech_reactor_boosters_2");
+  assert.equal(result[0].key, "tech_reactor_boosters_3");
   assert.equal(result[length - 1].key, "tech_zero_point_power");
 });
 
@@ -337,7 +337,7 @@ QUnit.test("startersByArea() physics", assert => {
   assert.ok(result);
   const length = 9;
   assert.equal(result.length, length);
-  assert.equal(result[0].key, "tech_bio_reactor");
+  assert.equal(result[0].key, "tech_pd_tracking_1");
   assert.equal(result[length - 1].key, "tech_basic_science_lab_1");
 });
 

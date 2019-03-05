@@ -13,4 +13,7 @@ cd ../technology
 cd ../artifact
 open TestSuite.html
 
-cd ..
+cd ../technology-tree/model
+open TestSuite.html
+
+cd ../..

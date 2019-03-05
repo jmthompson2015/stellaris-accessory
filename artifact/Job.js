@@ -196,6 +196,7 @@ const Job = {
     "key": "entertainer"
   },
   "event_purge": {
+    "name": "Purging",
     "category": "purge",
     "produces": {
       "trigger": {

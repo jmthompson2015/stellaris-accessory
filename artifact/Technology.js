@@ -440,6 +440,7 @@ const Technology = {
     "key": "tech_binary_motivators"
   },
   "tech_bio_reactor": {
+    "name": "Bio-Reactor",
     "description": "A facility where organic matter is converted into energy at a highly efficient rate.",
     "area": "physics",
     "category": "particles",
@@ -3306,6 +3307,7 @@ const Technology = {
     "key": "tech_repeatable_improved_tile_mineral_output"
   },
   "tech_repeatable_lcluster_clue": {
+    "name": "L-Gate Insight",
     "description": "$clue$ Gained: §G+1§!",
     "area": "engineering",
     "category": "voidcraft",

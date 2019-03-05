@@ -77,7 +77,7 @@ QUnit.test("back() from setCategory()", assert => {
   assert.equal(result.technologyKey, technologyKey1, "technologyKey");
   assert.equal(result.backList.length, 0);
   assert.equal(result.forwardList.length, 1);
-  assert.equal(result.forwardList[0], "tech_reactor_boosters_2");
+  assert.equal(result.forwardList[0], "tech_reactor_boosters_3");
 });
 
 QUnit.test("forward()", assert => {
@@ -146,7 +146,7 @@ QUnit.test("setCategory()", assert => {
   assert.equal(result.categories.length, 3);
   assert.equal(result.categoryKey, categoryKey, "categoryKey");
   assert.equal(result.technologies.length, 46);
-  assert.equal(result.technologyKey, "tech_reactor_boosters_2", "technologyKey");
+  assert.equal(result.technologyKey, "tech_reactor_boosters_3", "technologyKey");
 });
 
 QUnit.test("setTechnology()", assert => {

@@ -27,6 +27,17 @@ NameFinder.find("building_artist_patron").then(nameDesc => {
   console.log("NameFinder Test 2: passed");
 });
 
+NameFinder.find("tech_bio_reactor").then(nameDesc => {
+  assert(nameDesc !== undefined, "not undefined");
+  assert.equal(nameDesc.name, "Bio-Reactor", `nameDesc.name = ${nameDesc.name}`);
+  assert.equal(
+    nameDesc.description,
+    "A facility where organic matter is converted into energy at a highly efficient rate.",
+    `nameDesc.description = ${nameDesc.description}`
+  );
+  console.log("NameFinder Test 3: passed");
+});
+
 NameFinder.find("building_colony_shelter").then(nameDesc => {
   assert(nameDesc !== undefined, "not undefined");
   assert.equal(nameDesc.name, "Reassembled Ship Shelter", `nameDesc.name = ${nameDesc.name}`);
@@ -35,7 +46,7 @@ NameFinder.find("building_colony_shelter").then(nameDesc => {
     "The remains of a Colony Ship, reassembled for planetside form and function.",
     `nameDesc.description = ${nameDesc.description}`
   );
-  console.log("NameFinder Test 3: passed");
+  console.log("NameFinder Test 4: passed");
 });
 
 NameFinder.find("building_planetary_shield_generator").then(nameDesc => {
@@ -46,7 +57,7 @@ NameFinder.find("building_planetary_shield_generator").then(nameDesc => {
     "Generating a strong energy shield within a planetary atmosphere is a greater challenge than in the vacuum of space, but it offers a potent defense against orbital bombardment.",
     `nameDesc.description = ${nameDesc.description}`
   );
-  console.log("NameFinder Test 4: passed");
+  console.log("NameFinder Test 5: passed");
 });
 
 NameFinder.find("tech_dark_matter_propulsion").then(nameDesc => {
@@ -57,7 +68,7 @@ NameFinder.find("tech_dark_matter_propulsion").then(nameDesc => {
     "These ship thrusters utilize Dark Matter technology to generate propulsion in a manner that appears to defy numerous laws of physics.",
     `nameDesc.description = ${nameDesc.description}`
   );
-  console.log("NameFinder Test 5: passed");
+  console.log("NameFinder Test 6: passed");
 });
 
 NameFinder.find("tech_pk_nanobots").then(nameDesc => {
@@ -68,5 +79,5 @@ NameFinder.find("tech_pk_nanobots").then(nameDesc => {
     "Swarms of nanobots are dispersed in the atmosphere. They infect sapient beings and restructure themselves into cybernetic implants, turning their unwitting hosts into cyborgs slaved to the Machine Intelligence.",
     `nameDesc.description = ${nameDesc.description}`
   );
-  console.log("NameFinder Test 6: passed");
+  console.log("NameFinder Test 7: passed");
 });
