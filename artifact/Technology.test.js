@@ -32,7 +32,7 @@ QUnit.test("Technology properties tech_adaptive_bureaucracy", assert => {
   );
   assert.equal(tech.area, "society");
   assert.equal(tech.category, "statecraft");
-  assert.equal(tech.cost, "@tier1cost2");
+  assert.equal(tech.cost, 750);
   assert.equal(tech.tier, 1);
   assert.equal(tech.key, key);
 

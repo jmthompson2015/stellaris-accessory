@@ -20,17 +20,18 @@ Object.freeze(Technology);
 
 export default Technology;`;
 
-const parseTechnology = (key, tech0) =>
+const parseTechnology = (techs, key, tech0) =>
   new Promise(resolve => {
     NameFinder.find(key).then(nameDesc => {
       const category = tech0.category.length === 1 ? tech0.category[0] : tech0.category;
+      const cost = typeof tech0.cost === "string" ? techs[tech0.cost] : tech0.cost;
 
       resolve({
         name: nameDesc.name,
         description: nameDesc.description,
         area: tech0.area,
         category,
-        cost: tech0.cost,
+        cost,
         featureFlags: tech0.feature_flags,
         isDangerous: tech0.is_dangerous,
         isRare: tech0.is_rare,
@@ -56,7 +57,7 @@ const parse = (techs, indexIn, answerIn) =>
         const myIndex = index + 1;
         parse(techs, myIndex, answer).then(answer2 => resolve(answer2));
       } else {
-        parseTechnology(key, tech0).then(tech => {
+        parseTechnology(techs, key, tech0).then(tech => {
           const myIndex = index + 1;
           const myAnswer = R.assoc(tech.key, tech, answer);
           parse(techs, myIndex, myAnswer).then(answer2 => resolve(answer2));
