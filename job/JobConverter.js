@@ -23,11 +23,18 @@ export default Job;`;
 const parseJob = (key, job0) =>
   new Promise(resolve => {
     NameFinder.find(key).then(nameDesc => {
-      const produces = job0.resources ? job0.resources.produces : undefined;
       resolve({
         name: nameDesc.name,
         category: job0.category,
-        produces,
+        is_capped_by_modifier: job0.is_capped_by_modifier,
+        building_icon: job0.building_icon,
+        clothes_texture_index: job0.clothes_texture_index,
+        possible: job0.possible,
+        resources: job0.resources,
+        triggered_pop_modifier: job0.triggered_pop_modifier,
+        planet_modifier: job0.planet_modifier,
+        triggered_planet_modifier: job0.triggered_planet_modifier,
+        weight: job0.weight,
         key
       });
     });
