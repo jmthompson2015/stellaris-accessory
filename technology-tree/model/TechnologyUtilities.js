@@ -33,7 +33,7 @@ TechnologyUtilities.childrenForTechnologies = technologies => {
 };
 
 TechnologyUtilities.dangerousByArea = areaKey => {
-  const filterFunction = r => r.isDangerous && r.area === areaKey;
+  const filterFunction = r => r.is_dangerous && r.area === areaKey;
   const technologies = R.filter(filterFunction, Object.values(Technology));
 
   return R.sort(TechnologyComparator.name, technologies);
@@ -60,14 +60,14 @@ TechnologyUtilities.parentsForTechnologies = technologies => {
 };
 
 TechnologyUtilities.rareTechnologies = () => {
-  const filterFunction = r => r.isRare;
+  const filterFunction = r => r.is_rare;
   const technologies = R.filter(filterFunction, Object.values(Technology));
 
   return R.sort(TechnologyComparator.areaName, technologies);
 };
 
 TechnologyUtilities.raresByArea = areaKey => {
-  const filterFunction = r => r.isRare && r.area === areaKey;
+  const filterFunction = r => r.is_rare && r.area === areaKey;
   const technologies = R.filter(filterFunction, Object.values(Technology));
 
   return R.sort(TechnologyComparator.name, technologies);
@@ -85,14 +85,14 @@ TechnologyUtilities.technologiesByAreaCategory = (areaKey, categoryKey) => {
 };
 
 TechnologyUtilities.starterTechnologies = () => {
-  const filterFunction = r => r.isStartTech;
+  const filterFunction = r => r.start_tech;
   const technologies = R.filter(filterFunction, Object.values(Technology));
 
   return R.sort(TechnologyComparator.areaName, technologies);
 };
 
 TechnologyUtilities.startersByArea = areaKey => {
-  const filterFunction = r => r.isStartTech && r.area === areaKey;
+  const filterFunction = r => r.start_tech && r.area === areaKey;
   const technologies = R.filter(filterFunction, Object.values(Technology));
 
   return R.sort(TechnologyComparator.name, technologies);

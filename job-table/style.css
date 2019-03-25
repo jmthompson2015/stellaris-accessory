@@ -43,11 +43,11 @@ body {
 }
 
 .frt-table td {
-  border: 1px solid Gray;
+  border: 1px solid RoyalBlue;
 }
 
 .frt-table th {
-  background: Gray;
+  background: RoyalBlue;
   border: 1px solid White;
   color: White;
 }

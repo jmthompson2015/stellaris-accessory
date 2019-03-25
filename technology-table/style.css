@@ -4,7 +4,7 @@ body {
 }
 
 .frt-filter {
-  background: Green;
+  background: Firebrick;
   font-size: x-small;
   padding: 2px;
 }
@@ -43,17 +43,17 @@ body {
 }
 
 .frt-table td {
-  border: 1px solid Green;
+  border: 1px solid Firebrick;
 }
 
 .frt-table th {
-  background: Green;
+  background: Firebrick;
   border: 1px solid White;
   color: White;
 }
 
 .frt-table tbody tr:nth-child(2n) td {
-  background: #f0fff0;
+  background: #fff0f0;
 }
 
 .frt-table tbody tr:nth-child(2n + 1) td {

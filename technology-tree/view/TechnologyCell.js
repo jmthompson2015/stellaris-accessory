@@ -11,9 +11,9 @@ const createImage = technology => {
   const { key } = technology;
   let className = "v-mid";
 
-  if (technology.isDangerous) {
+  if (technology.is_dangerous) {
     className += " b--dangerous ba bw2";
-  } else if (technology.isRare) {
+  } else if (technology.is_rare) {
     className += " b--rare ba bw2";
   }
 
@@ -33,7 +33,7 @@ const createLabel1 = technology => {
 const createLabel2 = technology => {
   const { category, tier } = technology;
   const categoryObj = Category[category];
-  const myTier = technology.isStartTech ? "Starting" : `Tier ${tier}`;
+  const myTier = technology.start_tech ? "Starting" : `Tier ${tier}`;
 
   return `${categoryObj.name} (${myTier})`;
 };
@@ -85,7 +85,7 @@ class TechnologyCell extends React.Component {
     ]);
     const innerTable = ReactUtils.createTable(row, "innerTable");
 
-    const outerClass = `b--${technology.area} ba bg-white bw2 ${technology.isRare ? "pr1" : "pa1"}`;
+    const outerClass = `b--${technology.area} ba bg-white bw2 ${technology.is_rare ? "pr1" : "pa1"}`;
     const outerProps = { onClick: this.handleClick, title: technology.description };
 
     return ReactUtils.createCell(
