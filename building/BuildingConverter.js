@@ -23,16 +23,20 @@ export default Building;`;
 const parseBuilding = (key, building0) =>
   new Promise(resolve => {
     NameFinder.find(key).then(nameDesc => {
-      const cost = building0.resources ? building0.resources.cost : undefined;
-      const upkeep = building0.resources ? building0.resources.upkeep : undefined;
       resolve({
         name: nameDesc.name,
         description: nameDesc.description,
+        allow: building0.allow,
+        base_buildtime: building0.base_buildtime,
+        can_build: building0.can_build,
         category: building0.category,
-        childKeys: building0.convert_to,
-        planetModifiers: building0.planet_modifier,
-        cost,
-        upkeep,
+        convert_to: building0.convert_to,
+        planet_modifier: building0.planet_modifier,
+        potential: building0.potential,
+        prerequisites: building0.prerequisites,
+        resources: building0.resources,
+        triggered_planet_modifier: building0.triggered_planet_modifier,
+        upgrades: building0.upgrades,
         key
       });
     });
