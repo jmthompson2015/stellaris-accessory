@@ -1649,7 +1649,7 @@ const Technology = {
     "description": "Sophisticated genetic engineering of crops helps increase yield and further improves both taste and nutrient levels.",
     "area": "society",
     "category": "biology",
-    "cost": 2500,
+    "cost": 1500,
     "prerequisites": [
       "tech_eco_simulation"
     ],
@@ -2395,7 +2395,7 @@ const Technology = {
     "description": "Optimal processing of mined materials have allowed us to reach new levels of efficiency.",
     "area": "engineering",
     "category": "industry",
-    "cost": 750,
+    "cost": 1000,
     "prerequisites": [
       "tech_mining_1"
     ],
@@ -2432,7 +2432,7 @@ const Technology = {
     "description": "These massive drills are needed to access the rich mineral deposits that can often be found close to a planet's core.",
     "area": "engineering",
     "category": "industry",
-    "cost": 2500,
+    "cost": 1500,
     "prerequisites": [
       "tech_mining_1"
     ],
@@ -2444,11 +2444,11 @@ const Technology = {
     "description": "Advanced spectrometry combines with fracking techniques and chemical flushing to rapidly exploit shallow and mid-depth deposits.",
     "area": "engineering",
     "category": "industry",
-    "cost": 10000,
+    "cost": 4000,
     "prerequisites": [
       "tech_mining_2"
     ],
-    "tier": 4,
+    "tier": 3,
     "key": "tech_mining_3"
   },
   "tech_mining_drone_weapon_1": {
@@ -2595,11 +2595,11 @@ const Technology = {
     "description": "Infusing crop strands with small amounts of nano-machines help create a type of produce that is ultra resilient, and the chemical composition of which can be tailored and altered during its entire lifetime.",
     "area": "society",
     "category": "biology",
-    "cost": 10000,
+    "cost": 4000,
     "prerequisites": [
       "tech_gene_crops"
     ],
-    "tier": 4,
+    "tier": 3,
     "key": "tech_nano_vitality_crops"
   },
   "tech_neural_implants": {
@@ -2913,7 +2913,7 @@ const Technology = {
     "description": "Load-balancing facilities can greatly improve the stability of local grids and feed excess power back into centralized capacitors.",
     "area": "physics",
     "category": "field_manipulation",
-    "cost": 750,
+    "cost": 1000,
     "prerequisites": [
       "tech_power_plant_1"
     ],
@@ -2960,7 +2960,7 @@ const Technology = {
     "description": "Basic entanglement principles applied to energy generation provide a substantial increase in energy output.",
     "area": "physics",
     "category": "field_manipulation",
-    "cost": 2500,
+    "cost": 1500,
     "prerequisites": [
       "tech_power_plant_2"
     ],
@@ -2972,11 +2972,11 @@ const Technology = {
     "description": "Quantum superposition of energy coils, simultaneously drained and charged.",
     "area": "physics",
     "category": "field_manipulation",
-    "cost": 10000,
+    "cost": 4000,
     "prerequisites": [
       "tech_power_plant_3"
     ],
-    "tier": 4,
+    "tier": 3,
     "key": "tech_power_plant_4"
   },
   "tech_powered_exoskeletons": {

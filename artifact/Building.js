@@ -222,7 +222,7 @@ const Building = {
     "triggered_planet_modifier": {
       "potential": {
         "owner": {
-          "has_ethic": "ethic_gestalt_consciousness"
+          "is_machine_empire": true
         }
       },
       "planet_jobs_unity_produces_mult": 0.15,
@@ -235,6 +235,12 @@ const Building = {
     "description": "A monument to the first pioneers to venture into space.",
     "base_buildtime": 240,
     "category": "unity",
+    "convert_to": [
+      "building_temple",
+      "building_hive_node",
+      "building_uplink_node",
+      "building_corporate_monument"
+    ],
     "planet_modifier": {
       "job_culture_worker_add": 2
     },
@@ -902,6 +908,12 @@ const Building = {
     "base_buildtime": 480,
     "can_build": false,
     "category": "unity",
+    "convert_to": [
+      "building_sacred_nexus",
+      "building_hive_confluence",
+      "building_hypercomms_forum",
+      "building_system_conflux"
+    ],
     "planet_modifier": {
       "job_manager_add": 7
     },
@@ -938,6 +950,12 @@ const Building = {
     "description": "A site dedicated to glorifying the unique corporate culture that permeates every business transaction conducted on the planet.",
     "base_buildtime": 240,
     "category": "unity",
+    "convert_to": [
+      "building_temple",
+      "building_hive_node",
+      "building_uplink_node",
+      "building_autochthon_monument"
+    ],
     "planet_modifier": {
       "job_manager_add": 2
     },
@@ -977,6 +995,12 @@ const Building = {
     "base_buildtime": 360,
     "can_build": false,
     "category": "unity",
+    "convert_to": [
+      "building_holotemple",
+      "building_hive_cluster",
+      "building_heritage_site",
+      "building_network_junction"
+    ],
     "planet_modifier": {
       "job_manager_add": 4
     },
@@ -1148,20 +1172,33 @@ const Building = {
       "planet_housing_add": 3,
       "planet_amenities_add": 3,
       "job_coordinator_add": 1,
-      "job_replicator_add": 1,
+      "job_replicator_add": 2,
       "job_patrol_drone_add": 1,
       "job_maintenance_drone_add": 1
     },
     "potential": {
       "exists": "owner",
       "owner": {
-        "is_machine_empire": true
+        "OR": {
+          "is_machine_empire": true,
+          "is_country_type": "ai_empire"
+        }
       }
     },
     "resources": {
       "category": "planet_buildings",
       "upkeep": {
         "energy": 1
+      }
+    },
+    "triggered_planet_modifier": {
+      "potential": {
+        "owner": {
+          "has_civic": "civic_machine_assimilator"
+        }
+      },
+      "modifier": {
+        "job_replicator_add": -1
       }
     },
     "upgrades": [
@@ -1329,7 +1366,13 @@ const Building = {
     "resources": {
       "category": "planet_buildings",
       "cost": {
-        "minerals": 200
+        "trigger": {
+          "owner": {
+            "is_robot_empire": true
+          }
+        },
+        "minerals": 100,
+        "alloys": 100
       },
       "upkeep": {
         "energy": 1
@@ -1339,11 +1382,12 @@ const Building = {
       "potential": {
         "exists": "owner",
         "owner": {
-          "is_gestalt": true
+          "is_robot_empire": true
         }
       },
       "modifier": {
-        "job_technician_drone_add": 1
+        "district_generator_max": 2,
+        "planet_technician_energy_produces_mult": 0.05
       }
     },
     "upgrades": [
@@ -1369,8 +1413,13 @@ const Building = {
     "resources": {
       "category": "planet_buildings",
       "cost": {
-        "minerals": 500,
-        "exotic_gases": 50
+        "trigger": {
+          "owner": {
+            "is_robot_empire": true
+          }
+        },
+        "minerals": 300,
+        "alloys": 150
       },
       "upkeep": {
         "energy": 1,
@@ -1381,11 +1430,12 @@ const Building = {
       "potential": {
         "exists": "owner",
         "owner": {
-          "is_gestalt": true
+          "is_robot_empire": true
         }
       },
       "modifier": {
-        "job_technician_drone_add": 2
+        "district_generator_max": 4,
+        "planet_technician_energy_produces_mult": 0.05
       }
     },
     "key": "building_energy_nexus"
@@ -1766,7 +1816,8 @@ const Building = {
       "planet_farmers_food_produces_mult": 0.15
     },
     "potential": {
-      "NOT": {
+      "NOR": {
+        "is_planet_class": "pc_machine",
         "has_modifier": "resort_colony"
       }
     },
@@ -2077,6 +2128,7 @@ const Building = {
       ">=",
       "10"
     ],
+    "base_buildtime": 480,
     "can_build": false,
     "category": "government",
     "planet_modifier": {
@@ -2152,6 +2204,12 @@ const Building = {
     "base_buildtime": 360,
     "can_build": false,
     "category": "unity",
+    "convert_to": [
+      "building_holotemple",
+      "building_network_junction",
+      "building_hive_cluster",
+      "building_corporate_site"
+    ],
     "planet_modifier": {
       "job_culture_worker_add": 4
     },
@@ -2202,7 +2260,10 @@ const Building = {
     "potential": {
       "exists": "owner",
       "owner": {
-        "is_hive_empire": true
+        "OR": {
+          "is_hive_empire": true,
+          "is_country_type": "swarm"
+        }
       }
     },
     "prerequisites": [
@@ -2231,6 +2292,12 @@ const Building = {
     "base_buildtime": 360,
     "can_build": false,
     "category": "unity",
+    "convert_to": [
+      "building_holotemple",
+      "building_network_junction",
+      "building_heritage_site",
+      "building_corporate_site"
+    ],
     "planet_modifier": {
       "job_synapse_drone_add": 4
     },
@@ -2277,6 +2344,12 @@ const Building = {
     "base_buildtime": 480,
     "can_build": false,
     "category": "unity",
+    "convert_to": [
+      "building_sacred_nexus",
+      "building_system_conflux",
+      "building_hypercomms_forum",
+      "building_corporate_forum"
+    ],
     "planet_modifier": {
       "job_synapse_drone_add": 7
     },
@@ -2338,7 +2411,10 @@ const Building = {
     "potential": {
       "exists": "owner",
       "owner": {
-        "is_hive_empire": true
+        "OR": {
+          "is_hive_empire": true,
+          "is_country_type": "swarm"
+        }
       }
     },
     "prerequisites": [
@@ -2360,6 +2436,12 @@ const Building = {
     "description": "A center of massive, macroscopic synapses, these nodes, tended to and assisted by specialized drones, receive and transmit the will of the Hive.",
     "base_buildtime": 240,
     "category": "unity",
+    "convert_to": [
+      "building_temple",
+      "building_uplink_node",
+      "building_autochthon_monument",
+      "building_corporate_monument"
+    ],
     "planet_modifier": {
       "job_synapse_drone_add": 2
     },
@@ -2435,11 +2517,9 @@ const Building = {
     "description": "The latest in holographic entertainment. Entire worlds built out of photons and energy fields.",
     "base_buildtime": 360,
     "category": "amenity",
-    "planet_modifier": {
-      "job_entertainer_add": 2
-    },
     "potential": {
-      "NOT": {
+      "NOR": {
+        "is_planet_class": "pc_habitat",
         "has_modifier": "slave_colony"
       },
       "owner": {
@@ -2458,6 +2538,17 @@ const Building = {
         "energy": 2
       }
     },
+    "triggered_planet_modifier": {
+      "potential": {
+        "exists": "owner",
+        "owner": {
+          "has_valid_civic": "civic_warrior_culture"
+        }
+      },
+      "modifier": {
+        "job_duelist_add": 2
+      }
+    },
     "upgrades": [
       "building_hyper_entertainment_forum"
     ],
@@ -2472,6 +2563,12 @@ const Building = {
     "base_buildtime": 360,
     "can_build": false,
     "category": "unity",
+    "convert_to": [
+      "building_network_junction",
+      "building_hive_cluster",
+      "building_heritage_site",
+      "building_corporate_site"
+    ],
     "planet_modifier": {
       "job_priest_add": 4,
       "pop_ethic_spiritualist_attraction_mult": 0.1
@@ -2581,9 +2678,6 @@ const Building = {
     "base_buildtime": 480,
     "can_build": false,
     "category": "amenity",
-    "planet_modifier": {
-      "job_entertainer_add": 4
-    },
     "potential": {
       "owner": {
         "is_regular_empire": true
@@ -2603,6 +2697,17 @@ const Building = {
         "exotic_gases": 1
       }
     },
+    "triggered_planet_modifier": {
+      "potential": {
+        "exists": "owner",
+        "owner": {
+          "has_valid_civic": "civic_warrior_culture"
+        }
+      },
+      "modifier": {
+        "job_duelist_add": 4
+      }
+    },
     "key": "building_hyper_entertainment_forum"
   },
   "building_hypercomms_forum": {
@@ -2614,6 +2719,12 @@ const Building = {
     "base_buildtime": 480,
     "can_build": false,
     "category": "unity",
+    "convert_to": [
+      "building_sacred_nexus",
+      "building_hive_confluence",
+      "building_system_conflux",
+      "building_corporate_forum"
+    ],
     "planet_modifier": {
       "job_culture_worker_add": 7
     },
@@ -2716,6 +2827,11 @@ const Building = {
     "name": "Junkheap",
     "description": "A rusting, irradiated jumble of collapsed infrastructure, destroyed buildings, and decaying wreckage from an unknown civilization.",
     "can_build": false,
+    "convert_to": [
+      "building_machine_capital",
+      "building_capital",
+      "building_hive_capital"
+    ],
     "planet_modifier": {
       "planet_housing_add": 15,
       "planet_amenities_add": 20,
@@ -2788,6 +2904,9 @@ const Building = {
     "description": "A production line assembly plant where new units are constructed.",
     "base_buildtime": 360,
     "category": "pop_assembly",
+    "convert_to": [
+      "building_robot_assembly_plant"
+    ],
     "planet_modifier": {
       "job_replicator_add": 1
     },
@@ -2833,7 +2952,10 @@ const Building = {
     "potential": {
       "exists": "owner",
       "owner": {
-        "is_machine_empire": true
+        "OR": {
+          "is_machine_empire": true,
+          "is_country_type": "ai_empire"
+        }
       }
     },
     "prerequisites": [
@@ -2846,6 +2968,16 @@ const Building = {
       },
       "upkeep": {
         "energy": 3
+      }
+    },
+    "triggered_planet_modifier": {
+      "potential": {
+        "owner": {
+          "has_civic": "civic_machine_assimilator"
+        }
+      },
+      "modifier": {
+        "job_replicator_add": -1
       }
     },
     "upgrades": [
@@ -2870,7 +3002,7 @@ const Building = {
     ],
     "planet_modifier": {
       "job_coordinator_add": 3,
-      "job_replicator_add": 3,
+      "job_replicator_add": 2,
       "planet_housing_add": 8,
       "planet_amenities_add": 8,
       "job_patrol_drone_add": 2,
@@ -2879,7 +3011,10 @@ const Building = {
     "potential": {
       "exists": "owner",
       "owner": {
-        "is_machine_empire": true
+        "OR": {
+          "is_machine_empire": true,
+          "is_country_type": "ai_empire"
+        }
       }
     },
     "prerequisites": [
@@ -2892,6 +3027,16 @@ const Building = {
       },
       "upkeep": {
         "energy": 5
+      }
+    },
+    "triggered_planet_modifier": {
+      "potential": {
+        "owner": {
+          "has_civic": "civic_machine_assimilator"
+        }
+      },
+      "modifier": {
+        "job_replicator_add": -1
       }
     },
     "upgrades": [
@@ -2919,14 +3064,17 @@ const Building = {
       "planet_housing_add": 10,
       "planet_amenities_add": 10,
       "job_coordinator_add": 5,
-      "job_replicator_add": 4,
+      "job_replicator_add": 2,
       "job_patrol_drone_add": 3,
       "job_maintenance_drone_add": 4
     },
     "potential": {
       "exists": "owner",
       "owner": {
-        "is_machine_empire": true
+        "OR": {
+          "is_machine_empire": true,
+          "is_country_type": "ai_empire"
+        }
       }
     },
     "prerequisites": [
@@ -2939,6 +3087,16 @@ const Building = {
       },
       "upkeep": {
         "energy": 10
+      }
+    },
+    "triggered_planet_modifier": {
+      "potential": {
+        "owner": {
+          "has_civic": "civic_machine_assimilator"
+        }
+      },
+      "modifier": {
+        "job_replicator_add": -1
       }
     },
     "key": "building_machine_system_capital"
@@ -3147,8 +3305,13 @@ const Building = {
     "resources": {
       "category": "planet_buildings",
       "cost": {
-        "minerals": 500,
-        "volatile_motes": 50
+        "trigger": {
+          "owner": {
+            "is_robot_empire": true
+          }
+        },
+        "minerals": 300,
+        "alloys": 150
       },
       "upkeep": {
         "energy": 1,
@@ -3159,11 +3322,12 @@ const Building = {
       "potential": {
         "exists": "owner",
         "owner": {
-          "is_gestalt": true
+          "is_robot_empire": true
         }
       },
       "modifier": {
-        "job_mining_drone_add": 2
+        "district_mining_max": 4,
+        "planet_miners_minerals_produces_mult": 0.05
       }
     },
     "key": "building_mineral_purification_hub"
@@ -3187,7 +3351,13 @@ const Building = {
     "resources": {
       "category": "planet_buildings",
       "cost": {
-        "minerals": 200
+        "trigger": {
+          "owner": {
+            "is_robot_empire": true
+          }
+        },
+        "minerals": 100,
+        "alloys": 100
       },
       "upkeep": {
         "energy": 1
@@ -3197,11 +3367,12 @@ const Building = {
       "potential": {
         "exists": "owner",
         "owner": {
-          "is_gestalt": true
+          "is_robot_empire": true
         }
       },
       "modifier": {
-        "job_mining_drone_add": 1
+        "district_mining_max": 2,
+        "planet_miners_minerals_produces_mult": 0.05
       }
     },
     "upgrades": [
@@ -3223,12 +3394,12 @@ const Building = {
       "planet_artisans_produces_mult": 0.15
     },
     "potential": {
-      "NOT": {
-        "has_modifier": "slave_colony"
-      },
       "exists": "owner",
       "owner": {
         "is_regular_empire": true
+      },
+      "NOR": {
+        "has_modifier": "slave_colony"
       }
     },
     "prerequisites": [
@@ -3289,7 +3460,7 @@ const Building = {
     "base_buildtime": 600,
     "category": "manufacturing",
     "potential": {
-      "NOT": {
+      "NOR": {
         "has_modifier": "slave_colony"
       }
     },
@@ -3302,6 +3473,13 @@ const Building = {
         "minerals": 1000
       },
       "produces": {
+        "trigger": {
+          "owner": {
+            "NOT": {
+              "has_deficit": "nanites"
+            }
+          }
+        },
         "rare_crystals": 2,
         "volatile_motes": 2,
         "exotic_gases": 2
@@ -3342,6 +3520,12 @@ const Building = {
     "base_buildtime": 360,
     "can_build": false,
     "category": "unity",
+    "convert_to": [
+      "building_holotemple",
+      "building_hive_cluster",
+      "building_heritage_site",
+      "building_corporate_site"
+    ],
     "planet_modifier": {
       "job_coordinator_add": 4
     },
@@ -3438,6 +3622,9 @@ const Building = {
       }
     },
     "resources": {
+      "cost": {
+        "minerals": 1000
+      },
       "category": "planet_buildings"
     },
     "key": "building_nuumismatic_shrine"
@@ -3452,7 +3639,6 @@ const Building = {
       "building_communal_housing_large"
     ],
     "planet_modifier": {
-      "planet_housing_add": 20,
       "job_bio_trophy_add": 20,
       "job_maintenance_drone_add": 2
     },
@@ -3487,7 +3673,6 @@ const Building = {
       "building_communal_housing"
     ],
     "planet_modifier": {
-      "planet_housing_add": 10,
       "job_bio_trophy_add": 10,
       "job_maintenance_drone_add": 1
     },
@@ -3677,6 +3862,11 @@ const Building = {
     "name": "Regional Capitals",
     "description": "The regional capital buildings of the various nation-states inhabiting this primitive world.",
     "can_build": false,
+    "convert_to": [
+      "building_machine_capital",
+      "building_capital",
+      "building_hive_capital"
+    ],
     "planet_modifier": {
       "job_primitive_bureaucrat_add": 2,
       "job_primitive_warrior_2_add": 2,
@@ -4225,7 +4415,7 @@ const Building = {
     "base_buildtime": 180,
     "category": "resource",
     "potential": {
-      "NOT": {
+      "NOR": {
         "has_modifier": "slave_colony"
       }
     },
@@ -4259,6 +4449,9 @@ const Building = {
     "description": "High-tech factories where skilled Roboticists assemble the latest robot models.",
     "base_buildtime": 360,
     "category": "pop_assembly",
+    "convert_to": [
+      "building_machine_assembly_plant"
+    ],
     "planet_modifier": {
       "job_roboticist_add": 1
     },
@@ -4297,7 +4490,10 @@ const Building = {
     "can_build": false,
     "category": "unity",
     "convert_to": [
-      "building_hypercomms_forum"
+      "building_hive_confluence",
+      "building_system_conflux",
+      "building_hypercomms_forum",
+      "building_corporate_forum"
     ],
     "planet_modifier": {
       "job_priest_add": 7,
@@ -4631,12 +4827,12 @@ const Building = {
       "planet_researchers_produces_mult": 0.15
     },
     "potential": {
-      "NOT": {
-        "has_modifier": "slave_colony"
-      },
       "exists": "owner",
       "owner": {
         "is_gestalt": true
+      },
+      "NOR": {
+        "has_modifier": "slave_colony"
       }
     },
     "prerequisites": [
@@ -4759,6 +4955,12 @@ const Building = {
     "base_buildtime": 480,
     "can_build": false,
     "category": "unity",
+    "convert_to": [
+      "building_sacred_nexus",
+      "building_hive_confluence",
+      "building_hypercomms_forum",
+      "building_corporate_forum"
+    ],
     "planet_modifier": {
       "job_coordinator_add": 7
     },
@@ -4795,6 +4997,12 @@ const Building = {
     "description": "Simple constructs erected since time immemorial, temples are places of quiet contemplation and communion with that which unites us all.",
     "base_buildtime": 240,
     "category": "unity",
+    "convert_to": [
+      "building_hive_node",
+      "building_uplink_node",
+      "building_autochthon_monument",
+      "building_corporate_monument"
+    ],
     "planet_modifier": {
       "job_priest_add": 2,
       "pop_ethic_spiritualist_attraction_mult": 0.05
@@ -4907,6 +5115,12 @@ const Building = {
     "description": "An uplink node that decreases planetary latency.",
     "base_buildtime": 240,
     "category": "unity",
+    "convert_to": [
+      "building_temple",
+      "building_hive_node",
+      "building_autochthon_monument",
+      "building_corporate_monument"
+    ],
     "planet_modifier": {
       "job_coordinator_add": 2
     },
@@ -5127,6 +5341,18 @@ const Building = {
       },
       "upkeep": {
         "energy": 1
+      }
+    },
+    "triggered_planet_modifier": {
+      "potential": {
+        "exists": "owner",
+        "owner": {
+          "has_valid_civic": "civic_warrior_culture"
+        }
+      },
+      "modifier": {
+        "job_duelist_add": 1,
+        "job_entertainer_add": -1
       }
     },
     "key": "building_xeno_zoo"

@@ -50,7 +50,12 @@ const Job = {
     "resources": {
       "category": "planet_farmers",
       "produces": {
-        "food": 6
+        "trigger": {
+          "owner": {
+            "is_robot_empire": true
+          }
+        },
+        "food": -1
       }
     },
     "weight": {
@@ -123,10 +128,10 @@ const Job = {
     "resources": {
       "category": "planet_artisans",
       "produces": {
-        "consumer_goods": 6
+        "consumer_goods": 8
       },
       "upkeep": {
-        "minerals": 6
+        "minerals": 8
       }
     },
     "weight": {
@@ -157,6 +162,12 @@ const Job = {
       "produces": {
         "unity": 2
       }
+    },
+    "triggered_pop_modifier": {
+      "pop_housing_usage_add": -1
+    },
+    "planet_modifier": {
+      "planet_jobs_complex_drone_produces_mult": 0.0025
     },
     "weight": {
       "weight": "@special_job_weight"
@@ -259,7 +270,7 @@ const Job = {
       "drone_job_check_trigger": true
     },
     "resources": {
-      "category": "planet_jobs",
+      "category": "planet_chemists",
       "produces": {
         "volatile_motes": 2
       },
@@ -308,8 +319,8 @@ const Job = {
     "weight": {
       "weight": "@clerk_job_weight",
       "modifier": {
-        "factor": 0.9,
-        "has_trait": "trait_weak"
+        "factor": 0.1,
+        "can_take_servant_job": true
       }
     },
     "key": "clerk"
@@ -342,7 +353,7 @@ const Job = {
     "weight": {
       "weight": "@colonist_job_weight",
       "modifier": {
-        "factor": 0.65,
+        "factor": 0.8,
         "has_trait": "trait_repugnant"
       }
     },
@@ -359,11 +370,16 @@ const Job = {
       "category": "planet_jobs",
       "produces": {
         "unity": 3,
-        "society_research": 3
+        "society_research": 1,
+        "physics_research": 1,
+        "engineering_research": 1
       },
       "upkeep": {
         "energy": 3
       }
+    },
+    "planet_modifier": {
+      "planet_jobs_simple_drone_produces_mult": 0.01
     },
     "weight": {
       "weight": "@synapse_drone_job_weight",
@@ -425,6 +441,48 @@ const Job = {
       "weight": "@criminal_job_weight"
     },
     "key": "criminal"
+  },
+  "crisis_purge": {
+    "name": "Purging",
+    "category": "purge",
+    "is_capped_by_modifier": false,
+    "clothes_texture_index": 2,
+    "possible": {
+      "exists": "planet",
+      "planet": {
+        "exists": "controller"
+      },
+      "planet.controller": {
+        "OR": {
+          "is_country_type": "ai_empire"
+        }
+      },
+      "OR": {
+        "NOT": {
+          "exists": "event_target:custodian_bot"
+        },
+        "AND": {
+          "exists": "event_target:custodian_bot",
+          "NOT": {
+            "species": {
+              "is_same_value": "event_target:custodian_bot"
+            }
+          }
+        }
+      }
+    },
+    "weight": {
+      "weight": "@special_job_weight",
+      "modifier": {
+        "factor": 9999,
+        "planet.controller": {
+          "OR": {
+            "is_country_type": "ai_empire"
+          }
+        }
+      }
+    },
+    "key": "crisis_purge"
   },
   "crystal_miner": {
     "name": "Crystal Miner",
@@ -629,13 +687,50 @@ const Job = {
     },
     "key": "dimensional_portal_researcher_gestalt"
   },
+  "duelist": {
+    "name": "Duelist",
+    "category": "specialist",
+    "building_icon": "building_holo_theatres",
+    "clothes_texture_index": 3,
+    "possible": {
+      "battle_thrall_job_check_trigger": true
+    },
+    "resources": {
+      "category": "planet_entertainers",
+      "produces": {
+        "unity": 3
+      },
+      "upkeep": {
+        "alloys": 1
+      }
+    },
+    "planet_modifier": {
+      "planet_amenities_add": 12
+    },
+    "triggered_planet_modifier": {
+      "potential": {
+        "has_trait": "trait_repugnant"
+      },
+      "modifier": {
+        "planet_amenities_add": -2
+      }
+    },
+    "weight": {
+      "weight": "@specialist_job_weight",
+      "modifier": {
+        "factor": 1.5,
+        "has_job": "duelist"
+      }
+    },
+    "key": "duelist"
+  },
   "enforcer": {
     "name": "Enforcer",
     "category": "specialist",
     "building_icon": "building_precinct_house",
     "clothes_texture_index": 5,
     "possible": {
-      "specialist_job_check_trigger": true
+      "battle_thrall_job_check_trigger": true
     },
     "resources": {
       "category": "planet_enforcers",
@@ -672,8 +767,8 @@ const Job = {
     "weight": {
       "weight": "@specialist_job_weight",
       "modifier": {
-        "factor": 1.5,
-        "has_job": "enforcer"
+        "factor": 0,
+        "can_be_soldier": false
       }
     },
     "key": "enforcer"
@@ -758,10 +853,10 @@ const Job = {
     },
     "triggered_planet_modifier": {
       "potential": {
-        "has_trait": "trait_nuumismatic_administration"
+        "has_trait": "trait_repugnant"
       },
       "modifier": {
-        "trade_value_add": 1
+        "planet_amenities_add": -1
       }
     },
     "weight": {
@@ -800,10 +895,10 @@ const Job = {
     "resources": {
       "category": "planet_metallurgists",
       "produces": {
-        "alloys": 3
+        "alloys": 4
       },
       "upkeep": {
-        "minerals": 6
+        "minerals": 8
       }
     },
     "weight": {
@@ -837,7 +932,12 @@ const Job = {
     "resources": {
       "category": "planet_farmers",
       "produces": {
-        "food": 6
+        "trigger": {
+          "owner": {
+            "is_robot_empire": true
+          }
+        },
+        "food": -1
       }
     },
     "triggered_planet_modifier": {
@@ -1454,7 +1554,7 @@ const Job = {
       "drone_job_check_trigger": true
     },
     "resources": {
-      "category": "planet_jobs",
+      "category": "planet_refiners",
       "produces": {
         "exotic_gases": 2
       },
@@ -1493,6 +1593,14 @@ const Job = {
     },
     "planet_modifier": {
       "planet_amenities_add": 5
+    },
+    "triggered_planet_modifier": {
+      "potential": {
+        "has_trait": "trait_repugnant"
+      },
+      "modifier": {
+        "planet_amenities_add": -1
+      }
     },
     "weight": {
       "weight": "@ruler_job_weight",
@@ -1788,8 +1896,8 @@ const Job = {
     "weight": {
       "weight": "@worker_job_weight",
       "modifier": {
-        "factor": 0.9,
-        "has_trait": "trait_weak"
+        "factor": 2,
+        "has_trait": "trait_syncretic_proles"
       }
     },
     "key": "miner"
@@ -2075,8 +2183,11 @@ const Job = {
     "weight": {
       "weight": "@specialist_job_weight",
       "modifier": {
-        "factor": 0.9,
-        "has_trait": "trait_weak"
+        "factor": 0.1,
+        "has_ethic": "ethic_materialist",
+        "NOT": {
+          "has_job": "preacher"
+        }
       }
     },
     "key": "preacher"
@@ -2500,31 +2611,7 @@ const Job = {
         "has_citizenship_type": {
           "type": "citizenship_purge"
         },
-        "has_pop_flag": "event_purge",
-        "AND": {
-          "exists": "planet",
-          "planet": {
-            "exists": "controller"
-          },
-          "planet.controller": {
-            "OR": {
-              "is_country_type": "ai_empire"
-            }
-          },
-          "OR": {
-            "NOT": {
-              "exists": "event_target:custodian_bot"
-            },
-            "AND": {
-              "exists": "event_target:custodian_bot",
-              "NOT": {
-                "species": {
-                  "is_same_value": "event_target:custodian_bot"
-                }
-              }
-            }
-          }
-        }
+        "has_pop_flag": "event_purge"
       }
     },
     "resources": {
@@ -2587,6 +2674,9 @@ const Job = {
     },
     "resources": {
       "category": "planet_pop_assemblers",
+      "produces": {
+        "engineering_research": 1
+      },
       "upkeep": {
         "minerals": 3
       }
@@ -2787,7 +2877,7 @@ const Job = {
             "has_valid_civic": "civic_citizen_service"
           }
         },
-        "unity": 1
+        "unity": 2
       }
     },
     "triggered_planet_modifier": {
@@ -2803,8 +2893,8 @@ const Job = {
     "weight": {
       "weight": "@soldier_job_weight",
       "modifier": {
-        "factor": 0.1,
-        "can_take_servant_job": true
+        "factor": 0,
+        "can_be_soldier": false
       }
     },
     "key": "soldier"
@@ -2896,7 +2986,12 @@ const Job = {
     "resources": {
       "category": "planet_technician",
       "produces": {
-        "energy": 4
+        "trigger": {
+          "owner": {
+            "is_robot_empire": true
+          }
+        },
+        "energy": 2
       }
     },
     "weight": {
@@ -2918,7 +3013,12 @@ const Job = {
     "resources": {
       "category": "planet_technician",
       "produces": {
-        "energy": 4
+        "trigger": {
+          "owner": {
+            "is_robot_empire": true
+          }
+        },
+        "energy": 2
       }
     },
     "weight": {
@@ -3017,7 +3117,7 @@ const Job = {
       "drone_job_check_trigger": true
     },
     "resources": {
-      "category": "planet_jobs",
+      "category": "planet_translucers",
       "produces": {
         "rare_crystals": 2
       },
