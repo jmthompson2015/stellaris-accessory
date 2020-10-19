@@ -2,7 +2,7 @@ import Building from "./Building.js";
 
 QUnit.module("Building");
 
-QUnit.test("Building properties building_colony_shelter", assert => {
+QUnit.test("Building properties building_colony_shelter", (assert) => {
   // Setup.
   const key = "building_colony_shelter";
 
@@ -18,19 +18,19 @@ QUnit.test("Building properties building_colony_shelter", assert => {
   assert.equal(building.category, "government");
   assert.equal(building.key, key);
 
-  const length = 4;
-  assert.equal(building.childKeys.length, length);
-  assert.equal(building.childKeys[0], "building_hive_capital");
-  assert.equal(building.childKeys[length - 1], "building_slave_capital");
+  const length = 6;
+  assert.equal(building.convert_to.length, length);
+  assert.equal(building.convert_to[0], "building_hive_capital");
+  assert.equal(building.convert_to[length - 1], "building_ancient_palace");
 
-  assert.ok(building.planetModifiers);
-  assert.equal(building.planetModifiers.planet_housing_add, 3);
-  assert.equal(building.planetModifiers.planet_amenities_add, 3);
+  assert.ok(building.planet_modifier);
+  assert.equal(building.planet_modifier.planet_housing_add, 3);
+  assert.equal(building.planet_modifier.planet_amenities_add, 3);
 });
 
-QUnit.test("Building keys", assert => {
+QUnit.test("Building keys", (assert) => {
   // Setup.
-  const length = 150;
+  const length = 162;
 
   // Run.
   const keys = Object.keys(Building);

@@ -2,7 +2,7 @@ import Job from "./Job.js";
 
 QUnit.module("Job");
 
-QUnit.test("Job properties clerk", assert => {
+QUnit.test("Job properties clerk", (assert) => {
   // Setup.
   const key = "clerk";
 
@@ -16,9 +16,9 @@ QUnit.test("Job properties clerk", assert => {
   assert.equal(job.key, key);
 });
 
-QUnit.test("Job keys", assert => {
+QUnit.test("Job keys", (assert) => {
   // Setup.
-  const length = 97;
+  const length = 99;
 
   // Run.
   const keys = Object.keys(Job);

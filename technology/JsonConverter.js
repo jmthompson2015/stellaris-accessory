@@ -22,6 +22,7 @@ const INPUT_FILES = [
   "00_horizonsignal_tech.txt",
   "00_leviathans_tech.txt",
   "00_megacorp_tech.txt",
+  "00_megastructures.txt",
   "00_phys_tech.txt",
   "00_phys_tech_repeatable.txt",
   "00_phys_weapon_tech.txt",
@@ -30,37 +31,39 @@ const INPUT_FILES = [
   "00_soc_tech_repeatable.txt",
   "00_soc_weapon_tech.txt",
   "00_strategic_resources_tech.txt",
-  "00_synthetic_dawn_tech.txt"
+  "00_synthetic_dawn_tech.txt",
 ];
 const OUTPUT_FILE = "./technology.json";
 
 const parseFile = (n, answerIn) =>
-  new Promise(resolve => {
+  new Promise((resolve) => {
     const answer = answerIn || {};
 
     if (n < INPUT_FILES.length) {
       // console.log(`parsing file ${INPUT_FILES[n]}`);
-      FileLoader.loadLocalFile(`${TECHNOLOGY}/${INPUT_FILES[n]}`).then(data => {
-        const data2 = Lexer.lex(data);
+      FileLoader.loadLocalFile(`${TECHNOLOGY}/${INPUT_FILES[n]}`).then(
+        (data) => {
+          const data2 = Lexer.lex(data);
 
-        // Parse.
-        const result = Parser.parse(data2);
-        const myAnswer = R.merge(answer, result);
+          // Parse.
+          const result = Parser.parse(data2);
+          const myAnswer = R.merge(answer, result);
 
-        // Next file.
-        const myN = n + 1;
-        parseFile(myN, myAnswer).then(answer2 => resolve(answer2));
-      });
+          // Next file.
+          const myN = n + 1;
+          parseFile(myN, myAnswer).then((answer2) => resolve(answer2));
+        }
+      );
     } else {
       resolve(answer);
     }
   });
 
 JsonConverter.convert = () =>
-  new Promise(resolve => {
+  new Promise((resolve) => {
     const start = Date.now();
     console.log("JsonConverter.convert() start");
-    parseFile(0).then(technologies => {
+    parseFile(0).then((technologies) => {
       FileWriter.writeFile(OUTPUT_FILE, JSON.stringify(technologies, null, 2));
 
       const end = Date.now();

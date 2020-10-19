@@ -4,7 +4,7 @@ import Technology from "./Technology.js";
 
 QUnit.module("Technology");
 
-QUnit.test("Technology category.length isArray", assert => {
+QUnit.test("Technology category.length isArray", (assert) => {
   const keys = Object.keys(Technology);
 
   for (let i = 0; i < keys.length; i += 1) {
@@ -17,7 +17,7 @@ QUnit.test("Technology category.length isArray", assert => {
   }
 });
 
-QUnit.test("Technology properties tech_adaptive_bureaucracy", assert => {
+QUnit.test("Technology properties tech_adaptive_bureaucracy", (assert) => {
   // Setup.
   const key = "tech_adaptive_bureaucracy";
 
@@ -40,9 +40,9 @@ QUnit.test("Technology properties tech_adaptive_bureaucracy", assert => {
   assert.equal(tech.prerequisites[0], "tech_planetary_unification");
 });
 
-QUnit.test("Technology keys", assert => {
+QUnit.test("Technology keys", (assert) => {
   // Setup.
-  const length = 375;
+  const length = 396;
 
   // Run.
   const keys = Object.keys(Technology);

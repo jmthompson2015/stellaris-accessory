@@ -1283,6 +1283,19 @@ const Technology = {
     "tier": 2,
     "key": "tech_droid_workers"
   },
+  "tech_dyson_sphere": {
+    "name": "Dyson Sphere",
+    "description": "A fully operational Dyson Sphere - §G100%§! energy generation efficiency.",
+    "area": "physics",
+    "category": "field_manipulation",
+    "cost": 20000,
+    "is_rare": true,
+    "prerequisites": [
+      "tech_mega_engineering"
+    ],
+    "tier": 5,
+    "key": "tech_dyson_sphere"
+  },
   "tech_eco_simulation": {
     "name": "Eco Simulation",
     "description": "Farming techniques can be further refined through sophisticated computer simulations of different environments and weather patterns. This allows for more predictable crop yields.",
@@ -1686,6 +1699,39 @@ const Technology = {
     "tier": 1,
     "key": "tech_gargantuan_evolution"
   },
+  "tech_gateway_activation": {
+    "name": "Gateway Activation",
+    "description": "The ability to reactivate the derelict Gateway stations that can be found scattered throughout the galaxy has the potential to dramatically shorten travel times.",
+    "area": "physics",
+    "category": "particles",
+    "cost": 12000,
+    "feature_flags": [
+      "gateway_activation"
+    ],
+    "is_rare": true,
+    "prerequisites": [
+      "tech_hyper_drive_3"
+    ],
+    "tier": 4,
+    "key": "tech_gateway_activation"
+  },
+  "tech_gateway_construction": {
+    "name": "Gateway Construction",
+    "description": "The construction of new Gateway stations enables us to build a fast-travel network that could revolutionize interstellar travel.",
+    "area": "physics",
+    "category": "particles",
+    "cost": 20000,
+    "feature_flags": [
+      "gateway_construction"
+    ],
+    "is_rare": true,
+    "prerequisites": [
+      "tech_gateway_activation",
+      "tech_mega_engineering"
+    ],
+    "tier": 5,
+    "key": "tech_gateway_construction"
+  },
   "tech_gene_banks": {
     "name": "Gene Banks",
     "description": "Gene Banks filter and curate available genomes for deployment in clones.",
@@ -2047,6 +2093,19 @@ const Technology = {
     "tier": 0,
     "key": "tech_interplanetary_commerce"
   },
+  "tech_interstellar_assembly": {
+    "name": "Interstellar Assembly",
+    "description": "The official unofficial political forum of the galactic community.",
+    "area": "society",
+    "category": "statecraft",
+    "cost": 20000,
+    "is_rare": true,
+    "prerequisites": [
+      "tech_mega_engineering"
+    ],
+    "tier": 5,
+    "key": "tech_interstellar_assembly"
+  },
   "tech_interstellar_campaigns": {
     "name": "Interstellar Campaigns",
     "description": "A well-oiled war machine is the key to exerting influence on a galactic scale. Backed by the might of our military, we can lay claim to almost anything we want.",
@@ -2348,6 +2407,19 @@ const Technology = {
     "tier": 1,
     "key": "tech_massive_glacier"
   },
+  "tech_matter_decompressor": {
+    "name": "Matter Decompressor",
+    "description": "With a bore of twisted gravity tunneling into the singularity and a series of automated matter decompressors, processors, and smelters in orbit, we are able to extract minerals from a black hole.",
+    "area": "physics",
+    "category": "field_manipulation",
+    "cost": 20000,
+    "is_rare": true,
+    "prerequisites": [
+      "tech_mega_engineering"
+    ],
+    "tier": 5,
+    "key": "tech_matter_decompressor"
+  },
   "tech_mechanized_mining": {
     "name": "Mechanized Mining",
     "description": "The application of mechanical engineering to mineral extraction is a fundamental requirement for any industrial society.",
@@ -2357,6 +2429,19 @@ const Technology = {
     "start_tech": true,
     "tier": 0,
     "key": "tech_mechanized_mining"
+  },
+  "tech_mega_art": {
+    "name": "Stellar.",
+    "description": "Ruined $mega_art_installation_3$",
+    "area": "society",
+    "category": "statecraft",
+    "cost": 20000,
+    "is_rare": true,
+    "prerequisites": [
+      "tech_mega_engineering"
+    ],
+    "tier": 5,
+    "key": "tech_mega_art"
   },
   "tech_mega_assembly": {
     "name": "Mega-Assembly Systems",
@@ -2371,6 +2456,37 @@ const Technology = {
     ],
     "tier": 4,
     "key": "tech_mega_assembly"
+  },
+  "tech_mega_engineering": {
+    "name": "Mega-Engineering",
+    "description": "To complete construction projects of truly staggering scales we must first achieve a fundamental understanding of both the engineering and resource storage requirements for such megastructures.",
+    "area": "engineering",
+    "category": "voidcraft",
+    "cost": 20000,
+    "feature_flags": [
+      "megaengineering"
+    ],
+    "is_rare": true,
+    "prerequisites": [
+      "tech_starbase_5",
+      "tech_battleships",
+      "tech_zero_point_power"
+    ],
+    "tier": 5,
+    "key": "tech_mega_engineering"
+  },
+  "tech_mega_shipyard": {
+    "name": "Mega Shipyard",
+    "description": "A zero-G construction yard of overwhelming proportion, capable of performing several space ship assembly projects simultaneously.",
+    "area": "society",
+    "category": "military_theory",
+    "cost": 20000,
+    "is_rare": true,
+    "prerequisites": [
+      "tech_mega_engineering"
+    ],
+    "tier": 5,
+    "key": "tech_mega_shipyard"
   },
   "tech_micro_replicators": {
     "name": "Micro-Replicators",
@@ -3539,6 +3655,19 @@ const Technology = {
     "tier": 3,
     "key": "tech_resource_processing_algorithms"
   },
+  "tech_ring_world": {
+    "name": "Ring World",
+    "description": "An immense band encircling the system's sun.nBuilt to allow for numerous artificial habitation zones along its inner span, freed from the restrictions and mundanity of planet-bound, spherical existence.",
+    "area": "engineering",
+    "category": "voidcraft",
+    "cost": 20000,
+    "is_rare": true,
+    "prerequisites": [
+      "tech_mega_engineering"
+    ],
+    "tier": 5,
+    "key": "tech_ring_world"
+  },
   "tech_robomodding": {
     "name": "Fungible Circuitry",
     "description": "Improved production practices allow for fundamental changes to synthetic workers without compromising core functionality.",
@@ -3623,6 +3752,19 @@ const Technology = {
     "tier": 4,
     "key": "tech_sapient_ai"
   },
+  "tech_science_nexus": {
+    "name": "Science Nexus",
+    "description": "A fully equipped and operational Science Nexus.",
+    "area": "physics",
+    "category": "computing",
+    "cost": 20000,
+    "is_rare": true,
+    "prerequisites": [
+      "tech_mega_engineering"
+    ],
+    "tier": 5,
+    "key": "tech_science_nexus"
+  },
   "tech_scourge_missile_1": {
     "name": "Scourge Missiles",
     "description": "By analyzing the biological weaponry employed by the Swarm we can create self-propelled projectiles weapons spreading the very same horrific destruction.",
@@ -3702,6 +3844,19 @@ const Technology = {
     ],
     "tier": 4,
     "key": "tech_sensors_4"
+  },
+  "tech_sentry_array": {
+    "name": "Sentry Array",
+    "description": "A complete Sentry Array extends sensor range to cover the entire galaxy.",
+    "area": "physics",
+    "category": "computing",
+    "cost": 20000,
+    "is_rare": true,
+    "prerequisites": [
+      "tech_mega_engineering"
+    ],
+    "tier": 5,
+    "key": "tech_sentry_array"
   },
   "tech_shield_rechargers_1": {
     "name": "Shield Capacitors",
@@ -4153,6 +4308,19 @@ const Technology = {
     ],
     "tier": 4,
     "key": "tech_starbase_5"
+  },
+  "tech_strategic_coordination": {
+    "name": "Strategic Coordination Center",
+    "description": "With the final addition of detached Hostile Force simulation bastions, the Strategic Coordination Center is the definitive megalith of national security and military planning.",
+    "area": "society",
+    "category": "military_theory",
+    "cost": 20000,
+    "is_rare": true,
+    "prerequisites": [
+      "tech_mega_engineering"
+    ],
+    "tier": 5,
+    "key": "tech_strategic_coordination"
   },
   "tech_strike_craft_1": {
     "name": "Carrier Operations",

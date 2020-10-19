@@ -4,7 +4,7 @@ import Reducer from "./Reducer.js";
 
 QUnit.module("Reducer");
 
-QUnit.test("back()", assert => {
+QUnit.test("back()", (assert) => {
   // Setup.
   const state = AppState.create();
   const technologyKey1 = "tech_lasers_1";
@@ -30,7 +30,7 @@ QUnit.test("back()", assert => {
   assert.equal(result.forwardList[0], technologyKey2);
 });
 
-QUnit.test("back() from setArea()", assert => {
+QUnit.test("back() from setArea()", (assert) => {
   // Setup.
   const state = AppState.create();
   const technologyKey1 = "tech_lasers_1";
@@ -55,7 +55,7 @@ QUnit.test("back() from setArea()", assert => {
   assert.equal(result.forwardList[0], "tech_mineral_purification_2");
 });
 
-QUnit.test("back() from setCategory()", assert => {
+QUnit.test("back() from setCategory()", (assert) => {
   // Setup.
   const state = AppState.create();
   const technologyKey1 = "tech_lasers_1";
@@ -80,7 +80,7 @@ QUnit.test("back() from setCategory()", assert => {
   assert.equal(result.forwardList[0], "tech_reactor_boosters_3");
 });
 
-QUnit.test("forward()", assert => {
+QUnit.test("forward()", (assert) => {
   // Setup.
   const state = AppState.create();
   const technologyKey1 = "tech_lasers_1";
@@ -101,14 +101,14 @@ QUnit.test("forward()", assert => {
   assert.equal(result.areaKey, "engineering", "areaKey");
   assert.equal(result.categories.length, 4);
   assert.equal(result.categoryKey, "industry", "categoryKey");
-  assert.equal(result.technologies.length, 35);
+  assert.equal(result.technologies.length, 36);
   assert.equal(result.technologyKey, technologyKey2, "technologyKey");
   assert.equal(result.backList.length, 1);
   assert.equal(result.backList[0], technologyKey1);
   assert.equal(result.forwardList.length, 0);
 });
 
-QUnit.test("setArea()", assert => {
+QUnit.test("setArea()", (assert) => {
   // Setup.
   const state = AppState.create();
   const areaKey = "engineering";
@@ -122,13 +122,17 @@ QUnit.test("setArea()", assert => {
   assert.equal(result.areaKey, areaKey, "areaKey");
   assert.equal(result.categories.length, 4);
   assert.equal(result.categoryKey, "industry", "categoryKey");
-  assert.equal(result.rareTechnologies.length, 24);
-  assert.equal(result.technologies.length, 35);
-  assert.equal(result.technologyKey, "tech_mineral_purification_2", "technologyKey");
+  assert.equal(result.rareTechnologies.length, 27);
+  assert.equal(result.technologies.length, 36);
+  assert.equal(
+    result.technologyKey,
+    "tech_mineral_purification_2",
+    "technologyKey"
+  );
   assert.equal(result.startingTechnologies.length, 15);
 });
 
-QUnit.test("setCategory()", assert => {
+QUnit.test("setCategory()", (assert) => {
   // Setup.
   const state0 = AppState.create();
   const areaKey = "physics";
@@ -146,10 +150,14 @@ QUnit.test("setCategory()", assert => {
   assert.equal(result.categories.length, 3);
   assert.equal(result.categoryKey, categoryKey, "categoryKey");
   assert.equal(result.technologies.length, 46);
-  assert.equal(result.technologyKey, "tech_reactor_boosters_3", "technologyKey");
+  assert.equal(
+    result.technologyKey,
+    "tech_reactor_boosters_3",
+    "technologyKey"
+  );
 });
 
-QUnit.test("setTechnology()", assert => {
+QUnit.test("setTechnology()", (assert) => {
   // Setup.
   const state = AppState.create();
   const technologyKey = "tech_lasers_1";
@@ -178,14 +186,14 @@ QUnit.test("setTechnology()", assert => {
   assert.equal(result.areaKey, "engineering", "areaKey");
   assert.equal(result.categories.length, 4);
   assert.equal(result.categoryKey, "industry", "categoryKey");
-  assert.equal(result.technologies.length, 35);
+  assert.equal(result.technologies.length, 36);
   assert.equal(result.technologyKey, technologyKey2, "technologyKey");
   assert.equal(result.backList.length, 1);
   assert.equal(result.backList[0], technologyKey);
   assert.equal(result.forwardList.length, 0);
 });
 
-QUnit.test("setTechnology() and back and forwardList", assert => {
+QUnit.test("setTechnology() and back and forwardList", (assert) => {
   // Setup.
   const state = AppState.create();
   const technologyKey1 = "tech_lasers_1";
