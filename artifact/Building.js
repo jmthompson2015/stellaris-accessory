@@ -5,13 +5,28 @@ const Building = {
   "building_affluence_center": {
     "name": "Affluence Center",
     "description": "Any material desire can be met here, no matter how outlandish.",
-    "base_buildtime": 480,
-    "can_build": false,
-    "potential": [],
+    "base_buildtime": "@b2_time",
+    "can_build": true,
+    "potential": {
+      "custom_tooltip": {
+        "exists": "owner",
+        "OR": {
+          "owner": {
+            "check_variable": {
+              "which": "affluence_center_build_count"
+            }
+          }
+        },
+        "fail_text": "ancrel.10004.failtext"
+      }
+    },
     "resources": {
       "category": "planet_buildings",
       "produces": {
         "consumer_goods": 50
+      },
+      "cost": {
+        "minerals": "@b3_minerals"
       },
       "upkeep": {
         "minerals": 25,
@@ -45,7 +60,7 @@ const Building = {
         "minerals": 1000
       },
       "upkeep": {
-        "energy": 6
+        "energy": "@b3_upkeep"
       },
       "produces": {
         "physics_research": 16
@@ -59,13 +74,19 @@ const Building = {
     "allow": {
       "has_fully_upgraded_capital": true
     },
-    "base_buildtime": 600,
-    "can_build": false,
+    "base_buildtime": "@b3_time",
     "category": "unity",
+    "convert_to": [
+      "building_autocurating_vault",
+      "building_citadel_of_faith",
+      "building_corporate_vault"
+    ],
     "planet_modifier": {
-      "job_coordinator_add": 10
+      "planet_evaluators_unity_produces_mult": 0.15
     },
     "potential": {
+      "exists": "owner",
+      "building_basic_income_check": true,
       "owner": {
         "is_machine_empire": true
       }
@@ -76,12 +97,15 @@ const Building = {
     "resources": {
       "category": "planet_buildings",
       "cost": {
-        "minerals": 1000,
-        "rare_crystals": 100
+        "minerals": "@b2_minerals",
+        "rare_crystals": "@b2_rare_cost"
       },
       "upkeep": {
-        "energy": 4,
-        "rare_crystals": 2
+        "energy": "@b2_upkeep",
+        "rare_crystals": "@b2_rare_upkeep"
+      },
+      "produces": {
+        "unity": 10
       }
     },
     "key": "building_alpha_hub"
@@ -89,7 +113,7 @@ const Building = {
   "building_amusement_megaplex": {
     "name": "Amusement Megaplex",
     "description": "A magical place where dreams can become reality, this megaplex features wholesome, corporate-sanctioned fun for the entire family unit.",
-    "base_buildtime": 480,
+    "base_buildtime": "@b2_time",
     "planet_modifier": {
       "planet_amenities_add": 10
     },
@@ -102,7 +126,7 @@ const Building = {
     "resources": {
       "category": "planet_branch_office_buildings",
       "cost": {
-        "minerals": 800
+        "minerals": "@b3_minerals"
       },
       "produces": {
         "energy": 10
@@ -113,13 +137,18 @@ const Building = {
   "building_ancient_control_center": {
     "name": "Ancient Control Center",
     "description": "The ancient control center of this section of the ringworld is just barely kept functional by the tireless efforts of a legion of machine drones.",
+    "base_buildtime": "@b3_time",
     "can_build": false,
     "convert_to": [
       "building_hive_major_capital",
       "building_machine_major_capital",
-      "building_major_capital"
+      "building_major_capital",
+      "building_ancient_palace"
     ],
     "planet_modifier": {
+      "planet_housing_add": 12,
+      "planet_amenities_add": 12,
+      "job_fe_maintenance_bot_add": 4,
       "job_fe_guardian_bot_add": 5
     },
     "potential": {
@@ -130,6 +159,9 @@ const Building = {
     },
     "resources": {
       "category": "planet_buildings",
+      "cost": {
+        "minerals": "@b2_minerals"
+      },
       "upkeep": {
         "energy": 10
       }
@@ -140,7 +172,7 @@ const Building = {
   "building_ancient_cryo_chamber": {
     "name": "Ancient Cryo-Chamber",
     "description": "Rows upon rows of cryo-pods line this massive structure, containing the long-expired remains of billions of alien specimens frozen long ago.",
-    "base_buildtime": 480,
+    "base_buildtime": "@b2_time",
     "can_build": false,
     "planet_modifier": [],
     "potential": {
@@ -151,6 +183,9 @@ const Building = {
     },
     "resources": {
       "category": "planet_buildings",
+      "cost": {
+        "minerals": "@b2_minerals"
+      },
       "upkeep": {
         "energy": 20
       }
@@ -161,13 +196,18 @@ const Building = {
   "building_ancient_palace": {
     "name": "Ancient Palace",
     "description": "A massive palatial complex built in a different age. The decrepit and abandoned wings are not betrayed by its shining exterior.",
-    "base_buildtime": 480,
+    "base_buildtime": "@b2_time",
     "can_build": false,
     "convert_to": [
       "building_hive_major_capital",
       "building_machine_major_capital",
-      "building_major_capital"
+      "building_major_capital",
+      "building_ancient_control_center"
     ],
+    "planet_modifier": {
+      "planet_housing_add": 12,
+      "planet_amenities_add": 12
+    },
     "potential": {
       "exists": "owner",
       "owner": {
@@ -176,6 +216,9 @@ const Building = {
     },
     "resources": {
       "category": "planet_buildings",
+      "cost": {
+        "minerals": "@b2_minerals"
+      },
       "upkeep": {
         "energy": 10
       }
@@ -198,7 +241,7 @@ const Building = {
   "building_artist_patron": {
     "name": "Ministry of Culture",
     "description": "A fashionable headquarters for the Ministry of Culture, helping to spread knowledge, entertainment and art to the masses.",
-    "base_buildtime": 480,
+    "base_buildtime": "@b2_time",
     "potential": {
       "custom_tooltip": {
         "text": "EMPIRE_UNIQUE_BUILDING",
@@ -221,31 +264,33 @@ const Building = {
     },
     "triggered_planet_modifier": {
       "potential": {
+        "exists": "owner",
         "owner": {
           "is_machine_empire": true
         }
       },
       "planet_jobs_unity_produces_mult": 0.15,
-      "job_coordinator_add": 3
+      "job_evaluator_add": 3
     },
     "key": "building_artist_patron"
   },
   "building_autochthon_monument": {
     "name": "Autochthon Monument",
     "description": "A monument to the first pioneers to venture into space.",
-    "base_buildtime": 240,
+    "base_buildtime": "@b1_time",
     "category": "unity",
     "convert_to": [
       "building_temple",
       "building_hive_node",
-      "building_uplink_node",
+      "building_simulation_1",
       "building_corporate_monument"
     ],
     "planet_modifier": {
-      "job_culture_worker_add": 2
+      "job_culture_worker_add": "@b1_jobs"
     },
     "potential": {
       "exists": "owner",
+      "building_basic_income_check": true,
       "NOT": {
         "has_modifier": "slave_colony"
       },
@@ -261,10 +306,10 @@ const Building = {
     "resources": {
       "category": "planet_buildings",
       "cost": {
-        "minerals": 200
+        "minerals": "@b1_minerals"
       },
       "upkeep": {
-        "energy": 1
+        "energy": "@b1_upkeep"
       }
     },
     "upgrades": [
@@ -278,19 +323,21 @@ const Building = {
     "allow": {
       "has_fully_upgraded_capital": true
     },
-    "base_buildtime": 600,
-    "can_build": false,
+    "base_buildtime": "@b2_time",
     "category": "unity",
-    "planet_modifier": {
-      "job_culture_worker_add": 10
-    },
+    "convert_to": [
+      "building_citadel_of_faith",
+      "building_alpha_hub",
+      "building_corporate_vault"
+    ],
     "potential": {
       "exists": "owner",
+      "building_basic_income_check": true,
       "NOT": {
         "has_modifier": "slave_colony"
       },
       "owner": {
-        "is_gestalt": false,
+        "is_machine_empire": false,
         "is_spiritualist": false,
         "is_megacorp": false
       }
@@ -301,20 +348,32 @@ const Building = {
     "resources": {
       "category": "planet_buildings",
       "cost": {
-        "minerals": 1000,
-        "rare_crystals": 100
+        "minerals": "@b2_minerals",
+        "rare_crystals": "@b2_rare_cost"
       },
       "upkeep": {
-        "energy": 4,
-        "rare_crystals": 2
+        "energy": "@b2_upkeep",
+        "rare_crystals": "@b2_rare_upkeep"
+      },
+      "produces": {
+        "unity": 10
       }
+    },
+    "triggered_planet_modifier": {
+      "potential": {
+        "exists": "owner",
+        "owner": {
+          "is_gestalt": true
+        }
+      },
+      "planet_synapse_drones_unity_produces_mult": 0.15
     },
     "key": "building_autocurating_vault"
   },
   "building_betharian_power_plant": {
     "name": "Betharian Power Plant",
     "description": "Betharian Power Plants consume Betharian Stone to produce vast amounts of Energy Credits.",
-    "base_buildtime": 360,
+    "base_buildtime": "@b1_time",
     "category": "resource",
     "potential": {
       "NOT": {
@@ -356,7 +415,8 @@ const Building = {
       "owner": {
         "OR": {
           "is_machine_empire": true,
-          "is_mechanical_empire": true
+          "is_mechanical_empire": true,
+          "is_lithoid_empire": true
         }
       }
     },
@@ -388,7 +448,7 @@ const Building = {
   "building_bio_reprocessing_facilities": {
     "name": "Bio-Reprocessing Plants",
     "description": "Underground facilities where disloyal employees and other forms of unsavory bio-matter are reprocessed into ready-to-eat food products.",
-    "base_buildtime": 360,
+    "base_buildtime": "@b1_time",
     "planet_modifier": {
       "planet_crime_add": 25,
       "trade_value_add": 5
@@ -396,10 +456,13 @@ const Building = {
     "potential": {
       "has_branch_office": true,
       "branch_office_owner": {
-        "is_criminal_syndicate": true
+        "is_criminal_syndicate": true,
+        "NOT": {
+          "is_ai": true
+        }
       },
       "NOR": {
-        "is_planet_class": "pc_city"
+        "is_planet_class": "pc_relic"
       }
     },
     "resources": {
@@ -416,35 +479,108 @@ const Building = {
     },
     "key": "building_bio_reprocessing_facilities"
   },
-  "building_bureaucratic_complex": {
-    "name": "Bureaucratic Complex",
+  "building_bureaucratic_1": {
+    "name": "Administrative Offices",
     "description": "A labyrinthine government complex of bureaucratic offices, sub-offices and sub-sub-offices.",
-    "allow": {
-      "has_upgraded_capital": true
-    },
-    "base_buildtime": 480,
+    "base_buildtime": "@b1_time",
     "category": "government",
     "planet_modifier": {
-      "job_administrator_add": 2
+      "job_bureaucrat_add": 2
     },
     "potential": {
+      "exists": "owner",
+      "building_relaxed_basic_income_check": true,
       "owner": {
-        "has_valid_civic": "civic_byzantine_bureaucracy"
-      },
-      "NOT": {
-        "has_modifier": "slave_colony"
+        "is_regular_empire": true
       }
     },
+    "prerequisites": [
+      "tech_planetary_government"
+    ],
     "resources": {
       "category": "planet_buildings",
       "cost": {
-        "minerals": 500
+        "minerals": "@b1_minerals"
       },
       "upkeep": {
-        "energy": 3
+        "energy": 2
       }
     },
-    "key": "building_bureaucratic_complex"
+    "upgrades": [
+      "building_bureaucratic_2"
+    ],
+    "key": "building_bureaucratic_1"
+  },
+  "building_bureaucratic_2": {
+    "name": "Administrative Park",
+    "description": "An area full of buildings dedicated to the glory of effective and meticulous paperwork.",
+    "allow": {
+      "has_upgraded_capital": true
+    },
+    "base_buildtime": "@b2_time",
+    "can_build": false,
+    "category": "government",
+    "planet_modifier": {
+      "job_bureaucrat_add": 5
+    },
+    "potential": {
+      "exists": "owner",
+      "owner": {
+        "is_regular_empire": true
+      }
+    },
+    "prerequisites": [
+      "tech_colonial_bureaucracy"
+    ],
+    "resources": {
+      "category": "planet_buildings",
+      "cost": {
+        "minerals": "@b2_minerals",
+        "rare_crystals": "@b2_rare_cost"
+      },
+      "upkeep": {
+        "energy": "@b2_upkeep",
+        "rare_crystals": "@b2_rare_upkeep"
+      }
+    },
+    "key": "building_bureaucratic_2"
+  },
+  "building_bureaucratic_3": {
+    "name": "Administrative Complex",
+    "description": "A vast stretch of land covered in bureaucratic offices containing countless cubicles.",
+    "allow": {
+      "has_upgraded_capital": true
+    },
+    "base_buildtime": "@b3_time",
+    "can_build": false,
+    "category": "government",
+    "planet_modifier": {
+      "job_bureaucrat_add": 8
+    },
+    "potential": {
+      "exists": "owner",
+      "OR": {
+        "buildings_no_crystals": true,
+        "owner": {
+          "is_regular_empire": false
+        }
+      }
+    },
+    "prerequisites": [
+      "tech_galactic_bureaucracy"
+    ],
+    "resources": {
+      "category": "planet_buildings",
+      "cost": {
+        "minerals": "@b2_minerals",
+        "rare_crystals": "@b3_rare_cost"
+      },
+      "upkeep": {
+        "energy": "@b3_upkeep",
+        "rare_crystals": "@b3_rare_upkeep"
+      }
+    },
+    "key": "building_bureaucratic_3"
   },
   "building_capital": {
     "name": "Planetary Administration",
@@ -454,14 +590,16 @@ const Building = {
       ">=",
       "10"
     ],
-    "base_buildtime": 480,
+    "base_buildtime": "@b2_time",
     "can_build": false,
     "category": "government",
     "convert_to": [
       "building_hive_capital",
       "building_machine_capital",
       "building_resort_capital",
-      "building_slave_capital"
+      "building_slave_capital",
+      "building_ancient_control_center",
+      "building_ancient_palace"
     ],
     "planet_modifier": {
       "job_enforcer_add": 1,
@@ -471,7 +609,8 @@ const Building = {
     "potential": {
       "exists": "owner",
       "owner": {
-        "is_regular_empire": true
+        "is_regular_empire": true,
+        "is_fallen_empire": false
       },
       "NOR": {
         "has_modifier": "slave_colony"
@@ -483,10 +622,10 @@ const Building = {
     "resources": {
       "category": "planet_buildings",
       "cost": {
-        "minerals": 500
+        "minerals": "@b2_minerals"
       },
       "upkeep": {
-        "energy": 3
+        "energy": "@b2_upkeep"
       }
     },
     "triggered_planet_modifier": {
@@ -497,8 +636,8 @@ const Building = {
         }
       },
       "modifier": {
-        "job_administrator_add": 1,
-        "job_merchant_add": 1
+        "job_merchant_add": 1,
+        "job_administrator_add": 1
       }
     },
     "upgrades": [
@@ -512,12 +651,13 @@ const Building = {
     "allow": {
       "has_upgraded_capital": true
     },
-    "base_buildtime": 480,
+    "base_buildtime": "@b2_time",
     "category": "manufacturing",
     "potential": {
       "NOT": {
         "has_modifier": "slave_colony"
-      }
+      },
+      "building_basic_income_check": true
     },
     "prerequisites": [
       "tech_volatile_motes"
@@ -525,7 +665,7 @@ const Building = {
     "resources": {
       "category": "planet_buildings",
       "cost": {
-        "minerals": 500
+        "minerals": "@b2_minerals"
       },
       "upkeep": {
         "energy": 3
@@ -548,16 +688,24 @@ const Building = {
     "name": "Citadel of Faith",
     "description": "A massive complex offering refuge and seclusion from the material world, for all comers.",
     "allow": {
-      "has_fully_upgraded_capital": true
+      "has_fully_upgraded_capital": true,
+      "buildings_upgrade_allow": true
     },
-    "base_buildtime": 600,
-    "can_build": false,
+    "base_buildtime": "@b2_time",
     "category": "unity",
+    "convert_to": [
+      "building_autocurating_vault",
+      "building_alpha_hub",
+      "building_corporate_vault"
+    ],
     "planet_modifier": {
-      "job_priest_add": 10,
+      "job_priest_add": "@b2_jobs",
+      "job_high_priest_add": 1,
       "pop_ethic_spiritualist_attraction_mult": 0.2
     },
     "potential": {
+      "exists": "owner",
+      "building_basic_income_check": true,
       "owner": {
         "is_spiritualist": true
       },
@@ -571,12 +719,12 @@ const Building = {
     "resources": {
       "category": "planet_buildings",
       "cost": {
-        "minerals": 1000,
-        "rare_crystals": 100
+        "minerals": "@b2_minerals",
+        "rare_crystals": "@b2_rare_cost"
       },
       "upkeep": {
-        "energy": 4,
-        "rare_crystals": 2
+        "energy": "@b2_upkeep",
+        "rare_crystals": "@b2_rare_upkeep"
       }
     },
     "key": "building_citadel_of_faith"
@@ -584,12 +732,27 @@ const Building = {
   "building_class_4_singularity": {
     "name": "Class-4 Singularity",
     "description": "Even after all this time, the containment fields remain stable. No one understands how.",
-    "base_buildtime": 480,
-    "can_build": false,
+    "base_buildtime": "@b2_time",
+    "can_build": true,
     "planet_modifier": [],
-    "potential": [],
+    "potential": {
+      "custom_tooltip": {
+        "exists": "owner",
+        "OR": {
+          "owner": {
+            "check_variable": {
+              "which": "class_4_singularity_build_count"
+            }
+          }
+        },
+        "fail_text": "ancrel.10004.failtext"
+      }
+    },
     "resources": {
       "category": "planet_buildings",
+      "cost": {
+        "minerals": "@b3_minerals"
+      },
       "produces": {
         "energy": 250
       }
@@ -600,8 +763,7 @@ const Building = {
   "building_clinic": {
     "name": "Gene Clinics",
     "description": "Gene Clinics can offer advanced medical treatments, which statistically lead to a significantly healthier and longer-living population.",
-    "allow": [],
-    "base_buildtime": 360,
+    "base_buildtime": "@b1_time",
     "category": "amenity",
     "planet_modifier": {
       "job_healthcare_add": 2
@@ -612,7 +774,8 @@ const Building = {
       },
       "NOT": {
         "has_modifier": "slave_colony"
-      }
+      },
+      "building_basic_income_check": true
     },
     "prerequisites": [
       "tech_frontier_health"
@@ -620,10 +783,10 @@ const Building = {
     "resources": {
       "category": "planet_buildings",
       "cost": {
-        "minerals": 300
+        "minerals": "@b1_minerals"
       },
       "upkeep": {
-        "energy": 2
+        "energy": "@b1_upkeep"
       }
     },
     "upgrades": [
@@ -634,12 +797,13 @@ const Building = {
   "building_clone_vats": {
     "name": "Clone Vats",
     "description": "Clone Vats allow for a remarkable increase to population growth speed.",
-    "base_buildtime": 360,
+    "base_buildtime": "@b1_time",
     "category": "government",
     "planet_modifier": {
       "pop_growth_speed": 0.33
     },
     "potential": {
+      "exists": "owner",
       "owner": {
         "has_ascension_perk": "ap_engineered_evolution"
       },
@@ -667,7 +831,9 @@ const Building = {
       "building_hive_capital",
       "building_deployment_post",
       "building_resort_capital",
-      "building_slave_capital"
+      "building_slave_capital",
+      "building_ancient_control_center",
+      "building_ancient_palace"
     ],
     "planet_modifier": {
       "planet_housing_add": 3,
@@ -676,7 +842,8 @@ const Building = {
     "potential": {
       "exists": "owner",
       "owner": {
-        "is_regular_empire": true
+        "is_regular_empire": true,
+        "is_fallen_empire": false
       },
       "NOR": {
         "has_modifier": "slave_colony"
@@ -706,7 +873,7 @@ const Building = {
   "building_commercial_forum": {
     "name": "Commercial Forum",
     "description": "Movers and shakers, local economic leaders, and other important figures can meet with corporate representatives here in a relaxed, soothing environment ideal for the creation of new business deals.",
-    "base_buildtime": 480,
+    "base_buildtime": "@b2_time",
     "planet_modifier": {
       "branch_office_value_mult": 0.25,
       "job_merchant_add": 1
@@ -720,7 +887,7 @@ const Building = {
     "resources": {
       "category": "planet_branch_office_buildings",
       "cost": {
-        "minerals": 800
+        "minerals": "@b3_minerals"
       },
       "upkeep": {
         "energy": 3
@@ -731,7 +898,10 @@ const Building = {
   "building_commercial_megaplex": {
     "name": "Commerce Megaplexes",
     "description": "Great commercial spires and towers rising up towards the sky, blotting out the light.",
-    "base_buildtime": 480,
+    "allow": {
+      "buildings_upgrade_allow": true
+    },
+    "base_buildtime": "@b2_time",
     "can_build": false,
     "category": "trade",
     "planet_modifier": {
@@ -745,7 +915,8 @@ const Building = {
       },
       "NOT": {
         "has_modifier": "slave_colony"
-      }
+      },
+      "has_building": "building_commercial_zone"
     },
     "prerequisites": [
       "tech_interstellar_economics"
@@ -753,12 +924,12 @@ const Building = {
     "resources": {
       "category": "planet_buildings",
       "cost": {
-        "minerals": 500,
-        "rare_crystals": 50
+        "minerals": "@b2_minerals",
+        "rare_crystals": "@b2_rare_cost"
       },
       "upkeep": {
-        "energy": 2,
-        "rare_crystals": 1
+        "energy": "@b2_upkeep",
+        "rare_crystals": "@b2_rare_upkeep"
       }
     },
     "key": "building_commercial_megaplex"
@@ -766,18 +937,21 @@ const Building = {
   "building_commercial_zone": {
     "name": "Commercial Zones",
     "description": "These commercial zones are home to towering office buildings and business complexes.",
-    "base_buildtime": 360,
+    "allow": {
+      "buildings_simple_allow": true
+    },
+    "base_buildtime": "@b1_time",
     "category": "trade",
     "planet_modifier": {
       "job_clerk_add": 5
     },
     "potential": {
-      "NOT": {
-        "has_modifier": "slave_colony"
-      },
       "exists": "owner",
       "owner": {
         "is_regular_empire": true
+      },
+      "NOT": {
+        "has_modifier": "slave_colony"
       }
     },
     "prerequisites": [
@@ -786,10 +960,10 @@ const Building = {
     "resources": {
       "category": "planet_buildings",
       "cost": {
-        "minerals": 300
+        "minerals": "@b1_minerals"
       },
       "upkeep": {
-        "energy": 2
+        "energy": "@b1_upkeep"
       }
     },
     "upgrades": [
@@ -800,7 +974,7 @@ const Building = {
   "building_communal_housing": {
     "name": "Communal Housing",
     "description": "A block of uniform housing, equal in every way.",
-    "base_buildtime": 360,
+    "base_buildtime": "@b1_time",
     "category": "amenity",
     "convert_to": [
       "building_drone_storage",
@@ -815,6 +989,7 @@ const Building = {
       "NOT": {
         "has_modifier": "slave_colony"
       },
+      "exists": "owner",
       "owner": {
         "is_regular_empire": true,
         "has_valid_civic": "civic_shared_burden"
@@ -823,7 +998,7 @@ const Building = {
     "resources": {
       "category": "planet_buildings",
       "cost": {
-        "minerals": 300
+        "minerals": "@b1_minerals"
       },
       "upkeep": {
         "energy": 2
@@ -851,7 +1026,7 @@ const Building = {
     "allow": {
       "has_upgraded_capital": true
     },
-    "base_buildtime": 480,
+    "base_buildtime": "@b2_time",
     "can_build": false,
     "category": "amenity",
     "convert_to": [
@@ -864,13 +1039,7 @@ const Building = {
       "planet_amenities_add": 6
     },
     "potential": {
-      "NOT": {
-        "has_modifier": "slave_colony"
-      },
-      "owner": {
-        "is_regular_empire": true,
-        "has_valid_civic": "civic_shared_burden"
-      }
+      "has_building": "building_communal_housing"
     },
     "prerequisites": [
       "tech_paradise_dome"
@@ -878,12 +1047,12 @@ const Building = {
     "resources": {
       "category": "planet_buildings",
       "cost": {
-        "minerals": 500,
-        "rare_crystals": 50
+        "minerals": "@b2_minerals",
+        "rare_crystals": "@b2_rare_cost"
       },
       "upkeep": {
-        "energy": 2,
-        "rare_crystals": 1
+        "energy": 3,
+        "rare_crystals": "@b2_rare_upkeep"
       }
     },
     "triggered_planet_modifier": {
@@ -899,23 +1068,48 @@ const Building = {
     },
     "key": "building_communal_housing_large"
   },
+  "building_corporate_embassy": {
+    "name": "Corporate Embassy",
+    "description": "Diplomacy is just advertising to governments instead of to the customer. This office analyzes local customs and trends to more efficiently target our efforts.",
+    "base_buildtime": "@b2_time",
+    "planet_modifier": {
+      "job_clerk_add": 2
+    },
+    "potential": {
+      "has_branch_office": true,
+      "branch_office_owner": {
+        "is_criminal_syndicate": false
+      }
+    },
+    "resources": {
+      "category": "planet_branch_office_buildings",
+      "cost": {
+        "minerals": "@b3_minerals"
+      },
+      "upkeep": {
+        "energy": 3
+      }
+    },
+    "key": "building_corporate_embassy"
+  },
   "building_corporate_forum": {
     "name": "Synergy Forum",
     "description": "A massive FTL communications forum capable of synergizing the corporate culture of millions of planetary corporate subdivisions.",
     "allow": {
-      "has_major_upgraded_capital": true
+      "has_major_upgraded_capital": true,
+      "buildings_upgrade_allow": true
     },
-    "base_buildtime": 480,
+    "base_buildtime": "@b3_time",
     "can_build": false,
     "category": "unity",
     "convert_to": [
       "building_sacred_nexus",
       "building_hive_confluence",
       "building_hypercomms_forum",
-      "building_system_conflux"
+      "building_simulation_3"
     ],
     "planet_modifier": {
-      "job_manager_add": 7
+      "job_manager_add": "@b3_jobs"
     },
     "potential": {
       "exists": "owner",
@@ -923,7 +1117,8 @@ const Building = {
         "has_modifier": "slave_colony"
       },
       "owner": {
-        "is_megacorp": true
+        "is_megacorp": true,
+        "is_spiritualist": false
       }
     },
     "prerequisites": [
@@ -932,35 +1127,33 @@ const Building = {
     "resources": {
       "category": "planet_buildings",
       "cost": {
-        "minerals": 600,
-        "rare_crystals": 50
+        "minerals": "@b3_minerals",
+        "rare_crystals": "@b3_rare_cost"
       },
       "upkeep": {
-        "energy": 3,
-        "rare_crystals": 1
+        "energy": "@b3_upkeep",
+        "rare_crystals": "@b3_rare_upkeep"
       }
     },
-    "upgrades": [
-      "building_corporate_vault"
-    ],
     "key": "building_corporate_forum"
   },
   "building_corporate_monument": {
     "name": "Corporate Culture Site",
     "description": "A site dedicated to glorifying the unique corporate culture that permeates every business transaction conducted on the planet.",
-    "base_buildtime": 240,
+    "base_buildtime": "@b1_time",
     "category": "unity",
     "convert_to": [
       "building_temple",
       "building_hive_node",
-      "building_uplink_node",
+      "building_simulation_1",
       "building_autochthon_monument"
     ],
     "planet_modifier": {
-      "job_manager_add": 2
+      "job_manager_add": "@b1_jobs"
     },
     "potential": {
       "exists": "owner",
+      "building_basic_income_check": true,
       "NOT": {
         "has_modifier": "slave_colony"
       },
@@ -975,10 +1168,10 @@ const Building = {
     "resources": {
       "category": "planet_buildings",
       "cost": {
-        "minerals": 200
+        "minerals": "@b1_minerals"
       },
       "upkeep": {
-        "energy": 1
+        "energy": "@b1_upkeep"
       }
     },
     "upgrades": [
@@ -990,9 +1183,10 @@ const Building = {
     "name": "Business Management Nexus",
     "description": "A facility where crucial decisions concerning the business culture of the planet can by strategized and subconsciously focus-tested by sapient resource specialists.",
     "allow": {
-      "has_upgraded_capital": true
+      "has_upgraded_capital": true,
+      "buildings_upgrade_allow": true
     },
-    "base_buildtime": 360,
+    "base_buildtime": "@b2_time",
     "can_build": false,
     "category": "unity",
     "convert_to": [
@@ -1002,7 +1196,7 @@ const Building = {
       "building_network_junction"
     ],
     "planet_modifier": {
-      "job_manager_add": 4
+      "job_manager_add": "@b2_jobs"
     },
     "potential": {
       "exists": "owner",
@@ -1010,7 +1204,8 @@ const Building = {
         "has_modifier": "slave_colony"
       },
       "owner": {
-        "is_megacorp": true
+        "is_megacorp": true,
+        "is_spiritualist": false
       }
     },
     "prerequisites": [
@@ -1019,10 +1214,12 @@ const Building = {
     "resources": {
       "category": "planet_buildings",
       "cost": {
-        "minerals": 400
+        "minerals": "@b2_minerals",
+        "rare_crystals": "@b2_rare_cost"
       },
       "upkeep": {
-        "energy": 2
+        "energy": "@b2_upkeep",
+        "rare_crystals": "@b2_rare_upkeep"
       }
     },
     "upgrades": [
@@ -1036,19 +1233,25 @@ const Building = {
     "allow": {
       "has_fully_upgraded_capital": true
     },
-    "base_buildtime": 600,
-    "can_build": false,
+    "base_buildtime": "@b3_time",
     "category": "unity",
+    "convert_to": [
+      "building_citadel_of_faith",
+      "building_autocurating_vault",
+      "building_alpha_hub"
+    ],
     "planet_modifier": {
-      "job_manager_add": 10
+      "planet_managers_produces_mult": 0.15
     },
     "potential": {
       "exists": "owner",
+      "building_basic_income_check": true,
       "NOT": {
         "has_modifier": "slave_colony"
       },
       "owner": {
-        "is_megacorp": true
+        "is_megacorp": true,
+        "is_spiritualist": false
       }
     },
     "prerequisites": [
@@ -1057,12 +1260,15 @@ const Building = {
     "resources": {
       "category": "planet_buildings",
       "cost": {
-        "minerals": 1000,
-        "rare_crystals": 100
+        "minerals": "@b2_minerals",
+        "rare_crystals": "@b2_rare_cost"
       },
       "upkeep": {
-        "energy": 5,
-        "rare_crystals": 2
+        "energy": "@b2_upkeep",
+        "rare_crystals": "@b2_rare_upkeep"
+      },
+      "produces": {
+        "unity": 10
       }
     },
     "key": "building_corporate_vault"
@@ -1089,7 +1295,7 @@ const Building = {
   "building_crystal_mines": {
     "name": "Crystal Mines",
     "description": "Great care must be taken when excavating these mines to avoid damaging the crystals.",
-    "base_buildtime": 360,
+    "base_buildtime": "@b1_time",
     "category": "resource",
     "potential": {
       "NOT": {
@@ -1122,17 +1328,18 @@ const Building = {
     "key": "building_crystal_mines"
   },
   "building_crystal_plant": {
-    "name": "Synthetic Crystal Plants",
-    "description": "Nearly identical to the real thing, the crystals produced here are of the highest quality.",
+    "name": "Kha'lanka Crystal Plant",
+    "description": "The discovery of new crystal manufacturing techniques, far below the surface in the city of the Kha'lanka lithoids, has effectivized artificial crystal manufacturing through oxidation of rapidly growing silicon-based cell-clusters.",
     "allow": {
       "has_upgraded_capital": true
     },
-    "base_buildtime": 480,
+    "base_buildtime": "@b2_time",
     "category": "manufacturing",
     "potential": {
       "NOT": {
         "has_modifier": "slave_colony"
-      }
+      },
+      "building_basic_income_check": true
     },
     "prerequisites": [
       "tech_rare_crystals"
@@ -1140,7 +1347,7 @@ const Building = {
     "resources": {
       "category": "planet_buildings",
       "cost": {
-        "minerals": 500
+        "minerals": "@b2_minerals"
       },
       "upkeep": {
         "energy": 3
@@ -1157,7 +1364,52 @@ const Building = {
         "job_translucer_drone_add": 1
       }
     },
+    "upgrades": [
+      "building_crystal_plant_2"
+    ],
     "key": "building_crystal_plant"
+  },
+  "building_crystal_plant_2": {
+    "name": "Kha'lanka Crystal Plant",
+    "description": "The discovery of new crystal manufacturing techniques, far below the surface in the city of the Kha'lanka lithoids, has effectivized artificial crystal manufacturing through oxidation of rapidly growing silicon-based cell-clusters.",
+    "allow": {
+      "has_upgraded_capital": true
+    },
+    "base_buildtime": 800,
+    "can_build": false,
+    "category": "manufacturing",
+    "potential": {
+      "owner": {
+        "has_country_flag": "lithoid_crystal_plant"
+      },
+      "NOR": {
+        "has_modifier": "slave_colony"
+      }
+    },
+    "prerequisites": [
+      "tech_rare_crystals"
+    ],
+    "resources": {
+      "category": "planet_buildings",
+      "cost": {
+        "minerals": 1000
+      },
+      "upkeep": {
+        "energy": 3
+      }
+    },
+    "triggered_planet_modifier": {
+      "potential": {
+        "exists": "owner",
+        "owner": {
+          "is_gestalt": true
+        }
+      },
+      "modifier": {
+        "job_translucer_drone_add": 3
+      }
+    },
+    "key": "building_crystal_plant_2"
   },
   "building_deployment_post": {
     "name": "Deployment Post",
@@ -1166,12 +1418,13 @@ const Building = {
     "category": "government",
     "convert_to": [
       "building_hive_capital",
-      "building_colony_shelter"
+      "building_colony_shelter",
+      "building_ancient_control_center",
+      "building_ancient_palace"
     ],
     "planet_modifier": {
-      "planet_housing_add": 3,
-      "planet_amenities_add": 3,
-      "job_coordinator_add": 1,
+      "planet_housing_add": 5,
+      "planet_amenities_add": 5,
       "job_replicator_add": 2,
       "job_patrol_drone_add": 1,
       "job_maintenance_drone_add": 1
@@ -1182,7 +1435,8 @@ const Building = {
         "OR": {
           "is_machine_empire": true,
           "is_country_type": "ai_empire"
-        }
+        },
+        "is_fallen_empire": false
       }
     },
     "resources": {
@@ -1193,6 +1447,7 @@ const Building = {
     },
     "triggered_planet_modifier": {
       "potential": {
+        "exists": "owner",
         "owner": {
           "has_civic": "civic_machine_assimilator"
         }
@@ -1209,16 +1464,37 @@ const Building = {
   "building_dimensional_fabricator": {
     "name": "Dimensional Fabricator",
     "description": "This building uses little-understood dimensional technology to tunnel into other realities and siphon off their valuable resources.",
-    "can_build": false,
+    "base_buildtime": "@b2_time",
+    "can_build": true,
     "planet_modifier": [],
-    "potential": [],
+    "potential": {
+      "custom_tooltip": {
+        "exists": "owner",
+        "OR": {
+          "owner": {
+            "check_variable": {
+              "which": "dimensional_fabricator_build_count"
+            }
+          }
+        },
+        "fail_text": "ancrel.10004.failtext"
+      }
+    },
     "resources": {
       "category": "planet_buildings",
       "produces": {
-        "minerals": 100,
-        "rare_crystals": 2,
-        "exotic_gases": 2,
-        "volatile_motes": 2
+        "trigger": {
+          "exists": "owner",
+          "owner": {
+            "is_fallen_empire": true
+          }
+        },
+        "sr_zro": 2,
+        "sr_dark_matter": 2,
+        "sr_living_metal": 2
+      },
+      "cost": {
+        "minerals": "@b3_minerals"
       },
       "upkeep": {
         "energy": 20
@@ -1227,13 +1503,39 @@ const Building = {
     "upgrades": [],
     "key": "building_dimensional_fabricator"
   },
+  "building_disinformation_center": {
+    "name": "Disinformation Center",
+    "description": "Through targeted advertisements and propaganda, we can control opinion and make the people agree with our version of the truth.",
+    "base_buildtime": "@b2_time",
+    "planet_modifier": {
+      "planet_crime_add": 40,
+      "pop_government_ethic_attraction": -0.5,
+      "job_clerk_add": 2
+    },
+    "potential": {
+      "has_branch_office": true,
+      "branch_office_owner": {
+        "is_criminal_syndicate": true
+      }
+    },
+    "resources": {
+      "category": "planet_branch_office_buildings",
+      "cost": {
+        "minerals": "@b3_minerals"
+      },
+      "upkeep": {
+        "energy": 3
+      }
+    },
+    "key": "building_disinformation_center"
+  },
   "building_drone_megastorage": {
     "name": "Upgraded Drone Storage",
     "description": "With the latest upgrades, while undergoing maintenance a portion of Drones' power-generation can be re-directed to the grid.",
     "allow": {
       "has_upgraded_capital": true
     },
-    "base_buildtime": 480,
+    "base_buildtime": "@b2_time",
     "can_build": false,
     "category": "amenity",
     "convert_to": [
@@ -1246,9 +1548,7 @@ const Building = {
       "planet_amenities_add": 6
     },
     "potential": {
-      "owner": {
-        "is_machine_empire": true
-      }
+      "has_building": "building_drone_storage"
     },
     "prerequisites": [
       "tech_micro_replicators"
@@ -1256,12 +1556,12 @@ const Building = {
     "resources": {
       "category": "planet_buildings",
       "cost": {
-        "minerals": 300,
-        "rare_crystals": 50
+        "minerals": "@b2_minerals",
+        "rare_crystals": "@b2_rare_cost"
       },
       "upkeep": {
-        "energy": 2,
-        "rare_crystals": 1
+        "energy": 3,
+        "rare_crystals": "@b2_rare_upkeep"
       }
     },
     "triggered_planet_modifier": {
@@ -1280,7 +1580,7 @@ const Building = {
   "building_drone_storage": {
     "name": "Drone Storage",
     "description": "A storage area for Drones to undergo maintenance.",
-    "base_buildtime": 360,
+    "base_buildtime": "@b1_time",
     "category": "amenity",
     "convert_to": [
       "building_luxury_residence",
@@ -1292,6 +1592,7 @@ const Building = {
       "planet_amenities_add": 3
     },
     "potential": {
+      "exists": "owner",
       "owner": {
         "is_machine_empire": true
       }
@@ -1299,7 +1600,7 @@ const Building = {
     "resources": {
       "category": "planet_buildings",
       "cost": {
-        "minerals": 300
+        "minerals": "@b1_minerals"
       },
       "upkeep": {
         "energy": 2
@@ -1310,10 +1611,50 @@ const Building = {
     ],
     "key": "building_drone_storage"
   },
+  "building_embassy": {
+    "name": "Embassy Complex",
+    "description": "This building forms the heart of the Empire's diplomatic efforts.nnDue to the need to be close to the seat of government, it can only be built at our Capital.",
+    "allow": {
+      "has_upgraded_capital": true,
+      "buildings_simple_allow": true
+    },
+    "base_buildtime": "@b2_time",
+    "category": "government",
+    "potential": {
+      "exists": "planet",
+      "owner": {
+        "is_regular_empire": true
+      },
+      "planet": {
+        "is_capital": true
+      },
+      "NOT": {
+        "has_modifier": "slave_colony"
+      }
+    },
+    "prerequisites": [
+      "tech_xeno_diplomacy"
+    ],
+    "resources": {
+      "category": "planet_buildings",
+      "cost": {
+        "minerals": "@b2_minerals",
+        "rare_crystals": "@b2_rare_cost"
+      },
+      "upkeep": {
+        "energy": "@b2_upkeep",
+        "rare_crystals": "@b2_rare_upkeep"
+      }
+    },
+    "upgrades": [
+      "building_grand_embassy"
+    ],
+    "key": "building_embassy"
+  },
   "building_empyrean_shrine": {
     "name": "Empyrean Shrine",
     "description": "The shrine itself vibrates somehow, making it appear slightly blurred from a distance.",
-    "base_buildtime": 480,
+    "base_buildtime": "@b2_time",
     "can_build": false,
     "convert_to": [
       "building_citadel_of_faith"
@@ -1329,6 +1670,9 @@ const Building = {
     },
     "resources": {
       "category": "planet_buildings",
+      "cost": {
+        "minerals": "@b3_minerals"
+      },
       "upkeep": {
         "energy": 10
       }
@@ -1339,14 +1683,17 @@ const Building = {
   "building_energy_grid": {
     "name": "Energy Grid",
     "description": "A carefully calibrated grid network maximizes the output of power generators.",
-    "base_buildtime": 360,
+    "allow": {
+      "buildings_simple_allow": true
+    },
+    "base_buildtime": "@b1_time",
     "category": "resource",
     "planet_modifier": {
       "planet_technician_energy_produces_mult": 0.15
     },
     "potential": {
       "NOT": {
-        "has_modifier": "slave_colony"
+        "has_modifier": "resort_colony"
       },
       "OR": {
         "NOT": {
@@ -1357,7 +1704,8 @@ const Building = {
           "owner": {
             "is_gestalt": true
           }
-        }
+        },
+        "has_planet_flag": "energy_habitat"
       }
     },
     "prerequisites": [
@@ -1375,7 +1723,7 @@ const Building = {
         "alloys": 100
       },
       "upkeep": {
-        "energy": 1
+        "energy": 2
       }
     },
     "triggered_planet_modifier": {
@@ -1383,11 +1731,13 @@ const Building = {
         "exists": "owner",
         "owner": {
           "is_robot_empire": true
+        },
+        "NOR": {
+          "is_planet_class": "pc_city"
         }
       },
       "modifier": {
-        "district_generator_max": 2,
-        "planet_technician_energy_produces_mult": 0.05
+        "district_generator_max": 2
       }
     },
     "upgrades": [
@@ -1401,7 +1751,7 @@ const Building = {
     "allow": {
       "has_upgraded_capital": true
     },
-    "base_buildtime": 480,
+    "base_buildtime": "@b2_time",
     "can_build": false,
     "category": "resource",
     "planet_modifier": {
@@ -1422,8 +1772,8 @@ const Building = {
         "alloys": 150
       },
       "upkeep": {
-        "energy": 1,
-        "exotic_gases": 1
+        "energy": 2,
+        "exotic_gases": "@b2_rare_upkeep"
       }
     },
     "triggered_planet_modifier": {
@@ -1431,11 +1781,13 @@ const Building = {
         "exists": "owner",
         "owner": {
           "is_robot_empire": true
+        },
+        "NOR": {
+          "is_planet_class": "pc_city"
         }
       },
       "modifier": {
-        "district_generator_max": 4,
-        "planet_technician_energy_produces_mult": 0.05
+        "district_generator_max": 4
       }
     },
     "key": "building_energy_nexus"
@@ -1448,12 +1800,17 @@ const Building = {
       ">=",
       "50"
     ],
-    "base_buildtime": 600,
+    "base_buildtime": "@b3_time",
     "planet_modifier": {
       "trade_value_mult": 0.05
     },
     "potential": {
-      "has_branch_office": true
+      "has_branch_office": true,
+      "branch_office_owner": {
+        "NOT": {
+          "is_ai": true
+        }
+      }
     },
     "prerequisites": [
       "tech_executive_retreat"
@@ -1462,11 +1819,11 @@ const Building = {
       "category": "planet_branch_office_buildings",
       "cost": {
         "minerals": 1000,
-        "exotic_gases": 50
+        "exotic_gases": "@b2_rare_cost"
       },
       "upkeep": {
-        "energy": 5,
-        "exotic_gases": 1
+        "energy": "@b2_upkeep",
+        "exotic_gases": "@b2_rare_upkeep"
       }
     },
     "key": "building_executive_retreat"
@@ -1477,7 +1834,7 @@ const Building = {
     "allow": {
       "has_upgraded_capital": true
     },
-    "base_buildtime": 480,
+    "base_buildtime": "@b2_time",
     "can_build": false,
     "category": "amenity",
     "convert_to": [
@@ -1486,13 +1843,11 @@ const Building = {
       "building_communal_housing_large"
     ],
     "planet_modifier": {
-      "planet_housing_add": 12,
-      "job_maintenance_drone_add": 2
+      "planet_housing_add": 6,
+      "planet_amenities_add": 10
     },
     "potential": {
-      "owner": {
-        "is_hive_empire": true
-      }
+      "has_building": "building_hive_warren"
     },
     "prerequisites": [
       "tech_housing_2"
@@ -1500,12 +1855,12 @@ const Building = {
     "resources": {
       "category": "planet_buildings",
       "cost": {
-        "minerals": 500,
-        "rare_crystals": 50
+        "minerals": "@b2_minerals",
+        "rare_crystals": "@b2_rare_cost"
       },
       "upkeep": {
-        "energy": 2,
-        "rare_crystals": 1
+        "energy": 3,
+        "rare_crystals": "@b2_rare_upkeep"
       }
     },
     "triggered_planet_modifier": {
@@ -1524,7 +1879,7 @@ const Building = {
   "building_factory_1": {
     "name": "Civilian Industries",
     "description": "A wide collection of civilian industries and manufactories where a variety of consumer goods are produced.",
-    "base_buildtime": 360,
+    "base_buildtime": "@b1_time",
     "category": "manufacturing",
     "potential": {
       "exists": "owner",
@@ -1536,7 +1891,8 @@ const Building = {
       },
       "NOT": {
         "has_modifier": "slave_colony"
-      }
+      },
+      "building_relaxed_basic_income_check": true
     },
     "prerequisites": [
       "tech_basic_industry"
@@ -1544,10 +1900,10 @@ const Building = {
     "resources": {
       "category": "planet_buildings",
       "cost": {
-        "minerals": 400
+        "minerals": "@b1_minerals"
       },
       "upkeep": {
-        "energy": 4
+        "energy": "@b1_upkeep"
       }
     },
     "triggered_planet_modifier": {
@@ -1558,7 +1914,7 @@ const Building = {
         }
       },
       "modifier": {
-        "job_artisan_drone_add": 2
+        "job_artisan_drone_add": "@b1_jobs"
       }
     },
     "upgrades": [
@@ -1570,9 +1926,10 @@ const Building = {
     "name": "Civilian Fabricators",
     "description": "Large industrial fabricators geared towards producing consumer goods.",
     "allow": {
-      "has_upgraded_capital": true
+      "has_upgraded_capital": true,
+      "buildings_upgrade_allow": true
     },
-    "base_buildtime": 480,
+    "base_buildtime": "@b2_time",
     "can_build": false,
     "category": "manufacturing",
     "potential": {
@@ -1593,12 +1950,12 @@ const Building = {
     "resources": {
       "category": "planet_buildings",
       "cost": {
-        "minerals": 600,
-        "rare_crystals": 50
+        "minerals": "@b2_minerals",
+        "rare_crystals": "@b2_rare_cost"
       },
       "upkeep": {
-        "energy": 5,
-        "rare_crystals": 1
+        "energy": "@b2_upkeep",
+        "rare_crystals": "@b2_rare_upkeep"
       }
     },
     "triggered_planet_modifier": {
@@ -1621,9 +1978,10 @@ const Building = {
     "name": "Civilian Repli-Complexes",
     "description": "Nearly anything can be replicated at the kiosks in these complexes.",
     "allow": {
-      "has_major_upgraded_capital": true
+      "has_major_upgraded_capital": true,
+      "buildings_upgrade_allow": true
     },
-    "base_buildtime": 600,
+    "base_buildtime": "@b3_time",
     "can_build": false,
     "category": "manufacturing",
     "potential": {
@@ -1644,12 +2002,12 @@ const Building = {
     "resources": {
       "category": "planet_buildings",
       "cost": {
-        "minerals": 800,
-        "rare_crystals": 100
+        "minerals": "@b3_minerals",
+        "rare_crystals": "@b3_rare_cost"
       },
       "upkeep": {
-        "energy": 6,
-        "rare_crystals": 2
+        "energy": "@b3_upkeep",
+        "rare_crystals": "@b3_rare_upkeep"
       }
     },
     "triggered_planet_modifier": {
@@ -1660,7 +2018,7 @@ const Building = {
         }
       },
       "modifier": {
-        "job_artisan_drone_add": 8
+        "job_artisan_drone_add": "@b3_jobs"
       }
     },
     "key": "building_factory_3"
@@ -1668,15 +2026,30 @@ const Building = {
   "building_fe_dome": {
     "name": "Sky-Dome",
     "description": "A floating utopia maintained with extremely advanced anti-gravity technology.",
-    "base_buildtime": 480,
-    "can_build": false,
+    "base_buildtime": "@b2_time",
+    "can_build": true,
     "planet_modifier": {
       "planet_housing_add": 20,
       "planet_amenities_add": 20
     },
-    "potential": [],
+    "potential": {
+      "custom_tooltip": {
+        "exists": "owner",
+        "OR": {
+          "owner": {
+            "check_variable": {
+              "which": "skydome_build_count"
+            }
+          }
+        },
+        "fail_text": "ancrel.10004.failtext"
+      }
+    },
     "resources": {
       "category": "planet_buildings",
+      "cost": {
+        "minerals": "@b2_minerals"
+      },
       "upkeep": {
         "energy": 10
       }
@@ -1686,6 +2059,7 @@ const Building = {
   "building_fe_stronghold": {
     "name": "Aegis Complex",
     "description": "A massive planetary defense complex housing a multitude of armories stocked to the brim with advanced precursor weaponry.",
+    "base_buildtime": "@b2_time",
     "can_build": false,
     "convert_to": [
       "building_fortress"
@@ -1701,6 +2075,9 @@ const Building = {
     },
     "resources": {
       "category": "planet_buildings",
+      "cost": {
+        "minerals": "@b2_minerals"
+      },
       "upkeep": {
         "energy": 10
       }
@@ -1710,7 +2087,7 @@ const Building = {
   "building_fe_xeno_zoo": {
     "name": "Xeno Preserve",
     "description": "A highly sophisticated preserve that maintains the natural habitat of the ",
-    "base_buildtime": 480,
+    "base_buildtime": "@b2_time",
     "can_build": false,
     "convert_to": [
       "building_hive_capital",
@@ -1731,6 +2108,9 @@ const Building = {
     },
     "resources": {
       "category": "planet_buildings",
+      "cost": {
+        "minerals": "@b3_minerals"
+      },
       "upkeep": {
         "energy": 10
       }
@@ -1741,17 +2121,20 @@ const Building = {
   "building_food_conglomerate": {
     "name": "Fast Food Chain",
     "description": "Affordable, fast, and with a perfectly acceptable nutritional value. Zero toxins* and zero hassle!nn* Food may contain traces of potassium benzoate, nitric acid, dark matter, soylent green and liquid smoke.",
-    "base_buildtime": 360,
+    "base_buildtime": "@b1_time",
     "planet_modifier": {
       "job_farmer_add": 1
     },
     "potential": {
       "has_branch_office": true,
       "branch_office_owner": {
-        "is_criminal_syndicate": false
+        "is_criminal_syndicate": false,
+        "NOT": {
+          "is_ai": true
+        }
       },
       "NOR": {
-        "is_planet_class": "pc_city"
+        "is_planet_class": "pc_relic"
       }
     },
     "resources": {
@@ -1772,9 +2155,10 @@ const Building = {
     "name": "Food Processing Centers",
     "description": "Streamlined facilities where large amounts of food can be processed.",
     "allow": {
+      "exists": "owner",
       "has_upgraded_capital": true
     },
-    "base_buildtime": 480,
+    "base_buildtime": "@b2_time",
     "can_build": false,
     "category": "resource",
     "planet_modifier": {
@@ -1786,12 +2170,12 @@ const Building = {
     "resources": {
       "category": "planet_buildings",
       "cost": {
-        "minerals": 500,
-        "volatile_motes": 50
+        "minerals": "@b2_minerals",
+        "volatile_motes": "@b2_rare_cost"
       },
       "upkeep": {
-        "energy": 1,
-        "volatile_motes": 1
+        "energy": 2,
+        "volatile_motes": "@b2_rare_upkeep"
       }
     },
     "triggered_planet_modifier": {
@@ -1810,12 +2194,16 @@ const Building = {
   "building_food_processing_facility": {
     "name": "Food Processing Facilities",
     "description": "Food that is processed at these facilities has its nutritional value greatly increased.",
-    "base_buildtime": 360,
+    "allow": {
+      "buildings_simple_allow": true
+    },
+    "base_buildtime": "@b1_time",
     "category": "resource",
     "planet_modifier": {
       "planet_farmers_food_produces_mult": 0.15
     },
     "potential": {
+      "exists": "owner",
       "NOR": {
         "is_planet_class": "pc_machine",
         "has_modifier": "resort_colony"
@@ -1827,10 +2215,10 @@ const Building = {
     "resources": {
       "category": "planet_buildings",
       "cost": {
-        "minerals": 200
+        "minerals": "@b1_minerals"
       },
       "upkeep": {
-        "energy": 1
+        "energy": 2
       }
     },
     "triggered_planet_modifier": {
@@ -1855,7 +2243,7 @@ const Building = {
     "allow": {
       "has_upgraded_capital": true
     },
-    "base_buildtime": 360,
+    "base_buildtime": "@b1_time",
     "can_build": false,
     "category": "army",
     "planet_modifier": {
@@ -1865,18 +2253,19 @@ const Building = {
       "tech_global_defense_grid"
     ],
     "resources": {
-      "category": "planet_buildings",
+      "category": "planet_buildings_strongholds",
       "cost": {
-        "minerals": 400,
-        "volatile_motes": 50
+        "minerals": "@b2_minerals",
+        "volatile_motes": "@b2_rare_cost"
       },
       "upkeep": {
         "energy": 1,
-        "volatile_motes": 1
+        "volatile_motes": "@b2_rare_upkeep"
       }
     },
     "triggered_planet_modifier": {
       "potential": {
+        "exists": "owner",
         "owner": {
           "is_gestalt": true
         }
@@ -1890,12 +2279,13 @@ const Building = {
   "building_foundry_1": {
     "name": "Alloy Foundries",
     "description": "The Metallurgists working in these foundries produce high-quality alloys.",
-    "base_buildtime": 360,
+    "base_buildtime": "@b1_time",
     "category": "manufacturing",
     "potential": {
       "NOT": {
         "has_modifier": "slave_colony"
-      }
+      },
+      "building_relaxed_basic_income_check": true
     },
     "prerequisites": [
       "tech_basic_industry"
@@ -1903,10 +2293,10 @@ const Building = {
     "resources": {
       "category": "planet_buildings",
       "cost": {
-        "minerals": 400
+        "minerals": "@b1_minerals"
       },
       "upkeep": {
-        "energy": 4
+        "energy": "@b1_upkeep"
       }
     },
     "triggered_planet_modifier": {
@@ -1917,7 +2307,7 @@ const Building = {
         }
       },
       "modifier": {
-        "job_foundry_add": 2
+        "job_foundry_add": "@b1_jobs"
       }
     },
     "upgrades": [
@@ -1929,9 +2319,10 @@ const Building = {
     "name": "Alloy Mega-Forges",
     "description": "Production on a massive scale, these forges can manufacture alloys in great quantities.",
     "allow": {
-      "has_upgraded_capital": true
+      "has_upgraded_capital": true,
+      "buildings_upgrade_allow": true
     },
-    "base_buildtime": 480,
+    "base_buildtime": "@b2_time",
     "can_build": false,
     "category": "manufacturing",
     "prerequisites": [
@@ -1940,12 +2331,12 @@ const Building = {
     "resources": {
       "category": "planet_buildings",
       "cost": {
-        "minerals": 600,
-        "volatile_motes": 50
+        "minerals": "@b2_minerals",
+        "volatile_motes": "@b2_rare_cost"
       },
       "upkeep": {
-        "energy": 5,
-        "volatile_motes": 1
+        "energy": "@b2_upkeep",
+        "volatile_motes": "@b2_rare_upkeep"
       }
     },
     "triggered_planet_modifier": {
@@ -1956,7 +2347,7 @@ const Building = {
         }
       },
       "modifier": {
-        "job_foundry_add": 5
+        "job_foundry_add": "@b2_jobs"
       }
     },
     "upgrades": [
@@ -1968,9 +2359,10 @@ const Building = {
     "name": "Alloy Nano-Plants",
     "description": "Advanced manufacturing centers where the alloy production process is aided by nanomachines.",
     "allow": {
-      "has_major_upgraded_capital": true
+      "has_major_upgraded_capital": true,
+      "buildings_upgrade_allow": true
     },
-    "base_buildtime": 600,
+    "base_buildtime": "@b3_time",
     "can_build": false,
     "category": "manufacturing",
     "prerequisites": [
@@ -1979,12 +2371,12 @@ const Building = {
     "resources": {
       "category": "planet_buildings",
       "cost": {
-        "minerals": 800,
-        "volatile_motes": 100
+        "minerals": "@b3_minerals",
+        "volatile_motes": "@b3_rare_cost"
       },
       "upkeep": {
-        "energy": 6,
-        "volatile_motes": 2
+        "energy": "@b3_upkeep",
+        "volatile_motes": "@b3_rare_upkeep"
       }
     },
     "triggered_planet_modifier": {
@@ -1995,7 +2387,7 @@ const Building = {
         }
       },
       "modifier": {
-        "job_foundry_add": 8
+        "job_foundry_add": "@b3_jobs"
       }
     },
     "key": "building_foundry_3"
@@ -2004,9 +2396,10 @@ const Building = {
     "name": "Galactic Stock Exchange",
     "description": "By engaging in free trade of goods and services we allow for a more specialized economy, where an individual can excel in a narrow field and trade for their needs.",
     "allow": {
+      "buildings_simple_allow": true,
       "has_major_upgraded_capital": true
     },
-    "base_buildtime": 480,
+    "base_buildtime": "@b2_time",
     "category": "trade",
     "planet_modifier": {
       "job_merchant_add": 2,
@@ -2023,10 +2416,12 @@ const Building = {
     "resources": {
       "category": "planet_buildings",
       "cost": {
-        "minerals": 500
+        "minerals": "@b2_minerals",
+        "rare_crystals": "@b2_rare_cost"
       },
       "upkeep": {
-        "energy": 5
+        "energy": "@b2_upkeep",
+        "rare_crystals": "@b2_rare_upkeep"
       }
     },
     "key": "building_galactic_stock_exchange"
@@ -2034,7 +2429,7 @@ const Building = {
   "building_gas_extractors": {
     "name": "Gas Extraction Wells",
     "description": "These hulking wells reach deep into the planet's mantle to access pockets of Exotic Gas.",
-    "base_buildtime": 360,
+    "base_buildtime": "@b1_time",
     "category": "resource",
     "potential": {
       "NOT": {
@@ -2066,10 +2461,47 @@ const Building = {
     },
     "key": "building_gas_extractors"
   },
+  "building_grand_embassy": {
+    "name": "Grand Embassy Complex",
+    "description": "The complex is intended to awe the viewer, rendering them more compliant in negotiations.nnDue to the need to be close to the seat of government, it can only be built at our Capital.",
+    "allow": {
+      "has_major_upgraded_capital": true
+    },
+    "base_buildtime": "@b3_time",
+    "can_build": false,
+    "category": "government",
+    "potential": {
+      "exists": "owner",
+      "owner": {
+        "is_regular_empire": true
+      },
+      "planet": {
+        "is_capital": true
+      },
+      "NOT": {
+        "has_modifier": "slave_colony"
+      }
+    },
+    "prerequisites": [
+      "tech_xeno_relations"
+    ],
+    "resources": {
+      "category": "planet_buildings",
+      "cost": {
+        "minerals": "@b3_minerals",
+        "rare_crystals": "@b3_rare_cost"
+      },
+      "upkeep": {
+        "energy": "@b3_upkeep",
+        "rare_crystals": "@b3_rare_upkeep"
+      }
+    },
+    "key": "building_grand_embassy"
+  },
   "building_great_pyramid": {
     "name": "Great Pyramid",
     "description": "A pyramid constructed by the local population to appease a deity descended from the sky.",
-    "base_buildtime": 480,
+    "base_buildtime": "@b2_time",
     "can_build": false,
     "planet_modifier": [],
     "potential": {
@@ -2091,12 +2523,19 @@ const Building = {
     "description": "The administrative hub of the Habitat, serving as its capital and the seat of the local government.",
     "can_build": false,
     "category": "government",
+    "convert_to": [
+      "building_hab_fe_capital"
+    ],
     "planet_modifier": {
       "planet_housing_add": 3,
       "planet_amenities_add": 3
     },
     "potential": {
-      "is_planet_class": "pc_habitat"
+      "is_planet_class": "pc_habitat",
+      "exists": "owner",
+      "owner": {
+        "is_fallen_empire": false
+      }
     },
     "resources": {
       "category": "planet_buildings",
@@ -2120,6 +2559,47 @@ const Building = {
     ],
     "key": "building_hab_capital"
   },
+  "building_hab_fe_capital": {
+    "name": "Habitat Administration",
+    "description": "The administrative hub of the Habitat, serving as its capital and the seat of the local government.",
+    "base_buildtime": "@b2_time",
+    "can_build": false,
+    "convert_to": [
+      "building_hab_major_capital"
+    ],
+    "planet_modifier": {
+      "planet_housing_add": 5,
+      "planet_amenities_add": 5
+    },
+    "potential": {
+      "is_planet_class": "pc_habitat",
+      "exists": "owner",
+      "owner": {
+        "is_fallen_empire": true
+      }
+    },
+    "resources": {
+      "category": "planet_buildings",
+      "cost": {
+        "minerals": "@b2_minerals"
+      },
+      "upkeep": {
+        "energy": 5
+      }
+    },
+    "triggered_planet_modifier": {
+      "potential": {
+        "exists": "owner",
+        "owner": {
+          "is_fallen_machine_empire": true
+        }
+      },
+      "job_fe_guardian_bot_add": 2,
+      "job_fe_maintenance_bot_add": 1
+    },
+    "upgrades": [],
+    "key": "building_hab_fe_capital"
+  },
   "building_hab_major_capital": {
     "name": "Habitat Central Control",
     "description": "An extensive complex of bureaucratic offices that oversees the administration of a highly-populated habitat.",
@@ -2128,23 +2608,30 @@ const Building = {
       ">=",
       "10"
     ],
-    "base_buildtime": 480,
+    "base_buildtime": "@b2_time",
     "can_build": false,
     "category": "government",
+    "convert_to": [
+      "building_hab_fe_capital"
+    ],
     "planet_modifier": {
       "planet_housing_add": 5,
       "planet_amenities_add": 5
     },
     "potential": {
-      "is_planet_class": "pc_habitat"
+      "is_planet_class": "pc_habitat",
+      "exists": "owner",
+      "owner": {
+        "is_fallen_empire": false
+      }
     },
     "resources": {
       "category": "planet_buildings",
       "cost": {
-        "minerals": 500
+        "minerals": "@b2_minerals"
       },
       "upkeep": {
-        "energy": 5,
+        "energy": "@b2_upkeep",
         "alloys": 5
       }
     },
@@ -2165,7 +2652,7 @@ const Building = {
   "building_hall_judgment": {
     "name": "Hall of Judgment",
     "description": "A massive complex dedicated to courts and law enforcement.",
-    "base_buildtime": 480,
+    "base_buildtime": "@b2_time",
     "can_build": false,
     "category": "government",
     "planet_modifier": {
@@ -2185,12 +2672,12 @@ const Building = {
     "resources": {
       "category": "planet_buildings",
       "cost": {
-        "minerals": 600,
-        "exotic_gases": 50
+        "minerals": "@b2_minerals",
+        "exotic_gases": "@b2_rare_cost"
       },
       "upkeep": {
-        "energy": 4,
-        "exotic_gases": 1
+        "energy": "@b1_upkeep",
+        "exotic_gases": "@b2_rare_upkeep"
       }
     },
     "key": "building_hall_judgment"
@@ -2199,19 +2686,20 @@ const Building = {
     "name": "Heritage Site",
     "description": "An area dedicated to the early history of our empire and its people.",
     "allow": {
-      "has_upgraded_capital": true
+      "has_upgraded_capital": true,
+      "buildings_upgrade_allow": true
     },
-    "base_buildtime": 360,
+    "base_buildtime": "@b2_time",
     "can_build": false,
     "category": "unity",
     "convert_to": [
       "building_holotemple",
-      "building_network_junction",
+      "building_simulation_2",
       "building_hive_cluster",
       "building_corporate_site"
     ],
     "planet_modifier": {
-      "job_culture_worker_add": 4
+      "job_culture_worker_add": "@b2_jobs"
     },
     "potential": {
       "exists": "owner",
@@ -2230,10 +2718,12 @@ const Building = {
     "resources": {
       "category": "planet_buildings",
       "cost": {
-        "minerals": 400
+        "minerals": "@b2_minerals",
+        "rare_crystals": "@b2_rare_cost"
       },
       "upkeep": {
-        "energy": 2
+        "energy": "@b2_upkeep",
+        "rare_crystals": "@b2_rare_upkeep"
       }
     },
     "upgrades": [
@@ -2248,11 +2738,13 @@ const Building = {
     "category": "government",
     "convert_to": [
       "building_machine_capital",
-      "building_capital"
+      "building_capital",
+      "building_ancient_control_center",
+      "building_ancient_palace"
     ],
     "planet_modifier": {
-      "planet_housing_add": 5,
-      "planet_amenities_add": 10,
+      "planet_housing_add": 8,
+      "planet_amenities_add": 8,
       "job_synapse_drone_add": 2,
       "job_maintenance_drone_add": 2,
       "job_patrol_drone_add": 1
@@ -2263,7 +2755,8 @@ const Building = {
         "OR": {
           "is_hive_empire": true,
           "is_country_type": "swarm"
-        }
+        },
+        "is_fallen_empire": false
       }
     },
     "prerequisites": [
@@ -2287,19 +2780,20 @@ const Building = {
     "name": "Synaptic Clusters",
     "description": "Synaptic hive nodes networked and clustered together produce maximum meganeuron transmission per available surface area, strengthening the organization of the will to its drones.",
     "allow": {
-      "has_upgraded_capital": true
+      "has_upgraded_capital": true,
+      "buildings_upgrade_allow": true
     },
-    "base_buildtime": 360,
+    "base_buildtime": "@b2_time",
     "can_build": false,
     "category": "unity",
     "convert_to": [
       "building_holotemple",
-      "building_network_junction",
+      "building_simulation_2",
       "building_heritage_site",
       "building_corporate_site"
     ],
     "planet_modifier": {
-      "job_synapse_drone_add": 4
+      "job_synapse_drone_add": "@b2_jobs"
     },
     "potential": {
       "exists": "owner",
@@ -2313,10 +2807,12 @@ const Building = {
     "resources": {
       "category": "planet_buildings",
       "cost": {
-        "minerals": 400
+        "minerals": "@b2_minerals",
+        "exotic_gases": "@b2_rare_cost"
       },
       "upkeep": {
-        "energy": 2
+        "energy": "@b2_upkeep",
+        "exotic_gases": "@b2_rare_upkeep"
       }
     },
     "triggered_planet_modifier": {
@@ -2339,9 +2835,10 @@ const Building = {
     "name": "Confluence of Thought",
     "description": "A massive nervous center of macroscopic neurology, billions of meganeurons fire along vast stretches of roiling protoplasmic fibers in the Confluence, spreading, strengthening, coordinating the will of the Hive.",
     "allow": {
-      "has_major_upgraded_capital": true
+      "has_major_upgraded_capital": true,
+      "buildings_upgrade_allow": true
     },
-    "base_buildtime": 480,
+    "base_buildtime": "@b3_time",
     "can_build": false,
     "category": "unity",
     "convert_to": [
@@ -2351,7 +2848,7 @@ const Building = {
       "building_corporate_forum"
     ],
     "planet_modifier": {
-      "job_synapse_drone_add": 7
+      "job_synapse_drone_add": "@b3_jobs"
     },
     "potential": {
       "exists": "owner",
@@ -2365,12 +2862,12 @@ const Building = {
     "resources": {
       "category": "planet_buildings",
       "cost": {
-        "minerals": 600,
-        "rare_crystals": 50
+        "minerals": "@b3_minerals",
+        "exotic_gases": "@b2_rare_upkeep"
       },
       "upkeep": {
-        "energy": 3,
-        "rare_crystals": 1
+        "energy": "@b3_upkeep",
+        "exotic_gases": "@b3_rare_upkeep"
       }
     },
     "triggered_planet_modifier": {
@@ -2394,16 +2891,18 @@ const Building = {
       ">=",
       "40"
     ],
-    "base_buildtime": 480,
+    "base_buildtime": "@b2_time",
     "can_build": false,
     "category": "government",
     "convert_to": [
       "building_machine_major_capital",
-      "building_major_capital"
+      "building_major_capital",
+      "building_ancient_control_center",
+      "building_ancient_palace"
     ],
     "planet_modifier": {
-      "planet_housing_add": 10,
-      "planet_amenities_add": 10,
+      "planet_housing_add": 15,
+      "planet_amenities_add": 15,
       "job_synapse_drone_add": 3,
       "job_maintenance_drone_add": 5,
       "job_patrol_drone_add": 2
@@ -2414,7 +2913,8 @@ const Building = {
         "OR": {
           "is_hive_empire": true,
           "is_country_type": "swarm"
-        }
+        },
+        "is_fallen_empire": false
       }
     },
     "prerequisites": [
@@ -2423,10 +2923,10 @@ const Building = {
     "resources": {
       "category": "planet_buildings",
       "cost": {
-        "minerals": 1000
+        "minerals": "@b2_minerals"
       },
       "upkeep": {
-        "energy": 4
+        "energy": "@b2_upkeep"
       }
     },
     "key": "building_hive_major_capital"
@@ -2434,19 +2934,20 @@ const Building = {
   "building_hive_node": {
     "name": "Synaptic Nodes",
     "description": "A center of massive, macroscopic synapses, these nodes, tended to and assisted by specialized drones, receive and transmit the will of the Hive.",
-    "base_buildtime": 240,
+    "base_buildtime": "@b1_time",
     "category": "unity",
     "convert_to": [
       "building_temple",
-      "building_uplink_node",
+      "building_simulation_1",
       "building_autochthon_monument",
       "building_corporate_monument"
     ],
     "planet_modifier": {
-      "job_synapse_drone_add": 2
+      "job_synapse_drone_add": "@b1_jobs"
     },
     "potential": {
       "exists": "owner",
+      "building_relaxed_basic_income_check": true,
       "owner": {
         "is_hive_empire": true
       }
@@ -2457,10 +2958,10 @@ const Building = {
     "resources": {
       "category": "planet_buildings",
       "cost": {
-        "minerals": 200
+        "minerals": "@b1_minerals"
       },
       "upkeep": {
-        "energy": 1
+        "energy": "@b1_upkeep"
       }
     },
     "triggered_planet_modifier": {
@@ -2482,7 +2983,7 @@ const Building = {
   "building_hive_warren": {
     "name": "Hive Warren",
     "description": "A vast warren offers shelter for many Drones to rest.",
-    "base_buildtime": 360,
+    "base_buildtime": "@b1_time",
     "category": "amenity",
     "convert_to": [
       "building_luxury_residence",
@@ -2490,10 +2991,11 @@ const Building = {
       "building_communal_housing"
     ],
     "planet_modifier": {
-      "planet_housing_add": 6,
-      "job_maintenance_drone_add": 1
+      "planet_housing_add": 3,
+      "planet_amenities_add": 5
     },
     "potential": {
+      "exists": "owner",
       "owner": {
         "is_hive_empire": true
       }
@@ -2501,7 +3003,7 @@ const Building = {
     "resources": {
       "category": "planet_buildings",
       "cost": {
-        "minerals": 300
+        "minerals": "@b1_minerals"
       },
       "upkeep": {
         "energy": 2
@@ -2515,11 +3017,10 @@ const Building = {
   "building_holo_theatres": {
     "name": "Holo-Theatres",
     "description": "The latest in holographic entertainment. Entire worlds built out of photons and energy fields.",
-    "base_buildtime": 360,
+    "base_buildtime": "@b1_time",
     "category": "amenity",
     "potential": {
-      "NOR": {
-        "is_planet_class": "pc_habitat",
+      "NOT": {
         "has_modifier": "slave_colony"
       },
       "owner": {
@@ -2532,10 +3033,10 @@ const Building = {
     "resources": {
       "category": "planet_buildings",
       "cost": {
-        "minerals": 300
+        "minerals": "@b1_minerals"
       },
       "upkeep": {
-        "energy": 2
+        "energy": "@b1_upkeep"
       }
     },
     "triggered_planet_modifier": {
@@ -2546,7 +3047,7 @@ const Building = {
         }
       },
       "modifier": {
-        "job_duelist_add": 2
+        "job_duelist_add": "@b1_jobs"
       }
     },
     "upgrades": [
@@ -2558,22 +3059,24 @@ const Building = {
     "name": "Holotemple",
     "description": "An enhanced form of its rough-hewn predecessors, the latest in Spiritualist technology creates a mutable reality inside the Holotemple - all for deeper meditation and more intense devotion.",
     "allow": {
-      "has_upgraded_capital": true
+      "has_upgraded_capital": true,
+      "buildings_upgrade_allow": true
     },
-    "base_buildtime": 360,
+    "base_buildtime": "@b2_time",
     "can_build": false,
     "category": "unity",
     "convert_to": [
-      "building_network_junction",
+      "building_simulation_2",
       "building_hive_cluster",
       "building_heritage_site",
       "building_corporate_site"
     ],
     "planet_modifier": {
-      "job_priest_add": 4,
+      "job_priest_add": "@b2_jobs",
       "pop_ethic_spiritualist_attraction_mult": 0.1
     },
     "potential": {
+      "exists": "owner",
       "owner": {
         "is_spiritualist": true
       },
@@ -2587,10 +3090,12 @@ const Building = {
     "resources": {
       "category": "planet_buildings",
       "cost": {
-        "minerals": 400
+        "minerals": "@b2_minerals",
+        "rare_crystals": "@b2_rare_cost"
       },
       "upkeep": {
-        "energy": 2
+        "energy": "@b2_upkeep",
+        "rare_crystals": "@b2_rare_upkeep"
       }
     },
     "upgrades": [
@@ -2604,19 +3109,14 @@ const Building = {
     "allow": {
       "has_upgraded_capital": true
     },
-    "base_buildtime": 480,
+    "base_buildtime": "@b2_time",
     "can_build": false,
     "category": "amenity",
     "planet_modifier": {
-      "job_healthcare_add": 5
+      "job_healthcare_add": "@b2_jobs"
     },
     "potential": {
-      "owner": {
-        "is_regular_empire": true
-      },
-      "NOT": {
-        "has_modifier": "slave_colony"
-      }
+      "has_building": "building_clinic"
     },
     "prerequisites": [
       "tech_frontier_hospital"
@@ -2624,12 +3124,12 @@ const Building = {
     "resources": {
       "category": "planet_buildings",
       "cost": {
-        "minerals": 500,
-        "exotic_gases": 50
+        "minerals": "@b2_minerals",
+        "exotic_gases": "@b2_rare_cost"
       },
       "upkeep": {
-        "energy": 2,
-        "exotic_gases": 1
+        "energy": "@b2_upkeep",
+        "exotic_gases": "@b2_rare_upkeep"
       }
     },
     "key": "building_hospital"
@@ -2637,9 +3137,20 @@ const Building = {
   "building_hydroponics_farm": {
     "name": "Hydroponics Farms",
     "description": "Hydroponics Farms produce nutrient-rich vegetable matter tailored for consumption by local Pops.",
-    "base_buildtime": 360,
+    "allow": {
+      "buildings_simple_allow": true
+    },
+    "base_buildtime": "@b1_time",
     "category": "resource",
     "potential": {
+      "exists": "owner",
+      "planet": {
+        "or": {
+          "owner": {
+            "is_ai": false
+          }
+        }
+      },
       "NOT": {
         "has_modifier": "resort_colony"
       }
@@ -2650,7 +3161,7 @@ const Building = {
     "resources": {
       "category": "planet_buildings",
       "cost": {
-        "minerals": 300
+        "minerals": "@b1_minerals"
       },
       "upkeep": {
         "energy": 2
@@ -2664,7 +3175,7 @@ const Building = {
         }
       },
       "modifier": {
-        "job_agri_drone_add": 2
+        "job_agri_drone_add": "@b1_jobs"
       }
     },
     "key": "building_hydroponics_farm"
@@ -2673,15 +3184,14 @@ const Building = {
     "name": "Hyper-Entertainment Forums",
     "description": "These massive entertainment complexes is where dreams come true. Shopping malls, restaurants, amusement parks, virtual arcades, and more. You dream it - we are it!",
     "allow": {
-      "has_upgraded_capital": true
+      "has_upgraded_capital": true,
+      "buildings_upgrade_allow": true
     },
-    "base_buildtime": 480,
+    "base_buildtime": "@b2_time",
     "can_build": false,
     "category": "amenity",
     "potential": {
-      "owner": {
-        "is_regular_empire": true
-      }
+      "has_building": "building_holo_theatres"
     },
     "prerequisites": [
       "tech_hyper_entertainment_forum"
@@ -2689,12 +3199,12 @@ const Building = {
     "resources": {
       "category": "planet_buildings",
       "cost": {
-        "minerals": 500,
-        "exotic_gases": 50
+        "minerals": "@b2_minerals",
+        "exotic_gases": "@b2_rare_cost"
       },
       "upkeep": {
-        "energy": 2,
-        "exotic_gases": 1
+        "energy": "@b2_upkeep",
+        "exotic_gases": "@b2_rare_upkeep"
       }
     },
     "triggered_planet_modifier": {
@@ -2705,7 +3215,7 @@ const Building = {
         }
       },
       "modifier": {
-        "job_duelist_add": 4
+        "job_duelist_add": "@b2_jobs"
       }
     },
     "key": "building_hyper_entertainment_forum"
@@ -2714,19 +3224,20 @@ const Building = {
     "name": "Hypercomms Forum",
     "description": "An immense facility equipped with avant-garde interpersonal communications equipment, the Forum allows for the exchange of multisensory ideas in casual discussions and rapid consensus-forming in debates.",
     "allow": {
-      "has_major_upgraded_capital": true
+      "has_major_upgraded_capital": true,
+      "buildings_upgrade_allow": true
     },
-    "base_buildtime": 480,
+    "base_buildtime": "@b3_time",
     "can_build": false,
     "category": "unity",
     "convert_to": [
       "building_sacred_nexus",
       "building_hive_confluence",
-      "building_system_conflux",
+      "building_simulation_3",
       "building_corporate_forum"
     ],
     "planet_modifier": {
-      "job_culture_worker_add": 7
+      "job_culture_worker_add": "@b3_jobs"
     },
     "potential": {
       "exists": "owner",
@@ -2745,23 +3256,20 @@ const Building = {
     "resources": {
       "category": "planet_buildings",
       "cost": {
-        "minerals": 600,
-        "rare_crystals": 50
+        "minerals": "@b3_minerals",
+        "rare_crystals": "@b3_rare_cost"
       },
       "upkeep": {
-        "energy": 3,
-        "rare_crystals": 1
+        "energy": "@b3_upkeep",
+        "rare_crystals": "@b3_rare_upkeep"
       }
     },
-    "upgrades": [
-      "building_autocurating_vault"
-    ],
     "key": "building_hypercomms_forum"
   },
   "building_illicit_research_labs": {
     "name": "Illicit Research Labs",
     "description": "All manner of highly illegal R&D is carried out in these secret laboratories.",
-    "base_buildtime": 480,
+    "base_buildtime": "@b2_time",
     "planet_modifier": {
       "planet_crime_add": 40,
       "job_clerk_add": 2
@@ -2775,7 +3283,7 @@ const Building = {
     "resources": {
       "category": "planet_branch_office_buildings",
       "cost": {
-        "minerals": 800
+        "minerals": "@b3_minerals"
       },
       "produces": {
         "physics_research": 6,
@@ -2794,8 +3302,11 @@ const Building = {
     "allow": {
       "has_major_upgraded_capital": true
     },
-    "base_buildtime": 480,
+    "base_buildtime": "@b2_time",
     "category": "research",
+    "convert_to": [
+      "building_supercomputer"
+    ],
     "planet_modifier": {
       "planet_researchers_produces_mult": 0.15,
       "job_head_researcher_add": 1
@@ -2815,10 +3326,12 @@ const Building = {
     "resources": {
       "category": "planet_buildings",
       "cost": {
-        "minerals": 500
+        "minerals": "@b2_minerals",
+        "exotic_gases": "@b2_rare_cost"
       },
       "upkeep": {
-        "energy": 5
+        "energy": "@b2_upkeep",
+        "exotic_gases": "@b2_rare_upkeep"
       }
     },
     "key": "building_institute"
@@ -2852,7 +3365,10 @@ const Building = {
   "building_luxury_residence": {
     "name": "Luxury Residences",
     "description": "Intricately designed residential towers with luxurious apartments. Advanced zero-g technology is the only thing keeping the more outlandish terrace designs from collapsing.",
-    "base_buildtime": 360,
+    "allow": {
+      "buildings_simple_allow": true
+    },
+    "base_buildtime": "@b1_time",
     "category": "amenity",
     "convert_to": [
       "building_drone_storage",
@@ -2867,6 +3383,7 @@ const Building = {
       "NOT": {
         "has_modifier": "slave_colony"
       },
+      "exists": "owner",
       "owner": {
         "is_regular_empire": true,
         "NOT": {
@@ -2877,7 +3394,7 @@ const Building = {
     "resources": {
       "category": "planet_buildings",
       "cost": {
-        "minerals": 300
+        "minerals": "@b1_minerals"
       },
       "upkeep": {
         "energy": 2
@@ -2899,10 +3416,48 @@ const Building = {
     ],
     "key": "building_luxury_residence"
   },
+  "building_machine_assembly_complex": {
+    "name": "Machine Assembly Complex",
+    "description": "An advanced assembly plant where new units are constructed.",
+    "allow": {
+      "has_major_upgraded_capital": true,
+      "buildings_upgrade_allow": true
+    },
+    "base_buildtime": "@b3_time",
+    "can_build": false,
+    "category": "pop_assembly",
+    "convert_to": [
+      "building_robot_assembly_plant"
+    ],
+    "planet_modifier": {
+      "job_replicator_add": 3
+    },
+    "potential": {
+      "exists": "owner",
+      "owner": {
+        "is_machine_empire": true
+      }
+    },
+    "prerequisites": [
+      "tech_mega_assembly"
+    ],
+    "resources": {
+      "category": "planet_buildings",
+      "cost": {
+        "minerals": "@b3_minerals",
+        "rare_crystals": "@b3_rare_cost"
+      },
+      "upkeep": {
+        "energy": "@b3_upkeep",
+        "rare_crystals": "@b3_rare_upkeep"
+      }
+    },
+    "key": "building_machine_assembly_complex"
+  },
   "building_machine_assembly_plant": {
     "name": "Machine Assembly Plants",
     "description": "A production line assembly plant where new units are constructed.",
-    "base_buildtime": 360,
+    "base_buildtime": "@b1_time",
     "category": "pop_assembly",
     "convert_to": [
       "building_robot_assembly_plant"
@@ -2911,19 +3466,24 @@ const Building = {
       "job_replicator_add": 1
     },
     "potential": {
+      "exists": "owner",
       "owner": {
         "is_machine_empire": true
       }
     },
+    "prerequisites": [],
     "resources": {
       "category": "planet_buildings",
       "cost": {
-        "minerals": 300
+        "minerals": "@b1_minerals"
       },
       "upkeep": {
-        "energy": 2
+        "energy": "@b1_upkeep"
       }
     },
+    "upgrades": [
+      "building_machine_assembly_complex"
+    ],
     "key": "building_machine_assembly_plant"
   },
   "building_machine_capital": {
@@ -2934,17 +3494,18 @@ const Building = {
       ">=",
       "10"
     ],
-    "base_buildtime": 480,
+    "base_buildtime": "@b2_time",
     "can_build": false,
     "category": "government",
     "convert_to": [
       "building_hive_capital",
-      "building_colony_shelter"
+      "building_colony_shelter",
+      "building_ancient_control_center",
+      "building_ancient_palace"
     ],
     "planet_modifier": {
-      "planet_housing_add": 5,
-      "planet_amenities_add": 5,
-      "job_coordinator_add": 2,
+      "planet_housing_add": 8,
+      "planet_amenities_add": 8,
       "job_replicator_add": 2,
       "job_patrol_drone_add": 1,
       "job_maintenance_drone_add": 2
@@ -2954,8 +3515,13 @@ const Building = {
       "owner": {
         "OR": {
           "is_machine_empire": true,
-          "is_country_type": "ai_empire"
-        }
+          "is_country_type": "ai_empire",
+          "AND": {
+            "exists": "event_target:mechanocalibrator_country",
+            "is_same_value": "event_target:mechanocalibrator_country"
+          }
+        },
+        "is_fallen_empire": false
       }
     },
     "prerequisites": [
@@ -2964,20 +3530,22 @@ const Building = {
     "resources": {
       "category": "planet_buildings",
       "cost": {
-        "minerals": 500
+        "minerals": "@b2_minerals"
       },
       "upkeep": {
-        "energy": 3
+        "energy": "@b2_upkeep"
       }
     },
     "triggered_planet_modifier": {
       "potential": {
+        "exists": "owner",
         "owner": {
           "has_civic": "civic_machine_assimilator"
         }
       },
       "modifier": {
-        "job_replicator_add": -1
+        "job_replicator_add": -1,
+        "job_maintenance_drone_add": 1
       }
     },
     "upgrades": [
@@ -2993,18 +3561,19 @@ const Building = {
       ">=",
       "40"
     ],
-    "base_buildtime": 600,
+    "base_buildtime": "@b3_time",
     "can_build": false,
     "category": "government",
     "convert_to": [
       "building_hive_major_capital",
-      "building_major_capital"
+      "building_major_capital",
+      "building_ancient_control_center",
+      "building_ancient_palace"
     ],
     "planet_modifier": {
-      "job_coordinator_add": 3,
+      "planet_housing_add": 10,
+      "planet_amenities_add": 10,
       "job_replicator_add": 2,
-      "planet_housing_add": 8,
-      "planet_amenities_add": 8,
       "job_patrol_drone_add": 2,
       "job_maintenance_drone_add": 3
     },
@@ -3014,7 +3583,8 @@ const Building = {
         "OR": {
           "is_machine_empire": true,
           "is_country_type": "ai_empire"
-        }
+        },
+        "is_fallen_empire": false
       }
     },
     "prerequisites": [
@@ -3023,20 +3593,22 @@ const Building = {
     "resources": {
       "category": "planet_buildings",
       "cost": {
-        "minerals": 1000
+        "minerals": "@b3_minerals"
       },
       "upkeep": {
-        "energy": 5
+        "energy": "@b3_upkeep"
       }
     },
     "triggered_planet_modifier": {
       "potential": {
+        "exists": "owner",
         "owner": {
           "has_civic": "civic_machine_assimilator"
         }
       },
       "modifier": {
-        "job_replicator_add": -1
+        "job_replicator_add": -1,
+        "job_maintenance_drone_add": 1
       }
     },
     "upgrades": [
@@ -3052,18 +3624,19 @@ const Building = {
       ">=",
       "80"
     ],
-    "base_buildtime": 900,
+    "base_buildtime": "@b4_time",
     "can_build": false,
     "category": "government",
     "convert_to": [
       "building_hive_major_capital",
       "building_major_capital",
-      "building_machine_major_capital"
+      "building_machine_major_capital",
+      "building_ancient_control_center",
+      "building_ancient_palace"
     ],
     "planet_modifier": {
-      "planet_housing_add": 10,
-      "planet_amenities_add": 10,
-      "job_coordinator_add": 5,
+      "planet_housing_add": 12,
+      "planet_amenities_add": 12,
       "job_replicator_add": 2,
       "job_patrol_drone_add": 3,
       "job_maintenance_drone_add": 4
@@ -3074,7 +3647,8 @@ const Building = {
         "OR": {
           "is_machine_empire": true,
           "is_country_type": "ai_empire"
-        }
+        },
+        "is_fallen_empire": false
       }
     },
     "prerequisites": [
@@ -3083,20 +3657,22 @@ const Building = {
     "resources": {
       "category": "planet_buildings",
       "cost": {
-        "minerals": 2000
+        "minerals": "@b4_minerals"
       },
       "upkeep": {
-        "energy": 10
+        "energy": "@b4_upkeep"
       }
     },
     "triggered_planet_modifier": {
       "potential": {
+        "exists": "owner",
         "owner": {
           "has_civic": "civic_machine_assimilator"
         }
       },
       "modifier": {
-        "job_replicator_add": -1
+        "job_replicator_add": -1,
+        "job_maintenance_drone_add": 1
       }
     },
     "key": "building_machine_system_capital"
@@ -3105,9 +3681,10 @@ const Building = {
     "name": "Maintenance Depots",
     "description": "Workshops where maintenance of machinery and structures is planned, managed, and executed.",
     "base_buildtime": 240,
+    "can_build": false,
     "category": "amenity",
     "planet_modifier": {
-      "job_maintenance_drone_add": 3
+      "job_maintenance_drone_add": 5
     },
     "potential": {
       "owner": {
@@ -3120,21 +3697,10 @@ const Building = {
     "resources": {
       "category": "planet_buildings",
       "cost": {
-        "minerals": 200
+        "minerals": "@b1_minerals"
       },
       "upkeep": {
-        "energy": 1
-      }
-    },
-    "triggered_planet_modifier": {
-      "potential": {
-        "exists": "owner",
-        "owner": {
-          "has_swapped_tradition": "tr_synchronicity_integrated_preservation"
-        }
-      },
-      "modifier": {
-        "job_maintenance_drone_add": 2
+        "energy": 2
       }
     },
     "key": "building_maintenance_depot"
@@ -3147,14 +3713,16 @@ const Building = {
       ">=",
       "40"
     ],
-    "base_buildtime": 600,
+    "base_buildtime": "@b3_time",
     "can_build": false,
     "category": "government",
     "convert_to": [
       "building_hive_major_capital",
       "building_machine_major_capital",
       "building_resort_major_capital",
-      "building_slave_major_capital"
+      "building_slave_major_capital",
+      "building_ancient_control_center",
+      "building_ancient_palace"
     ],
     "planet_modifier": {
       "job_enforcer_add": 2,
@@ -3164,7 +3732,8 @@ const Building = {
     "potential": {
       "exists": "owner",
       "owner": {
-        "is_regular_empire": true
+        "is_regular_empire": true,
+        "is_fallen_empire": false
       },
       "NOR": {
         "has_modifier": "slave_colony"
@@ -3176,10 +3745,10 @@ const Building = {
     "resources": {
       "category": "planet_buildings",
       "cost": {
-        "minerals": 1000
+        "minerals": "@b3_minerals"
       },
       "upkeep": {
-        "energy": 5
+        "energy": "@b3_upkeep"
       }
     },
     "triggered_planet_modifier": {
@@ -3190,8 +3759,8 @@ const Building = {
         }
       },
       "modifier": {
-        "job_merchant_add": 2,
-        "job_administrator_add": 1
+        "job_merchant_add": 1,
+        "job_administrator_add": 2
       }
     },
     "upgrades": [
@@ -3202,7 +3771,7 @@ const Building = {
   "building_master_archive": {
     "name": "Master Archive",
     "description": "The collected knowledge of five galactic ages is supposedly stored here, but the ability to operate the exceedingly complex and arcane data retrieval system has long since been lost. Still, whatever scraps of data can be obtained are often invaluable.",
-    "base_buildtime": 480,
+    "base_buildtime": "@b2_time",
     "can_build": false,
     "potential": [],
     "resources": {
@@ -3211,6 +3780,9 @@ const Building = {
         "physics_research": 100,
         "society_research": 100,
         "engineering_research": 100
+      },
+      "cost": {
+        "minerals": "@b2_minerals"
       },
       "upkeep": {
         "energy": 20
@@ -3234,10 +3806,10 @@ const Building = {
     "allow": {
       "has_upgraded_capital": true
     },
-    "base_buildtime": 480,
+    "base_buildtime": "@b2_time",
     "category": "army",
     "potential": {
-      "always": true
+      "buildings_simple_allow": true
     },
     "prerequisites": [
       "tech_centralized_command"
@@ -3245,14 +3817,15 @@ const Building = {
     "resources": {
       "category": "planet_buildings",
       "cost": {
-        "minerals": 400
+        "minerals": "@b1_minerals"
       },
       "upkeep": {
-        "energy": 2
+        "energy": "@b1_upkeep"
       }
     },
     "triggered_planet_modifier": {
       "potential": {
+        "exists": "owner",
         "owner": {
           "is_gestalt": true
         }
@@ -3266,14 +3839,17 @@ const Building = {
   "building_military_contractors": {
     "name": "Mercenary Liaison Office",
     "description": "This office allows locals to sign up for the exciting life of a corporate soldier of fortune. Generous compensation, limited health insurance and stories of adventure ensure a steady stream of recruits.",
-    "base_buildtime": 360,
+    "base_buildtime": "@b1_time",
     "planet_modifier": {
       "job_soldier_add": 1
     },
     "potential": {
       "has_branch_office": true,
       "branch_office_owner": {
-        "is_criminal_syndicate": false
+        "is_criminal_syndicate": false,
+        "NOT": {
+          "is_ai": true
+        }
       }
     },
     "resources": {
@@ -3291,9 +3867,12 @@ const Building = {
     "name": "Mineral Purification Hubs",
     "description": "Massive hubs where minerals are received and then shuttled to arrays of purifiers.",
     "allow": {
-      "has_upgraded_capital": true
+      "has_upgraded_capital": true,
+      "NOT": {
+        "has_modifier": "resort_colony"
+      }
     },
-    "base_buildtime": 480,
+    "base_buildtime": "@b2_time",
     "can_build": false,
     "category": "resource",
     "planet_modifier": {
@@ -3314,8 +3893,8 @@ const Building = {
         "alloys": 150
       },
       "upkeep": {
-        "energy": 1,
-        "volatile_motes": 1
+        "energy": 2,
+        "volatile_motes": "@b2_rare_upkeep"
       }
     },
     "triggered_planet_modifier": {
@@ -3323,11 +3902,13 @@ const Building = {
         "exists": "owner",
         "owner": {
           "is_robot_empire": true
+        },
+        "NOR": {
+          "is_planet_class": "pc_city"
         }
       },
       "modifier": {
-        "district_mining_max": 4,
-        "planet_miners_minerals_produces_mult": 0.05
+        "district_mining_max": 4
       }
     },
     "key": "building_mineral_purification_hub"
@@ -3335,14 +3916,26 @@ const Building = {
   "building_mineral_purification_plant": {
     "name": "Mineral Purification Plants",
     "description": "Minerals that have passed through these purifiers are of the highest quality.",
-    "base_buildtime": 360,
+    "allow": {
+      "buildings_simple_allow": true
+    },
+    "base_buildtime": "@b1_time",
     "category": "resource",
     "planet_modifier": {
       "planet_miners_minerals_produces_mult": 0.15
     },
     "potential": {
       "NOT": {
-        "has_modifier": "slave_colony"
+        "has_modifier": "resort_colony"
+      },
+      "NOR": {
+        "is_planet_class": "pc_cybrex"
+      },
+      "OR": {
+        "NOT": {
+          "is_planet_class": "pc_habitat"
+        },
+        "has_planet_flag": "mining_habitat"
       }
     },
     "prerequisites": [
@@ -3360,7 +3953,7 @@ const Building = {
         "alloys": 100
       },
       "upkeep": {
-        "energy": 1
+        "energy": 2
       }
     },
     "triggered_planet_modifier": {
@@ -3368,11 +3961,13 @@ const Building = {
         "exists": "owner",
         "owner": {
           "is_robot_empire": true
+        },
+        "NOR": {
+          "is_planet_class": "pc_city"
         }
       },
       "modifier": {
-        "district_mining_max": 2,
-        "planet_miners_minerals_produces_mult": 0.05
+        "district_mining_max": 2
       }
     },
     "upgrades": [
@@ -3386,7 +3981,7 @@ const Building = {
     "allow": {
       "has_major_upgraded_capital": true
     },
-    "base_buildtime": 480,
+    "base_buildtime": "@b2_time",
     "category": "manufacturing",
     "planet_modifier": {
       "job_administrator_add": 1,
@@ -3408,10 +4003,12 @@ const Building = {
     "resources": {
       "category": "planet_buildings",
       "cost": {
-        "minerals": 500
+        "minerals": "@b2_minerals",
+        "volatile_motes": "@b2_rare_cost"
       },
       "upkeep": {
-        "energy": 5
+        "energy": "@b2_upkeep",
+        "volatile_motes": "@b2_rare_upkeep"
       }
     },
     "key": "building_ministry_production"
@@ -3419,7 +4016,7 @@ const Building = {
   "building_mote_harvesters": {
     "name": "Mote Harvesting Traps",
     "description": "These intricate facilities trap Volatile Motes within energy fields, funneling them into special containment zones below ground where they can be stabilized and harvested.",
-    "base_buildtime": 360,
+    "base_buildtime": "@b1_time",
     "category": "resource",
     "potential": {
       "NOT": {
@@ -3457,12 +4054,27 @@ const Building = {
     "allow": {
       "has_upgraded_capital": true
     },
-    "base_buildtime": 600,
+    "base_buildtime": "@b3_time",
     "category": "manufacturing",
     "potential": {
+      "exists": "owner",
+      "OWNER": {
+        "OR": {
+          "has_monthly_income": {
+            "resource": "nanites"
+          },
+          "AND": {
+            "is_ai": false,
+            "has_resource": {
+              "type": "nanites"
+            }
+          }
+        }
+      },
       "NOR": {
         "has_modifier": "slave_colony"
-      }
+      },
+      "building_basic_income_check": true
     },
     "prerequisites": [
       "tech_nanite_transmutation"
@@ -3494,14 +4106,29 @@ const Building = {
   "building_nano_forge": {
     "name": "Auto-Forge",
     "description": "The colossal nano-replicator bays convert raw materials into advanced alloys with miraculous efficiency.",
-    "base_buildtime": 480,
-    "can_build": false,
+    "base_buildtime": "@b2_time",
+    "can_build": true,
     "planet_modifier": [],
-    "potential": [],
+    "potential": {
+      "custom_tooltip": {
+        "exists": "owner",
+        "OR": {
+          "owner": {
+            "check_variable": {
+              "which": "nano_forge_build_count"
+            }
+          }
+        },
+        "fail_text": "ancrel.10004.failtext"
+      }
+    },
     "resources": {
       "category": "planet_buildings",
       "produces": {
         "alloys": 25
+      },
+      "cost": {
+        "minerals": "@b3_minerals"
       },
       "upkeep": {
         "minerals": 50,
@@ -3517,37 +4144,30 @@ const Building = {
     "allow": {
       "has_upgraded_capital": true
     },
-    "base_buildtime": 360,
+    "base_buildtime": "@b2_time",
     "can_build": false,
-    "category": "unity",
-    "convert_to": [
-      "building_holotemple",
-      "building_hive_cluster",
-      "building_heritage_site",
-      "building_corporate_site"
-    ],
+    "category": "government",
     "planet_modifier": {
-      "job_coordinator_add": 4
+      "job_coordinator_add": "@b2_jobs"
     },
     "potential": {
       "exists": "owner",
       "owner": {
-        "is_machine_empire": true,
-        "NOT": {
-          "has_valid_civic": "civic_machine_servitor"
-        }
+        "is_machine_empire": true
       }
     },
     "prerequisites": [
-      "tech_heritage_site"
+      "tech_colonial_bureaucracy"
     ],
     "resources": {
       "category": "planet_buildings",
       "cost": {
-        "minerals": 400
+        "minerals": "@b2_minerals",
+        "rare_crystals": "@b2_rare_cost"
       },
       "upkeep": {
-        "energy": 2
+        "energy": "@b2_upkeep",
+        "rare_crystals": "@b2_rare_upkeep"
       }
     },
     "upgrades": [
@@ -3559,15 +4179,25 @@ const Building = {
     "name": "Noble Estates",
     "description": "Palaces and mansions, resplendent in their glory, owned by the nobility. The surrounding countryside and the peasants that inhabit it are theirs as well.",
     "allow": {
-      "has_upgraded_capital": true
+      "has_upgraded_capital": true,
+      "buildings_simple_allow": true
     },
-    "base_buildtime": 480,
+    "base_buildtime": "@b2_time",
     "category": "government",
     "planet_modifier": {
       "job_noble_add": 1,
       "planet_housing_add": 1
     },
     "potential": {
+      "exists": "owner",
+      "planet": {
+        "or": {
+          "has_building": "building_noble_estates",
+          "owner": {
+            "is_ai": false
+          }
+        }
+      },
       "owner": {
         "has_valid_civic": "civic_aristocratic_elite"
       },
@@ -3578,7 +4208,7 @@ const Building = {
     "resources": {
       "category": "planet_buildings",
       "cost": {
-        "minerals": 400
+        "minerals": "@b1_minerals"
       },
       "upkeep": {
         "energy": 2
@@ -3589,14 +4219,29 @@ const Building = {
   "building_nourishment_center": {
     "name": "Nourishment Center",
     "description": "If it exists as a flavor, it can be replicated here.",
-    "base_buildtime": 480,
-    "can_build": false,
+    "base_buildtime": "@b2_time",
+    "can_build": true,
     "planet_modifier": [],
-    "potential": [],
+    "potential": {
+      "custom_tooltip": {
+        "exists": "owner",
+        "OR": {
+          "owner": {
+            "check_variable": {
+              "which": "nourishment_center_build_count"
+            }
+          }
+        },
+        "fail_text": "ancrel.10004.failtext"
+      }
+    },
     "resources": {
       "category": "planet_buildings",
       "produces": {
         "food": 100
+      },
+      "cost": {
+        "minerals": "@b3_minerals"
       },
       "upkeep": {
         "energy": 20
@@ -3632,7 +4277,7 @@ const Building = {
   "building_organic_paradise": {
     "name": "Organic Paradise",
     "description": "An AI-controlled artificial paradise designed to satisfy every need a sapient organic being might have, just so long as it does not express a need for self-determination. The Organics within have their housing needs completely fulfilled.",
-    "base_buildtime": 480,
+    "base_buildtime": "@b2_time",
     "can_build": false,
     "convert_to": [
       "building_paradise_dome",
@@ -3643,6 +4288,7 @@ const Building = {
       "job_maintenance_drone_add": 2
     },
     "potential": {
+      "exists": "owner",
       "owner": {
         "has_valid_civic": "civic_machine_servitor"
       }
@@ -3653,12 +4299,12 @@ const Building = {
     "resources": {
       "category": "planet_buildings",
       "cost": {
-        "minerals": 600,
-        "exotic_gases": 50
+        "minerals": "@b2_minerals",
+        "exotic_gases": "@b2_rare_cost"
       },
       "upkeep": {
-        "energy": 3,
-        "exotic_gases": 1
+        "energy": "@b2_upkeep",
+        "exotic_gases": "@b2_rare_upkeep"
       }
     },
     "key": "building_organic_paradise"
@@ -3666,7 +4312,7 @@ const Building = {
   "building_organic_sanctuary": {
     "name": "Organic Sanctuary",
     "description": "This sanctuary provides a sealed environment where organics can thrive in a safe and above all controlled manner. The Organics within have their housing needs completely fulfilled.",
-    "base_buildtime": 360,
+    "base_buildtime": "@b1_time",
     "category": "unity",
     "convert_to": [
       "building_luxury_residence",
@@ -3677,6 +4323,7 @@ const Building = {
       "job_maintenance_drone_add": 1
     },
     "potential": {
+      "exists": "owner",
       "owner": {
         "has_valid_civic": "civic_machine_servitor"
       }
@@ -3684,10 +4331,10 @@ const Building = {
     "resources": {
       "category": "planet_buildings",
       "cost": {
-        "minerals": 400
+        "minerals": "@b1_minerals"
       },
       "upkeep": {
-        "energy": 2
+        "energy": "@b1_upkeep"
       }
     },
     "upgrades": [
@@ -3724,7 +4371,7 @@ const Building = {
     "allow": {
       "has_upgraded_capital": true
     },
-    "base_buildtime": 480,
+    "base_buildtime": "@b2_time",
     "can_build": false,
     "category": "amenity",
     "convert_to": [
@@ -3738,15 +4385,7 @@ const Building = {
       "planet_amenities_add": 10
     },
     "potential": {
-      "NOT": {
-        "has_modifier": "slave_colony"
-      },
-      "owner": {
-        "is_regular_empire": true,
-        "NOT": {
-          "has_valid_civic": "civic_shared_burden"
-        }
-      }
+      "has_building": "building_luxury_residence"
     },
     "prerequisites": [
       "tech_paradise_dome"
@@ -3754,12 +4393,12 @@ const Building = {
     "resources": {
       "category": "planet_buildings",
       "cost": {
-        "minerals": 500,
-        "rare_crystals": 50
+        "minerals": "@b2_minerals",
+        "rare_crystals": "@b2_rare_cost"
       },
       "upkeep": {
-        "energy": 2,
-        "rare_crystals": 1
+        "energy": 3,
+        "rare_crystals": "@b2_rare_upkeep"
       }
     },
     "triggered_planet_modifier": {
@@ -3778,7 +4417,7 @@ const Building = {
   "building_pirate_haven": {
     "name": "Pirate Free Haven",
     "description": "A secluded and hidden city on the planet's surface, where pirates and other lowlifes can congregate to repair their ships and trade stories.",
-    "base_buildtime": 360,
+    "base_buildtime": "@b1_time",
     "planet_modifier": {
       "planet_crime_add": 40,
       "job_soldier_add": 1
@@ -3786,7 +4425,10 @@ const Building = {
     "potential": {
       "has_branch_office": true,
       "branch_office_owner": {
-        "is_criminal_syndicate": true
+        "is_criminal_syndicate": true,
+        "NOT": {
+          "is_ai": true
+        }
       }
     },
     "resources": {
@@ -3804,9 +4446,12 @@ const Building = {
     "name": "Planetary Shield Generator",
     "description": "Generating a strong energy shield within a planetary atmosphere is a greater challenge than in the vacuum of space, but it offers a potent defense against orbital bombardment.",
     "allow": {
-      "has_upgraded_capital": true
+      "has_upgraded_capital": true,
+      "owner": {
+        "is_ai": false
+      }
     },
-    "base_buildtime": 600,
+    "base_buildtime": "@b3_time",
     "category": "army",
     "planet_modifier": {
       "planet_orbital_bombardment_damage": -0.5
@@ -3817,10 +4462,10 @@ const Building = {
     "resources": {
       "category": "planet_buildings",
       "cost": {
-        "minerals": 500
+        "minerals": "@b2_minerals"
       },
       "upkeep": {
-        "energy": 5
+        "energy": "@b2_upkeep"
       }
     },
     "key": "building_planetary_shield_generator"
@@ -3828,7 +4473,7 @@ const Building = {
   "building_precinct_house": {
     "name": "Precinct Houses",
     "description": "Monuments to law and order. Enforcers are based here.",
-    "base_buildtime": 360,
+    "base_buildtime": "@b1_time",
     "category": "government",
     "planet_modifier": {
       "job_enforcer_add": 2
@@ -3847,7 +4492,7 @@ const Building = {
     "resources": {
       "category": "planet_buildings",
       "cost": {
-        "minerals": 400
+        "minerals": "@b1_minerals"
       },
       "upkeep": {
         "energy": 2
@@ -3930,6 +4575,9 @@ const Building = {
     "name": "Primitive Farms",
     "description": "Primitive farmsteads working the soil for meager returns.",
     "can_build": false,
+    "convert_to": [
+      "building_primitive_mine"
+    ],
     "planet_modifier": {
       "job_primitive_farmer_add": 10
     },
@@ -3939,7 +4587,8 @@ const Building = {
         "is_primitive": true,
         "OR": {
           "has_country_flag": "early_space_age"
-        }
+        },
+        "is_lithoid_empire": false
       }
     },
     "upgrades": [],
@@ -3960,6 +4609,15 @@ const Building = {
           "has_country_flag": "early_space_age"
         }
       }
+    },
+    "triggered_planet_modifier": {
+      "potential": {
+        "exists": "owner",
+        "owner": {
+          "is_lithoid_empire": true
+        }
+      },
+      "job_primitive_miner_add": 8
     },
     "upgrades": [],
     "key": "building_primitive_mine"
@@ -3986,14 +4644,17 @@ const Building = {
   "building_private_mining_consortium": {
     "name": "Private Mining Consortium",
     "description": "A private mineral extraction company owned by a megacorporation. It employs local miners to access the planet's wealth.",
-    "base_buildtime": 360,
+    "base_buildtime": "@b1_time",
     "planet_modifier": {
       "job_miner_add": 1
     },
     "potential": {
       "has_branch_office": true,
       "branch_office_owner": {
-        "is_criminal_syndicate": false
+        "is_criminal_syndicate": false,
+        "NOT": {
+          "is_ai": true
+        }
       },
       "habitable_structure": false,
       "NOR": {
@@ -4017,7 +4678,7 @@ const Building = {
   "building_private_research_initiative": {
     "name": "Private Research Enterprises",
     "description": "In these state-of-the-art facilities, private tech-enterprises carry out important R&D on behalf of their parent company.",
-    "base_buildtime": 480,
+    "base_buildtime": "@b2_time",
     "planet_modifier": {
       "job_clerk_add": 2
     },
@@ -4030,7 +4691,7 @@ const Building = {
     "resources": {
       "category": "planet_branch_office_buildings",
       "cost": {
-        "minerals": 800
+        "minerals": "@b3_minerals"
       },
       "produces": {
         "physics_research": 6,
@@ -4046,14 +4707,17 @@ const Building = {
   "building_private_shipyards": {
     "name": "Private Military Industries",
     "description": "These planet-based corporate factories produce and assemble a variety of components that are vital in starship construction.",
-    "base_buildtime": 360,
+    "base_buildtime": "@b1_time",
     "planet_modifier": {
       "job_clerk_add": 2
     },
     "potential": {
       "has_branch_office": true,
       "branch_office_owner": {
-        "is_criminal_syndicate": false
+        "is_criminal_syndicate": false,
+        "NOT": {
+          "is_ai": true
+        }
       }
     },
     "resources": {
@@ -4076,7 +4740,7 @@ const Building = {
     "allow": {
       "has_major_upgraded_capital": true
     },
-    "base_buildtime": 480,
+    "base_buildtime": "@b2_time",
     "category": "manufacturing",
     "planet_modifier": {
       "planet_metallurgists_produces_mult": 0.15,
@@ -4094,10 +4758,12 @@ const Building = {
     "resources": {
       "category": "planet_buildings",
       "cost": {
-        "minerals": 500
+        "minerals": "@b2_minerals",
+        "volatile_motes": "@b2_rare_cost"
       },
       "upkeep": {
-        "energy": 5
+        "energy": "@b2_upkeep",
+        "volatile_motes": "@b2_rare_upkeep"
       }
     },
     "triggered_planet_modifier": {
@@ -4107,7 +4773,7 @@ const Building = {
           "is_machine_empire": true
         }
       },
-      "job_coordinator_add": 1
+      "job_fabricator_add": 1
     },
     "key": "building_production_center"
   },
@@ -4115,9 +4781,10 @@ const Building = {
     "name": "Psi Corps",
     "description": "Psi-gifted individuals are brought from all across to our empire to a place where they are able to hone their abilities.nn§YThe Psi Corps is your friend. Trust the Corps.§!",
     "allow": {
-      "has_major_upgraded_capital": true
+      "has_major_upgraded_capital": true,
+      "buildings_simple_allow": true
     },
-    "base_buildtime": 480,
+    "base_buildtime": "@b2_time",
     "category": "government",
     "planet_modifier": {
       "job_telepath_add": 2,
@@ -4137,7 +4804,7 @@ const Building = {
         "minerals": 500
       },
       "upkeep": {
-        "energy": 5
+        "energy": "@b2_upkeep"
       }
     },
     "key": "building_psi_corps"
@@ -4145,7 +4812,7 @@ const Building = {
   "building_public_relations_office": {
     "name": "Public Relations Firm",
     "description": "Misconceptions and suspicions are always floating around any large corporate entity. It is in the public's interest to hear out all sides of any dispute, and this PR firm makes it their business to get their employer's point across.",
-    "base_buildtime": 480,
+    "base_buildtime": "@b2_time",
     "planet_modifier": {
       "job_clerk_add": 2
     },
@@ -4158,7 +4825,7 @@ const Building = {
     "resources": {
       "category": "planet_branch_office_buildings",
       "cost": {
-        "minerals": 800
+        "minerals": "@b3_minerals"
       },
       "produces": {
         "unity": 6
@@ -4170,17 +4837,18 @@ const Building = {
     "key": "building_public_relations_office"
   },
   "building_refinery": {
-    "name": "Exotic Gas Refineries",
-    "description": "These advanced refineries work day and night to produce exotic gases.",
+    "name": "Refinery Build Speed",
+    "description": "",
     "allow": {
       "has_upgraded_capital": true
     },
-    "base_buildtime": 480,
+    "base_buildtime": "@b2_time",
     "category": "manufacturing",
     "potential": {
       "NOT": {
         "has_modifier": "slave_colony"
-      }
+      },
+      "building_basic_income_check": true
     },
     "prerequisites": [
       "tech_exotic_gases"
@@ -4213,12 +4881,13 @@ const Building = {
     "allow": {
       "has_upgraded_capital": true
     },
-    "base_buildtime": 360,
+    "base_buildtime": "@b1_time",
     "category": "research",
     "potential": {
       "NOT": {
-        "is_planet_class": "pc_habitat"
-      }
+        "has_modifier": "slave_colony"
+      },
+      "building_relaxed_basic_income_check": true
     },
     "prerequisites": [
       "tech_basic_science_lab_1"
@@ -4226,10 +4895,10 @@ const Building = {
     "resources": {
       "category": "planet_buildings",
       "cost": {
-        "minerals": 400
+        "minerals": "@b1_minerals"
       },
       "upkeep": {
-        "energy": 4
+        "energy": "@b1_upkeep"
       }
     },
     "triggered_planet_modifier": {
@@ -4240,7 +4909,7 @@ const Building = {
         }
       },
       "modifier": {
-        "job_calculator_add": 2
+        "job_calculator_add": "@b1_jobs"
       }
     },
     "upgrades": [
@@ -4254,7 +4923,7 @@ const Building = {
     "allow": {
       "has_upgraded_capital": true
     },
-    "base_buildtime": 480,
+    "base_buildtime": "@b2_time",
     "can_build": false,
     "category": "research",
     "prerequisites": [
@@ -4263,12 +4932,12 @@ const Building = {
     "resources": {
       "category": "planet_buildings",
       "cost": {
-        "minerals": 600,
-        "exotic_gases": 50
+        "minerals": "@b2_minerals",
+        "exotic_gases": "@b2_rare_cost"
       },
       "upkeep": {
-        "energy": 5,
-        "exotic_gases": 1
+        "energy": "@b2_upkeep",
+        "exotic_gases": "@b2_rare_upkeep"
       }
     },
     "triggered_planet_modifier": {
@@ -4279,7 +4948,7 @@ const Building = {
         }
       },
       "modifier": {
-        "job_calculator_add": 5
+        "job_calculator_add": "@b2_jobs"
       }
     },
     "upgrades": [
@@ -4293,7 +4962,7 @@ const Building = {
     "allow": {
       "has_major_upgraded_capital": true
     },
-    "base_buildtime": 480,
+    "base_buildtime": "@b3_time",
     "can_build": false,
     "category": "research",
     "prerequisites": [
@@ -4302,23 +4971,34 @@ const Building = {
     "resources": {
       "category": "planet_buildings",
       "cost": {
-        "minerals": 800,
-        "exotic_gases": 100
+        "minerals": "@b3_minerals",
+        "exotic_gases": "@b3_rare_cost"
       },
       "upkeep": {
-        "energy": 6,
-        "exotic_gases": 2
+        "trigger": {
+          "owner": {
+            "is_galactic_community_member": true
+          },
+          "is_active_resolution": "resolution_galacticstudies_extradimensional_experimentation",
+          "planet": {
+            "has_modifier": "pm_extradimensional_experimentation"
+          }
+        },
+        "sr_zro": 1
       }
     },
     "triggered_planet_modifier": {
       "potential": {
         "exists": "owner",
         "owner": {
-          "is_machine_empire": true
-        }
+          "is_gestalt": true,
+          "is_galactic_community_member": true
+        },
+        "is_active_resolution": "resolution_galacticstudies_extradimensional_experimentation",
+        "has_modifier": "pm_extradimensional_experimentation"
       },
       "modifier": {
-        "job_calculator_add": 8
+        "job_dimensional_portal_researcher_gestalt_add": 1
       }
     },
     "key": "building_research_lab_3"
@@ -4331,7 +5011,9 @@ const Building = {
     "convert_to": [
       "building_hive_capital",
       "building_machine_capital",
-      "building_capital"
+      "building_capital",
+      "building_ancient_control_center",
+      "building_ancient_palace"
     ],
     "planet_modifier": {
       "planet_housing_add": 5,
@@ -4371,13 +5053,15 @@ const Building = {
       ">=",
       "10"
     ],
-    "base_buildtime": 480,
+    "base_buildtime": "@b2_time",
     "can_build": false,
     "category": "government",
     "convert_to": [
       "building_hive_major_capital",
       "building_machine_major_capital",
-      "building_major_capital"
+      "building_major_capital",
+      "building_ancient_control_center",
+      "building_ancient_palace"
     ],
     "planet_modifier": {
       "planet_housing_add": 10,
@@ -4390,10 +5074,10 @@ const Building = {
     "resources": {
       "category": "planet_buildings",
       "cost": {
-        "minerals": 500
+        "minerals": "@b2_minerals"
       },
       "upkeep": {
-        "energy": 4
+        "energy": "@b2_upkeep"
       }
     },
     "triggered_planet_modifier": {
@@ -4412,6 +5096,9 @@ const Building = {
   "building_resource_silo": {
     "name": "Resource Silos",
     "description": "Massive resource silos and storage facilities where large quantities of resources can be safely kept.",
+    "allow": {
+      "buildings_simple_allow": true
+    },
     "base_buildtime": 180,
     "category": "resource",
     "potential": {
@@ -4447,7 +5134,7 @@ const Building = {
   "building_robot_assembly_plant": {
     "name": "Robot Assembly Plants",
     "description": "High-tech factories where skilled Roboticists assemble the latest robot models.",
-    "base_buildtime": 360,
+    "base_buildtime": "@b1_time",
     "category": "pop_assembly",
     "convert_to": [
       "building_machine_assembly_plant"
@@ -4456,6 +5143,12 @@ const Building = {
       "job_roboticist_add": 1
     },
     "potential": {
+      "exists": "owner",
+      "OR": {
+        "owner": {
+          "is_ai": false
+        }
+      },
       "owner": {
         "is_regular_empire": true,
         "NOT": {
@@ -4472,10 +5165,10 @@ const Building = {
     "resources": {
       "category": "planet_buildings",
       "cost": {
-        "minerals": 500
+        "minerals": "@b2_minerals"
       },
       "upkeep": {
-        "energy": 5
+        "energy": "@b2_upkeep"
       }
     },
     "key": "building_robot_assembly_plant"
@@ -4484,15 +5177,16 @@ const Building = {
     "name": "Sacred Nexus",
     "description": "The latest developments in field technology allow worshipers to directly experience the divine influence of sacred ground.",
     "allow": {
-      "has_major_upgraded_capital": true
+      "has_major_upgraded_capital": true,
+      "buildings_upgrade_allow": true
     },
-    "base_buildtime": 480,
+    "base_buildtime": "@b3_time",
     "can_build": false,
     "category": "unity",
     "convert_to": [
-      "building_hive_confluence",
-      "building_system_conflux",
       "building_hypercomms_forum",
+      "building_hive_confluence",
+      "building_simulation_3",
       "building_corporate_forum"
     ],
     "planet_modifier": {
@@ -4500,6 +5194,7 @@ const Building = {
       "pop_ethic_spiritualist_attraction_mult": 0.15
     },
     "potential": {
+      "exists": "owner",
       "owner": {
         "is_spiritualist": true
       },
@@ -4513,28 +5208,26 @@ const Building = {
     "resources": {
       "category": "planet_buildings",
       "cost": {
-        "minerals": 600,
-        "rare_crystals": 50
+        "minerals": "@b3_minerals",
+        "rare_crystals": "@b3_rare_cost"
       },
       "upkeep": {
-        "energy": 3,
-        "rare_crystals": 1
+        "energy": "@b3_upkeep",
+        "rare_crystals": "@b3_rare_upkeep"
       }
     },
-    "upgrades": [
-      "building_citadel_of_faith"
-    ],
     "key": "building_sacred_nexus"
   },
   "building_sentinel_posts": {
     "name": "Sentinel Posts",
     "description": "These are the outposts from which Patrol Drones scan the Consciousness for signs of deviancy and malfunction.",
-    "base_buildtime": 360,
+    "base_buildtime": "@b1_time",
     "category": "government",
     "planet_modifier": {
       "job_patrol_drone_add": 2
     },
     "potential": {
+      "exists": "owner",
       "owner": {
         "is_gestalt": true
       }
@@ -4545,13 +5238,145 @@ const Building = {
     "resources": {
       "category": "planet_buildings",
       "cost": {
-        "minerals": 400
+        "minerals": "@b1_minerals"
       },
       "upkeep": {
         "energy": 2
       }
     },
     "key": "building_sentinel_posts"
+  },
+  "building_simulation_1": {
+    "name": "Simulation Site",
+    "description": "To advance our civilization we must run and evaluate complex simulations.",
+    "base_buildtime": "@b1_time",
+    "category": "unity",
+    "convert_to": [
+      "building_temple",
+      "building_hive_node",
+      "building_autochthon_monument",
+      "building_corporate_monument"
+    ],
+    "planet_modifier": {
+      "job_evaluator_add": "@b1_jobs"
+    },
+    "potential": {
+      "exists": "owner",
+      "building_basic_income_check": true,
+      "owner": {
+        "is_machine_empire": true,
+        "NOT": {
+          "has_valid_civic": "civic_machine_servitor"
+        }
+      }
+    },
+    "prerequisites": [
+      "tech_cultural_heritage"
+    ],
+    "resources": {
+      "category": "planet_buildings",
+      "cost": {
+        "minerals": "@b1_minerals"
+      },
+      "upkeep": {
+        "energy": "@b1_upkeep"
+      }
+    },
+    "upgrades": [
+      "building_simulation_2"
+    ],
+    "key": "building_simulation_1"
+  },
+  "building_simulation_2": {
+    "name": "Simulation Center",
+    "description": "To advance our civilization we must run and evaluate complex simulations.",
+    "allow": {
+      "has_upgraded_capital": true,
+      "buildings_upgrade_allow": true
+    },
+    "base_buildtime": "@b2_time",
+    "can_build": false,
+    "category": "unity",
+    "convert_to": [
+      "building_holotemple",
+      "building_hive_cluster",
+      "building_heritage_site",
+      "building_corporate_site"
+    ],
+    "planet_modifier": {
+      "job_evaluator_add": "@b2_jobs"
+    },
+    "potential": {
+      "exists": "owner",
+      "owner": {
+        "is_machine_empire": true,
+        "NOT": {
+          "has_valid_civic": "civic_machine_servitor"
+        }
+      }
+    },
+    "prerequisites": [
+      "tech_heritage_site"
+    ],
+    "resources": {
+      "category": "planet_buildings",
+      "cost": {
+        "minerals": "@b2_minerals",
+        "rare_crystals": "@b2_rare_cost"
+      },
+      "upkeep": {
+        "energy": "@b2_upkeep",
+        "rare_crystals": "@b2_rare_upkeep"
+      }
+    },
+    "upgrades": [
+      "building_simulation_3"
+    ],
+    "key": "building_simulation_2"
+  },
+  "building_simulation_3": {
+    "name": "Simulation Complex",
+    "description": "To advance our civilization we must run and evaluate complex simulations.",
+    "allow": {
+      "has_major_upgraded_capital": true,
+      "buildings_upgrade_allow": true
+    },
+    "base_buildtime": "@b3_time",
+    "can_build": false,
+    "category": "unity",
+    "convert_to": [
+      "building_sacred_nexus",
+      "building_hive_confluence",
+      "building_hypercomms_forum",
+      "building_corporate_forum"
+    ],
+    "planet_modifier": {
+      "job_evaluator_add": "@b3_jobs"
+    },
+    "potential": {
+      "exists": "owner",
+      "owner": {
+        "is_machine_empire": true,
+        "NOT": {
+          "has_valid_civic": "civic_machine_servitor"
+        }
+      }
+    },
+    "prerequisites": [
+      "tech_hypercomms_forum"
+    ],
+    "resources": {
+      "category": "planet_buildings",
+      "cost": {
+        "minerals": "@b3_minerals",
+        "rare_crystals": "@b3_rare_cost"
+      },
+      "upkeep": {
+        "energy": "@b3_upkeep",
+        "rare_crystals": "@b3_rare_upkeep"
+      }
+    },
+    "key": "building_simulation_3"
   },
   "building_slave_capital": {
     "name": "Governor's Palace",
@@ -4561,7 +5386,9 @@ const Building = {
     "convert_to": [
       "building_hive_capital",
       "building_machine_capital",
-      "building_capital"
+      "building_capital",
+      "building_ancient_control_center",
+      "building_ancient_palace"
     ],
     "planet_modifier": {
       "planet_housing_add": 5,
@@ -4624,13 +5451,15 @@ const Building = {
       ">=",
       "10"
     ],
-    "base_buildtime": 480,
+    "base_buildtime": "@b2_time",
     "can_build": false,
     "category": "government",
     "convert_to": [
       "building_hive_major_capital",
       "building_machine_major_capital",
-      "building_major_capital"
+      "building_major_capital",
+      "building_ancient_control_center",
+      "building_ancient_palace"
     ],
     "planet_modifier": {
       "planet_housing_add": 10,
@@ -4647,7 +5476,7 @@ const Building = {
         "minerals": 500
       },
       "upkeep": {
-        "energy": 4
+        "energy": "@b1_upkeep"
       }
     },
     "triggered_planet_modifier": {
@@ -4669,7 +5498,7 @@ const Building = {
     "allow": {
       "has_upgraded_capital": true
     },
-    "base_buildtime": 360,
+    "base_buildtime": "@b1_time",
     "category": "government",
     "planet_modifier": {
       "planet_jobs_slave_produces_mult": 0.05,
@@ -4689,7 +5518,7 @@ const Building = {
     "resources": {
       "category": "planet_buildings",
       "cost": {
-        "minerals": 400
+        "minerals": "@b1_minerals"
       },
       "upkeep": {
         "energy": 2
@@ -4700,7 +5529,7 @@ const Building = {
   "building_smuggling_rings": {
     "name": "Smuggler's Port",
     "description": "An unauthorized spaceport that remains off the records thanks to secrecy and generous bribes. Large volumes of illegal cargo passes through here every day.",
-    "base_buildtime": 480,
+    "base_buildtime": "@b2_time",
     "planet_modifier": {
       "planet_crime_add": 50,
       "branch_office_value_mult": 0.25,
@@ -4715,7 +5544,7 @@ const Building = {
     "resources": {
       "category": "planet_branch_office_buildings",
       "cost": {
-        "minerals": 800
+        "minerals": "@b3_minerals"
       },
       "upkeep": {
         "energy": 3
@@ -4726,7 +5555,7 @@ const Building = {
   "building_spawning_pool": {
     "name": "Spawning Pools",
     "description": "Tended by the scientific and gentle care of specialists, these pools stimulate our spawn into faster growth.",
-    "base_buildtime": 360,
+    "base_buildtime": "@b1_time",
     "category": "amenity",
     "planet_modifier": {
       "job_spawning_drone_add": 1
@@ -4734,12 +5563,20 @@ const Building = {
     "potential": {
       "owner": {
         "is_hive_empire": true
+      },
+      "or": {
+        "num_buildings": {
+          "type": "any"
+        },
+        "owner": {
+          "is_ai": false
+        }
       }
     },
     "resources": {
       "category": "planet_buildings",
       "cost": {
-        "minerals": 300
+        "minerals": "@b1_minerals"
       },
       "upkeep": {
         "energy": 2
@@ -4786,15 +5623,15 @@ const Building = {
       "planet_housing_add": 1
     },
     "potential": {
-      "always": true
+      "buildings_simple_allow": true
     },
     "prerequisites": [
       "tech_planetary_defenses"
     ],
     "resources": {
-      "category": "planet_buildings",
+      "category": "planet_buildings_strongholds",
       "cost": {
-        "minerals": 200
+        "minerals": "@b1_minerals"
       },
       "upkeep": {
         "energy": 1
@@ -4802,6 +5639,7 @@ const Building = {
     },
     "triggered_planet_modifier": {
       "potential": {
+        "exists": "owner",
         "owner": {
           "is_gestalt": true
         }
@@ -4821,8 +5659,11 @@ const Building = {
     "allow": {
       "has_major_upgraded_capital": true
     },
-    "base_buildtime": 480,
+    "base_buildtime": "@b2_time",
     "category": "research",
+    "convert_to": [
+      "building_institute"
+    ],
     "planet_modifier": {
       "planet_researchers_produces_mult": 0.15
     },
@@ -4841,10 +5682,10 @@ const Building = {
     "resources": {
       "category": "planet_buildings",
       "cost": {
-        "minerals": 500
+        "minerals": "@b2_minerals"
       },
       "upkeep": {
-        "energy": 5
+        "energy": "@b2_upkeep"
       }
     },
     "triggered_planet_modifier": {
@@ -4863,7 +5704,7 @@ const Building = {
   "building_syndicate_outreach_office": {
     "name": "Syndicate Front Corporations",
     "description": "These above-the-board businesses allow the local criminal syndicate to operate behind a veneer of upstanding legality.",
-    "base_buildtime": 480,
+    "base_buildtime": "@b2_time",
     "planet_modifier": {
       "planet_crime_add": 40,
       "job_clerk_add": 2
@@ -4877,7 +5718,7 @@ const Building = {
     "resources": {
       "category": "planet_branch_office_buildings",
       "cost": {
-        "minerals": 800
+        "minerals": "@b3_minerals"
       },
       "produces": {
         "unity": 6
@@ -4896,7 +5737,7 @@ const Building = {
       ">=",
       "80"
     ],
-    "base_buildtime": 900,
+    "base_buildtime": "@b4_time",
     "can_build": false,
     "category": "government",
     "convert_to": [
@@ -4904,17 +5745,20 @@ const Building = {
       "building_machine_major_capital",
       "building_major_capital",
       "building_resort_major_capital",
-      "building_slave_major_capital"
+      "building_slave_major_capital",
+      "building_ancient_control_center",
+      "building_ancient_palace"
     ],
     "planet_modifier": {
       "job_enforcer_add": 3,
-      "planet_housing_add": 10,
-      "planet_amenities_add": 10
+      "planet_housing_add": 12,
+      "planet_amenities_add": 12
     },
     "potential": {
       "exists": "owner",
       "owner": {
-        "is_regular_empire": true
+        "is_regular_empire": true,
+        "is_fallen_empire": false
       },
       "NOR": {
         "has_modifier": "slave_colony"
@@ -4926,10 +5770,10 @@ const Building = {
     "resources": {
       "category": "planet_buildings",
       "cost": {
-        "minerals": 2000
+        "minerals": "@b4_minerals"
       },
       "upkeep": {
-        "energy": 10
+        "energy": "@b4_upkeep"
       }
     },
     "triggered_planet_modifier": {
@@ -4940,7 +5784,7 @@ const Building = {
         }
       },
       "modifier": {
-        "job_merchant_add": 3,
+        "job_merchant_add": 2,
         "job_administrator_add": 2
       }
     },
@@ -4950,69 +5794,64 @@ const Building = {
     "name": "System Conflux",
     "description": "A massive hub facility that receives and forwards signals across interstellar distances from millions of different systems.",
     "allow": {
-      "has_major_upgraded_capital": true
+      "has_upgraded_capital": true
     },
-    "base_buildtime": 480,
+    "base_buildtime": "@b3_time",
     "can_build": false,
-    "category": "unity",
-    "convert_to": [
-      "building_sacred_nexus",
-      "building_hive_confluence",
-      "building_hypercomms_forum",
-      "building_corporate_forum"
-    ],
+    "category": "government",
     "planet_modifier": {
-      "job_coordinator_add": 7
+      "job_coordinator_add": "@b3_jobs"
     },
     "potential": {
       "exists": "owner",
       "owner": {
-        "is_machine_empire": true,
-        "NOT": {
-          "has_valid_civic": "civic_machine_servitor"
-        }
+        "is_machine_empire": true
       }
     },
     "prerequisites": [
-      "tech_hypercomms_forum"
+      "tech_galactic_bureaucracy"
     ],
     "resources": {
       "category": "planet_buildings",
       "cost": {
-        "minerals": 600,
-        "rare_crystals": 50
+        "minerals": "@b3_minerals",
+        "rare_crystals": "@b3_rare_cost"
       },
       "upkeep": {
-        "energy": 3,
-        "rare_crystals": 1
+        "energy": "@b3_upkeep",
+        "rare_crystals": "@b3_rare_upkeep"
       }
     },
-    "upgrades": [
-      "building_alpha_hub"
-    ],
     "key": "building_system_conflux"
   },
   "building_temple": {
     "name": "Temple",
     "description": "Simple constructs erected since time immemorial, temples are places of quiet contemplation and communion with that which unites us all.",
-    "base_buildtime": 240,
+    "base_buildtime": "@b1_time",
     "category": "unity",
     "convert_to": [
       "building_hive_node",
-      "building_uplink_node",
+      "building_simulation_1",
       "building_autochthon_monument",
       "building_corporate_monument"
     ],
     "planet_modifier": {
-      "job_priest_add": 2,
+      "job_priest_add": "@b1_jobs",
       "pop_ethic_spiritualist_attraction_mult": 0.05
     },
     "potential": {
+      "exists": "owner",
+      "building_basic_income_check": true,
       "owner": {
         "is_spiritualist": true
       },
       "NOT": {
         "has_modifier": "slave_colony"
+      },
+      "OR": {
+        "owner": {
+          "is_ai": false
+        }
       }
     },
     "prerequisites": [
@@ -5021,10 +5860,10 @@ const Building = {
     "resources": {
       "category": "planet_buildings",
       "cost": {
-        "minerals": 200
+        "minerals": "@b1_minerals"
       },
       "upkeep": {
-        "energy": 1
+        "energy": "@b1_upkeep"
       }
     },
     "upgrades": [
@@ -5035,7 +5874,7 @@ const Building = {
   "building_temple_of_prosperity": {
     "name": "Temple of Prosperity",
     "description": "A high-security temple that spreads the gospel of the Megachurch that built it.",
-    "base_buildtime": 360,
+    "base_buildtime": "@b1_time",
     "planet_modifier": {
       "job_preacher_add": 2,
       "pop_ethic_spiritualist_attraction_mult": 0.5
@@ -5060,7 +5899,7 @@ const Building = {
   "building_underground_chemists": {
     "name": "Concealed Drug Labs",
     "description": "Subterranean drug labs in remote regions that are virtually undetectable from the surface. Chemists work day and night here to produce various illegal, highly addictive and quite lucrative narcotics.",
-    "base_buildtime": 360,
+    "base_buildtime": "@b1_time",
     "planet_modifier": {
       "planet_crime_add": 25,
       "trade_value_add": 5
@@ -5088,7 +5927,7 @@ const Building = {
   "building_underground_clubs": {
     "name": "Underground Clubs",
     "description": "These illegal entertainment clubs will satisfy any vice. As night descends, they are open for business in the planet's seedier districts.",
-    "base_buildtime": 480,
+    "base_buildtime": "@b2_time",
     "planet_modifier": {
       "planet_crime_add": 40,
       "planet_amenities_add": 10
@@ -5102,7 +5941,7 @@ const Building = {
     "resources": {
       "category": "planet_branch_office_buildings",
       "cost": {
-        "minerals": 800
+        "minerals": "@b3_minerals"
       },
       "produces": {
         "energy": 10
@@ -5113,36 +5952,28 @@ const Building = {
   "building_uplink_node": {
     "name": "Uplink Node",
     "description": "An uplink node that decreases planetary latency.",
-    "base_buildtime": 240,
-    "category": "unity",
-    "convert_to": [
-      "building_temple",
-      "building_hive_node",
-      "building_autochthon_monument",
-      "building_corporate_monument"
-    ],
+    "base_buildtime": "@b1_time",
+    "category": "government",
     "planet_modifier": {
-      "job_coordinator_add": 2
+      "job_coordinator_add": "@b1_jobs"
     },
     "potential": {
       "exists": "owner",
+      "building_relaxed_basic_income_check": true,
       "owner": {
-        "is_machine_empire": true,
-        "NOT": {
-          "has_valid_civic": "civic_machine_servitor"
-        }
+        "is_machine_empire": true
       }
     },
     "prerequisites": [
-      "tech_cultural_heritage"
+      "tech_planetary_government"
     ],
     "resources": {
       "category": "planet_buildings",
       "cost": {
-        "minerals": 200
+        "minerals": "@b1_minerals"
       },
       "upkeep": {
-        "energy": 1
+        "energy": "@b1_upkeep"
       }
     },
     "upgrades": [
@@ -5172,7 +6003,7 @@ const Building = {
   "building_virtual_entertainment_studios": {
     "name": "Virtual Entertainment Studios",
     "description": "Using nano-transaction systems and neuro-chemical retention algorithms, these development houses bring the latest in virtual entertainment software into the homes and lives of billions of sapient consumers.",
-    "base_buildtime": 360,
+    "base_buildtime": "@b1_time",
     "planet_modifier": {
       "job_clerk_add": 2
     },
@@ -5199,7 +6030,7 @@ const Building = {
   "building_waste_reprocessing_center": {
     "name": "Waste Reprocessing Center",
     "description": "A planet's one stop center for converting industrial and biowaste into mostly clean, mostly reusable energy and minerals. Designed by the $NAME_Caravaneer_Fleet3$, its construction is somewhat arcane, and largely non-reverse- engineerable.",
-    "base_buildtime": 480,
+    "base_buildtime": "@b2_time",
     "can_build": true,
     "planet_modifier": {
       "planet_amenities_add": 5,
@@ -5228,7 +6059,7 @@ const Building = {
   "building_wildcat_miners": {
     "name": "Wildcat Mining Operations",
     "description": "Illegal, highly unsafe mining operations operated by the destitute and the desperate, who toil away in the vain hopes of striking it rich.",
-    "base_buildtime": 360,
+    "base_buildtime": "@b1_time",
     "planet_modifier": {
       "planet_crime_add": 25,
       "trade_value_add": 5
@@ -5236,7 +6067,10 @@ const Building = {
     "potential": {
       "has_branch_office": true,
       "branch_office_owner": {
-        "is_criminal_syndicate": true
+        "is_criminal_syndicate": true,
+        "NOT": {
+          "is_ai": true
+        }
       },
       "habitable_structure": false,
       "NOR": {
@@ -5260,7 +6094,7 @@ const Building = {
   "building_wrecking_yards": {
     "name": "Wrecking Yards",
     "description": "Stolen vessels and prize ships brought in by pirates are broken into scrap here. Any valuable components and alloys are carefully salvaged.",
-    "base_buildtime": 360,
+    "base_buildtime": "@b1_time",
     "planet_modifier": {
       "planet_crime_add": 25,
       "trade_value_add": 5
@@ -5268,7 +6102,10 @@ const Building = {
     "potential": {
       "has_branch_office": true,
       "branch_office_owner": {
-        "is_criminal_syndicate": true
+        "is_criminal_syndicate": true,
+        "NOT": {
+          "is_ai": true
+        }
       }
     },
     "resources": {
@@ -5293,12 +6130,17 @@ const Building = {
       ">=",
       "50"
     ],
-    "base_buildtime": 600,
+    "base_buildtime": "@b3_time",
     "planet_modifier": {
       "trade_value_mult": 0.05
     },
     "potential": {
-      "has_branch_office": true
+      "has_branch_office": true,
+      "branch_office_owner": {
+        "NOT": {
+          "is_ai": true
+        }
+      }
     },
     "prerequisites": [
       "tech_xeno_tourism_agency"
@@ -5307,11 +6149,11 @@ const Building = {
       "category": "planet_branch_office_buildings",
       "cost": {
         "minerals": 1000,
-        "rare_crystals": 50
+        "rare_crystals": "@b2_rare_cost"
       },
       "upkeep": {
-        "energy": 5,
-        "rare_crystals": 1
+        "energy": "@b2_upkeep",
+        "rare_crystals": "@b2_rare_upkeep"
       }
     },
     "key": "building_xeno_tourism_agency"
@@ -5319,7 +6161,7 @@ const Building = {
   "building_xeno_zoo": {
     "name": "Alien Zoo",
     "description": "As a sign of our mastery of the unknown, we have gathered alien creatures from all across the galaxy.",
-    "base_buildtime": 360,
+    "base_buildtime": "@b1_time",
     "category": "resource",
     "planet_modifier": {
       "job_entertainer_add": 1,

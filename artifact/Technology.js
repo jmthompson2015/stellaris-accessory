@@ -28,11 +28,8 @@ const Technology = {
     "name": "Adaptive Combat Algorithms",
     "description": "Organics often fight using illogical and unpredictable tactics that can be difficult to effectively counter. Adaptive tactics and new, more maneuverable warforms should provide a decisive advantage.",
     "area": "society",
-    "category": "biology",
+    "category": "military_theory",
     "cost": 2000,
-    "prerequisites": [
-      "tech_colonial_bureaucracy"
-    ],
     "tier": 2,
     "key": "tech_adaptive_combat_algorithms"
   },
@@ -47,6 +44,33 @@ const Technology = {
     ],
     "tier": 1,
     "key": "tech_administrative_ai"
+  },
+  "tech_advanced_metallurgy_1": {
+    "name": "Ceramo-Metal Alloys",
+    "description": "The widespread use of advanced ceramics in industry can improve metallurgical yields.",
+    "area": "engineering",
+    "category": "materials",
+    "cost": 1500,
+    "prerequisites": [
+      "tech_alloys_1",
+      "tech_ship_armor_2"
+    ],
+    "tier": 2,
+    "key": "tech_advanced_metallurgy_1"
+  },
+  "tech_advanced_metallurgy_2": {
+    "name": "Durasteel-Laced Alloys",
+    "description": "By replacing antiquated ceramo-metal equipment with cutting edge technology, we can run our forges hotter and longer, increasing production.",
+    "area": "engineering",
+    "category": "materials",
+    "cost": 8000,
+    "prerequisites": [
+      "tech_advanced_metallurgy_1",
+      "tech_alloys_2",
+      "tech_ship_armor_4"
+    ],
+    "tier": 4,
+    "key": "tech_advanced_metallurgy_2"
   },
   "tech_afterburners_1": {
     "name": "Afterburners",
@@ -189,8 +213,24 @@ const Technology = {
     "tier": 4,
     "key": "tech_arc_emitter_2"
   },
+  "tech_arcane_deciphering": {
+    "name": "Arcane Deciphering",
+    "description": "Various artifacts and technologies functioning by arcane means that cannot be understood or replicated... at least not by conventional science as it is known to us.",
+    "area": "society",
+    "category": "statecraft",
+    "cost": 2500,
+    "feature_flags": [
+      "unlock_arcane_deciphering"
+    ],
+    "is_rare": true,
+    "prerequisites": [
+      "tech_society_2"
+    ],
+    "tier": 2,
+    "key": "tech_arcane_deciphering"
+  },
   "tech_archeology_lab": {
-    "name": "Curator Archeology Lab",
+    "name": "Curator Archaeology Lab",
     "description": "A shipboard lab with advanced archaeological equipment, including a vast database supplied by the Curator Order where new discoveries can easily be cross-referenced.",
     "area": "physics",
     "category": "computing",
@@ -198,6 +238,16 @@ const Technology = {
     "is_rare": true,
     "tier": 2,
     "key": "tech_archeology_lab"
+  },
+  "tech_archeology_lab_ancrel": {
+    "name": "Curator Archaeology Lab",
+    "description": "A shipboard lab with advanced archaeological equipment, including a vast database supplied by the Curator Order where new discoveries can easily be cross-referenced.",
+    "area": "physics",
+    "category": "computing",
+    "cost": 1500,
+    "is_rare": true,
+    "tier": 2,
+    "key": "tech_archeology_lab_ancrel"
   },
   "tech_artificial_moral_codes": {
     "name": "Artificial Moral Codes",
@@ -287,13 +337,12 @@ const Technology = {
     "description": "All informational pathways lead to the Hub, where the primary Machine Intelligence can analyze and interpret the data at its leisure.",
     "area": "society",
     "category": "statecraft",
-    "cost": 10000,
+    "cost": 4000,
     "prerequisites": [
-      "tech_hypercomms_forum",
       "tech_administrative_ai",
-      "tech_galactic_administration"
+      "tech_colonial_centralization"
     ],
-    "tier": 4,
+    "tier": 3,
     "key": "tech_autocurating_vault"
   },
   "tech_automated_exploration": {
@@ -548,7 +597,7 @@ const Technology = {
     "name": "Colonial Bureaucracy",
     "description": "Local administrative developments allow for closer supervision of colonial affairs without excessively burdening central decision-making.",
     "area": "society",
-    "category": "new_worlds",
+    "category": "statecraft",
     "cost": 1500,
     "prerequisites": [
       "tech_adaptive_bureaucracy"
@@ -744,6 +793,33 @@ const Technology = {
     ],
     "tier": 3,
     "key": "tech_construction_templates"
+  },
+  "tech_consumer_good_refinement_1": {
+    "name": "Market Analysis Algorithms",
+    "description": "Basic administrative AIs can be used to streamline supply and demand lines, reducing waste.",
+    "area": "physics",
+    "category": "computing",
+    "cost": 4000,
+    "prerequisites": [
+      "tech_luxuries_1",
+      "tech_administrative_ai"
+    ],
+    "tier": 2,
+    "key": "tech_consumer_good_refinement_1"
+  },
+  "tech_consumer_good_refinement_2": {
+    "name": "Predictive Consumerism",
+    "description": "Using advanced AIs, we can reliably predict consumer demand before it exists.",
+    "area": "physics",
+    "category": "computing",
+    "cost": 4000,
+    "prerequisites": [
+      "tech_luxuries_2",
+      "tech_consumer_good_refinement_1",
+      "tech_self_aware_logic"
+    ],
+    "tier": 4,
+    "key": "tech_consumer_good_refinement_2"
   },
   "tech_corvette_build_speed": {
     "name": "Standardized Corvette Patterns",
@@ -1234,6 +1310,18 @@ const Technology = {
     "tier": 3,
     "key": "tech_ecological_adaptation"
   },
+  "tech_effective_bureaucracy": {
+    "name": "Effective Bureaucracy",
+    "description": "Improved algorithms for processing and organizing vast amounts of data has streamlined decision-making and information-sharing throughout the empire.",
+    "area": "society",
+    "category": "statecraft",
+    "cost": 1500,
+    "prerequisites": [
+      "tech_adaptive_bureaucracy"
+    ],
+    "tier": 2,
+    "key": "tech_effective_bureaucracy"
+  },
   "tech_embodied_dynamism": {
     "name": "Embodied Dynamism",
     "description": "Initiative and some measure of ambition must be promoted in our autonomous leader units, while still making certain that they do not stray too far from the directives of the core intelligence.",
@@ -1554,7 +1642,7 @@ const Technology = {
     "name": "Galactic Bureaucracy",
     "description": "Multiple administrative strata efficiently surface only the most vital information to the upper levels of government.",
     "area": "society",
-    "category": "new_worlds",
+    "category": "statecraft",
     "cost": 4000,
     "prerequisites": [
       "tech_colonial_bureaucracy"
@@ -1597,39 +1685,6 @@ const Technology = {
     "is_rare": true,
     "tier": 1,
     "key": "tech_gargantuan_evolution"
-  },
-  "tech_gateway_activation": {
-    "name": "Gateway Activation",
-    "description": "The ability to reactivate the derelict Gateway stations that can be found scattered throughout the galaxy has the potential to dramatically shorten travel times.",
-    "area": "physics",
-    "category": "particles",
-    "cost": 12000,
-    "feature_flags": [
-      "gateway_activation"
-    ],
-    "is_rare": true,
-    "prerequisites": [
-      "tech_hyper_drive_3"
-    ],
-    "tier": 4,
-    "key": "tech_gateway_activation"
-  },
-  "tech_gateway_construction": {
-    "name": "Gateway Construction",
-    "description": "The construction of new Gateway stations enables us to build a fast-travel network that could revolutionize interstellar travel.",
-    "area": "physics",
-    "category": "particles",
-    "cost": 20000,
-    "feature_flags": [
-      "gateway_construction"
-    ],
-    "is_rare": true,
-    "prerequisites": [
-      "tech_gateway_activation",
-      "tech_mega_engineering"
-    ],
-    "tier": 5,
-    "key": "tech_gateway_construction"
   },
   "tech_gene_banks": {
     "name": "Gene Banks",
@@ -1769,7 +1824,7 @@ const Technology = {
     "category": "computing",
     "cost": 4000,
     "prerequisites": [
-      "tech_physics_1",
+      "tech_basic_science_lab_2",
       "tech_colonial_centralization"
     ],
     "tier": 3,
@@ -1787,16 +1842,28 @@ const Technology = {
     "tier": 1,
     "key": "tech_ground_defense_planning"
   },
+  "tech_habitat_1": {
+    "name": "Orbital Habitats",
+    "description": "Allows the construction of largely self-sustaining Orbital Habitats.",
+    "area": "engineering",
+    "category": "voidcraft",
+    "cost": 5000,
+    "prerequisites": [
+      "tech_starbase_4"
+    ],
+    "tier": 3,
+    "key": "tech_habitat_1"
+  },
   "tech_heritage_site": {
     "name": "Heritage Sites",
     "description": "Physical reminders of how far we have come both instill a reverence for past achievements and bolster ambitions for the future.",
     "area": "society",
     "category": "statecraft",
-    "cost": 2000,
+    "cost": 1000,
     "prerequisites": [
       "tech_cultural_heritage"
     ],
-    "tier": 2,
+    "tier": 1,
     "key": "tech_heritage_site"
   },
   "tech_hive_cluster": {
@@ -1952,7 +2019,7 @@ const Technology = {
     "description": "Not all research into faster-than-light communication channels produces useful results, but some outcomes may find new purpose in bringing our people together.",
     "area": "society",
     "category": "statecraft",
-    "cost": 5000,
+    "cost": 4000,
     "prerequisites": [
       "tech_heritage_site",
       "tech_colonial_centralization"
@@ -2013,6 +2080,20 @@ const Technology = {
     "prerequisites": [],
     "tier": 2,
     "key": "tech_interstellar_fleet_traditions"
+  },
+  "tech_juggernaut": {
+    "name": "Juggernaut",
+    "description": "A mobile space base of unparalleled proportions, the Juggernaut ship class takes offensive warfare to a whole new level.",
+    "area": "engineering",
+    "category": "voidcraft",
+    "cost": 20000,
+    "is_rare": true,
+    "prerequisites": [
+      "tech_starbase_5",
+      "tech_titans"
+    ],
+    "tier": 5,
+    "key": "tech_juggernaut"
   },
   "tech_jump_drive_1": {
     "name": "Jump Drive",
@@ -2277,23 +2358,19 @@ const Technology = {
     "tier": 0,
     "key": "tech_mechanized_mining"
   },
-  "tech_mega_engineering": {
-    "name": "Mega-Engineering",
-    "description": "To complete construction projects of truly staggering scales we must first achieve a fundamental understanding of both the engineering and resource storage requirements for such megastructures.",
+  "tech_mega_assembly": {
+    "name": "Mega-Assembly Systems",
+    "description": "Advanced templates allow us to drastically increase the assembly of new units.",
     "area": "engineering",
-    "category": "voidcraft",
-    "cost": 20000,
-    "feature_flags": [
-      "megaengineering"
-    ],
+    "category": "industry",
+    "cost": 8000,
     "is_rare": true,
     "prerequisites": [
-      "tech_starbase_5",
-      "tech_battleships",
-      "tech_zero_point_power"
+      "tech_binary_motivators",
+      "tech_galactic_administration"
     ],
-    "tier": 5,
-    "key": "tech_mega_engineering"
+    "tier": 4,
+    "key": "tech_mega_assembly"
   },
   "tech_micro_replicators": {
     "name": "Micro-Replicators",
@@ -4468,6 +4545,31 @@ const Technology = {
     ],
     "tier": 3,
     "key": "tech_wormhole_stabilization"
+  },
+  "tech_xeno_diplomacy": {
+    "name": "Xeno Diplomacy",
+    "description": "Advancing our understanding of interactions with - and manipulations of - the xeno is a necessary step in forming more permanent interstellar alliances.",
+    "area": "society",
+    "category": "statecraft",
+    "cost": 2000,
+    "prerequisites": [
+      "tech_colonial_centralization"
+    ],
+    "tier": 2,
+    "key": "tech_xeno_diplomacy"
+  },
+  "tech_xeno_relations": {
+    "name": "Xeno Relations",
+    "description": "The complexities of interstellar diplomacy necessitate the forming of bonds with foreign powers in order to further one's goals.",
+    "area": "society",
+    "category": "statecraft",
+    "cost": 5000,
+    "prerequisites": [
+      "tech_xeno_diplomacy",
+      "tech_galactic_administration"
+    ],
+    "tier": 3,
+    "key": "tech_xeno_relations"
   },
   "tech_xeno_tourism_agency": {
     "name": "Xeno Outreach Agencies",
