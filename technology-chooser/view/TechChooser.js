@@ -5,7 +5,8 @@ const { CheckboxPanel } = ReactComponent;
 class TechChooser extends React.PureComponent {
   render() {
     const { applyOnClick, areaKey } = this.props;
-    const filterFunction = (item) => item.area === areaKey && item.tier !== 0;
+    const filterFunction = (item) =>
+      item.start_tech !== true && item.area === areaKey;
     const technologies = Object.values(Technology);
     const areaTechs = R.filter(filterFunction, technologies);
 
