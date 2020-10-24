@@ -7,11 +7,6 @@ const applyOnClick = (selectedItems) => {
     `applyOnClick() selectedItems = ${JSON.stringify(selectedItems)}`
   );
 };
-const areaKey = "physics";
 
-const element = React.createElement(TechChooser, {
-  applyOnClick,
-  areaKey,
-});
-
+const element = React.createElement(TechChooser, { applyOnClick });
 ReactDOM.render(element, document.getElementById("panel"));

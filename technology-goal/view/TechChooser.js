@@ -16,20 +16,18 @@ const labelFunction = (item) => {
 
 class TechChooser extends React.PureComponent {
   render() {
-    const { applyOnClick, areaKey } = this.props;
-    const filterFunction = (item) =>
-      item.start_tech !== true && item.area === areaKey;
+    const { applyOnClick, selectedKeys } = this.props;
     const technologies = Object.values(Technology);
-    const areaTechs = R.filter(filterFunction, technologies);
-    const items = R.sortBy(R.prop("name"), areaTechs);
+    const items = R.sortBy(R.prop("name"), technologies);
+    const selectedItems = TechUtils.technologies(selectedKeys);
 
     return React.createElement(CheckboxPanel, {
-      key: `techChooser${areaKey}`,
+      key: `techChooser`,
       className: "tech-chooser",
       items,
       applyOnClick,
-      itemToChecked: {},
       labelFunction,
+      selectedItems,
       useSelectButtons: true,
     });
   }
@@ -37,7 +35,12 @@ class TechChooser extends React.PureComponent {
 
 TechChooser.propTypes = {
   applyOnClick: PropTypes.func.isRequired,
-  areaKey: PropTypes.string.isRequired,
+
+  selectedKeys: PropTypes.arrayOf(PropTypes.string),
+};
+
+TechChooser.defaultProps = {
+  selectedKeys: [],
 };
 
 export default TechChooser;

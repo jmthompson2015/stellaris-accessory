@@ -1,0 +1,17 @@
+body {
+  font-family: "Futura", "San Francisco", "Helvetica Neue", Helvetica,
+    sans-serif;
+}
+
+.button-row {
+  background-color: gray;
+}
+
+.button-table {
+  margin: 0 auto;
+}
+
+.scroll-pane {
+  height: 500px;
+  overflow-y: auto;
+}

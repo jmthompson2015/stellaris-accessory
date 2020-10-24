@@ -9,12 +9,10 @@ const mapStateToProps = (state) => {
 };
 
 const mapDispatchToProps = (dispatch) => ({
-  applyOnClick: (itemToChecked) => {
-    const itemKeys = Object.keys(itemToChecked);
-    const filterFunction = (itemKey) => itemToChecked[itemKey];
-    const selectedItems = R.filter(filterFunction, itemKeys);
-
-    dispatch(ActionCreator.setSelectedItems(selectedItems));
+  applyOnClick: (selectedItems) => {
+    const mapFunction = (item) => item.key;
+    const selectedKeys = R.map(mapFunction, selectedItems);
+    dispatch(ActionCreator.setSelectedItems(selectedKeys));
   },
 });
 
