@@ -1,6 +1,10 @@
 # Stellaris Accessory
 
-- [Research Tree](https://jmthompson2015.github.io/stellaris-accessory/research-tree/app/ResearchTree.html)
+- [Building Table](https://jmthompson2015.github.io/stellaris-accessory/building-table/app/BuildingTable.html)
+- [Technology Chooser](https://jmthompson2015.github.io/stellaris-accessory/technology-chooser/app/TechnologyChooser.html)
+- [Technology Goal](https://jmthompson2015.github.io/stellaris-accessory/technology-goal/app/TechnologyGoal.html)
+- [Technology Table](https://jmthompson2015.github.io/stellaris-accessory/technology-table/app/TechnologyTable.html)
+- [Technology Tree](https://jmthompson2015.github.io/stellaris-accessory/technology-tree/app/TechnologyTree.html)
 
 ## Built With
 
