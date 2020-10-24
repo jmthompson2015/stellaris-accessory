@@ -1,4 +1,8 @@
 body {
+  background-color: Black;
+  background-image: url(stellaris_utopia.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
   font-family: "Futura", "San Francisco", "Helvetica Neue", Helvetica,
     sans-serif;
 }
