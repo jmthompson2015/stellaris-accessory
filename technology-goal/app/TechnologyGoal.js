@@ -1,45 +1,34 @@
 import ActionCreator from "../state/ActionCreator.js";
 import Reducer from "../state/Reducer.js";
 
-import GoalListContainer from "../container/GoalListContainer.js";
 import TechChooserContainer from "../container/TechChooserContainer.js";
 import TechListContainer from "../container/TechListContainer.js";
 
 const { TitledElement } = ReactComponent;
 
 const store = Redux.createStore(Reducer.root);
-let currentTechArea;
-const handleChange = () => {
-  const previousTechArea = currentTechArea;
-  currentTechArea = store.getState().techAreaKey;
-
-  if (previousTechArea !== currentTechArea) {
-    const areaToBackground = {
-      physics: "hsl(195, 100%, 45%)",
-      society: "green",
-      engineering: "hsl(45, 100%, 45%)",
-    };
-    const background = areaToBackground[currentTechArea];
-    document.body.style = `background: ${background};`;
-  }
-};
-store.subscribe(handleChange);
 
 const goalKeys = [
+  "tech_arc_emitter_2", // Focused Arc Emitters
   "tech_climate_restoration",
   "tech_colossus",
   "tech_dyson_sphere",
+  "tech_energy_torpedoes_2", // Neutron Launchers
   "tech_galactic_bureaucracy",
-  "tech_habitat_1",
+  "tech_habitat_1", // Orbital Habitats
   "tech_jump_drive_1",
   "tech_matter_decompressor",
 ];
 store.dispatch(ActionCreator.setSelectedItems(goalKeys));
 
-const elementClass = "ma0 v-mid";
+// const elementClass = "ma0 v-mid";
+const elementClass = "pa1 v-mid";
 const titleClass = "b bg-white f5 ph1 pt1 tc";
 
-const container0 = React.createElement(GoalListContainer);
+// /////////////////////////////////////////////////////////////////////////////
+const container0 = React.createElement(TechListContainer, {
+  areaKey: "physics",
+});
 const element0 = React.createElement(
   ReactRedux.Provider,
   { store },
@@ -47,13 +36,16 @@ const element0 = React.createElement(
 );
 const panel0 = React.createElement(TitledElement, {
   element: element0,
-  title: "Goals",
+  title: "Physics",
   elementClass,
   titleClass,
 });
-ReactDOM.render(panel0, document.getElementById("goalListPanel"));
+ReactDOM.render(panel0, document.getElementById("physicsTechList"));
 
-const container1 = React.createElement(TechListContainer);
+// /////////////////////////////////////////////////////////////////////////////
+const container1 = React.createElement(TechListContainer, {
+  areaKey: "society",
+});
 const element1 = React.createElement(
   ReactRedux.Provider,
   { store },
@@ -61,13 +53,16 @@ const element1 = React.createElement(
 );
 const panel1 = React.createElement(TitledElement, {
   element: element1,
-  title: "Prerequisites",
+  title: "Society",
   elementClass,
   titleClass,
 });
-ReactDOM.render(panel1, document.getElementById("techListPanel"));
+ReactDOM.render(panel1, document.getElementById("societyTechList"));
 
-const container2 = React.createElement(TechChooserContainer);
+// /////////////////////////////////////////////////////////////////////////////
+const container2 = React.createElement(TechListContainer, {
+  areaKey: "engineering",
+});
 const element2 = React.createElement(
   ReactRedux.Provider,
   { store },
@@ -75,8 +70,23 @@ const element2 = React.createElement(
 );
 const panel2 = React.createElement(TitledElement, {
   element: element2,
+  title: "Engineering",
+  elementClass,
+  titleClass,
+});
+ReactDOM.render(panel2, document.getElementById("engineeringTechList"));
+
+// /////////////////////////////////////////////////////////////////////////////
+const container3 = React.createElement(TechChooserContainer);
+const element3 = React.createElement(
+  ReactRedux.Provider,
+  { store },
+  container3
+);
+const panel3 = React.createElement(TitledElement, {
+  element: element3,
   title: "Technologies",
   elementClass,
   titleClass,
 });
-ReactDOM.render(panel2, document.getElementById("techChooserPanel"));
+ReactDOM.render(panel3, document.getElementById("techChooserPanel"));

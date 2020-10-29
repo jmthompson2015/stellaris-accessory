@@ -3,7 +3,7 @@ import TechUtils from "../model/TechnologyUtilities.js";
 const { ReactUtilities: RU } = ReactComponent;
 
 const labelFunction = (item) => {
-  const label = `${item.tier}-${item.name}`;
+  const label = `${item.tier}: ${item.name}`;
   const style = {
     color: TechUtils.areaColor(item.area),
     verticalAlign: "middle",
