@@ -13,7 +13,13 @@ cd ../technology
 cd ../artifact
 open TestSuite.html
 
-cd ../technology-tree/model
-open TestSuite.html
+cd ../technology-chooser
+./test-all.sh
+
+cd ../technology-goal
+./test-all.sh
+
+cd ../technology-tree
+./test-all.sh
 
 cd ../..

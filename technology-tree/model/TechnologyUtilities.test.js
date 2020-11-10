@@ -193,7 +193,7 @@ QUnit.test("rareTechnologies()", (assert) => {
 
   // Verify.
   assert.ok(result);
-  const length = 90;
+  const length = 92;
   assert.equal(result.length, length);
   assert.equal(result[0].key, "tech_battleship_hull_2");
   assert.equal(result[length - 1].key, "tech_mine_zro");
@@ -208,7 +208,7 @@ QUnit.test("raresByArea() engineering", (assert) => {
 
   // Verify.
   assert.ok(result);
-  const length = 27;
+  const length = 29;
   assert.equal(result.length, length);
   assert.equal(result[0].key, "tech_battleship_hull_2");
   assert.equal(result[length - 1].key, "tech_synthetic_workers");
@@ -284,7 +284,7 @@ QUnit.test("technologiesByAreaCategory() engineering voidcraft", (assert) => {
 
   // Verify.
   assert.ok(result);
-  const length = 47;
+  const length = 49;
   assert.equal(result.length, length);
   assert.equal(result[0].key, "tech_battleship_hull_2");
   assert.equal(result[length - 1].key, "tech_titans");

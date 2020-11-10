@@ -30,7 +30,7 @@ QUnit.test("Building properties building_colony_shelter", (assert) => {
 
 QUnit.test("Building keys", (assert) => {
   // Setup.
-  const length = 162;
+  const length = 171;
 
   // Run.
   const keys = Object.keys(Building);

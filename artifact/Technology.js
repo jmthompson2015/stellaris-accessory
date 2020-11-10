@@ -1895,10 +1895,38 @@ const Technology = {
     "category": "voidcraft",
     "cost": 5000,
     "prerequisites": [
-      "tech_starbase_4"
+      "tech_starbase_3"
     ],
     "tier": 3,
     "key": "tech_habitat_1"
+  },
+  "tech_habitat_2": {
+    "name": "Habitat Expansion",
+    "description": "Our early habitats were primitive things compared to the efficient designs we can now develop.",
+    "area": "engineering",
+    "category": "voidcraft",
+    "cost": 10000,
+    "is_rare": true,
+    "prerequisites": [
+      "tech_habitat_1",
+      "tech_starbase_4"
+    ],
+    "tier": 4,
+    "key": "tech_habitat_2"
+  },
+  "tech_habitat_3": {
+    "name": "Advanced Space Habitation",
+    "description": "Years of improvements to our §YOrbital Habitats§! have led us to create newer more effective designs.",
+    "area": "engineering",
+    "category": "voidcraft",
+    "cost": 17500,
+    "is_rare": true,
+    "prerequisites": [
+      "tech_habitat_2",
+      "tech_starbase_5"
+    ],
+    "tier": 4,
+    "key": "tech_habitat_3"
   },
   "tech_heritage_site": {
     "name": "Heritage Sites",
@@ -2149,7 +2177,7 @@ const Technology = {
     "is_rare": true,
     "prerequisites": [
       "tech_starbase_5",
-      "tech_titans"
+      "tech_battleships"
     ],
     "tier": 5,
     "key": "tech_juggernaut"

@@ -42,7 +42,7 @@ QUnit.test("Technology properties tech_adaptive_bureaucracy", (assert) => {
 
 QUnit.test("Technology keys", (assert) => {
   // Setup.
-  const length = 396;
+  const length = 398;
 
   // Run.
   const keys = Object.keys(Technology);

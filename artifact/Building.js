@@ -283,7 +283,8 @@ const Building = {
       "building_temple",
       "building_hive_node",
       "building_simulation_1",
-      "building_corporate_monument"
+      "building_corporate_monument",
+      "building_galactic_memorial_1"
     ],
     "planet_modifier": {
       "job_culture_worker_add": "@b1_jobs"
@@ -295,9 +296,12 @@ const Building = {
         "has_modifier": "slave_colony"
       },
       "owner": {
-        "is_gestalt": false,
-        "is_spiritualist": false,
-        "is_megacorp": false
+        "NOR": {
+          "is_gestalt": true,
+          "is_spiritualist": true,
+          "is_megacorp": true,
+          "has_valid_civic": "civic_machine_memorialist"
+        }
       }
     },
     "prerequisites": [
@@ -558,13 +562,7 @@ const Building = {
       "job_bureaucrat_add": 8
     },
     "potential": {
-      "exists": "owner",
-      "OR": {
-        "buildings_no_crystals": true,
-        "owner": {
-          "is_regular_empire": false
-        }
-      }
+      "always": false
     },
     "prerequisites": [
       "tech_galactic_bureaucracy"
@@ -774,8 +772,7 @@ const Building = {
       },
       "NOT": {
         "has_modifier": "slave_colony"
-      },
-      "building_basic_income_check": true
+      }
     },
     "prerequisites": [
       "tech_frontier_health"
@@ -974,6 +971,9 @@ const Building = {
   "building_communal_housing": {
     "name": "Communal Housing",
     "description": "A block of uniform housing, equal in every way.",
+    "allow": {
+      "buildings_simple_allow": true
+    },
     "base_buildtime": "@b1_time",
     "category": "amenity",
     "convert_to": [
@@ -986,6 +986,12 @@ const Building = {
       "planet_amenities_add": 3
     },
     "potential": {
+      "OR": {
+        "NOT": {
+          "is_planet_class": "pc_habitat"
+        },
+        "has_planet_flag": "advanced_habitat"
+      },
       "NOT": {
         "has_modifier": "slave_colony"
       },
@@ -1039,7 +1045,19 @@ const Building = {
       "planet_amenities_add": 6
     },
     "potential": {
-      "has_building": "building_communal_housing"
+      "has_building": "building_communal_housing",
+      "OR": {
+        "NOT": {
+          "is_planet_class": "pc_habitat"
+        },
+        "AND": {
+          "has_planet_flag": "advanced_habitat",
+          "exists": "owner",
+          "owner": {
+            "has_ascension_perk": "ap_voidborn"
+          }
+        }
+      }
     },
     "prerequisites": [
       "tech_paradise_dome"
@@ -1071,6 +1089,11 @@ const Building = {
   "building_corporate_embassy": {
     "name": "Corporate Embassy",
     "description": "Diplomacy is just advertising to governments instead of to the customer. This office analyzes local customs and trends to more efficiently target our efforts.",
+    "allow": [
+      "num_pops",
+      ">=",
+      "50"
+    ],
     "base_buildtime": "@b2_time",
     "planet_modifier": {
       "job_clerk_add": 2
@@ -1081,6 +1104,9 @@ const Building = {
         "is_criminal_syndicate": false
       }
     },
+    "prerequisites": [
+      "tech_xeno_diplomacy"
+    ],
     "resources": {
       "category": "planet_branch_office_buildings",
       "cost": {
@@ -1506,6 +1532,11 @@ const Building = {
   "building_disinformation_center": {
     "name": "Disinformation Center",
     "description": "Through targeted advertisements and propaganda, we can control opinion and make the people agree with our version of the truth.",
+    "allow": [
+      "num_pops",
+      ">=",
+      "50"
+    ],
     "base_buildtime": "@b2_time",
     "planet_modifier": {
       "planet_crime_add": 40,
@@ -1518,6 +1549,9 @@ const Building = {
         "is_criminal_syndicate": true
       }
     },
+    "prerequisites": [
+      "tech_xeno_diplomacy"
+    ],
     "resources": {
       "category": "planet_branch_office_buildings",
       "cost": {
@@ -1528,6 +1562,41 @@ const Building = {
       }
     },
     "key": "building_disinformation_center"
+  },
+  "building_dread_encampment": {
+    "name": "Dread Encampment",
+    "description": "It is best to shield the activities of the necromancers from the tender eyes of the public as they raise undead hordes to fight in our armies.",
+    "allow": {
+      "has_upgraded_capital": true
+    },
+    "base_buildtime": "@b2_time",
+    "category": "army",
+    "convert_to": [
+      "building_military_academy"
+    ],
+    "planet_modifier": {
+      "job_necromancer_add": 1
+    },
+    "potential": {
+      "buildings_simple_allow": true,
+      "exists": "owner",
+      "owner": {
+        "has_valid_civic": "civic_reanimated_armies"
+      }
+    },
+    "prerequisites": [
+      "tech_centralized_command"
+    ],
+    "resources": {
+      "category": "planet_buildings",
+      "cost": {
+        "minerals": "@b2_minerals"
+      },
+      "upkeep": {
+        "energy": "@b1_upkeep"
+      }
+    },
+    "key": "building_dread_encampment"
   },
   "building_drone_megastorage": {
     "name": "Upgraded Drone Storage",
@@ -1580,6 +1649,9 @@ const Building = {
   "building_drone_storage": {
     "name": "Drone Storage",
     "description": "A storage area for Drones to undergo maintenance.",
+    "allow": {
+      "buildings_simple_allow": true
+    },
     "base_buildtime": "@b1_time",
     "category": "amenity",
     "convert_to": [
@@ -2285,7 +2357,21 @@ const Building = {
       "NOT": {
         "has_modifier": "slave_colony"
       },
-      "building_relaxed_basic_income_check": true
+      "OR": {
+        "building_relaxed_basic_income_check": true,
+        "AND": {
+          "num_buildings": {
+            "type": "building_foundry_1"
+          },
+          "is_capital": true,
+          "owner": {
+            "OR": {
+              "country_uses_consumer_goods": false,
+              "country_uses_food": false
+            }
+          }
+        }
+      }
     },
     "prerequisites": [
       "tech_basic_industry"
@@ -2391,6 +2477,201 @@ const Building = {
       }
     },
     "key": "building_foundry_3"
+  },
+  "building_galactic_memorial_1": {
+    "name": "Sanctuary of Repose",
+    "description": "This humble memorial focuses thoughts and study upon the multi-facted nature of death and endings.",
+    "base_buildtime": "@b1_time",
+    "category": "unity",
+    "convert_to": [
+      "building_temple",
+      "building_sacrificial_temple_1",
+      "building_hive_node",
+      "building_simulation_1",
+      "building_corporate_monument",
+      "building_autochthon_monument"
+    ],
+    "planet_modifier": {
+      "planet_stability_add": 5
+    },
+    "potential": {
+      "exists": "owner",
+      "building_basic_income_check": true,
+      "NOT": {
+        "has_modifier": "slave_colony"
+      },
+      "owner": {
+        "OR": {
+          "has_valid_civic": "civic_machine_memorialist"
+        },
+        "NOT": {
+          "OR": {
+            "is_megacorp": true,
+            "has_valid_civic": "civic_machine_terminator"
+          }
+        }
+      }
+    },
+    "resources": {
+      "category": "planet_buildings",
+      "cost": {
+        "minerals": "@b1_minerals"
+      },
+      "upkeep": {
+        "minerals": "@b1_upkeep"
+      }
+    },
+    "triggered_planet_modifier": {
+      "potential": {
+        "exists": "owner",
+        "owner": {
+          "is_gestalt": true
+        },
+        "OR": {
+          "is_planet_class": "pc_relic"
+        }
+      },
+      "planet_crime_no_happiness_add": -20
+    },
+    "upgrades": [
+      "building_galactic_memorial_2"
+    ],
+    "key": "building_galactic_memorial_1"
+  },
+  "building_galactic_memorial_2": {
+    "name": "Pillar of Quietus",
+    "description": "A solemn place dedicated to the contemplation of death, in which many an ending may be chronicled.",
+    "allow": {
+      "exists": "owner",
+      "has_upgraded_capital": true,
+      "buildings_upgrade_allow": true,
+      "owner": {
+        "OR": {
+          "has_technology": "tech_exotic_gases"
+        }
+      }
+    },
+    "base_buildtime": "@b2_time",
+    "can_build": false,
+    "category": "unity",
+    "convert_to": [
+      "building_holotemple",
+      "building_sacrificial_temple_2",
+      "building_simulation_2",
+      "building_hive_cluster",
+      "building_corporate_site",
+      "building_heritage_site"
+    ],
+    "planet_modifier": {
+      "planet_stability_add": 10
+    },
+    "potential": {
+      "exists": "owner",
+      "NOT": {
+        "has_modifier": "slave_colony"
+      },
+      "owner": {
+        "OR": {
+          "has_valid_civic": "civic_machine_memorialist"
+        },
+        "NOT": {
+          "OR": {
+            "is_megacorp": true,
+            "has_valid_civic": "civic_machine_terminator"
+          }
+        }
+      }
+    },
+    "resources": {
+      "category": "planet_buildings",
+      "cost": {
+        "minerals": "@b2_minerals",
+        "exotic_gases": "@b2_rare_cost"
+      },
+      "upkeep": {
+        "minerals": "@b2_upkeep",
+        "exotic_gases": "@b2_rare_upkeep"
+      }
+    },
+    "triggered_planet_modifier": {
+      "potential": {
+        "exists": "owner",
+        "owner": {
+          "is_gestalt": true
+        },
+        "OR": {
+          "is_planet_class": "pc_relic"
+        }
+      },
+      "planet_crime_no_happiness_add": -20
+    },
+    "upgrades": [
+      "building_galactic_memorial_3"
+    ],
+    "key": "building_galactic_memorial_2"
+  },
+  "building_galactic_memorial_3": {
+    "name": "Galactic Memorial",
+    "description": "A monumental library of all that may or may not be understood about endings, chronicled for unknowable future ages.",
+    "allow": {
+      "has_major_upgraded_capital": true,
+      "buildings_upgrade_allow": true
+    },
+    "base_buildtime": "@b3_time",
+    "can_build": false,
+    "category": "unity",
+    "convert_to": [
+      "building_sacred_nexus",
+      "building_sacrificial_temple_3",
+      "building_hive_confluence",
+      "building_simulation_3",
+      "building_corporate_forum",
+      "building_hypercomms_forum"
+    ],
+    "planet_modifier": {
+      "planet_stability_add": 15
+    },
+    "potential": {
+      "exists": "owner",
+      "NOT": {
+        "has_modifier": "slave_colony"
+      },
+      "owner": {
+        "OR": {
+          "has_valid_civic": "civic_machine_memorialist"
+        },
+        "NOT": {
+          "OR": {
+            "is_megacorp": true,
+            "has_valid_civic": "civic_machine_terminator"
+          }
+        }
+      }
+    },
+    "resources": {
+      "category": "planet_buildings",
+      "cost": {
+        "minerals": "@b3_minerals",
+        "exotic_gases": "@b3_rare_cost"
+      },
+      "upkeep": {
+        "minerals": "@b3_upkeep",
+        "exotic_gases": "@b3_rare_upkeep"
+      }
+    },
+    "triggered_planet_modifier": {
+      "potential": {
+        "exists": "owner",
+        "owner": {
+          "is_gestalt": true
+        },
+        "OR": {
+          "is_planet_class": "pc_relic"
+        }
+      },
+      "planet_crime_no_happiness_add": -20
+    },
+    "key": "building_galactic_memorial_3"
   },
   "building_galactic_stock_exchange": {
     "name": "Galactic Stock Exchange",
@@ -2639,12 +2920,11 @@ const Building = {
       "potential": {
         "exists": "owner",
         "owner": {
-          "has_civic": "civic_merchant_guilds"
+          "has_ascension_perk": "ap_voidborn"
         }
       },
       "modifier": {
-        "job_administrator_add": 1,
-        "job_merchant_add": 1
+        "planet_max_buildings_add": 2
       }
     },
     "key": "building_hab_major_capital"
@@ -2696,7 +2976,8 @@ const Building = {
       "building_holotemple",
       "building_simulation_2",
       "building_hive_cluster",
-      "building_corporate_site"
+      "building_corporate_site",
+      "building_galactic_memorial_2"
     ],
     "planet_modifier": {
       "job_culture_worker_add": "@b2_jobs"
@@ -2707,9 +2988,12 @@ const Building = {
         "has_modifier": "slave_colony"
       },
       "owner": {
-        "is_gestalt": false,
-        "is_spiritualist": false,
-        "is_megacorp": false
+        "NOR": {
+          "is_gestalt": true,
+          "is_spiritualist": true,
+          "is_megacorp": true,
+          "has_valid_civic": "civic_machine_memorialist"
+        }
       }
     },
     "prerequisites": [
@@ -2863,7 +3147,7 @@ const Building = {
       "category": "planet_buildings",
       "cost": {
         "minerals": "@b3_minerals",
-        "exotic_gases": "@b2_rare_upkeep"
+        "exotic_gases": "@b3_rare_cost"
       },
       "upkeep": {
         "energy": "@b3_upkeep",
@@ -2983,6 +3267,9 @@ const Building = {
   "building_hive_warren": {
     "name": "Hive Warren",
     "description": "A vast warren offers shelter for many Drones to rest.",
+    "allow": {
+      "buildings_simple_allow": true
+    },
     "base_buildtime": "@b1_time",
     "category": "amenity",
     "convert_to": [
@@ -3017,6 +3304,9 @@ const Building = {
   "building_holo_theatres": {
     "name": "Holo-Theatres",
     "description": "The latest in holographic entertainment. Entire worlds built out of photons and energy fields.",
+    "allow": {
+      "buildings_simple_allow": true
+    },
     "base_buildtime": "@b1_time",
     "category": "amenity",
     "potential": {
@@ -3069,7 +3359,8 @@ const Building = {
       "building_simulation_2",
       "building_hive_cluster",
       "building_heritage_site",
-      "building_corporate_site"
+      "building_corporate_site",
+      "building_sacrificial_temple_2"
     ],
     "planet_modifier": {
       "job_priest_add": "@b2_jobs",
@@ -3077,8 +3368,12 @@ const Building = {
     },
     "potential": {
       "exists": "owner",
+      "building_basic_income_check": true,
       "owner": {
-        "is_spiritualist": true
+        "is_spiritualist": true,
+        "NOR": {
+          "has_valid_civic": "civic_death_cult_corporate"
+        }
       },
       "NOT": {
         "has_modifier": "slave_colony"
@@ -3144,11 +3439,10 @@ const Building = {
     "category": "resource",
     "potential": {
       "exists": "owner",
-      "planet": {
-        "or": {
-          "owner": {
-            "is_ai": false
-          }
+      "owner": {
+        "OR": {
+          "country_uses_food": true,
+          "is_ai": false
         }
       },
       "NOT": {
@@ -3234,7 +3528,8 @@ const Building = {
       "building_sacred_nexus",
       "building_hive_confluence",
       "building_simulation_3",
-      "building_corporate_forum"
+      "building_corporate_forum",
+      "building_galactic_memorial_3"
     ],
     "planet_modifier": {
       "job_culture_worker_add": "@b3_jobs"
@@ -3245,9 +3540,12 @@ const Building = {
         "has_modifier": "slave_colony"
       },
       "owner": {
-        "is_gestalt": false,
-        "is_spiritualist": false,
-        "is_megacorp": false
+        "NOR": {
+          "is_gestalt": true,
+          "is_spiritualist": true,
+          "is_megacorp": true,
+          "has_valid_civic": "civic_machine_memorialist"
+        }
       }
     },
     "prerequisites": [
@@ -3380,6 +3678,12 @@ const Building = {
       "planet_amenities_add": 5
     },
     "potential": {
+      "OR": {
+        "NOT": {
+          "is_planet_class": "pc_habitat"
+        },
+        "has_planet_flag": "advanced_habitat"
+      },
       "NOT": {
         "has_modifier": "slave_colony"
       },
@@ -3420,8 +3724,19 @@ const Building = {
     "name": "Machine Assembly Complex",
     "description": "An advanced assembly plant where new units are constructed.",
     "allow": {
-      "has_major_upgraded_capital": true,
-      "buildings_upgrade_allow": true
+      "OR": {
+        "owner": {
+          "is_ai": false
+        },
+        "AND": {
+          "num_buildings": {
+            "type": "any"
+          },
+          "NOT": {
+            "is_planet_class": "pc_habitat"
+          }
+        }
+      }
     },
     "base_buildtime": "@b3_time",
     "can_build": false,
@@ -3457,6 +3772,21 @@ const Building = {
   "building_machine_assembly_plant": {
     "name": "Machine Assembly Plants",
     "description": "A production line assembly plant where new units are constructed.",
+    "allow": {
+      "OR": {
+        "owner": {
+          "is_ai": false
+        },
+        "AND": {
+          "num_buildings": {
+            "type": "any"
+          },
+          "NOT": {
+            "is_planet_class": "pc_habitat"
+          }
+        }
+      }
+    },
     "base_buildtime": "@b1_time",
     "category": "pop_assembly",
     "convert_to": [
@@ -3691,9 +4021,6 @@ const Building = {
         "is_gestalt": true
       }
     },
-    "prerequisites": [
-      "tech_planetary_government"
-    ],
     "resources": {
       "category": "planet_buildings",
       "cost": {
@@ -3808,8 +4135,17 @@ const Building = {
     },
     "base_buildtime": "@b2_time",
     "category": "army",
+    "convert_to": [
+      "building_dread_encampment"
+    ],
     "potential": {
-      "buildings_simple_allow": true
+      "buildings_simple_allow": true,
+      "exists": "owner",
+      "owner": {
+        "NOT": {
+          "has_valid_civic": "civic_reanimated_armies"
+        }
+      }
     },
     "prerequisites": [
       "tech_centralized_command"
@@ -4138,6 +4474,106 @@ const Building = {
     "upgrades": [],
     "key": "building_nano_forge"
   },
+  "building_necrophage_elevation_chamber": {
+    "name": "Chamber of Elevation",
+    "description": "Those awaiting transformation spend their days studying the practices and rituals of the [This.Owner.GetSpeciesNamePlural] in the comfort of the Chamber of Elevation.",
+    "allow": {
+      "custom_tooltip": {
+        "fail_text": "NO_CULTURE_SHOCK",
+        "NOT": {
+          "has_modifier": "planet_culture_shock"
+        }
+      },
+      "NOR": {
+        "is_planet_class": "pc_machine"
+      },
+      "OR": {
+        "owner": {
+          "is_ai": false
+        },
+        "any_owned_species": {
+          "species_can_be_necrophaged": true
+        }
+      }
+    },
+    "base_buildtime": "@b1_time",
+    "category": "pop_assembly",
+    "planet_modifier": {
+      "planet_stability_add": 5,
+      "job_necro_apprentice_add": 3
+    },
+    "potential": {
+      "exists": "owner",
+      "owner": {
+        "has_origin": "origin_necrophage",
+        "has_trait": "trait_necrophage",
+        "NOT": {
+          "has_valid_civic": "civic_fanatic_purifiers"
+        }
+      }
+    },
+    "prerequisites": [],
+    "resources": {
+      "category": "planet_buildings",
+      "cost": {
+        "minerals": "@b1_minerals"
+      },
+      "upkeep": {
+        "energy": "@b1_upkeep"
+      }
+    },
+    "upgrades": [
+      "building_necrophage_house_of_apotheosis"
+    ],
+    "key": "building_necrophage_elevation_chamber"
+  },
+  "building_necrophage_house_of_apotheosis": {
+    "name": "House of Apotheosis",
+    "description": "A house of untold splendor where those awaiting their apotheosis as [This.Owner.GetSpeciesNamePlural] can spend their final days in their original forms in comfort.",
+    "allow": {
+      "OR": {
+        "owner": {
+          "is_ai": false
+        },
+        "any_owned_species": {
+          "species_can_be_necrophaged": true
+        }
+      }
+    },
+    "base_buildtime": "@b3_time",
+    "can_build": false,
+    "category": "pop_assembly",
+    "planet_modifier": {
+      "planet_stability_add": 10,
+      "job_necro_apprentice_add": 6,
+      "job_necro_apprentice_per_pop": 0.02
+    },
+    "potential": {
+      "exists": "owner",
+      "owner": {
+        "has_origin": "origin_necrophage",
+        "has_trait": "trait_necrophage",
+        "NOT": {
+          "has_valid_civic": "civic_fanatic_purifiers"
+        }
+      }
+    },
+    "prerequisites": [
+      "tech_glandular_acclimation"
+    ],
+    "resources": {
+      "category": "planet_buildings",
+      "cost": {
+        "minerals": "@b2_minerals",
+        "exotic_gases": "@b2_rare_cost"
+      },
+      "upkeep": {
+        "energy": "@b2_upkeep",
+        "exotic_gases": "@b2_rare_upkeep"
+      }
+    },
+    "key": "building_necrophage_house_of_apotheosis"
+  },
   "building_network_junction": {
     "name": "Network Junction",
     "description": "This powerful transceiver increases the bandwidth of the signals being continuously sent between the many different systems operating across our empire.",
@@ -4385,7 +4821,19 @@ const Building = {
       "planet_amenities_add": 10
     },
     "potential": {
-      "has_building": "building_luxury_residence"
+      "has_building": "building_luxury_residence",
+      "OR": {
+        "NOT": {
+          "is_planet_class": "pc_habitat"
+        },
+        "AND": {
+          "has_planet_flag": "advanced_habitat",
+          "exists": "owner",
+          "owner": {
+            "has_ascension_perk": "ap_voidborn"
+          }
+        }
+      }
     },
     "prerequisites": [
       "tech_paradise_dome"
@@ -4473,6 +4921,28 @@ const Building = {
   "building_precinct_house": {
     "name": "Precinct Houses",
     "description": "Monuments to law and order. Enforcers are based here.",
+    "allow": {
+      "OR": {
+        "owner": {
+          "is_ai": false
+        },
+        "AND": {
+          "NOR": {
+            "AND": {
+              "has_building": "building_precinct_house",
+              "owner": {
+                "has_technology": "tech_colonial_centralization"
+              }
+            },
+            "has_building": "building_hall_judgment",
+            "num_buildings": {
+              "type": "building_precinct_house",
+              "value": 3
+            }
+          }
+        }
+      }
+    },
     "base_buildtime": "@b1_time",
     "category": "government",
     "planet_modifier": {
@@ -5097,7 +5567,26 @@ const Building = {
     "name": "Resource Silos",
     "description": "Massive resource silos and storage facilities where large quantities of resources can be safely kept.",
     "allow": {
-      "buildings_simple_allow": true
+      "exists": "owner",
+      "OR": {
+        "owner": {
+          "is_ai": false
+        },
+        "AND": {
+          "NOT": {
+            "has_building": "building_resource_silo"
+          },
+          "OR": {
+            "owner": {
+              "has_ascension_perk": "ap_arcology_project",
+              "NOT": {
+                "has_technology": "tech_mega_engineering"
+              }
+            },
+            "is_active_resolution": "resolution_greatergood_universal_prosperity_mandate"
+          }
+        }
+      }
     },
     "base_buildtime": 180,
     "category": "resource",
@@ -5134,6 +5623,21 @@ const Building = {
   "building_robot_assembly_plant": {
     "name": "Robot Assembly Plants",
     "description": "High-tech factories where skilled Roboticists assemble the latest robot models.",
+    "allow": {
+      "OR": {
+        "owner": {
+          "is_ai": false
+        },
+        "AND": {
+          "num_buildings": {
+            "type": "any"
+          },
+          "NOT": {
+            "is_planet_class": "pc_habitat"
+          }
+        }
+      }
+    },
     "base_buildtime": "@b1_time",
     "category": "pop_assembly",
     "convert_to": [
@@ -5187,7 +5691,8 @@ const Building = {
       "building_hypercomms_forum",
       "building_hive_confluence",
       "building_simulation_3",
-      "building_corporate_forum"
+      "building_corporate_forum",
+      "building_sacrificial_temple_3"
     ],
     "planet_modifier": {
       "job_priest_add": 7,
@@ -5195,8 +5700,12 @@ const Building = {
     },
     "potential": {
       "exists": "owner",
+      "building_basic_income_check": true,
       "owner": {
-        "is_spiritualist": true
+        "is_spiritualist": true,
+        "NOR": {
+          "has_valid_civic": "civic_death_cult_corporate"
+        }
       },
       "NOT": {
         "has_modifier": "slave_colony"
@@ -5218,9 +5727,174 @@ const Building = {
     },
     "key": "building_sacred_nexus"
   },
+  "building_sacrificial_temple_1": {
+    "name": "Sacrificial Temple",
+    "description": "A revered site in which solemn preachers and dedicated pupils pray and work towards each prosperous yet bloody cycle.",
+    "base_buildtime": "@b1_time",
+    "category": "unity",
+    "convert_to": [
+      "building_hive_node",
+      "building_simulation_1",
+      "building_autochthon_monument",
+      "building_corporate_monument",
+      "building_temple"
+    ],
+    "planet_modifier": {
+      "job_death_priest_add": 1,
+      "job_mortal_initiate_add": 1,
+      "pop_ethic_spiritualist_attraction_mult": 0.05
+    },
+    "potential": {
+      "exists": "owner",
+      "building_basic_income_check": true,
+      "owner": {
+        "is_spiritualist": true,
+        "OR": {
+          "has_valid_civic": "civic_death_cult_corporate"
+        }
+      },
+      "NOT": {
+        "has_modifier": "slave_colony"
+      },
+      "OR": {
+        "owner": {
+          "is_ai": false
+        }
+      }
+    },
+    "prerequisites": [
+      "tech_cultural_heritage"
+    ],
+    "resources": {
+      "category": "planet_buildings",
+      "cost": {
+        "minerals": "@b1_minerals"
+      },
+      "upkeep": {
+        "energy": "@b1_upkeep"
+      }
+    },
+    "upgrades": [
+      "building_sacrificial_temple_2"
+    ],
+    "key": "building_sacrificial_temple_1"
+  },
+  "building_sacrificial_temple_2": {
+    "name": "Grim Holotemple",
+    "description": "Technological enhancements to this consecrated building allow for more rigorous study, and a more tangible sense of devotion to causes beyond its mutable walls.",
+    "base_buildtime": "@b2_time",
+    "can_build": false,
+    "category": "unity",
+    "convert_to": [
+      "building_hive_cluster",
+      "building_simulation_2",
+      "building_heritage_site",
+      "building_corporate_site",
+      "building_holotemple"
+    ],
+    "planet_modifier": {
+      "job_death_priest_add": 3,
+      "job_mortal_initiate_add": 3,
+      "pop_ethic_spiritualist_attraction_mult": 0.1
+    },
+    "potential": {
+      "exists": "owner",
+      "owner": {
+        "is_spiritualist": true,
+        "OR": {
+          "has_valid_civic": "civic_death_cult_corporate"
+        }
+      },
+      "NOT": {
+        "has_modifier": "slave_colony"
+      }
+    },
+    "prerequisites": [
+      "tech_holographic_rituals"
+    ],
+    "resources": {
+      "category": "planet_buildings",
+      "cost": {
+        "minerals": "@b2_minerals",
+        "exotic_gases": "@b2_rare_cost"
+      },
+      "upkeep": {
+        "energy": "@b2_upkeep",
+        "exotic_gases": "@b3_rare_upkeep"
+      }
+    },
+    "upgrades": [
+      "building_sacrificial_temple_3"
+    ],
+    "key": "building_sacrificial_temple_2"
+  },
+  "building_sacrificial_temple_3": {
+    "name": "Temple of Grand Sacrifice",
+    "description": "A site of supreme consecration in which multi-sensory immersion fields allow the faithful to honor every [This.Owner.GetAdj] sacrifice - past, present and future.",
+    "allow": {
+      "has_major_upgraded_capital": true,
+      "buildings_upgrade_allow": true
+    },
+    "base_buildtime": "@b3_time",
+    "can_build": false,
+    "category": "unity",
+    "convert_to": [
+      "building_hypercomms_forum",
+      "building_hive_confluence",
+      "building_simulation_3",
+      "building_corporate_forum",
+      "building_sacred_nexus"
+    ],
+    "planet_modifier": {
+      "job_death_priest_add": 5,
+      "job_mortal_initiate_add": 5,
+      "pop_ethic_spiritualist_attraction_mult": 0.15
+    },
+    "potential": {
+      "exists": "owner",
+      "owner": {
+        "is_spiritualist": true,
+        "OR": {
+          "has_valid_civic": "civic_death_cult_corporate"
+        }
+      },
+      "NOT": {
+        "has_modifier": "slave_colony"
+      }
+    },
+    "prerequisites": [
+      "tech_consecration_fields"
+    ],
+    "resources": {
+      "category": "planet_buildings",
+      "cost": {
+        "minerals": "@b3_minerals",
+        "exotic_gases": "@b3_rare_cost"
+      },
+      "upkeep": {
+        "energy": "@b3_upkeep",
+        "exotic_gases": "@b3_rare_upkeep",
+        "volatile_motes": "@b2_rare_upkeep"
+      }
+    },
+    "key": "building_sacrificial_temple_3"
+  },
   "building_sentinel_posts": {
     "name": "Sentinel Posts",
     "description": "These are the outposts from which Patrol Drones scan the Consciousness for signs of deviancy and malfunction.",
+    "allow": {
+      "OR": {
+        "owner": {
+          "is_ai": false
+        },
+        "AND": {
+          "buildings_simple_allow": true,
+          "NOT": {
+            "has_building": "building_sentinel_posts"
+          }
+        }
+      }
+    },
     "base_buildtime": "@b1_time",
     "category": "government",
     "planet_modifier": {
@@ -5424,6 +6098,9 @@ const Building = {
   "building_slave_huts": {
     "name": "Slave Huts",
     "description": "Crude dwellings for the planet's enslaved population.",
+    "allow": {
+      "buildings_simple_allow": true
+    },
     "base_buildtime": 240,
     "category": "amenity",
     "planet_modifier": {
@@ -5833,7 +6510,8 @@ const Building = {
       "building_hive_node",
       "building_simulation_1",
       "building_autochthon_monument",
-      "building_corporate_monument"
+      "building_corporate_monument",
+      "building_sacrificial_temple_1"
     ],
     "planet_modifier": {
       "job_priest_add": "@b1_jobs",
@@ -5843,7 +6521,10 @@ const Building = {
       "exists": "owner",
       "building_basic_income_check": true,
       "owner": {
-        "is_spiritualist": true
+        "is_spiritualist": true,
+        "NOR": {
+          "has_valid_civic": "civic_death_cult_corporate"
+        }
       },
       "NOT": {
         "has_modifier": "slave_colony"

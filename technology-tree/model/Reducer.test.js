@@ -122,7 +122,7 @@ QUnit.test("setArea()", (assert) => {
   assert.equal(result.areaKey, areaKey, "areaKey");
   assert.equal(result.categories.length, 4);
   assert.equal(result.categoryKey, "industry", "categoryKey");
-  assert.equal(result.rareTechnologies.length, 27);
+  assert.equal(result.rareTechnologies.length, 29);
   assert.equal(result.technologies.length, 36);
   assert.equal(
     result.technologyKey,
