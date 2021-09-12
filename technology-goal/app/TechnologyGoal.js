@@ -9,15 +9,24 @@ const { TitledElement } = ReactComponent;
 const store = Redux.createStore(Reducer.root);
 
 const goalKeys = [
-  "tech_arc_emitter_2", // Focused Arc Emitters
-  "tech_climate_restoration",
   "tech_colossus",
+  "tech_droid_workers", // Droids
   "tech_dyson_sphere",
   "tech_energy_torpedoes_2", // Neutron Launchers
+  "tech_exotic_gases", // Exotic Gas Refining
   "tech_galactic_bureaucracy",
+  "tech_gateway_construction",
   "tech_habitat_1", // Orbital Habitats
+  "tech_juggernaut",
   "tech_jump_drive_1",
+  "tech_mass_accelerator_2", // Giga Cannon
   "tech_matter_decompressor",
+  "tech_mine_exotic_gases", // Exotic Gas Extraction
+  "tech_mine_rare_crystals", // Rare Crystal Mining
+  "tech_mine_volatile_motes", // Mote Stabilization
+  "tech_rare_crystals", // Rare Crystal Manufacturing
+  "tech_shields_5", // Hyper Shields
+  "tech_volatile_motes", // Volatile Material Plants
 ];
 store.dispatch(ActionCreator.setSelectedItems(goalKeys));
 

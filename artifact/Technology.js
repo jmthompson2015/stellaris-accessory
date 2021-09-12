@@ -511,6 +511,17 @@ const Technology = {
     "tier": 4,
     "key": "tech_biomechanics"
   },
+  "tech_btc_1": {
+    "name": "Star Cracker",
+    "description": "A beam of directed tachyon energy is fired into the star, triggering a supernova. The incredible energy released by this event is then used to generate vast quantities of dark matter.nn§RWhen the star detonates, ALL colonies, megastructures, and stations in the system are destroyed - including our own. All fleets in the system will go MIA. The Star-Eater itself is the only exception.§!",
+    "area": "engineering",
+    "category": "voidcraft",
+    "cost": 20000,
+    "is_rare": true,
+    "prerequisites": [],
+    "tier": 5,
+    "key": "tech_btc_1"
+  },
   "tech_capacity_boosters": {
     "name": "Capacity Boosters",
     "description": "We leave nothing to chance, no matter the cost. Through exacting curation of DNA banks do we build the leaders of tomorrow.",
@@ -523,6 +534,44 @@ const Technology = {
     ],
     "tier": 4,
     "key": "tech_capacity_boosters"
+  },
+  "tech_capital_productivity_1": {
+    "name": "Improved Production",
+    "description": "As our planets become more developed, we can gain significant improvements to our throughput.",
+    "area": "society",
+    "category": "statecraft",
+    "cost": 2500,
+    "prerequisites": [
+      "tech_planetary_unification"
+    ],
+    "tier": 2,
+    "key": "tech_capital_productivity_1"
+  },
+  "tech_capital_productivity_2": {
+    "name": "Efficiencies of Scale",
+    "description": "Increased population density gives us an opportunity to further increase productivity.",
+    "area": "society",
+    "category": "statecraft",
+    "cost": 6000,
+    "prerequisites": [
+      "tech_colonial_centralization",
+      "tech_capital_productivity_1"
+    ],
+    "tier": 3,
+    "key": "tech_capital_productivity_2"
+  },
+  "tech_capital_productivity_3": {
+    "name": "Maximized Productivity",
+    "description": "Continued advancements in technology allow our most developed planets to reach productivity levels unheard of in earlier times.",
+    "area": "society",
+    "category": "statecraft",
+    "cost": 12000,
+    "prerequisites": [
+      "tech_galactic_administration",
+      "tech_capital_productivity_2"
+    ],
+    "tier": 4,
+    "key": "tech_capital_productivity_3"
   },
   "tech_centralized_command": {
     "name": "Centralized Command",
@@ -799,7 +848,7 @@ const Technology = {
     "description": "Basic administrative AIs can be used to streamline supply and demand lines, reducing waste.",
     "area": "physics",
     "category": "computing",
-    "cost": 4000,
+    "cost": 1500,
     "prerequisites": [
       "tech_luxuries_1",
       "tech_administrative_ai"
@@ -812,7 +861,7 @@ const Technology = {
     "description": "Using advanced AIs, we can reliably predict consumer demand before it exists.",
     "area": "physics",
     "category": "computing",
-    "cost": 4000,
+    "cost": 8000,
     "prerequisites": [
       "tech_luxuries_2",
       "tech_consumer_good_refinement_1",
@@ -1032,6 +1081,45 @@ const Technology = {
     ],
     "tier": "@fallentechtier",
     "key": "tech_dark_matter_propulsion"
+  },
+  "tech_decryption_1": {
+    "name": "Quantum Hacking",
+    "description": "Primitive encryption systems stand no chance against modern decryption tools.",
+    "area": "physics",
+    "category": "computing",
+    "cost": 750,
+    "prerequisites": [
+      "tech_physics_1",
+      "tech_colonial_bureaucracy"
+    ],
+    "tier": 1,
+    "key": "tech_decryption_1"
+  },
+  "tech_decryption_2": {
+    "name": "Simulated Social Engineering",
+    "description": "The weakest link in any security system are the individuals within it. By modeling their weaknesses in computer simulations we can find novel ways to bypass their security - or trick them into bypassing it for us.",
+    "area": "physics",
+    "category": "computing",
+    "cost": 2000,
+    "prerequisites": [
+      "tech_decryption_1",
+      "tech_physics_2"
+    ],
+    "tier": 2,
+    "key": "tech_decryption_2"
+  },
+  "tech_decryption_3": {
+    "name": "Quasi-Dimensional Reflection",
+    "description": "Our operatives can access data from adjacent realities without risking setting off alarms in this reality.",
+    "area": "physics",
+    "category": "computing",
+    "cost": 10000,
+    "prerequisites": [
+      "tech_decryption_2",
+      "tech_physics_3"
+    ],
+    "tier": 4,
+    "key": "tech_decryption_3"
   },
   "tech_deep_sinkhole": {
     "name": "Subterranean Colonization",
@@ -1346,6 +1434,45 @@ const Technology = {
     ],
     "tier": 3,
     "key": "tech_embodied_dynamism"
+  },
+  "tech_encryption_1": {
+    "name": "Quantum Firewalls",
+    "description": "Advances in computing technology have given us new ways to protect our data from prying eyes.",
+    "area": "physics",
+    "category": "computing",
+    "cost": 750,
+    "prerequisites": [
+      "tech_physics_1",
+      "tech_colonial_bureaucracy"
+    ],
+    "tier": 1,
+    "key": "tech_encryption_1"
+  },
+  "tech_encryption_2": {
+    "name": "Simultaneous-Collapse Storage",
+    "description": "Further advances in unstable entanglement have given us new ways to prevent unauthorized intrusions into our databases.",
+    "area": "physics",
+    "category": "computing",
+    "cost": 2000,
+    "prerequisites": [
+      "tech_encryption_1",
+      "tech_physics_2"
+    ],
+    "tier": 2,
+    "key": "tech_encryption_2"
+  },
+  "tech_encryption_3": {
+    "name": "Negative-Time Keys",
+    "description": "Our latest advances in encryption exploit recently discovered quirks of physics to require inputting a specialized key before it has been generated.",
+    "area": "physics",
+    "category": "computing",
+    "cost": 10000,
+    "prerequisites": [
+      "tech_encryption_2",
+      "tech_physics_3"
+    ],
+    "tier": 4,
+    "key": "tech_encryption_3"
   },
   "tech_energy_lance_1": {
     "name": "Particle Lances",
@@ -1857,7 +1984,6 @@ const Technology = {
     "cost": 4000,
     "prerequisites": [
       "tech_alloys_1",
-      "tech_luxuries_1",
       "tech_colonial_centralization"
     ],
     "tier": 3,
@@ -3053,6 +3179,33 @@ const Technology = {
     "tier": 0,
     "key": "tech_planetary_government"
   },
+  "tech_planetary_infrastructure_1": {
+    "name": "Ceramo-Metal Infrastructure",
+    "description": "Stronger alloys allow us to create prefabricated buildings, providing our colonies with the improved infrastructure.",
+    "area": "society",
+    "category": "new_worlds",
+    "cost": 2500,
+    "prerequisites": [
+      "tech_colonial_centralization",
+      "tech_ship_armor_2"
+    ],
+    "tier": 2,
+    "key": "tech_planetary_infrastructure_1"
+  },
+  "tech_planetary_infrastructure_2": {
+    "name": "Durasteel Infrastructure",
+    "description": "Advances in metallurgy permit us to build vastly larger and more durable structures, greatly improving the infrastructure of our colonies.",
+    "area": "society",
+    "category": "new_worlds",
+    "cost": 12000,
+    "prerequisites": [
+      "tech_galactic_administration",
+      "tech_ship_armor_4",
+      "tech_planetary_infrastructure_1"
+    ],
+    "tier": 4,
+    "key": "tech_planetary_infrastructure_2"
+  },
   "tech_planetary_shield_generator": {
     "name": "Planetary Shields",
     "description": "Generating a strong energy shield within a planetary atmosphere is a greater challenge than in the vacuum of space, but it offers a potent defense against orbital bombardment.",
@@ -3123,6 +3276,9 @@ const Technology = {
     "area": "physics",
     "category": "computing",
     "cost": 8000,
+    "feature_flags": [
+      "unlocks_auto_research"
+    ],
     "prerequisites": [
       "tech_self_aware_logic"
     ],
@@ -3774,6 +3930,9 @@ const Technology = {
     "area": "physics",
     "category": "computing",
     "cost": 8000,
+    "feature_flags": [
+      "unlocks_auto_research"
+    ],
     "prerequisites": [
       "tech_self_aware_logic"
     ],
@@ -4523,6 +4682,19 @@ const Technology = {
     "tier": 2,
     "key": "tech_terrestrial_sculpting"
   },
+  "tech_thought_enforcement": {
+    "name": "Thought Enforcement",
+    "description": "Telepaths can monitor the citizenry for incorrect thoughts, but with some study they could also correct thought abberations that they find.",
+    "area": "society",
+    "category": "psionics",
+    "cost": 10000,
+    "is_rare": true,
+    "prerequisites": [
+      "tech_telepathy"
+    ],
+    "tier": 4,
+    "key": "tech_thought_enforcement"
+  },
   "tech_thrusters_1": {
     "name": "Chemical Thrusters",
     "description": "Simple yet moderately effective chemical thrusters that rely on combustible propellant to function.",
@@ -4667,6 +4839,20 @@ const Technology = {
     ],
     "tier": 1,
     "key": "tech_toxic_kelp"
+  },
+  "tech_tracking_implants": {
+    "name": "Tracking Implants",
+    "description": "Further advancements in the field of subdermal implants can provide detailed information regarding the movements and actions of the implanted.",
+    "area": "society",
+    "category": "statecraft",
+    "cost": 10000,
+    "is_rare": true,
+    "prerequisites": [
+      "tech_subdermal_stimulation",
+      "tech_galactic_bureaucracy"
+    ],
+    "tier": 4,
+    "key": "tech_tracking_implants"
   },
   "tech_transcendent_faith": {
     "name": "Metacognitive Faith",
