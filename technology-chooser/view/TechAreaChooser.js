@@ -15,12 +15,17 @@ class TechAreaChooser extends React.PureComponent {
       TechnologyArea.engineering,
     ];
     const items = R.map(mapFunction, items0);
+    const labelFunction = (item) => item.label;
+    const filterFunction = (item) => item.key === selected;
+    const selectedItem = R.head(R.filter(filterFunction, items));
 
     return React.createElement(RadioButtonPanel, {
       key: "techAreaChooser",
       items,
       applyOnClick,
-      selected,
+      className: "w-100",
+      labelFunction,
+      selectedItem,
     });
   }
 }

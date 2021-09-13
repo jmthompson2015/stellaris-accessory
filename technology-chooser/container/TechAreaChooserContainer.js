@@ -10,7 +10,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => ({
   applyOnClick: (selected) => {
-    dispatch(ActionCreator.setTechArea(selected));
+    dispatch(ActionCreator.setTechArea(selected.key));
     dispatch(ActionCreator.clearSelectedItems());
   },
 });
