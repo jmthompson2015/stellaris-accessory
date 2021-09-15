@@ -1,0 +1,33 @@
+body {
+  background-color: Black;
+  background-image: url(stellaris_utopia.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-family: "Futura", "San Francisco", "Helvetica Neue", Helvetica,
+    sans-serif;
+}
+
+.button-row {
+  background-color: gray;
+}
+
+.button-table {
+  margin: 0 auto;
+}
+
+.color-engineering {
+  color: hsl(45, 100%, 40%);
+}
+
+.color-physics {
+  color: hsl(195, 100%, 45%);
+}
+
+.color-society {
+  color: Green;
+}
+
+.scroll-pane {
+  height: 400px;
+  overflow-y: auto;
+}
