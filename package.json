@@ -5,26 +5,26 @@
   "main": ".eslintrc.js",
   "dependencies": {
     "fs": "0.0.1-security",
-    "node-fetch": "^2.3.0",
-    "prop-types": "^15.6.2",
-    "ramda": "^0.26.1",
-    "react": "^16.6.3",
-    "react-dom": "^16.6.3",
+    "node-fetch": "^3.0.0",
+    "prop-types": "^15.7.2",
+    "ramda": "^0.27.1",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
     "react-dom-factories": "^1.0.2",
-    "react-redux": "^6.0.0",
-    "redux": "^4.0.1",
+    "react-redux": "^7.2.5",
+    "redux": "^4.1.1",
     "seamless-immutable": "^7.1.4",
-    "tachyons": "^4.11.1",
-    "unit.js": "^2.0.0"
+    "tachyons": "^4.12.0",
+    "unit.js": "^2.1.1"
   },
   "devDependencies": {
-    "eslint": "^5.9.0",
-    "eslint-config-airbnb": "^17.1.0",
-    "eslint-config-prettier": "^3.3.0",
-    "eslint-plugin-import": "^2.14.0",
-    "eslint-plugin-jsx-a11y": "^6.1.2",
-    "eslint-plugin-react": "^7.11.1",
-    "qunit": "^2.8.0"
+    "eslint": "^7.32.0",
+    "eslint-config-airbnb": "^18.2.1",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-import": "^2.24.2",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-react": "^7.25.1",
+    "qunit": "^2.17.1"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
