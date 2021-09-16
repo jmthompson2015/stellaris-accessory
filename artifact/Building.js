@@ -809,11 +809,48 @@ const Building = {
     ],
     "key": "building_clinic"
   },
+  "building_clone_army_clone_vat": {
+    "name": "Ancient Clone Vat",
+    "description": "Lost technology left behind by the Creators. Can be taken apart and reassembled, but its inner components and workings are much too advanced to replicate.",
+    "base_buildtime": 90,
+    "category": "pop_assembly",
+    "potential": {
+      "exists": "owner",
+      "owner": {
+        "has_origin": "origin_clone_army",
+        "NOT": {
+          "has_country_flag": "clone_army_fertility_unlocked"
+        }
+      }
+    },
+    "prerequisites": [],
+    "resources": {
+      "category": "planet_buildings",
+      "cost": {
+        "minerals": "@b2_minerals"
+      },
+      "upkeep": {
+        "energy": "@b2_upkeep"
+      }
+    },
+    "triggered_planet_modifier": {
+      "potential": {
+        "check_variable": {
+          "which": "clone_pops_missing_per_vat"
+        }
+      },
+      "modifier": {
+        "planet_pop_assembly_organic_add": 5
+      }
+    },
+    "upgrades": [],
+    "key": "building_clone_army_clone_vat"
+  },
   "building_clone_vats": {
     "name": "Clone Vats",
-    "description": "Clone Vats break down simple organic materials like food to generate Organic Pop Assembly.",
+    "description": "Clone Vats break down simple materials to generate Organic Pop Assembly.",
     "base_buildtime": "@b1_time",
-    "category": "government",
+    "category": "pop_assembly",
     "planet_modifier": {
       "planet_pop_assembly_organic_add": 3
     },
@@ -837,12 +874,22 @@ const Building = {
     "resources": {
       "category": "planet_buildings",
       "cost": {
-        "minerals": 500,
-        "food": 500
+        "trigger": {
+          "exists": "owner",
+          "owner": {
+            "is_lithoid_empire": true
+          }
+        },
+        "energy": 500
       },
       "upkeep": {
-        "energy": 2,
-        "food": 30
+        "trigger": {
+          "exists": "owner",
+          "owner": {
+            "is_lithoid_empire": true
+          }
+        },
+        "minerals": 30
       }
     },
     "key": "building_clone_vats"
@@ -931,8 +978,8 @@ const Building = {
     "can_build": false,
     "category": "trade",
     "planet_modifier": {
-      "job_merchant_add": 1,
-      "job_clerk_add": 6
+      "job_clerk_add": 6,
+      "job_merchant_add": 1
     },
     "potential": {
       "exists": "owner",
@@ -956,6 +1003,17 @@ const Building = {
       "upkeep": {
         "energy": "@b2_upkeep",
         "rare_crystals": "@b2_rare_upkeep"
+      }
+    },
+    "triggered_planet_modifier": {
+      "potential": {
+        "exists": "owner",
+        "owner": {
+          "has_active_tradition": "tr_mercantile_commercial_enterprise"
+        }
+      },
+      "modifier": {
+        "job_merchant_add": 1
       }
     },
     "key": "building_commercial_megaplex"
@@ -990,6 +1048,17 @@ const Building = {
       },
       "upkeep": {
         "energy": "@b1_upkeep"
+      }
+    },
+    "triggered_planet_modifier": {
+      "potential": {
+        "exists": "owner",
+        "owner": {
+          "has_active_tradition": "tr_mercantile_commercial_enterprise"
+        }
+      },
+      "modifier": {
+        "job_merchant_add": 1
       }
     },
     "upgrades": [
@@ -1043,7 +1112,7 @@ const Building = {
       "potential": {
         "exists": "owner",
         "owner": {
-          "has_non_swapped_tradition": "tr_domination_imperious_architecture"
+          "has_active_tradition": "tr_domination_imperious_architecture"
         }
       },
       "modifier": {
@@ -1106,7 +1175,7 @@ const Building = {
       "potential": {
         "exists": "owner",
         "owner": {
-          "has_non_swapped_tradition": "tr_domination_imperious_architecture"
+          "has_active_tradition": "tr_domination_imperious_architecture"
         }
       },
       "modifier": {
@@ -1611,7 +1680,7 @@ const Building = {
       "building_military_academy"
     ],
     "planet_modifier": {
-      "job_necromancer_add": 1
+      "job_necromancer_add": 2
     },
     "potential": {
       "buildings_simple_allow": true,
@@ -1620,9 +1689,6 @@ const Building = {
         "has_valid_civic": "civic_reanimated_armies"
       }
     },
-    "prerequisites": [
-      "tech_centralized_command"
-    ],
     "resources": {
       "category": "planet_buildings",
       "cost": {
@@ -1673,7 +1739,7 @@ const Building = {
       "potential": {
         "exists": "owner",
         "owner": {
-          "has_non_swapped_tradition": "tr_domination_imperious_architecture"
+          "has_active_tradition": "tr_domination_imperious_architecture"
         }
       },
       "modifier": {
@@ -1796,6 +1862,9 @@ const Building = {
     },
     "base_buildtime": "@b1_time",
     "category": "resource",
+    "planet_modifier": {
+      "planet_technician_energy_produces_add": 1
+    },
     "potential": {
       "NOT": {
         "has_modifier": "resort_colony"
@@ -1859,6 +1928,9 @@ const Building = {
     "base_buildtime": "@b2_time",
     "can_build": false,
     "category": "resource",
+    "planet_modifier": {
+      "planet_technician_energy_produces_add": 2
+    },
     "prerequisites": [
       "tech_power_hub_2"
     ],
@@ -1900,7 +1972,7 @@ const Building = {
     "allow": [
       "num_pops",
       ">=",
-      "50"
+      "25"
     ],
     "base_buildtime": "@b3_time",
     "planet_modifier": {
@@ -1969,7 +2041,7 @@ const Building = {
       "potential": {
         "exists": "owner",
         "owner": {
-          "has_non_swapped_tradition": "tr_domination_imperious_architecture"
+          "has_active_tradition": "tr_domination_imperious_architecture"
         }
       },
       "modifier": {
@@ -2030,6 +2102,10 @@ const Building = {
     "base_buildtime": "@b2_time",
     "can_build": false,
     "category": "manufacturing",
+    "planet_modifier": {
+      "planet_artisans_consumer_goods_produces_add": 1,
+      "planet_artisans_minerals_upkeep_add": 1
+    },
     "potential": {
       "exists": "owner",
       "owner": {
@@ -2079,6 +2155,10 @@ const Building = {
     "base_buildtime": "@b3_time",
     "can_build": false,
     "category": "manufacturing",
+    "planet_modifier": {
+      "planet_artisans_consumer_goods_produces_add": 2,
+      "planet_artisans_minerals_upkeep_add": 2
+    },
     "potential": {
       "exists": "owner",
       "owner": {
@@ -2254,6 +2334,9 @@ const Building = {
     "base_buildtime": "@b2_time",
     "can_build": false,
     "category": "resource",
+    "planet_modifier": {
+      "planet_farmers_food_produces_add": 2
+    },
     "prerequisites": [
       "tech_food_processing_2"
     ],
@@ -2289,6 +2372,9 @@ const Building = {
     },
     "base_buildtime": "@b1_time",
     "category": "resource",
+    "planet_modifier": {
+      "planet_farmers_food_produces_add": 1
+    },
     "potential": {
       "exists": "owner",
       "NOR": {
@@ -2338,6 +2424,15 @@ const Building = {
     ],
     "resources": {
       "category": "planet_buildings_strongholds",
+      "produces": {
+        "trigger": {
+          "exists": "owner",
+          "owner": {
+            "has_active_tradition": "tr_unyielding_resistance_is_frugal"
+          }
+        },
+        "unity": 3
+      },
       "cost": {
         "minerals": "@b2_minerals",
         "volatile_motes": "@b2_rare_cost"
@@ -2389,11 +2484,12 @@ const Building = {
       "potential": {
         "exists": "owner",
         "owner": {
-          "is_regular_empire": true
+          "is_regular_empire": true,
+          "is_catalytic_empire": true
         }
       },
       "modifier": {
-        "job_foundry_add": "@b1_jobs"
+        "job_catalytic_technician_add": "@b1_jobs"
       }
     },
     "upgrades": [
@@ -2410,6 +2506,9 @@ const Building = {
     "base_buildtime": "@b2_time",
     "can_build": false,
     "category": "manufacturing",
+    "planet_modifier": {
+      "planet_metallurgists_alloys_produces_add": 1
+    },
     "prerequisites": [
       "tech_alloys_1"
     ],
@@ -2428,11 +2527,13 @@ const Building = {
       "potential": {
         "exists": "owner",
         "owner": {
-          "is_machine_empire": true
+          "is_gestalt": true,
+          "is_catalytic_empire": true
         }
       },
       "modifier": {
-        "job_fabricator_add": "@b1_jobs"
+        "planet_metallurgists_food_upkeep_add": 3,
+        "job_catalytic_drone_add": "@b1_jobs"
       }
     },
     "upgrades": [
@@ -2450,6 +2551,9 @@ const Building = {
     "base_buildtime": "@b3_time",
     "can_build": false,
     "category": "manufacturing",
+    "planet_modifier": {
+      "planet_metallurgists_alloys_produces_add": 2
+    },
     "prerequisites": [
       "tech_alloys_2"
     ],
@@ -2468,18 +2572,144 @@ const Building = {
       "potential": {
         "exists": "owner",
         "owner": {
-          "is_machine_empire": true
+          "is_gestalt": true,
+          "is_catalytic_empire": true
         }
       },
       "modifier": {
-        "job_fabricator_add": "@b1_jobs"
+        "planet_metallurgists_food_upkeep_add": 6,
+        "job_catalytic_drone_add": "@b1_jobs"
       }
     },
     "key": "building_foundry_3"
   },
+  "building_gaiaseeders_1": {
+    "description": "$building_gaiaseeders$ - Phase 1",
+    "allow": {
+      "is_ideal_planet_class": {
+        "who": "owner",
+        "status": true
+      },
+      "has_upgraded_capital": true
+    },
+    "base_buildtime": "@b2_time",
+    "category": "government",
+    "planet_modifier": {
+      "pop_growth_speed": 0.1
+    },
+    "potential": {
+      "exists": "owner",
+      "owner": {
+        "is_country_type": "default",
+        "OR": {
+          "has_valid_civic": "civic_hive_idyllic_bloom"
+        }
+      },
+      "building_basic_income_check": true,
+      "NOR": {
+        "is_planet_class": "pc_machine"
+      },
+      "is_artificial": false
+    },
+    "resources": {
+      "category": "planet_buildings",
+      "cost": {
+        "energy": 1500
+      },
+      "upkeep": {
+        "energy": 20
+      }
+    },
+    "upgrades": [
+      "building_gaiaseeders_2"
+    ],
+    "key": "building_gaiaseeders_1"
+  },
+  "building_gaiaseeders_2": {
+    "description": "$building_gaiaseeders$ - Phase 2",
+    "allow": {
+      "is_ideal_planet_class": {
+        "who": "owner",
+        "status": true
+      }
+    },
+    "base_buildtime": "@b2_time",
+    "can_build": false,
+    "category": "government",
+    "planet_modifier": {
+      "pop_growth_speed": 0.05,
+      "pop_environment_tolerance": 0.1
+    },
+    "resources": {
+      "category": "planet_buildings",
+      "cost": {
+        "energy": 1500,
+        "exotic_gases": "@b2_rare_cost"
+      },
+      "upkeep": {
+        "energy": 20,
+        "exotic_gases": "@b2_rare_upkeep"
+      }
+    },
+    "upgrades": [
+      "building_gaiaseeders_3"
+    ],
+    "key": "building_gaiaseeders_2"
+  },
+  "building_gaiaseeders_3": {
+    "description": "$building_gaiaseeders$ - Phase 3",
+    "allow": {
+      "is_ideal_planet_class": {
+        "who": "owner",
+        "status": true
+      }
+    },
+    "base_buildtime": "@b2_time",
+    "can_build": false,
+    "category": "government",
+    "planet_modifier": {
+      "pop_environment_tolerance": 0.2
+    },
+    "resources": {
+      "category": "planet_buildings",
+      "cost": {
+        "energy": 1500,
+        "exotic_gases": "@b3_rare_cost"
+      },
+      "upkeep": {
+        "energy": 20,
+        "exotic_gases": "@b3_rare_upkeep"
+      }
+    },
+    "upgrades": [
+      "building_gaiaseeders_4"
+    ],
+    "key": "building_gaiaseeders_3"
+  },
+  "building_gaiaseeders_4": {
+    "name": "Terraforms the planet into a §YGaia World§! on completion.",
+    "description": "",
+    "allow": {
+      "is_ideal_planet_class": {
+        "who": "owner",
+        "status": true
+      }
+    },
+    "base_buildtime": "@b2_time",
+    "can_build": false,
+    "category": "government",
+    "resources": {
+      "category": "planet_buildings",
+      "cost": {
+        "energy": 1500,
+        "exotic_gases": "@b4_rare_cost"
+      }
+    },
+    "key": "building_gaiaseeders_4"
+  },
   "building_galactic_memorial_1": {
     "name": "Sanctuary of Repose",
-    "description": "This humble memorial focuses thoughts and study upon the multi-facted nature of death and endings.",
+    "description": "This humble memorial focuses thoughts and study upon the multi-faceted nature of death and endings.",
     "base_buildtime": "@b1_time",
     "category": "unity",
     "convert_to": [
@@ -2490,9 +2720,6 @@ const Building = {
       "building_corporate_monument",
       "building_autochthon_monument"
     ],
-    "planet_modifier": {
-      "planet_stability_add": 5
-    },
     "potential": {
       "exists": "owner",
       "building_basic_income_check": true,
@@ -2561,9 +2788,6 @@ const Building = {
       "building_corporate_site",
       "building_heritage_site"
     ],
-    "planet_modifier": {
-      "planet_stability_add": 10
-    },
     "potential": {
       "exists": "owner",
       "NOT": {
@@ -2627,9 +2851,6 @@ const Building = {
       "building_corporate_forum",
       "building_hypercomms_forum"
     ],
-    "planet_modifier": {
-      "planet_stability_add": 15
-    },
     "potential": {
       "exists": "owner",
       "NOT": {
@@ -2823,7 +3044,7 @@ const Building = {
       "upkeep": {
         "trigger": {
           "owner": {
-            "has_swapped_tradition": "tr_domination_adopt_void"
+            "has_active_tradition": "tr_domination_adopt_void"
           }
         },
         "alloys": -1
@@ -2923,7 +3144,7 @@ const Building = {
       "upkeep": {
         "trigger": {
           "owner": {
-            "has_swapped_tradition": "tr_domination_adopt_void"
+            "has_active_tradition": "tr_domination_adopt_void"
           }
         },
         "alloys": -1
@@ -3671,7 +3892,7 @@ const Building = {
       "planet_housing_add": 18,
       "planet_amenities_add": 18,
       "planet_max_buildings_add": 11,
-      "planet_max_branch_office_buildings_add": 3
+      "planet_max_branch_office_buildings_add": 4
     },
     "potential": {
       "exists": "owner",
@@ -3978,7 +4199,7 @@ const Building = {
       "potential": {
         "exists": "owner",
         "owner": {
-          "has_non_swapped_tradition": "tr_domination_imperious_architecture"
+          "has_active_tradition": "tr_domination_imperious_architecture"
         }
       },
       "modifier": {
@@ -4519,7 +4740,7 @@ const Building = {
           "is_robot_empire": true
         },
         "NOR": {
-          "is_planet_class": "pc_city"
+          "is_planet_class": "pc_shattered_ring_habitable"
         }
       },
       "modifier": {
@@ -4536,6 +4757,9 @@ const Building = {
     },
     "base_buildtime": "@b1_time",
     "category": "resource",
+    "planet_modifier": {
+      "planet_miners_minerals_produces_add": 1
+    },
     "potential": {
       "NOT": {
         "has_modifier": "resort_colony"
@@ -4575,7 +4799,7 @@ const Building = {
           "is_robot_empire": true
         },
         "NOR": {
-          "is_planet_class": "pc_city"
+          "is_planet_class": "pc_shattered_ring_habitable"
         }
       },
       "modifier": {
@@ -4760,7 +4984,17 @@ const Building = {
           "has_modifier": "planet_culture_shock"
         }
       },
-      "NOR": {
+      "if": {
+        "limit": {
+          "owner": {
+            "is_hive_empire": false
+          }
+        },
+        "NOT": {
+          "is_planet_class": "pc_hive"
+        }
+      },
+      "NOT": {
         "is_planet_class": "pc_machine"
       },
       "hidden_trigger": {
@@ -4779,7 +5013,6 @@ const Building = {
     "base_buildtime": "@b1_time",
     "category": "pop_assembly",
     "planet_modifier": {
-      "planet_stability_add": 5,
       "job_necro_apprentice_add": 1
     },
     "potential": {
@@ -4787,8 +5020,8 @@ const Building = {
       "owner": {
         "has_origin": "origin_necrophage",
         "has_trait": "trait_necrophage",
-        "NOT": {
-          "has_valid_civic": "civic_fanatic_purifiers"
+        "NOR": {
+          "has_valid_civic": "civic_hive_devouring_swarm"
         }
       }
     },
@@ -4836,7 +5069,6 @@ const Building = {
     "can_build": false,
     "category": "pop_assembly",
     "planet_modifier": {
-      "planet_stability_add": 10,
       "job_necro_apprentice_add": 6
     },
     "potential": {
@@ -4844,8 +5076,8 @@ const Building = {
       "owner": {
         "has_origin": "origin_necrophage",
         "has_trait": "trait_necrophage",
-        "NOT": {
-          "has_valid_civic": "civic_fanatic_purifiers"
+        "NOR": {
+          "has_valid_civic": "civic_hive_devouring_swarm"
         },
         "is_ai": false
       }
@@ -4863,6 +5095,16 @@ const Building = {
         "energy": "@b2_upkeep",
         "exotic_gases": "@b2_rare_upkeep"
       }
+    },
+    "triggered_planet_modifier": {
+      "potential": {
+        "is_planet_class": "pc_hive",
+        "exists": "owner",
+        "owner": {
+          "is_hive_empire": true
+        }
+      },
+      "job_necro_apprentice_add": 4
     },
     "key": "building_necrophage_house_of_apotheosis"
   },
@@ -5004,7 +5246,7 @@ const Building = {
   },
   "building_organic_paradise": {
     "name": "Organic Paradise",
-    "description": "An AI-controlled artificial paradise designed to satisfy every need a sapient organic being might have, just so long as it does not express a need for self-determination. The Organics within have their housing needs completely fulfilled.",
+    "description": "An AI-controlled artificial paradise designed to satisfy every need a sapient organic being might have, just so long as it does not express a need for self-determination. The organics within have their housing needs completely fulfilled.",
     "base_buildtime": "@b2_time",
     "can_build": false,
     "convert_to": [
@@ -5014,8 +5256,7 @@ const Building = {
     "planet_modifier": {
       "job_bio_trophy_add": 20,
       "job_artisan_drone_add": 2,
-      "job_maintenance_drone_add": 1,
-      "planet_carry_cap_add": 20
+      "job_maintenance_drone_add": 1
     },
     "potential": {
       "exists": "owner",
@@ -5041,7 +5282,7 @@ const Building = {
   },
   "building_organic_sanctuary": {
     "name": "Organic Sanctuary",
-    "description": "This sanctuary provides a sealed environment where organics can thrive in a safe and above all controlled manner. The Organics within have their housing needs completely fulfilled.",
+    "description": "This sanctuary provides a sealed environment where organics can thrive in a safe and above all controlled manner. The organics within have their housing needs completely fulfilled.",
     "base_buildtime": "@b1_time",
     "category": "unity",
     "convert_to": [
@@ -5050,8 +5291,7 @@ const Building = {
     ],
     "planet_modifier": {
       "job_bio_trophy_add": 10,
-      "job_artisan_drone_add": 1,
-      "planet_carry_cap_add": 10
+      "job_artisan_drone_add": 1
     },
     "potential": {
       "exists": "owner",
@@ -5148,7 +5388,7 @@ const Building = {
       "potential": {
         "exists": "owner",
         "owner": {
-          "has_non_swapped_tradition": "tr_domination_imperious_architecture"
+          "has_active_tradition": "tr_domination_imperious_architecture"
         }
       },
       "modifier": {
@@ -5539,10 +5779,11 @@ const Building = {
       "potential": {
         "exists": "owner",
         "owner": {
-          "is_machine_empire": true
+          "is_machine_empire": true,
+          "is_catalytic_empire": true
         }
       },
-      "job_fabricator_add": 1
+      "job_catalytic_drone_add": 1
     },
     "key": "building_production_center"
   },
@@ -6109,7 +6350,7 @@ const Building = {
     ],
     "planet_modifier": {
       "job_death_priest_add": 3,
-      "job_mortal_initiate_add": 3,
+      "job_mortal_initiate_add": 2,
       "pop_ethic_spiritualist_attraction_mult": 0.1
     },
     "potential": {
@@ -6162,7 +6403,7 @@ const Building = {
     ],
     "planet_modifier": {
       "job_death_priest_add": 5,
-      "job_mortal_initiate_add": 5,
+      "job_mortal_initiate_add": 3,
       "pop_ethic_spiritualist_attraction_mult": 0.15
     },
     "potential": {
@@ -6627,6 +6868,15 @@ const Building = {
     ],
     "resources": {
       "category": "planet_buildings_strongholds",
+      "produces": {
+        "trigger": {
+          "exists": "owner",
+          "owner": {
+            "has_active_tradition": "tr_unyielding_resistance_is_frugal"
+          }
+        },
+        "unity": 3
+      },
       "cost": {
         "minerals": "@b1_minerals"
       },
@@ -6649,6 +6899,33 @@ const Building = {
       "building_fortress"
     ],
     "key": "building_stronghold"
+  },
+  "building_subversive_shrine": {
+    "name": "Subversive Shrine",
+    "description": "A meeting place for followers of the Subversive Cult to gather and conduct their ceremonies.",
+    "base_buildtime": "@b1_time",
+    "planet_modifier": {
+      "job_preacher_add": 2,
+      "pop_ethic_spiritualist_attraction_mult": 0.25,
+      "planet_crime_add": 25
+    },
+    "potential": {
+      "has_branch_office": true,
+      "branch_office_owner": {
+        "has_valid_civic": "civic_gospel_of_the_masses",
+        "is_criminal_syndicate": true
+      }
+    },
+    "resources": {
+      "category": "planet_branch_office_buildings",
+      "cost": {
+        "minerals": 500
+      },
+      "upkeep": {
+        "energy": 2
+      }
+    },
+    "key": "building_subversive_shrine"
   },
   "building_supercomputer": {
     "name": "Planetary Supercomputer",
@@ -6751,7 +7028,7 @@ const Building = {
       "planet_housing_add": 12,
       "planet_amenities_add": 12,
       "planet_max_buildings_add": "@buildings_t4",
-      "planet_max_branch_office_buildings_add": 3
+      "planet_max_branch_office_buildings_add": 4
     },
     "potential": {
       "exists": "owner",
@@ -6888,7 +7165,8 @@ const Building = {
     "potential": {
       "has_branch_office": true,
       "branch_office_owner": {
-        "has_valid_civic": "civic_gospel_of_the_masses"
+        "has_valid_civic": "civic_gospel_of_the_masses",
+        "is_criminal_syndicate": false
       }
     },
     "resources": {
@@ -7134,7 +7412,7 @@ const Building = {
     "allow": [
       "num_pops",
       ">=",
-      "50"
+      "25"
     ],
     "base_buildtime": "@b3_time",
     "planet_modifier": {
