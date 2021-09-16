@@ -1,7 +1,7 @@
-const R = require("ramda");
+import R from "ramda";
 
-const FileLoader = require("../converter/FileLoader.js");
-const FileWriter = require("../converter/FileWriter.js");
+import FileLoader from "../converter/FileLoader.js";
+import FileWriter from "../converter/FileWriter.js";
 
 const AreaGenerator = {};
 
@@ -15,14 +15,14 @@ Object.freeze(TechnologyArea);
 
 export default TechnologyArea;`;
 
-const capitalizeFirstLetter = string => {
+const capitalizeFirstLetter = (string) => {
   const firstLetter = string[0] || string.charAt(0);
 
   return firstLetter ? firstLetter.toUpperCase() + string.substring(1) : "";
 };
 
 AreaGenerator.convert = () => {
-  FileLoader.loadLocalFileJson(INPUT_FILE).then(data => {
+  FileLoader.loadLocalFileJson(INPUT_FILE).then((data) => {
     const reduceFunction1 = (accum, item) =>
       item[PROPERTY] ? R.append(item[PROPERTY], accum) : accum;
     const values = Object.values(data);

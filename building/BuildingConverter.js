@@ -1,10 +1,10 @@
 /* eslint no-console: ["error", { allow: ["log", "error"] }] */
 
-const R = require("ramda");
+import R from "ramda";
 
-const FileLoader = require("../converter/FileLoader.js");
-const FileWriter = require("../converter/FileWriter.js");
-const NameFinder = require("../converter/NameFinder.js");
+import FileLoader from "../converter/FileLoader.js";
+import FileWriter from "../converter/FileWriter.js";
+import NameFinder from "../converter/NameFinder.js";
 
 const BuildingConverter = {};
 
@@ -21,8 +21,8 @@ Object.freeze(Building);
 export default Building;`;
 
 const parseBuilding = (key, building0) =>
-  new Promise(resolve => {
-    NameFinder.find(key).then(nameDesc => {
+  new Promise((resolve) => {
+    NameFinder.find(key).then((nameDesc) => {
       resolve({
         name: nameDesc.name,
         description: nameDesc.description,
@@ -37,13 +37,13 @@ const parseBuilding = (key, building0) =>
         resources: building0.resources,
         triggered_planet_modifier: building0.triggered_planet_modifier,
         upgrades: building0.upgrades,
-        key
+        key,
       });
     });
   });
 
 const parse = (buildings, indexIn, answerIn) =>
-  new Promise(resolve => {
+  new Promise((resolve) => {
     const index = indexIn;
     const answer = answerIn || {};
 
@@ -51,10 +51,10 @@ const parse = (buildings, indexIn, answerIn) =>
     const building0 = buildings[key];
 
     if (building0) {
-      parseBuilding(key, building0).then(building => {
+      parseBuilding(key, building0).then((building) => {
         const myIndex = index + 1;
         const myAnswer = R.assoc(building.key, building, answer);
-        parse(buildings, myIndex, myAnswer).then(answer2 => resolve(answer2));
+        parse(buildings, myIndex, myAnswer).then((answer2) => resolve(answer2));
       });
     } else {
       resolve(answer);
@@ -65,13 +65,18 @@ BuildingConverter.convert = () => {
   const start = Date.now();
   console.log("BuildingConverter.convert() start");
   console.log(`parsing file ${INPUT_FILE}`);
-  FileLoader.loadLocalFileJson(`${INPUT_FILE}`).then(buildings => {
-    parse(buildings, 0).then(buildingDetails0 => {
+  FileLoader.loadLocalFileJson(`${INPUT_FILE}`).then((buildings) => {
+    parse(buildings, 0).then((buildingDetails0) => {
       const buildingKeys = Object.keys(buildingDetails0);
       buildingKeys.sort();
-      const reduceFunction = (accum, key) => R.assoc(key, buildingDetails0[key], accum);
+      const reduceFunction = (accum, key) =>
+        R.assoc(key, buildingDetails0[key], accum);
       const buildingDetails = R.reduce(reduceFunction, {}, buildingKeys);
-      const content2 = `${HEADER}${JSON.stringify(buildingDetails, null, "  ")}${FOOTER}`;
+      const content2 = `${HEADER}${JSON.stringify(
+        buildingDetails,
+        null,
+        "  "
+      )}${FOOTER}`;
       FileWriter.writeFile(OUTPUT_FILE, content2);
       const end = Date.now();
       console.log(`elapsed: ${end - start} ms`);

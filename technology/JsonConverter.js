@@ -1,11 +1,11 @@
 /* eslint no-console: ["error", { allow: ["log"] }] */
 
-const R = require("ramda");
+import R from "ramda";
 
-const FileLoader = require("../converter/FileLoader.js");
-const FileWriter = require("../converter/FileWriter.js");
-const Lexer = require("../converter/Lexer.js");
-const Parser = require("../converter/Parser.js");
+import FileLoader from "../converter/FileLoader.js";
+import FileWriter from "../converter/FileWriter.js";
+import Lexer from "../converter/Lexer.js";
+import Parser from "../converter/Parser.js";
 
 const JsonConverter = {};
 
@@ -72,4 +72,4 @@ JsonConverter.convert = () =>
     });
   });
 
-module.exports = JsonConverter;
+export default JsonConverter;

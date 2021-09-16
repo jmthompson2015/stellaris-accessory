@@ -1,10 +1,12 @@
 /* eslint max-len: ["error", { "ignoreTemplateLiterals": true }] */
 /* eslint no-console: ["error", { allow: ["log"] }] */
 
-const R = require("ramda");
-const { assert } = require("unit.js");
+import R from "ramda";
+import UnitJS from "unit.js";
 
-const Lexer = require("./Lexer.js");
+import Lexer from "./Lexer.js";
+
+const { assert } = UnitJS;
 
 const isVerbose = false;
 
@@ -17,7 +19,11 @@ const testExpected = (input, expected) => {
     console.log(`expected = ${JSON.stringify(expected, null, 2)}`);
   }
 
-  assert.equal(result.length, expected.length, `result.length = ${result.length}`);
+  assert.equal(
+    result.length,
+    expected.length,
+    `result.length = ${result.length}`
+  );
   assert(R.equals(result, expected));
 
   return result;
@@ -65,7 +71,7 @@ testExpected(TEST1, [
   "=",
   "yes",
   "}",
-  "}"
+  "}",
 ]);
 console.log("Lexer Test 1: passed");
 
@@ -125,7 +131,7 @@ testExpected(TEST2, [
   "TECH_UNLOCK_SCIENCE_SHIP_CONSTRUCTION_DESC",
   "}",
   "}",
-  "}"
+  "}",
 ]);
 console.log("Lexer Test 2: passed");
 
@@ -271,7 +277,7 @@ testExpected(TEST3, [
   "}",
   "}",
   "}",
-  "}"
+  "}",
 ]);
 console.log("Lexer Test 3: passed");
 
@@ -371,6 +377,6 @@ testExpected(TEST4, [
   "=",
   "0.05",
   "}",
-  "}"
+  "}",
 ]);
 console.log("Lexer Test 4: passed");

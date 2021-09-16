@@ -1,11 +1,11 @@
 /* eslint no-console: ["error", { allow: ["log"] }] */
 
-const fs = require("fs");
+import fs from "fs";
 
 const FileWriter = {};
 
 FileWriter.writeFile = (outputFile, content, isVerbose = true) => {
-  fs.writeFile(outputFile, content, err => {
+  fs.writeFile(outputFile, content, (err) => {
     if (err) {
       throw err;
     }
@@ -17,4 +17,4 @@ FileWriter.writeFile = (outputFile, content, isVerbose = true) => {
   });
 };
 
-module.exports = FileWriter;
+export default FileWriter;

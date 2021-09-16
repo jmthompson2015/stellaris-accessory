@@ -1,11 +1,11 @@
 /* eslint no-console: ["error", { allow: ["log"] }] */
 /* eslint no-unused-vars: ["error", { "args": "none" }] */
 
-const R = require("ramda");
+import R from "ramda";
 
 const Parser = {};
 
-const convertValue = value => {
+const convertValue = (value) => {
   let answer = value;
 
   if (value.match(/^[-+]?\d+$/)) {
@@ -21,7 +21,7 @@ const convertValue = value => {
   return answer;
 };
 
-const matchBrace = content => {
+const matchBrace = (content) => {
   let index = 0;
   let openCount = 1;
   let closeCount = 0;
@@ -38,7 +38,7 @@ const matchBrace = content => {
   return content.slice(0, index + 1);
 };
 
-const parseObject = fragment0 => {
+const parseObject = (fragment0) => {
   // Trim brackets.
   const fragment = fragment0.slice(1, -1);
   // console.log(`fragment = :${fragment}:`);
@@ -108,4 +108,4 @@ Parser.parse = (tokens, isVerbose = false) => {
   return answer;
 };
 
-module.exports = Parser;
+export default Parser;

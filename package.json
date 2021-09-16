@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": ".eslintrc.js",
+  "type": "module",
   "dependencies": {
     "fs": "0.0.1-security",
     "node-fetch": "^3.0.0",

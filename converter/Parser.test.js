@@ -1,11 +1,13 @@
 /* eslint max-len: ["error", { "ignoreTemplateLiterals": true }] */
 /* eslint no-console: ["error", { allow: ["log"] }] */
 
-const R = require("ramda");
-const { assert } = require("unit.js");
+import R from "ramda";
+import UnitJS from "unit.js";
 
-const Lexer = require("./Lexer.js");
-const Parser = require("./Parser.js");
+import Lexer from "./Lexer.js";
+import Parser from "./Parser.js";
+
+const { assert } = UnitJS;
 
 const isVerbose = false;
 
@@ -44,9 +46,9 @@ testExpected(TEST1, {
     prerequisites: ["tech_starbase_2"],
     start_tech: true,
     potential: {
-      is_gestalt: true
-    }
-  }
+      is_gestalt: true,
+    },
+  },
 });
 console.log("Parser Test 1: passed");
 
@@ -78,9 +80,9 @@ testExpected(TEST2, {
     prereqfor_desc: {
       ship: {
         title: "TECH_UNLOCK_SCIENCE_SHIP_CONSTRUCTION_TITLE",
-        desc: "TECH_UNLOCK_SCIENCE_SHIP_CONSTRUCTION_DESC"
-      }
-    }
-  }
+        desc: "TECH_UNLOCK_SCIENCE_SHIP_CONSTRUCTION_DESC",
+      },
+    },
+  },
 });
 console.log("Parser Test 2: passed");

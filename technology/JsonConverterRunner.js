@@ -1,5 +1,5 @@
 /* eslint no-console: ["error", { allow: ["log"] }] */
 
-const JsonConverter = require("./JsonConverter.js");
+import JsonConverter from "./JsonConverter.js";
 
 JsonConverter.convert().then(() => console.log("JsonConverterRunner done."));

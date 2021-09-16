@@ -1,14 +1,16 @@
 /* eslint no-console: ["error", { allow: ["log"] }] */
 
-const { assert } = require("unit.js");
+import UnitJS from "unit.js";
 
-const FileLoader = require("../converter/FileLoader.js");
+import FileLoader from "../converter/FileLoader.js";
 
-const JsonConverter = require("./JsonConverter.js");
+import JsonConverter from "./JsonConverter.js";
+
+const { assert } = UnitJS;
 
 const testExpected = () => {
   JsonConverter.convert().then(() =>
-    FileLoader.loadLocalFileJson("building.json").then(result => {
+    FileLoader.loadLocalFileJson("building.json").then((result) => {
       assert(result !== undefined);
       console.log("JsonConverter Test 1: passed");
     })

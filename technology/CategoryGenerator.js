@@ -1,7 +1,7 @@
-const R = require("ramda");
+import R from "ramda";
 
-const FileLoader = require("../converter/FileLoader.js");
-const FileWriter = require("../converter/FileWriter.js");
+import FileLoader from "../converter/FileLoader.js";
+import FileWriter from "../converter/FileWriter.js";
 
 const CategoryGenerator = {};
 
@@ -15,7 +15,7 @@ Object.freeze(TechnologyCategory);
 
 export default TechnologyCategory;`;
 
-const createName = key => {
+const createName = (key) => {
   const name0 = key.replace(/_/g, " ");
   let name = name0.charAt(0).toUpperCase() + name0.substring(1);
 
@@ -33,7 +33,7 @@ const createName = key => {
 };
 
 CategoryGenerator.convert = () => {
-  FileLoader.loadLocalFileJson(INPUT_FILE).then(data => {
+  FileLoader.loadLocalFileJson(INPUT_FILE).then((data) => {
     const reduceFunction1 = (accum, item) => {
       let answer = accum;
       const itemProp = item[PROPERTY];
@@ -64,7 +64,11 @@ CategoryGenerator.convert = () => {
     const allItem0 = R.reduce(reduceFunction1, {}, values);
     const allKeys = Object.keys(allItem0);
     allKeys.sort();
-    const itemMap = R.reduce((accum, key) => R.assoc(key, allItem0[key], accum), {}, allKeys);
+    const itemMap = R.reduce(
+      (accum, key) => R.assoc(key, allItem0[key], accum),
+      {},
+      allKeys
+    );
 
     const content = `${HEADER}${JSON.stringify(itemMap, null, "  ")}${FOOTER}`;
     FileWriter.writeFile(OUTPUT_FILE, content);

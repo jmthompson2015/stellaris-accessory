@@ -1,14 +1,15 @@
-const R = require("ramda");
+import R from "ramda";
 
 const Lexer = {};
 
-const maybeAppend = string => array => (string.length > 0 ? R.append(string, array) : array);
+const maybeAppend = (string) => (array) =>
+  string.length > 0 ? R.append(string, array) : array;
 
-const removeBlanks = tokens => R.filter(t => t !== "", tokens);
+const removeBlanks = (tokens) => R.filter((t) => t !== "", tokens);
 
-const removeComments = input => {
+const removeComments = (input) => {
   const lines0 = input.split(/[\r\n]/);
-  const mapFunction = l => {
+  const mapFunction = (l) => {
     const index = l.indexOf("#");
     if (index >= 0) {
       return l.substring(0, index);
@@ -20,8 +21,8 @@ const removeComments = input => {
   return lines1.join("\n");
 };
 
-const removeQuotationMarks = tokens => {
-  const mapFunction = t => {
+const removeQuotationMarks = (tokens) => {
+  const mapFunction = (t) => {
     if (t.indexOf(" ") < 0 && t.indexOf('"') >= 0) {
       return t.replace(/"/g, "");
     }
@@ -31,7 +32,7 @@ const removeQuotationMarks = tokens => {
   return R.map(mapFunction, tokens);
 };
 
-const separateChar = char => tokens => {
+const separateChar = (char) => (tokens) => {
   const reduceFunction = (accum, t) => {
     if (t.length > char.length) {
       const index0 = t.indexOf(char);
@@ -52,7 +53,7 @@ const separateChar = char => tokens => {
   return R.reduce(reduceFunction, [], tokens);
 };
 
-Lexer.lex = input => {
+Lexer.lex = (input) => {
   const input1 = removeComments(input);
   const tokens0 = input1.split(/[\s\n]/);
 
@@ -66,4 +67,4 @@ Lexer.lex = input => {
   return pipeFunction(tokens0);
 };
 
-module.exports = Lexer;
+export default Lexer;

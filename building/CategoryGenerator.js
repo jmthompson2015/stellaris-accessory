@@ -1,9 +1,9 @@
 /* eslint no-console: ["error", { allow: ["log", "error"] }] */
 
-const R = require("ramda");
+import R from "ramda";
 
-const FileLoader = require("../converter/FileLoader.js");
-const FileWriter = require("../converter/FileWriter.js");
+import FileLoader from "../converter/FileLoader.js";
+import FileWriter from "../converter/FileWriter.js";
 
 const CategoryGenerator = {};
 
@@ -19,7 +19,7 @@ Object.freeze(BuildingCategory);
 
 export default BuildingCategory;`;
 
-const createName = key => {
+const createName = (key) => {
   let answer;
 
   if (key) {
@@ -41,7 +41,7 @@ const createName = key => {
 CategoryGenerator.generate = () => {
   const start = Date.now();
   console.log("CategoryGenerator.generate() start");
-  FileLoader.loadLocalFileJson(INPUT_FILE).then(data => {
+  FileLoader.loadLocalFileJson(INPUT_FILE).then((data) => {
     const reduceFunction1 = (accum, item) => {
       const obj0 = accum[item[PROPERTY]];
       if (obj0) {
@@ -53,7 +53,11 @@ CategoryGenerator.generate = () => {
     const allItem0 = R.reduce(reduceFunction1, {}, Object.values(data));
     const allKeys = Object.keys(allItem0);
     allKeys.sort();
-    const itemMap = R.reduce((accum, key) => R.assoc(key, allItem0[key], accum), {}, allKeys);
+    const itemMap = R.reduce(
+      (accum, key) => R.assoc(key, allItem0[key], accum),
+      {},
+      allKeys
+    );
 
     const content = `${HEADER}${JSON.stringify(itemMap, null, "  ")}${FOOTER}`;
     FileWriter.writeFile(OUTPUT_FILE, content);
