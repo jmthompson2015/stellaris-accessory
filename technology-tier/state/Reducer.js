@@ -27,18 +27,30 @@ Reducer.root = (state, action) => {
     case ActionType.SET_VERBOSE:
       log(`Reducer SET_VERBOSE isVerbose ? ${action.isVerbose}`, state);
       return { ...state, isVerbose: action.isVerbose };
+    case ActionType.SET_PHYSICS_GOAL_KEYS:
+      log(`Reducer SET_PHYSICS_GOAL_KEYS techKeys = ${action.techKeys}`, state);
+      return { ...state, physicsGoalKeys: action.techKeys };
     case ActionType.SET_PHYSICS_TECH_KEYS:
       log(`Reducer SET_PHYSICS_TECH_KEYS techKeys = ${action.techKeys}`, state);
       return { ...state, physicsTechKeys: action.techKeys };
     case ActionType.SET_PHYSICS_TIER:
       log(`Reducer SET_PHYSICS_TIER tier = ${action.tier}`, state);
       return { ...state, physicsTier: action.tier };
+    case ActionType.SET_SOCIETY_GOAL_KEYS:
+      log(`Reducer SET_SOCIETY_GOAL_KEYS techKeys = ${action.techKeys}`, state);
+      return { ...state, societyGoalKeys: action.techKeys };
     case ActionType.SET_SOCIETY_TECH_KEYS:
       log(`Reducer SET_SOCIETY_TECH_KEYS techKeys = ${action.techKeys}`, state);
       return { ...state, societyTechKeys: action.techKeys };
     case ActionType.SET_SOCIETY_TIER:
       log(`Reducer SET_SOCIETY_TIER tier = ${action.tier}`, state);
       return { ...state, societyTier: action.tier };
+    case ActionType.SET_ENGINEERING_GOAL_KEYS:
+      log(
+        `Reducer SET_ENGINEERING_GOAL_KEYS techKeys = ${action.techKeys}`,
+        state
+      );
+      return { ...state, engineeringGoalKeys: action.techKeys };
     case ActionType.SET_ENGINEERING_TECH_KEYS:
       log(
         `Reducer SET_ENGINEERING_TECH_KEYS techKeys = ${action.techKeys}`,

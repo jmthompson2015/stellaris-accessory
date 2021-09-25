@@ -11,6 +11,11 @@ const makeActionCreator = (type, ...argNames) => (...args) => {
   return action;
 };
 
+ActionCreator.setEngineeringGoalKeys = makeActionCreator(
+  ActionType.SET_ENGINEERING_GOAL_KEYS,
+  "techKeys"
+);
+
 ActionCreator.setEngineeringTechKeys = makeActionCreator(
   ActionType.SET_ENGINEERING_TECH_KEYS,
   "techKeys"
@@ -21,6 +26,11 @@ ActionCreator.setEngineeringTier = makeActionCreator(
   "tier"
 );
 
+ActionCreator.setPhysicsGoalKeys = makeActionCreator(
+  ActionType.SET_PHYSICS_GOAL_KEYS,
+  "techKeys"
+);
+
 ActionCreator.setPhysicsTechKeys = makeActionCreator(
   ActionType.SET_PHYSICS_TECH_KEYS,
   "techKeys"
@@ -29,6 +39,11 @@ ActionCreator.setPhysicsTechKeys = makeActionCreator(
 ActionCreator.setPhysicsTier = makeActionCreator(
   ActionType.SET_PHYSICS_TIER,
   "tier"
+);
+
+ActionCreator.setSocietyGoalKeys = makeActionCreator(
+  ActionType.SET_SOCIETY_GOAL_KEYS,
+  "techKeys"
 );
 
 ActionCreator.setSocietyTechKeys = makeActionCreator(
