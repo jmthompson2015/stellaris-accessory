@@ -3,10 +3,23 @@ import TechUtils from "../model/TechnologyUtilities.js";
 const { ReactUtilities: RU } = ReactComponent;
 
 const labelFunction = (item) => {
-  const label = `${item.tier}: ${item.name}`;
   const className = `color-${item.area} v-mid`;
+  let answer;
 
-  return ReactDOMFactories.span({ className }, label);
+  if (item.is_dangerous || item.is_rare) {
+    const span1 = ReactDOMFactories.span({ className }, `${item.tier}: `);
+    const colorClass = item.is_dangerous ? "color-dangerous" : "color-rare";
+    const span2 = ReactDOMFactories.span(
+      { className: `${colorClass} v-mid` },
+      item.name
+    );
+    answer = ReactDOMFactories.span({}, span1, span2);
+  } else {
+    const label = `${item.tier}: ${item.name}`;
+    answer = ReactDOMFactories.span({ className }, label);
+  }
+
+  return answer;
 };
 
 const tierNameSort = R.sortWith([
