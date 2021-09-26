@@ -1,4 +1,5 @@
 import ActionCreator from "../state/ActionCreator.js";
+import Preferences from "../state/Preferences.js";
 import Reducer from "../state/Reducer.js";
 
 import TU from "../model/TechnologyUtilities.js";
@@ -8,27 +9,44 @@ import TierPanelContainer from "../container/TierPanelContainer.js";
 const { TitledElement } = ReactComponent;
 
 const store = Redux.createStore(Reducer.root);
-const tier = 1;
-store.dispatch(ActionCreator.setPhysicsTier(tier));
-store.dispatch(
-  ActionCreator.setPhysicsTechKeys(TU.techKeysByAreaTier("physics", tier))
-);
-store.dispatch(ActionCreator.setSocietyTier(tier));
-store.dispatch(
-  ActionCreator.setSocietyTechKeys(TU.techKeysByAreaTier("society", tier))
-);
-store.dispatch(ActionCreator.setEngineeringTier(tier));
-store.dispatch(
-  ActionCreator.setEngineeringTechKeys(
-    TU.techKeysByAreaTier("engineering", tier)
-  )
-);
+const { appName } = store.getState();
+
+// Initialize physics.
+{
+  const tier = Preferences.getPhysicsTier(appName);
+  const goalKeys = Preferences.getPhysicsGoalKeys(appName);
+  const techKeys = TU.techKeysByAreaTier("physics", tier);
+  store.dispatch(ActionCreator.setPhysicsTier(tier));
+  store.dispatch(ActionCreator.setPhysicsGoalKeys(goalKeys));
+  store.dispatch(ActionCreator.setPhysicsTechKeys(techKeys));
+}
+
+// Initialize society.
+{
+  const tier = Preferences.getSocietyTier(appName);
+  const goalKeys = Preferences.getSocietyGoalKeys(appName);
+  const techKeys = TU.techKeysByAreaTier("society", tier);
+  store.dispatch(ActionCreator.setSocietyTier(tier));
+  store.dispatch(ActionCreator.setSocietyGoalKeys(goalKeys));
+  store.dispatch(ActionCreator.setSocietyTechKeys(techKeys));
+}
+
+// Initialize engineering.
+{
+  const tier = Preferences.getEngineeringTier(appName);
+  const goalKeys = Preferences.getEngineeringGoalKeys(appName);
+  const techKeys = TU.techKeysByAreaTier("engineering", tier);
+  store.dispatch(ActionCreator.setEngineeringTier(tier));
+  store.dispatch(ActionCreator.setEngineeringGoalKeys(goalKeys));
+  store.dispatch(ActionCreator.setEngineeringTechKeys(techKeys));
+}
 
 const elementClass = "pa1 v-mid";
 const titleClass = "b bg-white f5 ph1 pt1 tc";
 
 // /////////////////////////////////////////////////////////////////////////////
 const container1 = React.createElement(TierPanelContainer, {
+  appName: store.getState().appName,
   techAreaKey: "physics",
 });
 const element1 = React.createElement(
@@ -46,6 +64,7 @@ ReactDOM.render(panel1, document.getElementById("physicsPanel"));
 
 // /////////////////////////////////////////////////////////////////////////////
 const container2 = React.createElement(TierPanelContainer, {
+  appName: store.getState().appName,
   techAreaKey: "society",
 });
 const element2 = React.createElement(
@@ -63,6 +82,7 @@ ReactDOM.render(panel2, document.getElementById("societyPanel"));
 
 // /////////////////////////////////////////////////////////////////////////////
 const container3 = React.createElement(TierPanelContainer, {
+  appName: store.getState().appName,
   techAreaKey: "engineering",
 });
 const element3 = React.createElement(

@@ -1,6 +1,7 @@
 const AppState = {};
 
 AppState.create = ({
+  appName = "TechnologyTier",
   engineeringGoalKeys = [],
   engineeringTechKeys = [],
   engineeringTier = 1,
@@ -13,6 +14,7 @@ AppState.create = ({
   societyTier = 1,
 } = {}) =>
   Immutable({
+    appName,
     engineeringGoalKeys,
     engineeringTechKeys,
     engineeringTier,
