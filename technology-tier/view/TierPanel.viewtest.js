@@ -8,20 +8,11 @@ const myOnChange = (tier) => {
   console.log(`myOnChange() tier = ${tier}`);
 };
 
-const myOnClick = (techAreaKey) => (selectedItems) => {
-  console.log(
-    `myOnClick() techAreaKey = ${techAreaKey} selectedItems = ${JSON.stringify(
-      selectedItems
-    )}`
-  );
-};
-
 const techAreaKey1 = "physics";
 const tier1 = 1;
 const goalKeys1 = ["tech_reactor_boosters_2", "tech_auxiliary_fire_control"];
 const techKeys1 = TU.techKeysByAreaTier(techAreaKey1, tier1);
 const element1 = React.createElement(TierPanel, {
-  applyOnClick: myOnClick(techAreaKey1),
   goalKeys: goalKeys1,
   initialValue: tier1,
   onChange: myOnChange,
@@ -38,7 +29,6 @@ const goalKeys2 = [
 ];
 const techKeys2 = TU.techKeysByAreaTier(techAreaKey2, tier2);
 const element2 = React.createElement(TierPanel, {
-  applyOnClick: myOnClick(techAreaKey2),
   goalKeys: goalKeys2,
   initialValue: tier2,
   onChange: myOnChange,
@@ -52,7 +42,6 @@ const tier3 = 3;
 const goalKeys3 = ["tech_destroyer_hull_2", "tech_mass_drivers_4"];
 const techKeys3 = TU.techKeysByAreaTier(techAreaKey3, tier3);
 const element3 = React.createElement(TierPanel, {
-  applyOnClick: myOnClick(techAreaKey3),
   goalKeys: goalKeys3,
   initialValue: tier3,
   onChange: myOnChange,

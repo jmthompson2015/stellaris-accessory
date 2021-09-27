@@ -4,6 +4,7 @@ import Reducer from "../state/Reducer.js";
 
 import TU from "../model/TechnologyUtilities.js";
 
+import TechChooserContainer from "../container/TechChooserContainer.js";
 import TierPanelContainer from "../container/TierPanelContainer.js";
 
 const { TitledElement } = ReactComponent;
@@ -97,3 +98,66 @@ const panel3 = React.createElement(TitledElement, {
   titleClass: `${titleClass} color-engineering`,
 });
 ReactDOM.render(panel3, document.getElementById("engineeringPanel"));
+
+// /////////////////////////////////////////////////////////////////////////////
+{
+  const container = React.createElement(TechChooserContainer, {
+    appName,
+    selectedKeys: store.getState().physicsGoalKeys,
+    techAreaKey: "physics",
+  });
+  const element = React.createElement(
+    ReactRedux.Provider,
+    { store },
+    container
+  );
+  const panel = React.createElement(TitledElement, {
+    element,
+    title: "Physics Goals",
+    elementClass,
+    titleClass: `${titleClass} color-physics`,
+  });
+  ReactDOM.render(panel, document.getElementById("physicsGoals"));
+}
+
+// /////////////////////////////////////////////////////////////////////////////
+{
+  const container = React.createElement(TechChooserContainer, {
+    appName,
+    selectedKeys: store.getState().societyGoalKeys,
+    techAreaKey: "society",
+  });
+  const element = React.createElement(
+    ReactRedux.Provider,
+    { store },
+    container
+  );
+  const panel = React.createElement(TitledElement, {
+    element,
+    title: "Society Goals",
+    elementClass,
+    titleClass: `${titleClass} color-society`,
+  });
+  ReactDOM.render(panel, document.getElementById("societyGoals"));
+}
+
+// /////////////////////////////////////////////////////////////////////////////
+{
+  const container = React.createElement(TechChooserContainer, {
+    appName,
+    selectedKeys: store.getState().engineeringGoalKeys,
+    techAreaKey: "engineering",
+  });
+  const element = React.createElement(
+    ReactRedux.Provider,
+    { store },
+    container
+  );
+  const panel = React.createElement(TitledElement, {
+    element,
+    title: "Engineering Goals",
+    elementClass,
+    titleClass: `${titleClass} color-engineering`,
+  });
+  ReactDOM.render(panel, document.getElementById("engineeringGoals"));
+}
