@@ -8,7 +8,10 @@ import TierPanel from "../view/TierPanel.js";
 const mapStateToProps = (state, ownProps) => {
   const { techAreaKey } = ownProps;
   const initialValue = state[`${techAreaKey}Tier`];
-  const goalKeys = state[`${techAreaKey}GoalKeys`];
+  const keys1 = state.physicsGoalKeys;
+  const keys2 = state.societyGoalKeys;
+  const keys3 = state.engineeringGoalKeys;
+  const goalKeys = R.uniq(R.concat(keys1, R.concat(keys2, keys3)));
   const techKeys = state[`${techAreaKey}TechKeys`];
 
   return { goalKeys, techAreaKey, techKeys, initialValue };
