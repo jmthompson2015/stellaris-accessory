@@ -28,6 +28,7 @@ class TechChooser extends React.PureComponent {
       applyOnClick,
       labelFunction,
       selectedItems,
+      useApplyButton: true,
       useSelectButtons: true,
     });
   }
