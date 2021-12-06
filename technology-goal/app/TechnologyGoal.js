@@ -9,24 +9,35 @@ const { TitledElement } = ReactComponent;
 const store = Redux.createStore(Reducer.root);
 
 const goalKeys = [
-  "tech_colossus",
-  "tech_droid_workers", // Droids
+  // Physics
   "tech_dyson_sphere",
-  "tech_energy_torpedoes_2", // Neutron Launchers
-  "tech_exotic_gases", // Exotic Gas Refining
-  "tech_galactic_bureaucracy",
   "tech_gateway_construction",
-  "tech_habitat_1", // Orbital Habitats
-  "tech_juggernaut",
-  "tech_jump_drive_1",
-  "tech_mass_accelerator_2", // Giga Cannon
-  "tech_matter_decompressor",
-  "tech_mine_exotic_gases", // Exotic Gas Extraction
-  "tech_mine_rare_crystals", // Rare Crystal Mining
-  "tech_mine_volatile_motes", // Mote Stabilization
-  "tech_rare_crystals", // Rare Crystal Manufacturing
+  "tech_power_hub_1", // Global Energy Management
   "tech_shields_5", // Hyper Shields
+  "tech_jump_drive_1",
+  "tech_mine_volatile_motes", // Mote Stabilization
+  "tech_energy_torpedoes_2", // Neutron Launchers
+  "tech_science_nexus",
+  "tech_energy_lance_2", // Tachyon Lances
   "tech_volatile_motes", // Volatile Material Plants
+  // Society
+  "tech_ascension_theory",
+  "tech_climate_restoration",
+  "tech_galactic_bureaucracy",
+  "tech_global_production_strategy",
+  "tech_living_state",
+  // Engineering
+  "tech_strike_craft_3", // Advanced Strike Craft
+  "tech_colossus",
+  "tech_mine_exotic_gases", // Exotic Gas Extraction
+  "tech_exotic_gases", // Exotic Gas Refining
+  "tech_mass_accelerator_2", // Giga Cannon
+  "tech_ship_armor_5", // Neutronium Materials
+  "tech_habitat_1", // Orbital Habitats
+  "tech_rare_crystals", // Rare Crystal Manufacturing
+  "tech_mine_rare_crystals", // Rare Crystal Mining
+  "tech_autocannons_3", // Stormfire Cannons
+  "tech_synthetic_leaders", // Synthetic Personality Matrix
 ];
 store.dispatch(ActionCreator.setSelectedItems(goalKeys));
 
