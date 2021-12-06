@@ -341,7 +341,7 @@ const Building = {
     "name": "Auto-Curating Vault",
     "description": "A highly-specialized computerized network constantly acquires, analyzes, evaluates and puts on display everyday artifacts it deems of impending historical import, creating a living museum of the present and a window into the zeitgeist.",
     "allow": {
-      "has_fully_upgraded_capital": true
+      "has_major_upgraded_capital": true
     },
     "base_buildtime": "@b2_time",
     "category": "unity",
@@ -476,10 +476,8 @@ const Building = {
     "potential": {
       "has_branch_office": true,
       "branch_office_owner": {
-        "is_criminal_syndicate": true,
-        "NOT": {
-          "is_ai": true
-        }
+        "is_ai": false,
+        "is_criminal_syndicate": true
       },
       "NOR": {
         "is_planet_class": "pc_relic"
@@ -652,8 +650,8 @@ const Building = {
         }
       },
       "modifier": {
-        "planet_jobs_upkeep_mult": 0.1,
-        "planet_jobs_produces_mult": 0.1
+        "planet_jobs_productive_upkeep_mult": 0.1,
+        "planet_jobs_productive_produces_mult": 0.1
       }
     },
     "upgrades": [
@@ -704,7 +702,7 @@ const Building = {
     "name": "Citadel of Faith",
     "description": "A massive complex offering refuge and seclusion from the material world, for all comers.",
     "allow": {
-      "has_fully_upgraded_capital": true,
+      "has_major_upgraded_capital": true,
       "buildings_upgrade_allow": true
     },
     "base_buildtime": "@b2_time",
@@ -835,6 +833,7 @@ const Building = {
     },
     "triggered_planet_modifier": {
       "potential": {
+        "can_assemble_clone_soldier_pop": true,
         "check_variable": {
           "which": "clone_pops_missing_per_vat"
         }
@@ -1358,7 +1357,8 @@ const Building = {
     "name": "Vault of Acquisitions",
     "description": "An enormous underground vault that serves the dual purpose of business coordination site and public museum to the long and profitable history of the Megacorporation that built it.",
     "allow": {
-      "has_fully_upgraded_capital": true
+      "has_major_upgraded_capital": true,
+      "buildings_upgrade_allow": true
     },
     "base_buildtime": "@b3_time",
     "category": "unity",
@@ -1981,9 +1981,7 @@ const Building = {
     "potential": {
       "has_branch_office": true,
       "branch_office_owner": {
-        "NOT": {
-          "is_ai": true
-        }
+        "is_ai": false
       }
     },
     "prerequisites": [
@@ -2295,16 +2293,11 @@ const Building = {
     "name": "Fast Food Chain",
     "description": "Affordable, fast, and with a perfectly acceptable nutritional value. Zero toxins* and zero hassle!nn* Food may contain traces of potassium benzoate, nitric acid, dark matter, soylent green and liquid smoke.",
     "base_buildtime": "@b1_time",
-    "planet_modifier": {
-      "job_farmer_add": 1
-    },
     "potential": {
       "has_branch_office": true,
       "branch_office_owner": {
-        "is_criminal_syndicate": false,
-        "NOT": {
-          "is_ai": true
-        }
+        "is_ai": false,
+        "is_criminal_syndicate": false
       },
       "NOR": {
         "is_planet_class": "pc_relic"
@@ -2320,6 +2313,22 @@ const Building = {
       },
       "upkeep": {
         "energy": 2
+      }
+    },
+    "triggered_planet_modifier": {
+      "potential": {
+        "exists": "owner",
+        "owner": {
+          "is_anglers_empire": true,
+          "PREV": {
+            "planet": {
+              "is_wet": true
+            }
+          }
+        }
+      },
+      "modifier": {
+        "job_angler_add": 1
       }
     },
     "key": "building_food_conglomerate"
@@ -2355,11 +2364,18 @@ const Building = {
       "potential": {
         "exists": "owner",
         "owner": {
-          "is_gestalt": true
+          "is_regular_empire": true,
+          "is_fallen_empire_spiritualist": false,
+          "is_anglers_empire": true,
+          "PREV": {
+            "planet": {
+              "is_wet": true
+            }
+          }
         }
       },
       "modifier": {
-        "job_agri_drone_add": 2
+        "job_angler_add": 2
       }
     },
     "key": "building_food_processing_center"
@@ -2398,11 +2414,18 @@ const Building = {
       "potential": {
         "exists": "owner",
         "owner": {
-          "is_gestalt": true
+          "is_regular_empire": true,
+          "is_fallen_empire_spiritualist": false,
+          "is_anglers_empire": true,
+          "PREV": {
+            "planet": {
+              "is_wet": true
+            }
+          }
         }
       },
       "modifier": {
-        "job_agri_drone_add": 1
+        "job_angler_add": 1
       }
     },
     "upgrades": [
@@ -2457,7 +2480,7 @@ const Building = {
   },
   "building_foundry_1": {
     "name": "Alloy Foundries",
-    "description": "The Metallurgists working in these foundries produce high-quality alloys.",
+    "description": "The [Owner.GetAlloyProducerPlural] working in these foundries produce high-quality alloys.",
     "base_buildtime": "@b1_time",
     "category": "manufacturing",
     "potential": {
@@ -3158,8 +3181,8 @@ const Building = {
         }
       },
       "modifier": {
-        "planet_jobs_upkeep_mult": 0.1,
-        "planet_jobs_produces_mult": 0.1
+        "planet_jobs_productive_upkeep_mult": 0.1,
+        "planet_jobs_productive_produces_mult": 0.1
       }
     },
     "key": "building_hab_major_capital"
@@ -3299,8 +3322,8 @@ const Building = {
         }
       },
       "modifier": {
-        "planet_jobs_upkeep_mult": 0.1,
-        "planet_jobs_produces_mult": 0.1
+        "planet_jobs_productive_upkeep_mult": 0.1,
+        "planet_jobs_productive_produces_mult": 0.1
       }
     },
     "upgrades": [
@@ -3476,8 +3499,8 @@ const Building = {
         }
       },
       "modifier": {
-        "planet_jobs_upkeep_mult": 0.1,
-        "planet_jobs_produces_mult": 0.1
+        "planet_jobs_productive_upkeep_mult": 0.1,
+        "planet_jobs_productive_produces_mult": 0.1
       }
     },
     "upgrades": [
@@ -3739,11 +3762,18 @@ const Building = {
       "potential": {
         "exists": "owner",
         "owner": {
-          "is_gestalt": true
+          "is_regular_empire": true,
+          "is_fallen_empire_spiritualist": false,
+          "is_anglers_empire": true,
+          "PREV": {
+            "planet": {
+              "is_wet": true
+            }
+          }
         }
       },
       "modifier": {
-        "job_agri_drone_add": "@b1_jobs"
+        "job_angler_add": 1
       }
     },
     "key": "building_hydroponics_farm"
@@ -3922,8 +3952,8 @@ const Building = {
         }
       },
       "modifier": {
-        "planet_jobs_upkeep_mult": 0.1,
-        "planet_jobs_produces_mult": 0.1
+        "planet_jobs_productive_upkeep_mult": 0.1,
+        "planet_jobs_productive_produces_mult": 0.1
       }
     },
     "key": "building_imperial_capital"
@@ -4014,8 +4044,8 @@ const Building = {
         }
       },
       "modifier": {
-        "planet_jobs_upkeep_mult": 0.1,
-        "planet_jobs_produces_mult": 0.1
+        "planet_jobs_productive_upkeep_mult": 0.1,
+        "planet_jobs_productive_produces_mult": 0.1
       }
     },
     "key": "building_imperial_hive_capital"
@@ -4079,8 +4109,8 @@ const Building = {
         }
       },
       "modifier": {
-        "planet_jobs_upkeep_mult": 0.1,
-        "planet_jobs_produces_mult": 0.1
+        "planet_jobs_productive_upkeep_mult": 0.1,
+        "planet_jobs_productive_produces_mult": 0.1
       }
     },
     "key": "building_imperial_machine_capital"
@@ -4370,8 +4400,8 @@ const Building = {
         }
       },
       "modifier": {
-        "planet_jobs_upkeep_mult": 0.1,
-        "planet_jobs_produces_mult": 0.1
+        "planet_jobs_productive_upkeep_mult": 0.1,
+        "planet_jobs_productive_produces_mult": 0.1
       }
     },
     "upgrades": [
@@ -4434,8 +4464,8 @@ const Building = {
         }
       },
       "modifier": {
-        "planet_jobs_upkeep_mult": 0.1,
-        "planet_jobs_produces_mult": 0.1
+        "planet_jobs_productive_upkeep_mult": 0.1,
+        "planet_jobs_productive_produces_mult": 0.1
       }
     },
     "upgrades": [
@@ -4499,8 +4529,8 @@ const Building = {
         }
       },
       "modifier": {
-        "planet_jobs_upkeep_mult": 0.1,
-        "planet_jobs_produces_mult": 0.1
+        "planet_jobs_productive_upkeep_mult": 0.1,
+        "planet_jobs_productive_produces_mult": 0.1
       }
     },
     "upgrades": [
@@ -4589,8 +4619,8 @@ const Building = {
         }
       },
       "modifier": {
-        "planet_jobs_upkeep_mult": 0.1,
-        "planet_jobs_produces_mult": 0.1
+        "planet_jobs_productive_upkeep_mult": 0.1,
+        "planet_jobs_productive_produces_mult": 0.1
       }
     },
     "upgrades": [
@@ -4685,10 +4715,8 @@ const Building = {
     "potential": {
       "has_branch_office": true,
       "branch_office_owner": {
-        "is_criminal_syndicate": false,
-        "NOT": {
-          "is_ai": true
-        }
+        "is_ai": false,
+        "is_criminal_syndicate": false
       }
     },
     "resources": {
@@ -5408,10 +5436,8 @@ const Building = {
     "potential": {
       "has_branch_office": true,
       "branch_office_owner": {
-        "is_criminal_syndicate": true,
-        "NOT": {
-          "is_ai": true
-        }
+        "is_ai": false,
+        "is_criminal_syndicate": true
       }
     },
     "resources": {
@@ -5660,10 +5686,8 @@ const Building = {
     "potential": {
       "has_branch_office": true,
       "branch_office_owner": {
-        "is_criminal_syndicate": false,
-        "NOT": {
-          "is_ai": true
-        }
+        "is_ai": false,
+        "is_criminal_syndicate": false
       },
       "is_artificial": false,
       "NOR": {
@@ -5723,10 +5747,8 @@ const Building = {
     "potential": {
       "has_branch_office": true,
       "branch_office_owner": {
-        "is_criminal_syndicate": false,
-        "NOT": {
-          "is_ai": true
-        }
+        "is_ai": false,
+        "is_criminal_syndicate": false
       }
     },
     "resources": {
@@ -6102,8 +6124,8 @@ const Building = {
         }
       },
       "modifier": {
-        "planet_jobs_upkeep_mult": 0.1,
-        "planet_jobs_produces_mult": 0.1
+        "planet_jobs_productive_upkeep_mult": 0.1,
+        "planet_jobs_productive_produces_mult": 0.1
       }
     },
     "key": "building_resort_major_capital"
@@ -6726,8 +6748,8 @@ const Building = {
         }
       },
       "modifier": {
-        "planet_jobs_upkeep_mult": 0.1,
-        "planet_jobs_produces_mult": 0.1
+        "planet_jobs_productive_upkeep_mult": 0.1,
+        "planet_jobs_productive_produces_mult": 0.1
       }
     },
     "key": "building_slave_major_capital"
@@ -7060,8 +7082,8 @@ const Building = {
         }
       },
       "modifier": {
-        "planet_jobs_upkeep_mult": 0.1,
-        "planet_jobs_produces_mult": 0.1
+        "planet_jobs_productive_upkeep_mult": 0.1,
+        "planet_jobs_productive_produces_mult": 0.1
       }
     },
     "upgrades": [
@@ -7351,10 +7373,8 @@ const Building = {
     "potential": {
       "has_branch_office": true,
       "branch_office_owner": {
-        "is_criminal_syndicate": true,
-        "NOT": {
-          "is_ai": true
-        }
+        "is_ai": false,
+        "is_criminal_syndicate": true
       },
       "is_artificial": false,
       "NOR": {
@@ -7386,10 +7406,8 @@ const Building = {
     "potential": {
       "has_branch_office": true,
       "branch_office_owner": {
-        "is_criminal_syndicate": true,
-        "NOT": {
-          "is_ai": true
-        }
+        "is_ai": false,
+        "is_criminal_syndicate": true
       }
     },
     "resources": {
@@ -7421,9 +7439,7 @@ const Building = {
     "potential": {
       "has_branch_office": true,
       "branch_office_owner": {
-        "NOT": {
-          "is_ai": true
-        }
+        "is_ai": false
       }
     },
     "prerequisites": [
