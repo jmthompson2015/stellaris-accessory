@@ -42,7 +42,7 @@ class TechList extends React.PureComponent {
     };
     const rows = R.map(mapFunction, items);
 
-    return RU.createTable(rows, key, "tech-list-table");
+    return RU.createTable(rows, key, "tech-list-table bg-white");
   }
 }
 
