@@ -3584,17 +3584,6 @@ const Technology = {
     "tier": "@repeatableTechTier",
     "key": "tech_repeatable_improved_core_system_cap"
   },
-  "tech_repeatable_improved_edict_length": {
-    "name": "Proclamation Broadcasts",
-    "description": "More aggressive information campaigns improve the populace's receptiveness to Edicts.",
-    "area": "society",
-    "category": "statecraft",
-    "prerequisites": [
-      "tech_artificial_moral_codes"
-    ],
-    "tier": "@repeatableTechTier",
-    "key": "tech_repeatable_improved_edict_length"
-  },
   "tech_repeatable_improved_leader_life_span": {
     "name": "Cell Revitalization",
     "description": "Regimens of periodic cell revitalization treatments keep the leader class spry and active beyond traditionally expected lifespans.",
