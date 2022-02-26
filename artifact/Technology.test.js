@@ -42,7 +42,7 @@ QUnit.test("Technology properties tech_adaptive_bureaucracy", (assert) => {
 
 QUnit.test("Technology keys", (assert) => {
   // Setup.
-  const length = 398;
+  const length = 412;
 
   // Run.
   const keys = Object.keys(Technology);
@@ -50,11 +50,11 @@ QUnit.test("Technology keys", (assert) => {
   // Verify.
   assert.equal(keys.length, length);
 
-  const tech0 = Technology[keys[0]];
+  const tech0 = Technology[R.head(keys)];
   assert.equal(tech0.name, "Null Void Beam");
   assert.equal(tech0.key, "null_void_beam");
 
-  const techLast = Technology[keys[length - 1]];
+  const techLast = Technology[R.last(keys)];
   assert.equal(techLast.name, "Zero Point Power");
   assert.equal(techLast.key, "tech_zero_point_power");
 });

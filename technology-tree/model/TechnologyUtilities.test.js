@@ -101,10 +101,9 @@ QUnit.test("childrenForTechnologies()", (assert) => {
 
   // Verify.
   assert.ok(result);
-  const length = 5;
-  assert.equal(result.length, length);
-  assert.equal(result[0].key, "tech_mega_assembly");
-  assert.equal(result[length - 1].key, "tech_xeno_relations");
+  assert.equal(result.length, 7);
+  assert.equal(R.head(result).key, "tech_mega_assembly");
+  assert.equal(R.last(result).key, "tech_xeno_relations");
 });
 
 QUnit.test("dangerousByArea() engineering", (assert) => {
@@ -193,10 +192,9 @@ QUnit.test("rareTechnologies()", (assert) => {
 
   // Verify.
   assert.ok(result);
-  const length = 92;
-  assert.equal(result.length, length);
-  assert.equal(result[0].key, "tech_battleship_hull_2");
-  assert.equal(result[length - 1].key, "tech_mine_zro");
+  assert.equal(result.length, 95);
+  assert.equal(R.head(result).key, "tech_battleship_hull_2");
+  assert.equal(R.last(result).key, "tech_mine_zro");
 });
 
 QUnit.test("raresByArea() engineering", (assert) => {
@@ -208,10 +206,9 @@ QUnit.test("raresByArea() engineering", (assert) => {
 
   // Verify.
   assert.ok(result);
-  const length = 29;
-  assert.equal(result.length, length);
-  assert.equal(result[0].key, "tech_battleship_hull_2");
-  assert.equal(result[length - 1].key, "tech_synthetic_workers");
+  assert.equal(result.length, 30);
+  assert.equal(R.head(result).key, "tech_battleship_hull_2");
+  assert.equal(R.last(result).key, "tech_synthetic_workers");
 });
 
 QUnit.test("raresByArea() physics", (assert) => {
@@ -238,10 +235,9 @@ QUnit.test("raresByArea() society", (assert) => {
 
   // Verify.
   assert.ok(result);
-  const length = 35;
-  assert.equal(result.length, length);
-  assert.equal(result[0].key, "tech_arcane_deciphering");
-  assert.equal(result[length - 1].key, "tech_mine_zro");
+  assert.equal(result.length, 37);
+  assert.equal(R.head(result).key, "tech_arcane_deciphering");
+  assert.equal(R.last(result).key, "tech_mine_zro");
 });
 
 QUnit.test("technology() tech_automated_exploration", (assert) => {
@@ -284,10 +280,9 @@ QUnit.test("technologiesByAreaCategory() engineering voidcraft", (assert) => {
 
   // Verify.
   assert.ok(result);
-  const length = 49;
-  assert.equal(result.length, length);
-  assert.equal(result[0].key, "tech_battleship_hull_2");
-  assert.equal(result[length - 1].key, "tech_titans");
+  assert.equal(result.length, 50);
+  assert.equal(R.head(result).key, "tech_battleship_hull_2");
+  assert.equal(R.last(result).key, "tech_titans");
 });
 
 QUnit.test("technologiesByAreaCategory() physics particles", (assert) => {

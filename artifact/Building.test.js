@@ -30,7 +30,7 @@ QUnit.test("Building properties building_colony_shelter", (assert) => {
 
 QUnit.test("Building keys", (assert) => {
   // Setup.
-  const length = 171;
+  const length = 185;
 
   // Run.
   const keys = Object.keys(Building);
@@ -38,11 +38,11 @@ QUnit.test("Building keys", (assert) => {
   // Verify.
   assert.equal(keys.length, length);
 
-  const building0 = Building[keys[0]];
-  assert.equal(building0.name, "Affluence Center");
-  assert.equal(building0.key, "building_affluence_center");
+  const building0 = Building[R.head(keys)];
+  assert.equal(building0.name, undefined);
+  assert.equal(building0.key, "@buildings_t1");
 
-  const buildingLast = Building[keys[length - 1]];
+  const buildingLast = Building[R.last(keys)];
   assert.equal(buildingLast.name, "Alien Zoo");
   assert.equal(buildingLast.key, "building_xeno_zoo");
 });
