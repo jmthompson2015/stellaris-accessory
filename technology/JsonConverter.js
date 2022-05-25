@@ -10,7 +10,7 @@ import Parser from "../converter/Parser.js";
 const JsonConverter = {};
 
 const STEAMAPPS =
-  "/Volumes/StorageDrive/jmthompson/Library/Application Support/SteamLibrary/steamapps";
+  "/Users/jmthompson/Library/Application Support/Steam/steamapps";
 const TECHNOLOGY = `${STEAMAPPS}/common/Stellaris/common/technology`;
 const INPUT_FILES = [
   "00_apocalypse_tech.txt",

@@ -1,6 +1,6 @@
 #! /bin/bash
 
-export BASE=/Volumes/StorageDrive/jmthompson/git/stellaris-accessory/technology-goal/container
+export BASE="/Users/jmthompson/Documents (Local)/Software Development/git/stellaris-accessory/technology-goal/container"
 
-open ${BASE}/TechChooserContainer.viewtest.html
-open ${BASE}/TechListContainer.viewtest.html
+open "${BASE}/TechChooserContainer.viewtest.html"
+open "${BASE}/TechListContainer.viewtest.html"

@@ -10,7 +10,7 @@ import Parser from "../converter/Parser.js";
 const JsonConverter = {};
 
 const STEAMAPPS =
-  "/Volumes/StorageDrive/jmthompson/Library/Application Support/SteamLibrary/steamapps";
+  "/Users/jmthompson/Library/Application Support/Steam/steamapps";
 const BUILDING = `${STEAMAPPS}/common/Stellaris/common/pop_jobs`;
 const INPUT_FILES = [
   "00_other_jobs.txt",
