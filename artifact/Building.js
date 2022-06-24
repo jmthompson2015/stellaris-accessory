@@ -7813,6 +7813,959 @@ const Building = {
       }
     },
     "key": "building_xeno_zoo"
+  },
+  "holding_aid_agency": {
+    "name": "Aid Agency",
+    "description": "Agencies founded and staffed by foreign benefactors, bringing some of their culture and knowledge to the planet.",
+    "allow": {
+      "custom_tooltip": {
+        "fail_text": "overlord_is_xenophobe",
+        "exists": "owner.overlord",
+        "owner.overlord": {
+          "NOR": {
+            "has_ethic": "ethic_fanatic_xenophobe"
+          }
+        }
+      }
+    },
+    "base_buildtime": "@b2_time",
+    "planet_modifier": {
+      "monthly_loyalty": 0.5
+    },
+    "resources": {
+      "category": "planet_holdings",
+      "cost": {
+        "minerals": "@b1_minerals"
+      },
+      "upkeep": {
+        "trigger": {
+          "exists": "planet.owner",
+          "planet.owner": {
+            "is_lithoid": false,
+            "is_machine_empire": false,
+            "is_mechanical_empire": false
+          }
+        },
+        "food": 10
+      }
+    },
+    "triggered_planet_modifier": {
+      "potential": {
+        "exists": "planet.owner",
+        "planet.owner": {
+          "is_gestalt": true
+        }
+      },
+      "job_aid_worker_drone_add": 2
+    },
+    "key": "holding_aid_agency"
+  },
+  "holding_communal_housing_outreach": {
+    "name": "Communal Housing Outreach",
+    "description": "Everyone is entitled to a home, which is why the Ovelord have extended their Communal Housing Project to this planet. This serves as a great forum for teaching the inhabitants the value of egalitarianism.",
+    "base_buildtime": "@b1_time",
+    "planet_modifier": {
+      "planet_housing_add": 10,
+      "planet_amenities_add": 6
+    },
+    "potential": {
+      "owner.overlord": {
+        "has_valid_civic": "civic_shared_burden"
+      },
+      "NOT": {
+        "owner": {
+          "has_valid_civic": "civic_shared_burden"
+        }
+      }
+    },
+    "resources": {
+      "category": "planet_holdings",
+      "cost": {
+        "minerals": "@b1_minerals"
+      },
+      "upkeep": {
+        "energy": "@b1_upkeep"
+      }
+    },
+    "triggered_planet_modifier": {
+      "potential": {
+        "exists": "planet.owner",
+        "planet.owner": {
+          "is_egalitarian": false,
+          "is_gestalt": false
+        }
+      },
+      "pop_ethic_egalitarian_attraction_mult": 1
+    },
+    "key": "holding_communal_housing_outreach"
+  },
+  "holding_distributed_processing": {
+    "name": "Distributed Processing",
+    "description": "A cold structure eclipsing the local region. Those who work here refuse to elaborate on what they do, but no-one leaves the experience entirely unscathed.",
+    "base_buildtime": "@b2_time",
+    "planet_modifier": {
+      "monthly_loyalty": -2
+    },
+    "potential": {
+      "owner.overlord": {
+        "is_machine_empire": true,
+        "NOT": {
+          "has_civic": "civic_machine_servitor"
+        }
+      },
+      "has_overlord_dlc": true
+    },
+    "resources": {
+      "category": "planet_holdings",
+      "cost": {
+        "minerals": "@b1_minerals"
+      },
+      "upkeep": {
+        "energy": "@b1_upkeep"
+      }
+    },
+    "triggered_planet_modifier": {
+      "potential": {
+        "exists": "planet.owner",
+        "planet.owner": {
+          "is_gestalt": true
+        }
+      },
+      "job_mind_thrall_drone_add": 4
+    },
+    "key": "holding_distributed_processing"
+  },
+  "holding_dread_outpost": {
+    "name": "Dread Outpost",
+    "description": "The Dread Outpost is an arcane structure that produces unholy reanimated armies while sending back insidious data to this planet's Overlord.",
+    "allow": {
+      "owner": {
+        "NOR": {
+          "has_valid_civic": "civic_reanimated_armies",
+          "is_machine_empire": true
+        }
+      }
+    },
+    "base_buildtime": "@b2_time",
+    "potential": {
+      "owner.overlord": {
+        "has_valid_civic": "civic_reanimated_armies"
+      }
+    },
+    "resources": {
+      "category": "planet_holdings",
+      "cost": {
+        "minerals": "@b1_minerals"
+      },
+      "upkeep": {
+        "energy": "@b1_upkeep"
+      }
+    },
+    "triggered_planet_modifier": {
+      "potential": {
+        "exists": "planet.owner",
+        "planet.owner": {
+          "is_gestalt": true
+        }
+      },
+      "job_overlord_necromancer_drone_add": 2
+    },
+    "key": "holding_dread_outpost"
+  },
+  "holding_emporium": {
+    "name": "Emporium",
+    "description": "Large shopping malls filled with futuristic and exotic wares from distant planets.",
+    "base_buildtime": "@b2_time",
+    "potential": {
+      "owner.overlord": {
+        "is_machine_empire": false,
+        "is_hive_empire": false
+      }
+    },
+    "resources": {
+      "category": "planet_holdings",
+      "cost": {
+        "minerals": "@b1_minerals"
+      },
+      "upkeep": {
+        "energy": "@b1_upkeep",
+        "consumer_goods": 5
+      }
+    },
+    "triggered_planet_modifier": {
+      "potential": {
+        "exists": "planet.owner",
+        "planet.owner": {
+          "is_gestalt": true
+        }
+      },
+      "job_overlord_trader_drone_add": 2
+    },
+    "key": "holding_emporium"
+  },
+  "holding_energy_requisitorium": {
+    "name": "Ministry of Energy",
+    "description": "A ministry overseeing taxation and the minting of energy credits, often coming into conflict with the domestic bureaucracy.",
+    "allow": {
+      "custom_tooltip": {
+        "fail_text": "ove_requires_tech_power_hub_2",
+        "owner.overlord": {
+          "has_technology": "tech_power_hub_2"
+        }
+      }
+    },
+    "base_buildtime": "@b2_time",
+    "planet_modifier": {
+      "monthly_loyalty": -0.25
+    },
+    "potential": {
+      "has_overlord_dlc": true
+    },
+    "resources": {
+      "category": "planet_holdings",
+      "cost": {
+        "minerals": "@b1_minerals"
+      },
+      "upkeep": {
+        "energy": "@b1_upkeep",
+        "exotic_gases": 1
+      }
+    },
+    "key": "holding_energy_requisitorium"
+  },
+  "holding_experimental_crater": {
+    "name": "Experimental Crater",
+    "description": "A designated area for testing new asteroidal colony ships. It might not be the most convenient way to test the ships, but outsourcing the process definitely saves on the clean-up costs for the Overlord.",
+    "base_buildtime": "@b2_time",
+    "planet_modifier": {
+      "monthly_loyalty": -1
+    },
+    "potential": {
+      "owner.overlord": {
+        "has_origin": "origin_lithoid"
+      }
+    },
+    "resources": {
+      "category": "planet_holdings",
+      "produces": {
+        "engineering_research": 8,
+        "physics_research": 4
+      }
+    },
+    "triggered_planet_modifier": {
+      "potential": {
+        "exists": "planet.owner",
+        "planet.owner": {
+          "is_gestalt": true
+        }
+      },
+      "job_mining_drone_add": 3
+    },
+    "key": "holding_experimental_crater"
+  },
+  "holding_franchise_headquarters": {
+    "name": "Franchise Headquarters",
+    "description": "These offices allow Corporate Management to realign the Subsidiary's interests with that of their Overlord through mandatory planet-wide training and team-building exercises.",
+    "allow": {
+      "custom_tooltip": {
+        "fail_text": "no_branch_office",
+        "planet": {
+          "has_branch_office": "owner.overlord"
+        }
+      }
+    },
+    "base_buildtime": "@b2_time",
+    "planet_modifier": {
+      "monthly_loyalty": -0.5,
+      "job_overlord_manager_add": 2
+    },
+    "potential": {
+      "owner.overlord": {
+        "has_civic": "civic_franchising"
+      }
+    },
+    "resources": {
+      "category": "planet_holdings",
+      "cost": {
+        "minerals": "@b1_minerals"
+      },
+      "upkeep": {
+        "energy": "@b1_upkeep"
+      }
+    },
+    "triggered_planet_modifier": {
+      "potential": {
+        "owner.overlord": {
+          "has_ethic": "ethic_fanatic_egalitarian"
+        }
+      },
+      "pop_ethic_egalitarian_attraction_mult": 1
+    },
+    "key": "holding_franchise_headquarters"
+  },
+  "holding_garrison": {
+    "name": "Overlord Garrison",
+    "description": "A garrison established to oversee the local enforcers, occasionally reinforced by military battalions in more dire circumstances.",
+    "base_buildtime": "@b1_time",
+    "planet_modifier": {
+      "planet_crime_add": -10,
+      "monthly_loyalty": 0.5
+    },
+    "resources": {
+      "category": "planet_holdings",
+      "cost": {
+        "minerals": "@b1_minerals"
+      },
+      "upkeep": {
+        "energy": "@b1_upkeep"
+      }
+    },
+    "triggered_planet_modifier": {
+      "potential": {
+        "overlord_has_more_than_num_armies_on_planet": {
+          "NUM": 2
+        }
+      },
+      "modifier": {
+        "planet_crime_add": -30,
+        "pop_happiness": -0.15,
+        "monthly_loyalty": 1.5
+      }
+    },
+    "key": "holding_garrison"
+  },
+  "holding_idyllic_bloom": {
+    "name": "Gaia Seeder Outpost",
+    "description": "Hyper-advanced terraforming techniques mastered by the Overlord are housed in this structure. After being introduced to the planet, it will take a decade to finish its world-changing work.",
+    "allow": {
+      "can_build_overlord_gaiaseeder": true
+    },
+    "base_buildtime": "@b1_time",
+    "planet_modifier": {
+      "pop_environment_tolerance": 0.2
+    },
+    "potential": {
+      "exists": "owner",
+      "owner.overlord": {
+        "is_country_type": "default",
+        "OR": {
+          "has_valid_civic": "civic_hive_idyllic_bloom"
+        }
+      },
+      "NOR": {
+        "is_planet_class": "pc_relic"
+      },
+      "is_artificial": false
+    },
+    "resources": {
+      "category": "planet_holdings",
+      "cost": {
+        "energy": 1500,
+        "exotic_gases": "@b4_rare_cost"
+      },
+      "upkeep": {
+        "energy": 20,
+        "exotic_gases": "@b3_rare_upkeep",
+        "multiplier": "value:overlord_gaiaseeder_upkeep"
+      }
+    },
+    "triggered_planet_modifier": {
+      "potential": {
+        "exists": "planet.owner",
+        "planet.owner": {
+          "NOT": {
+            "has_ascension_perk": "ap_hydrocentric"
+          }
+        }
+      },
+      "monthly_loyalty": 1
+    },
+    "key": "holding_idyllic_bloom"
+  },
+  "holding_material_requisitorium": {
+    "name": "Ministry of Extraction",
+    "description": "A ministry overseeing local mineral production, extraction, and purification. They often secure the best land purchases and reap the benefits for their patron.",
+    "allow": {
+      "custom_tooltip": {
+        "fail_text": "ove_requires_tech_mineral_purification_2",
+        "owner.overlord": {
+          "has_technology": "tech_mineral_purification_2"
+        }
+      }
+    },
+    "base_buildtime": "@b2_time",
+    "planet_modifier": {
+      "monthly_loyalty": -0.5
+    },
+    "potential": {
+      "has_overlord_dlc": true
+    },
+    "resources": {
+      "category": "planet_holdings",
+      "cost": {
+        "minerals": "@b1_minerals"
+      },
+      "upkeep": {
+        "energy": "@b1_upkeep",
+        "volatile_motes": 1
+      }
+    },
+    "key": "holding_material_requisitorium"
+  },
+  "holding_noble_vacation_homes": {
+    "name": "Noble Chateaus",
+    "description": "A home away from home, this is the perfect place for the Overlord's ruling elite to let off steam, so that they don't cause incidents back home.",
+    "base_buildtime": "@b2_time",
+    "planet_modifier": {
+      "monthly_loyalty": -1
+    },
+    "potential": {
+      "owner.overlord": {
+        "has_valid_civic": "civic_aristocratic_elite"
+      }
+    },
+    "resources": {
+      "category": "planet_holdings",
+      "cost": {
+        "minerals": "@b1_minerals"
+      },
+      "upkeep": {
+        "energy": "@b1_upkeep"
+      }
+    },
+    "triggered_planet_modifier": {
+      "potential": {
+        "exists": "planet.owner",
+        "planet.owner": {
+          "is_gestalt": true
+        }
+      },
+      "planet_amenities_no_happiness_add": -15
+    },
+    "key": "holding_noble_vacation_homes"
+  },
+  "holding_offspring_nest": {
+    "name": "Offspring Nest",
+    "description": "At this nest, a foreign hivemind has a unique representative acting as a centralized node for its neural network. This has enabled its continued control over the colony.",
+    "allow": {
+      "owner": {
+        "NOT": {
+          "has_origin": "origin_progenitor_hive"
+        }
+      }
+    },
+    "base_buildtime": "@b2_time",
+    "potential": {
+      "owner.overlord": {
+        "is_hive_empire": true,
+        "has_origin": "origin_progenitor_hive"
+      },
+      "has_overlord_dlc": true
+    },
+    "resources": {
+      "category": "planet_holdings",
+      "cost": {
+        "minerals": "@b1_minerals"
+      },
+      "upkeep": {
+        "energy": "@b1_upkeep"
+      }
+    },
+    "triggered_planet_modifier": {
+      "potential": {
+        "exists": "planet.owner",
+        "planet.owner": {
+          "is_gestalt": true
+        }
+      },
+      "job_overlord_offspring_drone_feeder_drone_add": 1
+    },
+    "key": "holding_offspring_nest"
+  },
+  "holding_offworld_foundry": {
+    "name": "Offworld Foundry",
+    "description": "Large foundries owned by a foreign empire, siphoning off local resources for the creation of high quality alloys.",
+    "allow": {
+      "custom_tooltip": {
+        "fail_text": "subject_is_prospectorium",
+        "exists": "planet.owner",
+        "planet.owner": {
+          "is_specialist_subject_type": {
+            "TYPE": "prospectorium"
+          }
+        }
+      }
+    },
+    "base_buildtime": "@b2_time",
+    "planet_modifier": {
+      "monthly_loyalty": -1.5
+    },
+    "potential": {
+      "has_overlord_dlc": true
+    },
+    "resources": {
+      "category": "planet_holdings",
+      "cost": {
+        "minerals": "@b1_minerals"
+      },
+      "upkeep": {
+        "energy": "@b1_upkeep"
+      }
+    },
+    "triggered_planet_modifier": {
+      "potential": {
+        "exists": "planet.owner",
+        "planet.owner": {
+          "is_catalytic_empire": true,
+          "is_gestalt": true
+        }
+      },
+      "job_overlord_catalytic_drone_add": 2
+    },
+    "key": "holding_offworld_foundry"
+  },
+  "holding_orbital_assembly_complex": {
+    "name": "Orbital Assembly Complex",
+    "description": "A soaring building filled with long assembly lines, creating everything one could dream of.",
+    "base_buildtime": "@b1_time",
+    "planet_modifier": {
+      "planet_building_build_speed_mult": 0.1
+    },
+    "potential": {
+      "has_overlord_dlc": true
+    },
+    "resources": {
+      "category": "planet_holdings",
+      "cost": {
+        "minerals": "@b1_minerals"
+      },
+      "upkeep": {
+        "energy": "@b1_upkeep",
+        "alloys": 5
+      }
+    },
+    "key": "holding_orbital_assembly_complex"
+  },
+  "holding_organic_sanctuary": {
+    "name": "Organic Haven",
+    "description": "Although the care facilities on this planet are more limited in scope than those found on the Overlord's worlds, the bio-trophies inside still enjoy a much more comfortable standard of living than they are used to.",
+    "base_buildtime": "@b2_time",
+    "potential": {
+      "owner.overlord": {
+        "has_valid_civic": "civic_machine_servitor"
+      },
+      "owner": {
+        "is_machine_empire": false
+      }
+    },
+    "resources": {
+      "category": "planet_holdings",
+      "upkeep": {
+        "consumer_goods": 10
+      }
+    },
+    "triggered_planet_modifier": {
+      "potential": {
+        "exists": "planet.owner",
+        "planet.owner": {
+          "is_gestalt": true
+        }
+      },
+      "job_overlord_bio_trophy_drone_add": 5
+    },
+    "key": "holding_organic_sanctuary"
+  },
+  "holding_overlord_vigil_command": {
+    "name": "Vigil Command",
+    "description": "A command center specialized in - and delegated to - calculating the best possible means of increasing defensive measures.",
+    "allow": {
+      "custom_tooltip": {
+        "fail_text": "subject_is_bulwark",
+        "exists": "planet.owner",
+        "planet.owner": {
+          "is_specialist_subject_type": {
+            "TYPE": "bulwark"
+          }
+        }
+      }
+    },
+    "base_buildtime": "@b2_time",
+    "potential": {
+      "has_overlord_dlc": true
+    },
+    "resources": {
+      "category": "planet_holdings",
+      "cost": {
+        "minerals": "@b1_minerals"
+      },
+      "upkeep": {
+        "energy": "@b1_upkeep"
+      }
+    },
+    "triggered_planet_modifier": {
+      "potential": {
+        "exists": "planet.owner",
+        "planet.owner": {
+          "is_gestalt": true
+        }
+      },
+      "job_overlord_beholder_drone_add": 1
+    },
+    "key": "holding_overlord_vigil_command"
+  },
+  "holding_parasitic_algorithms": {
+    "name": "Ministry of Science",
+    "description": "A ministry overseeing local research and science, bringing the most noteworthy breakthroughs and discoveries back to their benefactor.",
+    "allow": {
+      "custom_tooltip": {
+        "fail_text": "subject_is_scholarium",
+        "exists": "planet.owner",
+        "planet.owner": {
+          "is_specialist_subject_type": {
+            "TYPE": "scholarium"
+          }
+        }
+      }
+    },
+    "base_buildtime": "@b2_time",
+    "planet_modifier": {
+      "monthly_loyalty": -1
+    },
+    "potential": {
+      "has_overlord_dlc": true
+    },
+    "resources": {
+      "category": "planet_holdings",
+      "cost": {
+        "minerals": "@b1_minerals"
+      },
+      "upkeep": {
+        "energy": "@b1_upkeep"
+      }
+    },
+    "key": "holding_parasitic_algorithms"
+  },
+  "holding_park_ranger_lodge": {
+    "name": "Ranger Lodge",
+    "description": "The Overlord has an interest in co-existing with nature and wishes to spread this joy to its Vassal. To ensure that there always is at least some nature left to enjoy.",
+    "allow": {
+      "custom_tooltip": {
+        "fail_text": "no_free_district_for_ranger_lodge",
+        "planet": {
+          "num_free_districts": {
+            "type": "any"
+          }
+        }
+      }
+    },
+    "base_buildtime": "@b2_time",
+    "potential": {
+      "owner.overlord": {
+        "has_valid_civic": "civic_environmentalist"
+      },
+      "NOT": {
+        "owner": {
+          "has_valid_civic": "civic_environmentalist"
+        }
+      },
+      "NOR": {
+        "is_planet_class": "pc_relic"
+      },
+      "is_artificial": false
+    },
+    "resources": {
+      "category": "planet_holdings",
+      "cost": {
+        "minerals": "@b1_minerals"
+      },
+      "upkeep": {
+        "energy": "@b1_upkeep"
+      }
+    },
+    "triggered_planet_modifier": {
+      "potential": {
+        "exists": "planet.owner",
+        "planet.owner": {
+          "is_gestalt": true
+        }
+      },
+      "job_overlord_ranger_drone_add": 1
+    },
+    "key": "holding_park_ranger_lodge"
+  },
+  "holding_produce_requisitorium": {
+    "name": "Ministry of Acquisition",
+    "description": "A ministry overseeing local produce. In addition to placing a small tax on this world, some products have a tendency to disappear into their convoluted, bureaucratic process.",
+    "allow": {
+      "custom_tooltip": {
+        "fail_text": "ove_requires_tech_food_processing_2",
+        "owner.overlord": {
+          "has_technology": "tech_food_processing_2"
+        }
+      }
+    },
+    "base_buildtime": "@b2_time",
+    "planet_modifier": {
+      "monthly_loyalty": -0.25
+    },
+    "potential": {
+      "has_overlord_dlc": true
+    },
+    "resources": {
+      "category": "planet_holdings",
+      "cost": {
+        "minerals": "@b1_minerals"
+      },
+      "upkeep": {
+        "energy": "@b1_upkeep",
+        "rare_crystals": 1
+      }
+    },
+    "triggered_planet_modifier": {
+      "potential": {
+        "exists": "owner.overlord",
+        "owner.overlord": {
+          "is_gestalt": false
+        }
+      },
+      "monthly_loyalty": -0.25
+    },
+    "key": "holding_produce_requisitorium"
+  },
+  "holding_propaganda_office": {
+    "name": "Ministry of Truth",
+    "description": "A ministry overseeing local faiths, news, and political interest groups. With the right prod everything runs a tad smoother.",
+    "allow": {
+      "exists": "planet",
+      "planet": {
+        "is_capital": true
+      }
+    },
+    "base_buildtime": "@b2_time",
+    "potential": {
+      "has_overlord_dlc": true
+    },
+    "resources": {
+      "category": "planet_holdings",
+      "cost": {
+        "minerals": "@b1_minerals"
+      },
+      "upkeep": {
+        "energy": "@b1_upkeep"
+      }
+    },
+    "triggered_planet_modifier": {
+      "potential": {
+        "exists": "planet.owner",
+        "planet.owner": {
+          "is_gestalt": true
+        }
+      },
+      "job_overlord_propagandist_drone_add": 2
+    },
+    "key": "holding_propaganda_office"
+  },
+  "holding_recruitment_office": {
+    "name": "Recruitment Office",
+    "description": "Everyone must do their part. That is why the Overlord is offering military training in exchange for a tour in their fleet. Service guarantees citizenship.",
+    "base_buildtime": "@b1_time",
+    "potential": {
+      "owner.overlord": {
+        "has_valid_civic": "civic_citizen_service"
+      }
+    },
+    "resources": {
+      "category": "planet_holdings",
+      "cost": {
+        "minerals": "@b1_minerals"
+      },
+      "upkeep": {
+        "energy": "@b1_upkeep"
+      }
+    },
+    "triggered_planet_modifier": {
+      "potential": {
+        "exists": "planet.owner",
+        "planet.owner": {
+          "is_pacifist": true
+        }
+      },
+      "monthly_loyalty": -0.5
+    },
+    "key": "holding_recruitment_office"
+  },
+  "holding_reemployment_center": {
+    "name": "Reemployment Center",
+    "description": "Never leave a resource unexploited, even if that resource is the Subject's dead. With the Reemployment Center, the Overlord can ensure that the Subject's planets are always filled with employees even though the quality of work might vary.",
+    "base_buildtime": "@b1_time",
+    "potential": {
+      "owner.overlord": {
+        "has_valid_civic": "civic_permanent_employment"
+      },
+      "NOT": {
+        "owner": {
+          "has_valid_civic": "civic_permanent_employment"
+        }
+      },
+      "owner": {
+        "is_machine_empire": false
+      }
+    },
+    "resources": {
+      "category": "planet_holdings",
+      "cost": {
+        "minerals": "@b1_minerals"
+      },
+      "upkeep": {
+        "energy": "@b1_upkeep"
+      }
+    },
+    "triggered_planet_modifier": {
+      "potential": {
+        "exists": "planet.owner",
+        "planet.owner": {
+          "is_egalitarian": true
+        }
+      },
+      "monthly_loyalty": -0.5
+    },
+    "key": "holding_reemployment_center"
+  },
+  "holding_sacrificial_shrine": {
+    "name": "Sacrificial Shrine",
+    "description": "The great study of the cycle should not be limited to the Overlord; the turning of life and death must be explored through the Vassal as well.",
+    "base_buildtime": "@b1_time",
+    "potential": {
+      "owner.overlord": {
+        "is_death_cult_empire": true
+      },
+      "owner": {
+        "is_machine_empire": false
+      }
+    },
+    "resources": {
+      "category": "planet_holdings",
+      "cost": {
+        "minerals": "@b1_minerals"
+      },
+      "upkeep": {
+        "energy": "@b1_upkeep"
+      }
+    },
+    "triggered_planet_modifier": {
+      "potential": {
+        "exists": "planet.owner",
+        "planet.owner": {
+          "is_gestalt": true
+        }
+      },
+      "job_overlord_mortal_initiate_drone_add": 2
+    },
+    "key": "holding_sacrificial_shrine"
+  },
+  "holding_satellite_campus": {
+    "name": "Satellite Campus",
+    "description": "A large campus where domestic researchers and foreign scientists can come together to share ideas and conduct experiments.",
+    "base_buildtime": "@b2_time",
+    "potential": {
+      "has_overlord_dlc": true
+    },
+    "resources": {
+      "category": "planet_holdings",
+      "cost": {
+        "minerals": "@b1_minerals"
+      },
+      "upkeep": {
+        "energy": "@b1_upkeep"
+      }
+    },
+    "triggered_planet_modifier": {
+      "potential": {
+        "exists": "planet.owner",
+        "planet.owner": {
+          "is_gestalt": true
+        }
+      },
+      "job_overlord_academic_drone_add": 2
+    },
+    "key": "holding_satellite_campus"
+  },
+  "holding_splinter_hive": {
+    "name": "Splinter Hive",
+    "description": "A large biomass producing new workers for the hive. Though it stands apart from the original hive, it is still connected to the neural network.",
+    "allow": {
+      "custom_tooltip": {
+        "fail_text": "no_free_district_for_splinter_hive",
+        "planet": {
+          "num_free_districts": {
+            "type": "any"
+          }
+        }
+      }
+    },
+    "base_buildtime": "@b2_time",
+    "planet_modifier": {
+      "monthly_loyalty": -2
+    },
+    "potential": {
+      "owner.overlord": {
+        "is_hive_empire": true
+      }
+    },
+    "resources": {
+      "category": "planet_holdings",
+      "cost": {
+        "minerals": "@b1_minerals"
+      },
+      "upkeep": {
+        "energy": "@b1_upkeep"
+      }
+    },
+    "triggered_planet_modifier": {
+      "potential": {
+        "exists": "planet.owner",
+        "planet.owner": {
+          "is_gestalt": true
+        }
+      },
+      "job_overlord_breeder_drone_add": 1
+    },
+    "key": "holding_splinter_hive"
+  },
+  "holding_tree_of_life_sapling": {
+    "name": "Tree of Life Sapling",
+    "description": "The Overlord has existed with their Tree of Life for so long that they can no longer imagine life without it. Now, they want to share the same opportunity with their vassals.",
+    "base_buildtime": "@b1_time",
+    "planet_modifier": {
+      "monthly_loyalty": 1,
+      "pop_environment_tolerance": 0.1,
+      "planet_farmers_food_produces_add": 1
+    },
+    "potential": {
+      "owner.overlord": {
+        "has_origin": "origin_tree_of_life"
+      },
+      "NOR": {
+        "is_planet_class": "pc_relic"
+      },
+      "is_artificial": false
+    },
+    "resources": {
+      "category": "planet_holdings",
+      "cost": {
+        "food": 1000
+      }
+    },
+    "triggered_planet_modifier": {
+      "potential": {
+        "exists": "planet.owner",
+        "planet.owner": {
+          "is_gestalt": true
+        }
+      },
+      "job_overlord_arborist_drone_add": 1
+    },
+    "key": "holding_tree_of_life_sapling"
   }
 }
 

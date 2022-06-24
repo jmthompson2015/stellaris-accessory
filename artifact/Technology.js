@@ -2208,6 +2208,22 @@ const Technology = {
     "tier": 1,
     "key": "tech_hyper_entertainment_forum"
   },
+  "tech_hyper_relays": {
+    "name": "Hyper Relays",
+    "description": "§YHyper Relays§! form a chain of structures built outside the gravity well of systems, allowing fast travel from relay to relay rather than requiring transit to established hyperlane entrances.",
+    "area": "physics",
+    "category": "particles",
+    "cost": 2500,
+    "feature_flags": [
+      "hyper_relay_construction"
+    ],
+    "is_rare": true,
+    "prerequisites": [
+      "tech_hyper_drive_2"
+    ],
+    "tier": 2,
+    "key": "tech_hyper_relays"
+  },
   "tech_hypercomms_forum": {
     "name": "Local Hypercommunication",
     "description": "Not all research into faster-than-light communication channels produces useful results, but some outcomes may find new purpose in bringing our people together.",
@@ -2987,6 +3003,20 @@ const Technology = {
     "tier": 4,
     "key": "tech_nutrient_replication"
   },
+  "tech_orbital_ring_tier_1": {
+    "name": "Orbital Rings",
+    "description": "Allows the construction of massive, band-shaped starbases in stable orbit around colonized planets.",
+    "area": "engineering",
+    "category": "voidcraft",
+    "cost": 5000,
+    "prerequisites": [
+      "tech_starbase_3",
+      "tech_galactic_administration",
+      "tech_planetary_infrastructure_1"
+    ],
+    "tier": 3,
+    "key": "tech_orbital_ring_tier_1"
+  },
   "tech_orbital_trash_dispersal": {
     "name": "Orbital Trash Dispersal",
     "description": "This orbital bombardment management system spams a planet with millions of minute, high-velocity projectiles, overwhelming planetside defensive grids with trash data. Ships equipped with this component will cause more damage during orbital bombardment.",
@@ -3437,6 +3467,19 @@ const Technology = {
     "is_rare": true,
     "tier": 3,
     "key": "tech_psionic_theory"
+  },
+  "tech_quantum_catapult": {
+    "name": "Quantum Catapult",
+    "description": "A §YQuantum Catapult§! harnesses the power of a Neutron Star or Pulsar to twist the fabric of space, skipping a fleet across great distances.",
+    "area": "physics",
+    "category": "particles",
+    "cost": 20000,
+    "is_rare": true,
+    "prerequisites": [
+      "tech_mega_engineering"
+    ],
+    "tier": 5,
+    "key": "tech_quantum_catapult"
   },
   "tech_quicksand_basin": {
     "name": "Soil Remediation",

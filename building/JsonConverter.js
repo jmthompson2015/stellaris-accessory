@@ -29,6 +29,7 @@ const INPUT_FILES = [
   "12_event_buildings.txt",
   "13_fallen_empire_buildings.txt",
   "14_branch_office_buildings.txt",
+  "15_overlord_holdings.txt",
 ];
 const OUTPUT_FILE = "./building.json";
 

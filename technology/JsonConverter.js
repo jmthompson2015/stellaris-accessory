@@ -23,6 +23,7 @@ const INPUT_FILES = [
   "00_leviathans_tech.txt",
   "00_megacorp_tech.txt",
   "00_megastructures.txt",
+  "00_overlord_tech.txt",
   "00_phys_tech.txt",
   "00_phys_tech_repeatable.txt",
   "00_phys_weapon_tech.txt",
