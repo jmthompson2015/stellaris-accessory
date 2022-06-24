@@ -351,9 +351,6 @@ const Technology = {
     "area": "physics",
     "category": "computing",
     "cost": 750,
-    "feature_flags": [
-      "tech_automated_exploration"
-    ],
     "tier": 1,
     "key": "tech_automated_exploration"
   },
@@ -396,7 +393,9 @@ const Technology = {
     "description": "Testable predictions of observable phenomena.",
     "area": "physics",
     "category": "computing",
-    "cost": 0,
+    "feature_flags": [
+      "unlocks_auto_research"
+    ],
     "start_tech": true,
     "tier": 0,
     "key": "tech_basic_science_lab_1"
@@ -671,7 +670,6 @@ const Technology = {
     "description": "Calculating required resources and gear required to establish a planetary colony allows us to herd brave pioneers into grand ",
     "area": "society",
     "category": "new_worlds",
-    "cost": 0,
     "start_tech": true,
     "prerequisites": [
       "tech_space_exploration"
@@ -912,7 +910,6 @@ const Technology = {
     "description": "The FTL breakthrough allowed early attempts to adapt traditional surface-to-space shuttle frames to military applications to finally create relatively small, fast, and maneuverable vessels with limited firepower.",
     "area": "engineering",
     "category": "voidcraft",
-    "cost": 0,
     "start_tech": true,
     "prerequisites": [
       "tech_starbase_2"
@@ -2172,9 +2169,6 @@ const Technology = {
     "category": "particles",
     "cost": 0,
     "start_tech": true,
-    "prerequisites": [
-      "tech_basic_science_lab_1"
-    ],
     "tier": 0,
     "key": "tech_hyper_drive_1"
   },
@@ -3919,9 +3913,6 @@ const Technology = {
     "area": "physics",
     "category": "computing",
     "cost": 8000,
-    "feature_flags": [
-      "unlocks_auto_research"
-    ],
     "prerequisites": [
       "tech_self_aware_logic"
     ],
@@ -4053,9 +4044,6 @@ const Technology = {
     "category": "field_manipulation",
     "cost": 0,
     "start_tech": true,
-    "prerequisites": [
-      "tech_basic_science_lab_1"
-    ],
     "tier": 0,
     "key": "tech_shields_1"
   },
@@ -4275,10 +4263,10 @@ const Technology = {
     "area": "engineering",
     "category": "voidcraft",
     "cost": 0,
-    "start_tech": true,
-    "prerequisites": [
-      "tech_basic_science_lab_1"
+    "feature_flags": [
+      "tech_automated_exploration"
     ],
+    "start_tech": true,
     "tier": 0,
     "key": "tech_space_exploration"
   },

@@ -96,7 +96,7 @@ const Building = {
       "building_corporate_vault"
     ],
     "planet_modifier": {
-      "planet_administrators_unity_produces_mult": 0.15
+      "planet_administrators_produces_mult": 0.15
     },
     "potential": {
       "exists": "owner",
@@ -350,6 +350,9 @@ const Building = {
       "building_alpha_hub",
       "building_corporate_vault"
     ],
+    "planet_modifier": {
+      "planet_administrators_produces_mult": 0.15
+    },
     "potential": {
       "exists": "owner",
       "NOT": {
@@ -377,12 +380,6 @@ const Building = {
       "produces": {
         "unity": 10
       }
-    },
-    "triggered_planet_modifier": {
-      "potential": {
-        "exists": "owner"
-      },
-      "planet_administrators_produces_mult": 0.15
     },
     "key": "building_autocurating_vault"
   },
@@ -711,9 +708,6 @@ const Building = {
   "building_chemical_plant": {
     "name": "Chemical Plants",
     "description": "The unpredictable and sometimes unstable Volatile Motes are produced here artificially. No open flames are permitted within a five kilometer radius of the plants.",
-    "allow": {
-      "has_upgraded_capital": true
-    },
     "base_buildtime": "@b2_time",
     "category": "manufacturing",
     "potential": {
@@ -760,9 +754,9 @@ const Building = {
       "building_corporate_vault"
     ],
     "planet_modifier": {
-      "job_priest_add": "@b2_jobs",
       "job_high_priest_add": 1,
-      "pop_ethic_spiritualist_attraction_mult": 0.2
+      "pop_ethic_spiritualist_attraction_mult": 0.2,
+      "planet_administrators_produces_mult": 0.15
     },
     "potential": {
       "exists": "owner",
@@ -785,6 +779,9 @@ const Building = {
       "upkeep": {
         "energy": "@b2_upkeep",
         "rare_crystals": "@b2_rare_upkeep"
+      },
+      "produces": {
+        "unity": 10
       }
     },
     "key": "building_citadel_of_faith"
@@ -927,12 +924,6 @@ const Building = {
         "owner": {
           "is_ai": false
         },
-        "NOT": {
-          "exists": "assembling_species"
-        },
-        "assembling_species": {
-          "is_organic_species": true
-        },
         "NAND": {
           "free_district_slots": 0
         }
@@ -976,7 +967,7 @@ const Building = {
     ],
     "planet_modifier": {
       "planet_housing_add": 3,
-      "planet_amenities_add": 3,
+      "planet_amenities_add": 7,
       "planet_max_buildings_add": "@buildings_t1"
     },
     "potential": {
@@ -1432,7 +1423,7 @@ const Building = {
       "building_alpha_hub"
     ],
     "planet_modifier": {
-      "planet_managers_produces_mult": 0.15
+      "planet_administrators_produces_mult": 0.15
     },
     "potential": {
       "exists": "owner",
@@ -1520,9 +1511,6 @@ const Building = {
   "building_crystal_plant": {
     "name": "Kha'lanka Crystal Plant",
     "description": "The discovery of new crystal manufacturing techniques, far below the surface in the city of the Kha'lanka lithoids, has effectivized artificial crystal manufacturing through oxidation of rapidly growing silicon-based cell-clusters.",
-    "allow": {
-      "has_upgraded_capital": true
-    },
     "base_buildtime": "@b2_time",
     "category": "manufacturing",
     "potential": {
@@ -1929,16 +1917,10 @@ const Building = {
         "has_modifier": "resort_colony"
       },
       "OR": {
-        "NOT": {
-          "is_planet_class": "pc_habitat"
+        "owner": {
+          "is_ai": false
         },
-        "AND": {
-          "exists": "owner",
-          "owner": {
-            "is_gestalt": true
-          }
-        },
-        "has_planet_flag": "energy_habitat"
+        "has_any_generator_district_or_building": true
       }
     },
     "prerequisites": [
@@ -2108,8 +2090,8 @@ const Building = {
     "key": "building_expanded_warren"
   },
   "building_factory_1": {
-    "name": "Civilian Industries",
-    "description": "A wide collection of civilian industries and manufactories where a variety of consumer goods are produced.",
+    "name": "Factory Build Speed",
+    "description": "Civilian Industries",
     "base_buildtime": "@b1_time",
     "category": "manufacturing",
     "potential": {
@@ -2118,12 +2100,13 @@ const Building = {
         "country_uses_consumer_goods": true
       },
       "NOT": {
-        "AND": {
-          "owner": {
-            "is_ai": true
-          },
-          "has_any_industry_district": false
-        }
+        "has_modifier": "slave_colony"
+      },
+      "OR": {
+        "owner": {
+          "is_ai": false
+        },
+        "has_any_industry_district": true
       }
     },
     "prerequisites": [
@@ -2455,6 +2438,12 @@ const Building = {
       "NOR": {
         "is_planet_class": "pc_machine",
         "has_modifier": "resort_colony"
+      },
+      "OR": {
+        "owner": {
+          "is_ai": false
+        },
+        "has_any_farming_district_or_buildings": true
       }
     },
     "prerequisites": [
@@ -2506,15 +2495,6 @@ const Building = {
     ],
     "resources": {
       "category": "planet_buildings_strongholds",
-      "produces": {
-        "trigger": {
-          "exists": "owner",
-          "owner": {
-            "has_active_tradition": "tr_unyielding_resistance_is_frugal"
-          }
-        },
-        "unity": 3
-      },
       "cost": {
         "minerals": "@b2_minerals",
         "volatile_motes": "@b2_rare_cost"
@@ -2544,12 +2524,13 @@ const Building = {
     "category": "manufacturing",
     "potential": {
       "NOT": {
-        "AND": {
-          "owner": {
-            "is_ai": true
-          },
-          "has_any_industry_district": false
-        }
+        "has_modifier": "slave_colony"
+      },
+      "OR": {
+        "owner": {
+          "is_ai": false
+        },
+        "has_any_industry_district": true
       }
     },
     "prerequisites": [
@@ -2669,10 +2650,6 @@ const Building = {
   "building_gaiaseeders_1": {
     "description": "$building_gaiaseeders$ - Phase 1",
     "allow": {
-      "is_ideal_planet_class": {
-        "who": "owner",
-        "status": true
-      },
       "has_upgraded_capital": true
     },
     "base_buildtime": "@b2_time",
@@ -2689,7 +2666,7 @@ const Building = {
         }
       },
       "NOR": {
-        "is_planet_class": "pc_machine"
+        "is_planet_class": "pc_relic"
       },
       "is_artificial": false
     },
@@ -2699,7 +2676,8 @@ const Building = {
         "energy": 1500
       },
       "upkeep": {
-        "energy": 20
+        "energy": 20,
+        "multiplier": "value:gaiaseeder_upkeep"
       }
     },
     "upgrades": [
@@ -2710,10 +2688,7 @@ const Building = {
   "building_gaiaseeders_2": {
     "description": "$building_gaiaseeders$ - Phase 2",
     "allow": {
-      "is_ideal_planet_class": {
-        "who": "owner",
-        "status": true
-      }
+      "can_build_gaiaseeder": true
     },
     "base_buildtime": "@b2_time",
     "can_build": false,
@@ -2730,7 +2705,8 @@ const Building = {
       },
       "upkeep": {
         "energy": 20,
-        "exotic_gases": "@b2_rare_upkeep"
+        "exotic_gases": "@b2_rare_upkeep",
+        "multiplier": "value:gaiaseeder_upkeep"
       }
     },
     "upgrades": [
@@ -2741,10 +2717,7 @@ const Building = {
   "building_gaiaseeders_3": {
     "description": "$building_gaiaseeders$ - Phase 3",
     "allow": {
-      "is_ideal_planet_class": {
-        "who": "owner",
-        "status": true
-      }
+      "can_build_gaiaseeder": true
     },
     "base_buildtime": "@b2_time",
     "can_build": false,
@@ -2760,7 +2733,8 @@ const Building = {
       },
       "upkeep": {
         "energy": 20,
-        "exotic_gases": "@b3_rare_upkeep"
+        "exotic_gases": "@b3_rare_upkeep",
+        "multiplier": "value:gaiaseeder_upkeep"
       }
     },
     "upgrades": [
@@ -2772,10 +2746,7 @@ const Building = {
     "name": "Terraforms the planet into a §YGaia World§! on completion.",
     "description": "",
     "allow": {
-      "is_ideal_planet_class": {
-        "who": "owner",
-        "status": true
-      }
+      "can_build_gaiaseeder": true
     },
     "base_buildtime": "@b2_time",
     "can_build": false,
@@ -2950,7 +2921,7 @@ const Building = {
         "trigger": {
           "exists": "owner"
         },
-        "unity": 2,
+        "unity": 3,
         "multiplier": "owner.trigger:num_ascension_perks"
       },
       "cost": {
@@ -3122,7 +3093,7 @@ const Building = {
       }
     },
     "resources": {
-      "category": "planet_buildings",
+      "category": "planet_buildings_hab_capital",
       "upkeep": {
         "trigger": {
           "owner": {
@@ -3219,7 +3190,7 @@ const Building = {
       }
     },
     "resources": {
-      "category": "planet_buildings",
+      "category": "planet_buildings_hab_capital",
       "cost": {
         "minerals": "@b2_minerals"
       },
@@ -3563,7 +3534,7 @@ const Building = {
   },
   "building_hive_node": {
     "name": "Synaptic Nodes",
-    "description": "A center of massive, macroscopic synapses, these nodes, tended to and assisted by specialized drones, receive and transmit the will of the Hive.",
+    "description": "A center of massive, macroscopic synapses, these nodes - tended to and assisted by specialized drones - receive and transmit the will of the Hive.",
     "base_buildtime": "@b1_time",
     "category": "unity",
     "convert_to": [
@@ -4817,10 +4788,10 @@ const Building = {
         "is_planet_class": "pc_cybrex"
       },
       "OR": {
-        "NOT": {
-          "is_planet_class": "pc_habitat"
+        "owner": {
+          "is_ai": false
         },
-        "has_planet_flag": "mining_habitat"
+        "has_any_mining_district": true
       }
     },
     "prerequisites": [
@@ -5300,6 +5271,41 @@ const Building = {
       "category": "planet_buildings"
     },
     "key": "building_nuumismatic_shrine"
+  },
+  "building_offspring_nest": {
+    "name": "Offspring Nest",
+    "description": "This fortified nest safely harbors the local Offspring while also accelerating growth for the rest of the nearby hive.",
+    "base_buildtime": "@b1_time",
+    "category": "pop_assembly",
+    "convert_to": [
+      "building_spawning_pool"
+    ],
+    "planet_modifier": {
+      "job_offspring_drone_add": 1
+    },
+    "potential": {
+      "owner": {
+        "has_origin": "origin_progenitor_hive"
+      },
+      "or": {
+        "num_buildings": {
+          "type": "any"
+        },
+        "owner": {
+          "is_ai": false
+        }
+      }
+    },
+    "resources": {
+      "category": "planet_buildings",
+      "cost": {
+        "minerals": "@b1_minerals"
+      },
+      "upkeep": {
+        "energy": 2
+      }
+    },
+    "key": "building_offspring_nest"
   },
   "building_organic_paradise": {
     "name": "Organic Paradise",
@@ -5853,6 +5859,12 @@ const Building = {
       "exists": "owner",
       "owner": {
         "is_gestalt": true
+      },
+      "OR": {
+        "owner": {
+          "is_ai": false
+        },
+        "has_any_industry_district": true
       }
     },
     "prerequisites": [
@@ -5895,8 +5907,12 @@ const Building = {
       "planet_stability_add": 5
     },
     "potential": {
+      "host_has_dlc": "Utopia",
       "owner": {
-        "has_ascension_perk": "ap_mind_over_matter"
+        "OR": {
+          "has_ascension_perk": "ap_mind_over_matter",
+          "has_origin": "origin_shroudwalker_apprentice"
+        }
       },
       "NOT": {
         "has_modifier": "slave_colony"
@@ -5940,12 +5956,63 @@ const Building = {
     },
     "key": "building_public_relations_office"
   },
+  "building_ranger_lodge": {
+    "name": "Ranger Lodge",
+    "description": "The first step to live more in tune with nature is to ensure that nature is still around. Making sure none of the colonists impact the natural beauty is essential. The world must remain pure.",
+    "allow": {
+      "custom_tooltip": {
+        "fail_text": "no_free_district_for_ranger_lodge",
+        "planet": {
+          "num_free_districts": {
+            "type": "any"
+          }
+        }
+      }
+    },
+    "base_buildtime": "@b1_time",
+    "category": "amenity",
+    "planet_modifier": {
+      "job_ranger_add": "@b1_jobs",
+      "deposit_blockers_natural_unity_produces_add": 2
+    },
+    "potential": {
+      "always": false,
+      "NOT": {
+        "has_modifier": "slave_colony"
+      },
+      "owner": {
+        "is_regular_empire": true,
+        "has_valid_civic": "civic_environmentalist"
+      },
+      "NOR": {
+        "is_planet_class": "pc_relic"
+      },
+      "is_artificial": false
+    },
+    "resources": {
+      "category": "planet_buildings",
+      "cost": {
+        "minerals": "@b1_minerals"
+      },
+      "upkeep": {
+        "energy": "@b1_upkeep"
+      }
+    },
+    "triggered_planet_modifier": {
+      "potential": {
+        "exists": "owner",
+        "owner": {
+          "is_galactic_community_member": true,
+          "is_active_resolution": "resolution_ecology_paradise_initiative"
+        }
+      },
+      "deposit_blockers_natural_unity_produces_add": 1
+    },
+    "key": "building_ranger_lodge"
+  },
   "building_refinery": {
     "name": "Refinery Build Speed",
-    "description": "",
-    "allow": {
-      "has_upgraded_capital": true
-    },
+    "description": "Exotic Gas Refineries",
     "base_buildtime": "@b2_time",
     "category": "manufacturing",
     "potential": {
@@ -5981,9 +6048,6 @@ const Building = {
   "building_research_lab_1": {
     "name": "Research Labs",
     "description": "Research Labs provide the basic facilities for general research.",
-    "allow": {
-      "has_upgraded_capital": true
-    },
     "base_buildtime": "@b1_time",
     "category": "research",
     "potential": {
@@ -7056,13 +7120,20 @@ const Building = {
     "name": "Spawning Pools",
     "description": "Tended by the scientific and gentle care of specialists, these pools stimulate our spawn into faster growth.",
     "base_buildtime": "@b1_time",
-    "category": "amenity",
+    "category": "pop_assembly",
+    "convert_to": [
+      "building_offspring_nest"
+    ],
     "planet_modifier": {
       "job_spawning_drone_add": 1
     },
     "potential": {
+      "exists": "owner",
       "owner": {
-        "is_hive_empire": true
+        "is_hive_empire": true,
+        "NOT": {
+          "has_origin": "origin_progenitor_hive"
+        }
       },
       "or": {
         "num_buildings": {
@@ -7127,15 +7198,6 @@ const Building = {
     ],
     "resources": {
       "category": "planet_buildings_strongholds",
-      "produces": {
-        "trigger": {
-          "exists": "owner",
-          "owner": {
-            "has_active_tradition": "tr_unyielding_resistance_is_frugal"
-          }
-        },
-        "unity": 3
-      },
       "cost": {
         "minerals": "@b1_minerals"
       },
