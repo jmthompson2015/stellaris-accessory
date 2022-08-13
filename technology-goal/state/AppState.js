@@ -1,12 +1,14 @@
 const AppState = {};
 
 AppState.create = ({
+  appName = "TechnologyGoal",
   goalKeys = [],
   isVerbose = true,
   prerequisiteKeys = [],
   selectedKeys = [],
 } = {}) =>
   Immutable({
+    appName,
     goalKeys,
     isVerbose,
     prerequisiteKeys,
