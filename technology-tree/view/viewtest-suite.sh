@@ -1,6 +1,6 @@
 #! /bin/bash
 
-export BASE="/Users/jmthompson/Documents (Local)/Software Development/git/stellaris-accessory/technology-tree/view"
+export BASE="/Users/jmthompson/Documents/Software Development/git/stellaris-accessory/technology-tree/view"
 
 open "${BASE}/AreaSelect.viewtest.html"
 open "${BASE}/CategorySelect.viewtest.html"

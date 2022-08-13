@@ -5,6 +5,7 @@ import R from "ramda";
 import FileLoader from "../converter/FileLoader.js";
 import FileWriter from "../converter/FileWriter.js";
 import NameFinder from "../converter/NameFinder.js";
+import NameFinderGiga from "../converter/NameFinderGiga.js";
 
 const BuildingConverter = {};
 
@@ -20,41 +21,48 @@ Object.freeze(Building);
 
 export default Building;`;
 
-const parseBuilding = (key, building0) =>
+const parseBuilding = (data, key, data0) =>
   new Promise((resolve) => {
-    NameFinder.find(key).then((nameDesc) => {
-      resolve({
+    const nameFinder = data[key].isGE ? NameFinderGiga : NameFinder;
+    nameFinder.find(key).then((nameDesc) => {
+      let answer = {
         name: nameDesc.name,
         description: nameDesc.description,
-        allow: building0.allow,
-        base_buildtime: building0.base_buildtime,
-        can_build: building0.can_build,
-        category: building0.category,
-        convert_to: building0.convert_to,
-        planet_modifier: building0.planet_modifier,
-        potential: building0.potential,
-        prerequisites: building0.prerequisites,
-        resources: building0.resources,
-        triggered_planet_modifier: building0.triggered_planet_modifier,
-        upgrades: building0.upgrades,
+        allow: data0.allow,
+        base_buildtime: data0.base_buildtime,
+        can_build: data0.can_build,
+        category: data0.category,
+        convert_to: data0.convert_to,
+        planet_modifier: data0.planet_modifier,
+        potential: data0.potential,
+        prerequisites: data0.prerequisites,
+        resources: data0.resources,
+        triggered_planet_modifier: data0.triggered_planet_modifier,
+        upgrades: data0.upgrades,
         key,
-      });
+      };
+
+      if (data0.isGE) {
+        answer = R.assoc("isGE", data0.isGE, answer);
+      }
+
+      resolve(answer);
     });
   });
 
-const parse = (buildings, indexIn, answerIn) =>
+const parse = (data, indexIn, answerIn) =>
   new Promise((resolve) => {
     const index = indexIn;
     const answer = answerIn || {};
 
-    const key = Object.keys(buildings)[index];
-    const building0 = buildings[key];
+    const key = Object.keys(data)[index];
+    const data0 = data[key];
 
-    if (building0) {
-      parseBuilding(key, building0).then((building) => {
+    if (data0) {
+      parseBuilding(data, key, data0).then((building) => {
         const myIndex = index + 1;
         const myAnswer = R.assoc(building.key, building, answer);
-        parse(buildings, myIndex, myAnswer).then((answer2) => resolve(answer2));
+        parse(data, myIndex, myAnswer).then((answer2) => resolve(answer2));
       });
     } else {
       resolve(answer);
@@ -65,18 +73,13 @@ BuildingConverter.convert = () => {
   const start = Date.now();
   console.log("BuildingConverter.convert() start");
   console.log(`parsing file ${INPUT_FILE}`);
-  FileLoader.loadLocalFileJson(`${INPUT_FILE}`).then((buildings) => {
-    parse(buildings, 0).then((buildingDetails0) => {
-      const buildingKeys = Object.keys(buildingDetails0);
-      buildingKeys.sort();
-      const reduceFunction = (accum, key) =>
-        R.assoc(key, buildingDetails0[key], accum);
-      const buildingDetails = R.reduce(reduceFunction, {}, buildingKeys);
-      const content2 = `${HEADER}${JSON.stringify(
-        buildingDetails,
-        null,
-        "  "
-      )}${FOOTER}`;
+  FileLoader.loadLocalFileJson(`${INPUT_FILE}`).then((data) => {
+    parse(data, 0).then((details0) => {
+      const keys = Object.keys(details0);
+      keys.sort();
+      const reduceFunction = (accum, key) => R.assoc(key, details0[key], accum);
+      const details = R.reduce(reduceFunction, {}, keys);
+      const content2 = `${HEADER}${JSON.stringify(details, null, 2)}${FOOTER}`;
       FileWriter.writeFile(OUTPUT_FILE, content2);
       const end = Date.now();
       console.log(`elapsed: ${end - start} ms`);

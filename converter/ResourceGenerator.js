@@ -99,7 +99,7 @@ ResourceGenerator.generate = () => {
     };
     const itemMap = R.reduce(reduceFunction2, {}, allKeys);
 
-    const content = `${HEADER}${JSON.stringify(itemMap, null, "  ")}${FOOTER}`;
+    const content = `${HEADER}${JSON.stringify(itemMap, null, 2)}${FOOTER}`;
     FileWriter.writeFile(OUTPUT_FILE, content);
     const end = Date.now();
     console.log(`elapsed: ${end - start} ms`);

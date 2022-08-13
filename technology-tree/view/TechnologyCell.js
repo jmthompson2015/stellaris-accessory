@@ -6,8 +6,9 @@ import ReactUtils from "./ReactUtilities.js";
 // 2.0: const IMG = `${BASE}public/vanilla/img/`;
 const BASE = "https://turanar.github.io/stellaris-tech-tree/";
 const IMG = `${BASE}assets/img/`;
+const IMG_GIGA = `../../images/`;
 
-const createImage = technology => {
+const createImage = (technology) => {
   const { key } = technology;
   let className = "v-mid";
 
@@ -19,18 +20,18 @@ const createImage = technology => {
 
   return ReactDOMFactories.img({
     className,
-    src: `${IMG}${key}.png`,
-    style: { width: 48 }
+    src: technology.isGE ? `${IMG_GIGA}${key}.png` : `${IMG}${key}.png`,
+    style: { width: 48 },
   });
 };
 
-const createLabel1 = technology => {
+const createLabel1 = (technology) => {
   const { name } = technology;
 
   return name;
 };
 
-const createLabel2 = technology => {
+const createLabel2 = (technology) => {
   const { category, tier } = technology;
   const categoryObj = Category[category];
   const myTier = technology.start_tech ? "Starting" : `Tier ${tier}`;
@@ -38,7 +39,7 @@ const createLabel2 = technology => {
   return `${categoryObj.name} (${myTier})`;
 };
 
-const createLabel3 = technology => {
+const createLabel3 = (technology) => {
   const { cost } = technology;
 
   if (cost !== undefined && typeof cost === "number") {
@@ -48,14 +49,14 @@ const createLabel3 = technology => {
   return "";
 };
 
-const createLabel = technology => {
+const createLabel = (technology) => {
   const label1 = createLabel1(technology);
   const label2 = createLabel2(technology);
   const label3 = createLabel3(technology);
   const rows = [
     ReactUtils.createRow(ReactUtils.createCell(label1), "labelLine1", "b f6"),
     ReactUtils.createRow(ReactUtils.createCell(label2), "labelLine2"),
-    ReactUtils.createRow(ReactUtils.createCell(label3), "labelLine3")
+    ReactUtils.createRow(ReactUtils.createCell(label3), "labelLine3"),
   ];
 
   return ReactUtils.createTable(rows, "innerTable", "f7 tl");
@@ -81,12 +82,17 @@ class TechnologyCell extends React.Component {
     const { name } = technology;
     const row = ReactUtils.createRow([
       ReactUtils.createCell(image, "imageCell"),
-      ReactUtils.createCell(label, "labelCell", "pl1 v-mid")
+      ReactUtils.createCell(label, "labelCell", "pl1 v-mid"),
     ]);
     const innerTable = ReactUtils.createTable(row, "innerTable");
 
-    const outerClass = `b--${technology.area} ba bg-white bw2 ${technology.is_rare ? "pr1" : "pa1"}`;
-    const outerProps = { onClick: this.handleClick, title: technology.description };
+    const outerClass = `b--${technology.area} ba bg-white bw2 ${
+      technology.is_rare ? "pr1" : "pa1"
+    }`;
+    const outerProps = {
+      onClick: this.handleClick,
+      title: technology.description,
+    };
 
     return ReactUtils.createCell(
       innerTable,
@@ -101,12 +107,12 @@ TechnologyCell.propTypes = {
   technology: PropTypes.shape().isRequired,
 
   myKey: PropTypes.string,
-  onClick: PropTypes.func
+  onClick: PropTypes.func,
 };
 
 TechnologyCell.defaultProps = {
   myKey: "myKey",
-  onClick: () => {}
+  onClick: () => {},
 };
 
 export default TechnologyCell;

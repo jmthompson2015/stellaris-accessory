@@ -2,7 +2,7 @@ import TechnologyCategory from "./TechnologyCategory.js";
 
 QUnit.module("TechnologyCategory");
 
-QUnit.test("TechnologyCategory properties biology", assert => {
+QUnit.test("TechnologyCategory properties biology", (assert) => {
   // Setup.
   const key = "biology";
 
@@ -15,9 +15,9 @@ QUnit.test("TechnologyCategory properties biology", assert => {
   assert.equal(category.key, key);
 });
 
-QUnit.test("TechnologyCategory keys", assert => {
+QUnit.test("TechnologyCategory keys", (assert) => {
   // Setup.
-  const length = 12;
+  const length = 13;
 
   // Run.
   const keys = Object.keys(TechnologyCategory);
@@ -25,12 +25,12 @@ QUnit.test("TechnologyCategory keys", assert => {
   // Verify.
   assert.equal(keys.length, length);
 
-  const category0 = TechnologyCategory[keys[0]];
+  const category0 = TechnologyCategory[R.head(keys)];
   assert.equal(category0.name, "Biology");
   assert.equal(category0.area, "society");
   assert.equal(category0.key, "biology");
 
-  const categoryLast = TechnologyCategory[keys[length - 1]];
+  const categoryLast = TechnologyCategory[R.last(keys)];
   assert.equal(categoryLast.name, "Voidcraft");
   assert.equal(categoryLast.area, "engineering");
   assert.equal(categoryLast.key, "voidcraft");

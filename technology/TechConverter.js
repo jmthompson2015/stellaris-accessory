@@ -5,6 +5,7 @@ import R from "ramda";
 import FileLoader from "../converter/FileLoader.js";
 import FileWriter from "../converter/FileWriter.js";
 import NameFinder from "../converter/NameFinder.js";
+import NameFinderGiga from "../converter/NameFinderGiga.js";
 
 const TechConverter = {};
 
@@ -20,49 +21,56 @@ Object.freeze(Technology);
 
 export default Technology;`;
 
-const parseTechnology = (techs, key, tech0) =>
+const parseTechnology = (data, key, data0) =>
   new Promise((resolve) => {
-    NameFinder.find(key).then((nameDesc) => {
+    const nameFinder = data[key].isGE ? NameFinderGiga : NameFinder;
+    nameFinder.find(key).then((nameDesc) => {
       const category =
-        tech0.category.length === 1 ? tech0.category[0] : tech0.category;
+        data0.category.length === 1 ? data0.category[0] : data0.category;
       const cost =
-        typeof tech0.cost === "string" ? techs[tech0.cost] : tech0.cost;
+        typeof data0.cost === "string" ? data[data0.cost] : data0.cost;
 
-      resolve({
+      let answer = {
         name: nameDesc.name,
         description: nameDesc.description,
-        area: tech0.area,
+        area: data0.area,
         category,
         cost,
-        feature_flags: tech0.feature_flags,
-        is_dangerous: tech0.is_dangerous,
-        is_rare: tech0.is_rare,
-        start_tech: tech0.start_tech,
-        prerequisites: tech0.prerequisites,
-        tier: tech0.tier,
+        feature_flags: data0.feature_flags,
+        is_dangerous: data0.is_dangerous,
+        is_rare: data0.is_rare,
+        start_tech: data0.start_tech,
+        prerequisites: data0.prerequisites,
+        tier: data0.tier,
         key,
-      });
+      };
+
+      if (data0.isGE) {
+        answer = R.assoc("isGE", data0.isGE, answer);
+      }
+
+      resolve(answer);
     });
   });
 
-const parse = (techs, indexIn, answerIn) =>
+const parse = (data, indexIn, answerIn) =>
   new Promise((resolve) => {
     const index = indexIn;
     const answer = answerIn || {};
 
-    const key = Object.keys(techs)[index];
-    const tech0 = techs[key];
+    const key = Object.keys(data)[index];
+    const data0 = data[key];
 
-    if (tech0) {
+    if (data0) {
       if (key.startsWith("@")) {
         // Skip it.
         const myIndex = index + 1;
-        parse(techs, myIndex, answer).then((answer2) => resolve(answer2));
+        parse(data, myIndex, answer).then((answer2) => resolve(answer2));
       } else {
-        parseTechnology(techs, key, tech0).then((tech) => {
+        parseTechnology(data, key, data0).then((tech) => {
           const myIndex = index + 1;
           const myAnswer = R.assoc(tech.key, tech, answer);
-          parse(techs, myIndex, myAnswer).then((answer2) => resolve(answer2));
+          parse(data, myIndex, myAnswer).then((answer2) => resolve(answer2));
         });
       }
     } else {
@@ -74,18 +82,13 @@ TechConverter.convert = () => {
   const start = Date.now();
   console.log("TechConverter.convert() start");
   console.log(`parsing file ${INPUT_FILE}`);
-  FileLoader.loadLocalFileJson(`${INPUT_FILE}`).then((techs) => {
-    parse(techs, 0).then((techDetails0) => {
-      const techKeys = Object.keys(techDetails0);
-      techKeys.sort();
-      const reduceFunction = (accum, key) =>
-        R.assoc(key, techDetails0[key], accum);
-      const techDetails = R.reduce(reduceFunction, {}, techKeys);
-      const content2 = `${HEADER}${JSON.stringify(
-        techDetails,
-        null,
-        "  "
-      )}${FOOTER}`;
+  FileLoader.loadLocalFileJson(`${INPUT_FILE}`).then((data) => {
+    parse(data, 0).then((details0) => {
+      const keys = Object.keys(details0);
+      keys.sort();
+      const reduceFunction = (accum, key) => R.assoc(key, details0[key], accum);
+      const details = R.reduce(reduceFunction, {}, keys);
+      const content2 = `${HEADER}${JSON.stringify(details, null, 2)}${FOOTER}`;
       FileWriter.writeFile(OUTPUT_FILE, content2);
       const end = Date.now();
       console.log(`elapsed: ${end - start} ms`);

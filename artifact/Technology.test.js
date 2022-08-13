@@ -47,11 +47,11 @@ QUnit.test("Technology keys", (assert) => {
   const keys = Object.keys(Technology);
 
   // Verify.
-  assert.equal(keys.length, 411);
+  assert.equal(keys.length, 699);
 
   const tech0 = Technology[R.head(keys)];
-  assert.equal(tech0.name, "Null Void Beam");
-  assert.equal(tech0.key, "null_void_beam");
+  assert.equal(tech0.name, "Aeternite Loop-Quantum Defensive Matrix");
+  assert.equal(tech0.key, "giga_tech_aeternite_armor");
 
   const techLast = Technology[R.last(keys)];
   assert.equal(techLast.name, "Zero Point Power");

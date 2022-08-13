@@ -4,7 +4,7 @@ import TechnologyCategory from "../artifact/TechnologyCategory.js";
 
 import Formatter from "./Formatter.js";
 
-const technologyName = technologyKey => {
+const technologyName = (technologyKey) => {
   const technology = Technology[technologyKey];
 
   return technology ? technology.name : technologyKey;
@@ -14,71 +14,80 @@ const TableColumns = [
   {
     key: "name",
     label: "Name",
-    className: "tl"
+    className: "tl",
   },
   {
     key: "description",
     label: "Description",
-    className: "tl"
+    className: "tl",
   },
   {
     key: "area",
     label: "Area",
     className: "tl",
-    convertFunction: row => (TechnologyArea[row.area] ? TechnologyArea[row.area].name : undefined)
+    convertFunction: (row) =>
+      TechnologyArea[row.area] ? TechnologyArea[row.area].name : undefined,
   },
   {
     key: "category",
     label: "Category",
     className: "tl",
-    convertFunction: row =>
-      TechnologyCategory[row.category] ? TechnologyCategory[row.category].name : undefined
+    convertFunction: (row) =>
+      TechnologyCategory[row.category]
+        ? TechnologyCategory[row.category].name
+        : undefined,
   },
   {
     key: "cost",
     label: "cost",
     type: "number",
-    className: "tr"
+    className: "tr",
   },
   {
     key: "feature_flags",
     label: "feature_flags",
     className: "tl",
-    convertFunction: row => Formatter.formatArray(row.feature_flags)
+    convertFunction: (row) => Formatter.formatArray(row.feature_flags),
   },
   {
     key: "is_dangerous",
     label: "is_dangerous",
-    type: "boolean"
+    type: "boolean",
   },
   {
     key: "is_rare",
     label: "is_rare",
-    type: "boolean"
+    type: "boolean",
+  },
+  {
+    key: "isGE",
+    label: "isGE",
+    type: "boolean",
   },
   {
     key: "start_tech",
     label: "start_tech",
-    type: "boolean"
+    type: "boolean",
   },
   {
     key: "prerequisites",
     label: "Prerequisites",
     className: "tl",
-    convertFunction: row => {
+    convertFunction: (row) => {
       if (Array.isArray(row.prerequisites) && row.prerequisites.length > 0) {
-        const mapFunction = prerequisiteKey => technologyName(prerequisiteKey);
+        const mapFunction = (prerequisiteKey) =>
+          technologyName(prerequisiteKey);
         return Formatter.formatArray(R.map(mapFunction, row.prerequisites));
       }
       return undefined;
-    }
+    },
   },
   {
     key: "tier",
     label: "tier",
     type: "number",
-    className: "tr"
-  }
+    className: "tr",
+  },
 ];
 
 export default TableColumns;

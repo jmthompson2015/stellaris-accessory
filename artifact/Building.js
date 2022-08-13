@@ -1588,6 +1588,98 @@ const Building = {
     },
     "key": "building_crystal_plant_2"
   },
+  "building_defense_nexus_capacity": {
+    "name": "Auxiliary Hangars",
+    "description": "Vast hangars housing Strike Corvettes to be deployed whenever the world is threatened by hostile vessels.",
+    "allow": {
+      "OR": {
+        "has_modifier": "planetary_drive_yard_fortress_modifier_gestalt"
+      }
+    },
+    "base_buildtime": 720,
+    "can_build": true,
+    "category": "army",
+    "potential": {
+      "OR": {
+        "has_modifier": "planetary_drive_yard_fortress_modifier_gestalt"
+      }
+    },
+    "prerequisites": [
+      "giga_tech_planetary_drive_yard_defense"
+    ],
+    "resources": {
+      "category": "planet_buildings",
+      "cost": {
+        "alloys": 1000,
+        "minerals": 2000
+      },
+      "produces": {
+        "engineering_research": 25
+      },
+      "upkeep": {
+        "energy": 5
+      }
+    },
+    "triggered_planet_modifier": {
+      "potential": {
+        "exists": "owner",
+        "owner": {
+          "is_gestalt": true
+        }
+      },
+      "modifier": {
+        "job_warrior_drone_add": 2
+      }
+    },
+    "key": "building_defense_nexus_capacity",
+    "isGE": true
+  },
+  "building_defense_nexus_construction": {
+    "name": "Planetary Shipyards",
+    "description": "These large shipyards supplement the Planetary Defense Nexus's shipbuilding operations, enabling more Strike Corvettes to be built monthly.",
+    "allow": {
+      "OR": {
+        "has_modifier": "planetary_drive_yard_fortress_modifier_gestalt"
+      }
+    },
+    "base_buildtime": 720,
+    "can_build": true,
+    "category": "army",
+    "potential": {
+      "OR": {
+        "has_modifier": "planetary_drive_yard_fortress_modifier_gestalt"
+      }
+    },
+    "prerequisites": [
+      "giga_tech_planetary_drive_yard_defense"
+    ],
+    "resources": {
+      "category": "planet_buildings",
+      "cost": {
+        "alloys": 800,
+        "minerals": 1000
+      },
+      "produces": {
+        "engineering_research": 10
+      },
+      "upkeep": {
+        "energy": 5
+      }
+    },
+    "triggered_planet_modifier": {
+      "potential": {
+        "exists": "owner",
+        "owner": {
+          "is_gestalt": true
+        }
+      },
+      "modifier": {
+        "job_warrior_drone_add": 2
+      }
+    },
+    "key": "building_defense_nexus_construction",
+    "isGE": true
+  },
   "building_deployment_post": {
     "name": "Deployment Post",
     "description": "The initial deployment post from which we will expand on this world.",
@@ -1834,6 +1926,83 @@ const Building = {
       "building_drone_megastorage"
     ],
     "key": "building_drone_storage"
+  },
+  "building_ehof_sm_forge_1": {
+    "name": "Sentient Metal Foundry",
+    "description": "The Sentient Metal Foundry is a specialized and advanced installation, that serves the sole purpose of feeding alloys alloys and energy energy to an accumulation of Sentient Metal Sentient Metal in order to create more Sentient Metal Sentient Metal.",
+    "allow": {
+      "has_upgraded_capital": true
+    },
+    "base_buildtime": "@b3_time",
+    "category": "manufacturing",
+    "potential": {
+      "NOT": {
+        "has_modifier": "slave_colony"
+      }
+    },
+    "prerequisites": [
+      "tech_ehof_sentient_tier_1"
+    ],
+    "resources": {
+      "category": "planet_buildings",
+      "cost": {
+        "minerals": "@b3_minerals"
+      },
+      "upkeep": {
+        "energy": "@b3_upkeep"
+      }
+    },
+    "triggered_planet_modifier": {
+      "potential": {
+        "exists": "owner",
+        "owner": {
+          "is_regular_empire": true
+        }
+      },
+      "modifier": {
+        "job_ehof_cultivator_add": "@b1_jobs"
+      }
+    },
+    "upgrades": [
+      "building_ehof_sm_forge_2"
+    ],
+    "key": "building_ehof_sm_forge_1",
+    "isGE": true
+  },
+  "building_ehof_sm_forge_2": {
+    "name": "Sentient Metal Foundry-Complex",
+    "description": "The Sentient Metal Foundry-Complex is a larger and more efficient variant of the Sentient Metal Foundry. It makes use of our expanded knowledge of Sentient Metal Sentient Metal, to enhance the production process and create more Sentient Metal Sentient Metal in less time.",
+    "allow": {
+      "has_major_upgraded_capital": true
+    },
+    "base_buildtime": "@b4_time",
+    "can_build": false,
+    "category": "manufacturing",
+    "prerequisites": [
+      "tech_ehof_sentient_tier_3"
+    ],
+    "resources": {
+      "category": "planet_buildings",
+      "cost": {
+        "minerals": "@b4_minerals"
+      },
+      "upkeep": {
+        "energy": "@b4_upkeep"
+      }
+    },
+    "triggered_planet_modifier": {
+      "potential": {
+        "exists": "owner",
+        "owner": {
+          "is_regular_empire": true
+        }
+      },
+      "modifier": {
+        "job_ehof_cultivator_add": "@b2_jobs"
+      }
+    },
+    "key": "building_ehof_sm_forge_2",
+    "isGE": true
   },
   "building_embassy": {
     "name": "Embassy Complex",
@@ -2647,6 +2816,23 @@ const Building = {
     },
     "key": "building_foundry_3"
   },
+  "building_frameworld_outpost": {
+    "name": "Planetary Relay",
+    "description": "A surface relay node and deployment post for the ongoing expeditions on this planet.",
+    "can_build": false,
+    "category": "government",
+    "planet_modifier": {
+      "planet_amenities_add": 5
+    },
+    "potential": {
+      "exists": "owner",
+      "owner": {
+        "is_country_type": "frameworld_outpost_country_type"
+      }
+    },
+    "key": "building_frameworld_outpost",
+    "isGE": true
+  },
   "building_gaiaseeders_1": {
     "description": "$building_gaiaseeders$ - Phase 1",
     "allow": {
@@ -3014,6 +3200,1811 @@ const Building = {
       }
     },
     "key": "building_gas_extractors"
+  },
+  "building_giga_aeternum_birch_capital": {
+    "name": "Aeternite Capital",
+    "description": "A building which houses the centralized Aeternite government ruling over their Birch World and the rest of their empire. It is filled with various kinds of computers and machinery to help streamline governmental tasks.",
+    "can_build": false,
+    "planet_modifier": {
+      "job_politician_add": 5,
+      "planet_housing_add": 100,
+      "planet_orbital_bombardment_damage": -0.1,
+      "planet_stability_add": 25
+    },
+    "potential": {
+      "always": false
+    },
+    "key": "building_giga_aeternum_birch_capital",
+    "isGE": true
+  },
+  "building_giga_aeternum_housing": {
+    "name": "Aeternite Habitation Megaplexes",
+    "description": "Vast habitation complexes built with Loop-Quantum Aeternite technology. Able to bend spacetime itself, these esoteric habitats can provide more internal space than their external volume suggests, and are capable of autonomously adjusting themselves to fit the need of their inhabitants.",
+    "can_build": false,
+    "planet_modifier": {
+      "planet_housing_add": 100,
+      "pop_happiness": 0.1
+    },
+    "potential": {
+      "always": false
+    },
+    "key": "building_giga_aeternum_housing",
+    "isGE": true
+  },
+  "building_giga_aeternum_leisure_center": {
+    "name": "Aeternite Entertainment Megaplexes",
+    "description": "Centers dedicated entirely to satisfying and entertaining Aeternite populations. They grant access to all Aeternite culture and entertainment, as well as a near-infinite amount of potential simulated worlds for their users.",
+    "can_build": false,
+    "planet_modifier": {
+      "job_entertainer_add": 25,
+      "planet_amenities_add": 100,
+      "planet_amenities_mult": 0.1,
+      "pop_happiness": 0.1
+    },
+    "potential": {
+      "always": false
+    },
+    "resources": {
+      "category": "planet_buildings",
+      "produces": {
+        "consumer_goods": 250
+      }
+    },
+    "key": "building_giga_aeternum_leisure_center",
+    "isGE": true
+  },
+  "building_giga_aeternum_psi_halls": {
+    "name": "Aeternite Psikapacitor",
+    "description": "A generator which casts a field of psionic energy into the skies of this world, bolstering Aeternite psionic abilities and ensuring the docility and compliance of local populations.",
+    "can_build": false,
+    "potential": {
+      "always": false
+    },
+    "triggered_planet_modifier": {
+      "potential": {
+        "owner": {
+          "is_regular_birch_empire": true
+        }
+      },
+      "job_telepath_add": 25,
+      "job_researcher_add": 10,
+      "planet_stability_add": 10,
+      "planet_crime_mult": -0.3,
+      "planet_crime_add": -25
+    },
+    "key": "building_giga_aeternum_psi_halls",
+    "isGE": true
+  },
+  "building_giga_aeternum_quantum_reactor": {
+    "name": "Aeternite Loop-Quantum Reactor",
+    "description": "Humongous constructs that draw energy from esoteric Loop Quantum phenomena, and tasked with energizing and streamlining the complex processes which manage the Aeternite energy grid.",
+    "can_build": false,
+    "planet_modifier": {
+      "planet_jobs_energy_produces_mult": 0.15,
+      "planet_jobs_energy_upkeep_mult": -0.25
+    },
+    "potential": {
+      "always": false
+    },
+    "resources": {
+      "category": "planet_buildings",
+      "produces": {
+        "energy": 1000
+      }
+    },
+    "key": "building_giga_aeternum_quantum_reactor",
+    "isGE": true
+  },
+  "building_giga_aeternum_ruler_computer": {
+    "name": "Aeternite Regal Computing Complex",
+    "description": "This humongous networked complex serves as the Aeternite ruler's personal computer, and is used to coordinate and manage the empire whenever needed. Its vast databanks contain most of Aeternite scientific and cultural knowledge, and other secrets of invaluable value.",
+    "can_build": false,
+    "planet_modifier": {
+      "planet_jobs_physics_research_produces_mult": 1,
+      "planet_jobs_society_research_produces_mult": 1,
+      "planet_jobs_engineering_research_produces_mult": 1
+    },
+    "potential": {
+      "always": false
+    },
+    "triggered_planet_modifier": {
+      "potential": {
+        "owner": {
+          "is_machine_empire": true
+        }
+      },
+      "job_calculator_add": 25
+    },
+    "key": "building_giga_aeternum_ruler_computer",
+    "isGE": true
+  },
+  "building_giga_aeternum_synthetizer": {
+    "name": "Aeternite Esoteric Synthesizer",
+    "description": "A complex network of buildings that employ Loop-Quantum-based technologies to autonomously fabricate and assemble various advanced resources in order to sustain the Aeternite industry.",
+    "can_build": false,
+    "potential": {
+      "always": false
+    },
+    "resources": {
+      "category": "planet_buildings",
+      "produces": {
+        "rare_crystals": 50,
+        "volatile_motes": 50,
+        "exotic_gases": 50,
+        "nanites": 25,
+        "sr_zro": 5
+      }
+    },
+    "triggered_planet_modifier": {
+      "potential": {
+        "owner": {
+          "is_gestalt": true
+        }
+      },
+      "job_translucer_drone_add": 10,
+      "job_gas_refiner_drone_add": 10,
+      "job_chemist_drone_add": 10
+    },
+    "key": "building_giga_aeternum_synthetizer",
+    "isGE": true
+  },
+  "building_giga_aeternum_ultrafarm": {
+    "name": "Aeternite Nutrition Center",
+    "description": "Esoteric automated farms ran by an Aeternite artificial intelligence, that near-instantly synthesize vast amounts of nutrient-rich food tailored for consumption by local populations.",
+    "can_build": false,
+    "potential": {
+      "always": false
+    },
+    "resources": {
+      "category": "planet_buildings",
+      "produces": {
+        "food": 150
+      }
+    },
+    "key": "building_giga_aeternum_ultrafarm",
+    "isGE": true
+  },
+  "building_giga_ancient_palace": {
+    "name": "building_ancient_palace",
+    "description": "building_ancient_palace_desc",
+    "base_buildtime": "@b2_time",
+    "can_build": false,
+    "convert_to": [
+      "building_hive_major_capital",
+      "building_machine_major_capital",
+      "building_major_capital",
+      "building_ancient_control_center"
+    ],
+    "planet_modifier": {
+      "planet_housing_add": 12,
+      "planet_amenities_add": 12,
+      "planet_max_buildings_add": 11
+    },
+    "potential": {
+      "exists": "owner",
+      "owner": {
+        "is_fallen_empire": true,
+        "has_country_flag": "giga_meopa_fe"
+      }
+    },
+    "resources": {
+      "category": "planet_buildings",
+      "cost": {
+        "minerals": "@b2_minerals"
+      },
+      "upkeep": {
+        "energy": 10
+      }
+    },
+    "triggered_planet_modifier": {
+      "potential": {
+        "exists": "owner",
+        "owner": {
+          "is_fallen_empire_spiritualist": false
+        }
+      },
+      "modifier": {
+        "job_giga_fe_overseer_add": 2,
+        "job_giga_fe_protector_add": 2
+      }
+    },
+    "upgrades": [],
+    "key": "building_giga_ancient_palace",
+    "isGE": true
+  },
+  "building_giga_blokkat_blokkwork_node": {
+    "name": "building_giga_blokkat_blokkwork_node",
+    "description": "building_giga_blokkat_blokkwork_node",
+    "base_buildtime": 720,
+    "category": "research",
+    "planet_modifier": {
+      "planet_jobs_produces_mult": 0.3,
+      "planet_pops_energy_upkeep_mult": -0.3
+    },
+    "prerequisites": [
+      "giga_tech_blokkat_blokkwork_power_node"
+    ],
+    "resources": {
+      "category": "planet_buildings",
+      "cost": {
+        "alloys": 10000,
+        "energy": 20000,
+        "rare_crystals": 250,
+        "volatile_motes": 250,
+        "exotic_gases": 250
+      },
+      "upkeep": {
+        "alloys": 100,
+        "rare_crystals": 5,
+        "volatile_motes": 5,
+        "exotic_gases": 5
+      },
+      "produces": {
+        "energy": 200
+      }
+    },
+    "key": "building_giga_blokkat_blokkwork_node",
+    "isGE": true
+  },
+  "building_giga_blokkat_energy_capacitor": {
+    "name": "building_giga_blokkat_energy_capacitor",
+    "description": "building_giga_blokkat_energy_capacitor",
+    "base_buildtime": 720,
+    "category": "resource",
+    "prerequisites": [
+      "giga_tech_blokkat_gigarelay_core"
+    ],
+    "resources": {
+      "category": "planet_buildings",
+      "cost": {
+        "alloys": 5000,
+        "energy": 50000,
+        "rare_crystals": 200,
+        "volatile_motes": 200,
+        "exotic_gases": 200
+      },
+      "upkeep": {
+        "alloys": 50,
+        "rare_crystals": 5,
+        "volatile_motes": 5,
+        "exotic_gases": 5
+      }
+    },
+    "key": "building_giga_blokkat_energy_capacitor",
+    "isGE": true
+  },
+  "building_giga_blokkat_hyperdimensional_research": {
+    "name": "building_giga_blokkat_hyperdimensional_research",
+    "description": "building_giga_blokkat_hyperdimensional_research",
+    "allow": {
+      "owner": {
+        "has_country_flag": "giga_blokkat_can_build_hyperdimensional_lab"
+      }
+    },
+    "base_buildtime": 720,
+    "category": "research",
+    "potential": {
+      "owner": {
+        "has_country_flag": "giga_blokkat_can_build_hyperdimensional_lab"
+      }
+    },
+    "resources": {
+      "category": "planet_buildings",
+      "cost": {
+        "alloys": 1000
+      },
+      "upkeep": {
+        "energy": 200,
+        "physics_research": 400,
+        "society_research": 400,
+        "engineering_research": 400
+      }
+    },
+    "key": "building_giga_blokkat_hyperdimensional_research",
+    "isGE": true
+  },
+  "building_giga_corrona_capital": {
+    "name": "Arcane Palaces",
+    "description": "Large palaces which serve as the seat of Corrona's ruling elite. They are populated by a myriad of fantastical creatures which possess an array of seemingly magical abilities.",
+    "can_build": false,
+    "planet_modifier": {
+      "planet_max_buildings_add": 12,
+      "planet_housing_add": 5,
+      "planet_amenities_add": 25,
+      "job_politician_add": 2,
+      "job_priest_add": 2,
+      "job_miner_add": 2,
+      "job_researcher_add": 2
+    },
+    "potential": {
+      "always": false
+    },
+    "key": "building_giga_corrona_capital",
+    "isGE": true
+  },
+  "building_giga_corrona_homes": {
+    "name": "Esoteric Urban Center",
+    "description": "Although they appear to be simple medieval habitats at first glance, these cities are filled with various creatures employing some sort of ",
+    "can_build": false,
+    "planet_modifier": {
+      "planet_housing_add": 10,
+      "planet_amenities_add": 5,
+      "job_farmer_add": 1,
+      "job_priest_add": 1,
+      "job_researcher_add": 1,
+      "job_miner_add": 1
+    },
+    "potential": {
+      "always": false
+    },
+    "key": "building_giga_corrona_homes",
+    "isGE": true
+  },
+  "building_giga_elysium_dust_sifter": {
+    "name": "Space Dust Processing Facility",
+    "description": "Space dust frequently passes through the Orbital Elysium. This sprawling facility can gather this dust and refine it into small amounts of something usable.",
+    "allow": {
+      "has_upgraded_capital": true
+    },
+    "base_buildtime": 350,
+    "category": "manufacturing",
+    "potential": {
+      "planet": {
+        "is_planet_class": "pc_gigaorbital_ring"
+      }
+    },
+    "prerequisites": [
+      "giga_tech_orbital_elysium"
+    ],
+    "resources": {
+      "category": "planet_buildings",
+      "cost": {
+        "minerals": 600
+      },
+      "produces": {
+        "volatile_motes": 1
+      },
+      "upkeep": {
+        "energy": 3.5
+      }
+    },
+    "key": "building_giga_elysium_dust_sifter",
+    "isGE": true
+  },
+  "building_giga_energy_nexus_1": {
+    "name": "Laser Conduction Energy Distributor",
+    "description": "The huge complex uses powerful high-energy light conductors to transport energy between the planet it is located at and other planets in its solar system.",
+    "allow": {
+      "has_major_upgraded_capital": true
+    },
+    "base_buildtime": "@b3_time",
+    "category": "resource",
+    "planet_modifier": {
+      "planet_technician_energy_produces_add": 2
+    },
+    "prerequisites": [
+      "tech_l_conductor"
+    ],
+    "resources": {
+      "category": "planet_buildings",
+      "cost": {
+        "trigger": {
+          "owner": {
+            "is_robot_empire": true
+          }
+        },
+        "minerals": 100,
+        "alloys": 100
+      },
+      "upkeep": {
+        "energy": 6,
+        "exotic_gases": "@b3_rare_upkeep"
+      }
+    },
+    "triggered_planet_modifier": {
+      "potential": {
+        "exists": "owner",
+        "owner": {
+          "is_robot_empire": true
+        },
+        "NOR": {
+          "is_planet_class": "pc_city"
+        }
+      },
+      "modifier": {
+        "district_generator_max": 4
+      }
+    },
+    "upgrades": [
+      "building_giga_energy_nexus_2"
+    ],
+    "key": "building_giga_energy_nexus_1",
+    "isGE": true
+  },
+  "building_giga_energy_nexus_2": {
+    "name": "Hyperlane Power Transmitter",
+    "description": "These ultra high capacity energy transmitters can transfer energy between solar systems and more efficently distribute the power within our empire.",
+    "allow": {
+      "has_fully_upgraded_capital": true
+    },
+    "base_buildtime": "@b4_time",
+    "can_build": false,
+    "category": "resource",
+    "planet_modifier": {
+      "planet_technician_energy_produces_add": 3
+    },
+    "prerequisites": [
+      "tech_hyperlane_p_t"
+    ],
+    "resources": {
+      "category": "planet_buildings",
+      "cost": {
+        "trigger": {
+          "owner": {
+            "is_robot_empire": true
+          }
+        },
+        "minerals": 300,
+        "alloys": 150
+      },
+      "upkeep": {
+        "energy": 8,
+        "exotic_gases": "@b4_rare_upkeep"
+      }
+    },
+    "triggered_planet_modifier": {
+      "potential": {
+        "exists": "owner",
+        "owner": {
+          "is_robot_empire": true
+        },
+        "NOR": {
+          "is_planet_class": "pc_city"
+        }
+      },
+      "modifier": {
+        "district_generator_max": 4
+      }
+    },
+    "upgrades": [
+      "building_giga_energy_nexus_3"
+    ],
+    "key": "building_giga_energy_nexus_2",
+    "isGE": true
+  },
+  "building_giga_energy_nexus_3": {
+    "name": "Transstellar Field Entangler",
+    "description": "This humongous construct allows for direct entanglement of different locations of quantum fields in the galaxy, which makes it possible for us to instantly transfer energy within our empire.",
+    "base_buildtime": 1200,
+    "can_build": false,
+    "category": "resource",
+    "planet_modifier": {
+      "planet_technician_energy_produces_add": 4
+    },
+    "prerequisites": [
+      "tech_field_e_e_t"
+    ],
+    "resources": {
+      "category": "planet_buildings",
+      "cost": {
+        "trigger": {
+          "owner": {
+            "is_robot_empire": true
+          }
+        },
+        "minerals": 500,
+        "alloys": 200
+      },
+      "upkeep": {
+        "energy": 8,
+        "exotic_gases": "@b4_rare_upkeep",
+        "ehof_sr_negative_mass": 1
+      }
+    },
+    "triggered_planet_modifier": {
+      "potential": {
+        "exists": "owner",
+        "owner": {
+          "is_robot_empire": true
+        },
+        "NOR": {
+          "is_planet_class": "pc_city"
+        }
+      },
+      "modifier": {
+        "district_generator_max": 6
+      }
+    },
+    "upgrades": [
+      "building_giga_energy_nexus_3"
+    ],
+    "key": "building_giga_energy_nexus_3",
+    "isGE": true
+  },
+  "building_giga_ezic_capital": {
+    "name": "Ezicanian Capital",
+    "description": "A large and somewhat rustic city which serves as the ",
+    "can_build": false,
+    "planet_modifier": {
+      "job_giga_ezic_hunter_add": 1,
+      "planet_housing_add": 20,
+      "planet_amenities_add": 20,
+      "planet_crime_add": -100
+    },
+    "potential": {
+      "always": false
+    },
+    "key": "building_giga_ezic_capital",
+    "isGE": true
+  },
+  "building_giga_fe_megaworkshop": {
+    "name": "Nano-Foundry",
+    "description": "Huge molecular synthesis arrays work in tandem with replicator bays to process raw minerals into materials for orbital construction.",
+    "base_buildtime": "@b2_time",
+    "can_build": true,
+    "potential": {
+      "custom_tooltip": {
+        "exists": "owner",
+        "OR": {
+          "owner": {
+            "check_variable": {
+              "which": "giga_fe_megaworkshop_build_count"
+            }
+          }
+        },
+        "fail_text": "ancrel.10004.failtext"
+      }
+    },
+    "resources": {
+      "category": "planet_buildings",
+      "produces": {
+        "trigger": {
+          "or": {
+            "not": {
+              "exists": "owner"
+            },
+            "owner": {
+              "is_fallen_empire_spiritualist": false
+            }
+          }
+        },
+        "alloys": 10,
+        "giga_sr_amb_megaconstruction": 10
+      },
+      "cost": {
+        "minerals": "@b3_minerals"
+      },
+      "upkeep": {
+        "trigger": {
+          "or": {
+            "not": {
+              "exists": "owner"
+            },
+            "owner": {
+              "is_fallen_empire_spiritualist": false
+            }
+          }
+        },
+        "minerals": 20
+      }
+    },
+    "triggered_planet_modifier": {
+      "potential": {
+        "exists": "owner",
+        "owner": {
+          "is_fallen_empire_spiritualist": true
+        }
+      },
+      "job_giga_amb_fe_celestial_architect_add": 1,
+      "job_giga_amb_fe_acolyte_foundry_add": 2
+    },
+    "key": "building_giga_fe_megaworkshop",
+    "isGE": true
+  },
+  "building_giga_fe_stronghold": {
+    "name": "building_fe_stronghold",
+    "description": "building_fe_stronghold_desc",
+    "base_buildtime": "@b2_time",
+    "can_build": false,
+    "convert_to": [
+      "building_fortress"
+    ],
+    "planet_modifier": {
+      "job_giga_fe_protector_add": 5
+    },
+    "potential": {
+      "exists": "owner",
+      "owner": {
+        "is_fallen_empire": true,
+        "has_country_flag": "giga_meopa_fe"
+      }
+    },
+    "resources": {
+      "category": "planet_buildings",
+      "cost": {
+        "minerals": "@b2_minerals"
+      },
+      "upkeep": {
+        "energy": 10
+      }
+    },
+    "key": "building_giga_fe_stronghold",
+    "isGE": true
+  },
+  "building_giga_flusion_capital": {
+    "name": "Katown Megalopolis",
+    "description": "A gigantic city home to millions of inhabitants, serving as the capital of the Katzens. It features a noticeably large modern pyramid which houses their centralized government. The city also features a huge primitive shield generator, protecting its inhabitants from bombardment.",
+    "base_buildtime": 720,
+    "can_build": false,
+    "planet_modifier": {
+      "job_politician_add": 2,
+      "planet_max_districts_add": 1,
+      "planet_housing_add": 10,
+      "planet_amenities_add": 25,
+      "planet_crime_add": -25,
+      "planet_orbital_bombardment_damage": -0.1
+    },
+    "potential": {
+      "always": false
+    },
+    "key": "building_giga_flusion_capital",
+    "isGE": true
+  },
+  "building_giga_flusion_fusion_power_plant": {
+    "name": "Katzen Megareactor",
+    "description": "A colossal Katzen-built Fusion Reactor located under the Katzen capital, providing vast amounts of clean energy.",
+    "base_buildtime": 360,
+    "can_build": false,
+    "potential": {
+      "always": false
+    },
+    "resources": {
+      "category": "planet_buildings",
+      "produces": {
+        "energy": 25
+      }
+    },
+    "triggered_planet_modifier": {
+      "potential": {
+        "exists": "owner",
+        "owner": {
+          "is_gestalt": true
+        }
+      },
+      "job_technician_drone_add": 2
+    },
+    "key": "building_giga_flusion_fusion_power_plant",
+    "isGE": true
+  },
+  "building_giga_flusion_home": {
+    "name": "Flusionian Metropolis",
+    "description": "A major Flusionian urban center home to a myriad of species, offering remarkably good living conditions.",
+    "base_buildtime": 360,
+    "can_build": false,
+    "planet_modifier": {
+      "planet_amenities_add": 5,
+      "planet_housing_add": 5,
+      "planet_crime_add": -5
+    },
+    "potential": {
+      "always": false
+    },
+    "triggered_planet_modifier": {
+      "potential": {
+        "exists": "owner",
+        "owner": {
+          "is_machine_empire": true
+        }
+      },
+      "job_calculator_add": 1,
+      "job_fabricator_add": 1
+    },
+    "key": "building_giga_flusion_home",
+    "isGE": true
+  },
+  "building_giga_gas_floater_harvester_fixed": {
+    "name": "Floater Analysis Complex",
+    "description": "Facilities dedicated to herding and studying the peculiar airborne lifeforms found on this Gas Giant.",
+    "allow": {
+      "has_upgraded_capital": true
+    },
+    "base_buildtime": 400,
+    "category": "manufacturing",
+    "potential": {
+      "planet": {
+        "is_planet_class": "pc_habitable_gas_giant"
+      }
+    },
+    "prerequisites": [
+      "giga_tech_terraform_gas"
+    ],
+    "resources": {
+      "category": "planet_buildings",
+      "cost": {
+        "minerals": 600
+      },
+      "produces": {
+        "society_research": 20
+      },
+      "upkeep": {
+        "energy": 4
+      }
+    },
+    "triggered_planet_modifier": {
+      "potential": {
+        "exists": "owner",
+        "owner": {
+          "is_machine_empire": true
+        }
+      },
+      "modifier": {
+        "job_calculator_per_pop": 0.04
+      }
+    },
+    "key": "building_giga_gas_floater_harvester_fixed",
+    "isGE": true
+  },
+  "building_giga_gas_fusion_plant_fixed": {
+    "name": "Atmospheric Fusion Facility",
+    "description": "This building fuses light elements, such as Hydrogen and Helium harvested from this planet's atmosphere, into heavier elements that can be used by our industries.",
+    "allow": {
+      "has_upgraded_capital": true
+    },
+    "base_buildtime": 400,
+    "category": "manufacturing",
+    "potential": {
+      "planet": {
+        "is_planet_class": "pc_habitable_gas_giant"
+      }
+    },
+    "prerequisites": [
+      "giga_tech_terraform_gas"
+    ],
+    "resources": {
+      "category": "planet_buildings",
+      "cost": {
+        "minerals": 500
+      },
+      "produces": {
+        "minerals": 10
+      },
+      "upkeep": {
+        "energy": 5
+      }
+    },
+    "triggered_planet_modifier": {
+      "potential": {
+        "exists": "owner",
+        "owner": {
+          "is_gestalt": true
+        }
+      },
+      "modifier": {
+        "job_matter_synthesizer_drone_per_pop": 0.1
+      }
+    },
+    "key": "building_giga_gas_fusion_plant_fixed",
+    "isGE": true
+  },
+  "building_giga_gas_giant_habitation_module": {
+    "name": "Gas Giant Habitation Module",
+    "description": "Collection of facilities necessary to maintain a colony on a gas giant assembled by the original population of this planet. These facilities include reactors to provide power for the colony, docking bays to unload minerals collected from local moons and large climate-controlled hangars that can be used for hydroponic farms. In addition to that, these facilities serve as headquarters for resource distribution network and provide various services to the local populations.",
+    "can_build": false,
+    "category": "resource",
+    "resources": {
+      "category": "planet_buildings",
+      "upkeep": {
+        "energy": 3
+      }
+    },
+    "triggered_planet_modifier": {
+      "potential": {
+        "exists": "owner",
+        "owner": {
+          "is_gestalt": true
+        }
+      },
+      "modifier": {
+        "planet_amenities_no_happiness_add": 10
+      }
+    },
+    "key": "building_giga_gas_giant_habitation_module",
+    "isGE": true
+  },
+  "building_giga_gas_mote_harvester_fixed": {
+    "name": "Atmospheric Mote Extractor",
+    "description": "A facility which exploits massive mote clouds drifting through this Gas Giant's atmosphere.",
+    "allow": {
+      "has_upgraded_capital": true
+    },
+    "base_buildtime": 400,
+    "category": "manufacturing",
+    "potential": {
+      "planet": {
+        "is_planet_class": "pc_habitable_gas_giant"
+      }
+    },
+    "prerequisites": [
+      "giga_tech_terraform_gas"
+    ],
+    "resources": {
+      "category": "planet_buildings",
+      "cost": {
+        "minerals": 500
+      },
+      "produces": {
+        "volatile_motes": 2
+      },
+      "upkeep": {
+        "energy": 2
+      }
+    },
+    "triggered_planet_modifier": {
+      "potential": {
+        "exists": "owner",
+        "owner": {
+          "is_gestalt": true
+        }
+      },
+      "modifier": {
+        "job_mote_harvesting_drone_per_pop": 0.05
+      }
+    },
+    "key": "building_giga_gas_mote_harvester_fixed",
+    "isGE": true
+  },
+  "building_giga_habitat_zro_harvester": {
+    "name": "Zro Refining Complex",
+    "description": "This facility processes Zro harvested from accessible deposits.",
+    "base_buildtime": 400,
+    "category": "resource",
+    "potential": {
+      "planet": {
+        "is_planet_class": "pc_interstellar_habitat"
+      },
+      "owner": {
+        "is_regular_empire": true
+      }
+    },
+    "resources": {
+      "category": "planet_buildings",
+      "cost": {
+        "minerals": 400
+      },
+      "upkeep": {
+        "energy": 1
+      }
+    },
+    "triggered_planet_modifier": {
+      "potential": {
+        "exists": "owner",
+        "owner": {
+          "is_gestalt": true
+        }
+      },
+      "modifier": {
+        "job_giga_zro_extractor_drone_add": 1
+      }
+    },
+    "key": "building_giga_habitat_zro_harvester",
+    "isGE": true
+  },
+  "building_giga_institute_1": {
+    "name": "Unorthodox Think Tank",
+    "description": "The Unorthodox Think Thank is an enormous installation and a planet's central processing and research facility for abstract physics. The planet's research output gets hugely boosted in all aspects by this amazing facility.",
+    "allow": {
+      "has_major_upgraded_capital": true
+    },
+    "base_buildtime": "@b3_time",
+    "category": "research",
+    "convert_to": [
+      "building_giga_supercomputer_1"
+    ],
+    "planet_modifier": {
+      "planet_researchers_produces_mult": 0.3,
+      "job_head_researcher_add": 2
+    },
+    "potential": {
+      "NOT": {
+        "has_modifier": "slave_colony"
+      },
+      "exists": "owner",
+      "owner": {
+        "is_regular_empire": true
+      }
+    },
+    "prerequisites": [
+      "tech_u_r_e_t"
+    ],
+    "resources": {
+      "category": "planet_buildings",
+      "cost": {
+        "minerals": "@b3_minerals",
+        "exotic_gases": "@b3_rare_cost"
+      },
+      "upkeep": {
+        "energy": "@b3_upkeep",
+        "exotic_gases": "@b3_rare_upkeep"
+      }
+    },
+    "upgrades": [
+      "building_giga_institute_2"
+    ],
+    "key": "building_giga_institute_1",
+    "isGE": true
+  },
+  "building_giga_institute_2": {
+    "name": "Supercausal Science Nexus",
+    "description": "The Supercausal Science Nexus is a tremendous facility dedicated to the most advanced and humongous research projects and experiments in regards to the non-local, supercausal phenomenons of abstract physics.",
+    "allow": {
+      "has_fully_upgraded_capital": true
+    },
+    "base_buildtime": "@b4_time",
+    "can_build": false,
+    "category": "research",
+    "planet_modifier": {
+      "planet_researchers_produces_mult": 0.45,
+      "job_head_researcher_add": 3
+    },
+    "potential": {
+      "NOT": {
+        "has_modifier": "slave_colony"
+      },
+      "exists": "owner",
+      "owner": {
+        "is_regular_empire": true
+      }
+    },
+    "prerequisites": [
+      "tech_non_local_r_i"
+    ],
+    "resources": {
+      "category": "planet_buildings",
+      "cost": {
+        "minerals": "@b4_minerals",
+        "exotic_gases": "@b4_rare_cost",
+        "ehof_sr_negative_mass": 20
+      },
+      "upkeep": {
+        "energy": "@b4_upkeep",
+        "exotic_gases": "@b4_rare_upkeep",
+        "ehof_sr_negative_mass": 1
+      }
+    },
+    "key": "building_giga_institute_2",
+    "isGE": true
+  },
+  "building_giga_interstellar_hydroponic_farm": {
+    "name": "Hydroponic Farm Complex",
+    "description": "A sprawling complex of hydroponic farms, providing the ringworld's population with fresh food. These facilities, however, have their limits and can't sustain the ever-growing population forever.",
+    "can_build": false,
+    "category": "resource",
+    "resources": {
+      "category": "planet_buildings",
+      "upkeep": {
+        "energy": 2
+      }
+    },
+    "triggered_planet_modifier": {
+      "potential": {
+        "exists": "owner",
+        "owner": {
+          "is_machine_empire": true
+        }
+      },
+      "modifier": {
+        "job_agri_drone_add": 3
+      }
+    },
+    "key": "building_giga_interstellar_hydroponic_farm",
+    "isGE": true
+  },
+  "building_giga_iodizium_mines": {
+    "name": "Iodizium Crystal Mines",
+    "description": "Created when planetary material was bathed in exotic radiation during the supernova of this system's star, iodizium requires careful extraction.",
+    "base_buildtime": "@b1_time",
+    "category": "resource",
+    "potential": {
+      "NOT": {
+        "has_modifier": "resort_colony"
+      }
+    },
+    "prerequisites": [
+      "giga_tech_fusion_suppressor"
+    ],
+    "resources": {
+      "category": "planet_buildings",
+      "cost": {
+        "minerals": 200
+      },
+      "upkeep": {
+        "energy": 1
+      }
+    },
+    "triggered_planet_modifier": {
+      "potential": {
+        "exists": "owner",
+        "owner": {
+          "is_gestalt": true
+        }
+      },
+      "modifier": {
+        "job_giga_iodizium_mining_drone_add": 1
+      }
+    },
+    "key": "building_giga_iodizium_mines",
+    "isGE": true
+  },
+  "building_giga_iodizium_plant": {
+    "name": "Iodizium Power Plant",
+    "description": "A power plant powered by the exotic, physics-defying Iodizium Crystals. The crystals' strange nature makes them incredibly potent energy generators.",
+    "allow": {
+      "has_upgraded_capital": true
+    },
+    "base_buildtime": 350,
+    "category": "manufacturing",
+    "planet_modifier": {
+      "planet_technician_energy_produces_add": 2,
+      "planet_technician_sr_iodizium_upkeep_add": 0.01
+    },
+    "potential": {
+      "NOT": {
+        "has_modifier": "slave_colony"
+      }
+    },
+    "prerequisites": [
+      "giga_tech_fusion_suppressor"
+    ],
+    "resources": {
+      "category": "planet_buildings",
+      "cost": {
+        "minerals": 1000
+      },
+      "upkeep": {
+        "minerals": 5,
+        "sr_iodizium": 1
+      },
+      "produces": {
+        "energy": 35
+      }
+    },
+    "key": "building_giga_iodizium_plant",
+    "isGE": true
+  },
+  "building_giga_iodizium_research": {
+    "name": "Iodizium Research Facility",
+    "description": "This building conducts various experiments around Iodizium Crystals in order to study them and understand their incredibly odd nature.",
+    "allow": {
+      "has_upgraded_capital": true
+    },
+    "base_buildtime": 350,
+    "category": "research",
+    "planet_modifier": {
+      "planet_researchers_physics_research_produces_add": 1,
+      "planet_researchers_society_research_produces_add": 1,
+      "planet_researchers_engineering_research_produces_add": 1,
+      "planet_researchers_sr_iodizium_upkeep_add": 0.01
+    },
+    "potential": {
+      "NOT": {
+        "has_modifier": "slave_colony"
+      }
+    },
+    "prerequisites": [
+      "giga_tech_fusion_suppressor"
+    ],
+    "resources": {
+      "category": "planet_buildings",
+      "cost": {
+        "minerals": 1000
+      },
+      "upkeep": {
+        "minerals": 5,
+        "sr_iodizium": 1
+      },
+      "produces": {
+        "physics_research": 25,
+        "society_research": 25,
+        "engineering_research": 25
+      }
+    },
+    "key": "building_giga_iodizium_research",
+    "isGE": true
+  },
+  "building_giga_katzen_capital": {
+    "name": "Katzen Planetary Administration",
+    "description": "A large Katzen building complex, which houses the planet's local government. It is heavily connected to the central government on Flusion, and helps in coordinating the Imperium's fleet movements and resource distribution.",
+    "can_build": false,
+    "planet_modifier": {
+      "job_politician_add": 2,
+      "planet_max_districts_add": 3,
+      "district_farming_max": 1,
+      "district_generator_max": 1,
+      "district_mining_max": 1,
+      "planet_housing_add": 20,
+      "planet_amenities_add": 20,
+      "planet_crime_add": -20,
+      "planet_orbital_bombardment_damage": -0.1
+    },
+    "potential": {
+      "always": false
+    },
+    "key": "building_giga_katzen_capital",
+    "isGE": true
+  },
+  "building_giga_katzen_synthetizer": {
+    "name": "Katzen Megarefineries",
+    "description": "A vast network of Katzen-built refineries designed to artificially synthetize strategic resources.",
+    "base_buildtime": 360,
+    "can_build": false,
+    "potential": {
+      "always": false
+    },
+    "triggered_planet_modifier": {
+      "potential": {
+        "exists": "owner",
+        "owner": {
+          "is_gestalt": true
+        }
+      },
+      "job_translucer_drone_add": 2,
+      "job_gas_refiner_drone_add": 2,
+      "job_chemist_drone_add": 2
+    },
+    "key": "building_giga_katzen_synthetizer",
+    "isGE": true
+  },
+  "building_giga_katzen_terraformer": {
+    "name": "Katzen Environmental Reshaper",
+    "description": "This large array of complex structures helps the Katzens adapt the planet's environment to their liking, effectively rendering it more habitable and facilitating colonization efforts.",
+    "base_buildtime": 360,
+    "can_build": false,
+    "planet_modifier": {
+      "pop_environment_tolerance": 0.2
+    },
+    "potential": {
+      "always": false
+    },
+    "key": "building_giga_katzen_terraformer",
+    "isGE": true
+  },
+  "building_giga_living_metal_infusion_plant": {
+    "name": "Living Metal Infusion Plant",
+    "description": "Incorporating the regenerative properties of living metal into our manufacturing processes will be a great boon to our deep-space construction projects.",
+    "allow": {
+      "has_major_upgraded_capital": true
+    },
+    "base_buildtime": "@b2_time",
+    "category": "manufacturing",
+    "planet_modifier": {
+      "planet_giga_megaengineers_produces_mult": 0.2
+    },
+    "potential": {
+      "NOR": {
+        "has_modifier": "slave_colony"
+      }
+    },
+    "prerequisites": [
+      "giga_tech_amb_living_metal_infusion"
+    ],
+    "resources": {
+      "category": "planet_buildings",
+      "cost": {
+        "minerals": "@b2_minerals",
+        "sr_living_metal": "@b2_rare_cost"
+      },
+      "upkeep": {
+        "energy": "@b2_upkeep",
+        "sr_living_metal": "@b2_rare_upkeep"
+      }
+    },
+    "triggered_planet_modifier": {
+      "potential": {
+        "exists": "owner",
+        "owner": {
+          "is_fallen_empire_spiritualist": true
+        }
+      },
+      "job_giga_amb_fe_acolyte_foundry_add": 1
+    },
+    "key": "building_giga_living_metal_infusion_plant",
+    "isGE": true
+  },
+  "building_giga_maginot_global_bunker": {
+    "name": "Maginot Global Bunker System",
+    "description": "A world-spanning system of deep bunkers gives our armies unprecedented strike power while on this world.",
+    "allow": {
+      "has_upgraded_capital": true
+    },
+    "base_buildtime": 720,
+    "can_build": false,
+    "category": "army",
+    "planet_modifier": {
+      "planet_orbital_bombardment_damage": -0.25
+    },
+    "prerequisites": [
+      "giga_tech_maginot_world"
+    ],
+    "resources": {
+      "category": "planet_buildings_strongholds",
+      "produces": {
+        "trigger": {
+          "exists": "owner",
+          "owner": {
+            "has_active_tradition": "tr_unyielding_resistance_is_frugal"
+          }
+        },
+        "unity": 10
+      },
+      "cost": {
+        "minerals": 1000,
+        "alloys": 100
+      },
+      "upkeep": {
+        "energy": 10,
+        "alloys": 1
+      }
+    },
+    "triggered_planet_modifier": {
+      "potential": {
+        "exists": "owner",
+        "owner": {
+          "is_gestalt": true
+        }
+      },
+      "modifier": {
+        "job_maginot_bunker_officer_gestalt_add": 1
+      }
+    },
+    "key": "building_giga_maginot_global_bunker",
+    "isGE": true
+  },
+  "building_giga_maginot_stronghold": {
+    "name": "Maginot Fort Complex",
+    "description": "New techniques within the field of excessive fortification enables the construction of complexes like this one. It should now be possible to extend these defences to cover the whole planet.",
+    "allow": {
+      "has_upgraded_capital": true
+    },
+    "base_buildtime": 720,
+    "category": "army",
+    "planet_modifier": {
+      "planet_orbital_bombardment_damage": -0.25
+    },
+    "potential": {
+      "NOT": {
+        "is_giga_maginot_world": true,
+        "has_planet_flag": "giga_maginot_world"
+      }
+    },
+    "prerequisites": [
+      "giga_tech_maginot_world"
+    ],
+    "resources": {
+      "category": "planet_buildings_strongholds",
+      "produces": {
+        "trigger": {
+          "exists": "owner",
+          "owner": {
+            "has_active_tradition": "tr_unyielding_resistance_is_frugal"
+          }
+        },
+        "unity": 10
+      },
+      "cost": {
+        "minerals": 1000,
+        "alloys": 100
+      },
+      "upkeep": {
+        "energy": 10,
+        "alloys": 1
+      }
+    },
+    "triggered_planet_modifier": {
+      "potential": {
+        "exists": "owner",
+        "owner": {
+          "is_gestalt": true
+        }
+      },
+      "modifier": {
+        "job_maginot_bunker_officer_gestalt_add": 1
+      }
+    },
+    "key": "building_giga_maginot_stronghold",
+    "isGE": true
+  },
+  "building_giga_matter_synthesizer": {
+    "name": "Matter Synthesis Station",
+    "description": "A sprawling complex of arcane energy-to-mass converters that create the raw materials required to keep a pre-FTL civilization running.",
+    "can_build": false,
+    "category": "resource",
+    "triggered_planet_modifier": {
+      "potential": {
+        "exists": "owner",
+        "owner": {
+          "is_regular_empire": false
+        }
+      },
+      "modifier": {
+        "job_matter_synthesizer_drone_add": 5
+      }
+    },
+    "key": "building_giga_matter_synthesizer",
+    "isGE": true
+  },
+  "building_giga_megaworkshop": {
+    "name": "Molecular Foundry",
+    "description": "Molecular synthesis arrays and spotless clean rooms fill these facilities, producing the highly specialized materials required for large-scale orbital construction projects.",
+    "allow": {
+      "has_upgraded_capital": true
+    },
+    "base_buildtime": "@b2_time",
+    "category": "manufacturing",
+    "potential": {
+      "NOT": {
+        "has_modifier": "slave_colony"
+      },
+      "has_global_flag": "@giga_amb_flag"
+    },
+    "prerequisites": [
+      "giga_tech_amb_supertensiles"
+    ],
+    "resources": {
+      "category": "planet_buildings",
+      "cost": {
+        "minerals": "@b2_minerals"
+      },
+      "upkeep": {
+        "energy": "@b2_upkeep"
+      }
+    },
+    "triggered_planet_modifier": {
+      "potential": {
+        "exists": "owner",
+        "owner": {
+          "is_fallen_empire_spiritualist": true
+        }
+      },
+      "modifier": {
+        "job_giga_amb_fe_acolyte_foundry_add": 2
+      }
+    },
+    "key": "building_giga_megaworkshop",
+    "isGE": true
+  },
+  "building_giga_megaworkshop_hub": {
+    "name": "Megaconstruction Logistics Hub",
+    "description": "Experts coordinate a vast fleet of transport and construction ships, bearing forth their grand designs, while molecular foundries churn out vast quantities of construction materials.",
+    "allow": {
+      "has_upgraded_capital": true
+    },
+    "base_buildtime": "@b4_time",
+    "category": "manufacturing",
+    "potential": {
+      "NOT": {
+        "has_modifier": "slave_colony"
+      },
+      "has_global_flag": "@giga_amb_flag"
+    },
+    "prerequisites": [
+      "giga_tech_amb_supertensiles"
+    ],
+    "resources": {
+      "category": "planet_buildings",
+      "cost": {
+        "minerals": "@b4_minerals"
+      },
+      "upkeep": {
+        "energy": "@b4_upkeep"
+      }
+    },
+    "triggered_planet_modifier": {
+      "potential": {
+        "exists": "owner",
+        "owner": {
+          "is_fallen_empire_spiritualist": true
+        }
+      },
+      "modifier": {
+        "job_giga_amb_fe_celestial_architect_add": 2
+      }
+    },
+    "key": "building_giga_megaworkshop_hub",
+    "isGE": true
+  },
+  "building_giga_paluush_capital": {
+    "name": "Grand Paluush Palace",
+    "description": "A colossal network of buildings which seemingly serves as the Paluushian capital. Immense psionic energies seem to be emanating from it.",
+    "can_build": false,
+    "planet_modifier": {
+      "job_bureaucrat_add": 2,
+      "job_telepath_add": 2,
+      "planet_housing_add": 10,
+      "planet_amenities_add": 50,
+      "planet_crime_add": -50,
+      "planet_max_buildings_add": 12
+    },
+    "potential": {
+      "always": false
+    },
+    "key": "building_giga_paluush_capital",
+    "isGE": true
+  },
+  "building_giga_paluush_homes": {
+    "name": "Paluush Megapolis",
+    "description": "A massive city constructed by Paluushes. It is remarkably efficient and organized despite employing primitive technologies, almost rivalling space-age urban constructs.",
+    "can_build": false,
+    "planet_modifier": {
+      "planet_amenities_add": 10,
+      "planet_housing_add": 5,
+      "planet_crime_add": -20,
+      "job_researcher_add": 2,
+      "job_farmer_add": 2,
+      "job_technician_add": 1,
+      "job_miner_add": 1,
+      "job_telepath_add": 1,
+      "job_artisan_add": 1
+    },
+    "potential": {
+      "always": false
+    },
+    "key": "building_giga_paluush_homes",
+    "isGE": true
+  },
+  "building_giga_planetary_shield_generator_1": {
+    "name": "Hypershield Defensive Screen",
+    "description": "The Hypershield Defensive Screen is an enhanced version of the classical Planetary Shield Generator, which utilizes hypershield technology to vastly improve the capabilities and efficency of the generator.",
+    "allow": {
+      "has_upgraded_capital": true
+    },
+    "base_buildtime": "@b4_time",
+    "planet_modifier": {
+      "planet_orbital_bombardment_damage": -0.6
+    },
+    "prerequisites": [
+      "tech_giga_planetary_shield_generator_1"
+    ],
+    "resources": {
+      "category": "planet_buildings",
+      "cost": {
+        "minerals": "@b3_minerals",
+        "exotic_gases": 20
+      },
+      "upkeep": {
+        "energy": "@b3_upkeep",
+        "exotic_gases": 1
+      }
+    },
+    "upgrades": [
+      "building_giga_planetary_shield_generator_2"
+    ],
+    "key": "building_giga_planetary_shield_generator_1",
+    "isGE": true
+  },
+  "building_giga_planetary_shield_generator_2": {
+    "name": "Negative Mass Protector",
+    "description": "By creating a mass-energy repulsive layer around a planets atmosphere, through the utilization of Negative Mass, the Negative Mass Projector shields a Planet from even the most intense orbital bombardment and asteroids. Only permanent long-time bombardment and focused extreme high energy beams can penetrate the repulsive layer in time.",
+    "allow": {
+      "has_upgraded_capital": true
+    },
+    "base_buildtime": 1200,
+    "can_build": false,
+    "planet_modifier": {
+      "planet_orbital_bombardment_damage": -0.7
+    },
+    "prerequisites": [
+      "tech_giga_planetary_shield_generator_2"
+    ],
+    "resources": {
+      "category": "planet_buildings",
+      "cost": {
+        "minerals": "@b4_minerals",
+        "exotic_gases": "@b2_minerals",
+        "ehof_sr_negative_mass": 20
+      },
+      "upkeep": {
+        "energy": "@b4_upkeep",
+        "exotic_gases": "@b2_upkeep",
+        "ehof_sr_negative_mass": 2
+      }
+    },
+    "key": "building_giga_planetary_shield_generator_2",
+    "isGE": true
+  },
+  "building_giga_research_lab_1": {
+    "name": "Abstract Examination Institute",
+    "description": "A specialized Institute for the phenomenol research and experiments in the branch of abstract physics, with a very large capacity for research staff.",
+    "allow": {
+      "has_major_upgraded_capital": true
+    },
+    "base_buildtime": "@b4_time",
+    "category": "research",
+    "prerequisites": [
+      "tech_u_r_e_t"
+    ],
+    "resources": {
+      "category": "planet_buildings",
+      "cost": {
+        "minerals": 1400
+      },
+      "upkeep": {
+        "trigger": {
+          "owner": {
+            "is_galactic_community_member": true
+          },
+          "is_active_resolution": "resolution_galacticstudies_extradimensional_experimentation",
+          "planet": {
+            "has_modifier": "pm_extradimensional_experimentation"
+          }
+        },
+        "sr_zro": 1
+      }
+    },
+    "triggered_planet_modifier": {
+      "potential": {
+        "exists": "owner",
+        "owner": {
+          "is_gestalt": true,
+          "is_galactic_community_member": true
+        },
+        "is_active_resolution": "resolution_galacticstudies_extradimensional_experimentation",
+        "has_modifier": "pm_extradimensional_experimentation"
+      },
+      "modifier": {
+        "job_dimensional_portal_researcher_gestalt_add": 2
+      }
+    },
+    "upgrades": [
+      "building_giga_research_lab_2"
+    ],
+    "key": "building_giga_research_lab_1",
+    "isGE": true
+  },
+  "building_giga_research_lab_2": {
+    "name": "Non-localized Research Facility",
+    "description": "A specialized Institute for the phenomenol research and experiments in the branch of abstract physics, with a very large capacity for research staff.",
+    "allow": {
+      "has_major_upgraded_capital": true
+    },
+    "base_buildtime": "@b4_time",
+    "can_build": false,
+    "category": "research",
+    "prerequisites": [
+      "tech_non_local_r_i"
+    ],
+    "resources": {
+      "category": "planet_buildings",
+      "cost": {
+        "minerals": "@b4_minerals",
+        "exotic_gases": "@b4_rare_cost"
+      },
+      "upkeep": {
+        "trigger": {
+          "owner": {
+            "is_galactic_community_member": true
+          },
+          "is_active_resolution": "resolution_galacticstudies_extradimensional_experimentation",
+          "planet": {
+            "has_modifier": "pm_extradimensional_experimentation"
+          }
+        },
+        "sr_zro": 1
+      }
+    },
+    "triggered_planet_modifier": {
+      "potential": {
+        "exists": "owner",
+        "owner": {
+          "is_gestalt": true,
+          "is_galactic_community_member": true
+        },
+        "is_active_resolution": "resolution_galacticstudies_extradimensional_experimentation",
+        "has_modifier": "pm_extradimensional_experimentation"
+      },
+      "modifier": {
+        "job_dimensional_portal_researcher_gestalt_add": 3
+      }
+    },
+    "key": "building_giga_research_lab_2",
+    "isGE": true
+  },
+  "building_giga_shroud_capacitor": {
+    "name": "Shroud Capacitor",
+    "description": "A massive psionic facility forcefully extracting Shroud Energy and redistributing it on the planet's surface, greatly boosting telepathic abilities and industries.",
+    "allow": {
+      "has_upgraded_capital": true
+    },
+    "base_buildtime": 1000,
+    "category": "manufacturing",
+    "planet_modifier": {
+      "planet_jobs_energy_produces_mult": 0.1,
+      "planet_jobs_minerals_produces_mult": 0.1,
+      "planet_jobs_society_research_produces_mult": 0.1,
+      "planet_jobs_physics_research_produces_mult": 0.1,
+      "planet_jobs_engineering_research_produces_mult": 0.1,
+      "pop_happiness": 0.05
+    },
+    "prerequisites": [
+      "giga_tech_psychic_hypersiphon_4"
+    ],
+    "resources": {
+      "category": "planet_buildings",
+      "cost": {
+        "minerals": 1000,
+        "alloys": 50
+      },
+      "upkeep": {
+        "unity": 10,
+        "energy": 10
+      },
+      "produces": {
+        "physics_research": 5
+      }
+    },
+    "key": "building_giga_shroud_capacitor",
+    "isGE": true
+  },
+  "building_giga_siegfried_global_bunker": {
+    "name": "Siegfried Central Command",
+    "description": "This vast network of reinforced bunkers houses the administrative heart of a Katzen Siegfried World, ensuring its defenders are as efficient as possible.",
+    "allow": {
+      "has_upgraded_capital": true
+    },
+    "can_build": false,
+    "category": "army",
+    "planet_modifier": {
+      "planet_orbital_bombardment_damage": -0.25,
+      "job_maginot_bunker_officer_add": 1
+    },
+    "potential": {
+      "always": false
+    },
+    "key": "building_giga_siegfried_global_bunker",
+    "isGE": true
+  },
+  "building_giga_supercomputer_1": {
+    "name": "Abstract Supercomputer",
+    "description": "The Unorthodox Think Thank is an enormous installation and a planet's central processing and research facility for abstract physics. The planet's research output gets hugely boosted in all aspects by this amazing facility.",
+    "allow": {
+      "has_major_upgraded_capital": true
+    },
+    "base_buildtime": "@b3_time",
+    "category": "research",
+    "convert_to": [
+      "building_giga_institute_1"
+    ],
+    "planet_modifier": {
+      "planet_researchers_produces_mult": 0.3
+    },
+    "potential": {
+      "exists": "owner",
+      "owner": {
+        "is_gestalt": true
+      },
+      "NOR": {
+        "has_modifier": "slave_colony"
+      }
+    },
+    "prerequisites": [
+      "tech_u_r_e_t"
+    ],
+    "resources": {
+      "category": "planet_buildings",
+      "cost": {
+        "minerals": "@b3_minerals",
+        "exotic_gases": "@b3_rare_cost"
+      },
+      "upkeep": {
+        "energy": "@b3_upkeep",
+        "exotic_gases": "@b3_rare_upkeep"
+      }
+    },
+    "triggered_planet_modifier": {
+      "potential": {
+        "exists": "owner",
+        "owner": {
+          "is_machine_empire": true
+        }
+      },
+      "modifier": {
+        "job_calculator_add": 2
+      }
+    },
+    "upgrades": [
+      "building_giga_supercomputer_2"
+    ],
+    "key": "building_giga_supercomputer_1",
+    "isGE": true
+  },
+  "building_giga_supercomputer_2": {
+    "name": "Abstract Hypercomputer",
+    "description": "This highly advanced and specialized installation allows for the study and experimentation of the non-localized phenomenons discovered through the means of abstract physics.",
+    "allow": {
+      "has_fully_upgraded_capital": true
+    },
+    "base_buildtime": "@b4_time",
+    "can_build": false,
+    "category": "research",
+    "convert_to": [
+      "building_giga_institute_2"
+    ],
+    "planet_modifier": {
+      "planet_researchers_produces_mult": 0.45
+    },
+    "potential": {
+      "exists": "owner",
+      "owner": {
+        "is_gestalt": true
+      },
+      "NOR": {
+        "has_modifier": "slave_colony"
+      }
+    },
+    "prerequisites": [
+      "tech_non_local_r_i"
+    ],
+    "resources": {
+      "category": "planet_buildings",
+      "cost": {
+        "minerals": "@b4_minerals",
+        "exotic_gases": "@b4_rare_cost",
+        "ehof_sr_negative_mass": 20
+      },
+      "upkeep": {
+        "energy": "@b4_upkeep",
+        "exotic_gases": "@b4_rare_upkeep",
+        "ehof_sr_negative_mass": 1
+      }
+    },
+    "triggered_planet_modifier": {
+      "potential": {
+        "exists": "owner",
+        "owner": {
+          "is_machine_empire": true
+        }
+      },
+      "modifier": {
+        "job_calculator_add": 3
+      }
+    },
+    "key": "building_giga_supercomputer_2",
+    "isGE": true
+  },
+  "building_giga_supertensiles_mines": {
+    "name": "Supertensile Materials Extractors",
+    "description": "In rare instances, the right conditions can allow materials of improbable strength to form in nature.",
+    "base_buildtime": "@b1_time",
+    "category": "resource",
+    "potential": {
+      "NOT": {
+        "has_modifier": "resort_colony"
+      }
+    },
+    "prerequisites": [
+      "giga_tech_amb_supertensiles"
+    ],
+    "resources": {
+      "category": "planet_buildings",
+      "cost": {
+        "minerals": 200
+      },
+      "upkeep": {
+        "energy": 1
+      }
+    },
+    "triggered_planet_modifier": {
+      "potential": {
+        "exists": "owner",
+        "owner": {
+          "is_gestalt": true
+        }
+      },
+      "modifier": {
+        "job_giga_supertensiles_extractor_drone_add": 1
+      }
+    },
+    "key": "building_giga_supertensiles_mines",
+    "isGE": true
   },
   "building_grand_embassy": {
     "name": "Grand Embassy Complex",
@@ -4201,6 +6192,71 @@ const Building = {
     "upgrades": [],
     "key": "building_junkheap"
   },
+  "building_katzen_foundry": {
+    "name": "Katzen Megafoundry",
+    "description": "The Katzen Megafoundry produces large quantities of usable alloys with the unfortunate side-effect of damaging its planet's climate.",
+    "can_build": false,
+    "category": "manufacturing",
+    "planet_modifier": {
+      "pop_environment_tolerance": -0.075
+    },
+    "potential": {
+      "always": false
+    },
+    "triggered_planet_modifier": {
+      "potential": {
+        "exists": "owner",
+        "owner": {
+          "is_machine_empire": true
+        }
+      },
+      "modifier": {
+        "job_fabricator_add": 8
+      }
+    },
+    "key": "building_katzen_foundry",
+    "isGE": true
+  },
+  "building_katzen_science": {
+    "name": "Katzen Research Center",
+    "description": "A large facility where researchers work tirelessly to push the boundaries of Katzen science (reportedly the ",
+    "can_build": false,
+    "category": "research",
+    "planet_modifier": {
+      "pop_happiness": -0.025
+    },
+    "potential": {
+      "always": false
+    },
+    "triggered_planet_modifier": {
+      "potential": {
+        "exists": "owner",
+        "owner": {
+          "is_machine_empire": true
+        }
+      },
+      "modifier": {
+        "job_calculator_add": 8
+      }
+    },
+    "key": "building_katzen_science",
+    "isGE": true
+  },
+  "building_katzen_theater": {
+    "name": "Katzen Entertainment Complex",
+    "description": "These vast complexes provide citizens with large quantities of Katzen-approved mass media which primarily focuses on warfare and militarism.",
+    "can_build": false,
+    "category": "amenity",
+    "planet_modifier": {
+      "planet_amenities_add": 24,
+      "pop_ethic_militarist_attraction_mult": 2
+    },
+    "potential": {
+      "always": false
+    },
+    "key": "building_katzen_theater",
+    "isGE": true
+  },
   "building_luxury_residence": {
     "name": "Luxury Residences",
     "description": "Intricately designed residential towers with luxurious apartments. Advanced zero-g technology is the only thing keeping the more outlandish terrace designs from collapsing.",
@@ -4832,8 +6888,8 @@ const Building = {
     "key": "building_mineral_purification_plant"
   },
   "building_ministry_production": {
-    "name": "Ministry of Production",
-    "description": "The Ministry of Production works tirelessly to organize and streamline manufacturing across the entire planet.",
+    "name": "building_ministry_production",
+    "description": "building_ministry_production",
     "allow": {
       "has_major_upgraded_capital": true
     },
@@ -4842,7 +6898,8 @@ const Building = {
     "planet_modifier": {
       "job_politician_add": 1,
       "planet_metallurgists_produces_mult": 0.15,
-      "planet_artisans_produces_mult": 0.15
+      "planet_artisans_produces_mult": 0.15,
+      "planet_cultivators_produces_mult": 0.15
     },
     "potential": {
       "exists": "owner",
@@ -4867,7 +6924,8 @@ const Building = {
         "volatile_motes": "@b2_rare_upkeep"
       }
     },
-    "key": "building_ministry_production"
+    "key": "building_ministry_production",
+    "isGE": true
   },
   "building_mote_harvesters": {
     "name": "Mote Harvesting Traps",
@@ -5126,6 +7184,92 @@ const Building = {
       "job_necro_apprentice_add": 4
     },
     "key": "building_necrophage_house_of_apotheosis"
+  },
+  "building_negative_mass_factory_1": {
+    "name": "Prototype Energy Anti-Transmuter",
+    "description": "Advances in abstract physics allow us the development and construction of experimental facilities for the generation of the exotic negative mass. While being able to produce negative mass, the Energy Anti-Transmuter is still in a prototype state and its production efficency and yield is very low.",
+    "allow": {
+      "has_upgraded_capital": true
+    },
+    "base_buildtime": "@b4_time",
+    "category": "manufacturing",
+    "potential": {
+      "NOT": {
+        "has_modifier": "slave_colony"
+      }
+    },
+    "prerequisites": [
+      "tech_nm_utilization_1"
+    ],
+    "resources": {
+      "category": "planet_buildings",
+      "cost": {
+        "minerals": "@b4_minerals",
+        "exotic_gases": "@b2_rare_cost",
+        "rare_crystals": "@b2_rare_cost"
+      },
+      "upkeep": {
+        "energy": "@b3_upkeep"
+      }
+    },
+    "triggered_planet_modifier": {
+      "potential": {
+        "exists": "owner",
+        "owner": {
+          "is_regular_empire": true
+        }
+      },
+      "modifier": {
+        "job_ehof_energy_converter_add": "@b1_jobs"
+      }
+    },
+    "upgrades": [
+      "building_negative_mass_factory_2"
+    ],
+    "key": "building_negative_mass_factory_1",
+    "isGE": true
+  },
+  "building_negative_mass_factory_2": {
+    "name": "Negative Mass Transmuter",
+    "description": "Being the next step in negative mass production, the Negative Mass Transmuter is an advanced form of the Energy Anti-Transmuter with increased efficency and yield. However, energy-to-negative-energy conversion is still far from efficient and will remain so, until we figure out how to perfectly convert energy between the two states.",
+    "allow": {
+      "has_upgraded_capital": true
+    },
+    "base_buildtime": 1000,
+    "can_build": false,
+    "category": "manufacturing",
+    "potential": {
+      "NOT": {
+        "has_modifier": "slave_colony"
+      }
+    },
+    "prerequisites": [
+      "tech_nm_utilization_2"
+    ],
+    "resources": {
+      "category": "planet_buildings",
+      "cost": {
+        "minerals": "@b4_minerals",
+        "exotic_gases": "@b3_rare_cost",
+        "rare_crystals": "@b3_rare_cost"
+      },
+      "upkeep": {
+        "energy": "@b3_upkeep"
+      }
+    },
+    "triggered_planet_modifier": {
+      "potential": {
+        "exists": "owner",
+        "owner": {
+          "is_regular_empire": true
+        }
+      },
+      "modifier": {
+        "job_ehof_energy_converter_add": "@b2_jobs"
+      }
+    },
+    "key": "building_negative_mass_factory_2",
+    "isGE": true
   },
   "building_network_junction": {
     "name": "Network Junction",
@@ -5844,8 +7988,8 @@ const Building = {
     "key": "building_private_shipyards"
   },
   "building_production_center": {
-    "name": "Resource Processing Center",
-    "description": "A vast facility which centralizes the handling of resources and manufacturing across the entire planet.",
+    "name": "building_production_center",
+    "description": "building_production_center",
     "allow": {
       "has_major_upgraded_capital": true
     },
@@ -5853,18 +7997,13 @@ const Building = {
     "category": "manufacturing",
     "planet_modifier": {
       "planet_metallurgists_produces_mult": 0.15,
-      "planet_artisans_produces_mult": 0.15
+      "planet_artisans_produces_mult": 0.15,
+      "planet_cultivators_produces_mult": 0.15
     },
     "potential": {
       "exists": "owner",
       "owner": {
         "is_gestalt": true
-      },
-      "OR": {
-        "owner": {
-          "is_ai": false
-        },
-        "has_any_industry_district": true
       }
     },
     "prerequisites": [
@@ -5891,7 +8030,8 @@ const Building = {
       },
       "job_catalytic_drone_add": 1
     },
-    "key": "building_production_center"
+    "key": "building_production_center",
+    "isGE": true
   },
   "building_psi_corps": {
     "name": "Psi Corps",
@@ -7116,6 +9256,32 @@ const Building = {
     },
     "key": "building_smuggling_rings"
   },
+  "building_solar_farm": {
+    "name": "Solar Farm",
+    "description": "A large solar array which generates enough energy to power the planet's systems.",
+    "can_build": false,
+    "category": "resource",
+    "resources": {
+      "category": "planet_buildings",
+      "produces": {
+        "energy": 10
+      }
+    },
+    "triggered_planet_modifier": {
+      "potential": {
+        "exists": "owner",
+        "owner": {
+          "is_machine_empire": true
+        }
+      },
+      "modifier": {
+        "job_technician_drone_add": 8,
+        "job_maintenance_drone_add": 6
+      }
+    },
+    "key": "building_solar_farm",
+    "isGE": true
+  },
   "building_spawning_pool": {
     "name": "Spawning Pools",
     "description": "Tended by the scientific and gentle care of specialists, these pools stimulate our spawn into faster growth.",
@@ -8133,6 +10299,46 @@ const Building = {
       }
     },
     "key": "holding_garrison"
+  },
+  "holding_giga_megaworkshop": {
+    "name": "Megalogistics Export Wharf",
+    "description": "Molecular foundries owned by a foreign empire use local resources to fuel distant construction projects. Some might even call them vanity projects.",
+    "allow": {
+      "custom_tooltip": {
+        "fail_text": "ove_requires_giga_tech_amb_supertensiles",
+        "owner.overlord": {
+          "has_technology": "giga_tech_amb_supertensiles"
+        }
+      }
+    },
+    "base_buildtime": "@b2_time",
+    "planet_modifier": {
+      "monthly_loyalty": -1.5
+    },
+    "potential": {
+      "has_overlord_dlc": true,
+      "has_global_flag": "@giga_amb_flag"
+    },
+    "resources": {
+      "category": "planet_holdings",
+      "cost": {
+        "minerals": "@b1_minerals"
+      },
+      "upkeep": {
+        "energy": "@b1_upkeep"
+      }
+    },
+    "triggered_planet_modifier": {
+      "potential": {
+        "exists": "planet.owner",
+        "planet.owner": {
+          "is_gestalt": true
+        }
+      },
+      "job_giga_overlord_megaengineer_drone_add": 1
+    },
+    "key": "holding_giga_megaworkshop",
+    "isGE": true
   },
   "holding_idyllic_bloom": {
     "name": "Gaia Seeder Outpost",

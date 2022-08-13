@@ -1,5 +1,11 @@
 building/building.json
+building/englishGiga.json
+building/englishGiga.txt
+converter/englishGiga.json
+converter/englishGiga.txt
 job/job.json
 node_modules/
 research-tree/converter/techs.json
+technology/englishGiga.json
+technology/englishGiga.txt
 technology/technology.json

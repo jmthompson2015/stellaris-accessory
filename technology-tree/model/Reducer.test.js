@@ -23,7 +23,7 @@ QUnit.test("back()", (assert) => {
   assert.equal(result.areaKey, "physics", "areaKey");
   assert.equal(result.categories.length, 3);
   assert.equal(result.categoryKey, "particles", "categoryKey");
-  assert.equal(result.technologies.length, 46);
+  assert.equal(result.technologies.length, 97);
   assert.equal(result.technologyKey, technologyKey1, "technologyKey");
   assert.equal(result.backList.length, 0);
   assert.equal(result.forwardList.length, 1);
@@ -48,7 +48,7 @@ QUnit.test("back() from setArea()", (assert) => {
   assert.equal(result.areaKey, "physics", "areaKey");
   assert.equal(result.categories.length, 3);
   assert.equal(result.categoryKey, "particles", "categoryKey");
-  assert.equal(result.technologies.length, 46);
+  assert.equal(result.technologies.length, 97);
   assert.equal(result.technologyKey, technologyKey1, "technologyKey");
   assert.equal(result.backList.length, 0);
   assert.equal(result.forwardList.length, 1);
@@ -73,11 +73,11 @@ QUnit.test("back() from setCategory()", (assert) => {
   assert.equal(result.areaKey, "physics", "areaKey");
   assert.equal(result.categories.length, 3);
   assert.equal(result.categoryKey, "particles", "categoryKey");
-  assert.equal(result.technologies.length, 46);
+  assert.equal(result.technologies.length, 97);
   assert.equal(result.technologyKey, technologyKey1, "technologyKey");
   assert.equal(result.backList.length, 0);
   assert.equal(result.forwardList.length, 1);
-  assert.equal(result.forwardList[0], "tech_reactor_boosters_3");
+  assert.equal(R.head(result.forwardList), "tech_abstract_1");
 });
 
 QUnit.test("forward()", (assert) => {
@@ -101,10 +101,10 @@ QUnit.test("forward()", (assert) => {
   assert.equal(result.areaKey, "engineering", "areaKey");
   assert.equal(result.categories.length, 4);
   assert.equal(result.categoryKey, "industry", "categoryKey");
-  assert.equal(result.technologies.length, 36);
+  assert.equal(result.technologies.length, 57);
   assert.equal(result.technologyKey, technologyKey2, "technologyKey");
   assert.equal(result.backList.length, 1);
-  assert.equal(result.backList[0], technologyKey1);
+  assert.equal(R.head(result.backList), technologyKey1);
   assert.equal(result.forwardList.length, 0);
 });
 
@@ -122,8 +122,8 @@ QUnit.test("setArea()", (assert) => {
   assert.equal(result.areaKey, areaKey, "areaKey");
   assert.equal(result.categories.length, 4);
   assert.equal(result.categoryKey, "industry", "categoryKey");
-  assert.equal(result.rareTechnologies.length, 30);
-  assert.equal(result.technologies.length, 36);
+  assert.equal(result.rareTechnologies.length, 104);
+  assert.equal(result.technologies.length, 57);
   assert.equal(
     result.technologyKey,
     "tech_mineral_purification_2",
@@ -149,12 +149,8 @@ QUnit.test("setCategory()", (assert) => {
   assert.equal(result.areaKey, "physics", "areaKey");
   assert.equal(result.categories.length, 3);
   assert.equal(result.categoryKey, categoryKey, "categoryKey");
-  assert.equal(result.technologies.length, 46);
-  assert.equal(
-    result.technologyKey,
-    "tech_reactor_boosters_3",
-    "technologyKey"
-  );
+  assert.equal(result.technologies.length, 97);
+  assert.equal(result.technologyKey, "tech_abstract_1", "technologyKey");
 });
 
 QUnit.test("setTechnology()", (assert) => {
@@ -173,7 +169,7 @@ QUnit.test("setTechnology()", (assert) => {
   assert.equal(result.areaKey, "physics", "areaKey");
   assert.equal(result.categories.length, 3);
   assert.equal(result.categoryKey, "particles", "categoryKey");
-  assert.equal(result.technologies.length, 46);
+  assert.equal(result.technologies.length, 97);
   assert.equal(result.technologyKey, technologyKey, "technologyKey");
   assert.equal(result.backList.length, 0);
   assert.equal(result.forwardList.length, 0);
@@ -186,7 +182,7 @@ QUnit.test("setTechnology()", (assert) => {
   assert.equal(result.areaKey, "engineering", "areaKey");
   assert.equal(result.categories.length, 4);
   assert.equal(result.categoryKey, "industry", "categoryKey");
-  assert.equal(result.technologies.length, 36);
+  assert.equal(result.technologies.length, 57);
   assert.equal(result.technologyKey, technologyKey2, "technologyKey");
   assert.equal(result.backList.length, 1);
   assert.equal(result.backList[0], technologyKey);

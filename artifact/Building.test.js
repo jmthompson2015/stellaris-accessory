@@ -20,12 +20,20 @@ QUnit.test("Building properties building_colony_shelter", (assert) => {
 
   const length = 6;
   assert.equal(building.convert_to.length, length);
-  assert.equal(building.convert_to[0], "building_hive_capital");
-  assert.equal(building.convert_to[length - 1], "building_ancient_palace");
+  assert.equal(R.head(building.convert_to), "building_hive_capital");
+  assert.equal(R.last(building.convert_to), "building_ancient_palace");
 
   assert.ok(building.planet_modifier);
-  assert.equal(building.planet_modifier.planet_housing_add, 3);
-  assert.equal(building.planet_modifier.planet_amenities_add, 3);
+  assert.equal(
+    building.planet_modifier.planet_housing_add,
+    3,
+    "planet_housing_add"
+  );
+  assert.equal(
+    building.planet_modifier.planet_amenities_add,
+    7,
+    "planet_amenities_add"
+  );
 });
 
 QUnit.test("Building keys", (assert) => {
@@ -35,15 +43,15 @@ QUnit.test("Building keys", (assert) => {
   const keys = Object.keys(Building);
 
   // Verify.
-  assert.equal(keys.length, 189);
+  assert.equal(keys.length, 285);
 
   const building0 = Building[R.head(keys)];
   assert.equal(building0.name, undefined);
   assert.equal(building0.key, "@buildings_t1");
 
   const buildingLast = Building[R.last(keys)];
-  assert.equal(buildingLast.name, "Alien Zoo");
-  assert.equal(buildingLast.key, "building_xeno_zoo");
+  assert.equal(buildingLast.name, "Tree of Life Sapling");
+  assert.equal(buildingLast.key, "holding_tree_of_life_sapling");
 });
 
 const BuildingTest = {};

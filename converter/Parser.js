@@ -26,7 +26,7 @@ const matchBrace = (content) => {
   let openCount = 1;
   let closeCount = 0;
 
-  while (closeCount < openCount) {
+  while (closeCount < openCount && index < content.length) {
     index += 1;
     if (content[index] === "{") {
       openCount += 1;

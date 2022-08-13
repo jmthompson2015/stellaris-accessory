@@ -4,6 +4,15 @@ const TechnologyCategory = {
     "area": "society",
     "key": "biology"
   },
+  "blokkats": {
+    "name": "Blokkats",
+    "area": [
+      "engineering",
+      "physics",
+      "society"
+    ],
+    "key": "blokkats"
+  },
   "computing": {
     "name": "Computing",
     "area": "physics",
